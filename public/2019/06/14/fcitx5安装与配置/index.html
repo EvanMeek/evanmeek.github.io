@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://evanmeek.github.io/2019/06/14/fcitx5安装与配置/输入.gif">
 <meta property="og:image" content="https://evanmeek.github.io/2019/06/14/fcitx5安装与配置/kcm.png">
-<meta property="og:updated_time" content="2020-01-22T04:44:27.748Z">
+<meta property="og:updated_time" content="2020-06-26T10:20:39.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fcitx5安装与配置">
 <meta name="twitter:description" content="某天下午，我在Telegram群组里受人安利Fcitx5,今晚正好有空，所以就安装了个试试，还挺好的。(抱歉，文章标题一直写错了..直到这篇博客被人看到提醒我才发现..)">
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-22 12:44:27" itemprop="dateModified" datetime="2020-01-22T12:44:27+08:00">2020-01-22</time>
+                <time title="修改时间：2020-06-26 18:20:39" itemprop="dateModified" datetime="2020-06-26T18:20:39+08:00">2020-06-26</time>
               
             
           </span>
@@ -559,26 +559,32 @@
 <p><img src="/2019/06/14/fcitx5安装与配置/输入.gif" alt="演示"></p>
 <p>所需安装的软件包:</p>
 <ul>
-<li>fcitx5-git 输入法基础框架主程序</li>
-<li>fcitx5-chinese-addons-git 简体中文输入的支持，云拼音</li>
-<li>fcitx5-gtk-git gtk 程序的支持</li>
-<li>fcitx5-qt4-git qt4 的支持</li>
-<li>fcitx5-qt5-git qt5 的支持<br>可能还需要：</li>
-<li>kcm-fcitx5-git 如果你用的是 KDE ，请装这个</li>
-<li>fcitx5-rime-git 繁體中文輸入 RIME 中州韻輸入法引擎</li>
+<li>fciutx5 输入法基础框架主程序</li>
+<li>fcitx5-chinese-addons 简体中文输入的支持，云拼音</li>
+<li>fcitx5-gtk gtk 程序的支持</li>
+<li>fcitx5-qt4 qt4 的支持</li>
+<li>fcitx5-qt5 qt5 的支持<br>可能还需要：</li>
+<li>kcm-fcitx 如果你用的是 KDE ，请装这个</li>
+<li>fcitx5-rime 繁體中文輸入 RIME 中州韻輸入法引擎</li>
 </ul>
-<p>如果你是KDE桌面环境可以直接使用kcm-fcitx5-git配置输入法:</p>
+<p>如果你是KDE桌面环境可以直接使用kcm-fcitx5配置输入法:</p>
 <p><img src="/2019/06/14/fcitx5安装与配置/kcm.png" alt="kcm"></p>
-<p>否则将改配置文件<code>~/.config/fcitx5/profile</code></p>
+<p><del>否则将改配置文件<code>~/.config/fcitx5/profile</code></del></p>
+<p><strong> 2020-6-26 更新</strong></p>
+<p>如果你不是使用的KDE桌面，你可以安装<code>fcitx5-config-qt</code>来进行配置，所以可以不使用下面创建文件的方式来配置了！但是还是要加环境变量的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[Groups/0]</span><br><span class="line"># Group Name</span><br><span class="line">Name=Default</span><br><span class="line"># Layout</span><br><span class="line">Default Layout=us</span><br><span class="line"># Default Input Method</span><br><span class="line">DefaultIM=pinyin</span><br><span class="line"></span><br><span class="line">[Groups/0/Items/0]</span><br><span class="line"># Name</span><br><span class="line">Name=keyboard-us</span><br><span class="line"># Layout</span><br><span class="line">Layout=</span><br><span class="line"></span><br><span class="line">[Groups/0/Items/1]</span><br><span class="line"># Name</span><br><span class="line">Name=pinyin</span><br><span class="line"># Layout</span><br><span class="line">Layout=</span><br><span class="line"></span><br><span class="line">[GroupOrder]</span><br><span class="line">0=Default</span><br></pre></td></tr></table></figure>
 <p><strong>若没有<code>fcitx5</code>这个目录，则先打开一次fcitx5，再关闭，因为fcitx5关闭时会覆盖此文件。</strong></p>
 <p>由于fcitx5不能自动启动，我们需要添加环境变量</p>
 <p>将如下内容添加到<code>~/.xprofile</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fcitx5 &amp;</span><br></pre></td></tr></table></figure>
 <p>然后再将如下内容添加到~/.pam_environment`，没有则创建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx5</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx5</span><br></pre></td></tr></table></figure>
+<p><strong>2020-6-26更新</strong></p>
+<p>正确的写法是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE DEFAULT=fcitx</span><br><span class="line">QT_IM_MODULE  DEFAULT=fcitx</span><br><span class="line">XMODIFIERS    DEFAULT=\@im=fcitx</span><br></pre></td></tr></table></figure></p>
+<p>下面这种写法可能会出现问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx5</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx5</span><br></pre></td></tr></table></figure></p>
 <p>KDE用户可以直接在<code>系统设置模块-自动启动</code>设置</p>
 <p>默认的皮肤很丑，我们可以使用这个<a href="https://github.com/iovxw/fcitx5-simple-theme" target="_blank" rel="noopener">fcitx5-simple-theme</a></p>
+<p><strong>2020-6-26更新</strong></p>
+<p>有更多的皮肤包可以使用啦！只需要安装<code>fcitx5-material-color</code>这个包即可体验到类似Windows10输入法的样式。</p>
 <p>然后你就可以把fcitx4给删了…</p>
 
       
@@ -602,7 +608,7 @@
   <p><span>本文标题:</span><a href="/2019/06/14/fcitx5安装与配置/">fcitx5安装与配置</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 EvanMeek 的个人博客">EvanMeek</a></p>
   <p><span>发布时间:</span>2019年06月14日 - 02:06</p>
-  <p><span>最后更新:</span>2020年01月22日 - 12:01</p>
+  <p><span>最后更新:</span>2020年06月26日 - 18:06</p>
   <p><span>原始链接:</span><a href="/2019/06/14/fcitx5安装与配置/" title="fcitx5安装与配置">https://evanmeek.github.io/2019/06/14/fcitx5安装与配置/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://evanmeek.github.io/2019/06/14/fcitx5安装与配置/" aria-label="复制成功！"></i></span>
   </p>
