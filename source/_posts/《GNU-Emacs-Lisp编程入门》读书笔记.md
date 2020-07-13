@@ -2923,7 +2923,48 @@ Emacs中为特殊字符的字符转换为普通字符。随后的`'`右单引号
 ## re-search-forward函数
 
 `search-forward`的另一个版本，这个将第一个参量改为接收一个正则表达式字符串，其他
-几个参量相同。
+三个参量与其相同。
+
+- 第一个参量
+  要查找的正则表达式字符串。
+- 第二个参量
+  可选参量，用于限制查询的范围。
+- 第三个参量
+  可选参量，用于在查询失败时的响应。
+- 第四个参量
+  可选参量，用于查询计数。
+  
+## forward-sentence函数
+
+`forward-sentence`是一个将光标移动到下一个句子之前的命令，我们通过这个例子理解在
+EmacsLisp中使用正则表达式查询的工作方式。
+
+``` emacs-lisp
+(defun forward-sentence-t (&optional arg)
+  "向前移动至下一个sentence-end的位置
+具体细节可以看官方的文档"
+  (interactive "p")
+  (or arg (setq arg 1)) ;; 如果arg为nil，那么就将其设置为1
+  (while (< arg 0) ;; 如果arg小于0
+    (let ((par-beg (save-excursion
+                     (start-of-paragraph-text)
+                     (point))))
+      (if (re-search-forward
+           (concat sentence-end "[^ \t\n]") par-beg t)
+          (goto-char (1- (match-end 0)))
+        (goto-char par-beg)))
+    (setq arg (1+ arg)))
+  (while (> arg 0)
+    (let ((par-end (save-excursion
+                     (end-of-paragraph-text)
+                     (point))))
+      (if (re-search-forward sentence-end par-end t)
+          (skip-chars-backward " \t\n")
+        (goto-char par-end))
+      (setq arg (1- arg)))))
+```
+
+
 
 
 
