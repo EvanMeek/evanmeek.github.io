@@ -12,8 +12,10 @@
 
 [[./nav.org][_Nav_]] ➭ [[./idea.org][_Idea_]] ➯ [[./wiki.org][_Wiki_]]
 
-| Misc                |
-|---------------------|
+| 最新      |
+|-----------|
+| [[file:iamback.org][我回来了!]] |
+
 
 
 | Web                   |
