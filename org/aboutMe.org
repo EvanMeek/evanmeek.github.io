@@ -1,0 +1,31 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-07-14 二>
+#+TITLE: 关于我
+
+#+begin_quote
+一个喜欢模仿、喜欢折腾的人。
+#+end_quote
+
+* 技能
+  1. 捣鼓GNU/Linux
+  2. 捣鼓Emacs
+  3. 捣鼓相机
+
+* 喜欢的歌手
+  1. Eminem
+  2. 红花会贝贝
+
+* 崇拜的人
+  1. Linus Torvalds :: GNU/Linux、Git的创始人。
+  	喜欢他的人生终极意义"Just to fun."
+  2. Andy Stewart :: 江湖人称“勇哥”、Emacs黑客、锂钠氪锶.Inc 的Boss
+	从Deepin了解到的，那时我满脑子都想着当黑客，听说大家说有这么个黑客，就很崇拜了。但当时啥也不懂，根本不懂黑客的真正定义(每个人的定义可能也不一样吧)，后来真正让我崇拜的是勇哥的动手能力，以及那种对生活中苦难说不，懂得自我解放，自我安慰的魅力。
+
+* 性格
+如果说说出自我性格算一种自我评价的话，我认为我的性格是: 简单，随和，偏执的。
+
+* 如何联系我
+  - [[https://t.me/evanmeek/][Telegram]]
+  - [[腾讯QQ: 2864011679]]
+  - [[腾讯微信: A2-B0x]]
+  - [[mailto:the_lty_mail@foxmail.com][邮箱]]

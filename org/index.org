@@ -8,9 +8,9 @@
 # </audio>
 # #+END_EXPORT
 
-保持谦卑
+**保持谦卑**
 
-[[./nav.org][_Nav_]] ➭ [[./idea.org][_Idea_]] ➯ [[./wiki.org][_Wiki_]]
+[[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]]
 
 | 最新      |
 |-----------|
@@ -18,11 +18,10 @@
 
 
 
-| Web                   |
-|-----------------------|
+| 关于我的 |
+|----------|
+| [[file:aboutMe.org][AboutMe]]  |
 
-| 读书 |
-|------|
 
 #+BEGIN_EXPORT html
 <div class="me">
