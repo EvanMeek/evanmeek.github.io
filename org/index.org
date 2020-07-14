@@ -2,25 +2,44 @@
 #+DATE: <2019-12-28 Sat 23:03>
 #+TITLE: 我不会编程
 
-# #+BEGIN_EXPORT html
-# <audio preload="metadata" autoplay>
-#   <source src="../assets/doctor.mp3" type="audio/mpeg" />
-# </audio>
-# #+END_EXPORT
-
+#+BEGIN_EXPORT html
+<audio preload="metadata" autoplay>
+  <source src="../assets/doctor.mp3" type="audio/mpeg" />
+</audio>
+#+END_EXPORT
 **保持谦卑**
 
-[[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]]
+[[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]] ➯ [[file:diary.org][_我的日记_]]
 
 | 最新      |
 |-----------|
 | [[file:iamback.org][我回来了!]] |
 
-
-
 | 关于我的 |
 |----------|
 | [[file:aboutMe.org][AboutMe]]  |
+
+| Emacs                  |
+|------------------------|
+| 甭管有没有先把分类创好 |
+
+| GNU/Linux              |
+|------------------------|
+| 甭管有没有先把分类创好 |
+
+| C/C++                  |
+|------------------------|
+| 甭管有没有先把分类创好 |
+
+| 技术                   |
+|------------------------|
+| 甭管有没有先把分类创好 |
+|                        |
+
+| 生活                   |
+|------------------------|
+| 甭管有没有先把分类创好 |
+|                        |
 
 
 #+BEGIN_EXPORT html

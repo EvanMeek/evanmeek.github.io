@@ -26,6 +26,6 @@
 
 * 如何联系我
   - [[https://t.me/evanmeek/][Telegram]]
-  - [[腾讯QQ: 2864011679]]
-  - [[腾讯微信: A2-B0x]]
+  - [[https://qq.com][腾讯QQ: 2864011679]]
+  - [[https://wechat.com][腾讯微信: A2-B0x]]
   - [[mailto:the_lty_mail@foxmail.com][邮箱]]

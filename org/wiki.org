@@ -1,0 +1,11 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-07-14 周2 09:16>
+
+* WIKI
+
+#+begin_quote
+只要我记录的够多，这里就能成为百科全书。
+#+end_quote
+
+** ivy-dired下重命名确认 <2020-05-15 五>                    :emacs:ivy:dired:
+   在我使用 ~(dired-do-rename)~ 时发现如果重命名时新名称跟旧名称相似，直接按回车是无法修改的，因为ivy会自动将旧名称补全为新名称，等于没有修改，所以我们在重命名时，输入新名称后，可以调用命令 ~(ivy-immediate-done)~ 默认快捷键是_C-M-j_，这样就可以直接确认，ivy也不会将旧名称补全给新名称。
