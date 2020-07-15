@@ -1,0 +1,145 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATA: <2020-07-16 四>
+#+TITLE: C++菱形继承小记
+
+最近在复习C++，复习到多继承这个点上，由于多继承用的不多，以防自己以后忘记便有了这篇文章。
+
+* 多继承最明显的问题
+
+我们直接用代码来说话，下面我们会创建多个类，让它们形成一个 **菱形继承** 的关系。
+
+#+begin_src cpp
+  #include <iostream>
+  #include <string>
+
+  using namespace std;
+
+  class A
+  {
+	int a;
+  public:
+	A(int out_a=10):a(out_a){
+	  cout << "A 创建" <<endl;
+	}
+  };
+
+  class B: public A
+  {
+	int b;
+  public:
+	B(int out_b=10):b(out_b){
+	  cout << "B 创建" << endl;
+	}
+  };
+
+  class C: public A
+  {
+	int c;
+  public:
+	C(int out_c=10):c(out_c){
+	  cout << "C 创建" << endl;
+	}
+  };
+
+  class D: public B, public C
+  {
+	int d;
+  public:
+	D(int out_d=10):d(out_d){
+	  cout << "D 创建" << endl;
+	}
+  };
+
+
+  int main()
+  {
+	D d;
+  }
+
+#+end_src
+
+这边用文字简单描述下它们的关系，首先有个基类 **A** ，然后有两个由 **A** 派生类 **B** 和 **C** ，然后有一个由类 **B** 和类 **C** 派生的类 **D** 。
+
+这就是 **菱形继承** 了，其运行结果如下:
+
+#+begin_src shell
+A 创建
+B 创建
+A 创建
+C 创建
+D 创建
+#+end_src
+
+我们发现，其中 **A** 类的构造函数被执行了两次，这就是因为 **D** 两个基类都继承于类 **A** 所以就会造成这样的问题啦
+
+* 解决多继承带来的菱形继承问题
+
+那么要如何解决呢？其实也很简单，只需要将 **D** 类的两个父类所继承的位置添加一个 **virtual** 关键字就可以解决这个问题。
+
+就像这样:
+
+#+begin_src cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class A
+{
+  int a;
+public:
+  A(int out_a=10):a(out_a){
+	cout << "A 创建" <<endl;
+  }
+};
+
+class B: virtual public A
+{
+  int b;
+public:
+  B(int out_b=10):b(out_b){
+	cout << "B 创建" << endl;
+  }
+};
+
+class C: virtual public A
+{
+  int c;
+public:
+  C(int out_c=10):c(out_c){
+	cout << "C 创建" << endl;
+  }
+};
+
+class D: public B, public C
+{
+  int d;
+public:
+  D(int out_d=10):d(out_d){
+	cout << "D 创建" << endl;
+  }
+};
+
+
+int main()
+{
+  D d;
+}
+#+end_src
+
+其运行结果如下:
+
+#+begin_src shell
+A 创建
+B 创建
+C 创建
+D 创建
+#+end_src
+
+我们发现 **A** 类的构造函数只被执行了一次，也就解决这个问题啦。
+
+* 最后
+
+最后由于我现在写C++代码也不多，所以也不知道这个多继承的应用场景，可能是想更方便进行代码复用和提高执行效率吧。。
+
+不过感觉这样有些得不偿失，会让程序变得复杂不少。
