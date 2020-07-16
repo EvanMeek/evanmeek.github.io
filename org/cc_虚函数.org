@@ -1,4 +1,4 @@
-#+ SETUPFILE ../theme-rose.setup
+#+SETUPFILE ../theme-rose.setup
 #+DATE: <2020-07-17 五>
 #+TITLE: C++虚函数小记
 
