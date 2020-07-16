@@ -1,0 +1,110 @@
+#+ SETUPFILE ../theme-rose.setup
+#+DATE: <2020-07-17 五>
+#+TITLE: C++虚函数小记
+
+虚函数有点类似Java中的重写父类方法。不过主要还是解决C++中重写父类方法可能会存在的问题。
+
+* 不用虚函数存在的问题
+
+下面我们需要实现一个小例子，这个例子是这样的，类 **A** 是 类 **B** 和 **C** 的父类，
+然后他们都有一个同名同参数的成员函数 **print** ，我们会实例化各一个B类和C对象，然后调
+用他们的print()方法，看看会发生什么.
+
+#+begin_src cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class A {
+public:
+  void print() { cout << "A print" << endl; }
+};
+
+class B : public A {
+public:
+  void print() { cout << "B print" << endl; }
+};
+
+class C : public A {
+public:
+  void print() { cout << "C print" << endl; }
+};
+
+int main() {
+  A *a;
+  a = new B;
+  a->print();
+  a = new C;
+  a->print();
+}
+#+end_src
+
+运行结果
+
+#+begin_src shell
+A print
+A print
+#+end_src
+
+* 解决这个问题
+
+我们发现我们虽然实例化的是 **B** 和 **C** 类对象，但实际上调用的是 类 **A** 的 **pri
+nt()** 方法，这是因为C++默认是根据类型来决定具体使用哪个方法的，而想要解决这个问题就需要将
+被重写的父类方法设置为虚函数。
+
+就像这样(注意类 **A** 的 **print()** 方法实现)
+
+#+begin_src cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class A {
+public:
+  virtual void print() { cout << "A print" << endl; }
+};
+
+class B : public A {
+public:
+  void print() { cout << "B print" << endl; }
+};
+
+class C : public A {
+public:
+  void print() { cout << "C print" << endl; }
+};
+
+int main() {
+  A *a;
+  a = new B;
+  a->print();
+  a = new C;
+  a->print();
+}
+#+end_src
+
+运行结果:
+
+#+begin_src shell
+B print
+C print
+#+end_src
+
+这样子C++就会根据指针来决定具体使用哪个方法啦。
+
+* 其他说明
+
+其实虚函式为了实现C++中的多态，跟虚函数类似的一个C++术语叫做 **纯虚函数** ，其用于类似
+Java中接口方法的定义，只需要不实现具体的方法就可以啦，具体写法如下:
+
+#+begin_src cpp
+virtual void print() = 0;
+#+end_src
+
+#+begin_quote
+是不是感觉这个语法很奇怪的呢，我也是这么觉得的！
+
+还有就是，我对C++目前学的很少，可能有些地方有误或理解错误，请各位多多包涵，有问题可以联系我!
+#+end_quote

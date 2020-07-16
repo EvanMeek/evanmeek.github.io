@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-07-17 五 06:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C++虚函数小记</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+</head>
+<body>
+<div id="content">
+<h1 class="title">C++虚函数小记</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org743b5d8">不用虚函数存在的问题</a></li>
+<li><a href="#org5dd7ebc">解决这个问题</a></li>
+<li><a href="#orgdd26dfe">其他说明</a></li>
+</ul>
+</div>
+</div>
+<p>
+#+ SETUPFILE ../theme-rose.setup
+</p>
+<p>
+虚函数有点类似Java中的重写父类方法。不过主要还是解决C++中重写父类方法可能会存在的问题。
+</p>
+
+<div id="outline-container-org743b5d8" class="outline-2">
+<h2 id="org743b5d8">不用虚函数存在的问题</h2>
+<div class="outline-text-2" id="text-org743b5d8">
+<p>
+下面我们需要实现一个小例子，这个例子是这样的，类 <b><b>A</b></b> 是 类 <b><b>B</b></b> 和 <b><b>C</b></b> 的父类，
+然后他们都有一个同名同参数的成员函数 <b><b>print</b></b> ，我们会实例化各一个B类和C对象，然后调
+用他们的print()方法，看看会发生什么.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #ff69b4; font-style: italic;">#include</span> <span style="color: #ff4500; font-weight: bold; font-style: italic;">&lt;</span><span style="color: #ffa500; font-style: italic;">iostream</span><span style="color: #ff4500; font-weight: bold; font-style: italic;">&gt;</span>
+<span style="color: #ff69b4; font-style: italic;">#include</span> <span style="color: #ff4500; font-weight: bold; font-style: italic;">&lt;</span><span style="color: #ffa500; font-style: italic;">string</span><span style="color: #ff4500; font-weight: bold; font-style: italic;">&gt;</span>
+
+<span style="color: #ff0000;">using</span> <span style="color: #ff0000;">namespace</span> <span style="color: #ff69b4; font-style: italic;">std</span>;
+
+<span style="color: #ff0000;">class</span> <span style="color: #8470ff; font-style: italic;">A</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+<span style="color: #ff0000;">public</span>:
+  <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ffd700; font-weight: bold;">()</span> <span style="color: #ffd700; font-weight: bold;">{</span> cout &lt;&lt; <span style="color: #ffa500; font-style: italic;">"A print"</span> &lt;&lt; endl; <span style="color: #ffd700; font-weight: bold;">}</span>
+<span style="color: #ff4500; font-weight: bold;">}</span>;
+
+<span style="color: #ff0000;">class</span> <span style="color: #8470ff; font-style: italic;">B</span> : <span style="color: #ff0000;">public</span> <span style="color: #8470ff; font-style: italic;">A</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+<span style="color: #ff0000;">public</span>:
+  <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ffd700; font-weight: bold;">()</span> <span style="color: #ffd700; font-weight: bold;">{</span> cout &lt;&lt; <span style="color: #ffa500; font-style: italic;">"B print"</span> &lt;&lt; endl; <span style="color: #ffd700; font-weight: bold;">}</span>
+<span style="color: #ff4500; font-weight: bold;">}</span>;
+
+<span style="color: #ff0000;">class</span> <span style="color: #8470ff; font-style: italic;">C</span> : <span style="color: #ff0000;">public</span> <span style="color: #8470ff; font-style: italic;">A</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+<span style="color: #ff0000;">public</span>:
+  <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ffd700; font-weight: bold;">()</span> <span style="color: #ffd700; font-weight: bold;">{</span> cout &lt;&lt; <span style="color: #ffa500; font-style: italic;">"C print"</span> &lt;&lt; endl; <span style="color: #ffd700; font-weight: bold;">}</span>
+<span style="color: #ff4500; font-weight: bold;">}</span>;
+
+<span style="color: #8470ff; font-style: italic;">int</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">main</span><span style="color: #ff4500; font-weight: bold;">()</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+  <span style="color: #8470ff; font-style: italic;">A</span> *<span style="color: #eedd82; text-decoration: underline;">a</span>;
+  a = <span style="color: #ff0000;">new</span> <span style="color: #8470ff; font-style: italic;">B</span>;
+  a-&gt;print<span style="color: #ffd700; font-weight: bold;">()</span>;
+  a = <span style="color: #ff0000;">new</span> <span style="color: #8470ff; font-style: italic;">C</span>;
+  a-&gt;print<span style="color: #ffd700; font-weight: bold;">()</span>;
+<span style="color: #ff4500; font-weight: bold;">}</span>
+</pre>
+</div>
+
+<p>
+运行结果
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">A print
+A print
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5dd7ebc" class="outline-2">
+<h2 id="org5dd7ebc">解决这个问题</h2>
+<div class="outline-text-2" id="text-org5dd7ebc">
+<p>
+我们发现我们虽然实例化的是 <b><b>B</b></b> 和 <b><b>C</b></b> 类对象，但实际上调用的是 类 <b><b>A</b></b> 的 <b><b>pri
+nt()</b></b> 方法，这是因为C++默认是根据类型来决定具体使用哪个方法的，而想要解决这个问题就需要将
+被重写的父类方法设置为虚函数。
+</p>
+
+<p>
+就像这样(注意类 <b><b>A</b></b> 的 <b><b>print()</b></b> 方法实现)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #ff69b4; font-style: italic;">#include</span> <span style="color: #ff4500; font-weight: bold; font-style: italic;">&lt;</span><span style="color: #ffa500; font-style: italic;">iostream</span><span style="color: #ff4500; font-weight: bold; font-style: italic;">&gt;</span>
+<span style="color: #ff69b4; font-style: italic;">#include</span> <span style="color: #ff4500; font-weight: bold; font-style: italic;">&lt;</span><span style="color: #ffa500; font-style: italic;">string</span><span style="color: #ff4500; font-weight: bold; font-style: italic;">&gt;</span>
+
+<span style="color: #ff0000;">using</span> <span style="color: #ff0000;">namespace</span> <span style="color: #ff69b4; font-style: italic;">std</span>;
+
+<span style="color: #ff0000;">class</span> <span style="color: #8470ff; font-style: italic;">A</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+<span style="color: #ff0000;">public</span>:
+  <span style="color: #ff0000;">virtual</span> <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ffd700; font-weight: bold;">()</span> <span style="color: #ffd700; font-weight: bold;">{</span> cout &lt;&lt; <span style="color: #ffa500; font-style: italic;">"A print"</span> &lt;&lt; endl; <span style="color: #ffd700; font-weight: bold;">}</span>
+<span style="color: #ff4500; font-weight: bold;">}</span>;
+
+<span style="color: #ff0000;">class</span> <span style="color: #8470ff; font-style: italic;">B</span> : <span style="color: #ff0000;">public</span> <span style="color: #8470ff; font-style: italic;">A</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+<span style="color: #ff0000;">public</span>:
+  <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ffd700; font-weight: bold;">()</span> <span style="color: #ffd700; font-weight: bold;">{</span> cout &lt;&lt; <span style="color: #ffa500; font-style: italic;">"B print"</span> &lt;&lt; endl; <span style="color: #ffd700; font-weight: bold;">}</span>
+<span style="color: #ff4500; font-weight: bold;">}</span>;
+
+<span style="color: #ff0000;">class</span> <span style="color: #8470ff; font-style: italic;">C</span> : <span style="color: #ff0000;">public</span> <span style="color: #8470ff; font-style: italic;">A</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+<span style="color: #ff0000;">public</span>:
+  <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ffd700; font-weight: bold;">()</span> <span style="color: #ffd700; font-weight: bold;">{</span> cout &lt;&lt; <span style="color: #ffa500; font-style: italic;">"C print"</span> &lt;&lt; endl; <span style="color: #ffd700; font-weight: bold;">}</span>
+<span style="color: #ff4500; font-weight: bold;">}</span>;
+
+<span style="color: #8470ff; font-style: italic;">int</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">main</span><span style="color: #ff4500; font-weight: bold;">()</span> <span style="color: #ff4500; font-weight: bold;">{</span>
+  <span style="color: #8470ff; font-style: italic;">A</span> *<span style="color: #eedd82; text-decoration: underline;">a</span>;
+  a = <span style="color: #ff0000;">new</span> <span style="color: #8470ff; font-style: italic;">B</span>;
+  a-&gt;print<span style="color: #ffd700; font-weight: bold;">()</span>;
+  a = <span style="color: #ff0000;">new</span> <span style="color: #8470ff; font-style: italic;">C</span>;
+  a-&gt;print<span style="color: #ffd700; font-weight: bold;">()</span>;
+<span style="color: #ff4500; font-weight: bold;">}</span>
+</pre>
+</div>
+
+<p>
+运行结果:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">B print
+C print
+</pre>
+</div>
+
+<p>
+这样子C++就会根据指针来决定具体使用哪个方法啦。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdd26dfe" class="outline-2">
+<h2 id="orgdd26dfe">其他说明</h2>
+<div class="outline-text-2" id="text-orgdd26dfe">
+<p>
+其实虚函式为了实现C++中的多态，跟虚函数类似的一个C++术语叫做 <b><b>纯虚函数</b></b> ，其用于类似
+Java中接口方法的定义，只需要不实现具体的方法就可以啦，具体写法如下:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="color: #ff0000;">virtual</span> <span style="color: #8470ff; font-style: italic;">void</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">print</span><span style="color: #ff4500; font-weight: bold;">()</span> = 0;
+</pre>
+</div>
+
+<blockquote>
+<p>
+是不是感觉这个语法很奇怪的呢，我也是这么觉得的！
+</p>
+
+<p>
+还有就是，我对C++目前学的很少，可能有些地方有误或理解错误，请各位多多包涵，有问题可以联系我!
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-07-17 五 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-07-17 五 06:01</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
