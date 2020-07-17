@@ -1,0 +1,91 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-07-17 五>
+#+TITLE: Emacs中优雅地加载GUI配置
+
+大概是一周前，咱为咱的Emacs配置添加了更好的daemon支持，那么下面就简单介绍下吧!
+
+* 啥是Emacs Daemon?
+
+汝可以理解成让Emacs变为一种C/S架构，汝可以开机时立刻将Emacs以Daemon模式启动，然后汝只需要使用emacsclient来真正使用Emacs就可以了，它的优势是可以让汝启动emcas非常快速，因为汝的所有配置
+都已经加载过了(启动Daemon时)。
+
+* 如何使用Daemon?
+** 启动SERVER
+   键入命令:
+   #+begin_src shell
+   emacs --deamon
+   #+end_src
+
+   就可以将Emacs以Daemon模式启动，启动完成后汝会发现Emacs并不能直接使用，这就是前面说到的Emacs将会以"Server"的形式运行。
+ 
+** 启动CLIENT
+   SERVER启动了之后咱们就可以随时以一种超级快速的方式启动CLIENT了，CLIENT分两种方式，一种是TUI模式和GUI模式，分别对应着字符环境和图形环境的说法。
+
+   TUI模式
+   #+begin_src shell
+   emacsclient -t -a ""
+   #+end_src
+   
+   GUI模式
+   #+begin_src shell
+   emacsclient -c -a ""
+   #+end_src
+
+* Daemon存在的问题
+  经过前面的介绍咱们知道，所有的配置会在启动Daemon时就被加载(如果没有经过处理)。但是当咱们以TUI的方式启动EMACS,那么GUI的配置就显得有些多余了，所以咱们需要为每个GUI配置加一个判断，当当前环境
+是图形环境时再加载，否则就不加载。所以汝可以使用 **(display-graphic-p)** 来判断当前环境是否为GUI，然后为每个GUI的配置做单独的判断就可以了。
+
+汝以为就完了吗，但实际上这样仍然会有一些问题，就是启动Daemon时Emacs是以TUI的方式启动并加载配置的，所以前面提到的这个函数 将永远返回nil，所以就有第二种解决方案。
+
+查阅了一些资料后，咱发现可以获取当前xorg的环境是否为图形环境，来判断Emacs是否处于图形环境中，就像这样 **(getenv "DISPLAY")** ，这样汝就可以解决在图形环境下启动Daemon仍被识别为TUI的问题啦！
+
+不过不过，汝认为这就完了吗，不不不，实际上这还是会出现一些问题，就是当我们使用emacsclient TUI时，咱们的Emacs就会出现前面遇到的第一个问题了，仍然加载了图形化的配置，这样也不足够优雅，所以就有了
+下面的终极解决方案(咱能想到的)。
+
+* 解决这个问题!!!
+先来梳理梳理问题，目前问题是不好判断Daemon模式时emacsclient是否以图形化的方式启动的，咱冥思苦想(没办法咱太蠢了)，想了个解决方案: Daemon启动时无需判断是否为TUI还是GUI，而那些GUI的配置我们利用
+钩子来加载，这个钩子就是 **after-make-frame-functions** ，其作用是当创建了一个frame之后触发一些事，而TUI模式下正好是无法make一个frame的，而emacsclient以GUI模式启动时会触发这个hook，那就
+好办了，稍微思考一下，咱们想先构建一个容器：
+
+#+begin_src emacs-lisp
+(setq graphic-only-plugins-setting ())
+#+end_src
+
+这个容器的作用是存储GUI的特定配置，例如咱有个看PDF的插件，它必须在GUI下才能使用，咱就将其配置加入到此容器中：
+
+#+begin_src emacs-lisp
+  ;; Emacs下的pdf查看工具，默认非图形化不开启
+  (push '(use-package 
+		   pdf-tools 
+		   :ensure t 
+		   :hook ('doc-view-mode 'pdf-view-mode)) graphic-only-plugins-setting)
+#+end_src
+
+那么咱们就需要使用到那个钩子啦，我们在那个钩子触发时将这个容器里的所有代码一一Eval一下就OK啦！
+
+#+begin_src emacs-lisp
+  (defun graphic-p ()
+	"判断当前环境是否为图形环境"
+	(if (display-graphic-p)
+		t))
+  ;; 图形化插件特殊设置
+  (if (not (graphic-p))
+	  (add-hook 'after-make-frame-functions
+				(lambda (new-frame)
+				  (select-frame new-frame)
+				  (dolist (elisp-code graphic-only-plugins-setting)
+					(eval elisp-code))))
+	(dolist (elisp-code graphic-only-plugins-setting)
+	  (eval elisp-code)))
+#+end_src
+
+这段代码首先判定当前是否为图形环境，如果不是的话则创建这个钩子，这样在用emacsclient TUI模式启动时就暂时不会加载GUI的配置，直到使用emacsclient GUI模式启动时那些GUI配置才会被加载。
+* 最后
+希望能帮到汝，Emacs很强大，多谢汝喜欢她！
+
+**参考资料**
+
+[[http://tigersoldier.is-programmer.com/2010/2/5/tips-on-emacs-daemon.15404.html][画猫不成反类虎 使用Emasc Daemon]]
+
+[[http://blog.lujun9972.win/Emacs%E4%B9%8B%E6%80%92/2016/11/04/%E5%88%A4%E6%96%ADemacs%E6%98%AF%E5%90%A6%E5%9C%A8%E5%9B%BE%E5%BD%A2%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E6%B3%95/%20Or%20/Emacs%E4%B9%8B%E6%80%92/%E5%88%A4%E6%96%ADemacs%E6%98%AF%E5%90%A6%E5%9C%A8%E5%9B%BE%E5%BD%A2%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E6%B3%95/index.html][暗无天日 判断Emacs是否在图形环境中的正确方法]]
+
