@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-07-17 五 18:51 -->
+<!-- 2020-07-19 日 13:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diary</title>
@@ -47,11 +47,11 @@
 在我使用 <b>quickrun</b> 这个包来快速运行python程序时发现一个让人很烦躁的默认设定——自动生成临时文件，为了解决这个问题，我简单的查阅了下Issues和Google了一下，结果让人有些无语，没有找到相关说明，本以为只有我一个人有这个需求的时候，我又单独在Issue列表里换了个关键字查找，还真有类似的问题，不过没有直接给出解决方案，现在那个<a href="https://github.com/emacsorphanage/quickrun/issues/84">issue</a>还是Open状态。我也纳闷了，这个问题想解决也挺简单的，就是自己写一个quickrun命令，但为啥那个issue能从16年留到现在20年也太奇怪了，不说那么多废话了，下面提供解决方案。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #ffa500; font-style: italic;">"python"</span>
-    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:command</span> . <span style="color: #ffa500; font-style: italic;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:exec</span> . <span style="color: #ffa500; font-style: italic;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-    <span style="color: #b0c4de; font-weight: bold; font-style: italic;">:default</span> <span style="color: #ffa500; font-style: italic;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #4078f2;">(</span>quickrun-add-command <span style="color: #50a14f;">"python"</span>
+    '<span style="color: #a626a4;">(</span><span style="color: #50a14f;">(</span><span style="color: #a626a4;">:command</span> . <span style="color: #50a14f;">"python3"</span><span style="color: #50a14f;">)</span>
+      <span style="color: #50a14f;">(</span><span style="color: #a626a4;">:exec</span> . <span style="color: #50a14f;">"%c %s"</span><span style="color: #50a14f;">)</span>
+      <span style="color: #50a14f;">(</span><span style="color: #a626a4;">:tempfile</span> . nil<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
+    <span style="color: #a626a4;">:default</span> <span style="color: #50a14f;">"python"</span><span style="color: #4078f2;">)</span>
 </pre>
 </div>
 <p>
@@ -65,7 +65,7 @@
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-17 五 22:10</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-07-17 五 18:51</p>
+<p class="date">Created: 2020-07-19 日 13:20</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
