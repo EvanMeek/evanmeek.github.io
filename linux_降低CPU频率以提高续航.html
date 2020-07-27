@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-07-27 一 15:44 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArchLinux降低CPU频率以提高续航</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ArchLinux降低CPU频率以提高续航</h1>
+<p>
+如果你的笔电性能强劲，那么很有可能在Linux下续航时常非常短，这篇文章就提供了最简单的提高续航的方法。
+</p>
+
+<p>
+安装 <b>cpupower</b> :
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo pacman -S cpupower
+</pre>
+</div>
+
+<p>
+查看当前CPU信息:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">cpupower frequency-info
+</pre>
+</div>
+
+<p>
+设置CPU所有核心最大频率:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo cpupower frequency-set -u 2.0Ghz
+</pre>
+</div>
+
+<p>
+设置CPU所有核心最小频率:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo cpupower frequency-set -d 800Mhz
+</pre>
+</div>
+
+<p>
+指定当前CPU保持运行频率:
+</p>
+
+<p>
+<code>较新的Intel CPU可能无效</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo cpupower frequency-set -f 2.0Ghz
+</pre>
+</div>
+
+<p>
+这样就可以通过设置CPU频率提高电脑续航啦，我平常在外使用电脑时会将最大频率限定在1.5Ghz左右，这样可以
+让我的电脑续航变长。
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-07-27 一 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-07-27 一 15:44</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
