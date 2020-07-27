@@ -1,0 +1,38 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-07-27 一>
+#+TITLE: ArchLinux降低CPU频率以提高续航
+
+如果你的笔电性能强劲，那么很有可能在Linux下续航时常非常短，这篇文章就提供了最简单的提高续航的方法。
+
+安装 *cpupower* :
+
+#+begin_src shell
+sudo pacman -S cpupower
+#+end_src
+
+查看当前CPU信息:
+
+#+begin_src shell
+cpupower frequency-info
+#+end_src
+
+设置CPU所有核心最大频率:
+#+begin_src shell
+sudo cpupower frequency-set -u 2.0Ghz
+#+end_src
+
+设置CPU所有核心最小频率:
+#+begin_src shell
+sudo cpupower frequency-set -d 800Mhz
+#+end_src
+
+指定当前CPU保持运行频率:
+
+~较新的Intel CPU可能无效~
+
+#+begin_src shell
+sudo cpupower frequency-set -f 2.0Ghz
+#+end_src
+
+这样就可以通过设置CPU频率提高电脑续航啦，我平常在外使用电脑时会将最大频率限定在1.5Ghz左右，这样可以
+让我的电脑续航变长。
