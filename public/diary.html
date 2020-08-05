@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-07-27 一 15:44 -->
+<!-- 2020-08-06 四 02:35 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diary</title>
@@ -25,6 +25,13 @@
 <li><a href="#orge1f0c8a">日志</a>
 <ul>
 <li><a href="#org35ccc7d"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-14 四 19:28] </span></span> - 记一次quickrun自定义命令的过程</a></li>
+<li><a href="#orga79691a"><span class="timestamp-wrapper"><span class="timestamp">[2020-08-06 四 01:28] </span></span> - 利用org-capture和youdao-dictionary制作生词本</a>
+<ul>
+<li><a href="#org49e25fb">设计目标</a></li>
+<li><a href="#org42c4405">实现过程</a></li>
+<li><a href="#org2c1c4ff">总结</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -47,11 +54,11 @@
 在我使用 <b>quickrun</b> 这个包来快速运行python程序时发现一个让人很烦躁的默认设定——自动生成临时文件，为了解决这个问题，我简单的查阅了下Issues和Google了一下，结果让人有些无语，没有找到相关说明，本以为只有我一个人有这个需求的时候，我又单独在Issue列表里换了个关键字查找，还真有类似的问题，不过没有直接给出解决方案，现在那个<a href="https://github.com/emacsorphanage/quickrun/issues/84">issue</a>还是Open状态。我也纳闷了，这个问题想解决也挺简单的，就是自己写一个quickrun命令，但为啥那个issue能从16年留到现在20年也太奇怪了，不说那么多废话了，下面提供解决方案。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #2d9574;">"python"</span>
-    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3a81c3;">:command</span> . <span style="color: #2d9574;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3a81c3;">:exec</span> . <span style="color: #2d9574;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3a81c3;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-    <span style="color: #3a81c3;">:default</span> <span style="color: #2d9574;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #ffa500; font-style: italic;">"python"</span>
+    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:command</span> . <span style="color: #ffa500; font-style: italic;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:exec</span> . <span style="color: #ffa500; font-style: italic;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+    <span style="color: #b0c4de; font-weight: bold; font-style: italic;">:default</span> <span style="color: #ffa500; font-style: italic;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 <p>
@@ -60,12 +67,138 @@
 </p>
 </div>
 </div>
+<div id="outline-container-orga79691a" class="outline-3">
+<h3 id="orga79691a"><span class="timestamp-wrapper"><span class="timestamp">[2020-08-06 四 01:28] </span></span> - 利用org-capture和youdao-dictionary制作生词本</h3>
+<div class="outline-text-3" id="text-orga79691a">
+<p>
+youdao-dictionary是一个网络词典工具，可以获取英文对应的词性，中文翻译等信息。
+org-capture是一个快速捕获内容的工具，通过特定的模板可以做到以特定的结构保存捕获到的特定的内容。
+生词表是将不认识的单词保存到一个org-mode表格中，在日后可以随时查看生词表中的内容。
+</p>
+</div>
+
+<div id="outline-container-org49e25fb" class="outline-4">
+<h4 id="org49e25fb">设计目标</h4>
+<div class="outline-text-4" id="text-org49e25fb">
+<p>
+假定我在看文章，发现一个单词我不认识，这时可以通过youdao-dictionary进行翻译，但是瞬时记忆总是会忘记的
+所以就需要建立一个生词表，将这些不认识的单词丢进生词表中。
+</p>
+</div>
+</div>
+<div id="outline-container-org42c4405" class="outline-4">
+<h4 id="org42c4405">实现过程</h4>
+<div class="outline-text-4" id="text-org42c4405">
+<p>
+我设定生词表内，单个生词只需要包含四种信息，分别是: 时间，英文，词性，中文。
+其中时间可以通过org-capture的模板来生成，而其他三项可以通过youdao-dictionary获取。
+</p>
+
+<p>
+那么首先来写一下org-capture模板:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>add-to-list 'org-capture-templates '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffa500; font-style: italic;">"f"</span> <span style="color: #ffa500; font-style: italic;">"&#21333;&#35789;&#36895;&#23548;"</span> table-line <span style="color: #ffff00; font-weight: bold;">(</span>file+headline <span style="color: #ffa500; font-style: italic;">"~/Documents/org/capture/word.org"</span> <span style="color: #ffa500; font-style: italic;">"Words"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+                                    <span style="color: #ffa500; font-style: italic;">" | %U | %(evan/capture-get-word-eng 1) | %(evan/capture-get-word-eng 2) | %(evan/capture-get-word-eng 3) |"</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+
+<p>
+这个模板的功能是插入一个表格行，内容是 | 时间 | 英文 | 词性 | 中文。
+</p>
+
+<p>
+大概效果是这样的。
+<a href="file:///home/evanmeek/Documents/site/images/org-capture-生词表-预览.png">表格预览</a>
+</p>
+
+<p>
+那么下面就需要写一个能获取英文，词性，中文的函数了。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #ff0000;">defun</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">evan/capture-get-word-eng</span><span style="color: #ffd700; font-weight: bold;">(</span>type<span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">(interactive "^p")</span>
+<span style="color: #ffd700; font-weight: bold;">(</span>message <span style="color: #ffa500; font-style: italic;">"&#24403;&#21069;&#20809;&#26631;&#19979;&#30340;&#33521;&#25991;: %s"</span> <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">let*</span> <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #00ff7f; font-weight: bold;">(</span>point-word <span style="color: #00ffff; font-weight: bold;">(</span><span style="color: #ff0000;">if</span> <span style="color: #ff00ff; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ff00ff; font-weight: bold;">)</span>
+                       <span style="color: #ff00ff; font-weight: bold;">(</span><span style="color: #ffc0cb; font-weight: bold;">error</span> <span style="color: #ffa500; font-style: italic;">"Cannot find word at point."</span><span style="color: #ff00ff; font-weight: bold;">)</span>
+                     evan/capture-get-word-point-word<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
+       <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-translate <span style="color: #00ffff; font-weight: bold;">(</span>youdao-dictionary--request point-word<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
+       <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-eng point-word<span style="color: #00ff7f; font-weight: bold;">)</span>
+       <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>cdar <span style="color: #ff00ff; font-weight: bold;">(</span>nthcdr 3 <span style="color: #daa520; font-weight: bold;">(</span>cdadr evan/capture-word-translate<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
+       <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-type nil<span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#33719;&#21462;&#21333;&#35789;&#35789;&#24615;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ff0000;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #ffa500; font-style: italic;">"[a-zA-Z]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span> <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#21305;&#37197;&#33521;&#25991;&#23383;&#31526;</span>
+         <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#35774;&#32622;&#35789;&#24615; &#26684;&#24335;&#20026;: "adj."</span>
+         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #ff0000;">setq</span> evan/capture-word-type <span style="color: #00ffff; font-weight: bold;">(</span>concat <span style="color: #ff00ff; font-weight: bold;">(</span>match-string 0 <span style="color: #daa520; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span> <span style="color: #ffa500; font-style: italic;">"."</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+
+  <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#35774;&#32622;&#21333;&#35789;&#20013;&#25991;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ff0000;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #ffa500; font-style: italic;">"[\u4e00-\u9fa5&#65307;&#65292;]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
+         <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#35774;&#32622;&#20013;&#25991;</span>
+         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #ff0000;">setq</span> evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>match-string 0 <span style="color: #ff00ff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#26681;&#25454;&#21442;&#25968;&#36820;&#22238;&#20855;&#20307;&#30340;&#20540;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ff0000;">cond</span> <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 1<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-eng<span style="color: #00ff7f; font-weight: bold;">)</span>
+        <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 2<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-type<span style="color: #00ff7f; font-weight: bold;">)</span>
+        <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 3<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-chinese<span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+</pre>
+</div>
+
+<p>
+这个函数会将当前光标下的单词通过 `youdao-dictionary&#x2013;request` 获取我们所需要的数据，如果参数type为1，
+那么返回的是英文，如果参数type为2，返回词性，如果参数type为3，返回中文，也就正对应了capture模板的三个内容。
+</p>
+
+<p>
+注意观察 <b>point-word</b> 局部变量，它是通过 `evan/capture-get-word-point-word` 获取的，这个变量是由下面这个函数控制的。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #ff0000;">defun</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">evan/capture-get-word-point</span> <span style="color: #ffd700; font-weight: bold;">()</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">interactive</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">setq</span> evan/capture-get-word-point-word <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ffff00; font-weight: bold;">)</span>
+                       <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ffc0cb; font-weight: bold;">error</span> <span style="color: #ffa500; font-style: italic;">"Cannot find word at point."</span><span style="color: #ffff00; font-weight: bold;">)</span>
+                     <span style="color: #ffff00; font-weight: bold;">(</span>org-capture 1 <span style="color: #ffa500; font-style: italic;">"f"</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+<p>
+这个函数会将 `evan/capture-get-word-point-word` 设置为当前光标下的单词，这么做的原因是因为，如果先调出capture，那么就无法获取
+当前光标下的英文了，那么也就会出错，所以我们必须得在capture之前获取。
+</p>
+
+<p>
+回到 `evan/capture-get-word-eng` 函数，其内部对由 `youdao-dictionary&#x2013;request` 返回的数据进行了处理，并且分别设置了 词性，中文。
+再根据参数值返回内容。
+</p>
+
+<p>
+注意观察，由于 `youdao-dictionary` 查询曾经查询过的词时会优先查询缓存过的词，所以不用担心capture模板重复调用的问题。
+</p>
+
+<p>
+下面再看一下 `evan/capture-get-word-point` 函数中调用 `org-capture` 的语句，那里的1代表org-capture捕获时不需要显示选择界面，直接就选择
+"单词速导"模板。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2c1c4ff" class="outline-4">
+<h4 id="org2c1c4ff">总结</h4>
+<div class="outline-text-4" id="text-org2c1c4ff">
+<p>
+获取三条数据都还挺简单的，中间因为没有理清capture和youdao-dictionary查询之间的前后关系而出现了问题，主要是因为当时我是通过将先打开了org-capture选择模板界面，
+再获取的光标下的单词，所以就出现了`youdao-dictionary&#x2013;request`的参数永远为nil的问题。
+</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-17 五 22:10</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-07-27 一 15:44</p>
+<p class="date">Created: 2020-08-06 四 02:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

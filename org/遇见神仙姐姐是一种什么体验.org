@@ -1,9 +1,0 @@
-#+SETUPFILE: ../theme-rose.setup
-#+DATE: <2020-08-02 日>
-#+TITLE: 遇见神仙姐姐是一种什么体验
-
-#+begin_quote
-俏丽若三春之桃，清素若九秋之菊
-#+end_quote
-
-世间年轻貌美的尤物数不尽，只有那偶然间的相见

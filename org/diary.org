@@ -18,3 +18,83 @@
 	  #+end_src
  这段配置自定义了一个quickrun命令，它的特点就是不会生成临时文件，其他语言的也是类似的，完结。
    test
+** [2020-08-06 四 01:28] - 利用org-capture和youdao-dictionary制作生词本
+   youdao-dictionary是一个网络词典工具，可以获取英文对应的词性，中文翻译等信息。
+   org-capture是一个快速捕获内容的工具，通过特定的模板可以做到以特定的结构保存捕获到的特定的内容。
+   生词表是将不认识的单词保存到一个org-mode表格中，在日后可以随时查看生词表中的内容。
+
+*** 设计目标
+	假定我在看文章，发现一个单词我不认识，这时可以通过youdao-dictionary进行翻译，但是瞬时记忆总是会忘记的
+	所以就需要建立一个生词表，将这些不认识的单词丢进生词表中。
+*** 实现过程
+	我设定生词表内，单个生词只需要包含四种信息，分别是: 时间，英文，词性，中文。
+	其中时间可以通过org-capture的模板来生成，而其他三项可以通过youdao-dictionary获取。
+
+	那么首先来写一下org-capture模板:
+
+	#+begin_src emacs-lisp
+	(add-to-list 'org-capture-templates '("f" "单词速导" table-line (file+headline "~/Documents/org/capture/word.org" "Words")
+                                        " | %U | %(evan/capture-get-word-eng 1) | %(evan/capture-get-word-eng 2) | %(evan/capture-get-word-eng 3) |"))
+	#+end_src
+
+	这个模板的功能是插入一个表格行，内容是 | 时间 | 英文 | 词性 | 中文。
+	
+	大概效果是这样的。
+	[[file:~/Documents/site/images/org-capture-生词表-预览.png][表格预览]]
+	
+	那么下面就需要写一个能获取英文，词性，中文的函数了。
+
+	#+begin_src emacs-lisp
+	(defun evan/capture-get-word-eng(type)
+	;; (interactive "^p")
+	(message "当前光标下的英文: %s" (thing-at-point 'word))
+	(let* ((point-word (if (null evan/capture-get-word-point-word)
+						   (error "Cannot find word at point.")
+						 evan/capture-get-word-point-word))
+		   (evan/capture-word-translate (youdao-dictionary--request point-word))
+		   (evan/capture-word-eng point-word)
+		   (evan/capture-word-chinese (cdar (nthcdr 3 (cdadr evan/capture-word-translate))))
+		   (evan/capture-word-type nil))
+	  ;; 获取单词词性
+	  (progn (string-match "[a-zA-Z]+" (aref evan/capture-word-chinese 0)) ;; 匹配英文字符
+			 ;; 设置词性 格式为: "adj."
+			 (setq evan/capture-word-type (concat (match-string 0 (aref evan/capture-word-chinese 0)) ".")))
+	  
+	  ;; 设置单词中文
+	  (progn (string-match "[\u4e00-\u9fa5；，]+" (aref evan/capture-word-chinese 0))
+			 ;; 设置中文
+			 (setq evan/capture-word-chinese (match-string 0 (aref evan/capture-word-chinese 0))))
+	  ;; 根据参数返回具体的值
+	  (cond ((eq type 1) evan/capture-word-eng)
+			((eq type 2) evan/capture-word-type)
+			((eq type 3) evan/capture-word-chinese)))
+	#+end_src
+
+	这个函数会将当前光标下的单词通过 `youdao-dictionary--request` 获取我们所需要的数据，如果参数type为1，
+	那么返回的是英文，如果参数type为2，返回词性，如果参数type为3，返回中文，也就正对应了capture模板的三个内容。
+
+	注意观察 *point-word* 局部变量，它是通过 `evan/capture-get-word-point-word` 获取的，这个变量是由下面这个函数控制的。
+
+	#+begin_src emacs-lisp
+	(defun evan/capture-get-word-point ()
+	(interactive)
+	(setq evan/capture-get-word-point-word (thing-at-point 'word))
+	(if (null evan/capture-get-word-point-word)
+						   (error "Cannot find word at point.")
+						 (org-capture 1 "f")))
+	#+end_src
+	这个函数会将 `evan/capture-get-word-point-word` 设置为当前光标下的单词，这么做的原因是因为，如果先调出capture，那么就无法获取
+	当前光标下的英文了，那么也就会出错，所以我们必须得在capture之前获取。
+
+	回到 `evan/capture-get-word-eng` 函数，其内部对由 `youdao-dictionary--request` 返回的数据进行了处理，并且分别设置了 词性，中文。
+	再根据参数值返回内容。
+
+	注意观察，由于 `youdao-dictionary` 查询曾经查询过的词时会优先查询缓存过的词，所以不用担心capture模板重复调用的问题。
+
+	下面再看一下 `evan/capture-get-word-point` 函数中调用 `org-capture` 的语句，那里的1代表org-capture捕获时不需要显示选择界面，直接就选择
+	"单词速导"模板。
+
+*** 总结
+	获取三条数据都还挺简单的，中间因为没有理清capture和youdao-dictionary查询之间的前后关系而出现了问题，主要是因为当时我是通过将先打开了org-capture选择模板界面，
+	再获取的光标下的单词，所以就出现了`youdao-dictionary--request`的参数永远为nil的问题。
+	
