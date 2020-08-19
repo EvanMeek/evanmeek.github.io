@@ -1,0 +1,126 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-08-19 三>
+#+TITLE: 浅谈Python写中的正则表达式
+
+Hey, 欢迎回来！这里是美味的樱桃菌，今天咱们来谈谈Python中的正则表达式。
+
+Python中的正则是由`re`模块提供的。
+
+`re`模块中提供很多有用的函数。
+
+| 函数                                | 描述                                                 |
+|-------------------------------------+------------------------------------------------------|
+| compile(pattern[, flags])           | 根据包含正则表达式的字符串创建模式对象               |
+| search(pattern, string[, flags])    | 在字符串中查找模式                                   |
+| match(pattern, string[, flags])     | 在字符串开头查找模式                                 |
+| split(pattern,string[, maxsplit=0]) | 根据模式来分割字符串                                 |
+| findall(pattern, string)            | 返回一个列表，其中包含字符串中所有与模式匹配的字符串 |
+| sub(pat, repl, string[, count=0])   | 将字符串中与模式pat匹配的字串都替换为repl            |
+| escape(string)                      | 对字符串中所有的正则表达式特殊字符都进行转义         |
+
+* compile()
+  compile() 用于将其参量parrtern(string)转换为一个模式对象。
+  这样的好处在于，如果直接将一个字符串传递给search()函数，那么search()内部会将字符串转换为模式对象后再进行下一步。所以
+如果提前对一些常用的正则表达式字符串转换为模式对象，那么就会提高search()的查询效率。
+* search()
+  search() 用于查找其参量pattern(string)与参量string匹配的第一个字符子串，如果找到则返回子串，这个子串是MatchObject对象
+的，如果没有找到则返回None。
+  #+begin_src python :results output
+	import re
+
+	pattern = "python"
+	string = "www.python.org"
+	if re.search(pattern,string):
+		print("Found it.")
+  #+end_src
+
+  #+RESULTS:
+  : Found it.
+
+* match()
+  跟search()类似，不过其仅作用于参量string的开头，如果参量pattern与参量string的开头匹配的话，那么就返回MatchObject对象，
+  否则返回None。
+
+  #+begin_src python
+	import re
+
+	pattern = "p"
+	string = "python"
+	if re.match(pattern, string):
+		print("Found it!")
+  #+end_src
+
+  #+RESULTS:
+  : Found it
+
+* split()
+  用于将参量pattern(string)与参量string进行匹配，然后通过匹配的子串进行分割string。
+  #+begin_src python :results output
+	import re
+
+	pattern = "[,]+"
+	string = "Hello,My name is EvanMeek,Nice to meet you"
+
+	string = re.split(pattern, string)
+	print(string)
+  #+end_src
+
+  #+RESULTS:
+  : ['Hello', 'My name is EvanMeek', 'Nice to meet you']
+
+  还可以指定参量maxsplit，其作用是设置最大分割次数。
+
+  #+begin_quote
+  如果在pattern内包含括号，那么括号内的内容就会被插入至被分割的子串之间。
+  #+end_quote
+  
+  #+begin_src python :results output
+	import re
+	pattern = "o(o)+"
+	string = "FoooooBar"
+	string = re.split(pattern, string)
+	print(string)
+  #+end_src
+
+  #+RESULTS:
+  : ['F', 'o', 'Bar']
+
+* findall()
+  findall()会将匹配的所有的子串生成一个列表。
+  #+begin_src python :results output
+	import re
+
+	pattern = "[a-zA-Z]+"
+	string = "Hmm...You really thing so?"
+	print(re.findall(pattern, string))
+  #+end_src
+
+  #+RESULTS:
+  : ['Hmm', 'You', 'really', 'thing', 'so']
+
+* sub()
+  sub()可以将匹配到的子串从左往右依次用参量repl替换掉。
+  #+begin_src python :results output
+	import re
+
+	pat = "{name}"
+	repl= "EvanMeek"
+	string = "Hi, Your name is {name}?\nYes! My name is {name}."
+	print(re.sub(pat, repl, string))
+
+  #+end_src
+
+  #+RESULTS:
+  : Hi, Your name is EvanMeek?
+  : Yes! My name is EvanMeek.
+
+* escape()
+  escape()会把参量string中所有包含正则表达式特殊字符的都进行转义，就像这样:
+  #+begin_src python :results output
+	import re
+
+	print(re.escape("www.python.org"))
+  #+end_src
+
+  #+RESULTS:
+  : www\.python\.org
