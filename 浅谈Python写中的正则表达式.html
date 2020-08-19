@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="org-export-default-language">
+<head>
+<!-- 2020-08-19 三 21:32 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>浅谈Python写中的正则表达式</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">浅谈Python写中的正则表达式</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga6f2ac6">compile()</a></li>
+<li><a href="#orgdd459d4">search()</a></li>
+<li><a href="#org9764a8f">match()</a></li>
+<li><a href="#org5a8bbfe">split()</a></li>
+<li><a href="#org9ea87cc">findall()</a></li>
+<li><a href="#org56b2149">sub()</a></li>
+<li><a href="#org0dcbbf4">escape()</a></li>
+</ul>
+</div>
+</div>
+<p>
+Hey, 欢迎回来！这里是美味的樱桃菌，今天咱们来谈谈Python中的正则表达式。
+</p>
+
+<p>
+Python中的正则是由`re`模块提供的。
+</p>
+
+<p>
+`re`模块中提供很多有用的函数。
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">函数</th>
+<th scope="col" class="org-left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">compile(pattern[, flags])</td>
+<td class="org-left">根据包含正则表达式的字符串创建模式对象</td>
+</tr>
+
+<tr>
+<td class="org-left">search(pattern, string[, flags])</td>
+<td class="org-left">在字符串中查找模式</td>
+</tr>
+
+<tr>
+<td class="org-left">match(pattern, string[, flags])</td>
+<td class="org-left">在字符串开头查找模式</td>
+</tr>
+
+<tr>
+<td class="org-left">split(pattern,string[, maxsplit=0])</td>
+<td class="org-left">根据模式来分割字符串</td>
+</tr>
+
+<tr>
+<td class="org-left">findall(pattern, string)</td>
+<td class="org-left">返回一个列表，其中包含字符串中所有与模式匹配的字符串</td>
+</tr>
+
+<tr>
+<td class="org-left">sub(pat, repl, string[, count=0])</td>
+<td class="org-left">将字符串中与模式pat匹配的字串都替换为repl</td>
+</tr>
+
+<tr>
+<td class="org-left">escape(string)</td>
+<td class="org-left">对字符串中所有的正则表达式特殊字符都进行转义</td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-orga6f2ac6" class="outline-2">
+<h2 id="orga6f2ac6">compile()</h2>
+<div class="outline-text-2" id="text-orga6f2ac6">
+<p>
+  compile() 用于将其参量parrtern(string)转换为一个模式对象。
+  这样的好处在于，如果直接将一个字符串传递给search()函数，那么search()内部会将字符串转换为模式对象后再进行下一步。所以
+如果提前对一些常用的正则表达式字符串转换为模式对象，那么就会提高search()的查询效率。
+</p>
+</div>
+</div>
+<div id="outline-container-orgdd459d4" class="outline-2">
+<h2 id="orgdd459d4">search()</h2>
+<div class="outline-text-2" id="text-orgdd459d4">
+<p>
+  search() 用于查找其参量pattern(string)与参量string匹配的第一个字符子串，如果找到则返回子串，这个子串是MatchObject对象
+的，如果没有找到则返回None。
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+
+<span style="color: #cc342b;">pattern</span> = <span style="color: #198844;">"python"</span>
+<span style="color: #cc342b;">string</span> = <span style="color: #198844;">"www.python.org"</span>
+<span style="color: #a36ac7;">if</span> re.search<span style="color: #ff4500; font-weight: bold;">(</span>pattern,string<span style="color: #ff4500; font-weight: bold;">)</span>:
+        <span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #198844;">"Found it."</span><span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9764a8f" class="outline-2">
+<h2 id="org9764a8f">match()</h2>
+<div class="outline-text-2" id="text-org9764a8f">
+<p>
+跟search()类似，不过其仅作用于参量string的开头，如果参量pattern与参量string的开头匹配的话，那么就返回MatchObject对象，
+否则返回None。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+
+<span style="color: #cc342b;">pattern</span> = <span style="color: #198844;">"p"</span>
+<span style="color: #cc342b;">string</span> = <span style="color: #198844;">"python"</span>
+<span style="color: #a36ac7;">if</span> re.match<span style="color: #ff4500; font-weight: bold;">(</span>pattern, string<span style="color: #ff4500; font-weight: bold;">)</span>:
+        <span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #198844;">"Found it!"</span><span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a8bbfe" class="outline-2">
+<h2 id="org5a8bbfe">split()</h2>
+<div class="outline-text-2" id="text-org5a8bbfe">
+<p>
+用于将参量pattern(string)与参量string进行匹配，然后通过匹配的子串进行分割string。
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+
+<span style="color: #cc342b;">pattern</span> = <span style="color: #198844;">"[,]+"</span>
+<span style="color: #cc342b;">string</span> = <span style="color: #198844;">"Hello,My name is EvanMeek,Nice to meet you"</span>
+
+<span style="color: #cc342b;">string</span> = re.split<span style="color: #ff4500; font-weight: bold;">(</span>pattern, string<span style="color: #ff4500; font-weight: bold;">)</span>
+<span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span>string<span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+
+<p>
+还可以指定参量maxsplit，其作用是设置最大分割次数。
+</p>
+
+<blockquote>
+<p>
+如果在pattern内包含括号，那么括号内的内容就会被插入至被分割的子串之间。
+</p>
+</blockquote>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+<span style="color: #cc342b;">pattern</span> = <span style="color: #198844;">"o(o)+"</span>
+<span style="color: #cc342b;">string</span> = <span style="color: #198844;">"FoooooBar"</span>
+<span style="color: #cc342b;">string</span> = re.split<span style="color: #ff4500; font-weight: bold;">(</span>pattern, string<span style="color: #ff4500; font-weight: bold;">)</span>
+<span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span>string<span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ea87cc" class="outline-2">
+<h2 id="org9ea87cc">findall()</h2>
+<div class="outline-text-2" id="text-org9ea87cc">
+<p>
+findall()会将匹配的所有的子串生成一个列表。
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+
+<span style="color: #cc342b;">pattern</span> = <span style="color: #198844;">"[a-zA-Z]+"</span>
+<span style="color: #cc342b;">string</span> = <span style="color: #198844;">"Hmm...You really thing so?"</span>
+<span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span>re.findall<span style="color: #ffd700; font-weight: bold;">(</span>pattern, string<span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56b2149" class="outline-2">
+<h2 id="org56b2149">sub()</h2>
+<div class="outline-text-2" id="text-org56b2149">
+<p>
+sub()可以将匹配到的子串从左往右依次用参量repl替换掉。
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+
+<span style="color: #cc342b;">pat</span> = <span style="color: #198844;">"{name}"</span>
+<span style="color: #cc342b;">repl</span>= <span style="color: #198844;">"EvanMeek"</span>
+<span style="color: #cc342b;">string</span> = <span style="color: #198844;">"Hi, Your name is {name}?\nYes! My name is {name}."</span>
+<span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span>re.sub<span style="color: #ffd700; font-weight: bold;">(</span>pat, repl, string<span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0dcbbf4" class="outline-2">
+<h2 id="org0dcbbf4">escape()</h2>
+<div class="outline-text-2" id="text-org0dcbbf4">
+<p>
+escape()会把参量string中所有包含正则表达式特殊字符的都进行转义，就像这样:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a36ac7;">import</span> re
+
+<span style="color: #a36ac7;">print</span><span style="color: #ff4500; font-weight: bold;">(</span>re.escape<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #198844;">"www.python.org"</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-08-19 三 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-08-19 三 21:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

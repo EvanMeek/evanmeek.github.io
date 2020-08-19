@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="org-export-default-language">
 <head>
-<!-- 2020-08-12 三 01:16 -->
+<!-- 2020-08-19 三 21:32 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diary</title>
@@ -54,11 +54,11 @@
 在我使用 <b>quickrun</b> 这个包来快速运行python程序时发现一个让人很烦躁的默认设定——自动生成临时文件，为了解决这个问题，我简单的查阅了下Issues和Google了一下，结果让人有些无语，没有找到相关说明，本以为只有我一个人有这个需求的时候，我又单独在Issue列表里换了个关键字查找，还真有类似的问题，不过没有直接给出解决方案，现在那个<a href="https://github.com/emacsorphanage/quickrun/issues/84">issue</a>还是Open状态。我也纳闷了，这个问题想解决也挺简单的，就是自己写一个quickrun命令，但为啥那个issue能从16年留到现在20年也太奇怪了，不说那么多废话了，下面提供解决方案。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #ffa500; font-style: italic;">"python"</span>
-    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:command</span> . <span style="color: #ffa500; font-style: italic;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:exec</span> . <span style="color: #ffa500; font-style: italic;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #b0c4de; font-weight: bold; font-style: italic;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-    <span style="color: #b0c4de; font-weight: bold; font-style: italic;">:default</span> <span style="color: #ffa500; font-style: italic;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #198844;">"python"</span>
+    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3971ed;">:command</span> . <span style="color: #198844;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3971ed;">:exec</span> . <span style="color: #198844;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3971ed;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+    <span style="color: #3971ed;">:default</span> <span style="color: #198844;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 <p>
@@ -99,8 +99,8 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>add-to-list 'org-capture-templates '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffa500; font-style: italic;">"f"</span> <span style="color: #ffa500; font-style: italic;">"&#21333;&#35789;&#36895;&#23548;"</span> table-line <span style="color: #ffff00; font-weight: bold;">(</span>file+headline <span style="color: #ffa500; font-style: italic;">"~/Documents/org/capture/word.org"</span> <span style="color: #ffa500; font-style: italic;">"Words"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-                                    <span style="color: #ffa500; font-style: italic;">" | %U | %(evan/capture-get-word-eng 1) | %(evan/capture-get-word-eng 2) | %(evan/capture-get-word-eng 3) |"</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>add-to-list 'org-capture-templates '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #198844;">"f"</span> <span style="color: #198844;">"&#21333;&#35789;&#36895;&#23548;"</span> table-line <span style="color: #ffff00; font-weight: bold;">(</span>file+headline <span style="color: #198844;">"~/Documents/org/capture/word.org"</span> <span style="color: #198844;">"Words"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+                                    <span style="color: #198844;">" | %U | %(evan/capture-get-word-eng 1) | %(evan/capture-get-word-eng 2) | %(evan/capture-get-word-eng 3) |"</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 
@@ -118,27 +118,27 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #ff0000;">defun</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">evan/capture-get-word-eng</span><span style="color: #ffd700; font-weight: bold;">(</span>type<span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">(interactive "^p")</span>
-<span style="color: #ffd700; font-weight: bold;">(</span>message <span style="color: #ffa500; font-style: italic;">"&#24403;&#21069;&#20809;&#26631;&#19979;&#30340;&#33521;&#25991;: %s"</span> <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">let*</span> <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #00ff7f; font-weight: bold;">(</span>point-word <span style="color: #00ffff; font-weight: bold;">(</span><span style="color: #ff0000;">if</span> <span style="color: #ff00ff; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ff00ff; font-weight: bold;">)</span>
-                       <span style="color: #ff00ff; font-weight: bold;">(</span><span style="color: #ffc0cb; font-weight: bold;">error</span> <span style="color: #ffa500; font-style: italic;">"Cannot find word at point."</span><span style="color: #ff00ff; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">defun</span> <span style="color: #3971ed;">evan/capture-get-word-eng</span><span style="color: #ffd700; font-weight: bold;">(</span>type<span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #373b41;">;; </span><span style="color: #969896;">(interactive "^p")</span>
+<span style="color: #ffd700; font-weight: bold;">(</span>message <span style="color: #198844;">"&#24403;&#21069;&#20809;&#26631;&#19979;&#30340;&#33521;&#25991;: %s"</span> <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">let*</span> <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #00ff7f; font-weight: bold;">(</span>point-word <span style="color: #00ffff; font-weight: bold;">(</span><span style="color: #a36ac7;">if</span> <span style="color: #ff00ff; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ff00ff; font-weight: bold;">)</span>
+                       <span style="color: #ff00ff; font-weight: bold;">(</span><span style="color: #cc342b;">error</span> <span style="color: #198844;">"Cannot find word at point."</span><span style="color: #ff00ff; font-weight: bold;">)</span>
                      evan/capture-get-word-point-word<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-translate <span style="color: #00ffff; font-weight: bold;">(</span>youdao-dictionary--request point-word<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-eng point-word<span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>cdar <span style="color: #ff00ff; font-weight: bold;">(</span>nthcdr 3 <span style="color: #daa520; font-weight: bold;">(</span>cdadr evan/capture-word-translate<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-type nil<span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
-  <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#33719;&#21462;&#21333;&#35789;&#35789;&#24615;</span>
-  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ff0000;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #ffa500; font-style: italic;">"[a-zA-Z]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span> <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#21305;&#37197;&#33521;&#25991;&#23383;&#31526;</span>
-         <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#35774;&#32622;&#35789;&#24615; &#26684;&#24335;&#20026;: "adj."</span>
-         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #ff0000;">setq</span> evan/capture-word-type <span style="color: #00ffff; font-weight: bold;">(</span>concat <span style="color: #ff00ff; font-weight: bold;">(</span>match-string 0 <span style="color: #daa520; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span> <span style="color: #ffa500; font-style: italic;">"."</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #373b41;">;; </span><span style="color: #969896;">&#33719;&#21462;&#21333;&#35789;&#35789;&#24615;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #198844;">"[a-zA-Z]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span> <span style="color: #373b41;">;; </span><span style="color: #969896;">&#21305;&#37197;&#33521;&#25991;&#23383;&#31526;</span>
+         <span style="color: #373b41;">;; </span><span style="color: #969896;">&#35774;&#32622;&#35789;&#24615; &#26684;&#24335;&#20026;: "adj."</span>
+         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> evan/capture-word-type <span style="color: #00ffff; font-weight: bold;">(</span>concat <span style="color: #ff00ff; font-weight: bold;">(</span>match-string 0 <span style="color: #daa520; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span> <span style="color: #198844;">"."</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
 
-  <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#35774;&#32622;&#21333;&#35789;&#20013;&#25991;</span>
-  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ff0000;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #ffa500; font-style: italic;">"[\u4e00-\u9fa5&#65307;&#65292;]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
-         <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#35774;&#32622;&#20013;&#25991;</span>
-         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #ff0000;">setq</span> evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>match-string 0 <span style="color: #ff00ff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
-  <span style="color: #8b814c; font-style: italic;">;; </span><span style="color: #8b814c; font-style: italic;">&#26681;&#25454;&#21442;&#25968;&#36820;&#22238;&#20855;&#20307;&#30340;&#20540;</span>
-  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ff0000;">cond</span> <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 1<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-eng<span style="color: #00ff7f; font-weight: bold;">)</span>
+  <span style="color: #373b41;">;; </span><span style="color: #969896;">&#35774;&#32622;&#21333;&#35789;&#20013;&#25991;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #198844;">"[\u4e00-\u9fa5&#65307;&#65292;]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
+         <span style="color: #373b41;">;; </span><span style="color: #969896;">&#35774;&#32622;&#20013;&#25991;</span>
+         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>match-string 0 <span style="color: #ff00ff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #373b41;">;; </span><span style="color: #969896;">&#26681;&#25454;&#21442;&#25968;&#36820;&#22238;&#20855;&#20307;&#30340;&#20540;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">cond</span> <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 1<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-eng<span style="color: #00ff7f; font-weight: bold;">)</span>
         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 2<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-type<span style="color: #00ff7f; font-weight: bold;">)</span>
         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 3<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-chinese<span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
 </pre>
@@ -154,12 +154,12 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #ff0000;">defun</span> <span style="color: #ff0000; font-weight: bold; font-style: italic;">evan/capture-get-word-point</span> <span style="color: #ffd700; font-weight: bold;">()</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">interactive</span><span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">setq</span> evan/capture-get-word-point-word <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ff0000;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ffff00; font-weight: bold;">)</span>
-                       <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #ffc0cb; font-weight: bold;">error</span> <span style="color: #ffa500; font-style: italic;">"Cannot find word at point."</span><span style="color: #ffff00; font-weight: bold;">)</span>
-                     <span style="color: #ffff00; font-weight: bold;">(</span>org-capture 1 <span style="color: #ffa500; font-style: italic;">"f"</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">defun</span> <span style="color: #3971ed;">evan/capture-get-word-point</span> <span style="color: #ffd700; font-weight: bold;">()</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">interactive</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> evan/capture-get-word-point-word <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ffff00; font-weight: bold;">)</span>
+                       <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #cc342b;">error</span> <span style="color: #198844;">"Cannot find word at point."</span><span style="color: #ffff00; font-weight: bold;">)</span>
+                     <span style="color: #ffff00; font-weight: bold;">(</span>org-capture 1 <span style="color: #198844;">"f"</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 <p>
@@ -198,7 +198,7 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-17 五 22:10</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-08-12 三 01:16</p>
+<p class="date">Created: 2020-08-19 三 21:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
