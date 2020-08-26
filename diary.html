@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="org-export-default-language">
+<html lang="en">
 <head>
-<!-- 2020-08-19 三 21:34 -->
+<!-- 2020-08-27 四 05:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diary</title>
@@ -32,6 +32,17 @@
 <li><a href="#org2c1c4ff">总结</a></li>
 </ul>
 </li>
+<li><a href="#org4968ad7"><span class="timestamp-wrapper"><span class="timestamp">[2020-08-27 四 03:49] </span></span> - 今日50单词无厘头短文</a>
+<ul>
+<li><a href="#org3752233">单词</a></li>
+<li><a href="#orgf9b4f9a">正文</a>
+<ul>
+<li><a href="#orgb29a7f6">zh-CN</a></li>
+<li><a href="#org363c219">en-US</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -54,11 +65,11 @@
 在我使用 <b>quickrun</b> 这个包来快速运行python程序时发现一个让人很烦躁的默认设定——自动生成临时文件，为了解决这个问题，我简单的查阅了下Issues和Google了一下，结果让人有些无语，没有找到相关说明，本以为只有我一个人有这个需求的时候，我又单独在Issue列表里换了个关键字查找，还真有类似的问题，不过没有直接给出解决方案，现在那个<a href="https://github.com/emacsorphanage/quickrun/issues/84">issue</a>还是Open状态。我也纳闷了，这个问题想解决也挺简单的，就是自己写一个quickrun命令，但为啥那个issue能从16年留到现在20年也太奇怪了，不说那么多废话了，下面提供解决方案。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #198844;">"python"</span>
-    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3971ed;">:command</span> . <span style="color: #198844;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3971ed;">:exec</span> . <span style="color: #198844;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #3971ed;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-    <span style="color: #3971ed;">:default</span> <span style="color: #198844;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>quickrun-add-command <span style="color: #b8bb26;">"python"</span>
+    '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fe8019;">:command</span> . <span style="color: #b8bb26;">"python3"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fe8019;">:exec</span> . <span style="color: #b8bb26;">"%c %s"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+      <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fe8019;">:tempfile</span> . nil<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+    <span style="color: #fe8019;">:default</span> <span style="color: #b8bb26;">"python"</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 <p>
@@ -99,8 +110,8 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>add-to-list 'org-capture-templates '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #198844;">"f"</span> <span style="color: #198844;">"&#21333;&#35789;&#36895;&#23548;"</span> table-line <span style="color: #ffff00; font-weight: bold;">(</span>file+headline <span style="color: #198844;">"~/Documents/org/capture/word.org"</span> <span style="color: #198844;">"Words"</span><span style="color: #ffff00; font-weight: bold;">)</span>
-                                    <span style="color: #198844;">" | %U | %(evan/capture-get-word-eng 1) | %(evan/capture-get-word-eng 2) | %(evan/capture-get-word-eng 3) |"</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span>add-to-list 'org-capture-templates '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #b8bb26;">"f"</span> <span style="color: #b8bb26;">"&#21333;&#35789;&#36895;&#23548;"</span> table-line <span style="color: #ffff00; font-weight: bold;">(</span>file+headline <span style="color: #b8bb26;">"~/Documents/org/capture/word.org"</span> <span style="color: #b8bb26;">"Words"</span><span style="color: #ffff00; font-weight: bold;">)</span>
+                                    <span style="color: #b8bb26;">" | %U | %(evan/capture-get-word-eng 1) | %(evan/capture-get-word-eng 2) | %(evan/capture-get-word-eng 3) |"</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 
@@ -118,27 +129,27 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">defun</span> <span style="color: #3971ed;">evan/capture-get-word-eng</span><span style="color: #ffd700; font-weight: bold;">(</span>type<span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #373b41;">;; </span><span style="color: #969896;">(interactive "^p")</span>
-<span style="color: #ffd700; font-weight: bold;">(</span>message <span style="color: #198844;">"&#24403;&#21069;&#20809;&#26631;&#19979;&#30340;&#33521;&#25991;: %s"</span> <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">let*</span> <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #00ff7f; font-weight: bold;">(</span>point-word <span style="color: #00ffff; font-weight: bold;">(</span><span style="color: #a36ac7;">if</span> <span style="color: #ff00ff; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ff00ff; font-weight: bold;">)</span>
-                       <span style="color: #ff00ff; font-weight: bold;">(</span><span style="color: #cc342b;">error</span> <span style="color: #198844;">"Cannot find word at point."</span><span style="color: #ff00ff; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #8ec07c;">evan/capture-get-word-eng</span><span style="color: #ffd700; font-weight: bold;">(</span>type<span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #928374;">;; </span><span style="color: #928374;">(interactive "^p")</span>
+<span style="color: #ffd700; font-weight: bold;">(</span>message <span style="color: #b8bb26;">"&#24403;&#21069;&#20809;&#26631;&#19979;&#30340;&#33521;&#25991;: %s"</span> <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">let*</span> <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #00ff7f; font-weight: bold;">(</span>point-word <span style="color: #00ffff; font-weight: bold;">(</span><span style="color: #fb4934;">if</span> <span style="color: #ff00ff; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ff00ff; font-weight: bold;">)</span>
+                       <span style="color: #ff00ff; font-weight: bold;">(</span><span style="color: #fabd2f;">error</span> <span style="color: #b8bb26;">"Cannot find word at point."</span><span style="color: #ff00ff; font-weight: bold;">)</span>
                      evan/capture-get-word-point-word<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-translate <span style="color: #00ffff; font-weight: bold;">(</span>youdao-dictionary--request point-word<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-eng point-word<span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>cdar <span style="color: #ff00ff; font-weight: bold;">(</span>nthcdr 3 <span style="color: #daa520; font-weight: bold;">(</span>cdadr evan/capture-word-translate<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
        <span style="color: #00ff7f; font-weight: bold;">(</span>evan/capture-word-type nil<span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
-  <span style="color: #373b41;">;; </span><span style="color: #969896;">&#33719;&#21462;&#21333;&#35789;&#35789;&#24615;</span>
-  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #198844;">"[a-zA-Z]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span> <span style="color: #373b41;">;; </span><span style="color: #969896;">&#21305;&#37197;&#33521;&#25991;&#23383;&#31526;</span>
-         <span style="color: #373b41;">;; </span><span style="color: #969896;">&#35774;&#32622;&#35789;&#24615; &#26684;&#24335;&#20026;: "adj."</span>
-         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> evan/capture-word-type <span style="color: #00ffff; font-weight: bold;">(</span>concat <span style="color: #ff00ff; font-weight: bold;">(</span>match-string 0 <span style="color: #daa520; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span> <span style="color: #198844;">"."</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #928374;">;; </span><span style="color: #928374;">&#33719;&#21462;&#21333;&#35789;&#35789;&#24615;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fb4934;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #b8bb26;">"[a-zA-Z]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span> <span style="color: #928374;">;; </span><span style="color: #928374;">&#21305;&#37197;&#33521;&#25991;&#23383;&#31526;</span>
+         <span style="color: #928374;">;; </span><span style="color: #928374;">&#35774;&#32622;&#35789;&#24615; &#26684;&#24335;&#20026;: "adj."</span>
+         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #fb4934;">setq</span> evan/capture-word-type <span style="color: #00ffff; font-weight: bold;">(</span>concat <span style="color: #ff00ff; font-weight: bold;">(</span>match-string 0 <span style="color: #daa520; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #daa520; font-weight: bold;">)</span><span style="color: #ff00ff; font-weight: bold;">)</span> <span style="color: #b8bb26;">"."</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
 
-  <span style="color: #373b41;">;; </span><span style="color: #969896;">&#35774;&#32622;&#21333;&#35789;&#20013;&#25991;</span>
-  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #198844;">"[\u4e00-\u9fa5&#65307;&#65292;]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
-         <span style="color: #373b41;">;; </span><span style="color: #969896;">&#35774;&#32622;&#20013;&#25991;</span>
-         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>match-string 0 <span style="color: #ff00ff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
-  <span style="color: #373b41;">;; </span><span style="color: #969896;">&#26681;&#25454;&#21442;&#25968;&#36820;&#22238;&#20855;&#20307;&#30340;&#20540;</span>
-  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">cond</span> <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 1<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-eng<span style="color: #00ff7f; font-weight: bold;">)</span>
+  <span style="color: #928374;">;; </span><span style="color: #928374;">&#35774;&#32622;&#21333;&#35789;&#20013;&#25991;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fb4934;">progn</span> <span style="color: #00ff7f; font-weight: bold;">(</span>string-match <span style="color: #b8bb26;">"[\u4e00-\u9fa5&#65307;&#65292;]+"</span> <span style="color: #00ffff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span>
+         <span style="color: #928374;">;; </span><span style="color: #928374;">&#35774;&#32622;&#20013;&#25991;</span>
+         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #fb4934;">setq</span> evan/capture-word-chinese <span style="color: #00ffff; font-weight: bold;">(</span>match-string 0 <span style="color: #ff00ff; font-weight: bold;">(</span>aref evan/capture-word-chinese 0<span style="color: #ff00ff; font-weight: bold;">)</span><span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #928374;">;; </span><span style="color: #928374;">&#26681;&#25454;&#21442;&#25968;&#36820;&#22238;&#20855;&#20307;&#30340;&#20540;</span>
+  <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fb4934;">cond</span> <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 1<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-eng<span style="color: #00ff7f; font-weight: bold;">)</span>
         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 2<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-type<span style="color: #00ff7f; font-weight: bold;">)</span>
         <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #00ffff; font-weight: bold;">(</span>eq type 3<span style="color: #00ffff; font-weight: bold;">)</span> evan/capture-word-chinese<span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
 </pre>
@@ -154,12 +165,12 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">defun</span> <span style="color: #3971ed;">evan/capture-get-word-point</span> <span style="color: #ffd700; font-weight: bold;">()</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">interactive</span><span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> evan/capture-get-word-point-word <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ffff00; font-weight: bold;">)</span>
-                       <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #cc342b;">error</span> <span style="color: #198844;">"Cannot find word at point."</span><span style="color: #ffff00; font-weight: bold;">)</span>
-                     <span style="color: #ffff00; font-weight: bold;">(</span>org-capture 1 <span style="color: #198844;">"f"</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #8ec07c;">evan/capture-get-word-point</span> <span style="color: #ffd700; font-weight: bold;">()</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">interactive</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">setq</span> evan/capture-get-word-point-word <span style="color: #ffff00; font-weight: bold;">(</span>thing-at-point 'word<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>null evan/capture-get-word-point-word<span style="color: #ffff00; font-weight: bold;">)</span>
+                       <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fabd2f;">error</span> <span style="color: #b8bb26;">"Cannot find word at point."</span><span style="color: #ffff00; font-weight: bold;">)</span>
+                     <span style="color: #ffff00; font-weight: bold;">(</span>org-capture 1 <span style="color: #b8bb26;">"f"</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 <p>
@@ -193,12 +204,435 @@ org-capture是一个快速捕获内容的工具，通过特定的模板可以做
 </div>
 </div>
 </div>
+<div id="outline-container-org4968ad7" class="outline-3">
+<h3 id="org4968ad7"><span class="timestamp-wrapper"><span class="timestamp">[2020-08-27 四 03:49] </span></span> - 今日50单词无厘头短文</h3>
+<div class="outline-text-3" id="text-org4968ad7">
+</div>
+<div id="outline-container-org3752233" class="outline-4">
+<h4 id="org3752233">单词</h4>
+<div class="outline-text-4" id="text-org3752233">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-12 二 08:35]</span></span></td>
+<td class="org-left">hello</td>
+<td class="org-left">n.</td>
+<td class="org-left">你好</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-12 二 13:30]</span></span></td>
+<td class="org-left">Tree</td>
+<td class="org-left">n.</td>
+<td class="org-left">树</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-14 四 19:41]</span></span></td>
+<td class="org-left">capture</td>
+<td class="org-left">v.</td>
+<td class="org-left">捕获</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-14 四 19:42]</span></span></td>
+<td class="org-left">Template</td>
+<td class="org-left">n.</td>
+<td class="org-left">模板</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 16:11]</span></span></td>
+<td class="org-left">skeleton</td>
+<td class="org-left">n.</td>
+<td class="org-left">骨架</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:32]</span></span></td>
+<td class="org-left">triggered</td>
+<td class="org-left">v.</td>
+<td class="org-left">触发，引发</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:33]</span></span></td>
+<td class="org-left">emitted</td>
+<td class="org-left">v.</td>
+<td class="org-left">射出，排放</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:34]</span></span></td>
+<td class="org-left">signal</td>
+<td class="org-left">n.</td>
+<td class="org-left">信号</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:35]</span></span></td>
+<td class="org-left">terminates</td>
+<td class="org-left">vt.</td>
+<td class="org-left">使终止，使结束</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:37]</span></span></td>
+<td class="org-left">located</td>
+<td class="org-left">adj.</td>
+<td class="org-left">位于，处于，坐落于</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:39]</span></span></td>
+<td class="org-left">tutorial</td>
+<td class="org-left">n.</td>
+<td class="org-left">教程</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-15 五 19:44]</span></span></td>
+<td class="org-left">geometry</td>
+<td class="org-left">n.</td>
+<td class="org-left">几何学；几何结构</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 13:28]</span></span></td>
+<td class="org-left">implement</td>
+<td class="org-left">n.</td>
+<td class="org-left">工具，器械</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 13:29]</span></span></td>
+<td class="org-left">implement</td>
+<td class="org-left">vt.</td>
+<td class="org-left">实施；执行</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 13:31]</span></span></td>
+<td class="org-left">coordinate</td>
+<td class="org-left">n.</td>
+<td class="org-left">坐标</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 13:53]</span></span></td>
+<td class="org-left">shortcut</td>
+<td class="org-left">n.</td>
+<td class="org-left">快捷方式</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 14:07]</span></span></td>
+<td class="org-left">occupy</td>
+<td class="org-left">vt.</td>
+<td class="org-left">占据</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:20]</span></span></td>
+<td class="org-left">specifies</td>
+<td class="org-left">vt</td>
+<td class="org-left">指定</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:29]</span></span></td>
+<td class="org-left">absolute</td>
+<td class="org-left">adj.</td>
+<td class="org-left">绝对的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:31]</span></span></td>
+<td class="org-left">limitation</td>
+<td class="org-left">n.</td>
+<td class="org-left">局限性</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:33]</span></span></td>
+<td class="org-left">might</td>
+<td class="org-left">aux.</td>
+<td class="org-left">可能；也许；可以</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:34]</span></span></td>
+<td class="org-left">various</td>
+<td class="org-left">adj.</td>
+<td class="org-left">各种各样的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:35]</span></span></td>
+<td class="org-left">platform</td>
+<td class="org-left">n.</td>
+<td class="org-left">平台</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:37]</span></span></td>
+<td class="org-left">spoil</td>
+<td class="org-left">vt.</td>
+<td class="org-left">破坏；掠夺</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:39]</span></span></td>
+<td class="org-left">decide</td>
+<td class="org-left">vi.</td>
+<td class="org-left">决定；下定决心</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:40]</span></span></td>
+<td class="org-left">completely</td>
+<td class="org-left">adv.</td>
+<td class="org-left">完全地</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:42]</span></span></td>
+<td class="org-left">tedious</td>
+<td class="org-left">adj.</td>
+<td class="org-left">沉闷的；乏味的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 16:43]</span></span></td>
+<td class="org-left">consuming</td>
+<td class="org-left">adj.</td>
+<td class="org-left">消耗的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 17:21]</span></span></td>
+<td class="org-left">corner</td>
+<td class="org-left">n.</td>
+<td class="org-left">角落；拐角处；偏僻</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 17:24]</span></span></td>
+<td class="org-left">horizontally</td>
+<td class="org-left">adv.</td>
+<td class="org-left">水平地</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 17:24]</span></span></td>
+<td class="org-left">vertically</td>
+<td class="org-left">adv.</td>
+<td class="org-left">垂直地</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 17:36]</span></span></td>
+<td class="org-left">imagine</td>
+<td class="org-left">vt.</td>
+<td class="org-left">想象；猜想</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 18:05]</span></span></td>
+<td class="org-left">necessary</td>
+<td class="org-left">adj.</td>
+<td class="org-left">必备的；必需的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-16 六 18:15]</span></span></td>
+<td class="org-left">stretch</td>
+<td class="org-left">adj.</td>
+<td class="org-left">弹性的；拉伸的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-17 日 19:25]</span></span></td>
+<td class="org-left">linear</td>
+<td class="org-left">n.</td>
+<td class="org-left">线性</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-17 日 19:30]</span></span></td>
+<td class="org-left">recycler</td>
+<td class="org-left">n.</td>
+<td class="org-left">反复循环器</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:26]</span></span></td>
+<td class="org-left">review</td>
+<td class="org-left">n.</td>
+<td class="org-left">回顾;评估</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:27]</span></span></td>
+<td class="org-left">cumbersome</td>
+<td class="org-left">adj.</td>
+<td class="org-left">笨重的;难处理的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:28]</span></span></td>
+<td class="org-left">simplify</td>
+<td class="org-left">vt.</td>
+<td class="org-left">简化</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:29]</span></span></td>
+<td class="org-left">offers</td>
+<td class="org-left">n.</td>
+<td class="org-left">试图</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:30]</span></span></td>
+<td class="org-left">possible</td>
+<td class="org-left">adj.</td>
+<td class="org-left">可能的;合理的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:33]</span></span></td>
+<td class="org-left">considered</td>
+<td class="org-left">n.</td>
+<td class="org-left">认为</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-20 三 21:35]</span></span></td>
+<td class="org-left">finalize</td>
+<td class="org-left">vt</td>
+<td class="org-left">完成</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-24 日 14:48]</span></span></td>
+<td class="org-left">horizontal</td>
+<td class="org-left">adj.</td>
+<td class="org-left">水平的</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-24 日 14:49]</span></span></td>
+<td class="org-left">vertical</td>
+<td class="org-left">n.</td>
+<td class="org-left">垂直线</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-24 日 19:38]</span></span></td>
+<td class="org-left">gravity</td>
+<td class="org-left">n.</td>
+<td class="org-left">重力</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-31 日 00:14]</span></span></td>
+<td class="org-left">dialog</td>
+<td class="org-left">n.</td>
+<td class="org-left">对话；会话</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-31 日 00:14]</span></span></td>
+<td class="org-left">summary</td>
+<td class="org-left">n.</td>
+<td class="org-left">总结;概要</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-31 日 00:15]</span></span></td>
+<td class="org-left">figure</td>
+<td class="org-left">n.</td>
+<td class="org-left">数字;人物;图形;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2020-05-31 日 00:17]</span></span></td>
+<td class="org-left">progress</td>
+<td class="org-left">n.</td>
+<td class="org-left">进步;发展;前进</td>
+</tr>
+</tbody>
+</table>
+<p>
+那么开始吧!
+</p>
+</div>
+</div>
+<div id="outline-container-orgf9b4f9a" class="outline-4">
+<h4 id="orgf9b4f9a">正文</h4>
+<div class="outline-text-4" id="text-orgf9b4f9a">
+</div>
+<div id="outline-container-orgb29a7f6" class="outline-5">
+<h5 id="orgb29a7f6">zh-CN</h5>
+<div class="outline-text-5" id="text-orgb29a7f6">
+<p>
+Hello，My name is Li TianYu，Today I saw a tree，I capture a bug template from this tree，this bug's skeleton is very big!
+</p>
+
+<p>
+Sfee the bug's skeleton let my brains triggered fear signal，let me emitted a phlegm,I think teacher talked tutorial of the tree,this tutorial is talk about geometry，need use varitey implement to implement measurement thing corrdinate,don't want to know，Just start at course can not use shortcut，so we only can early occupy specifies measurement address，let us absolute get the address，bug some address is limitation，might can not measurement standard，bug might can use various tool platform to spoil teacher's decide，thought is not each person able to completely measurement standard，毕竟这些测量工作都是很沉闷的，
+需要消耗巨大的体力，时不时还得钻进角落才能使得测量器水平地垂直地使用，真的难以想象对么？
+你们平常那些必需的测量工具，在老师眼里都是非弹性的。对了最近遇到一个词，叫做线性，我也不
+是很懂，不过同期学习的 反复循环器我倒是搞懂了，哈哈。回顾整个学期，最难处理的还是英语，
+毕竟我英语一直不咋地，所以我试图找到最简化的英语教程，最终我决定使用我自己发明的英语方法
+，这可能有些傻，但我任务这完全可以做到学习好英语，可能语法不会很标准吧。前几天去体验了下
+缆车，刚上缆车的时候，给了我一种失去重力的感觉，我跟我哥对话，总结了下早晨的早餐体验，我
+用一个数字来评分，我给5分，哈哈。今天我又为org-agenda添加了任务支持，挺好的，我的emacs有
+了很好的图形体验，希望我的英语水平能进步吧，一直前进。
+</p>
+</div>
+</div>
+<div id="outline-container-org363c219" class="outline-5">
+<h5 id="org363c219">en-US</h5>
+<div class="outline-text-5" id="text-org363c219">
+<p>
+你好，我叫李天宇，今天我看到一棵树，我从树上捕获到了一只虫子的模板，这只虫子的骨架很大，
+看到这个虫子的骨架都让我的脑子触发了恐惧感的信号，不由让我射出了一口痰，处于树下的我想到
+了老师说的教程，这个教程是将几何学的，需要利用各种工具与器械来实施进行测量物体的坐标，不
+用想就知道，刚开课时是不能用这些快捷方式的，我们只能早早的占据指定的测量地点，以让我们绝
+对的抢到位置，不过有些位置会有局限性，可能无法测量出标准，不过也许可以用各种各样的工具平
+台来破坏老师的决定，虽然不是每个人都能完全得做到测量标准，毕竟这些测量工作都是很沉闷的，
+需要消耗巨大的体力，时不时还得钻进角落才能使得测量器水平地垂直地使用，真的难以想象对么？
+你们平常那些必需的测量工具，在老师眼里都是非弹性的。对了最近遇到一个词，叫做线性，我也不
+是很懂，不过同期学习的 反复循环器我倒是搞懂了，哈哈。回顾整个学期，最难处理的还是英语，
+毕竟我英语一直不咋地，所以我试图找到最简化的英语教程，最终我决定使用我自己发明的英语方法
+，这可能有些傻，但我任务这完全可以做到学习好英语，可能语法不会很标准吧。前几天去体验了下
+缆车，刚上缆车的时候，给了我一种失去重力的感觉，我跟我哥对话，总结了下早晨的早餐体验，我
+用一个数字来评分，我给5分，哈哈。今天我又为org-agenda添加了任务支持，挺好的，我的emacs有
+了很好的图形体验，希望我的英语水平能进步吧，一直前进。
+</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-17 五 22:10</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-08-19 三 21:34</p>
+<p class="date">Created: 2020-08-27 四 05:10</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
