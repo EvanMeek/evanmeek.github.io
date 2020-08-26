@@ -97,4 +97,85 @@
 *** 总结
 	获取三条数据都还挺简单的，中间因为没有理清capture和youdao-dictionary查询之间的前后关系而出现了问题，主要是因为当时我是通过将先打开了org-capture选择模板界面，
 	再获取的光标下的单词，所以就出现了`youdao-dictionary--request`的参数永远为nil的问题。
-	
+** [2020-08-27 四 03:49] - 今日50单词无厘头短文
+*** 单词
+      | [2020-05-12 二 08:35] | hello        | n.   | 你好               |
+      | [2020-05-12 二 13:30] | Tree         | n.   | 树                 |
+      | [2020-05-14 四 19:41] | capture      | v.   | 捕获               |
+      | [2020-05-14 四 19:42] | Template     | n.   | 模板               |
+      | [2020-05-15 五 16:11] | skeleton     | n.   | 骨架               |
+      | [2020-05-15 五 19:32] | triggered    | v.   | 触发，引发         |
+      | [2020-05-15 五 19:33] | emitted      | v.   | 射出，排放         |
+      | [2020-05-15 五 19:34] | signal       | n.   | 信号               |
+      | [2020-05-15 五 19:35] | terminates   | vt.  | 使终止，使结束     |
+      | [2020-05-15 五 19:37] | located      | adj. | 位于，处于，坐落于 |
+      | [2020-05-15 五 19:39] | tutorial     | n.   | 教程               |
+      | [2020-05-15 五 19:44] | geometry     | n.   | 几何学；几何结构   |
+      | [2020-05-16 六 13:28] | implement    | n.   | 工具，器械         |
+      | [2020-05-16 六 13:29] | implement    | vt.  | 实施；执行         |
+      | [2020-05-16 六 13:31] | coordinate   | n.   | 坐标               |
+      | [2020-05-16 六 13:53] | shortcut     | n.   | 快捷方式           |
+      | [2020-05-16 六 14:07] | occupy       | vt.  | 占据               |
+      | [2020-05-16 六 16:20] | specifies    | vt   | 指定               |
+      | [2020-05-16 六 16:29] | absolute     | adj. | 绝对的             |
+      | [2020-05-16 六 16:31] | limitation   | n.   | 局限性             |
+      | [2020-05-16 六 16:33] | might        | aux. | 可能；也许；可以   |
+      | [2020-05-16 六 16:34] | various      | adj. | 各种各样的         |
+      | [2020-05-16 六 16:35] | platform     | n.   | 平台               |
+      | [2020-05-16 六 16:37] | spoil        | vt.  | 破坏；掠夺         |
+      | [2020-05-16 六 16:39] | decide       | vi.  | 决定；下定决心     |
+      | [2020-05-16 六 16:40] | completely   | adv. | 完全地             |
+      | [2020-05-16 六 16:42] | tedious      | adj. | 沉闷的；乏味的     |
+      | [2020-05-16 六 16:43] | consuming    | adj. | 消耗的             |
+      | [2020-05-16 六 17:21] | corner       | n.   | 角落；拐角处；偏僻 |
+      | [2020-05-16 六 17:24] | horizontally | adv. | 水平地             |
+      | [2020-05-16 六 17:24] | vertically   | adv. | 垂直地             |
+      | [2020-05-16 六 17:36] | imagine      | vt.  | 想象；猜想         |
+      | [2020-05-16 六 18:05] | necessary    | adj. | 必备的；必需的     |
+      | [2020-05-16 六 18:15] | stretch      | adj. | 弹性的；拉伸的     |
+      | [2020-05-17 日 19:25] | linear       | n.   | 线性               |
+      | [2020-05-17 日 19:30] | recycler     | n.   | 反复循环器         |
+      | [2020-05-20 三 21:26] | review       | n.   | 回顾;评估          |
+      | [2020-05-20 三 21:27] | cumbersome   | adj. | 笨重的;难处理的    |
+      | [2020-05-20 三 21:28] | simplify     | vt.  | 简化               |
+      | [2020-05-20 三 21:29] | offers       | n.   | 试图               |
+      | [2020-05-20 三 21:30] | possible     | adj. | 可能的;合理的      |
+      | [2020-05-20 三 21:33] | considered   | n.   | 认为               |
+      | [2020-05-20 三 21:35] | finalize     | vt   | 完成               |
+      | [2020-05-24 日 14:48] | horizontal   | adj. | 水平的             |
+      | [2020-05-24 日 14:49] | vertical     | n.   | 垂直线             |
+      | [2020-05-24 日 19:38] | gravity      | n.   | 重力               |
+      | [2020-05-31 日 00:14] | dialog       | n.   | 对话；会话         |
+      | [2020-05-31 日 00:14] | summary      | n.   | 总结;概要          |
+      | [2020-05-31 日 00:15] | figure       | n.   | 数字;人物;图形;    |
+      | [2020-05-31 日 00:17] | progress     | n.   | 进步;发展;前进     |	 
+	  那么开始吧!
+*** 正文
+**** zh-CN
+	 Hello，My name is Li TianYu，Today I saw a tree，I capture a bug template from this tree，this bug's skeleton is very big!
+
+	 Sfee the bug's skeleton let my brains triggered fear signal，let me emitted a phlegm,I think teacher talked tutorial of the tree,this tutorial is talk about geometry，need use varitey implement to implement measurement thing corrdinate,don't want to know，Just start at course can not use shortcut，so we only can early occupy specifies measurement address，let us absolute get the address，bug some address is limitation，might can not measurement standard，bug might can use various tool platform to spoil teacher's decide，thought is not each person able to completely measurement standard，毕竟这些测量工作都是很沉闷的，
+	 需要消耗巨大的体力，时不时还得钻进角落才能使得测量器水平地垂直地使用，真的难以想象对么？
+	 你们平常那些必需的测量工具，在老师眼里都是非弹性的。对了最近遇到一个词，叫做线性，我也不
+	 是很懂，不过同期学习的 反复循环器我倒是搞懂了，哈哈。回顾整个学期，最难处理的还是英语，
+	 毕竟我英语一直不咋地，所以我试图找到最简化的英语教程，最终我决定使用我自己发明的英语方法
+	 ，这可能有些傻，但我任务这完全可以做到学习好英语，可能语法不会很标准吧。前几天去体验了下
+	 缆车，刚上缆车的时候，给了我一种失去重力的感觉，我跟我哥对话，总结了下早晨的早餐体验，我
+	 用一个数字来评分，我给5分，哈哈。今天我又为org-agenda添加了任务支持，挺好的，我的emacs有
+	 了很好的图形体验，希望我的英语水平能进步吧，一直前进。
+**** en-US
+	 你好，我叫李天宇，今天我看到一棵树，我从树上捕获到了一只虫子的模板，这只虫子的骨架很大，
+	 看到这个虫子的骨架都让我的脑子触发了恐惧感的信号，不由让我射出了一口痰，处于树下的我想到
+	 了老师说的教程，这个教程是将几何学的，需要利用各种工具与器械来实施进行测量物体的坐标，不
+	 用想就知道，刚开课时是不能用这些快捷方式的，我们只能早早的占据指定的测量地点，以让我们绝
+	 对的抢到位置，不过有些位置会有局限性，可能无法测量出标准，不过也许可以用各种各样的工具平
+	 台来破坏老师的决定，虽然不是每个人都能完全得做到测量标准，毕竟这些测量工作都是很沉闷的，
+	 需要消耗巨大的体力，时不时还得钻进角落才能使得测量器水平地垂直地使用，真的难以想象对么？
+	 你们平常那些必需的测量工具，在老师眼里都是非弹性的。对了最近遇到一个词，叫做线性，我也不
+	 是很懂，不过同期学习的 反复循环器我倒是搞懂了，哈哈。回顾整个学期，最难处理的还是英语，
+	 毕竟我英语一直不咋地，所以我试图找到最简化的英语教程，最终我决定使用我自己发明的英语方法
+	 ，这可能有些傻，但我任务这完全可以做到学习好英语，可能语法不会很标准吧。前几天去体验了下
+	 缆车，刚上缆车的时候，给了我一种失去重力的感觉，我跟我哥对话，总结了下早晨的早餐体验，我
+	 用一个数字来评分，我给5分，哈哈。今天我又为org-agenda添加了任务支持，挺好的，我的emacs有
+	 了很好的图形体验，希望我的英语水平能进步吧，一直前进。
+   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="org-export-default-language">
+<html lang="en">
 <head>
-<!-- 2020-08-19 三 21:34 -->
+<!-- 2020-08-27 四 05:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs中优雅地加载GUI配置</title>
@@ -81,7 +81,7 @@ SERVER启动了之后咱们就可以随时以一种超级快速的方式启动CL
 TUI模式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">emacsclient -t -a <span style="color: #198844;">""</span>
+<pre class="src src-shell">emacsclient -t -a <span style="color: #b8bb26;">""</span>
 </pre>
 </div>
 
@@ -89,7 +89,7 @@ TUI模式
 GUI模式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">emacsclient -c -a <span style="color: #198844;">""</span>
+<pre class="src src-shell">emacsclient -c -a <span style="color: #b8bb26;">""</span>
 </pre>
 </div>
 </div>
@@ -129,7 +129,7 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">setq</span> graphic-only-plugins-setting <span style="color: #ffd700; font-weight: bold;">()</span><span style="color: #ff4500; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #fb4934;">setq</span> graphic-only-plugins-setting <span style="color: #ffd700; font-weight: bold;">()</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 
@@ -138,11 +138,11 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #373b41;">;; </span><span style="color: #969896;">Emacs&#19979;&#30340;pdf&#26597;&#30475;&#24037;&#20855;&#65292;&#40664;&#35748;&#38750;&#22270;&#24418;&#21270;&#19981;&#24320;&#21551;</span>
-<span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">push</span> '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">use-package</span> 
+<pre class="src src-emacs-lisp"><span style="color: #928374;">;; </span><span style="color: #928374;">Emacs&#19979;&#30340;pdf&#26597;&#30475;&#24037;&#20855;&#65292;&#40664;&#35748;&#38750;&#22270;&#24418;&#21270;&#19981;&#24320;&#21551;</span>
+<span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #fb4934;">push</span> '<span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">use-package</span> 
          pdf-tools 
-         <span style="color: #3971ed;">:ensure</span> t 
-         <span style="color: #3971ed;">:hook</span> <span style="color: #ffff00; font-weight: bold;">(</span>'doc-view-mode 'pdf-view-mode<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span> <span style="color: #cc342b;">graphic-only-plugins-setting</span><span style="color: #ff4500; font-weight: bold;">)</span>
+         <span style="color: #fe8019;">:ensure</span> t 
+         <span style="color: #fe8019;">:hook</span> <span style="color: #ffff00; font-weight: bold;">(</span>'doc-view-mode 'pdf-view-mode<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span> <span style="color: #fabd2f;">graphic-only-plugins-setting</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
 
@@ -151,18 +151,18 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">defun</span> <span style="color: #3971ed;">graphic-p</span> <span style="color: #ffd700; font-weight: bold;">()</span>
-  <span style="color: #b4b7b4;">"&#21028;&#26029;&#24403;&#21069;&#29615;&#22659;&#26159;&#21542;&#20026;&#22270;&#24418;&#29615;&#22659;"</span>
-  <span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>display-graphic-p<span style="color: #ffff00; font-weight: bold;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #fb4934;">defun</span> <span style="color: #8ec07c;">graphic-p</span> <span style="color: #ffd700; font-weight: bold;">()</span>
+  <span style="color: #dfd2b8;">"&#21028;&#26029;&#24403;&#21069;&#29615;&#22659;&#26159;&#21542;&#20026;&#22270;&#24418;&#29615;&#22659;"</span>
+  <span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">if</span> <span style="color: #ffff00; font-weight: bold;">(</span>display-graphic-p<span style="color: #ffff00; font-weight: bold;">)</span>
       t<span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
-<span style="color: #373b41;">;; </span><span style="color: #969896;">&#22270;&#24418;&#21270;&#25554;&#20214;&#29305;&#27530;&#35774;&#32622;</span>
-<span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #a36ac7;">if</span> <span style="color: #ffd700; font-weight: bold;">(</span>not <span style="color: #ffff00; font-weight: bold;">(</span>graphic-p<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
+<span style="color: #928374;">;; </span><span style="color: #928374;">&#22270;&#24418;&#21270;&#25554;&#20214;&#29305;&#27530;&#35774;&#32622;</span>
+<span style="color: #ff4500; font-weight: bold;">(</span><span style="color: #fb4934;">if</span> <span style="color: #ffd700; font-weight: bold;">(</span>not <span style="color: #ffff00; font-weight: bold;">(</span>graphic-p<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
     <span style="color: #ffd700; font-weight: bold;">(</span>add-hook 'after-make-frame-functions
-              <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #a36ac7;">lambda</span> <span style="color: #00ff7f; font-weight: bold;">(</span>new-frame<span style="color: #00ff7f; font-weight: bold;">)</span>
+              <span style="color: #ffff00; font-weight: bold;">(</span><span style="color: #fb4934;">lambda</span> <span style="color: #00ff7f; font-weight: bold;">(</span>new-frame<span style="color: #00ff7f; font-weight: bold;">)</span>
                 <span style="color: #00ff7f; font-weight: bold;">(</span>select-frame new-frame<span style="color: #00ff7f; font-weight: bold;">)</span>
-                <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #a36ac7;">dolist</span> <span style="color: #00ffff; font-weight: bold;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #00ffff; font-weight: bold;">)</span>
+                <span style="color: #00ff7f; font-weight: bold;">(</span><span style="color: #fb4934;">dolist</span> <span style="color: #00ffff; font-weight: bold;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #00ffff; font-weight: bold;">)</span>
                   <span style="color: #00ffff; font-weight: bold;">(</span>eval elisp-code<span style="color: #00ffff; font-weight: bold;">)</span><span style="color: #00ff7f; font-weight: bold;">)</span><span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span>
-  <span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #a36ac7;">dolist</span> <span style="color: #ffff00; font-weight: bold;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #ffff00; font-weight: bold;">)</span>
+  <span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fb4934;">dolist</span> <span style="color: #ffff00; font-weight: bold;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #ffff00; font-weight: bold;">)</span>
     <span style="color: #ffff00; font-weight: bold;">(</span>eval elisp-code<span style="color: #ffff00; font-weight: bold;">)</span><span style="color: #ffd700; font-weight: bold;">)</span><span style="color: #ff4500; font-weight: bold;">)</span>
 </pre>
 </div>
@@ -196,7 +196,7 @@ GUI模式
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-17 五 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-08-19 三 21:34</p>
+<p class="date">Created: 2020-08-27 四 05:10</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

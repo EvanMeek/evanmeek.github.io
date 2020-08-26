@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="org-export-default-language">
+<html lang="en">
 <head>
-<!-- 2020-08-19 三 21:34 -->
+<!-- 2020-08-27 四 05:09 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>C++菱形继承小记</title>
@@ -40,51 +40,51 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #3971ed;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #198844;">iostream</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
-<span style="color: #3971ed;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #198844;">string</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
+<pre class="src src-cpp"><span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #b8bb26;">iostream</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
+<span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #b8bb26;">string</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
 
-<span style="color: #a36ac7;">using</span> <span style="color: #a36ac7;">namespace</span> <span style="color: #f96a38;">std</span>;
+<span style="color: #fb4934;">using</span> <span style="color: #fb4934;">namespace</span> <span style="color: #d3869b;">std</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">A</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">A</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">a</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">A</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_a</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">a</span><span style="color: #ffd700; font-weight: bold;">(</span>out_a<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"A &#21019;&#24314;"</span> &lt;&lt;endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">a</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">A</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_a</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">a</span><span style="color: #ffd700; font-weight: bold;">(</span>out_a<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"A &#21019;&#24314;"</span> &lt;&lt;endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">B</span>: <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">A</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">B</span>: <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">b</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">B</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_b</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">b</span><span style="color: #ffd700; font-weight: bold;">(</span>out_b<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"B &#21019;&#24314;"</span> &lt;&lt; endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">b</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">B</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_b</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">b</span><span style="color: #ffd700; font-weight: bold;">(</span>out_b<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"B &#21019;&#24314;"</span> &lt;&lt; endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">C</span>: <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">A</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">C</span>: <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">c</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">C</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_c</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">c</span><span style="color: #ffd700; font-weight: bold;">(</span>out_c<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"C &#21019;&#24314;"</span> &lt;&lt; endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">c</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">C</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_c</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">c</span><span style="color: #ffd700; font-weight: bold;">(</span>out_c<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"C &#21019;&#24314;"</span> &lt;&lt; endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">D</span>: <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">B</span>, <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">C</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">D</span>: <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">B</span>, <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">C</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">d</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">D</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_d</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">d</span><span style="color: #ffd700; font-weight: bold;">(</span>out_d<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"D &#21019;&#24314;"</span> &lt;&lt; endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">d</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">D</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_d</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">d</span><span style="color: #ffd700; font-weight: bold;">(</span>out_d<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"D &#21019;&#24314;"</span> &lt;&lt; endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
 
-<span style="color: #fba922;">int</span> <span style="color: #3971ed;">main</span><span style="color: #ff4500; font-weight: bold;">()</span>
+<span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">main</span><span style="color: #ff4500; font-weight: bold;">()</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">D</span> <span style="color: #cc342b;">d</span>;
+  <span style="color: #fabd2f;">D</span> <span style="color: #8ec07c;">d</span>;
 <span style="color: #ff4500; font-weight: bold;">}</span>
 
 </pre>
@@ -125,51 +125,51 @@ D &#21019;&#24314;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #3971ed;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #198844;">iostream</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
-<span style="color: #3971ed;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #198844;">string</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
+<pre class="src src-cpp"><span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #b8bb26;">iostream</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
+<span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #ff4500; font-weight: bold;">&lt;</span><span style="color: #b8bb26;">string</span><span style="color: #ff4500; font-weight: bold;">&gt;</span>
 
-<span style="color: #a36ac7;">using</span> <span style="color: #a36ac7;">namespace</span> <span style="color: #f96a38;">std</span>;
+<span style="color: #fb4934;">using</span> <span style="color: #fb4934;">namespace</span> <span style="color: #d3869b;">std</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">A</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">A</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">a</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">A</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_a</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">a</span><span style="color: #ffd700; font-weight: bold;">(</span>out_a<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"A &#21019;&#24314;"</span> &lt;&lt;endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">a</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">A</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_a</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">a</span><span style="color: #ffd700; font-weight: bold;">(</span>out_a<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"A &#21019;&#24314;"</span> &lt;&lt;endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">B</span>: <span style="color: #a36ac7;">virtual</span> <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">A</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">B</span>: <span style="color: #fb4934;">virtual</span> <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">b</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">B</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_b</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">b</span><span style="color: #ffd700; font-weight: bold;">(</span>out_b<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"B &#21019;&#24314;"</span> &lt;&lt; endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">b</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">B</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_b</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">b</span><span style="color: #ffd700; font-weight: bold;">(</span>out_b<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"B &#21019;&#24314;"</span> &lt;&lt; endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">C</span>: <span style="color: #a36ac7;">virtual</span> <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">A</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">C</span>: <span style="color: #fb4934;">virtual</span> <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">c</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">C</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_c</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">c</span><span style="color: #ffd700; font-weight: bold;">(</span>out_c<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"C &#21019;&#24314;"</span> &lt;&lt; endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">c</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">C</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_c</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">c</span><span style="color: #ffd700; font-weight: bold;">(</span>out_c<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"C &#21019;&#24314;"</span> &lt;&lt; endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
-<span style="color: #a36ac7;">class</span> <span style="color: #fba922;">D</span>: <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">B</span>, <span style="color: #a36ac7;">public</span> <span style="color: #fba922;">C</span>
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">D</span>: <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">B</span>, <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">C</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">int</span> <span style="color: #cc342b;">d</span>;
-<span style="color: #a36ac7;">public</span>:
-  <span style="color: #3971ed;">D</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fba922;">int</span> <span style="color: #cc342b;">out_d</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #3971ed;">d</span><span style="color: #ffd700; font-weight: bold;">(</span>out_d<span style="color: #ffd700; font-weight: bold;">){</span>
-    cout &lt;&lt; <span style="color: #198844;">"D &#21019;&#24314;"</span> &lt;&lt; endl;
+  <span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">d</span>;
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #8ec07c;">D</span><span style="color: #ffd700; font-weight: bold;">(</span><span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">out_d</span>=10<span style="color: #ffd700; font-weight: bold;">)</span>:<span style="color: #8ec07c;">d</span><span style="color: #ffd700; font-weight: bold;">(</span>out_d<span style="color: #ffd700; font-weight: bold;">){</span>
+    cout &lt;&lt; <span style="color: #b8bb26;">"D &#21019;&#24314;"</span> &lt;&lt; endl;
   <span style="color: #ffd700; font-weight: bold;">}</span>
 <span style="color: #ff4500; font-weight: bold;">}</span>;
 
 
-<span style="color: #fba922;">int</span> <span style="color: #3971ed;">main</span><span style="color: #ff4500; font-weight: bold;">()</span>
+<span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">main</span><span style="color: #ff4500; font-weight: bold;">()</span>
 <span style="color: #ff4500; font-weight: bold;">{</span>
-  <span style="color: #fba922;">D</span> <span style="color: #cc342b;">d</span>;
+  <span style="color: #fabd2f;">D</span> <span style="color: #8ec07c;">d</span>;
 <span style="color: #ff4500; font-weight: bold;">}</span>
 </pre>
 </div>
@@ -208,7 +208,7 @@ D &#21019;&#24314;
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-16 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-08-19 三 21:34</p>
+<p class="date">Created: 2020-08-27 四 05:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
