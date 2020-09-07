@@ -152,9 +152,15 @@
 	  那么开始吧!
 *** 正文
 **** zh-CN
-	 Hello，My name is Li TianYu，Today I saw a tree，I capture a bug template from this tree，this bug's skeleton is very big!
-
-	 Sfee the bug's skeleton let my brains triggered fear signal，let me emitted a phlegm,I think teacher talked tutorial of the tree,this tutorial is talk about geometry，need use varitey implement to implement measurement thing corrdinate,don't want to know，Just start at course can not use shortcut，so we only can early occupy specifies measurement address，let us absolute get the address，bug some address is limitation，might can not measurement standard，bug might can use various tool platform to spoil teacher's decide，thought is not each person able to completely measurement standard，毕竟这些测量工作都是很沉闷的，
+	 Hello，My name is Li TianYu，Today I saw a tree，I capture a bug template from this tree
+	 ，this bug's skeleton is very big!See the bug's skeleton let my brains triggered fear s-
+	 ignal，let me emitted a phlegm,I think teacher talked tutorial of the tree,this tutorial
+	 is talk about geometry，need use varitey implement to implement measurement thing corrdi
+	 nate,don't want to know，Just start at course can not use shortcut，so we only can early
+	 occupy specifies measurement address，let us absolute get the address，bug some address 
+	 is limitation，might can not measurement standard，bug might can use various tool platf-
+	 orm to spoil teacher's decide，thought is not each person able to completely measuremen-
+	 t standard，毕竟这些测量工作都是很沉闷的，
 	 需要消耗巨大的体力，时不时还得钻进角落才能使得测量器水平地垂直地使用，真的难以想象对么？
 	 你们平常那些必需的测量工具，在老师眼里都是非弹性的。对了最近遇到一个词，叫做线性，我也不
 	 是很懂，不过同期学习的 反复循环器我倒是搞懂了，哈哈。回顾整个学期，最难处理的还是英语，
@@ -178,4 +184,8 @@
 	 缆车，刚上缆车的时候，给了我一种失去重力的感觉，我跟我哥对话，总结了下早晨的早餐体验，我
 	 用一个数字来评分，我给5分，哈哈。今天我又为org-agenda添加了任务支持，挺好的，我的emacs有
 	 了很好的图形体验，希望我的英语水平能进步吧，一直前进。
-   
+** [2020-09-03 四 21:17] - Java自考
+   这次Java自考没过，我心态炸裂，氣死我了，考前我做了充足的准备，结果没有过。
+更让我觉得难受的是，为什么没过的科目不能看成绩啊！！！
+	
+	10月份还有一次考试，加油吧！
