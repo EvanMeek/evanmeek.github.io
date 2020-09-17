@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-09-17 四 21:05 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>操作系统第一章-</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">操作系统第一章-</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5b3dfd3">操作系统分类</a>
+<ul>
+<li><a href="#orgd013383">批处理操作系统</a>
+<ul>
+<li><a href="#orga208090">基本工作方式</a></li>
+<li><a href="#org0ef09f9">特点与分类</a></li>
+<li><a href="#orgab0c321">SPOOLing技术</a></li>
+</ul>
+</li>
+<li><a href="#org3f2b113">分时系统</a>
+<ul>
+<li><a href="#orga9d8685">基本工作方式</a></li>
+<li><a href="#org5e3b27c">设计思想</a></li>
+<li><a href="#org8d13526">特点</a></li>
+</ul>
+</li>
+<li><a href="#orgcfdba42">实时操作系统</a></li>
+<li><a href="#org65bc2d6">嵌入式操作系统</a></li>
+<li><a href="#org8b371b9">个人计算机操作系统</a></li>
+<li><a href="#org850ca0d">网络操作系统</a></li>
+<li><a href="#orgf28e2a6">分布式操作系统</a></li>
+</ul>
+</li>
+<li><a href="#org755ef4e">操作系统设计</a>
+<ul>
+<li><a href="#org0c44030">操作系统的设计过程</a></li>
+<li><a href="#org91fb516">操作系统的设计目标</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b3dfd3" class="outline-2">
+<h2 id="org5b3dfd3">操作系统分类</h2>
+<div class="outline-text-2" id="text-org5b3dfd3">
+<p>
+操作系统从早期到如今发展了很久，下面介绍从早到如今的操作系统类别
+</p>
+</div>
+<div id="outline-container-orgd013383" class="outline-3">
+<h3 id="orgd013383">批处理操作系统</h3>
+<div class="outline-text-3" id="text-orgd013383">
+<p>
+批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
+</p>
+</div>
+<div id="outline-container-orga208090" class="outline-4">
+<h4 id="orga208090">基本工作方式</h4>
+<div class="outline-text-4" id="text-orga208090">
+<p>
+用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
+</p>
+</div>
+</div>
+<div id="outline-container-org0ef09f9" class="outline-4">
+<h4 id="org0ef09f9">特点与分类</h4>
+<div class="outline-text-4" id="text-org0ef09f9">
+<p>
+成批处理。
+</p>
+<ul class="org-ul">
+<li>缺点</li>
+</ul>
+<p>
+运行时，如果出错则无法及时更正，必须在修改后重新排队运行，开发时长过长。
+</p>
+<ul class="org-ul">
+<li>优点</li>
+</ul>
+<p>
+系统资源利用率高，作业吞吐率高。
+</p>
+</div>
+</div>
+<div id="outline-container-orgab0c321" class="outline-4">
+<h4 id="orgab0c321">SPOOLing技术</h4>
+<div class="outline-text-4" id="text-orgab0c321">
+<p>
+为了提高硬件资源的利用率，人们在监控程序中间引入了缓冲技术和多道程序设计的概念。使得简单的批处理系统发展为更为高级的多道批处理系统。
+</p>
+
+<p>
+SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的外部设备联机操作”，基本设计思想是用磁盘设备作为主机的直接输入输出设备，主机直接从磁盘上选取作业运行，作业的执行结果也存储在磁盘上；
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f2b113" class="outline-3">
+<h3 id="org3f2b113">分时系统</h3>
+<div class="outline-text-3" id="text-org3f2b113">
+<p>
+分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
+</p>
+</div>
+<div id="outline-container-orga9d8685" class="outline-4">
+<h4 id="orga9d8685">基本工作方式</h4>
+<div class="outline-text-4" id="text-orga9d8685">
+<p>
+一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
+</p>
+</div>
+</div>
+<div id="outline-container-org5e3b27c" class="outline-4">
+<h4 id="org5e3b27c">设计思想</h4>
+<div class="outline-text-4" id="text-org5e3b27c">
+<p>
+分时操作系统将处理器运行时间划分为多个小片段，称为时间片。每个时间片极快，处理器将会依次处理这些时间片的命令，由于速度极快，用户通常无法感受到卡顿。
+</p>
+</div>
+</div>
+<div id="outline-container-org8d13526" class="outline-4">
+<h4 id="org8d13526">特点</h4>
+<div class="outline-text-4" id="text-org8d13526">
+<p>
+交互性，“独占”性，及时性，多路性
+</p>
+
+<ul class="org-ul">
+<li>多路性
+多用户同时使用一台计算机。</li>
+<li>交互性
+用户根据系统响应的结果提出下一个请求。</li>
+<li>独占性
+每个用户只能感受到计算机只为他一人服务。</li>
+<li>及时性
+计算机能及时对用户提出的请求给予响应。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcfdba42" class="outline-3">
+<h3 id="orgcfdba42">实时操作系统</h3>
+<div class="outline-text-3" id="text-orgcfdba42">
+<p>
+RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其使计算机在规定时间内，及时响应外部事件的请求，同时完成对该事件的处理，并且能够控制所有实时设备和实时人物协调一致地工作。
+</p>
+
+<ul class="org-ul">
+<li>主要目标</li>
+</ul>
+<p>
+在严格时间范围内，对外部请求做出反应，系统具有高度可靠性。
+</p>
+
+<ul class="org-ul">
+<li>硬实时系统</li>
+</ul>
+<p>
+是指对关键外部事件的响应和处理时间有着极其严格的要求，例如火箭和导弹控制，这些如果出现延迟可能会造成严重的不良后果。
+</p>
+
+<ul class="org-ul">
+<li>软实时系统</li>
+</ul>
+<p>
+是指对外部时间的响应和处理时间有一定的要求，不过在不满足要求时只会影响服务质量，而不会造成严重的后果，例如视频处理，等。
+</p>
+<ul class="org-ul">
+<li>实时操作系统必备功能
+<ul class="org-ul">
+<li>实时时钟管理
+实时任务根于时间要求分为两类:
+<ul class="org-ul">
+<li>定时任务
+再周期严格按照指定的时间间隔重复运行。</li>
+<li>延时任务
+非周期内重复运行，有时间界限，根据任务功能不同分为两类:
+<ul class="org-ul">
+<li>主动式
+根据时间间隔主动运行，例如实时监控。</li>
+<li>从动式
+依赖外部事件的触发运行。</li>
+</ul></li>
+</ul></li>
+<li>过载防护
+如果遇到大量实时任务，可能会超出系统的处理能力，那么就需要及时分析并找出最重要的实时任务，将次要任务延期或抛弃以保证最重要任务的执行。</li>
+<li>高可靠性
+要求实时操作系统具有很强的健壮性，坚固性。不仅要求软件系统也要对硬件系统做严格的要求。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org65bc2d6" class="outline-3">
+<h3 id="org65bc2d6">嵌入式操作系统</h3>
+<div class="outline-text-3" id="text-org65bc2d6">
+<p>
+嵌入式操作系统运行在嵌入式芯片环境中。
+其优点是:
+</p>
+<ul class="org-ul">
+<li>高可靠性</li>
+<li>实时性</li>
+<li>占有资源少</li>
+<li>智能化能源管理</li>
+<li>易于连接</li>
+<li>低成本</li>
+</ul>
+<p>
+嵌入式操作系统可根据需求对系统的功能进行裁剪、调整、和生成。
+嵌入式操作系统主要应用在工业监控、智能化生活空间（家电）、通信系统、导航系统等。
+</p>
+</div>
+</div>
+<div id="outline-container-org8b371b9" class="outline-3">
+<h3 id="org8b371b9">个人计算机操作系统</h3>
+<div class="outline-text-3" id="text-org8b371b9">
+<p>
+个人计算机操作系统(Personal Computer OPertaing System)，是一种单用户多任务的操作系统。
+其特点是:
+</p>
+<ul class="org-ul">
+<li>可供个人使用</li>
+<li>功能强</li>
+<li>价格便宜</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org850ca0d" class="outline-3">
+<h3 id="org850ca0d">网络操作系统</h3>
+<div class="outline-text-3" id="text-org850ca0d">
+<p>
+网络操作系统(Network Operating System)基于计算机网络。
+用于将计算机网络上的各个计算机连接，目的是互相通信，资源共享。
+计算机网络分为两大模式:
+</p>
+<ul class="org-ul">
+<li>集中式</li>
+</ul>
+<p>
+运算由主机处理，多个终端仅作为输入/输出设备使用。
+</p>
+<ul class="org-ul">
+<li>分布式</li>
+</ul>
+<p>
+每台计算机都做运算处理，通过网络进行数据交换和资源共享服务。分布式还能共享运算处理能力。
+</p>
+</div>
+</div>
+<div id="outline-container-orgf28e2a6" class="outline-3">
+<h3 id="orgf28e2a6">分布式操作系统</h3>
+<div class="outline-text-3" id="text-orgf28e2a6">
+<p>
+分布式操作系统(Distributed System)由大量计算机通过网络连结起来。
+特点:
+</p>
+<ul class="org-ul">
+<li>多太主机使用相同的操作系统。</li>
+<li>实现资源的深度共享。</li>
+<li>透明性。分布式操作系统在用户眼里是一台具有强大功能的计算机系统。而网络操作系统则会感觉到本地主机和非本地主机之间的区别。</li>
+<li>自治性
+分布式系统中的每台主机么呀主从关系，一个主机失效一般不会影响其他主机。</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org755ef4e" class="outline-2">
+<h2 id="org755ef4e">操作系统设计</h2>
+<div class="outline-text-2" id="text-org755ef4e">
+<p>
+本小节谈谈操作系统的设计开发所面临的问题，以及对操作系统的设计阶段、设计目标及结构设计做探讨。
+</p>
+
+<p>
+设计操作系统中面临的困难:
+</p>
+<ol class="org-ol">
+<li>设计复杂程度高
+主要表现在:
+<ul class="org-ul">
+<li>程序长</li>
+<li>接口信息多</li>
+<li>动态性强</li>
+<li>并行性强</li>
+</ul></li>
+<li>正确性难以保证
+由于操作系统包含的功能巨大，并且对各种外部设备提供的接口复杂，导致源码的正确性难以保证，目前操作系统的正确性主要依靠软件开发的规范保证。</li>
+<li>研制周期长
+由于操作系统的复杂性，研发周期会随之变长。</li>
+</ol>
+</div>
+<div id="outline-container-org0c44030" class="outline-3">
+<h3 id="org0c44030">操作系统的设计过程</h3>
+<div class="outline-text-3" id="text-org0c44030">
+<p>
+由三个过程涵盖，并且每方面是互相渗透，不能截然分开。
+</p>
+<ol class="org-ol">
+<li>功能设计
+根据操作系统的设计目标和使用要求，确定所需要具备的功能。</li>
+<li>算法设计
+根据计算机的性能和操作系统的功能来选择和设计满足系统功能的算法和策略、并且分析和估算其效能。</li>
+<li>结构设计
+根据系统的功能和特性要去，选择合适的结构。使得系统结构清晰、简明、可靠、易读、易修改，并且使用方便，适应性强。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org91fb516" class="outline-3">
+<h3 id="org91fb516">操作系统的设计目标</h3>
+<div class="outline-text-3" id="text-org91fb516">
+<p>
+一个高质量的操作系统应具有可靠性、高效性、易维护性、易移植性、安全性和简明性等特征。
+</p>
+<ol class="org-ol">
+<li>可靠性</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-09-10 四 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-09-17 四 21:05</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
