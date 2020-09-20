@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-09-17 四 21:05 -->
+<!-- 2020-09-19 六 15:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -24,6 +24,14 @@
 <li><a href="#org6120c9a">WIKI</a>
 <ul>
 <li><a href="#orga0fa6ff">ivy-dired下重命名确认 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-05-15 五&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="ivy">ivy</span>&#xa0;<span class="dired">dired</span></span></a></li>
+<li><a href="#org78d3423">Linux下调节屏幕亮度 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-19 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span></span></a>
+<ul>
+<li><a href="#org32a3872">查看亮度是由谁控制的</a></li>
+<li><a href="#org050d36a">查看最大亮度</a></li>
+<li><a href="#org72184ff">设置当前亮度</a></li>
+<li><a href="#org1eda128">可能会遇到的问题</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -48,12 +56,57 @@
 </p>
 </div>
 </div>
+<div id="outline-container-org78d3423" class="outline-3">
+<h3 id="org78d3423">Linux下调节屏幕亮度 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-19 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span></span></h3>
+<div class="outline-text-3" id="text-org78d3423">
+</div>
+<div id="outline-container-org32a3872" class="outline-4">
+<h4 id="org32a3872">查看亮度是由谁控制的</h4>
+<div class="outline-text-4" id="text-org32a3872">
+<div class="org-src-container">
+<pre class="src src-shell">ls /sys/class/backlight/
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org050d36a" class="outline-4">
+<h4 id="org050d36a">查看最大亮度</h4>
+<div class="outline-text-4" id="text-org050d36a">
+<div class="org-src-container">
+<pre class="src src-shell">cat /sys/class/backlight/intel_backlight/max_brightness
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org72184ff" class="outline-4">
+<h4 id="org72184ff">设置当前亮度</h4>
+<div class="outline-text-4" id="text-org72184ff">
+<div class="org-src-container">
+<pre class="src src-shell">cat /sys/class/backlight/intel_backlight/max_brightness &gt; /sys/class/backlight/intel_backlight/brightness 
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1eda128" class="outline-4">
+<h4 id="org1eda128">可能会遇到的问题</h4>
+<div class="outline-text-4" id="text-org1eda128">
+<p>
+设置亮度可能会出现权限问题，那么可以这样设置:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo chmod 777 /sys/class/backlight/intel_backlight/brightness
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-14 二 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-09-17 四 21:05</p>
+<p class="date">Created: 2020-09-19 六 15:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
