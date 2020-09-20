@@ -9,3 +9,30 @@
 
 ** ivy-dired下重命名确认 <2020-05-15 五>                    :emacs:ivy:dired:
    在我使用 ~(dired-do-rename)~ 时发现如果重命名时新名称跟旧名称相似，直接按回车是无法修改的，因为ivy会自动将旧名称补全为新名称，等于没有修改，所以我们在重命名时，输入新名称后，可以调用命令 ~(ivy-immediate-done)~ 默认快捷键是_C-M-j_，这样就可以直接确认，ivy也不会将旧名称补全给新名称。
+** Linux下调节屏幕亮度 <2020-09-19 六>                                :linux:
+*** 查看亮度是由谁控制的
+	#+begin_src shell
+	  ls /sys/class/backlight/
+	#+end_src
+
+	#+RESULTS:
+	: intel_backlight
+*** 查看最大亮度
+	#+begin_src shell
+	  cat /sys/class/backlight/intel_backlight/max_brightness
+	#+end_src
+
+	#+RESULTS:
+	: 68571
+*** 设置当前亮度
+	#+begin_src shell
+	  cat /sys/class/backlight/intel_backlight/max_brightness > /sys/class/backlight/intel_backlight/brightness 
+	#+end_src
+
+*** 可能会遇到的问题
+	设置亮度可能会出现权限问题，那么可以这样设置:
+	#+begin_src shell
+	  sudo chmod 777 /sys/class/backlight/intel_backlight/brightness
+	#+end_src
+
+

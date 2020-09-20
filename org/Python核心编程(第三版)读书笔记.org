@@ -1,0 +1,10 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-09-19 六>
+#+TITLE: Python核心编程(第三版)读书笔记
+
+#+begin_quote
+王勇大佬推荐的书，所以看看咯？
+#+end_quote
+* 第一章
+  写笔记的时候第一章已经看完了，等什么时候再做记录吧。
+* 第二章-网络编程
