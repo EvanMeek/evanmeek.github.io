@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-09-23 三 11:08 -->
+<!-- 2020-09-23 三 19:34 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgd013383">批处理操作系统</a>
 <ul>
-<li><a href="#orgd2211e5">基本工作方式</a></li>
+<li><a href="#org95fb1f8">基本工作方式</a></li>
 <li><a href="#org0ef09f9">特点与分类</a></li>
 <li><a href="#orgab0c321">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org3f2b113">分时系统</a>
 <ul>
-<li><a href="#orgec532fb">基本工作方式</a></li>
+<li><a href="#org19c31df">基本工作方式</a></li>
 <li><a href="#org5e3b27c">设计思想</a></li>
 <li><a href="#org8d13526">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org7f73f4b">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org1027acb">程序状态字(PSW)</a></li>
+<li><a href="#org6afc737">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org43a306f">计算机系统硬件部件</a>
@@ -140,13 +140,17 @@
 <li><a href="#orgdcf2f3f">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#org66e31c2">思考题与练习题</a></li>
+<li><a href="#orgf23f59e">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#orge6908f1">第三章-进程与线程</a>
 <ul>
 <li><a href="#orgd02c8ec">多道程序设计</a></li>
-<li><a href="#org9666c91">思考题与练习题</a></li>
+<li><a href="#org6cf44a9">进程</a></li>
+<li><a href="#org131cf22">线程</a></li>
+<li><a href="#org3a651d4">进程调度</a></li>
+<li><a href="#orgf063fa1">系统内核</a></li>
+<li><a href="#org32e36c5">思考题与练习题</a></li>
 </ul>
 </li>
 </ul>
@@ -170,9 +174,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-orgd2211e5" class="outline-5">
-<h5 id="orgd2211e5">基本工作方式</h5>
-<div class="outline-text-5" id="text-orgd2211e5">
+<div id="outline-container-org95fb1f8" class="outline-5">
+<h5 id="org95fb1f8">基本工作方式</h5>
+<div class="outline-text-5" id="text-org95fb1f8">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -218,9 +222,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-orgec532fb" class="outline-5">
-<h5 id="orgec532fb">基本工作方式</h5>
-<div class="outline-text-5" id="text-orgec532fb">
+<div id="outline-container-org19c31df" class="outline-5">
+<h5 id="org19c31df">基本工作方式</h5>
+<div class="outline-text-5" id="text-org19c31df">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -540,8 +544,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="orgb6c18ce"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-orgb6c18ce">
+<li><a id="org853556c"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-org853556c">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -657,9 +661,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org1027acb" class="outline-4">
-<h4 id="org1027acb">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org1027acb">
+<div id="outline-container-org6afc737" class="outline-4">
+<h4 id="org6afc737">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org6afc737">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -760,7 +764,7 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 <p>
 由于现代程序设计技术大量采用程序代码复用，所以一旦进入这些程序段，OS就会存取相同的指令集合。
 总的来说就是速度快的存储器，CPU更愿意使用它，因为这样更快。
-<img src="img/2-2计算机系统中的存储装置.png" alt="2-2计算机系统中的存储装置.png">
+<img src="../images/2-2计算机系统中的存储装置.png" alt="2-2计算机系统中的存储装置.png">
 <b><b>基于这一原理，就有充分的理由设计出多级存储的体系结构，并使得存储级别较低的存储器的比率小于存储级别较高的存储器的比率</b></b>
 </p>
 </div>
@@ -1175,7 +1179,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div class="outline-text-4" id="text-org7c82e8b">
 <p>
 用户可以通过库函数或API来使用内核函数从而使用系统调用，其关系图如下:
-<img src="img/2-7系统调用与库函数-API-内核函数的关系.png" alt="2-7系统调用与库函数-API-内核函数的关系.png">
+<img src="../images/2-7系统调用与库函数-API-内核函数的关系.png" alt="2-7系统调用与库函数-API-内核函数的关系.png">
 </p>
 </div>
 </div>
@@ -1207,14 +1211,14 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div class="outline-text-4" id="text-orgdcf2f3f">
 <p>
 见书本p73页，图2-8上的一段。
-<img src="img/2-8系统调用的处理过程.png" alt="2-8系统调用的处理过程.png">
+<img src="../images/2-8系统调用的处理过程.png" alt="2-8系统调用的处理过程.png">
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org66e31c2" class="outline-3">
-<h3 id="org66e31c2">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org66e31c2">
+<div id="outline-container-orgf23f59e" class="outline-3">
+<h3 id="orgf23f59e">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgf23f59e">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1224,6 +1228,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <li>运算器</li>
 <li>控制器</li>
 <li>寄存器</li>
+<li>高速缓存器</li>
 </ul>
 <p>
 我认为寄存器与操作系统密切相关，因为控制寄存器中的PSW实现管态、目态、中断屏蔽码、条件码等需求。
@@ -1410,9 +1415,21 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="outline-container-orgd02c8ec" class="outline-3">
 <h3 id="orgd02c8ec">多道程序设计</h3>
 </div>
-<div id="outline-container-org9666c91" class="outline-3">
-<h3 id="org9666c91">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org9666c91">
+<div id="outline-container-org6cf44a9" class="outline-3">
+<h3 id="org6cf44a9">进程</h3>
+</div>
+<div id="outline-container-org131cf22" class="outline-3">
+<h3 id="org131cf22">线程</h3>
+</div>
+<div id="outline-container-org3a651d4" class="outline-3">
+<h3 id="org3a651d4">进程调度</h3>
+</div>
+<div id="outline-container-orgf063fa1" class="outline-3">
+<h3 id="orgf063fa1">系统内核</h3>
+</div>
+<div id="outline-container-org32e36c5" class="outline-3">
+<h3 id="org32e36c5">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org32e36c5">
 <ol class="org-ol">
 <li>什么是多道程序设计？</li>
 <li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
@@ -1566,7 +1583,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-09-23 三 11:08</p>
+<p class="date">Created: 2020-09-23 三 19:34</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
