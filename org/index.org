@@ -1,4 +1,4 @@
-#+SETUPFILE: ../theme-rose.setup
+#+SETUPFILE: ../theme-trose.setup
 #+DATE: <2019-12-28 Sat 23:03>
 #+TITLE: 我不会编程
 
