@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-09-24 四 13:15 -->
+<!-- 2020-09-25 五 11:26 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -30,6 +30,12 @@
 <li><a href="#org050d36a">查看最大亮度</a></li>
 <li><a href="#org72184ff">设置当前亮度</a></li>
 <li><a href="#org1eda128">可能会遇到的问题</a></li>
+</ul>
+</li>
+<li><a href="#org5fa582e">关于endian的那点事 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-24 四&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="os">os</span></span></a>
+<ul>
+<li><a href="#org78c5edb">故事</a></li>
+<li><a href="#orgaa165a7">技术</a></li>
 </ul>
 </li>
 </ul>
@@ -101,12 +107,38 @@
 </div>
 </div>
 </div>
+<div id="outline-container-org5fa582e" class="outline-3">
+<h3 id="org5fa582e">关于endian的那点事 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-09-24 四&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="os">os</span></span></h3>
+<div class="outline-text-3" id="text-org5fa582e">
+<blockquote>
+<p>
+今天看《深入理解操作系统原理》一书了解到endian，它背后有个小故事，我感觉挺有趣的，故抄写下来，有空当笑料。
+</p>
+</blockquote>
+</div>
+<div id="outline-container-org78c5edb" class="outline-4">
+<h4 id="org78c5edb">故事</h4>
+<div class="outline-text-4" id="text-org78c5edb">
+<p>
+在很久很久以前，有一位国王吃鸡蛋因为打破鸡蛋较大的一端而让手指受伤，这位国王就命令其子民日后吃鸡蛋只能从较小的一端破壳开吃，并将其颁为“法律”。有些子民不满，甚至发起暴乱、逃离他国，从此就有了little endian和big endian的说法。
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa165a7" class="outline-4">
+<h4 id="orgaa165a7">技术</h4>
+<div class="outline-text-4" id="text-orgaa165a7">
+<p>
+操作系统中有关于字节顺序排列的一个问题，就是字节顺序排列是从大到小还是从小到大，操作系统真有趣，哈哈！
+</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-14 二 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-09-24 四 13:15</p>
+<p class="date">Created: 2020-09-25 五 11:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
