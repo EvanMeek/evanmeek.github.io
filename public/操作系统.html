@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-09-25 五 11:26 -->
+<!-- 2020-10-16 五 10:37 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgd013383">批处理操作系统</a>
 <ul>
-<li><a href="#org54b9df8">基本工作方式</a></li>
+<li><a href="#orgbfecd99">基本工作方式</a></li>
 <li><a href="#org0ef09f9">特点与分类</a></li>
 <li><a href="#orgab0c321">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org3f2b113">分时系统</a>
 <ul>
-<li><a href="#orgbfecd99">基本工作方式</a></li>
+<li><a href="#orgb85ffef">基本工作方式</a></li>
 <li><a href="#org5e3b27c">设计思想</a></li>
 <li><a href="#org8d13526">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org7f73f4b">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org3967e09">程序状态字(PSW)</a></li>
+<li><a href="#org6b0b67f">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org43a306f">计算机系统硬件部件</a>
@@ -140,17 +140,21 @@
 <li><a href="#orgdcf2f3f">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#org261315a">思考题与练习题</a></li>
+<li><a href="#org5b149b2">思考题与练习题</a></li>
 </ul>
 </li>
-<li><a href="#orgfe79e48">第三章-进程与线程b</a>
+<li><a href="#orgd48fbd0">第三章-进程与线程</a>
 <ul>
-<li><a href="#orgd02c8ec">多道程序设计</a></li>
+<li><a href="#orgd02c8ec">多道程序设计</a>
+<ul>
+<li><a href="#org69815c9">程序的顺序执行</a></li>
+</ul>
+</li>
 <li><a href="#org6cf44a9">进程</a></li>
 <li><a href="#org131cf22">线程</a></li>
 <li><a href="#org3a651d4">进程调度</a></li>
 <li><a href="#orgf063fa1">系统内核</a></li>
-<li><a href="#org5b149b2">思考题与练习题</a></li>
+<li><a href="#org3faa70d">思考题与练习题</a></li>
 </ul>
 </li>
 </ul>
@@ -174,9 +178,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-org54b9df8" class="outline-5">
-<h5 id="org54b9df8">基本工作方式</h5>
-<div class="outline-text-5" id="text-org54b9df8">
+<div id="outline-container-orgbfecd99" class="outline-5">
+<h5 id="orgbfecd99">基本工作方式</h5>
+<div class="outline-text-5" id="text-orgbfecd99">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -222,9 +226,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-orgbfecd99" class="outline-5">
-<h5 id="orgbfecd99">基本工作方式</h5>
-<div class="outline-text-5" id="text-orgbfecd99">
+<div id="outline-container-orgb85ffef" class="outline-5">
+<h5 id="orgb85ffef">基本工作方式</h5>
+<div class="outline-text-5" id="text-orgb85ffef">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -484,9 +488,15 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 <td class="org-left">寄存器</td>
 <td class="org-left">暂存处理器执行指令过程中的数据、地址及指令信息（速度最快）</td>
 </tr>
+
+<tr>
+<td class="org-left">高速缓冲</td>
+<td class="org-left">为了解决CPU与内存速度不匹配的问题</td>
+</tr>
 </tbody>
 </table>
 </div>
+
 <div id="outline-container-org63c5846" class="outline-5">
 <h5 id="org63c5846">处理器中的寄存器</h5>
 <div class="outline-text-5" id="text-org63c5846">
@@ -544,8 +554,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="org863f9c8"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org863f9c8">
+<li><a id="org3967e09"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-org3967e09">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -577,7 +587,7 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 <li>I/O指令
 作用: CPU和I/O模块之间的数据传输及命令发送</li>
 <li>算术逻辑指令
-作用: 执行数据相关的算数和逻辑操作</li>
+作用: 执行数据相关的算术和逻辑操作</li>
 <li>控制转移指令
 作用: 指定新指令的执行起点</li>
 <li>处理器控制指令
@@ -661,9 +671,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org3967e09" class="outline-4">
-<h4 id="org3967e09">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org3967e09">
+<div id="outline-container-org6b0b67f" class="outline-4">
+<h4 id="org6b0b67f">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org6b0b67f">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -826,7 +836,7 @@ CPU按照程序执行顺序依次执行指令，若执行到启动I/O指令时�
 <div class="outline-text-5" id="text-org3d04b97">
 <ul class="org-ul">
 <li>原理
-DMA技术将数据成块的在内存和外部设备之间传输，例如当处理器需要读写一整块数据时，DMA控制单元发送命令，命令包含了外部设备的编址，需要读写的内存编址以及传输的数据长度，是否请求依次读或写等信息。
+DMA技术将数据成块的在内存和外部设备之间传输，例如当处理器需要读写一整块数据时，DMA控制单元发送命令，命令包含了外部设备的编址，需要读写的内存编址以及传输的数据长度，是否请求一次读或写等信息。
 随后这些外部设备就都由DMA控制单元控制，CPU就不需要采理了(除了结束和开始)。</li>
 <li>特点
 <ol class="org-ol">
@@ -846,6 +856,8 @@ DMA技术将数据成块的在内存和外部设备之间传输，例如当处�
 </ul></li>
 <li>原理
 当需要输入输出数据时，先将数据放置缓冲器内，随后CPU再处理缓冲区内的数据。</li>
+<li>根本原因
+CPU处理速度与设备传输速度不相匹配。</li>
 </ul>
 </div>
 </div>
@@ -989,7 +1001,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <ol class="org-ol">
 <li>程序性中断
 在特殊条件下由指令执行结果引发，例如零作被除数，目态程序试图执行特权指令。</li>
-<li>访管指令异常
+<li>访管指令异常(自愿性中断)
 用于使OS提供OS服务</li>
 </ol>
 </div>
@@ -1216,9 +1228,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org261315a" class="outline-3">
-<h3 id="org261315a">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org261315a">
+<div id="outline-container-org5b149b2" class="outline-3">
+<h3 id="org5b149b2">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org5b149b2">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1408,13 +1420,36 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfe79e48" class="outline-2">
-<h2 id="orgfe79e48">第三章-进程与线程b</h2>
-<div class="outline-text-2" id="text-orgfe79e48">
+<div id="outline-container-orgd48fbd0" class="outline-2">
+<h2 id="orgd48fbd0">第三章-进程与线程</h2>
+<div class="outline-text-2" id="text-orgd48fbd0">
 </div>
 <div id="outline-container-orgd02c8ec" class="outline-3">
 <h3 id="orgd02c8ec">多道程序设计</h3>
+<div class="outline-text-3" id="text-orgd02c8ec">
+<ul class="org-ul">
+<li>作用
+提高处理器利用率。</li>
+<li>简单解释
+充分发挥处理器与外围设备以及外围设备之间的并行工作能力。</li>
+</ul>
 </div>
+<div id="outline-container-org69815c9" class="outline-4">
+<h4 id="org69815c9">程序的顺序执行</h4>
+<div class="outline-text-4" id="text-org69815c9">
+<p>
+由程序独占CPU直到得到结果的过程称为顺序执行。
+</p>
+<ol class="org-ol">
+<li>顺序性
+程序根据规定顺序在机器上执行。</li>
+<li>封闭性
+程序运行时，</li>
+</ol>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org6cf44a9" class="outline-3">
 <h3 id="org6cf44a9">进程</h3>
 </div>
@@ -1427,9 +1462,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="outline-container-orgf063fa1" class="outline-3">
 <h3 id="orgf063fa1">系统内核</h3>
 </div>
-<div id="outline-container-org5b149b2" class="outline-3">
-<h3 id="org5b149b2">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org5b149b2">
+<div id="outline-container-org3faa70d" class="outline-3">
+<h3 id="org3faa70d">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org3faa70d">
 <ol class="org-ol">
 <li>什么是多道程序设计？</li>
 <li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
@@ -1583,7 +1618,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-09-25 五 11:26</p>
+<p class="date">Created: 2020-10-16 五 10:37</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
