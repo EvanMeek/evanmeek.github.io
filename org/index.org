@@ -25,9 +25,11 @@
 |--------------------------|
 | [[file:emacs_Emacs中优雅地加载GUI配置.org][Emacs中优雅地加载GUI配置]] |
 
-| GNU/Linux              |
-|------------------------|
+| GNU/Linux                      |
+|--------------------------------|
 | [[file:linux_降低CPU频率以提高续航.org][ArchLinux降低CPU频率以提高续航]] |
+| [[file:ArchLinux降级软件包.org][ArchLinux降级软件包]]            |
+
 
 | C/C++           |
 |-----------------|
