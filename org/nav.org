@@ -2,12 +2,10 @@
 #+DATE: <2020-04-10 Fri 20:56>
 #+TITLE: Navigations
 
-| C/N  | A      | B        | C           | D      | E    |
-|------+--------+----------+-------------+--------+------|
-| 我的 | [[./index.org][Virgo]]  | [[https://www.bilibili.com/][Bilibili]] | [[https://emacs-china.org/][Emacs China]] | [[https://github.com/loveminimal][Github]] | [[https://www.zhihu.com/][知乎]] |
-|      | [[https://cloud.huawei.com/home#/notepad/task/2f0739e3$ee3c$4049$8422$461c7e46d116/none][华为云]] | [[https://cloud.tencent.com/developer/labs][腾讯云]]   | [[https://www.youtube.com/][YouTube]]     | [[https://www.icourse163.org/][MOOC]]   |      |
+| C/N  | A      | B           | C | D | E |
+|------+--------+-------------+---+---+---|
+| 我的 | [[https://github.com/evanmeek][Github]] | [[https://emacs-china.org/u/evanmeek][emacs-china]] |   |   |   |
 
  *Bookmarks InboX*
 
 - 合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。
-- [[https://www.cnblogs.com/kenshinobiy/p/10720151.html][javaScript -- touch事件详解（touchstart、touchmove和touchend）]]
