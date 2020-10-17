@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-10-17 六 20:17 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArchLinux降级软件包</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ArchLinux降级软件包</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org61c699a">前言</a></li>
+<li><a href="#org0d74c3b">downgrade 降级软件包的软件包</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org61c699a" class="outline-2">
+<h2 id="org61c699a">前言</h2>
+<div class="outline-text-2" id="text-org61c699a">
+<p>
+今天考试，听KiteAB说QV2ray挂了，让我不要更新，回到宿舍还是忍不住滚了一下。随后，QV2ray果然挂了，原因是grpc包不兼容，所以就查了下如何降级软件包，下面简单说下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d74c3b" class="outline-2">
+<h2 id="org0d74c3b">downgrade 降级软件包的软件包</h2>
+<div class="outline-text-2" id="text-org0d74c3b">
+<p>
+最方便的方式是通过downgrade来进行降级，非常方便。
+</p>
+
+<p>
+首先安装:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">pacman -S downgrade
+</pre>
+</div>
+
+<p>
+随后只需要通过这条命令即可降级
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #505050;">#</span><span style="color: #505050;">downgrade &#21253;&#21517;</span>
+downgrade grpc
+</pre>
+</div>
+
+<blockquote>
+<ol class="org-ol">
+<li>grpc    1.30.0  1  x86<sub>64</sub>  (远端)</li>
+<li>grpc    1.30.0  2  x86<sub>64</sub>  (远端)</li>
+<li>grpc    1.30.1  1  x86<sub>64</sub>  (远端)</li>
+</ol>
+<ul class="org-ul">
+<li>41)  grpc    1.30.1  2  x86<sub>64</sub>  (远端)</li>
+<li>42)  grpc    1.30.1  2  x86<sub>64</sub>  (本地)</li>
+<li>43)  grpc    1.30.2  1  x86<sub>64</sub>  (远端)</li>
+<li>44)  grpc    1.30.2  1  x86<sub>64</sub>  (本地)</li>
+<li>45)  grpc    1.32.0  1  x86<sub>64</sub>  (远端)</li>
+<li>46)  grpc    1.32.0  1  x86<sub>64</sub>  (本地)
+<ol class="org-ol">
+<li>grpc    1.32.0  2  x86<sub>64</sub>  (远端)</li>
+</ol></li>
+</ul>
+<p>
+输入数字以选择包：
+</p>
+</blockquote>
+
+<p>
+输入要降级的版本后即可。
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-09-19 六 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-10-17 六 20:17</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
