@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-10-19 一 16:14 -->
+<!-- 2020-10-20 二 02:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>数据库原理</title>
@@ -22,123 +22,123 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8c52060">数据库系统概述</a>
+<li><a href="#orgf1a2c9e">数据库系统概述</a>
 <ul>
-<li><a href="#orgd27e38c">数据库基本概念</a>
+<li><a href="#org3d6bb71">数据库基本概念</a>
 <ul>
-<li><a href="#orgd901710">数据是什么?</a></li>
-<li><a href="#org373b3c9">数据库是什么?</a></li>
-<li><a href="#orgd0d8adb">数据库管理系统是什么?</a></li>
-<li><a href="#org0293e2b">数据库系统</a></li>
+<li><a href="#org69650ad">数据是什么?</a></li>
+<li><a href="#orgda0c666">数据库是什么?</a></li>
+<li><a href="#org30c988b">数据库管理系统是什么?</a></li>
+<li><a href="#orgcd0078f">数据库系统</a></li>
 </ul>
 </li>
-<li><a href="#orgfa9200e">数据库管理技术的发展</a>
+<li><a href="#org6e89ec5">数据库管理技术的发展</a>
 <ul>
-<li><a href="#orgb9e9a24">人工管理阶段</a></li>
-<li><a href="#orgba806f9">文件系统阶段</a></li>
-<li><a href="#org66b6dcf">数据库系统阶段</a></li>
+<li><a href="#org14b1c99">人工管理阶段</a></li>
+<li><a href="#orged115a5">文件系统阶段</a></li>
+<li><a href="#org78b2110">数据库系统阶段</a></li>
 </ul>
 </li>
-<li><a href="#org865176e">数据库系统的结构</a>
+<li><a href="#org705adaa">数据库系统的结构</a>
 <ul>
-<li><a href="#org27500ba">数据库系统的三级 <b><b>模式</b></b> 结构</a></li>
-<li><a href="#org7772de2">数据库系统的运行于应用结构</a></li>
+<li><a href="#orgab151de">数据库系统的三级 <b><b>模式</b></b> 结构</a></li>
+<li><a href="#org509b997">数据库系统的运行于应用结构</a></li>
 </ul>
 </li>
-<li><a href="#org1e26a0f">数据模型</a>
+<li><a href="#org25efbdd">数据模型</a>
 <ul>
-<li><a href="#org20bbc28">数据特性与数据模型组成要素</a></li>
-<li><a href="#orgab5c630">数据模型的分类</a>
+<li><a href="#org7f685ce">数据特性与数据模型组成要素</a></li>
+<li><a href="#org16199b4">数据模型的分类</a>
 <ul>
-<li><a href="#org7121168">总结</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org185d724">关系数据库</a>
-<ul>
-<li><a href="#org2d2e630">关系数据库概述</a></li>
-<li><a href="#orgfb1a9cf">关系数据模型</a>
-<ul>
-<li><a href="#orgd105874">关系数据结构</a></li>
-<li><a href="#orga777d2c">关系操作集合</a></li>
-</ul>
-</li>
-<li><a href="#org58b95ac">关系数据库的规范理论 重点</a>
-<ul>
-<li><a href="#org52cb3f2">关系模式中存在的冗余和异常问题</a>
-<ul>
-<li><a href="#orga584aa1">数据冗余</a></li>
-<li><a href="#orgd768f45">更新异常</a></li>
-<li><a href="#org6b5c0b5">插入异常</a></li>
-<li><a href="#org10ead7a">删除异常</a></li>
-</ul>
-</li>
-<li><a href="#org99650fe">函数依赖与关键字</a></li>
-<li><a href="#org04a1807">范式于关系规范化过程</a></li>
+<li><a href="#orgfe21790">总结</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1cdb10f">数据库设计</a>
-<ul>
-<li><a href="#org2632bbc">数据库设计概述</a>
-<ul>
-<li><a href="#org635e444">数据库的生命周期</a></li>
-<li><a href="#org18f7776">数据库设计的目标</a></li>
-<li><a href="#org8635d8c">数据库设计的内容</a></li>
-<li><a href="#org52ad24c">数据库设计的方法</a></li>
-<li><a href="#orgbcbc764">数据库设计的过程</a></li>
 </ul>
 </li>
-<li><a href="#org9f4c750">数据库设计的基本步骤</a>
+<li><a href="#orga25a50a">关系数据库</a>
 <ul>
-<li><a href="#org76c2eef">第一步-需求分析</a></li>
-<li><a href="#org0968be1">第二步-概念结构设计</a></li>
-<li><a href="#orgb4698b9">逻辑结构设计</a></li>
+<li><a href="#orgcfebc80">关系数据库概述</a></li>
+<li><a href="#org19f0752">关系数据模型</a>
+<ul>
+<li><a href="#orgdc1c223">关系数据结构</a></li>
+<li><a href="#orgccf05c5">关系操作集合</a></li>
 </ul>
 </li>
-<li><a href="#org7999fea">关系数据库设计方法</a></li>
+<li><a href="#org0b5c70e">关系数据库的规范理论 重点</a>
+<ul>
+<li><a href="#org16f99f6">关系模式中存在的冗余和异常问题</a>
+<ul>
+<li><a href="#orgf00f40a">数据冗余</a></li>
+<li><a href="#orga75edb8">更新异常</a></li>
+<li><a href="#org166c82b">插入异常</a></li>
+<li><a href="#org33f1671">删除异常</a></li>
 </ul>
 </li>
-<li><a href="#orge101bad">SQL与关系数据库基本操作</a>
-<ul>
-<li><a href="#org0a346a5">SQL概述</a></li>
-<li><a href="#org5de873f">MySQL预备知识</a></li>
-<li><a href="#orge5bab6f">数据定义</a></li>
-<li><a href="#org4a65255">数据更新</a></li>
-<li><a href="#org71ff11b">数据查询</a></li>
-<li><a href="#orga681264">视图</a></li>
+<li><a href="#org6f43fb9">函数依赖与关键字</a></li>
+<li><a href="#org826e718">范式于关系规范化过程</a></li>
 </ul>
 </li>
-<li><a href="#org64b8831">数据库编程</a>
-<ul>
-<li><a href="#orgbae8890">存储过程</a></li>
-<li><a href="#org1eef388">存储函数</a></li>
 </ul>
 </li>
-<li><a href="#orga4e5b48">数据库安全与保护</a>
+<li><a href="#org73901e5">数据库设计</a>
 <ul>
-<li><a href="#org4e1c798">数据库完整性</a></li>
-<li><a href="#orgf82dc24">触发器</a></li>
-<li><a href="#orge0ebf23">安全性与访问控制</a></li>
-<li><a href="#orga1c5190">事务与并发控制</a></li>
-<li><a href="#org223edc1">备份与恢复</a></li>
+<li><a href="#orgbf8fd49">数据库设计概述</a>
+<ul>
+<li><a href="#orga253db2">数据库的生命周期</a></li>
+<li><a href="#orgaa97be9">数据库设计的目标</a></li>
+<li><a href="#org941effe">数据库设计的内容</a></li>
+<li><a href="#orgf161471">数据库设计的方法</a></li>
+<li><a href="#org340f4d5">数据库设计的过程</a></li>
 </ul>
 </li>
-<li><a href="#org7fa1e08">数据库应用设计与开发实例</a>
+<li><a href="#org08c6eac">数据库设计的基本步骤</a>
 <ul>
-<li><a href="#orga694d8d">需求描述与分析</a></li>
-<li><a href="#org0e0b6e2">系统设计</a></li>
+<li><a href="#orge2f340d">第一步-需求分析</a></li>
+<li><a href="#org2cbccd0">第二步-概念结构设计</a></li>
+<li><a href="#orgb52cba6">逻辑结构设计</a></li>
 </ul>
 </li>
-<li><a href="#org5c84ef5">数据管理技术的发展</a>
+<li><a href="#org727c9eb">关系数据库设计方法</a></li>
+</ul>
+</li>
+<li><a href="#org8b36803">SQL与关系数据库基本操作</a>
 <ul>
-<li><a href="#org31ab769">数据库技术发展概述</a></li>
-<li><a href="#org579f35c">数据仓库与数据挖掘</a></li>
-<li><a href="#org635c19d">大数据管理技术</a></li>
+<li><a href="#orge2341c4">SQL概述</a></li>
+<li><a href="#orgd2ef341">MySQL预备知识</a></li>
+<li><a href="#org1bb33a0">数据定义</a></li>
+<li><a href="#org8a6d3e1">数据更新</a></li>
+<li><a href="#orgb02128f">数据查询</a></li>
+<li><a href="#orgcdde88d">视图</a></li>
+</ul>
+</li>
+<li><a href="#org7d0cee4">数据库编程</a>
+<ul>
+<li><a href="#org0afcdfa">存储过程</a></li>
+<li><a href="#orgf8ff051">存储函数</a></li>
+</ul>
+</li>
+<li><a href="#orge077436">数据库安全与保护</a>
+<ul>
+<li><a href="#orgc2ee905">数据库完整性</a></li>
+<li><a href="#org4e2da02">触发器</a></li>
+<li><a href="#org9fc5f4c">安全性与访问控制</a></li>
+<li><a href="#orge496793">事务与并发控制</a></li>
+<li><a href="#org964c67f">备份与恢复</a></li>
+</ul>
+</li>
+<li><a href="#org208bf7f">数据库应用设计与开发实例</a>
+<ul>
+<li><a href="#org4c94a41">需求描述与分析</a></li>
+<li><a href="#org59785a5">系统设计</a></li>
+</ul>
+</li>
+<li><a href="#org8033600">数据管理技术的发展</a>
+<ul>
+<li><a href="#org84d2048">数据库技术发展概述</a></li>
+<li><a href="#org6ae5a73">数据仓库与数据挖掘</a></li>
+<li><a href="#org6ac95ae">大数据管理技术</a></li>
 </ul>
 </li>
 </ul>
@@ -149,25 +149,25 @@
 临近自考，本篇整理下2018年自考教材的的一些重点知识，希望自己能过吧！
 </p>
 </blockquote>
-<div id="outline-container-org8c52060" class="outline-2">
-<h2 id="org8c52060">数据库系统概述</h2>
-<div class="outline-text-2" id="text-org8c52060">
+<div id="outline-container-orgf1a2c9e" class="outline-2">
+<h2 id="orgf1a2c9e">数据库系统概述</h2>
+<div class="outline-text-2" id="text-orgf1a2c9e">
 </div>
-<div id="outline-container-orgd27e38c" class="outline-3">
-<h3 id="orgd27e38c">数据库基本概念</h3>
-<div class="outline-text-3" id="text-orgd27e38c">
+<div id="outline-container-org3d6bb71" class="outline-3">
+<h3 id="org3d6bb71">数据库基本概念</h3>
+<div class="outline-text-3" id="text-org3d6bb71">
 </div>
-<div id="outline-container-orgd901710" class="outline-4">
-<h4 id="orgd901710">数据是什么?</h4>
-<div class="outline-text-4" id="text-orgd901710">
+<div id="outline-container-org69650ad" class="outline-4">
+<h4 id="org69650ad">数据是什么?</h4>
+<div class="outline-text-4" id="text-org69650ad">
 <p>
 描述事物的符号记录
 </p>
 </div>
 </div>
-<div id="outline-container-org373b3c9" class="outline-4">
-<h4 id="org373b3c9">数据库是什么?</h4>
-<div class="outline-text-4" id="text-org373b3c9">
+<div id="outline-container-orgda0c666" class="outline-4">
+<h4 id="orgda0c666">数据库是什么?</h4>
+<div class="outline-text-4" id="text-orgda0c666">
 <p>
 简称DB,长期存储在计算机内， <b><b>有组织，可共享的大量数据集合</b></b> 。
 </p>
@@ -182,9 +182,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd0d8adb" class="outline-4">
-<h4 id="orgd0d8adb">数据库管理系统是什么?</h4>
-<div class="outline-text-4" id="text-orgd0d8adb">
+<div id="outline-container-org30c988b" class="outline-4">
+<h4 id="org30c988b">数据库管理系统是什么?</h4>
+<div class="outline-text-4" id="text-org30c988b">
 <blockquote>
 <p>
 前三点重点
@@ -224,22 +224,22 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-org0293e2b" class="outline-4">
-<h4 id="org0293e2b">数据库系统</h4>
-<div class="outline-text-4" id="text-org0293e2b">
+<div id="outline-container-orgcd0078f" class="outline-4">
+<h4 id="orgcd0078f">数据库系统</h4>
+<div class="outline-text-4" id="text-orgcd0078f">
 <p>
 简称DBS，包含了上面所有，以及相关的实用工具，以及 <b><b>数据库管理员(DBA)</b></b> 。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfa9200e" class="outline-3">
-<h3 id="orgfa9200e">数据库管理技术的发展</h3>
-<div class="outline-text-3" id="text-orgfa9200e">
+<div id="outline-container-org6e89ec5" class="outline-3">
+<h3 id="org6e89ec5">数据库管理技术的发展</h3>
+<div class="outline-text-3" id="text-org6e89ec5">
 </div>
-<div id="outline-container-orgb9e9a24" class="outline-4">
-<h4 id="orgb9e9a24">人工管理阶段</h4>
-<div class="outline-text-4" id="text-orgb9e9a24">
+<div id="outline-container-org14b1c99" class="outline-4">
+<h4 id="org14b1c99">人工管理阶段</h4>
+<div class="outline-text-4" id="text-org14b1c99">
 <p>
 <b><b>记录内无结构，整体无结构</b></b>
 </p>
@@ -250,9 +250,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgba806f9" class="outline-4">
-<h4 id="orgba806f9">文件系统阶段</h4>
-<div class="outline-text-4" id="text-orgba806f9">
+<div id="outline-container-orged115a5" class="outline-4">
+<h4 id="orged115a5">文件系统阶段</h4>
+<div class="outline-text-4" id="text-orged115a5">
 <dl class="org-dl">
 <dt>数据的管理者</dt><dd>文件系统，**数据可长期保存**</dd>
 <dt>数据面向的对象</dt><dd>某一应用程序</dd>
@@ -263,9 +263,9 @@
 </dl>
 </div>
 </div>
-<div id="outline-container-org66b6dcf" class="outline-4">
-<h4 id="org66b6dcf">数据库系统阶段</h4>
-<div class="outline-text-4" id="text-org66b6dcf">
+<div id="outline-container-org78b2110" class="outline-4">
+<h4 id="org78b2110">数据库系统阶段</h4>
+<div class="outline-text-4" id="text-org78b2110">
 <ol class="org-ol">
 <li>数据集成（存放在一起）</li>
 <li>数据共享性高 （不同的应用可以使用同一部分数据）</li>
@@ -277,16 +277,16 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org865176e" class="outline-3">
-<h3 id="org865176e">数据库系统的结构</h3>
-<div class="outline-text-3" id="text-org865176e">
+<div id="outline-container-org705adaa" class="outline-3">
+<h3 id="org705adaa">数据库系统的结构</h3>
+<div class="outline-text-3" id="text-org705adaa">
 <p>
 <b><b>必考</b></b>
 </p>
 </div>
-<div id="outline-container-org27500ba" class="outline-4">
-<h4 id="org27500ba">数据库系统的三级 <b><b>模式</b></b> 结构</h4>
-<div class="outline-text-4" id="text-org27500ba">
+<div id="outline-container-orgab151de" class="outline-4">
+<h4 id="orgab151de">数据库系统的三级 <b><b>模式</b></b> 结构</h4>
+<div class="outline-text-4" id="text-orgab151de">
 <ol class="org-ol">
 <li>模式
 描述库中数据的 <b><b>逻辑</b></b> 结构和 <b><b>特征</b></b> 。
@@ -311,9 +311,9 @@ DBMS提供子模式描述语言。</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org7772de2" class="outline-4">
-<h4 id="org7772de2">数据库系统的运行于应用结构</h4>
-<div class="outline-text-4" id="text-org7772de2">
+<div id="outline-container-org509b997" class="outline-4">
+<h4 id="org509b997">数据库系统的运行于应用结构</h4>
+<div class="outline-text-4" id="text-org509b997">
 <ol class="org-ol">
 <li>C/S
 例如Emasc Daemon</li>
@@ -323,13 +323,13 @@ DBMS提供子模式描述语言。</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org1e26a0f" class="outline-3">
-<h3 id="org1e26a0f">数据模型</h3>
-<div class="outline-text-3" id="text-org1e26a0f">
+<div id="outline-container-org25efbdd" class="outline-3">
+<h3 id="org25efbdd">数据模型</h3>
+<div class="outline-text-3" id="text-org25efbdd">
 </div>
-<div id="outline-container-org20bbc28" class="outline-4">
-<h4 id="org20bbc28">数据特性与数据模型组成要素</h4>
-<div class="outline-text-4" id="text-org20bbc28">
+<div id="outline-container-org7f685ce" class="outline-4">
+<h4 id="org7f685ce">数据特性与数据模型组成要素</h4>
+<div class="outline-text-4" id="text-org7f685ce">
 <ol class="org-ol">
 <li>数据结构
 例如树形，队列，链式
@@ -342,9 +342,9 @@ DBMS提供子模式描述语言。</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgab5c630" class="outline-4">
-<h4 id="orgab5c630">数据模型的分类</h4>
-<div class="outline-text-4" id="text-orgab5c630">
+<div id="outline-container-org16199b4" class="outline-4">
+<h4 id="org16199b4">数据模型的分类</h4>
+<div class="outline-text-4" id="text-org16199b4">
 <ol class="org-ol">
 <li>概念层数据模型
 <ol class="org-ol">
@@ -391,9 +391,9 @@ DBMS提供子模式描述语言。</li>
 也就是硬件那些</li>
 </ol>
 </div>
-<div id="outline-container-org7121168" class="outline-5">
-<h5 id="org7121168">总结</h5>
-<div class="outline-text-5" id="text-org7121168">
+<div id="outline-container-orgfe21790" class="outline-5">
+<h5 id="orgfe21790">总结</h5>
+<div class="outline-text-5" id="text-orgfe21790">
 <p>
 三层模型，从上到下 概念-&gt;逻辑-&gt;物理
 两层映像，概念-&gt;外模式 | 逻辑-&gt;模式 | 物理-&gt;内模式
@@ -403,13 +403,13 @@ DBMS提供子模式描述语言。</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org185d724" class="outline-2">
-<h2 id="org185d724">关系数据库</h2>
-<div class="outline-text-2" id="text-org185d724">
+<div id="outline-container-orga25a50a" class="outline-2">
+<h2 id="orga25a50a">关系数据库</h2>
+<div class="outline-text-2" id="text-orga25a50a">
 </div>
-<div id="outline-container-org2d2e630" class="outline-3">
-<h3 id="org2d2e630">关系数据库概述</h3>
-<div class="outline-text-3" id="text-org2d2e630">
+<div id="outline-container-orgcfebc80" class="outline-3">
+<h3 id="orgcfebc80">关系数据库概述</h3>
+<div class="outline-text-3" id="text-orgcfebc80">
 <p>
 常用系统:
 </p>
@@ -420,16 +420,16 @@ DBMS提供子模式描述语言。</li>
 </dl>
 </div>
 </div>
-<div id="outline-container-orgfb1a9cf" class="outline-3">
-<h3 id="orgfb1a9cf">关系数据模型</h3>
-<div class="outline-text-3" id="text-orgfb1a9cf">
+<div id="outline-container-org19f0752" class="outline-3">
+<h3 id="org19f0752">关系数据模型</h3>
+<div class="outline-text-3" id="text-org19f0752">
 <p>
 <b><b>关系也就是二维表格</b></b>
 </p>
 </div>
-<div id="outline-container-orgd105874" class="outline-4">
-<h4 id="orgd105874">关系数据结构</h4>
-<div class="outline-text-4" id="text-orgd105874">
+<div id="outline-container-orgdc1c223" class="outline-4">
+<h4 id="orgdc1c223">关系数据结构</h4>
+<div class="outline-text-4" id="text-orgdc1c223">
 <p>
 基本术语:
 </p>
@@ -483,9 +483,9 @@ DBMS提供子模式描述语言。</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orga777d2c" class="outline-4">
-<h4 id="orga777d2c">关系操作集合</h4>
-<div class="outline-text-4" id="text-orga777d2c">
+<div id="outline-container-orgccf05c5" class="outline-4">
+<h4 id="orgccf05c5">关系操作集合</h4>
+<div class="outline-text-4" id="text-orgccf05c5">
 <ol class="org-ol">
 <li>基本的关系操作
 <ol class="org-ol">
@@ -593,30 +593,30 @@ A 笛卡尔积 B
 </div>
 </div>
 </div>
-<div id="outline-container-org58b95ac" class="outline-3">
-<h3 id="org58b95ac">关系数据库的规范理论 重点</h3>
-<div class="outline-text-3" id="text-org58b95ac">
+<div id="outline-container-org0b5c70e" class="outline-3">
+<h3 id="org0b5c70e">关系数据库的规范理论 重点</h3>
+<div class="outline-text-3" id="text-org0b5c70e">
 </div>
-<div id="outline-container-org52cb3f2" class="outline-4">
-<h4 id="org52cb3f2">关系模式中存在的冗余和异常问题</h4>
-<div class="outline-text-4" id="text-org52cb3f2">
+<div id="outline-container-org16f99f6" class="outline-4">
+<h4 id="org16f99f6">关系模式中存在的冗余和异常问题</h4>
+<div class="outline-text-4" id="text-org16f99f6">
 </div>
-<div id="outline-container-orga584aa1" class="outline-5">
-<h5 id="orga584aa1">数据冗余</h5>
+<div id="outline-container-orgf00f40a" class="outline-5">
+<h5 id="orgf00f40a">数据冗余</h5>
 </div>
-<div id="outline-container-orgd768f45" class="outline-5">
-<h5 id="orgd768f45">更新异常</h5>
+<div id="outline-container-orga75edb8" class="outline-5">
+<h5 id="orga75edb8">更新异常</h5>
 </div>
-<div id="outline-container-org6b5c0b5" class="outline-5">
-<h5 id="org6b5c0b5">插入异常</h5>
+<div id="outline-container-org166c82b" class="outline-5">
+<h5 id="org166c82b">插入异常</h5>
 </div>
-<div id="outline-container-org10ead7a" class="outline-5">
-<h5 id="org10ead7a">删除异常</h5>
+<div id="outline-container-org33f1671" class="outline-5">
+<h5 id="org33f1671">删除异常</h5>
 </div>
 </div>
-<div id="outline-container-org99650fe" class="outline-4">
-<h4 id="org99650fe">函数依赖与关键字</h4>
-<div class="outline-text-4" id="text-org99650fe">
+<div id="outline-container-org6f43fb9" class="outline-4">
+<h4 id="org6f43fb9">函数依赖与关键字</h4>
+<div class="outline-text-4" id="text-org6f43fb9">
 <p>
 函数依赖是指 <b><b>关系中属性间的对应关系</b></b>
  下面有几种依赖的定义，每个依赖都不同，将会一一说明=。
@@ -641,26 +641,26 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org04a1807" class="outline-4">
-<h4 id="org04a1807">范式于关系规范化过程</h4>
+<div id="outline-container-org826e718" class="outline-4">
+<h4 id="org826e718">范式于关系规范化过程</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1cdb10f" class="outline-2">
-<h2 id="org1cdb10f">数据库设计</h2>
-<div class="outline-text-2" id="text-org1cdb10f">
+<div id="outline-container-org73901e5" class="outline-2">
+<h2 id="org73901e5">数据库设计</h2>
+<div class="outline-text-2" id="text-org73901e5">
 </div>
-<div id="outline-container-org2632bbc" class="outline-3">
-<h3 id="org2632bbc">数据库设计概述</h3>
-<div class="outline-text-3" id="text-org2632bbc">
+<div id="outline-container-orgbf8fd49" class="outline-3">
+<h3 id="orgbf8fd49">数据库设计概述</h3>
+<div class="outline-text-3" id="text-orgbf8fd49">
 <p>
 本章介绍数据库设计的特点、方法于过程，其中关系数据库的结构设计是本章的学习重点。
 </p>
 </div>
-<div id="outline-container-org635e444" class="outline-4">
-<h4 id="org635e444">数据库的生命周期</h4>
-<div class="outline-text-4" id="text-org635e444">
+<div id="outline-container-orga253db2" class="outline-4">
+<h4 id="orga253db2">数据库的生命周期</h4>
+<div class="outline-text-4" id="text-orga253db2">
 <p>
 从数据库演变过程看，分为两个阶段:
 </p>
@@ -683,9 +683,9 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org18f7776" class="outline-4">
-<h4 id="org18f7776">数据库设计的目标</h4>
-<div class="outline-text-4" id="text-org18f7776">
+<div id="outline-container-orgaa97be9" class="outline-4">
+<h4 id="orgaa97be9">数据库设计的目标</h4>
+<div class="outline-text-4" id="text-orgaa97be9">
 <ol class="org-ol">
 <li>满足功能需求
 增删改查</li>
@@ -694,9 +694,9 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8635d8c" class="outline-4">
-<h4 id="org8635d8c">数据库设计的内容</h4>
-<div class="outline-text-4" id="text-org8635d8c">
+<div id="outline-container-org941effe" class="outline-4">
+<h4 id="org941effe">数据库设计的内容</h4>
+<div class="outline-text-4" id="text-org941effe">
 <ol class="org-ol">
 <li>数据库结构设计
 静态的，用来定义数据库的组成方式，一般定义好后不会随意更改。
@@ -710,9 +710,9 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org52ad24c" class="outline-4">
-<h4 id="org52ad24c">数据库设计的方法</h4>
-<div class="outline-text-4" id="text-org52ad24c">
+<div id="outline-container-orgf161471" class="outline-4">
+<h4 id="orgf161471">数据库设计的方法</h4>
+<div class="outline-text-4" id="text-orgf161471">
 <ol class="org-ol">
 <li>直观设计法
 特点：根据经验设计数据库模式
@@ -741,9 +741,9 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbcbc764" class="outline-4">
-<h4 id="orgbcbc764">数据库设计的过程</h4>
-<div class="outline-text-4" id="text-orgbcbc764">
+<div id="outline-container-org340f4d5" class="outline-4">
+<h4 id="org340f4d5">数据库设计的过程</h4>
+<div class="outline-text-4" id="text-org340f4d5">
 <p>
 分为以下几个阶段:
 </p>
@@ -771,9 +771,9 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org9f4c750" class="outline-3">
-<h3 id="org9f4c750">数据库设计的基本步骤</h3>
-<div class="outline-text-3" id="text-org9f4c750">
+<div id="outline-container-org08c6eac" class="outline-3">
+<h3 id="org08c6eac">数据库设计的基本步骤</h3>
+<div class="outline-text-3" id="text-org08c6eac">
 <p>
 目前分阶段规范设计方法已在数据库设计中得到广泛应用，通过自顶向下，逐步求精的原则，将数据库设计分为以下几个步骤，下面将会详细盘点。
 </p>
@@ -783,9 +783,9 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org76c2eef" class="outline-4">
-<h4 id="org76c2eef">第一步-需求分析</h4>
-<div class="outline-text-4" id="text-org76c2eef">
+<div id="outline-container-orge2f340d" class="outline-4">
+<h4 id="orge2f340d">第一步-需求分析</h4>
+<div class="outline-text-4" id="text-orge2f340d">
 <p>
 目标: 了解、分析客户要求，并且按照一定格式整理为一个需求分析报告，这个报告在后面的结构设计阶段有大大滴用处。
 主要分为四个步骤:
@@ -970,18 +970,18 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org0968be1" class="outline-4">
-<h4 id="org0968be1">第二步-概念结构设计</h4>
-<div class="outline-text-4" id="text-org0968be1">
+<div id="outline-container-org2cbccd0" class="outline-4">
+<h4 id="org2cbccd0">第二步-概念结构设计</h4>
+<div class="outline-text-4" id="text-org2cbccd0">
 <p>
 特点: 不受DBMS限制，纯概念。
 目标: 基于需求分析作最大限度满足应用需求
 </p>
 </div>
 </div>
-<div id="outline-container-orgb4698b9" class="outline-4">
-<h4 id="orgb4698b9">逻辑结构设计</h4>
-<div class="outline-text-4" id="text-orgb4698b9">
+<div id="outline-container-orgb52cba6" class="outline-4">
+<h4 id="orgb52cba6">逻辑结构设计</h4>
+<div class="outline-text-4" id="text-orgb52cba6">
 <p>
 目标: 设计基于概念模型以及为特定DBMS中所支持数据模型的结构。
 逻辑模型的数据模型表示有层次，网状，关系几种。
@@ -1007,94 +1007,94 @@ BNO-&gt;PNAME PNAME-x&gt;BNO PNAME-&gt;PADDRESS</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org7999fea" class="outline-3">
-<h3 id="org7999fea">关系数据库设计方法</h3>
+<div id="outline-container-org727c9eb" class="outline-3">
+<h3 id="org727c9eb">关系数据库设计方法</h3>
 </div>
 </div>
-<div id="outline-container-orge101bad" class="outline-2">
-<h2 id="orge101bad">SQL与关系数据库基本操作</h2>
-<div class="outline-text-2" id="text-orge101bad">
+<div id="outline-container-org8b36803" class="outline-2">
+<h2 id="org8b36803">SQL与关系数据库基本操作</h2>
+<div class="outline-text-2" id="text-org8b36803">
 </div>
-<div id="outline-container-org0a346a5" class="outline-3">
-<h3 id="org0a346a5">SQL概述</h3>
+<div id="outline-container-orge2341c4" class="outline-3">
+<h3 id="orge2341c4">SQL概述</h3>
 </div>
-<div id="outline-container-org5de873f" class="outline-3">
-<h3 id="org5de873f">MySQL预备知识</h3>
+<div id="outline-container-orgd2ef341" class="outline-3">
+<h3 id="orgd2ef341">MySQL预备知识</h3>
 </div>
-<div id="outline-container-orge5bab6f" class="outline-3">
-<h3 id="orge5bab6f">数据定义</h3>
+<div id="outline-container-org1bb33a0" class="outline-3">
+<h3 id="org1bb33a0">数据定义</h3>
 </div>
-<div id="outline-container-org4a65255" class="outline-3">
-<h3 id="org4a65255">数据更新</h3>
+<div id="outline-container-org8a6d3e1" class="outline-3">
+<h3 id="org8a6d3e1">数据更新</h3>
 </div>
-<div id="outline-container-org71ff11b" class="outline-3">
-<h3 id="org71ff11b">数据查询</h3>
+<div id="outline-container-orgb02128f" class="outline-3">
+<h3 id="orgb02128f">数据查询</h3>
 </div>
-<div id="outline-container-orga681264" class="outline-3">
-<h3 id="orga681264">视图</h3>
-</div>
-</div>
-<div id="outline-container-org64b8831" class="outline-2">
-<h2 id="org64b8831">数据库编程</h2>
-<div class="outline-text-2" id="text-org64b8831">
-</div>
-<div id="outline-container-orgbae8890" class="outline-3">
-<h3 id="orgbae8890">存储过程</h3>
-</div>
-<div id="outline-container-org1eef388" class="outline-3">
-<h3 id="org1eef388">存储函数</h3>
+<div id="outline-container-orgcdde88d" class="outline-3">
+<h3 id="orgcdde88d">视图</h3>
 </div>
 </div>
-<div id="outline-container-orga4e5b48" class="outline-2">
-<h2 id="orga4e5b48">数据库安全与保护</h2>
-<div class="outline-text-2" id="text-orga4e5b48">
+<div id="outline-container-org7d0cee4" class="outline-2">
+<h2 id="org7d0cee4">数据库编程</h2>
+<div class="outline-text-2" id="text-org7d0cee4">
 </div>
-<div id="outline-container-org4e1c798" class="outline-3">
-<h3 id="org4e1c798">数据库完整性</h3>
+<div id="outline-container-org0afcdfa" class="outline-3">
+<h3 id="org0afcdfa">存储过程</h3>
 </div>
-<div id="outline-container-orgf82dc24" class="outline-3">
-<h3 id="orgf82dc24">触发器</h3>
-</div>
-<div id="outline-container-orge0ebf23" class="outline-3">
-<h3 id="orge0ebf23">安全性与访问控制</h3>
-</div>
-<div id="outline-container-orga1c5190" class="outline-3">
-<h3 id="orga1c5190">事务与并发控制</h3>
-</div>
-<div id="outline-container-org223edc1" class="outline-3">
-<h3 id="org223edc1">备份与恢复</h3>
+<div id="outline-container-orgf8ff051" class="outline-3">
+<h3 id="orgf8ff051">存储函数</h3>
 </div>
 </div>
-<div id="outline-container-org7fa1e08" class="outline-2">
-<h2 id="org7fa1e08">数据库应用设计与开发实例</h2>
-<div class="outline-text-2" id="text-org7fa1e08">
+<div id="outline-container-orge077436" class="outline-2">
+<h2 id="orge077436">数据库安全与保护</h2>
+<div class="outline-text-2" id="text-orge077436">
 </div>
-<div id="outline-container-orga694d8d" class="outline-3">
-<h3 id="orga694d8d">需求描述与分析</h3>
+<div id="outline-container-orgc2ee905" class="outline-3">
+<h3 id="orgc2ee905">数据库完整性</h3>
 </div>
-<div id="outline-container-org0e0b6e2" class="outline-3">
-<h3 id="org0e0b6e2">系统设计</h3>
+<div id="outline-container-org4e2da02" class="outline-3">
+<h3 id="org4e2da02">触发器</h3>
+</div>
+<div id="outline-container-org9fc5f4c" class="outline-3">
+<h3 id="org9fc5f4c">安全性与访问控制</h3>
+</div>
+<div id="outline-container-orge496793" class="outline-3">
+<h3 id="orge496793">事务与并发控制</h3>
+</div>
+<div id="outline-container-org964c67f" class="outline-3">
+<h3 id="org964c67f">备份与恢复</h3>
 </div>
 </div>
-<div id="outline-container-org5c84ef5" class="outline-2">
-<h2 id="org5c84ef5">数据管理技术的发展</h2>
-<div class="outline-text-2" id="text-org5c84ef5">
+<div id="outline-container-org208bf7f" class="outline-2">
+<h2 id="org208bf7f">数据库应用设计与开发实例</h2>
+<div class="outline-text-2" id="text-org208bf7f">
 </div>
-<div id="outline-container-org31ab769" class="outline-3">
-<h3 id="org31ab769">数据库技术发展概述</h3>
+<div id="outline-container-org4c94a41" class="outline-3">
+<h3 id="org4c94a41">需求描述与分析</h3>
 </div>
-<div id="outline-container-org579f35c" class="outline-3">
-<h3 id="org579f35c">数据仓库与数据挖掘</h3>
+<div id="outline-container-org59785a5" class="outline-3">
+<h3 id="org59785a5">系统设计</h3>
 </div>
-<div id="outline-container-org635c19d" class="outline-3">
-<h3 id="org635c19d">大数据管理技术</h3>
+</div>
+<div id="outline-container-org8033600" class="outline-2">
+<h2 id="org8033600">数据管理技术的发展</h2>
+<div class="outline-text-2" id="text-org8033600">
+</div>
+<div id="outline-container-org84d2048" class="outline-3">
+<h3 id="org84d2048">数据库技术发展概述</h3>
+</div>
+<div id="outline-container-org6ae5a73" class="outline-3">
+<h3 id="org6ae5a73">数据仓库与数据挖掘</h3>
+</div>
+<div id="outline-container-org6ac95ae" class="outline-3">
+<h3 id="org6ac95ae">大数据管理技术</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-22 三 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-10-19 一 16:14</p>
+<p class="date">Created: 2020-10-20 二 02:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

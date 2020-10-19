@@ -47,3 +47,129 @@
    所以就用“紫薯布丁”替代了，其又称为“字数补丁”真是有趣。
 ** 上课时走神看到的陶渊明写的诗句 <2020-10-15 四>                      :life:
    盛年不重来，一日难再晨。及时当勉励，岁月不待人。
+** 丢弃不稳定的xmodmap，转而使用hwdb设置键盘映射 <2020-10-20 二>      :linux:
+   #+begin_quote
+   	xmodmap有个问题，就是只要有软件利用了xmodmap进行设置一些键位，那么你自定义的键位就会失效，例如在打开fcitx后你的xmodmap配置就会被覆盖，你就得重新执行那一条命令，让人十分的苦恼，为了解决这个方法，我看了下JimMoen写的一篇BILIBILI专栏: [[https://www.bilibili.com/read/cv5156572][Linux修改键位]] ，写得非常好，但就是理论知识太多了，像我这种心急的人往往懒得看太多东西，想要快速上手，所以就有这篇文章了。
+   #+end_quote
+
+*** 依赖包
+	* evtest
+	  用于获取大量键盘相关信息
+*** 具体操作
+**** 获取必要信息
+	 第一步，先查看你所需要更改的键盘的键位（利用hwdb支持根据不同设备设置不同的键位 ）。
+	 #+begin_src shell
+	 su - #切换到root用户，不能用sudo
+	 evtest
+	 #+end_src
+
+	 随后就会有一大堆信息，通常来说你只需要找到后缀有keybord的那个设备，例如我的就是第8号(/dev/input/event8):
+	 #+begin_src shell
+	   No device specified, trying to scan all of /dev/input/event*
+	   Available devices:
+	   /dev/input/event0:      AT Translated Set 2 keyboard
+	   /dev/input/event1:      Video Bus
+	   /dev/input/event2:      Compx 2.4G Wireless Receiver
+	   /dev/input/event3:      Compx 2.4G Wireless Receiver Keyboard
+	   /dev/input/event4:      Compx 2.4G Wireless Receiver
+	   /dev/input/event5:      Compx 2.4G Wireless Receiver Consumer Control
+	   /dev/input/event6:      Compx 2.4G Wireless Receiver System Control
+	   /dev/input/event7:      Compx 2.4G Wireless Receiver
+	   /dev/input/event8:      ITE Tech. Inc. ITE Device(8910) Keyboard
+	   /dev/input/event9:      ITE Tech. Inc. ITE Device(8910) Consumer Control
+	   /dev/input/event10:     ITE Tech. Inc. ITE Device(8910) Wireless Radio Control
+	   /dev/input/event11:     ITE Tech. Inc. ITE Device(8910) System Control
+	   /dev/input/event12:     Lid Switch
+	   /dev/input/event13:     Power Button
+	   /dev/input/event14:     Power Button
+	   /dev/input/event15:     Ideapad extra buttons
+	   /dev/input/event16:     PC Speaker
+	   /dev/input/event17:     Integrated Camera: Integrated C
+	   /dev/input/event18:     MSFT0001:02 04F3:304B Mouse
+	   /dev/input/event19:     MSFT0001:02 04F3:304B Touchpad
+	   /dev/input/event20:     HDA Digital PCBeep
+	   /dev/input/event21:     HDA Intel PCH Mic
+	   /dev/input/event22:     HDA Intel PCH Headphone
+	   /dev/input/event23:     HDA Intel PCH HDMI/DP,pcm=3
+	   /dev/input/event24:     HDA Intel PCH HDMI/DP,pcm=7
+	   /dev/input/event25:     HDA Intel PCH HDMI/DP,pcm=8
+	   /dev/input/event26:     HDA Intel PCH HDMI/DP,pcm=9
+	   /dev/input/event27:     HDA Intel PCH HDMI/DP,pcm=10
+	   Select the device event number [0-27]: 
+	 #+end_src
+
+	 选择了之后就会有关于所选设备的信息:
+	 #+begin_src shell
+	   Input driver version is 1.0.1
+	   Input device ID: bus 0x3 vendor 0x48d product 0xc937 version 0x110
+	   Input device name: "ITE Tech. Inc. ITE Device(8910) Keyboard"
+	   Supported events:
+		 Event type 0 (EV_SYN)
+		 Event type 1 (EV_KEY)
+		 Event code 1 (KEY_ESC)
+		 Event code 2 (KEY_1)
+		 ...
+		 Event type 4 (EV_MSC)
+		 Event code 4 (MSC_SCAN)
+		 Event type 17 (EV_LED)
+		 Event code 0 (LED_NUML) state 0
+		 Event code 1 (LED_CAPSL) state 0
+		 Event code 2 (LED_SCROLLL) state 0
+		 Event code 3 (LED_COMPOSE) state 0
+		 Event code 4 (LED_KANA) state 0
+		 Key repeat handling:
+		 Repeat type 20 (EV_REP)
+		 Repeat code 0 (REP_DELAY)
+		 Value    250
+		 Repeat code 1 (REP_PERIOD)
+		 Value     33
+		 Properties:
+	 #+end_src
+
+	 我们只需要关注Input device ID这一项，先记住它。
+	 下面你随便按一个按键就会被按下按键的相关信息。
+	
+	 比如如下信息中就是我按下LEFT ALT获得到的信息:
+	 #+begin_src shell
+	   Event: time 1603130102.353570, -------------- SYN_REPORT ------------
+	   Event: time 1603130102.353570, type 4 (EV_MSC), code 4 (MSC_SCAN), value 700e3
+	   Event: time 1603130102.353570, type 1 (EV_KEY), code 56 (KEY_LEFTALT), value 1
+	   Event: time 1603130102.353570, -------------- SYN_REPORT ------------
+	   Event: time 1603130102.441558, type 4 (EV_MSC), code 4 (MSC_SCAN), value 700e3
+	   Event: time 1603130102.441558, type 1 (EV_KEY), code 56 (KEY_LEFTALT), value 0
+	 #+end_src
+	 每个SYN_REPORT代表一个操作，例如第一个SYN_REPORT代表按下LEFT ALT，因为其type1项的value值是1。我们只需要记住type4项中的value值即可。
+
+**** 编写自定义按键映射
+	 创建文件 **/etc/udev/hwdb.d/99-personal-kbd.hwdb** ，这里的99代表优先级，由于是自定义的所以我们将其设置为最高。
+	 
+	 文件内容如下:
+	 
+	 #+begin_src text
+	   evdev:input:b0003v*
+		KEYBOARD_KEY_700e2=leftmeta	# bind LEFT ALT to SUPER
+	 #+end_src
+	 
+	 **注意KEYBOARD_KEY开头的空格缩进**
+
+	 evdev表示要修改映射的设备，后面跟着的表示匹配设备的相关信息，这里也就是我们前面提到的Input Device ID(bus 0x3 vendor 0x48d product 0xc937 version 0x110)。
+	 由于我不需要多么精准的匹配，因为我只有一个设备，所以我只是精准匹配了bus信息以及贪婪匹配了vendor，其他的我都忽lue(mmp这个输入法很沙比)了。
+	 
+	 **还有一项要注意的是获取必要信息时的bus值是0x3为什么我写的是0003?** 答案是，不够4位用0补齐。
+
+**** 加载配置
+	 执行如下命令即可:
+	 #+begin_src shell
+	   udevadm hwdb --update #更新键盘映射数据库
+	   udevadm trigger # 应用
+	 #+end_src
+	 
+**** 最后
+
+	 本文参考JimMoen的专栏文章，详情请去看这位帅哥的文章。
+
+
+
+	 
+	 
+

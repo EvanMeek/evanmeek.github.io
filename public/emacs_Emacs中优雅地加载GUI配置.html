@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-10-19 一 16:14 -->
+<!-- 2020-10-20 二 02:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs中优雅地加载GUI配置</title>
@@ -22,16 +22,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge67914d">啥是Emacs Daemon?</a></li>
-<li><a href="#org59d1734">如何使用Daemon?</a>
+<li><a href="#org1c32220">啥是Emacs Daemon?</a></li>
+<li><a href="#org1940baf">如何使用Daemon?</a>
 <ul>
-<li><a href="#org011d947">启动SERVER</a></li>
-<li><a href="#orgc5e3b1a">启动CLIENT</a></li>
+<li><a href="#org43b73a5">启动SERVER</a></li>
+<li><a href="#orgdba70cf">启动CLIENT</a></li>
 </ul>
 </li>
-<li><a href="#org0e8de84">Daemon存在的问题</a></li>
-<li><a href="#org5f2165e">解决这个问题!!!</a></li>
-<li><a href="#org407188b">最后</a></li>
+<li><a href="#org5b5627f">Daemon存在的问题</a></li>
+<li><a href="#orgf876081">解决这个问题!!!</a></li>
+<li><a href="#orgb98a8f0">最后</a></li>
 </ul>
 </div>
 </div>
@@ -39,9 +39,9 @@
 大概是一周前，咱为咱的Emacs配置添加了更好的daemon支持，那么下面就简单介绍下吧!
 </p>
 
-<div id="outline-container-orge67914d" class="outline-2">
-<h2 id="orge67914d">啥是Emacs Daemon?</h2>
-<div class="outline-text-2" id="text-orge67914d">
+<div id="outline-container-org1c32220" class="outline-2">
+<h2 id="org1c32220">啥是Emacs Daemon?</h2>
+<div class="outline-text-2" id="text-org1c32220">
 <p>
 汝可以理解成让Emacs变为一种C/S架构，汝可以开机时立刻将Emacs以Daemon模式启动，然后汝只需要使用emacsclient来真正使用Emacs就可以了，它的优势是可以让汝启动emcas非常快速，因为汝的所有配置
 都已经加载过了(启动Daemon时)。
@@ -49,13 +49,13 @@
 </div>
 </div>
 
-<div id="outline-container-org59d1734" class="outline-2">
-<h2 id="org59d1734">如何使用Daemon?</h2>
-<div class="outline-text-2" id="text-org59d1734">
+<div id="outline-container-org1940baf" class="outline-2">
+<h2 id="org1940baf">如何使用Daemon?</h2>
+<div class="outline-text-2" id="text-org1940baf">
 </div>
-<div id="outline-container-org011d947" class="outline-3">
-<h3 id="org011d947">启动SERVER</h3>
-<div class="outline-text-3" id="text-org011d947">
+<div id="outline-container-org43b73a5" class="outline-3">
+<h3 id="org43b73a5">启动SERVER</h3>
+<div class="outline-text-3" id="text-org43b73a5">
 <p>
 键入命令:
 </p>
@@ -70,9 +70,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc5e3b1a" class="outline-3">
-<h3 id="orgc5e3b1a">启动CLIENT</h3>
-<div class="outline-text-3" id="text-orgc5e3b1a">
+<div id="outline-container-orgdba70cf" class="outline-3">
+<h3 id="orgdba70cf">启动CLIENT</h3>
+<div class="outline-text-3" id="text-orgdba70cf">
 <p>
 SERVER启动了之后咱们就可以随时以一种超级快速的方式启动CLIENT了，CLIENT分两种方式，一种是TUI模式和GUI模式，分别对应着字符环境和图形环境的说法。
 </p>
@@ -81,7 +81,7 @@ SERVER启动了之后咱们就可以随时以一种超级快速的方式启动CL
 TUI模式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">emacsclient -t -a <span style="color: #2544bb;">""</span>
+<pre class="src src-shell">emacsclient -t -a <span style="color: #79a8ff;">""</span>
 </pre>
 </div>
 
@@ -89,16 +89,16 @@ TUI模式
 GUI模式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">emacsclient -c -a <span style="color: #2544bb;">""</span>
+<pre class="src src-shell">emacsclient -c -a <span style="color: #79a8ff;">""</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0e8de84" class="outline-2">
-<h2 id="org0e8de84">Daemon存在的问题</h2>
-<div class="outline-text-2" id="text-org0e8de84">
+<div id="outline-container-org5b5627f" class="outline-2">
+<h2 id="org5b5627f">Daemon存在的问题</h2>
+<div class="outline-text-2" id="text-org5b5627f">
 <p>
   经过前面的介绍咱们知道，所有的配置会在启动Daemon时就被加载(如果没有经过处理)。但是当咱们以TUI的方式启动EMACS,那么GUI的配置就显得有些多余了，所以咱们需要为每个GUI配置加一个判断，当当前环境
 是图形环境时再加载，否则就不加载。所以汝可以使用 <b><b>(display-graphic-p)</b></b> 来判断当前环境是否为GUI，然后为每个GUI的配置做单独的判断就可以了。
@@ -119,9 +119,9 @@ GUI模式
 </div>
 </div>
 
-<div id="outline-container-org5f2165e" class="outline-2">
-<h2 id="org5f2165e">解决这个问题!!!</h2>
-<div class="outline-text-2" id="text-org5f2165e">
+<div id="outline-container-orgf876081" class="outline-2">
+<h2 id="orgf876081">解决这个问题!!!</h2>
+<div class="outline-text-2" id="text-orgf876081">
 <p>
 先来梳理梳理问题，目前问题是不好判断Daemon模式时emacsclient是否以图形化的方式启动的，咱冥思苦想(没办法咱太蠢了)，想了个解决方案: Daemon启动时无需判断是否为TUI还是GUI，而那些GUI的配置我们利用
 钩子来加载，这个钩子就是 <b><b>after-make-frame-functions</b></b> ，其作用是当创建了一个frame之后触发一些事，而TUI模式下正好是无法make一个frame的，而emacsclient以GUI模式启动时会触发这个hook，那就
@@ -129,7 +129,7 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #145c33;">(</span><span style="color: #5317ac;">setq</span> graphic-only-plugins-setting <span style="color: #5317ac;">()</span><span style="color: #145c33;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #00cd68;">(</span><span style="color: #b6a0ff;">setq</span> graphic-only-plugins-setting <span style="color: #b6a0ff;">()</span><span style="color: #00cd68;">)</span>
 </pre>
 </div>
 
@@ -138,11 +138,11 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #505050;">;; </span><span style="color: #505050;">Emacs&#19979;&#30340;pdf&#26597;&#30475;&#24037;&#20855;&#65292;&#40664;&#35748;&#38750;&#22270;&#24418;&#21270;&#19981;&#24320;&#21551;</span>
-<span style="color: #145c33;">(</span><span style="color: #5317ac;">push</span> '<span style="color: #5317ac;">(</span><span style="color: #5317ac;">use-package</span> 
+<pre class="src src-emacs-lisp"><span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">Emacs&#19979;&#30340;pdf&#26597;&#30475;&#24037;&#20855;&#65292;&#40664;&#35748;&#38750;&#22270;&#24418;&#21270;&#19981;&#24320;&#21551;</span>
+<span style="color: #00cd68;">(</span><span style="color: #b6a0ff;">push</span> '<span style="color: #b6a0ff;">(</span><span style="color: #b6a0ff;">use-package</span> 
          pdf-tools 
-         <span style="color: #8f0075;">:ensure</span> t 
-         <span style="color: #8f0075;">:hook</span> <span style="color: #005a5f;">(</span>'doc-view-mode 'pdf-view-mode<span style="color: #005a5f;">)</span><span style="color: #5317ac;">)</span> <span style="color: #702d1f;">graphic-only-plugins-setting</span><span style="color: #145c33;">)</span>
+         <span style="color: #f78fe7;">:ensure</span> t 
+         <span style="color: #f78fe7;">:hook</span> <span style="color: #6ae4b9;">(</span>'doc-view-mode 'pdf-view-mode<span style="color: #6ae4b9;">)</span><span style="color: #b6a0ff;">)</span> <span style="color: #dbbe5f;">graphic-only-plugins-setting</span><span style="color: #00cd68;">)</span>
 </pre>
 </div>
 
@@ -151,19 +151,19 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #145c33;">(</span><span style="color: #5317ac;">defun</span> <span style="color: #721045;">graphic-p</span> <span style="color: #5317ac;">()</span>
-  <span style="color: #093060;">"&#21028;&#26029;&#24403;&#21069;&#29615;&#22659;&#26159;&#21542;&#20026;&#22270;&#24418;&#29615;&#22659;"</span>
-  <span style="color: #5317ac;">(</span><span style="color: #5317ac;">if</span> <span style="color: #005a5f;">(</span>display-graphic-p<span style="color: #005a5f;">)</span>
-      t<span style="color: #5317ac;">)</span><span style="color: #145c33;">)</span>
-<span style="color: #505050;">;; </span><span style="color: #505050;">&#22270;&#24418;&#21270;&#25554;&#20214;&#29305;&#27530;&#35774;&#32622;</span>
-<span style="color: #145c33;">(</span><span style="color: #5317ac;">if</span> <span style="color: #5317ac;">(</span>not <span style="color: #005a5f;">(</span>graphic-p<span style="color: #005a5f;">)</span><span style="color: #5317ac;">)</span>
-    <span style="color: #5317ac;">(</span>add-hook 'after-make-frame-functions
-              <span style="color: #005a5f;">(</span><span style="color: #5317ac;">lambda</span> <span style="color: #863927;">(</span>new-frame<span style="color: #863927;">)</span>
-                <span style="color: #863927;">(</span>select-frame new-frame<span style="color: #863927;">)</span>
-                <span style="color: #863927;">(</span><span style="color: #5317ac;">dolist</span> <span style="color: #0000c0;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #0000c0;">)</span>
-                  <span style="color: #0000c0;">(</span>eval elisp-code<span style="color: #0000c0;">)</span><span style="color: #863927;">)</span><span style="color: #005a5f;">)</span><span style="color: #5317ac;">)</span>
-  <span style="color: #5317ac;">(</span><span style="color: #5317ac;">dolist</span> <span style="color: #005a5f;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #005a5f;">)</span>
-    <span style="color: #005a5f;">(</span>eval elisp-code<span style="color: #005a5f;">)</span><span style="color: #5317ac;">)</span><span style="color: #145c33;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #00cd68;">(</span><span style="color: #b6a0ff;">defun</span> <span style="color: #feacd0;">graphic-p</span> <span style="color: #b6a0ff;">()</span>
+  <span style="color: #c6eaff;">"&#21028;&#26029;&#24403;&#21069;&#29615;&#22659;&#26159;&#21542;&#20026;&#22270;&#24418;&#29615;&#22659;"</span>
+  <span style="color: #b6a0ff;">(</span><span style="color: #b6a0ff;">if</span> <span style="color: #6ae4b9;">(</span>display-graphic-p<span style="color: #6ae4b9;">)</span>
+      t<span style="color: #b6a0ff;">)</span><span style="color: #00cd68;">)</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#22270;&#24418;&#21270;&#25554;&#20214;&#29305;&#27530;&#35774;&#32622;</span>
+<span style="color: #00cd68;">(</span><span style="color: #b6a0ff;">if</span> <span style="color: #b6a0ff;">(</span>not <span style="color: #6ae4b9;">(</span>graphic-p<span style="color: #6ae4b9;">)</span><span style="color: #b6a0ff;">)</span>
+    <span style="color: #b6a0ff;">(</span>add-hook 'after-make-frame-functions
+              <span style="color: #6ae4b9;">(</span><span style="color: #b6a0ff;">lambda</span> <span style="color: #f0ce43;">(</span>new-frame<span style="color: #f0ce43;">)</span>
+                <span style="color: #f0ce43;">(</span>select-frame new-frame<span style="color: #f0ce43;">)</span>
+                <span style="color: #f0ce43;">(</span><span style="color: #b6a0ff;">dolist</span> <span style="color: #00bcff;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #00bcff;">)</span>
+                  <span style="color: #00bcff;">(</span>eval elisp-code<span style="color: #00bcff;">)</span><span style="color: #f0ce43;">)</span><span style="color: #6ae4b9;">)</span><span style="color: #b6a0ff;">)</span>
+  <span style="color: #b6a0ff;">(</span><span style="color: #b6a0ff;">dolist</span> <span style="color: #6ae4b9;">(</span>elisp-code graphic-only-plugins-setting<span style="color: #6ae4b9;">)</span>
+    <span style="color: #6ae4b9;">(</span>eval elisp-code<span style="color: #6ae4b9;">)</span><span style="color: #b6a0ff;">)</span><span style="color: #00cd68;">)</span>
 </pre>
 </div>
 
@@ -172,9 +172,9 @@ GUI模式
 </p>
 </div>
 </div>
-<div id="outline-container-org407188b" class="outline-2">
-<h2 id="org407188b">最后</h2>
-<div class="outline-text-2" id="text-org407188b">
+<div id="outline-container-orgb98a8f0" class="outline-2">
+<h2 id="orgb98a8f0">最后</h2>
+<div class="outline-text-2" id="text-orgb98a8f0">
 <p>
 希望能帮到汝，Emacs很强大，多谢汝喜欢她！
 </p>
@@ -196,7 +196,7 @@ GUI模式
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-17 五 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-10-19 一 16:14</p>
+<p class="date">Created: 2020-10-20 二 02:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
