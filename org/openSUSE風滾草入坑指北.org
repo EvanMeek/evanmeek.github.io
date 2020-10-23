@@ -1,0 +1,58 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-09-19 六>
+#+TITLE: openSUSE風滾草入坑指北!
+
+#+begin_quote
+本文章僅針對於風滾草版本。
+#+end_quote
+
+* 獲取ISO鏡像
+  清華源風滾草DVD安裝鏡像: [[https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso][點我下載]]
+* 安裝過程
+  安裝過程直接省略，因爲本身openSUSE的安裝程序的引導性就不錯了。
+* 添加必要源-視頻解碼器
+  * packman源
+	
+  packman源即第三方源，其包含了大量的軟件，類似ArchLinux的ArchlinuxCN源。
+	=https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Tumbleweed/=
+
+  * 多媒體解碼器
+	
+  由於版權問題，openSUSE默認不自帶視頻解碼器，所以必須安裝以下包才能讓視頻等內容正常使用。
+	#+begin_src shell
+	zypper install --allow-vendor-change ffmpeg lame gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-ugly-orig-addon gstreamer-plugins-libav libavdevice56 libavdevice58 libdvdcss2 vlc-codecs
+	#+end_src
+
+* 一些有用的包
+** obs源下載工具
+   #+begin_src shell
+   zypper install opi
+   #+end_src
+
+** fcitx5
+   #+begin_src shell
+   # 添加M17N倉庫，此命令的M17N代表這個倉庫的別名
+   zypper addrepo https://download.opensuse.org/repositories/M17N/openSUSE_Tumbleweed/ M17N
+   # 卸載fcitx相關包，*代表貪婪匹配，意味着所有fcitx前綴包名的包都會被刪除。
+   zypper remove "fcitx*"
+   # 安裝fcitx5
+   zypper install fcitx5 fcitx5-chinese-addons fcitx5-chinese-addons-devel fcitx5-configtool fcitx5-gtk2 fcitx5-qt-devel fcitx5-qt5 fcitx5-rime
+   #+end_src
+
+** QV2ray
+
+   #+begin_src shell
+   opi qv2ray
+   #+end_src
+
+** 網易云音樂
+   
+   #+begin_src shell
+   opi netease-cloud-music
+   #+end_src
+
+** Emacs
+
+   #+begin_src shell
+   zypper in emacs
+   #+end_src
