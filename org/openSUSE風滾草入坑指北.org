@@ -13,7 +13,12 @@
 * 添加必要源-視頻解碼器
   * packman源
 	
+  #+begin_quote
   packman源即第三方源，其包含了大量的軟件，類似ArchLinux的ArchlinuxCN源。
+  #+end_quote
+  
+  根據openSUSE中國 tg群組的小夥伴提醒，packman是收錄有版權爭議&&可自由分發的軟件的社區軟件源，也是並不是AUR或ArchlinuxCN源
+
 	=https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Tumbleweed/=
 
   * 多媒體解碼器
@@ -25,7 +30,7 @@
 
 * 一些有用的包
 ** obs源下載工具
-   #+begin_src shell
+   #+begin_src shellxo
    zypper install opi
    #+end_src
 
