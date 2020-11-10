@@ -45,7 +45,7 @@
    #+end_src
 
 ** QV2ray
-
+@
    #+begin_src shell
    opi qv2ray
    #+end_src

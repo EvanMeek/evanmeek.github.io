@@ -1,0 +1,419 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-11-04 三>
+#+TITLE: html5简明总结
+
+* 前言
+  本人几次尝试学习html5但最终都放弃了，这次想要完整学习一下，顺便用自己的话总结每个标签的常用场景。
+* 基本结构
+** 基本结构
+   HTML文件后缀为 ~.html~ ，下面是一个简洁的基本框架。
+   #+begin_src web
+	 <!DOCTYPE html5> <!-- html5 声明头，如果没有5则会识别为4 -->
+	 <html lang="zh-cn"> <!-- 最外层的框架，所有HTML标签都是此标签的子标签。 -->
+		 <head></head> <!-- 头部区域，存放此文件的相关信息和设置 -->
+		 <body></body> <!-- 主体区域，html文件的主体，几乎所有内容都在此标签内呈现 -->
+	 </html> <!-- 结束标签，大部分标签都有结束标签，部分标签可省略结束标签 -->
+   #+end_src
+** 头部区域
+   #+begin_src web
+	 <html>
+		 <head>
+			 <meta charset="utf-8"/> <!-- 元数据标签，charset代表其属性，意思是设置了此html5的文件编码 -->
+			 <meta name="description" content="HTML5简明总结" /> <!-- 同元数据标签，name属性主要面向搜索引擎，搜索引擎根据此属性的值对此网页进行分类-->
+		 </head>
+	 </html>
+   #+end_src
+** 主体区域
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>最简单的标签之一</p> <!-- p标签-段落标签，其特点是自带隔行样式（其内容会独占一行），这些标签是主要的内容，所以要放在body标签内。 -->
+		 </body>
+	 </html>
+   #+end_src
+** 标签形式
+   前面看到的没有结束标签的标签称为单标签，而有结束标签的标签称为双标签。
+   #+begin_quote
+	部分浏览器会对你错误的写法（把单标签写成双标签）进行自动修复。
+   #+end_quote
+** 标签属性
+   前面看到的meta标签的charset属性就是标签的属性，其作用是为标签功能的补充。
+** 严格类型
+   不同浏览器有不同的严格机制，这个严格意味着就算你将一些标签的语法写错，但由于浏览器的智能，仍然能正常解析。
+   #+begin_quote
+   这个机制到底是好是坏呢？谁都有自己的道理，我更愿意站严格的那一派，因为中国有句老话，无规矩则不成方圆。
+   但其实挺无奈的，因为世界上不止一家做浏览器的公司，每个公司的浏览器内核实现都不同，所以其渲染引擎也不同，想要做到相同太困难了。
+   #+end_quote
+** 代码注释
+   代码注释是不会被浏览器解析的，所以如果你要标注一些信息，你就可以在源码内插入一些代码注释，就像这样:
+   #+begin_src web
+	 <html>	<!-- 最简单的网页 -->
+		 <head>
+			 <title>
+				 Easy Web
+			 </title>
+		 </head>
+		 <body>
+			 <p>
+				 So Easy
+			 </p>
+		 </body>
+	 </html>
+   #+end_src
+* 文本和语义
+** 文本标签
+   html5为文本提供了一些特有的标签，这些标签都自带一些样式，方便开发者直接使用，例如:
+   #+begin_src web
+	 <<html>
+		 <body>
+			 <p>我段落标签，我独占一行，没有人能靠近我，除非你修改我的样式</p>
+			 <span>我没啥用，我是个废物，但我又是个工具人，CSS偶尔会用到我</span>
+			 <br/> <!-- 加上我就会换一行，就跟那些真正叫做编程语言的格式化字符串中的\n一样呢！ -->
+			 <strong>
+				 我是加粗标签，不信你看这句话。
+			 </strong>
+			 <em>
+				 我是斜体标签，不信你看这句话。
+			 </em>
+			 <del>
+				 我是删除线标签，不信你看这句话
+			 </del>
+			 <hr/> <!-- 我是水平线，加上我就会有一条很长的线 -->
+		 </body>
+	 </html>
+   #+end_src
+** 标题组
+   html5还提供了一些标题标签，他们每个的字体大小不同。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <h1>标题</h1>
+			 <h2>标题</h2>
+			 <h3>标题</h3>
+			 <h4>标题</h4>
+			 <h5>标题</h5>
+			 <h6>标题</h6>
+		 </body>
+	 </html>
+   #+end_src
+** 语义化
+   前端技术发展至今，由于html的标签只是自带一些样式的标记罢了，所以开发者在编写时常常会修改其默认的样式，由于这个原因，大家更偏向万物设计均使用 ~div~ 标签，然后在对其进行CSS修改成想要的效果，其缺点就是可读性极差，所以HTML5就为大量的标签进行了修改，让其更具有语义性，例如原本html4中的 ~b~ 标签是加粗，但它并没有起到具有语义的作用，所以就改为 ~strong~ 标签了。
+* 布局标签
+  html5提供了一些用于布局的标签，其没有实际的样式，仅作为语义和布局标记。
+  #+begin_src web
+	<html>
+		<body>
+			<!-- 以下样式均无实际样式，仅作语义 -->
+			<header>头部</header>
+			<aside>侧边栏</aside>
+			<section>主题</section>
+			<footer>页脚</footer>
+		</body>
+	</html>
+  #+end_src
+* 列表
+  #+begin_src web
+	<html>
+		<body>
+			<p>以下是无序列表</p>
+			<ul>
+				<li>苹果</li>
+				<li>草莓</li>
+				<li>葡萄</li>
+				<li>西瓜</li>
+			</ul>
+			<p>以下是有序列表</p>
+			<ol>
+				<li>one</li>
+				<li>two</li>
+				<li>three</li>
+				<li>four</li>
+			</ol>
+		</body>
+	</html>
+  #+end_src
+* 组合
+** 文本组合
+  #+begin_src web
+	<html>
+		<body>
+			<p>以下是文本组合</p>
+			<dl>
+				<dt>标题</dt>
+				<dd>内容</dd>
+				<dd>内容</dd>
+			</dl>
+		</body>
+	</html>
+  #+end_src
+** 图文组合
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是图文组合</p>
+			 <figure>
+				 <img src="https://www.jmjc.tech/public/home/img/flower.png"/>
+				 <figcaption>花朵</figcaption>
+			 </figure>
+		 </body>
+	 </html>
+   #+end_src
+* 表格
+** 基本格式
+   html5提供了用于制作表格的标签，其结构跟前面提到的组合有些类似。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是表格</p>
+			 <!-- tr=行数 | th=标题列 | td=普通列 -->
+			 <table border="1">
+				 <tr>
+					 <th>性别</th>
+					 <th>年龄</th>
+				 </tr>
+				 <tr>
+					 <td>男</td>
+					 <td>女</td>
+				 </tr>
+				 <tr>
+					 <td>21</td>
+					 <td>35</td>
+				 </tr>
+			 </table>
+		 </body>
+	 </html>
+   #+end_src
+** 列合并
+   如果想要对表格的特定行进行合并操作可以指定其 ~colspan~ 属性
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是表格</p>
+			 <!-- tr=行数 | th 标题列 | td=普通列 -->
+			 <table border="1">
+				 <tr>
+					 <!-- colspan指定当前行所需合并的列数 -->
+					 <th colspan="2">数字</th>
+				 </tr>
+				 <tr>
+						 <td>233</td>
+						 <td>666</td>
+				 </tr>
+			 </table>
+		 </body>
+	 </html>
+   #+end_src
+** 行合并
+   又如何想要对表格特定列进行合并操作可以指定 ~rowspan~ 属性
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是表格</p>
+			 <!-- tr=行数 | th 标题列 | td=普通列 -->
+			 <table border="1">
+				 <tr>
+					 <!-- rowspan指定当前行所需合并的行数 -->
+					 <td rowspan="">数字</th>
+					 <td>233</td>
+				 </tr>
+				 <tr>
+					 <td>666</td>
+				 </tr>
+			 </table>
+		 </body>
+	 </html>
+
+   #+end_src
+* 链接
+** 最简单的链接
+   链接作为网站资源的跳转链接，例如一个链接可以指定一张图片，一个网页等。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是链接</p>
+			 <!-- href属性代表其指向的资源，我这里是指向了一个网站。 -->
+			 <!-- target属性代表点击后的操作方式，这里是从新页面打开资源。 -->
+			 <a href="https://evanmeek.github.io" target="_blank">我不会编程的博客</a>
+		 </body>
+	 </html>
+   #+end_src
+** 路径
+   路径分为相对路径和绝对路径。
+   * 相对路径
+	 即当前网页所在位置的路径
+   * 绝对路径
+	 即当前操作系统根所在位置的路径
+* 图片
+** 最简单的加载图片
+   网页的基本元素就是图片和内容，图片可以通过如下方式加载。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是图片</p>
+			 <!-- src=图片路径(相对/绝对路径或网络资源) width=宽度 height=高度 -->
+			 <img src="https://www.jmjc.tech/public/home/img/fly.jpg"/>
+		 </body>
+	 </html>
+   #+end_src
+** 定位点击图片的位置
+   可以通过设置ismap属性将用户点击图片的位置捕获。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是捕获图片位置，请点击图片</p>
+			 <a href="https://www.baidu.com">
+				 <img src="https://www.jmjc.tech/public/home/img/flower.png" alt="请点击我" ismap/>
+			 </a>
+		 </body>
+	 </html>
+   #+end_src
+   点击后注意观察地址栏是否存在 ?X/Y的数据，这就是捕获到的点击图片的坐标。
+** 映射链接到图片的指定区域
+   这是一个骚操作，也体现了HTML5的强大，我们可以将一个链接映射到图片的指定区域，从而实现点击图片指定区域替跳转至指定链接资源。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是映射图片，请点击图片中心</p>
+			 <!-- 使用usemap属性指定需要使用映射 -->
+			 <img src="https://www.jmjc.tech/public/home/img/flower.png" alt="点击我的中心" usemap="#flower" />
+			 <!-- 创建映射区域 -->
+			 <map name="flower">
+				 <!-- 使用area标签创建指定映射位置，可有多个area标签 -->
+				 <!-- coords指定映射坐标 -->
+				 <!-- href指定映射资源 -->
+				 <area shape="rect" coords="35,35,60,60" href="https://www.jmjc.tech/public/home/img/fly.jpg" target="_blank"/>
+			 </map>
+		 </body>
+	 </html>
+   #+end_src
+* 表单
+** 基本表单控件
+   表单是HTML十分重要的控件，其主要功能是用户通过表单填入输入，并且通过提交表单将其数据从而于服务器进行通信。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是一个表单</p>
+			 <form method="POST" action="">
+				 <!-- 文本框 -->
+				 <input type="text"/>
+				 <!-- 密码框 -->
+				 <input type="password"/>
+				 <!-- 隐藏框 -->
+				 <input type="hidden"/>
+				 <!-- 数字框 -->
+				 <input type="number"/>
+				 <!-- 日期控件 -->
+				 <input type="date"/>
+				 <!-- 多选框 | 多个多选框控件通过name属性进行分组 -->
+				 <input type="checkbox" name="type1" />
+				 <input type="checkbox" name="type1" />
+				 <input type="checkbox" name="type2" />
+				 <input type="checkbox" name="type2" />
+				 <!-- 单选框 | 多个单选框控件通过name属性进行分组 -->
+				 男 <input type="radio" name="sex" />
+				 女 <input type="radio" name="sex" />
+				 <!-- 多行文本框 | cols 宽 rows 高-->
+				 <textarea rows="2" cols="20"></textarea>
+				 <!-- 下拉选择框 -->
+				 <select name="num">
+					 <option value="">one</option>
+					 <option value="">two</option>
+					 <option value="">three</option>
+				 </select>
+				 <!-- 文件上传控件 | accpet=文件类型限制 -->
+				 <input type="file" accpet="image/gif, image/jpeg, image/png" />
+				 <!-- 范围控件 -->
+				 <input type="range" min="1" max="100"/>
+				 <!-- 颜色控件 -->
+				 <input type="color"/>
+				 <!-- 表单提交 -->
+				 <input type="submit" value="提交" />
+				 <!-- 表单重置 -->
+				 <input type="reset" value="重置" />
+				 <!-- 普通按钮 -->
+				 <button type="button">普通按钮</button>
+			 </form>
+		 </body>
+	 </html>
+   #+end_src
+** 表单控件属性
+   控件属性用来控制控件的行为或标记或值。
+   #+begin_src web
+	 <html>
+		 <body>
+			 <p>以下是多个控件的属性</p>
+			 <!-- name=指定控件的名称，用于标记控件  -->
+			 <input type="text" name="user" />
+			 <!-- value=指定控件的默认值 -->
+			 <input type="text" name="user" value="用户名" />
+			 <!-- 焦点于控件时的提示 -->
+			 <input type="text" placeholder="请输入用户名" />
+			 <!-- 下拉列表的提示 -->
+			 <input type="text" name="someone" value="zhou" />
+			 <datalist id="zhou">
+				 <option value="周杰伦">周杰伦</option>
+				 <option value="周大福">周大福</option>
+				 <option value="周某">周某</option>
+			 </datalist>
+			 <!-- 设置控件内容最大长度 -->
+			 <input type="text" maxlength="12" />
+			 <!-- 设置控件大小 -->
+			 <input type="text" size="5" />
+			 <!-- required表示必填 -->
+			 <input type="text" required />
+			 <!-- readonly只读 -->
+			 <input type="text" readonly />
+			 <!-- disabled禁用控件 -->
+			 <input type="text" disabled />
+			 <!-- pattern正则校验 -->
+			 <input type="text" pattern="[0-9]" />
+		 </body>
+	 </html>
+   #+end_src
+* 框架   
+  框架可以让一个页面内嵌入另一个页面。
+  #+begin_src web
+    <iframe src="https://www.baidu.com/" width="600" height="500" name="flag"></iframe>
+  #+end_src
+
+  链接到框架
+
+  通过 ~iframe~ 标签设置的name属性值，可以将 ~a~ 标签的目标与其映射。
+  
+  #+begin_src web
+  <a href="httsp://www.baidu.com" target="flag">百度</a>
+  #+end_src
+* 进度条
+  进度条是HTML5的新特性，凡是HTML5新特性IE9或以下版本的浏览器都不支持。
+** progress式进度条
+   #+begin_src web
+     <progress value="30" max="100"></progress>
+   #+end_src
+** meter式进度条
+   meter式进度条相比progress具有更多的可自定义性。
+   #+begin_src web
+     <meter value="100" min="0" low="100" high="200" max="300" optimum="200"></meter>
+   #+end_src
+* 多媒体
+  HTML5定义了新的多媒体文件载入方式。
+** 音频
+   #+begin_src web
+     <!-- src=路径 controls=是否显示控件 loop=是否循环 autoplay=是否自动播放 preload=是否预加载-->
+     <audio src="path/to/audio" controls="controls" loop="loop" preload autoplay></audio>
+   #+end_src
+** 视频
+   #+begin_src web
+     <!--
+          src 视频文件路径
+          poster 视频背景图片
+          controls 显示控件
+          width 宽度
+          height 高度
+          loop 循环播放
+          autoplay 自动播放
+          preload 预加载
+          muted 静音
+     -->
+     <video src="path/to/video" poster="path/to/video-background-picture" controls="controls" width="600" height="600" loop="loop" autoplay preload muted></video>
+   #+end_src
+   
