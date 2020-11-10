@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-11-10 二 15:31 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>html5简明总结</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">html5简明总结</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd849bdd">前言</a></li>
+<li><a href="#orgbd3ddc9">基本结构</a>
+<ul>
+<li><a href="#orgff3a6e5">基本结构</a></li>
+<li><a href="#org9edfaea">头部区域</a></li>
+<li><a href="#orgc4c342e">主体区域</a></li>
+<li><a href="#orgef5c885">标签形式</a></li>
+<li><a href="#org9e7ee7f">标签属性</a></li>
+<li><a href="#orgd6b24a2">严格类型</a></li>
+<li><a href="#org2e99ab8">代码注释</a></li>
+</ul>
+</li>
+<li><a href="#org19de078">文本和语义</a>
+<ul>
+<li><a href="#org897e0bf">文本标签</a></li>
+<li><a href="#orgb43cb36">标题组</a></li>
+<li><a href="#orgf6f3684">语义化</a></li>
+</ul>
+</li>
+<li><a href="#orgd409fa1">布局标签</a></li>
+<li><a href="#org30a1658">列表</a></li>
+<li><a href="#org848f5f9">组合</a>
+<ul>
+<li><a href="#orgbf22dd3">文本组合</a></li>
+<li><a href="#org07a3190">图文组合</a></li>
+</ul>
+</li>
+<li><a href="#org0d0dccf">表格</a>
+<ul>
+<li><a href="#orge27531e">基本格式</a></li>
+<li><a href="#orgde0937d">列合并</a></li>
+<li><a href="#org64fe546">行合并</a></li>
+</ul>
+</li>
+<li><a href="#orgb0ff274">链接</a>
+<ul>
+<li><a href="#orgc68e83c">最简单的链接</a></li>
+<li><a href="#org9f55a57">路径</a></li>
+</ul>
+</li>
+<li><a href="#org93e4208">图片</a>
+<ul>
+<li><a href="#orgd6652d4">最简单的加载图片</a></li>
+<li><a href="#orgc68ee1b">定位点击图片的位置</a></li>
+<li><a href="#org8ae8fa0">映射链接到图片的指定区域</a></li>
+</ul>
+</li>
+<li><a href="#org8e6a91c">表单</a>
+<ul>
+<li><a href="#org8b79527">基本表单控件</a></li>
+<li><a href="#orgb504820">表单控件属性</a></li>
+</ul>
+</li>
+<li><a href="#org327aae6">框架</a></li>
+<li><a href="#org220c6be">进度条</a>
+<ul>
+<li><a href="#org475b5cf">progress式进度条</a></li>
+<li><a href="#orgbee50e8">meter式进度条</a></li>
+</ul>
+</li>
+<li><a href="#org78bb2bb">多媒体</a>
+<ul>
+<li><a href="#orgb8012ae">音频</a></li>
+<li><a href="#org87cf3ce">视频</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd849bdd" class="outline-2">
+<h2 id="orgd849bdd">前言</h2>
+<div class="outline-text-2" id="text-orgd849bdd">
+<p>
+本人几次尝试学习html5但最终都放弃了，这次想要完整学习一下，顺便用自己的话总结每个标签的常用场景。
+</p>
+</div>
+</div>
+<div id="outline-container-orgbd3ddc9" class="outline-2">
+<h2 id="orgbd3ddc9">基本结构</h2>
+<div class="outline-text-2" id="text-orgbd3ddc9">
+</div>
+<div id="outline-container-orgff3a6e5" class="outline-3">
+<h3 id="orgff3a6e5">基本结构</h3>
+<div class="outline-text-3" id="text-orgff3a6e5">
+<p>
+HTML文件后缀为 <code>.html</code> ，下面是一个简洁的基本框架。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;!DOCTYPE html5&gt; &lt;!-- html5 &#22768;&#26126;&#22836;&#65292;&#22914;&#26524;&#27809;&#26377;5&#21017;&#20250;&#35782;&#21035;&#20026;4 --&gt;
+&lt;html lang="zh-cn"&gt; &lt;!-- &#26368;&#22806;&#23618;&#30340;&#26694;&#26550;&#65292;&#25152;&#26377;HTML&#26631;&#31614;&#37117;&#26159;&#27492;&#26631;&#31614;&#30340;&#23376;&#26631;&#31614;&#12290; --&gt;
+    &lt;head&gt;&lt;/head&gt; &lt;!-- &#22836;&#37096;&#21306;&#22495;&#65292;&#23384;&#25918;&#27492;&#25991;&#20214;&#30340;&#30456;&#20851;&#20449;&#24687;&#21644;&#35774;&#32622; --&gt;
+    &lt;body&gt;&lt;/body&gt; &lt;!-- &#20027;&#20307;&#21306;&#22495;&#65292;html&#25991;&#20214;&#30340;&#20027;&#20307;&#65292;&#20960;&#20046;&#25152;&#26377;&#20869;&#23481;&#37117;&#22312;&#27492;&#26631;&#31614;&#20869;&#21576;&#29616; --&gt;
+&lt;/html&gt; &lt;!-- &#32467;&#26463;&#26631;&#31614;&#65292;&#22823;&#37096;&#20998;&#26631;&#31614;&#37117;&#26377;&#32467;&#26463;&#26631;&#31614;&#65292;&#37096;&#20998;&#26631;&#31614;&#21487;&#30465;&#30053;&#32467;&#26463;&#26631;&#31614; --&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9edfaea" class="outline-3">
+<h3 id="org9edfaea">头部区域</h3>
+<div class="outline-text-3" id="text-org9edfaea">
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"/&gt; &lt;!-- &#20803;&#25968;&#25454;&#26631;&#31614;&#65292;charset&#20195;&#34920;&#20854;&#23646;&#24615;&#65292;&#24847;&#24605;&#26159;&#35774;&#32622;&#20102;&#27492;html5&#30340;&#25991;&#20214;&#32534;&#30721; --&gt;
+        &lt;meta name="description" content="HTML5&#31616;&#26126;&#24635;&#32467;" /&gt; &lt;!-- &#21516;&#20803;&#25968;&#25454;&#26631;&#31614;&#65292;name&#23646;&#24615;&#20027;&#35201;&#38754;&#21521;&#25628;&#32034;&#24341;&#25806;&#65292;&#25628;&#32034;&#24341;&#25806;&#26681;&#25454;&#27492;&#23646;&#24615;&#30340;&#20540;&#23545;&#27492;&#32593;&#39029;&#36827;&#34892;&#20998;&#31867;--&gt;
+    &lt;/head&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4c342e" class="outline-3">
+<h3 id="orgc4c342e">主体区域</h3>
+<div class="outline-text-3" id="text-orgc4c342e">
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#26368;&#31616;&#21333;&#30340;&#26631;&#31614;&#20043;&#19968;&lt;/p&gt; &lt;!-- p&#26631;&#31614;-&#27573;&#33853;&#26631;&#31614;&#65292;&#20854;&#29305;&#28857;&#26159;&#33258;&#24102;&#38548;&#34892;&#26679;&#24335;<span style="color: #5A5E65;">&#65288;</span>&#20854;&#20869;&#23481;&#20250;&#29420;&#21344;&#19968;&#34892;<span style="color: #5A5E65;">&#65289;</span>&#65292;&#36825;&#20123;&#26631;&#31614;&#26159;&#20027;&#35201;&#30340;&#20869;&#23481;&#65292;&#25152;&#20197;&#35201;&#25918;&#22312;body&#26631;&#31614;&#20869;&#12290; --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef5c885" class="outline-3">
+<h3 id="orgef5c885">标签形式</h3>
+<div class="outline-text-3" id="text-orgef5c885">
+<p>
+前面看到的没有结束标签的标签称为单标签，而有结束标签的标签称为双标签。
+</p>
+<blockquote>
+<p>
+部分浏览器会对你错误的写法（把单标签写成双标签）进行自动修复。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org9e7ee7f" class="outline-3">
+<h3 id="org9e7ee7f">标签属性</h3>
+<div class="outline-text-3" id="text-org9e7ee7f">
+<p>
+前面看到的meta标签的charset属性就是标签的属性，其作用是为标签功能的补充。
+</p>
+</div>
+</div>
+<div id="outline-container-orgd6b24a2" class="outline-3">
+<h3 id="orgd6b24a2">严格类型</h3>
+<div class="outline-text-3" id="text-orgd6b24a2">
+<p>
+不同浏览器有不同的严格机制，这个严格意味着就算你将一些标签的语法写错，但由于浏览器的智能，仍然能正常解析。
+</p>
+<blockquote>
+<p>
+这个机制到底是好是坏呢？谁都有自己的道理，我更愿意站严格的那一派，因为中国有句老话，无规矩则不成方圆。
+但其实挺无奈的，因为世界上不止一家做浏览器的公司，每个公司的浏览器内核实现都不同，所以其渲染引擎也不同，想要做到相同太困难了。
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org2e99ab8" class="outline-3">
+<h3 id="org2e99ab8">代码注释</h3>
+<div class="outline-text-3" id="text-org2e99ab8">
+<p>
+代码注释是不会被浏览器解析的，所以如果你要标注一些信息，你就可以在源码内插入一些代码注释，就像这样:
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;  &lt;!-- &#26368;&#31616;&#21333;&#30340;&#32593;&#39029; --&gt;
+    &lt;head&gt;
+        &lt;title&gt;
+            Easy Web
+        &lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            So Easy
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org19de078" class="outline-2">
+<h2 id="org19de078">文本和语义</h2>
+<div class="outline-text-2" id="text-org19de078">
+</div>
+<div id="outline-container-org897e0bf" class="outline-3">
+<h3 id="org897e0bf">文本标签</h3>
+<div class="outline-text-3" id="text-org897e0bf">
+<p>
+html5为文本提供了一些特有的标签，这些标签都自带一些样式，方便开发者直接使用，例如:
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#25105;&#27573;&#33853;&#26631;&#31614;&#65292;&#25105;&#29420;&#21344;&#19968;&#34892;&#65292;&#27809;&#26377;&#20154;&#33021;&#38752;&#36817;&#25105;&#65292;&#38500;&#38750;&#20320;&#20462;&#25913;&#25105;&#30340;&#26679;&#24335;&lt;/p&gt;
+        &lt;span&gt;&#25105;&#27809;&#21861;&#29992;&#65292;&#25105;&#26159;&#20010;&#24223;&#29289;&#65292;&#20294;&#25105;&#21448;&#26159;&#20010;&#24037;&#20855;&#20154;&#65292;CSS&#20598;&#23572;&#20250;&#29992;&#21040;&#25105;&lt;/span&gt;
+        &lt;br/&gt; &lt;!-- &#21152;&#19978;&#25105;&#23601;&#20250;&#25442;&#19968;&#34892;&#65292;&#23601;&#36319;&#37027;&#20123;&#30495;&#27491;&#21483;&#20570;&#32534;&#31243;&#35821;&#35328;&#30340;&#26684;&#24335;&#21270;&#23383;&#31526;&#20018;&#20013;&#30340;\n&#19968;&#26679;&#21602;&#65281; --&gt;
+        &lt;strong&gt;
+            &#25105;&#26159;&#21152;&#31895;&#26631;&#31614;&#65292;&#19981;&#20449;&#20320;&#30475;&#36825;&#21477;&#35805;&#12290;
+        &lt;/strong&gt;
+        &lt;em&gt;
+            &#25105;&#26159;&#26012;&#20307;&#26631;&#31614;&#65292;&#19981;&#20449;&#20320;&#30475;&#36825;&#21477;&#35805;&#12290;
+        &lt;/em&gt;
+        &lt;del&gt;
+            &#25105;&#26159;&#21024;&#38500;&#32447;&#26631;&#31614;&#65292;&#19981;&#20449;&#20320;&#30475;&#36825;&#21477;&#35805;
+        &lt;/del&gt;
+        &lt;hr/&gt; &lt;!-- &#25105;&#26159;&#27700;&#24179;&#32447;&#65292;&#21152;&#19978;&#25105;&#23601;&#20250;&#26377;&#19968;&#26465;&#24456;&#38271;&#30340;&#32447; --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb43cb36" class="outline-3">
+<h3 id="orgb43cb36">标题组</h3>
+<div class="outline-text-3" id="text-orgb43cb36">
+<p>
+html5还提供了一些标题标签，他们每个的字体大小不同。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;h1&gt;&#26631;&#39064;&lt;/h1&gt;
+        &lt;h2&gt;&#26631;&#39064;&lt;/h2&gt;
+        &lt;h3&gt;&#26631;&#39064;&lt;/h3&gt;
+        &lt;h4&gt;&#26631;&#39064;&lt;/h4&gt;
+        &lt;h5&gt;&#26631;&#39064;&lt;/h5&gt;
+        &lt;h6&gt;&#26631;&#39064;&lt;/h6&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf6f3684" class="outline-3">
+<h3 id="orgf6f3684">语义化</h3>
+<div class="outline-text-3" id="text-orgf6f3684">
+<p>
+前端技术发展至今，由于html的标签只是自带一些样式的标记罢了，所以开发者在编写时常常会修改其默认的样式，由于这个原因，大家更偏向万物设计均使用 <code>div</code> 标签，然后在对其进行CSS修改成想要的效果，其缺点就是可读性极差，所以HTML5就为大量的标签进行了修改，让其更具有语义性，例如原本html4中的 <code>b</code> 标签是加粗，但它并没有起到具有语义的作用，所以就改为 <code>strong</code> 标签了。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd409fa1" class="outline-2">
+<h2 id="orgd409fa1">布局标签</h2>
+<div class="outline-text-2" id="text-orgd409fa1">
+<p>
+html5提供了一些用于布局的标签，其没有实际的样式，仅作为语义和布局标记。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;!-- &#20197;&#19979;&#26679;&#24335;&#22343;&#26080;&#23454;&#38469;&#26679;&#24335;&#65292;&#20165;&#20316;&#35821;&#20041; --&gt;
+        &lt;header&gt;&#22836;&#37096;&lt;/header&gt;
+        &lt;aside&gt;&#20391;&#36793;&#26639;&lt;/aside&gt;
+        &lt;section&gt;&#20027;&#39064;&lt;/section&gt;
+        &lt;footer&gt;&#39029;&#33050;&lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org30a1658" class="outline-2">
+<h2 id="org30a1658">列表</h2>
+<div class="outline-text-2" id="text-org30a1658">
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#26080;&#24207;&#21015;&#34920;&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&#33529;&#26524;&lt;/li&gt;
+            &lt;li&gt;&#33609;&#33683;&lt;/li&gt;
+            &lt;li&gt;&#33889;&#33796;&lt;/li&gt;
+            &lt;li&gt;&#35199;&#29916;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#26377;&#24207;&#21015;&#34920;&lt;/p&gt;
+        &lt;ol&gt;
+            &lt;li&gt;one&lt;/li&gt;
+            &lt;li&gt;two&lt;/li&gt;
+            &lt;li&gt;three&lt;/li&gt;
+            &lt;li&gt;four&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org848f5f9" class="outline-2">
+<h2 id="org848f5f9">组合</h2>
+<div class="outline-text-2" id="text-org848f5f9">
+</div>
+<div id="outline-container-orgbf22dd3" class="outline-3">
+<h3 id="orgbf22dd3">文本组合</h3>
+<div class="outline-text-3" id="text-orgbf22dd3">
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#25991;&#26412;&#32452;&#21512;&lt;/p&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;&#26631;&#39064;&lt;/dt&gt;
+            &lt;dd&gt;&#20869;&#23481;&lt;/dd&gt;
+            &lt;dd&gt;&#20869;&#23481;&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org07a3190" class="outline-3">
+<h3 id="org07a3190">图文组合</h3>
+<div class="outline-text-3" id="text-org07a3190">
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#22270;&#25991;&#32452;&#21512;&lt;/p&gt;
+        &lt;figure&gt;
+            &lt;img src="https://www.jmjc.tech/public/home/img/flower.png"/&gt;
+            &lt;figcaption&gt;&#33457;&#26421;&lt;/figcaption&gt;
+        &lt;/figure&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d0dccf" class="outline-2">
+<h2 id="org0d0dccf">表格</h2>
+<div class="outline-text-2" id="text-org0d0dccf">
+</div>
+<div id="outline-container-orge27531e" class="outline-3">
+<h3 id="orge27531e">基本格式</h3>
+<div class="outline-text-3" id="text-orge27531e">
+<p>
+html5提供了用于制作表格的标签，其结构跟前面提到的组合有些类似。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#34920;&#26684;&lt;/p&gt;
+        &lt;!-- tr=&#34892;&#25968; | th=&#26631;&#39064;&#21015; | td=&#26222;&#36890;&#21015; --&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;th&gt;&#24615;&#21035;&lt;/th&gt;
+                &lt;th&gt;&#24180;&#40836;&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&#30007;&lt;/td&gt;
+                &lt;td&gt;&#22899;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;21&lt;/td&gt;
+                &lt;td&gt;35&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgde0937d" class="outline-3">
+<h3 id="orgde0937d">列合并</h3>
+<div class="outline-text-3" id="text-orgde0937d">
+<p>
+如果想要对表格的特定行进行合并操作可以指定其 <code>colspan</code> 属性
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#34920;&#26684;&lt;/p&gt;
+        &lt;!-- tr=&#34892;&#25968; | th &#26631;&#39064;&#21015; | td=&#26222;&#36890;&#21015; --&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;!-- colspan&#25351;&#23450;&#24403;&#21069;&#34892;&#25152;&#38656;&#21512;&#24182;&#30340;&#21015;&#25968; --&gt;
+                &lt;th colspan="2"&gt;&#25968;&#23383;&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                    &lt;td&gt;233&lt;/td&gt;
+                    &lt;td&gt;666&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org64fe546" class="outline-3">
+<h3 id="org64fe546">行合并</h3>
+<div class="outline-text-3" id="text-org64fe546">
+<p>
+又如何想要对表格特定列进行合并操作可以指定 <code>rowspan</code> 属性
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#34920;&#26684;&lt;/p&gt;
+        &lt;!-- tr=&#34892;&#25968; | th &#26631;&#39064;&#21015; | td=&#26222;&#36890;&#21015; --&gt;
+        &lt;table border="1"&gt;
+            &lt;tr&gt;
+                &lt;!-- rowspan&#25351;&#23450;&#24403;&#21069;&#34892;&#25152;&#38656;&#21512;&#24182;&#30340;&#34892;&#25968; --&gt;
+                &lt;td rowspan=""&gt;&#25968;&#23383;&lt;/th&gt;
+                &lt;td&gt;233&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;666&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb0ff274" class="outline-2">
+<h2 id="orgb0ff274">链接</h2>
+<div class="outline-text-2" id="text-orgb0ff274">
+</div>
+<div id="outline-container-orgc68e83c" class="outline-3">
+<h3 id="orgc68e83c">最简单的链接</h3>
+<div class="outline-text-3" id="text-orgc68e83c">
+<p>
+链接作为网站资源的跳转链接，例如一个链接可以指定一张图片，一个网页等。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#38142;&#25509;&lt;/p&gt;
+        &lt;!-- href&#23646;&#24615;&#20195;&#34920;&#20854;&#25351;&#21521;&#30340;&#36164;&#28304;&#65292;&#25105;&#36825;&#37324;&#26159;&#25351;&#21521;&#20102;&#19968;&#20010;&#32593;&#31449;&#12290; --&gt;
+        &lt;!-- target&#23646;&#24615;&#20195;&#34920;&#28857;&#20987;&#21518;&#30340;&#25805;&#20316;&#26041;&#24335;&#65292;&#36825;&#37324;&#26159;&#20174;&#26032;&#39029;&#38754;&#25171;&#24320;&#36164;&#28304;&#12290; --&gt;
+        &lt;a href="https://evanmeek.github.io" target="_blank"&gt;&#25105;&#19981;&#20250;&#32534;&#31243;&#30340;&#21338;&#23458;&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9f55a57" class="outline-3">
+<h3 id="org9f55a57">路径</h3>
+<div class="outline-text-3" id="text-org9f55a57">
+<p>
+路径分为相对路径和绝对路径。
+</p>
+<ul class="org-ul">
+<li>相对路径
+即当前网页所在位置的路径</li>
+<li>绝对路径
+即当前操作系统根所在位置的路径</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org93e4208" class="outline-2">
+<h2 id="org93e4208">图片</h2>
+<div class="outline-text-2" id="text-org93e4208">
+</div>
+<div id="outline-container-orgd6652d4" class="outline-3">
+<h3 id="orgd6652d4">最简单的加载图片</h3>
+<div class="outline-text-3" id="text-orgd6652d4">
+<p>
+网页的基本元素就是图片和内容，图片可以通过如下方式加载。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#22270;&#29255;&lt;/p&gt;
+        &lt;!-- src=&#22270;&#29255;&#36335;&#24452;<span style="color: #5A5E65;">(</span>&#30456;&#23545;/&#32477;&#23545;&#36335;&#24452;&#25110;&#32593;&#32476;&#36164;&#28304;<span style="color: #5A5E65;">)</span> width=&#23485;&#24230; height=&#39640;&#24230; --&gt;
+        &lt;img src="https://www.jmjc.tech/public/home/img/fly.jpg"/&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc68ee1b" class="outline-3">
+<h3 id="orgc68ee1b">定位点击图片的位置</h3>
+<div class="outline-text-3" id="text-orgc68ee1b">
+<p>
+可以通过设置ismap属性将用户点击图片的位置捕获。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#25429;&#33719;&#22270;&#29255;&#20301;&#32622;&#65292;&#35831;&#28857;&#20987;&#22270;&#29255;&lt;/p&gt;
+        &lt;a href="https://www.baidu.com"&gt;
+            &lt;img src="https://www.jmjc.tech/public/home/img/flower.png" alt="&#35831;&#28857;&#20987;&#25105;" ismap/&gt;
+        &lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<p>
+点击后注意观察地址栏是否存在 ?X/Y的数据，这就是捕获到的点击图片的坐标。
+</p>
+</div>
+</div>
+<div id="outline-container-org8ae8fa0" class="outline-3">
+<h3 id="org8ae8fa0">映射链接到图片的指定区域</h3>
+<div class="outline-text-3" id="text-org8ae8fa0">
+<p>
+这是一个骚操作，也体现了HTML5的强大，我们可以将一个链接映射到图片的指定区域，从而实现点击图片指定区域替跳转至指定链接资源。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#26144;&#23556;&#22270;&#29255;&#65292;&#35831;&#28857;&#20987;&#22270;&#29255;&#20013;&#24515;&lt;/p&gt;
+        &lt;!-- &#20351;&#29992;usemap&#23646;&#24615;&#25351;&#23450;&#38656;&#35201;&#20351;&#29992;&#26144;&#23556; --&gt;
+        &lt;img src="https://www.jmjc.tech/public/home/img/flower.png" alt="&#28857;&#20987;&#25105;&#30340;&#20013;&#24515;" usemap="#flower" /&gt;
+        &lt;!-- &#21019;&#24314;&#26144;&#23556;&#21306;&#22495; --&gt;
+        &lt;map name="flower"&gt;
+            &lt;!-- &#20351;&#29992;area&#26631;&#31614;&#21019;&#24314;&#25351;&#23450;&#26144;&#23556;&#20301;&#32622;&#65292;&#21487;&#26377;&#22810;&#20010;area&#26631;&#31614; --&gt;
+            &lt;!-- coords&#25351;&#23450;&#26144;&#23556;&#22352;&#26631; --&gt;
+            &lt;!-- href&#25351;&#23450;&#26144;&#23556;&#36164;&#28304; --&gt;
+            &lt;area shape="rect" coords="35,35,60,60" href="https://www.jmjc.tech/public/home/img/fly.jpg" target="_blank"/&gt;
+        &lt;/map&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e6a91c" class="outline-2">
+<h2 id="org8e6a91c">表单</h2>
+<div class="outline-text-2" id="text-org8e6a91c">
+</div>
+<div id="outline-container-org8b79527" class="outline-3">
+<h3 id="org8b79527">基本表单控件</h3>
+<div class="outline-text-3" id="text-org8b79527">
+<p>
+表单是HTML十分重要的控件，其主要功能是用户通过表单填入输入，并且通过提交表单将其数据从而于服务器进行通信。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#19968;&#20010;&#34920;&#21333;&lt;/p&gt;
+        &lt;form method="POST" action=""&gt;
+            &lt;!-- &#25991;&#26412;&#26694; --&gt;
+            &lt;input type="text"/&gt;
+            &lt;!-- &#23494;&#30721;&#26694; --&gt;
+            &lt;input type="password"/&gt;
+            &lt;!-- &#38544;&#34255;&#26694; --&gt;
+            &lt;input type="hidden"/&gt;
+            &lt;!-- &#25968;&#23383;&#26694; --&gt;
+            &lt;input type="number"/&gt;
+            &lt;!-- &#26085;&#26399;&#25511;&#20214; --&gt;
+            &lt;input type="date"/&gt;
+            &lt;!-- &#22810;&#36873;&#26694; | &#22810;&#20010;&#22810;&#36873;&#26694;&#25511;&#20214;&#36890;&#36807;name&#23646;&#24615;&#36827;&#34892;&#20998;&#32452; --&gt;
+            &lt;input type="checkbox" name="type1" /&gt;
+            &lt;input type="checkbox" name="type1" /&gt;
+            &lt;input type="checkbox" name="type2" /&gt;
+            &lt;input type="checkbox" name="type2" /&gt;
+            &lt;!-- &#21333;&#36873;&#26694; | &#22810;&#20010;&#21333;&#36873;&#26694;&#25511;&#20214;&#36890;&#36807;name&#23646;&#24615;&#36827;&#34892;&#20998;&#32452; --&gt;
+            &#30007; &lt;input type="radio" name="sex" /&gt;
+            &#22899; &lt;input type="radio" name="sex" /&gt;
+            &lt;!-- &#22810;&#34892;&#25991;&#26412;&#26694; | cols &#23485; rows &#39640;--&gt;
+            &lt;textarea rows="2" cols="20"&gt;&lt;/textarea&gt;
+            &lt;!-- &#19979;&#25289;&#36873;&#25321;&#26694; --&gt;
+            &lt;select name="num"&gt;
+                &lt;option value=""&gt;one&lt;/option&gt;
+                &lt;option value=""&gt;two&lt;/option&gt;
+                &lt;option value=""&gt;three&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;!-- &#25991;&#20214;&#19978;&#20256;&#25511;&#20214; | accpet=&#25991;&#20214;&#31867;&#22411;&#38480;&#21046; --&gt;
+            &lt;input type="file" accpet="image/gif, image/jpeg, image/png" /&gt;
+            &lt;!-- &#33539;&#22260;&#25511;&#20214; --&gt;
+            &lt;input type="range" min="1" max="100"/&gt;
+            &lt;!-- &#39068;&#33394;&#25511;&#20214; --&gt;
+            &lt;input type="color"/&gt;
+            &lt;!-- &#34920;&#21333;&#25552;&#20132; --&gt;
+            &lt;input type="submit" value="&#25552;&#20132;" /&gt;
+            &lt;!-- &#34920;&#21333;&#37325;&#32622; --&gt;
+            &lt;input type="reset" value="&#37325;&#32622;" /&gt;
+            &lt;!-- &#26222;&#36890;&#25353;&#38062; --&gt;
+            &lt;button type="button"&gt;&#26222;&#36890;&#25353;&#38062;&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb504820" class="outline-3">
+<h3 id="orgb504820">表单控件属性</h3>
+<div class="outline-text-3" id="text-orgb504820">
+<p>
+控件属性用来控制控件的行为或标记或值。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;&#20197;&#19979;&#26159;&#22810;&#20010;&#25511;&#20214;&#30340;&#23646;&#24615;&lt;/p&gt;
+        &lt;!-- name=&#25351;&#23450;&#25511;&#20214;&#30340;&#21517;&#31216;&#65292;&#29992;&#20110;&#26631;&#35760;&#25511;&#20214;  --&gt;
+        &lt;input type="text" name="user" /&gt;
+        &lt;!-- value=&#25351;&#23450;&#25511;&#20214;&#30340;&#40664;&#35748;&#20540; --&gt;
+        &lt;input type="text" name="user" value="&#29992;&#25143;&#21517;" /&gt;
+        &lt;!-- &#28966;&#28857;&#20110;&#25511;&#20214;&#26102;&#30340;&#25552;&#31034; --&gt;
+        &lt;input type="text" placeholder="&#35831;&#36755;&#20837;&#29992;&#25143;&#21517;" /&gt;
+        &lt;!-- &#19979;&#25289;&#21015;&#34920;&#30340;&#25552;&#31034; --&gt;
+        &lt;input type="text" name="someone" value="zhou" /&gt;
+        &lt;datalist id="zhou"&gt;
+            &lt;option value="&#21608;&#26480;&#20262;"&gt;&#21608;&#26480;&#20262;&lt;/option&gt;
+            &lt;option value="&#21608;&#22823;&#31119;"&gt;&#21608;&#22823;&#31119;&lt;/option&gt;
+            &lt;option value="&#21608;&#26576;"&gt;&#21608;&#26576;&lt;/option&gt;
+        &lt;/datalist&gt;
+        &lt;!-- &#35774;&#32622;&#25511;&#20214;&#20869;&#23481;&#26368;&#22823;&#38271;&#24230; --&gt;
+        &lt;input type="text" maxlength="12" /&gt;
+        &lt;!-- &#35774;&#32622;&#25511;&#20214;&#22823;&#23567; --&gt;
+        &lt;input type="text" size="5" /&gt;
+        &lt;!-- required&#34920;&#31034;&#24517;&#22635; --&gt;
+        &lt;input type="text" required /&gt;
+        &lt;!-- readonly&#21482;&#35835; --&gt;
+        &lt;input type="text" readonly /&gt;
+        &lt;!-- disabled&#31105;&#29992;&#25511;&#20214; --&gt;
+        &lt;input type="text" disabled /&gt;
+        &lt;!-- pattern&#27491;&#21017;&#26657;&#39564; --&gt;
+        &lt;input type="text" pattern="[0-9]" /&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org327aae6" class="outline-2">
+<h2 id="org327aae6">框架</h2>
+<div class="outline-text-2" id="text-org327aae6">
+<p>
+框架可以让一个页面内嵌入另一个页面。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;iframe src="https://www.baidu.com/" width="600" height="500" name="flag"&gt;&lt;/iframe&gt;
+</pre>
+</div>
+
+<p>
+链接到框架
+</p>
+
+<p>
+通过 <code>iframe</code> 标签设置的name属性值，可以将 <code>a</code> 标签的目标与其映射。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-web">&lt;a href="httsp://www.baidu.com" target="flag"&gt;&#30334;&#24230;&lt;/a&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org220c6be" class="outline-2">
+<h2 id="org220c6be">进度条</h2>
+<div class="outline-text-2" id="text-org220c6be">
+<p>
+进度条是HTML5的新特性，凡是HTML5新特性IE9或以下版本的浏览器都不支持。
+</p>
+</div>
+<div id="outline-container-org475b5cf" class="outline-3">
+<h3 id="org475b5cf">progress式进度条</h3>
+<div class="outline-text-3" id="text-org475b5cf">
+<div class="org-src-container">
+<pre class="src src-web">&lt;progress value="30" max="100"&gt;&lt;/progress&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbee50e8" class="outline-3">
+<h3 id="orgbee50e8">meter式进度条</h3>
+<div class="outline-text-3" id="text-orgbee50e8">
+<p>
+meter式进度条相比progress具有更多的可自定义性。
+</p>
+<div class="org-src-container">
+<pre class="src src-web">&lt;meter value="100" min="0" low="100" high="200" max="300" optimum="200"&gt;&lt;/meter&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org78bb2bb" class="outline-2">
+<h2 id="org78bb2bb">多媒体</h2>
+<div class="outline-text-2" id="text-org78bb2bb">
+<p>
+HTML5定义了新的多媒体文件载入方式。
+</p>
+</div>
+<div id="outline-container-orgb8012ae" class="outline-3">
+<h3 id="orgb8012ae">音频</h3>
+<div class="outline-text-3" id="text-orgb8012ae">
+<div class="org-src-container">
+<pre class="src src-web">&lt;!-- src=&#36335;&#24452; controls=&#26159;&#21542;&#26174;&#31034;&#25511;&#20214; loop=&#26159;&#21542;&#24490;&#29615; autoplay=&#26159;&#21542;&#33258;&#21160;&#25773;&#25918; preload=&#26159;&#21542;&#39044;&#21152;&#36733;--&gt;
+&lt;audio src="path/to/audio" controls="controls" loop="loop" preload autoplay&gt;&lt;/audio&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org87cf3ce" class="outline-3">
+<h3 id="org87cf3ce">视频</h3>
+<div class="outline-text-3" id="text-org87cf3ce">
+<div class="org-src-container">
+<pre class="src src-web">&lt;!--
+     src &#35270;&#39057;&#25991;&#20214;&#36335;&#24452;
+     poster &#35270;&#39057;&#32972;&#26223;&#22270;&#29255;
+     controls &#26174;&#31034;&#25511;&#20214;
+     width &#23485;&#24230;
+     height &#39640;&#24230;
+     loop &#24490;&#29615;&#25773;&#25918;
+     autoplay &#33258;&#21160;&#25773;&#25918;
+     preload &#39044;&#21152;&#36733;
+     muted &#38745;&#38899;
+--&gt;
+&lt;video src="path/to/video" poster="path/to/video-background-picture" controls="controls" width="600" height="600" loop="loop" autoplay preload muted&gt;&lt;/video&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-11-04 三 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-11-10 二 15:31</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

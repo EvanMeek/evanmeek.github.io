@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-10-24 六 13:17 -->
+<!-- 2020-11-10 二 15:31 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -126,9 +126,9 @@
 2&gt;数据库
   1)含义:数据库(Database,DB)是指长期存储在计算机中的有组织的,可共享的数据的集合;
   2)原则:
-	*1.数据库要按照一定的 数据模型 组织,描述和存储,
-	*2.具有 较小的冗余度 ,较高的 数据独立性 , //不必要的多次重复存储(冗余度)
-	*3.系统 易于扩展 ,并可以被 多个用户分享 ;
+    *1.数据库要按照一定的 数据模型 组织,描述和存储,
+    *2.具有 较小的冗余度 ,较高的 数据独立性 , //不必要的多次重复存储(冗余度)
+    *3.系统 易于扩展 ,并可以被 多个用户分享 ;
 </p>
 
 <p>
@@ -147,14 +147,14 @@
 <p>
 3&gt;数据库管理系统(DBMS))(Database Management System)
   1)含义:是专门用于 建立 和 管理 数据库 的一套软件,介于 应用程序 和 操作系统 之间;
-	*DBMS 没有图形化界面(不是应用程序),也不是操作系统 如mysql;
+    *DBMS 没有图形化界面(不是应用程序),也不是操作系统 如mysql;
   2)功能
-	*1.数据定义 功能
-	*2.数据操纵 功能
-	*3.数据库的 运行管理 功能;
-	*4.数据库的 建立 和 维护 功能;
-	   *5.数据组织、存储 和 管理 功能;
-	*6.其他功能;(与其他软件的 网络通信 功能,不同数据库管理系统之间 数据传输 及 相互访问 功能)。
+    *1.数据定义 功能
+    *2.数据操纵 功能
+    *3.数据库的 运行管理 功能;
+    *4.数据库的 建立 和 维护 功能;
+       *5.数据组织、存储 和 管理 功能;
+    *6.其他功能;(与其他软件的 网络通信 功能,不同数据库管理系统之间 数据传输 及 相互访问 功能)。
 </p>
 
 <p>
@@ -173,13 +173,13 @@ DBS构成示意图:
 <p>
 用户(程序员)     用户(数据库终端用户)
    ↘            ↙
-	   应用程序
-		  ↓
-	数据库管理系统&#x2014;&gt;数据库管理员(DBA)
-	   (DBMS)
-		  ↓
-	   数据库
-		(DB)
+       应用程序
+          ↓
+    数据库管理系统&#x2014;&gt;数据库管理员(DBA)
+       (DBMS)
+          ↓
+       数据库
+        (DB)
 </p>
 </div>
 </div>
@@ -211,9 +211,9 @@ DBS构成示意图:
 <p>
 1&gt;数据库管理技术的发展
   1)人工管理阶段
-	 *1.数据不保存
-	 *2.应用程序管理数据
-	 *3.数据面向应用程序
+     *1.数据不保存
+     *2.应用程序管理数据
+     *3.数据面向应用程序
 </p>
 
 <p>
@@ -223,7 +223,7 @@ DBS构成示意图:
 
 <p>
 应用程序1       应用程序2 &#x2026; 应用程序n
-		╲          │        ╱
+        ╲          │        ╱
 </p>
 <table>
 
@@ -238,13 +238,13 @@ DBS构成示意图:
 </tbody>
 </table>
 <p>
-	╱          │        ╲
+    ╱          │        ╲
 数据1         数据2 &#x2026;  数据n
 </p>
 
 <p>
 *1.数据独立
-	  *含义:数据定义与使用数据的应用程序分离称为数据独立
+      *含义:数据定义与使用数据的应用程序分离称为数据独立
 </p>
 
 <p>
@@ -259,9 +259,9 @@ DBS构成示意图:
 <p>
 *逻辑结构与物理结构相分离,物理数据独立性
   *2.优点:
-	 具有数据可长期保存和专门管理的特点，它还提供了物理数据独立性，
-	 使应用程序脱离数据物理结构,提高适用性,从而使编程人员不必关心数据的
-	 物理存储细节,提高了生产效率.并通过数据的抽取，而使数据共享成为可能;
+     具有数据可长期保存和专门管理的特点，它还提供了物理数据独立性，
+     使应用程序脱离数据物理结构,提高适用性,从而使编程人员不必关心数据的
+     物理存储细节,提高了生产效率.并通过数据的抽取，而使数据共享成为可能;
 </p>
 
 <p>
@@ -300,9 +300,9 @@ DBS构成示意图:
 <p>
 1&gt;数据库系统的结构分类(识记)
   1)从DBA(数据库管理员)的视角看:
-	*1.内部系统结构:
-	   1.采用三级模式(模式(数据库核心),内模式,外模式)
-		 #1.模式:称概念模式或逻辑模式,是数据在逻辑上的视图,即概念视图;描述数据库中全部数据的整体逻辑结构
+    *1.内部系统结构:
+       1.采用三级模式(模式(数据库核心),内模式,外模式)
+         #1.模式:称概念模式或逻辑模式,是数据在逻辑上的视图,即概念视图;描述数据库中全部数据的整体逻辑结构
 </p>
 
 <p>
@@ -323,14 +323,14 @@ DBS构成示意图:
 <p>
 应用A    应用B     应用C    应用D    应用E
    \      /         |        \       /
-	外模式1       外模式2       外模式3 (子模式或用户模式:数据视图或用户视图)
-	   ↑____________↑___________↑
-					↑
-				   模式 (概念模式或逻辑模式:概念视图或逻辑视图)
-					↑
-				  内模式 (存储模式:内部视图或存储视图)
-					↑
-				  数据库
+    外模式1       外模式2       外模式3 (子模式或用户模式:数据视图或用户视图)
+       ↑____________↑___________↑
+                    ↑
+                   模式 (概念模式或逻辑模式:概念视图或逻辑视图)
+                    ↑
+                  内模式 (存储模式:内部视图或存储视图)
+                    ↑
+                  数据库
 2.三级结构的两层映像与数据独立性
 </p>
 
@@ -369,12 +369,12 @@ DBS构成示意图:
 <p>
 2)从数据库应用的用户的视角
   *1.客户/服务器结构(client/Server,C/S)
-	 客户/服务器结构中:
-	 ("客户端","前台"或"表示层")主要完成与数据库使用者的交互任务;
-	 ("服务器","后台"或"数据层")主要负责数据管理;
-	 表示层&lt;&#x2014;&gt;数据层
-	 #1.单机方式(数据层与数据层在一台机器上)
-	 #2.网络方式(不在一台机器上))
+     客户/服务器结构中:
+     ("客户端","前台"或"表示层")主要完成与数据库使用者的交互任务;
+     ("服务器","后台"或"数据层")主要负责数据管理;
+     表示层&lt;&#x2014;&gt;数据层
+     #1.单机方式(数据层与数据层在一台机器上)
+     #2.网络方式(不在一台机器上))
 </p>
 
 <p>
@@ -393,15 +393,15 @@ DBS构成示意图:
 <p>
 1&gt;数据模型(Data Model)
   含义:是现实世界数据特征的抽象,描述的是数据的共性内容,它是模型化数据和信息的工具,
-	   也是数据库系统的核心和基础;
+       也是数据库系统的核心和基础;
 </p>
 
 <p>
 2&gt;数据的特征
    1)静态特征:
-	 *1.数据的基本结构,
-	 *2.数据间的联系,
-	 *3.数据取值范围的约束
+     *1.数据的基本结构,
+     *2.数据间的联系,
+     *3.数据取值范围的约束
 </p>
 
 <p>
@@ -434,8 +434,8 @@ DBS构成示意图:
 4&gt;数据模型的分类
   简述概念模型,逻辑模型,物理模型的关系(既相互独立,有存在的联系)
   *现实世界-(抽象)(数据库设计人员完成)
-	  -&gt;概念模型(抽象)(信息世界)-(组织,转换)(数据库设计工具协助人员完成)
-	  -&gt;逻辑模型和物理模型(机器世界)
+      -&gt;概念模型(抽象)(信息世界)-(组织,转换)(数据库设计工具协助人员完成)
+      -&gt;逻辑模型和物理模型(机器世界)
 </p>
 
 <p>
@@ -490,8 +490,8 @@ DBS构成示意图:
    #1.实体型:用矩形表示,矩形框内写明实体的名称;
    #2.属性:用椭圆形表示,并用无向边将其与相应的实体连接起来;
    #3.联系:用菱形表示,菱形框内写明联系的名称,并用无向边分别与有关实体连接起来,
-	 同时在无向边旁标上联系的类型(1:1,1:N或M:N),如果一个联系具有属性,
-	 则这些属性也要用无向边与该联系连接起来;
+     同时在无向边旁标上联系的类型(1:1,1:N或M:N),如果一个联系具有属性,
+     则这些属性也要用无向边与该联系连接起来;
 </p>
 
 <p>
@@ -511,7 +511,7 @@ DBS构成示意图:
 
 <p>
 *1.逻辑层是抽象级别的中间层,逻辑层数据模型,也称为数据的逻辑模型,任何DBMS都是基于逻辑数据模型.
-	 (既要考虑用户又要考虑DBMS的实现)
+     (既要考虑用户又要考虑DBMS的实现)
 </p>
 
 <p>
@@ -574,7 +574,7 @@ DBS构成示意图:
 <p>
 3)物理层数据模型
   *1.物理层数据模型,也称为数据的物理模型,描述数据在存储介质上的组织结构,
-	 是逻辑模型的物理实现,是数据库最底层的抽象;
+     是逻辑模型的物理实现,是数据库最底层的抽象;
   *2.设计目标是提高数据库性能和有效利用存储空间;
 </p>
 
@@ -621,8 +621,8 @@ DBS构成示意图:
 2&gt;关系数据结构(简单应用)
   1)表(Table):是一个二维的数据结构,由表名,列及若干行数据组成也称关系;
   2)关系(relationship):
-	一个关系逻辑上对应一张二维表,可以为每个关系取一个名称进行表示;
-	(某种程度上关系等同于表,表是关系的呈现,表名唯一);
+    一个关系逻辑上对应一张二维表,可以为每个关系取一个名称进行表示;
+    (某种程度上关系等同于表,表是关系的呈现,表名唯一);
 </p>
 
 <p>
@@ -651,9 +651,9 @@ DBS构成示意图:
 <p>
 5&gt;码或键(Key)
   1)概念:
-	 属性(或属性组)的值都能用来唯一标识该关系的元组,
-	 (属性或属性组的值能唯一标识出该表的该行 关系==表)
-	 则称这些属性(或属性组)为该关系的码或键;
+     属性(或属性组)的值都能用来唯一标识该关系的元组,
+     (属性或属性组的值能唯一标识出该表的该行 关系==表)
+     则称这些属性(或属性组)为该关系的码或键;
 </p>
 
 <p>
@@ -713,35 +713,35 @@ DBS构成示意图:
 
 <p>
 10)值域(Domain):
-	表示属性的取值范围;
+    表示属性的取值范围;
 </p>
 
 <p>
 11)数据类型(Data Type)
-	每个列都有相应的数据类型,它用于限制(或容许)该列中存储的数据;
+    每个列都有相应的数据类型,它用于限制(或容许)该列中存储的数据;
 </p>
 
 <p>
 12)关系模式与关系(Relation Schema):(<b><b>解答题</b></b>)
-	同数据库模型一样,数据库也有型和值之分,在关系数据库中关系模式是型(Type),
-	关系是值(Value),即关系模式是对关系的描述,关系模式是静态的,稳定的,
-	关系是动态的,随时间不断变化的,这是因为关系操作在不断更新数据库中的数据;
+    同数据库模型一样,数据库也有型和值之分,在关系数据库中关系模式是型(Type),
+    关系是值(Value),即关系模式是对关系的描述,关系模式是静态的,稳定的,
+    关系是动态的,随时间不断变化的,这是因为关系操作在不断更新数据库中的数据;
 </p>
 
 <p>
 13)关系数据库(Relation Database)
-	关系数据库以关系模型作为数据的逻辑模型,并采用关系作为组织方式的一类数据库,
-	其数据库操作建立在关系代数的基础上,在一个给定的应用领域中,所有关系的集合构成一个关系数据库;
+    关系数据库以关系模型作为数据的逻辑模型,并采用关系作为组织方式的一类数据库,
+    其数据库操作建立在关系代数的基础上,在一个给定的应用领域中,所有关系的集合构成一个关系数据库;
 </p>
 
 <p>
 14）.关系数据库对关系的限定/要求(重点和难点)
-	 #1.每一个属性都是不可分解的(不允许表中有表)
-	 #2.每一个关系仅仅只有一种关系模式;(存储的数据要对应表头)
-	 #3.每一个关系模式中的属性必须命名,在同一个关系模式中属性名必须不同;(唯一)
-	 #4.同一个关系中不允许出现候选码或候选键完全相同的元组;(不能有重复元祖(行))
-	 #5.在关系中元组的顺序(即行序)是无关紧要的,可以任意交换;
-	 #6.在关系中属性的顺序(即列序)是无关紧要的,可以任意交换;
+     #1.每一个属性都是不可分解的(不允许表中有表)
+     #2.每一个关系仅仅只有一种关系模式;(存储的数据要对应表头)
+     #3.每一个关系模式中的属性必须命名,在同一个关系模式中属性名必须不同;(唯一)
+     #4.同一个关系中不允许出现候选码或候选键完全相同的元组;(不能有重复元祖(行))
+     #5.在关系中元组的顺序(即行序)是无关紧要的,可以任意交换;
+     #6.在关系中属性的顺序(即列序)是无关紧要的,可以任意交换;
 </p>
 
 <p>
@@ -774,7 +774,7 @@ DBS构成示意图:
 </ol>
 <p>
 1)查询(Query)(代数五种基本操作)
-	#1.选择
+    #1.选择
 </p>
 
 <p>
@@ -805,11 +805,11 @@ DBS构成示意图:
 
 <p>
 2)关系数据语言的分类(<b><b><b>解答题</b></b></b>)
-	<b>1.关系代数语言(</b>)
-	*2.关系演算语言(元组关系演算,域关系演算)
-	*3.兼具两者双重特点的语言(SQL语言)
-	  共同特点:语言具备完备的表达能力,是非过程化的集合操作语言,
-			   功能强,能够独立使用也可以嵌入高级语言中使用;
+    <b>1.关系代数语言(</b>)
+    *2.关系演算语言(元组关系演算,域关系演算)
+    *3.兼具两者双重特点的语言(SQL语言)
+      共同特点:语言具备完备的表达能力,是非过程化的集合操作语言,
+               功能强,能够独立使用也可以嵌入高级语言中使用;
   *关系语言的特点:
    高度非过程化,即:用户不必请求数据库管理员为其建立特殊的存储路径,
    存储路径的选择由DBMS的优化机制来完成;
@@ -819,9 +819,9 @@ DBS构成示意图:
 <p>
 3)关系代数的运算符
   *1关系集合运算归类
-	 1)传统关系运算(并,差,交,笛卡尔积);
-	 2)基本的关系操作(选择,投影,并,差,笛卡尔积);
-	 3)专门的关系运算(选择,投影,连接,除)
+     1)传统关系运算(并,差,交,笛卡尔积);
+     2)基本的关系操作(选择,投影,并,差,笛卡尔积);
+     3)专门的关系运算(选择,投影,连接,除)
 </p>
 
 <p>
@@ -902,7 +902,7 @@ a1  b1  5      b1  3
 a1  b2  6      b2  7
 a2  b3  8      b2  10
 a2  b4  12     b3  2
-			   b5  2
+               b5  2
 示例:根据上图,连接表R和表S;
  #1 笛卡尔积 并做 等值连接 (只留属性值相等的)
    A  R.B  C  S.B   E
@@ -914,11 +914,11 @@ a2  b4  12     b3  2
 
 <p>
 #2去掉重复列(自然连接)(利用了投影)
-	A   B   C   E
-	a1  b1  5   3
-	a1  b2  6   7
-	a1  b2  6   10
-	a2  b3  8   2
+    A   B   C   E
+    a1  b1  5   3
+    a1  b2  6   7
+    a1  b2  6   10
+    a2  b3  8   2
 </p>
 
 <p>
@@ -941,7 +941,7 @@ a2  b4  12     b3  2
 *关系代数表达式是先运算()里的,在运算括号外的;
   Π SNO,SCORE(σAGE&gt;22(SC))
   含义:*1从表SC中筛选出AGE&gt;22的行,
-	   *2在这些行中投影出SNO和SCORE列建出原表的投影
+       *2在这些行中投影出SNO和SCORE列建出原表的投影
 </p>
 
 <p>
@@ -952,11 +952,11 @@ a2  b4  12     b3  2
 <p>
 7&gt;关系的完整性约束
   1)数据完整性约束(解答题)
-	*1.数据库的数据完整性是指数据的正确性,相容性,一致性.其中包含两个方面:
-	   #1.与现实世界中应用需求的数据的正确性,相容性和一致性,
-	   #2.数据库内数据之间的正确性,相容性和一致性.
-		  正确性:主键唯一,各属性值符合值域
-		  相容性和一致性:两个表有参照关系,参照表的外键值要对应被参照表的主键值或为NULL;
+    *1.数据库的数据完整性是指数据的正确性,相容性,一致性.其中包含两个方面:
+       #1.与现实世界中应用需求的数据的正确性,相容性和一致性,
+       #2.数据库内数据之间的正确性,相容性和一致性.
+          正确性:主键唯一,各属性值符合值域
+          相容性和一致性:两个表有参照关系,参照表的外键值要对应被参照表的主键值或为NULL;
 </p>
 
 <p>
@@ -968,7 +968,7 @@ a2  b4  12     b3  2
 <p>
 2)关系完整性约束具体定义
    *1.实体完整性约束(Entity Integrity Constraint)关系&#x2013;&gt;实体集
-	  主键 的组成 不能为空 ,主键中的 主属性 不能是空值NULL;
+      主键 的组成 不能为空 ,主键中的 主属性 不能是空值NULL;
 </p>
 
 <p>
@@ -993,9 +993,9 @@ a2  b4  12     b3  2
 <p>
 3)关系完整性约束的检验(增,删,改)
    *1.执行插入操作
-	  #1.检查实体完整性约束-&gt;检查表中主键是否为空
-	  #2.检查参照完整性约束-&gt;检查要插入的外键是否对应被参照表主键值(向参照关系插入)
-	  #3.检查用户定义完整性约束;
+      #1.检查实体完整性约束-&gt;检查表中主键是否为空
+      #2.检查参照完整性约束-&gt;检查要插入的外键是否对应被参照表主键值(向参照关系插入)
+      #3.检查用户定义完整性约束;
 </p>
 
 <p>
@@ -1045,8 +1045,8 @@ a2  b4  12     b3  2
    反之Y-/-&gt;X
 2)分类
    *1.完全函数依赖(解答题)
-	   设R为任一给定关系,X,Y为其属性集,若X-&gt;Y,且对X中的任何真子集X',
-	   都有X'-/-&gt;Y,则称Y完全函数依赖于X;
+       设R为任一给定关系,X,Y为其属性集,若X-&gt;Y,且对X中的任何真子集X',
+       都有X'-/-&gt;Y,则称Y完全函数依赖于X;
 </p>
 
 <p>
@@ -1061,15 +1061,15 @@ SNO(学号)   CNO(课程号)   CTITLE(课程名)  GRADE(成绩)
 
 <p>
 SC( SNO, CNO,  CTITLE, GRADE)
-	学号 课程号  课程名  成绩
+    学号 课程号  课程名  成绩
 其中(SNO,CNO)-&gt;GRADE; 且SNO-<i>-&gt;GRADE; CNO-</i>-&gt;GRADE;
 则GRADE完全依赖于(SNO,CNO);
 </p>
 
 <p>
 *2.部分函数依赖
-	设R为任一给定关系,X,Y为其属性集,若X-&gt;Y,且对X中
-	存在一个真子集X'满足X'-&gt;Y,则称Y部分函数依赖于X.
+    设R为任一给定关系,X,Y为其属性集,若X-&gt;Y,且对X中
+    存在一个真子集X'满足X'-&gt;Y,则称Y部分函数依赖于X.
 </p>
 
 <p>
@@ -1089,8 +1089,8 @@ ST(SNO,SNAME,SSEX)
 
 <p>
 *3.传递函数依赖
-	设R为任一给定关系,X,Y,Z为其不同属性子集,若X-&gt;Y,Y-/-&gt;X,Y-&gt;Z,则有X-&gt;Z,
-	则称Z传递函数依赖于X.
+    设R为任一给定关系,X,Y,Z为其不同属性子集,若X-&gt;Y,Y-/-&gt;X,Y-&gt;Z,则有X-&gt;Z,
+    则称Z传递函数依赖于X.
 </p>
 
 <p>
@@ -1114,10 +1114,10 @@ BOOKS(BNO,PNAME,PADRESS)
 
 <p>
 3)关键字
-	 设R为任一给定关系,U为其所含的全部属性集合,X为U的子集,若有完全依赖函数X-&gt;U,
-	 则X为R的一个候选关键字(X是候选码)
-	 SC( SNO, CNO,  CTITLE, GRADE)    U{SNO, CNO,  CTITLE, GRADE}//U全部属性集合
-	 (SNO,CNO)-&gt;CTITLE, (SNO,CNO)-&gt;GRADE   //(SNO,CNO)为候选关键字
+     设R为任一给定关系,U为其所含的全部属性集合,X为U的子集,若有完全依赖函数X-&gt;U,
+     则X为R的一个候选关键字(X是候选码)
+     SC( SNO, CNO,  CTITLE, GRADE)    U{SNO, CNO,  CTITLE, GRADE}//U全部属性集合
+     (SNO,CNO)-&gt;CTITLE, (SNO,CNO)-&gt;GRADE   //(SNO,CNO)为候选关键字
 </p>
 
 <p>
@@ -1154,20 +1154,20 @@ BOOKS(BNO,PNAME,PADRESS)
 <p>
 4&gt;低级范式向高级范式转换方法
   *1.由不符合范式规范的关系表,符合第一范式(1NF)
-	 规范方法:拆分行和列
-	 #1.使每列属性不可再分,属性值只代表一个属性(课程+讲师)-&gt;(课程名) (讲师)
-	 #2.使每行分量不可再分,一个分量包括多行元祖-&gt;一个分量只对应一个元祖(行)
+     规范方法:拆分行和列
+     #1.使每列属性不可再分,属性值只代表一个属性(课程+讲师)-&gt;(课程名) (讲师)
+     #2.使每行分量不可再分,一个分量包括多行元祖-&gt;一个分量只对应一个元祖(行)
 </p>
 
 <p>
 示例:
-			学生选课表SC
+            学生选课表SC
 SNO    SNAME   CUS<sub>INFO</sub>      IPLACE  GRADE
 901001 C01    操作系统(王中)    东     70
 901002 C01    操作系统(王中)    东     78
-	   C02    数据库(高国)      东     85
-	   C03    数据结构(王中)    东     80
-			   ↓1NF
+       C02    数据库(高国)      东     85
+       C03    数据结构(王中)    东     80
+               ↓1NF
 SNO    CNO  CTITLE    INAME  IPLACE GRADE
 901001 C01  操作系统   王中    东      70
 901002 C01  操作系统   王中    东      78
@@ -1181,7 +1181,7 @@ SNO    CNO  CTITLE    INAME  IPLACE GRADE
    #1.找到候选关键字,看其余的属性是否完全依赖候选关键字;
    #2.是的,与候选关键字一同抄下来形成一个表格;
    #3.不是的,查下来,形成第二个表格,并且将候选关键字里能唯一
-	  决定表格2的属性组抄在第一列;
+      决定表格2的属性组抄在第一列;
    示例:
    SC的候选关键字为(SNO,CNO),将其变为第二范式
    解题思路:
@@ -1190,14 +1190,14 @@ SNO    CNO  CTITLE    INAME  IPLACE GRADE
 </p>
 
 <p>
-				   学生选课表SC(1NF)
-		SNO    CNO  CTITLE    INAME  IPLACE GRADE
-		901001 C01  操作系统   王中    东     70
-		901002 C01  操作系统   王中    东     78
-		901002 C02  数据库     高国    北     85
-		901002 C03  数据结构   王中    东     80
-						↓2NF
-		  表一                        表二
+                   学生选课表SC(1NF)
+        SNO    CNO  CTITLE    INAME  IPLACE GRADE
+        901001 C01  操作系统   王中    东     70
+        901002 C01  操作系统   王中    东     78
+        901002 C02  数据库     高国    北     85
+        901002 C03  数据结构   王中    东     80
+                        ↓2NF
+          表一                        表二
 SNO     CNO   GRADE   |   CNO   CTITLE   INAME  IPLACE
 901001  C01    70     |   C01   操作系统  王中   东
 901002  C01    78     |   C02   数据库    高国   北
@@ -1213,15 +1213,15 @@ SNO     CNO   GRADE   |   CNO   CTITLE   INAME  IPLACE
   示例:
   表TC的候选关键字为CNO,使表TC符合3NF;
    解题思路:CNO-&gt;CTITLE,CTITLE-<i>-&gt;CNO,CTITLE-&gt;INAME,
-		   CNO-&gt;INAME,INAME-</i>-&gt;CNO,INAME-&gt;IPLACE,
-		  所以IPLACE传递函数依赖于CNO,
-		  拆分:没有传递函数依赖的表(CNO,CTITLE)
-			   有传递函数依赖的表(CTITLE  INAME)
-			   有传递函数依赖的表(INAME  IPLACE)
+           CNO-&gt;INAME,INAME-</i>-&gt;CNO,INAME-&gt;IPLACE,
+          所以IPLACE传递函数依赖于CNO,
+          拆分:没有传递函数依赖的表(CNO,CTITLE)
+               有传递函数依赖的表(CTITLE  INAME)
+               有传递函数依赖的表(INAME  IPLACE)
 </p>
 
 <p>
-		教师授课表TC
+        教师授课表TC
 CNO   CTITLE   INAME  IPLACE
 C01   操作系统  王中   东
 C02   数据库    高国   北
@@ -1229,8 +1229,8 @@ C03   数据结构  王中   东
 </p>
 
 <p>
-				  ↓3NF
-	表1                 表2               表3
+                  ↓3NF
+    表1                 表2               表3
 CNO   CTITLE   |   CTITLE  INAME  |  INAME  IPLACE
 C01   操作系统      操作系统  王中     王中   东
 C02   数据库        数据库    高国     高国   北
@@ -1265,8 +1265,8 @@ C03   数据结构  |   数据结构  王中  |
 </p>
 
 <p>
-	 数据库 分析 与 设计 阶段      和    数据库 实现 和 操作 阶段
-	 /      |     |     \               /         |        \
+     数据库 分析 与 设计 阶段      和    数据库 实现 和 操作 阶段
+     /      |     |     \               /         |        \
 需求分析 概念设计 逻辑设计 物理设计      实现     操作与监督   修改与调整
 </p>
 
@@ -1303,25 +1303,25 @@ C03   数据结构  |   数据结构  王中  |
 <p>
 1)数据库 结构设计(静态)
   *1.概念:
-	 是针对给定的应用环境进行数据库的 模式 或 子模式 的设计，
-	 包括数据库的 概念结构设计、逻辑结构设计 和 物理结构设计。
-	 模式定义并给出各应用程序共享的结构,结构设计是 静态的，
-	 一经形成通常不会改变。
+     是针对给定的应用环境进行数据库的 模式 或 子模式 的设计，
+     包括数据库的 概念结构设计、逻辑结构设计 和 物理结构设计。
+     模式定义并给出各应用程序共享的结构,结构设计是 静态的，
+     一经形成通常不会改变。
 </p>
 
 <p>
 *2.分类
    #1.概念结构设计
    #2.逻辑结构设计
-	  #3.物理结构设计
+      #3.物理结构设计
 </p>
 
 <p>
 2)数据库 行为设计(动态操作)
   *1.概念:
-	 是确定数据库用户的 行为 和 动作，而用户的行为和动作
-	 是对数据库的操作，它们通常是通过应用程序来实现的。
-	 行为设计是动态的。
+     是确定数据库用户的 行为 和 动作，而用户的行为和动作
+     是对数据库的操作，它们通常是通过应用程序来实现的。
+     行为设计是动态的。
 </p>
 
 <p>
@@ -1333,7 +1333,7 @@ C03   数据结构  |   数据结构  王中  |
 
 <p>
 数据库设计分类示意图:
-		 ╭
+         ╭
 </p>
 <table>
 
@@ -1348,13 +1348,13 @@ C03   数据结构  |   数据结构  王中  |
 </tbody>
 </table>
 <p>
-		  │ 结构设计&lt; #2.逻辑结构设计
-		  │         ╰#3.物理结构设计
-		  │
+          │ 结构设计&lt; #2.逻辑结构设计
+          │         ╰#3.物理结构设计
+          │
 数据库设计 │         ╭#1.功能设计
-		  │ 行为设计&lt; #2.事务设计
-		  │         ╰#3.程序设计
-		  ╰
+          │ 行为设计&lt; #2.事务设计
+          │         ╰#3.程序设计
+          ╰
 </p>
 
 <p>
@@ -1382,7 +1382,7 @@ C03   数据结构  |   数据结构  王中  |
 </tbody>
 </table>
 <p>
-			│         ╭同名异义
+            │         ╭同名异义
 各局部E-R图 &lt;  命名冲突&lt;
 之间的冲突   |         ╰异名同义
 </p>
@@ -1419,21 +1419,21 @@ C03   数据结构  |   数据结构  王中  |
 
 <p>
   5&gt;数据库设计过程(识记)
-								  ╭ #1.确定数据范围(支持哪些应用)
-								  │ #2.分析数据应用过程:
-					  *1.需求分析 &lt;
-								  │ #3.收集与分析数据
-								  ╰ #4.编写需求分析报告
-					 ↙         ↘
+                                  ╭ #1.确定数据范围(支持哪些应用)
+                                  │ #2.分析数据应用过程:
+                      *1.需求分析 &lt;
+                                  │ #3.收集与分析数据
+                                  ╰ #4.编写需求分析报告
+                     ↙         ↘
    #1概念结构设计╮                       ╭#1.功能设计
 *2.#2逻辑结构设计-&gt;结构设计       行为设计&lt;-#2.事务设计
    #3物理结构设计╯  (静态)        (动态)  ╰#3.程序设计
-					 ↘         ↙
-								╭#1.加载数据库数据
-				  *3.数据库实施 &lt; #2.应用程序设计
-						 ↓      ╰#3.数据库试运行
-						 ↓
-				 *4.数据库运行与维护-&#x2014;&gt;系统维护中最困难的工作是数据库重组与重构
+                     ↘         ↙
+                                ╭#1.加载数据库数据
+                  *3.数据库实施 &lt; #2.应用程序设计
+                         ↓      ╰#3.数据库试运行
+                         ↓
+                 *4.数据库运行与维护-&#x2014;&gt;系统维护中最困难的工作是数据库重组与重构
 </p>
 </div>
 </div>
@@ -1444,18 +1444,18 @@ C03   数据结构  |   数据结构  王中  |
 <p>
 1&gt;需求分析(领会)
   1)目标:(解答题)
-	是了解与分析用户的信息及应用处理的要求,
-	并将结果按一定的格式整理而形成的需求分析报告;
-	*需求分析报告是后续概念设计,逻辑设计,物理设计,数据库建立与维护的依据;
+    是了解与分析用户的信息及应用处理的要求,
+    并将结果按一定的格式整理而形成的需求分析报告;
+    *需求分析报告是后续概念设计,逻辑设计,物理设计,数据库建立与维护的依据;
 </p>
 
 <p>
 2)分析过程:
-		   ╭#1.确定数据范围
-		   │#2.分析数据应用过程
+           ╭#1.确定数据范围
+           │#2.分析数据应用过程
   需求分析 &lt;
-		   │#3.收集与分析数据
-		   ╰#4.编写需求分析报告
+           │#3.收集与分析数据
+           ╰#4.编写需求分析报告
 </p>
 
 <p>
@@ -1477,9 +1477,9 @@ C03   数据结构  |   数据结构  王中  |
 
 <p>
 3.收集与分析数据
-				╭#1.静态结构:不施加应用操作于其上时数据的原始状态;
+                ╭#1.静态结构:不施加应用操作于其上时数据的原始状态;
   收集与分析数据 &lt;#2.动态结构:将应用操作施加于数据之上后数据的状况;
-				╰#4.数据约束:使用数据时的特殊要求;
+                ╰#4.数据约束:使用数据时的特殊要求;
 </p>
 
 <p>
@@ -1657,7 +1657,7 @@ C03   数据结构  |   数据结构  王中  |
   *1.数据库的应用功能目标;
   *2.标明不同用户视图范围;
   *3.应用处理过程需求说明:
-	  ╭#1.数据流程图;
+      ╭#1.数据流程图;
 </p>
 <table>
 
@@ -1697,9 +1697,9 @@ C03   数据结构  |   数据结构  王中  |
 </p>
 
 <p>
-		   ╭#1.数据分类表;
+           ╭#1.数据分类表;
    数据字典&lt; #2.数据元素表;
-		   ╰#3.各类原始资料;
+           ╰#3.各类原始资料;
 *5.数据量;
 *6.数据约束;
 </p>
@@ -1782,7 +1782,7 @@ C03   数据结构  |   数据结构  王中  |
 <p>
    ↓    ╭任务:确定数据库在存储设备上的存储结构及存取方法
 物理设计&lt;
-		╰因DBMS的不同还可能包括建立索引和聚集,以及物理块大小,缓冲区个数和大小,数据压缩的选择;
+        ╰因DBMS的不同还可能包括建立索引和聚集,以及物理块大小,缓冲区个数和大小,数据压缩的选择;
 </p>
 
 
@@ -1897,15 +1897,15 @@ C03   数据结构  |   数据结构  王中  |
 <p>
 步骤：
  *1.实体名-&gt;表名,在对应表名后把图中相连接的属性名依次抄下来;
-	#1.将E-R按实体拆分,列出实体;(找□)用户,
-	#2.将实体的属性,列在实体后面;(归类○)用户:用户id,年龄,用户名
+    #1.将E-R按实体拆分,列出实体;(找□)用户,
+    #2.将实体的属性,列在实体后面;(归类○)用户:用户id,年龄,用户名
 </p>
 
 <p>
 *2.确定实体与实体之间的联系是1:N还是M:N:
    #1.当两个实体是1:N(一对多):在多的关系表后,写上一的关系表的主属性;
-	  1的表中的主键是N的那个实体表中的外键
-	  (找◇)用户:id,所属用户组(1:N或1:1 用户(N):用户组(1) )
+      1的表中的主键是N的那个实体表中的外键
+      (找◇)用户:id,所属用户组(1:N或1:1 用户(N):用户组(1) )
 </p>
 
 <p>
@@ -1914,15 +1914,15 @@ C03   数据结构  |   数据结构  王中  |
    #1.以两表之间的联系为实体(表名);
    #2.将两边表中的主码作为该表的联合主键
    #3.同联系的属性一起作为该表的属性;
-	  *若联系无属性则定义一个属性作为该关系的键(一般定义联系名+ID);
+      *若联系无属性则定义一个属性作为该关系的键(一般定义联系名+ID);
 </p>
 
 <p>
 2)对关系数据模型进行优化
   *1.目的:
-	 数据库逻辑设计的结果,不是唯一的,
-	 要进一步提高数据库应用系统的性能,
-	 根据需要适当的修改,调整数据模型的结构;
+     数据库逻辑设计的结果,不是唯一的,
+     要进一步提高数据库应用系统的性能,
+     根据需要适当的修改,调整数据模型的结构;
 </p>
 
 <p>
@@ -2012,9 +2012,9 @@ C03   数据结构  |   数据结构  王中  |
 
 <p>
 2&gt;SQL的特点(选择填空)
-	  ╭#1.SQL不是某个特定数据库供应商专有的语言;
+      ╭#1.SQL不是某个特定数据库供应商专有的语言;
   特点&lt;#2.SQL简单易学;
-	  ╰#3.SQL强大,灵活,可以进行非常复杂和高级的数据库操作;
+      ╰#3.SQL强大,灵活,可以进行非常复杂和高级的数据库操作;
 </p>
 
 <p>
@@ -2158,7 +2158,7 @@ SQL的组成 &lt;  *2.数据操纵语言(DML)        &lt;                       
 <p>
 1&gt;MySQL使用基础(选择填空)
   1)关系数据库管理系统(RDBMS)
-	优点:体积小,速度快,开放源代码,遵循GPL
+    优点:体积小,速度快,开放源代码,遵循GPL
 </p>
 
 <p>
@@ -2170,7 +2170,7 @@ SQL的组成 &lt;  *2.数据操纵语言(DML)        &lt;                       
 <p>
 3&gt;MySQL扩展语言要素(领会)
   1)常量(不变的值)
-	   ╭ #1.字符串常量:称为字面值或标量值,用单引号或双引号括起来的字符序列
+       ╭ #1.字符串常量:称为字面值或标量值,用单引号或双引号括起来的字符序列
 </p>
 <table>
 
@@ -2451,8 +2451,8 @@ show databases;查看数据库
 
 <p>
 mysql&gt; alter database mysql<sub>test</sub>
-	-&gt; default character set gb2312       修改字符集
-	-&gt; default collate gb2312<sub>chinese</sub><sub>ci</sub>; 修改校对规则
+    -&gt; default character set gb2312       修改字符集
+    -&gt; default collate gb2312<sub>chinese</sub><sub>ci</sub>; 修改校对规则
 </p>
 
 <p>
@@ -2504,14 +2504,14 @@ mysql&gt; show databases like 'm%';模糊匹配(%-&gt;通配符)
 mysql&gt; use mysql<sub>test</sub>;
 Database changed
 mysql&gt; create table if not exists customers
-	-&gt; (
-	-&gt; cust<sub>id</sub> int not null auto<sub>increment</sub>,(自增:auto<sub>increment</sub>)
-	-&gt; cust<sub>name</sub> char(50) not null,
-	-&gt; cust<sub>gender</sub> char(1) not null,
-	-&gt; cust<sub>address</sub> char(50) null,
-	-&gt; cust<sub>contact</sub> char(50) null,
-	-&gt; primary key(cust<sub>id</sub>)                 (主键:primary key(属性名))
-	-&gt; );
+    -&gt; (
+    -&gt; cust<sub>id</sub> int not null auto<sub>increment</sub>,(自增:auto<sub>increment</sub>)
+    -&gt; cust<sub>name</sub> char(50) not null,
+    -&gt; cust<sub>gender</sub> char(1) not null,
+    -&gt; cust<sub>address</sub> char(50) null,
+    -&gt; cust<sub>contact</sub> char(50) null,
+    -&gt; primary key(cust<sub>id</sub>)                 (主键:primary key(属性名))
+    -&gt; );
 </p>
 
 <p>
@@ -2525,12 +2525,12 @@ mysql&gt; show tables like 'customers';
 
 <p>
 *1 往表中增加一列
-	  add column column<sub>name</sub> type limit default value position (操作表)
+      add column column<sub>name</sub> type limit default value position (操作表)
 </p>
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; add column cust<sub>city</sub> char(10) not null default 'Wuhan'after cust<sub>gender</sub>;
+    -&gt; add column cust<sub>city</sub> char(10) not null default 'Wuhan'after cust<sub>gender</sub>;
 </p>
 
 <p>
@@ -2544,7 +2544,7 @@ mysql&gt; alter table mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; change column cust<sub>gender</sub> gender char(1) not null default 'M';
+    -&gt; change column cust<sub>gender</sub> gender char(1) not null default 'M';
 </p>
 
 <p>
@@ -2554,7 +2554,7 @@ mysql&gt; alter table mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; alter column cust<sub>city</sub> set default 'Beijing';
+    -&gt; alter column cust<sub>city</sub> set default 'Beijing';
 </p>
 
 <p>
@@ -2564,7 +2564,7 @@ mysql&gt; alter table mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; modify column cust<sub>name</sub> char(20) first;(首列)
+    -&gt; modify column cust<sub>name</sub> char(20) first;(首列)
 </p>
 
 <p>
@@ -2574,7 +2574,7 @@ mysql&gt; alter table mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; drop column cust<sub>contact</sub>;
+    -&gt; drop column cust<sub>contact</sub>;
 </p>
 
 <p>
@@ -2584,7 +2584,7 @@ mysql&gt; alter table mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; rename to mysql<sub>test.backup</sub><sub>customers</sub>;
+    -&gt; rename to mysql<sub>test.backup</sub><sub>customers</sub>;
 </p>
 
 <p>
@@ -2662,7 +2662,7 @@ create index index<sub>customers</sub>
 
 <p>
 mysql&gt; create index index<sub>cust</sub>
-	-&gt; on mysql<sub>test.customers</sub>(cust<sub>name,cust</sub><sub>id</sub>);
+    -&gt; on mysql<sub>test.customers</sub>(cust<sub>name,cust</sub><sub>id</sub>);
 </p>
 
 <p>
@@ -2688,16 +2688,16 @@ mysql&gt; create index index<sub>cust</sub>
 
 <p>
 mysql&gt; create table if not exists seller
-	-&gt; (
-	-&gt; seller<sub>id</sub> int not null auto<sub>increment</sub>,
-	-&gt; seller<sub>name</sub> char(50) not null,
-	-&gt; seller<sub>address</sub> char(50) null,
-	-&gt; seller<sub>contact</sub> char(50) null,
-	-&gt; product<sub>type</sub> int(5) null,
-	-&gt; sales int null,
-	-&gt; primary key(seller<sub>id,product</sub><sub>type</sub>),
-	-&gt; index index<sub>seller</sub>(sales)
-	-&gt; );
+    -&gt; (
+    -&gt; seller<sub>id</sub> int not null auto<sub>increment</sub>,
+    -&gt; seller<sub>name</sub> char(50) not null,
+    -&gt; seller<sub>address</sub> char(50) null,
+    -&gt; seller<sub>contact</sub> char(50) null,
+    -&gt; product<sub>type</sub> int(5) null,
+    -&gt; sales int null,
+    -&gt; primary key(seller<sub>id,product</sub><sub>type</sub>),
+    -&gt; index index<sub>seller</sub>(sales)
+    -&gt; );
 </p>
 
 <p>
@@ -2708,7 +2708,7 @@ mysql&gt; create table if not exists seller
 
 <p>
 mysql&gt; alter table mysql<sub>test.seller</sub>
-	-&gt; add index index<sub>seller</sub><sub>name</sub>(seller<sub>name</sub>);
+    -&gt; add index index<sub>seller</sub><sub>name</sub>(seller<sub>name</sub>);
 </p>
 
 <p>
@@ -2762,8 +2762,8 @@ mysql&gt; drop index index<sub>cust</sub> on mysql<sub>test.customers</sub>;
 
 <p>
 mysql&gt; alter table mysql<sub>test.customers</sub>
-	-&gt; drop primary key,
-	-&gt; drop index index<sub>customers</sub>;
+    -&gt; drop primary key,
+    -&gt; drop index index<sub>customers</sub>;
 </p>
 
 <p>
@@ -2789,7 +2789,7 @@ mysql&gt; alter table mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; insert mysql<sub>test.customers</sub>
-	-&gt; values(901,'zhansan','F','beijing','chaoyang');
+    -&gt; values(901,'zhansan','F','beijing','chaoyang');
 </p>
 
 <p>
@@ -2799,7 +2799,7 @@ mysql&gt; insert mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; insert into mysql<sub>test.customers</sub>
-	-&gt; set cust<sub>name</sub>='lisi',cust<sub>address</sub>='wuhai',gender=default;
+    -&gt; set cust<sub>name</sub>='lisi',cust<sub>address</sub>='wuhai',gender=default;
 </p>
 
 <p>
@@ -2821,7 +2821,7 @@ mysql&gt; insert into mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; delete from mysql<sub>test.customers</sub>
-	-&gt; where cust<sub>name</sub>='lisi';
+    -&gt; where cust<sub>name</sub>='lisi';
 </p>
 
 <p>
@@ -2834,8 +2834,8 @@ mysql&gt; delete from mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; update mysql<sub>test.customers</sub>
-	-&gt; set cust<sub>address</sub>='wuhanshi'
-	-&gt; where cust<sub>name</sub>='zhansan';
+    -&gt; set cust<sub>address</sub>='wuhanshi'
+    -&gt; where cust<sub>name</sub>='zhansan';
 </p>
 
 <p>
@@ -2845,14 +2845,14 @@ mysql&gt; update mysql<sub>test.customers</sub>
 <p>
 1&gt;select语句
   select select<sub>expr</sub>(要查的值)
-		 from table<sub>references</sub> (数据来源),
-		 where where<sub>condition</sub>(数据的选择条件)
-		 group by col<sub>name</sub>|expr|position(对检索到的记录进行分组)
-		 ASC|DESC, with rollup
-		 having where<sub>condition</sub> (指定组的选择条件)
-		 order by col<sub>name</sub>|expr|position(对查询结果进行排序)
-		 asc/desc,&#x2026;
-		 limit offset row<sub>count</sub>|row<sub>count</sub> Offset (限制行数)
+         from table<sub>references</sub> (数据来源),
+         where where<sub>condition</sub>(数据的选择条件)
+         group by col<sub>name</sub>|expr|position(对检索到的记录进行分组)
+         ASC|DESC, with rollup
+         having where<sub>condition</sub> (指定组的选择条件)
+         order by col<sub>name</sub>|expr|position(对查询结果进行排序)
+         asc/desc,&#x2026;
+         limit offset row<sub>count</sub>|row<sub>count</sub> Offset (限制行数)
 </p>
 
 <p>
@@ -2869,7 +2869,7 @@ select * from db<sub>name.tbl</sub><sub>name</sub>;(查询表中所有列)
 
 <p>
 mysql&gt; select cust<sub>name,cust</sub><sub>address,gender</sub>
-	-&gt; from mysql<sub>test.customers</sub>;
+    -&gt; from mysql<sub>test.customers</sub>;
 </p>
 
 <p>
@@ -2887,7 +2887,7 @@ col<sub>name</sub> as col<sub>alias</sub> (列的别名)(这个查询的只是�
 
 <p>
 mysql&gt; select cust<sub>address</sub> as dizhi
-	-&gt; from mysql<sub>test.customers</sub>;
+    -&gt; from mysql<sub>test.customers</sub>;
 </p>
 
 <p>
@@ -2896,7 +2896,7 @@ mysql&gt; select cust<sub>address</sub> as dizhi
 
 <p>
 case when 条件1 then 表达式1
-	   when 条件2 then 表达式2
+       when 条件2 then 表达式2
 </p>
 
 <p>
@@ -2909,11 +2909,11 @@ end as col<sub>alias</sub>;
 
 <p>
 mysql&gt; select cust<sub>name</sub>,
-	-&gt; case
-	-&gt; when gender='F'then 'nan'
-	-&gt; else 'nv'
-	-&gt; end as sex
-	-&gt; from mysql<sub>test.customers</sub>;
+    -&gt; case
+    -&gt; when gender='F'then 'nan'
+    -&gt; else 'nv'
+    -&gt; end as sex
+    -&gt; from mysql<sub>test.customers</sub>;
 </p>
 
 <p>
@@ -2922,7 +2922,7 @@ mysql&gt; select cust<sub>name</sub>,
 
 <p>
 mysql&gt; select cust<sub>id</sub>+199
-	-&gt; from mysql<sub>test.customers</sub>;
+    -&gt; from mysql<sub>test.customers</sub>;
 </p>
 
 <p>
@@ -2997,8 +2997,8 @@ mysql&gt; select cust<sub>id</sub>+199
 
 <p>
 mysql&gt; select * from student
-	-&gt; inner join tbl<sub>score</sub>
-	-&gt; on student.studentno=tbl<sub>score.studentno</sub>;
+    -&gt; inner join tbl<sub>score</sub>
+    -&gt; on student.studentno=tbl<sub>score.studentno</sub>;
 </p>
 
 <p>
@@ -3021,7 +3021,7 @@ mysql&gt; select * from student
 
 <p>
 mysql&gt; select * from student left join tbl<sub>score</sub>
-	-&gt; on student.studentno=tbl<sub>score.studentno</sub>;  (student是基表)
+    -&gt; on student.studentno=tbl<sub>score.studentno</sub>;  (student是基表)
 </p>
 
 <p>
@@ -3030,7 +3030,7 @@ mysql&gt; select * from student left join tbl<sub>score</sub>
 
 <p>
 mysql&gt; select * from student right join tbl<sub>score</sub>
-	-&gt; on student.studentno=tbl<sub>score.studentno</sub>;   (tbl<sub>score是基表</sub>)
+    -&gt; on student.studentno=tbl<sub>score.studentno</sub>;   (tbl<sub>score是基表</sub>)
 </p>
 
 
@@ -3045,33 +3045,33 @@ mysql&gt; select * from student right join tbl<sub>score</sub>
 <p>
 2)条件查询:
   mysql&gt; select * from mysql<sub>test.customers</sub>
-	  -&gt; where gender='F';
+      -&gt; where gender='F';
 </p>
 
 <p>
 3)查询范围(between and)
   *1.当查询的过滤条件被限定在值的某个范围时,可以使用关键字"between"
-	 expression [NOT] BETWEEN expression1 AND expression2
-	 当不使用关键字“NOT”时，值在表达式expression1和expression2之间（包括这两个值）
-	 如果使用关键字“NOT”时，其返回值正好相反。&lt;expression1 或 &gt;expression2
+     expression [NOT] BETWEEN expression1 AND expression2
+     当不使用关键字“NOT”时，值在表达式expression1和expression2之间（包括这两个值）
+     如果使用关键字“NOT”时，其返回值正好相反。&lt;expression1 或 &gt;expression2
 </p>
 
 <p>
 mysql&gt; select * from mysql<sub>test.customers</sub>
-	-&gt; where cust<sub>id</sub> between 900 and 901;
+    -&gt; where cust<sub>id</sub> between 900 and 901;
 </p>
 
 <p>
 *2.使用关键字"in" 可以指定一个值的枚举表,该表中会列出所有可能的值.
   mysql&gt; select * from mysql<sub>test.customers</sub>
-	  -&gt; where cust<sub>id</sub> in(900,901,908);
+      -&gt; where cust<sub>id</sub> in(900,901,908);
 </p>
 
 <p>
 4)判定空值
   *is null
    mysql&gt; select cust<sub>name</sub> from mysql<sub>test.customers</sub>
-	   -&gt; where cust<sub>contact</sub> is null;
+       -&gt; where cust<sub>contact</sub> is null;
 </p>
 
 <p>
@@ -3105,16 +3105,16 @@ mysql&gt; select * from mysql<sub>test.customers</sub>
 
 <p>
 mysql&gt; select studentno,student<sub>name</sub>
-	-&gt; from student where studentno in    (找到外键,用外键连接两个表)
-	-&gt; (select studentno from tbl<sub>score</sub> where score&gt;80); (循环嵌套选择列)
+    -&gt; from student where studentno in    (找到外键,用外键连接两个表)
+    -&gt; (select studentno from tbl<sub>score</sub> where score&gt;80); (循环嵌套选择列)
 </p>
 
 
 <p>
 取反  (&lt;=80)
 mysql&gt; select studentno,student<sub>name</sub>
-	-&gt; from student
-	-&gt; where studentno not in(select studentno from tbl<sub>score</sub> where score&gt;90);
+    -&gt; from student
+    -&gt; where studentno not in(select studentno from tbl<sub>score</sub> where score&gt;90);
 </p>
 
 <p>
@@ -3128,36 +3128,36 @@ mysql&gt; select studentno,student<sub>name</sub>
 <p>
 *:in-&gt; =any-&gt; =some;
 mysql&gt; select studentno,student<sub>name</sub>
-	-&gt; from student
-	-&gt; where studentno =any(select studentno from tbl<sub>score</sub> where score&gt;80);
+    -&gt; from student
+    -&gt; where studentno =any(select studentno from tbl<sub>score</sub> where score&gt;80);
 </p>
 
 <p>
 mysql&gt; select studentno,student<sub>name</sub>
-	-&gt; from student
-	-&gt; where studentno =some(select studentno from tbl<sub>score</sub> where score&gt;80);
+    -&gt; from student
+    -&gt; where studentno =some(select studentno from tbl<sub>score</sub> where score&gt;80);
 </p>
 
 <p>
 *:not in-&gt;&lt;&gt;all
 mysql&gt; select studentno,student<sub>name</sub>
-	-&gt; from student
-	-&gt; where studentno &lt;&gt;all(select studentno from tbl<sub>score</sub> where score&gt;90);
+    -&gt; from student
+    -&gt; where studentno &lt;&gt;all(select studentno from tbl<sub>score</sub> where score&gt;90);
 </p>
 
 <p>
 *:=(精确到条目)
 mysql&gt; select studentno,student<sub>name</sub>
-	-&gt; from student
-	-&gt; where studentno =(select studentno from tbl<sub>score</sub> where score=90);
+    -&gt; from student
+    -&gt; where studentno =(select studentno from tbl<sub>score</sub> where score=90);
 </p>
 
 <p>
 *4.结合关键字"exists"使用的子查询
    语法:exists(subquery)
    mysql&gt; select studentno,student<sub>name</sub>
-	   -&gt; from student
-	   -&gt; where exists(select studentno from tbl<sub>score</sub> where student.studentno=tbl<sub>score.studentno</sub>);
+       -&gt; from student
+       -&gt; where exists(select studentno from tbl<sub>score</sub> where student.studentno=tbl<sub>score.studentno</sub>);
 </p>
 
 <p>
@@ -3205,7 +3205,7 @@ group by{col<sub>name2</sub>|expr|position}[asc|desc],&#x2026;[with rollup]
 <p>
 示例:将表TC按课程和讲师姓名分组,根据讲师姓名获取每位讲师的授课项数;
  mysql&gt; select CName,count(*) as '授课项数'
-	 -&gt; from CT group by CName,CTitle;
+     -&gt; from CT group by CName,CTitle;
 </p>
 <p>
 <del>-------</del>---&#x2013;&#x2014;+
@@ -3260,7 +3260,7 @@ group by{col<sub>name2</sub>|expr|position}[asc|desc],&#x2026;[with rollup]
 <p>
 示例:将表TC按课程和讲师姓名分组,根据讲师姓名获取每位讲师的授课项数及授课汇总;
 mysql&gt; select CTitle,CName,count(*) as '授课项数'
-	-&gt; from CT group by CName,CTitle with rollup;//(汇总)(有总字就加这个)
+    -&gt; from CT group by CName,CTitle with rollup;//(汇总)(有总字就加这个)
 </p>
 
 <p>
@@ -3401,9 +3401,9 @@ mysql&gt; select CTitle,CName,count(*) as '授课项数'
 
 <p>
 mysql&gt; select cust<sub>name,cust</sub><sub>address</sub>
-	-&gt; from mysql<sub>test.customers</sub>
-	-&gt; group by cust<sub>address,cust</sub><sub>name</sub>
-	-&gt; having count(*)&lt;=3; (count是计算行数的)
+    -&gt; from mysql<sub>test.customers</sub>
+    -&gt; group by cust<sub>address,cust</sub><sub>name</sub>
+    -&gt; having count(*)&lt;=3; (count是计算行数的)
 HAVING 子句与 WHERE 子句两者之间存在哪些差异？：
 </p>
 </div>
@@ -3439,7 +3439,7 @@ order by col<sub>name</sub>|expr|position ASC|DESC
 
 <p>
 mysql&gt; select cust<sub>name,gender</sub> from mysql<sub>test.customers</sub>
-	-&gt; order by cust<sub>name</sub> desc,cust<sub>address</sub> desc;
+    -&gt; order by cust<sub>name</sub> desc,cust<sub>address</sub> desc;
 </p>
 
 <p>
@@ -3459,7 +3459,7 @@ limit {row<sub>count</sub> | row<sub>count</sub> offset}
 <p>
 示例:从表CT的第1行起取2行数据;
 mysql&gt; select CNO,CTitle from CT order by CNO
-	-&gt; limit 2 offset 0;(或写成 limit 2,0)
+    -&gt; limit 2 offset 0;(或写成 limit 2,0)
 </p>
 
 <p>
@@ -3583,7 +3583,7 @@ mysql&gt; select CNO,CTitle from CT order by CNO
 </tbody>
 </table>
 <p>
-		 <del>---------------</del>--------------------------------&#x2013;&#x2014;+
+         <del>---------------</del>--------------------------------&#x2013;&#x2014;+
 6.视图
 </p>
 
@@ -3639,9 +3639,9 @@ as select statement(条件)
 
 <p>
 mysql&gt; create or replace view mysql<sub>test.customers</sub><sub>view</sub>
-	-&gt; as select * from mysql<sub>test.customers</sub>
-	-&gt; where gender='M'
-	-&gt; with check option;
+    -&gt; as select * from mysql<sub>test.customers</sub>
+    -&gt; where gender='M'
+    -&gt; with check option;
 </p>
 
 <p>
@@ -3656,7 +3656,7 @@ view<sub>name</sub> [,view<sub>name</sub>]&#x2026;
 
 <p>
 mysql&gt; drop view if exists
-	-&gt; mysql<sub>test.coustomers</sub><sub>view</sub>;
+    -&gt; mysql<sub>test.coustomers</sub><sub>view</sub>;
 </p>
 
 <p>
@@ -3685,7 +3685,7 @@ as select statement(条件)
 
 <p>
 mysql&gt; insert mysql<sub>test.customers</sub><sub>view</sub>
-	-&gt; values(901,'zhansan','F','beijing','chaoyang');
+    -&gt; values(901,'zhansan','F','beijing','chaoyang');
 </p>
 
 <p>
@@ -3698,8 +3698,8 @@ mysql&gt; insert mysql<sub>test.customers</sub><sub>view</sub>
 
 <p>
 mysql&gt; update mysql<sub>test.customers</sub><sub>view</sub>
-	-&gt; set cust<sub>address</sub>='wuhanshi'
-	-&gt; where cust<sub>name</sub>='zhansan';
+    -&gt; set cust<sub>address</sub>='wuhanshi'
+    -&gt; where cust<sub>name</sub>='zhansan';
 </p>
 
 <p>
@@ -3714,7 +3714,7 @@ order by&#x2026; limit row<sub>count</sub>
 
 <p>
 mysql&gt; delete from mysql<sub>test.customers</sub><sub>view</sub>
-	-&gt; where cust<sub>name</sub>='lisi';
+    -&gt; where cust<sub>name</sub>='lisi';
 </p>
 
 
@@ -3724,8 +3724,8 @@ mysql&gt; delete from mysql<sub>test.customers</sub><sub>view</sub>
 
 <p>
 mysql&gt;select cust<sub>name,cust</sub><sub>address</sub>
-	-&gt; from mysql<sub>test.customers</sub><sub>view</sub>
-	-&gt; where cust<sub>id</sub> =905;
+    -&gt; from mysql<sub>test.customers</sub><sub>view</sub>
+    -&gt; where cust<sub>id</sub> =905;
 </p>
 
 <p>
@@ -3799,7 +3799,7 @@ mysql&gt;select cust<sub>name,cust</sub><sub>address</sub>
 delimiter\[-->用户自己定义结束符(替换";"告诉系统语集中的";",并不是结束)
 		   mysql> delimiter \]  (使用\[替换成\])
    mysql&gt; show databases;
-	   -&gt; $$
+       -&gt; $$
 </p>
 
 <p>
@@ -4092,22 +4092,22 @@ reference<sub>option</sub>:(限制语句包括以下几种)
 
 <p>
 mysql&gt; use mysql<sub>test</sub>       (指定数据库mysql<sub>test</sub>)
-	   Database changed
+       Database changed
 mysql&gt; create table orders  (创建表orders)
-	-&gt; (					 (以下指定orders表中的各属性列)
-	-&gt; order<sub>id</sub> int not null auto<sub>increment</sub>,
-	-&gt; order<sub>product</sub> char(50) not null,
-	-&gt; order<sub>product</sub><sub>type</sub> char(50) not null,
-	-&gt; cust<sub>id</sub> int not null,
-	-&gt; order<sub>date</sub> datetime not null,
-	-&gt; order<sub>price</sub> double not null,
-	-&gt; order<sub>amount</sub> int not null,
-	-&gt; primary key(order<sub>id</sub>),       (给orders表设置主键)
-	-&gt; foreign key(cust<sub>id</sub>)		 (给orders表设置外键)
-	-&gt; references customers(cust<sub>id</sub>)(开始参照完整性约束,指定参照表)
-	-&gt; on delete restrict			 (不允许删除外键)
-	-&gt; on update restrict			 (不允许更换外键)
-	-&gt; );
+    -&gt; (					 (以下指定orders表中的各属性列)
+    -&gt; order<sub>id</sub> int not null auto<sub>increment</sub>,
+    -&gt; order<sub>product</sub> char(50) not null,
+    -&gt; order<sub>product</sub><sub>type</sub> char(50) not null,
+    -&gt; cust<sub>id</sub> int not null,
+    -&gt; order<sub>date</sub> datetime not null,
+    -&gt; order<sub>price</sub> double not null,
+    -&gt; order<sub>amount</sub> int not null,
+    -&gt; primary key(order<sub>id</sub>),       (给orders表设置主键)
+    -&gt; foreign key(cust<sub>id</sub>)		 (给orders表设置外键)
+    -&gt; references customers(cust<sub>id</sub>)(开始参照完整性约束,指定参照表)
+    -&gt; on delete restrict			 (不允许删除外键)
+    -&gt; on update restrict			 (不允许更换外键)
+    -&gt; );
 </p>
 
 <p>
@@ -4221,9 +4221,9 @@ trigger<sub>body</sub>; (指定触发器动作的主体)
 
 <p>
 mysql&gt; create trigger customers<sub>insert</sub><sub>trigger</sub>
-	-&gt; after insert
-	-&gt; on mysql<sub>test.customers</sub> for each row
-	-&gt; set @str='one customer added!';
+    -&gt; after insert
+    -&gt; on mysql<sub>test.customers</sub> for each row
+    -&gt; set @str='one customer added!';
 </p>
 
 <p>
@@ -4269,8 +4269,8 @@ INSERT触发器可在INSERT语句执行之前或之后执行,使用该触发器�
 
 <p>
 mysql&gt; create trigger mysql<sub>test.customers</sub><sub>insert</sub><sub>trigger</sub>
-	-&gt; after delete on mysql<sub>test.customers</sub> for each row
-	-&gt; set @str=old.cust<sub>id</sub>;
+    -&gt; after delete on mysql<sub>test.customers</sub> for each row
+    -&gt; set @str=old.cust<sub>id</sub>;
 </p>
 
 <p>
@@ -4362,8 +4362,8 @@ CREATE USER user[identified by [PASSWORD]'password'] (可选项,指定用户账�
 <p>
 mysql&gt; select password(456);(获取456的散列值)
 mysql&gt; create user 'zhangsan'@'NorthStar' identified by '123',
-	-&gt; 'lisi'@'NorthStar'identified by password
-	-&gt; '*531E182E2F72080AB0740FE2F2D689DBE0146E04';
+    -&gt; 'lisi'@'NorthStar'identified by password
+    -&gt; '*531E182E2F72080AB0740FE2F2D689DBE0146E04';
 </p>
 
 <p>
@@ -4419,8 +4419,8 @@ to user<sub>specification</sub>[,user-specification](用于设定用户口令与
 
 <p>
 mysql&gt; grant select(cust<sub>id,cust</sub><sub>name</sub>)  &#x2013;列级授权
-	  -&gt; on mysql<sub>test.customers</sub>
-	-&gt; to 'wangwu'@'NorthStar';
+      -&gt; on mysql<sub>test.customers</sub>
+    -&gt; to 'wangwu'@'NorthStar';
 </p>
 
 <p>
@@ -4434,16 +4434,16 @@ mysql&gt; grant select(cust<sub>id,cust</sub><sub>name</sub>)  &#x2013;列级授
 
 <p>
 mysql&gt; grant select,update				 &#x2013;表级权限
-	-&gt; on mysql<sub>test.customers</sub>
-	-&gt; to'zhou''NorthStar'identified by '123'
-	-&gt; with grant option;
+    -&gt; on mysql<sub>test.customers</sub>
+    -&gt; to'zhou''NorthStar'identified by '123'
+    -&gt; with grant option;
 </p>
 
 
 <p>
 mysql&gt; grant all						 &#x2013;数据库级别权限
-	 -&gt; on mysql<sub>test</sub>.*
-	-&gt; to'wangwu'@'NorthStar';
+     -&gt; on mysql<sub>test</sub>.*
+    -&gt; to'wangwu'@'NorthStar';
 </p>
 
 <p>
@@ -4473,8 +4473,8 @@ mysql&gt; grant all						 &#x2013;数据库级别权限
 
 <p>
 mysql&gt; grant create user
-	-&gt; on <b>.</b>
-	-&gt; to 'wangwu'@'NorthStar';
+    -&gt; on <b>.</b>
+    -&gt; to 'wangwu'@'NorthStar';
 </p>
 
 <p>
@@ -4489,8 +4489,8 @@ mysql&gt; grant create user
 
 <p>
 mysql&gt; revoke select
-	-&gt; on mysql<sub>test.customers</sub>
-	-&gt; from 'wangwu'@'NorthStar';
+    -&gt; on mysql<sub>test.customers</sub>
+    -&gt; from 'wangwu'@'NorthStar';
 </p>
 </div>
 </div>
@@ -4528,22 +4528,22 @@ mysql&gt; revoke select
 
 <p>
 1)原子性：事务的原子性保证事务包含的一组更新操作是原子不可分的,
-		  即事务是不可分割的最小工作单位，所包含的这些操作是一个整体;(原子不可分)
+          即事务是不可分割的最小工作单位，所包含的这些操作是一个整体;(原子不可分)
 </p>
 
 <p>
 2)一致性:要求事务必须满足数据库的完整性约束,且事务执行完毕后将数据库由一个一致性状态
-		 转变到另一个一致性状态。其中，数据库的一致性状态是一种以一致性规则为基础的逻辑属性。
+         转变到另一个一致性状态。其中，数据库的一致性状态是一种以一致性规则为基础的逻辑属性。
 </p>
 
 <p>
 3)隔离性:隔离性要求事物是彼此独立的,隔离的,即一个事务的执行不能被其他事务所打扰.
-		 一个事务对数据库变更的结果必须在commit后,另一个事务才能存取.
+         一个事务对数据库变更的结果必须在commit后,另一个事务才能存取.
 </p>
 
 <p>
 4)持续性:持续性也称为永久性，是指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的，
-		 且接下来的其他操作或故障不应该对其执行结果有任何影响。
+         且接下来的其他操作或故障不应该对其执行结果有任何影响。
 </p>
 
 <p>
@@ -4573,9 +4573,9 @@ mysql&gt; revoke select
 <p>
 3)读"脏"数据
   *.设有两个事务T1和T2,读"脏数据"是指,事务T1修改某一数据,并将其写回磁盘,
-	事务T2读取同一数据后,事务T1由于某种原因被撤销,这时事务T1已经修改过的数据恢复原值,
-	事务T2读取到的数据就与数据库中的数据不一致,则事务T2读到的数据就为"脏数据",
-	即不正确的数据,所以在DB技术中,"脏数据"是指已提交随后又被撤销的数据;
+    事务T2读取同一数据后,事务T1由于某种原因被撤销,这时事务T1已经修改过的数据恢复原值,
+    事务T2读取到的数据就与数据库中的数据不一致,则事务T2读到的数据就为"脏数据",
+    即不正确的数据,所以在DB技术中,"脏数据"是指已提交随后又被撤销的数据;
 </p>
 
 <p>
@@ -4710,9 +4710,9 @@ mysql&gt; revoke select
 7)简述封锁的工作原理(解答题)
   *1.若事务 T 对数据 D 加了 X 锁，则所有别的事务对数据 D 的锁请求都必须等待直到事务 T 释放锁。
   *2.若事务 T 对数据 D 加了 S 锁，则别的事务还可对数据 D 请求 S 锁，
-	而对数据 D 的 X锁请求必须等待直到事务 T 释放锁。
+    而对数据 D 的 X锁请求必须等待直到事务 T 释放锁。
   *3.事务执行数据库操作时都要先请求相应的锁，即对读请求 S 锁，对更新请求 X 锁。
-	这个过程一般是由 DBMS 在执行操作时自动隐含地进行。
+    这个过程一般是由 DBMS 在执行操作时自动隐含地进行。
   *4.事务一直占有获得的锁直到结束时释放。
 </p>
 
@@ -4759,9 +4759,9 @@ mysql&gt; revoke select
 <p>
 [1]
 [field (决定数据行在备份文件中存储的格式)
-	  [terminated by 'string']  (指定字段间分隔符)
-	  [optionally enclosed by 'char']  (指定包裹文件中字符值的符号)
-	  [escaped by 'char']]  (指定转义字符)
+      [terminated by 'string']  (指定字段间分隔符)
+      [optionally enclosed by 'char']  (指定包裹文件中字符值的符号)
+      [escaped by 'char']]  (指定转义字符)
 </p>
 
 <p>
@@ -4771,10 +4771,10 @@ mysql&gt; revoke select
 <p>
 *.表备份
 mysql&gt; select * from mysql<sub>test.customers</sub>
-	-&gt; into outfile 'E/:BACKUP/backupfile.txt'
-	-&gt; fields terminated by ','
-	-&gt; optionally enclosed by ""
-	-&gt; lines terminated by'?';
+    -&gt; into outfile 'E/:BACKUP/backupfile.txt'
+    -&gt; fields terminated by ','
+    -&gt; optionally enclosed by ""
+    -&gt; lines terminated by'?';
 </p>
 
 <p>
@@ -4789,7 +4789,7 @@ mysql&gt; select * from mysql<sub>test.customers</sub>
    ]
    [LINES
    [STARTING BY ’string’]  //指定一个前缀,导入数据行时,忽略数据行中的该前缀和前缀之间的内容,
-							 如果某行不包括该前缀,则整个数据行被跳过;
+                             如果某行不包括该前缀,则整个数据行被跳过;
    [TERMINATED BY ’string’] //指定一行结束的标志
    ]
 </p>
@@ -4797,10 +4797,10 @@ mysql&gt; select * from mysql<sub>test.customers</sub>
 <p>
 示例:将备份导入空表中
 mysql&gt; load data infile 'E/:BACKUP/backupfile.txt'
-	-&gt; into table mysql<sub>test.customers</sub><sub>copy</sub>
-	-&gt; fields terminated by ','
-	-&gt; optionally enclosed by ""
-	-&gt; lines terminated by'?';
+    -&gt; into table mysql<sub>test.customers</sub><sub>copy</sub>
+    -&gt; fields terminated by ','
+    -&gt; optionally enclosed by ""
+    -&gt; lines terminated by'?';
 </p>
 </div>
 </div>
@@ -4817,10 +4817,10 @@ mysql&gt; load data infile 'E/:BACKUP/backupfile.txt'
 1&gt;功能性需求:分功能模块(管理员后台模块  学生使用模块  教师使用模块)
 2&gt;非功能需求:在线:B-S:web服务器,浏览器/服务器结构,网卡 wamp(windows(系统) Apache(web服务器) MySQL,PHP)
 3&gt;质量要求:
-	1)可靠性
-	2)正确性
-	3)兼容性
-	4)健壮性(容错性)
+    1)可靠性
+    2)正确性
+    3)兼容性
+    4)健壮性(容错性)
 </p>
 </div>
 </div>
@@ -4836,15 +4836,15 @@ mysql&gt; load data infile 'E/:BACKUP/backupfile.txt'
 <p>
 2&gt;概念设计
    1)确认实体(局部设计)
-	  *1.学生
-	  *2.教师
-	  *3.课程
-	  *4.院系
-	  *5.系统管理员
-	  *6.管理学生
-	  *7.管理教师
-	  *8.管理课程
-	  *9.管理院系
+      *1.学生
+      *2.教师
+      *3.课程
+      *4.院系
+      *5.系统管理员
+      *6.管理学生
+      *7.管理教师
+      *8.管理课程
+      *9.管理院系
 </p>
 
 <p>
@@ -4905,12 +4905,12 @@ mysql&gt; load data infile 'E/:BACKUP/backupfile.txt'
 
 <p>
 4&gt;规范化设计
-		1:N关系 在多的(N)表中添加1的表中的主键作为N关系表的外键
+        1:N关系 在多的(N)表中添加1的表中的主键作为N关系表的外键
 </p>
 
 <p>
 N:M关系 :建立一个中间表,以两表之间的联系为实体,
-		 将两边表中的主码作为该表的主键同联系的属性一起作为该表的属性;
+         将两边表中的主码作为该表的主键同联系的属性一起作为该表的属性;
 </p>
 
 <p>
@@ -5005,10 +5005,10 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 <p>
 3&gt;数据库系统阶段
   1)第一代数据库系统
-	*1.层次模型数据库管理系统
-	*2.网状模型数据库管理系统(*1是*2的特例)
-	*核心和基础:数据模型;
-			╭ #1.支持三级模式(外模式,模式,内模式)的体系结构
+    *1.层次模型数据库管理系统
+    *2.网状模型数据库管理系统(*1是*2的特例)
+    *核心和基础:数据模型;
+            ╭ #1.支持三级模式(外模式,模式,内模式)的体系结构
 </p>
 <table>
 
@@ -5038,7 +5038,7 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </tbody>
 </table>
 <p>
-		  ╰ #4.导航的数据操纵语言;
+          ╰ #4.导航的数据操纵语言;
 2)第二代数据库系统
   关系数据库系统
   *核心和基础:关系模型
@@ -5166,7 +5166,7 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 <p>
 1&gt;大数据及其特征(2008年提出)
   1)大数据是指无法在可容忍的时间内用现有信息技术和软,硬件工具符其进行感知,
-	获取,管理,处理的服务的数据集合;
+    获取,管理,处理的服务的数据集合;
 </p>
 
 <p>
@@ -5182,9 +5182,9 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
   1&gt;分布式文件系统;
   2&gt;key/value非关系数据模型
   3&gt;MapReduce并行编程模型为代表的众多新技术和新系统;
-	MapReduce技术是Google公司于2004年提出的大规模并行计算解决方案，
-	主要应用于大规模廉价集群上的大数据并行处理。MapReduce以Key/Value的分布式存储系统为基础，
-	通过元数据集中存储、数据以chunk为单位分布存储和数据chunk冗余复制来保证其高可用性。
+    MapReduce技术是Google公司于2004年提出的大规模并行计算解决方案，
+    主要应用于大规模廉价集群上的大数据并行处理。MapReduce以Key/Value的分布式存储系统为基础，
+    通过元数据集中存储、数据以chunk为单位分布存储和数据chunk冗余复制来保证其高可用性。
 </p>
 
 
@@ -5246,12 +5246,12 @@ connect.php //文件名,用文本编辑器打开编辑
    */
   $conn=mysql<sub>connect</sub>("localhost:3306","root","123456");//定义变量以$开头
   if(!$conn){
-	 echo"连接失败!&lt;br&gt;"; //echo语句返回信息
-	 echo"错误编号: "mysql<sub>errno</sub>()"!&lt;br&gt;"; //&lt;br&gt;为换行标记符
-	 echo"错误信息:"mysql<sub>err</sub>()"&lt;br&gt;"; //echo语句返回信息
-	 die(); //终止程序运行
+     echo"连接失败!&lt;br&gt;"; //echo语句返回信息
+     echo"错误编号: "mysql<sub>errno</sub>()"!&lt;br&gt;"; //&lt;br&gt;为换行标记符
+     echo"错误信息:"mysql<sub>err</sub>()"&lt;br&gt;"; //echo语句返回信息
+     die(); //终止程序运行
   }
-	 echo"连接成功!&lt;br&gt;";
+     echo"连接成功!&lt;br&gt;";
 ?&gt;
 </p>
 </div>
@@ -5260,7 +5260,7 @@ connect.php //文件名,用文本编辑器打开编辑
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-10-24 六 13:17</p>
+<p class="date">Created: 2020-11-10 二 15:31</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
