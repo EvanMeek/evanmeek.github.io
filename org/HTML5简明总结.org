@@ -1,13 +1,13 @@
 #+SETUPFILE: ../theme-rose.setup
 #+DATE: <2020-11-04 三>
-#+TITLE: html5简明总结
+#+TITLE: HTML5简明总结
 
 * 前言
   本人几次尝试学习html5但最终都放弃了，这次想要完整学习一下，顺便用自己的话总结每个标签的常用场景。
 * 基本结构
 ** 基本结构
    HTML文件后缀为 ~.html~ ，下面是一个简洁的基本框架。
-   #+begin_src web
+   #+begin_src html
 	 <!DOCTYPE html5> <!-- html5 声明头，如果没有5则会识别为4 -->
 	 <html lang="zh-cn"> <!-- 最外层的框架，所有HTML标签都是此标签的子标签。 -->
 		 <head></head> <!-- 头部区域，存放此文件的相关信息和设置 -->
@@ -15,7 +15,7 @@
 	 </html> <!-- 结束标签，大部分标签都有结束标签，部分标签可省略结束标签 -->
    #+end_src
 ** 头部区域
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <head>
 			 <meta charset="utf-8"/> <!-- 元数据标签，charset代表其属性，意思是设置了此html5的文件编码 -->
@@ -24,7 +24,7 @@
 	 </html>
    #+end_src
 ** 主体区域
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>最简单的标签之一</p> <!-- p标签-段落标签，其特点是自带隔行样式（其内容会独占一行），这些标签是主要的内容，所以要放在body标签内。 -->
@@ -46,11 +46,11 @@
    #+end_quote
 ** 代码注释
    代码注释是不会被浏览器解析的，所以如果你要标注一些信息，你就可以在源码内插入一些代码注释，就像这样:
-   #+begin_src web
+   #+begin_src html
 	 <html>	<!-- 最简单的网页 -->
 		 <head>
 			 <title>
-				 Easy Web
+				 Easy Html
 			 </title>
 		 </head>
 		 <body>
@@ -63,7 +63,7 @@
 * 文本和语义
 ** 文本标签
    html5为文本提供了一些特有的标签，这些标签都自带一些样式，方便开发者直接使用，例如:
-   #+begin_src web
+   #+begin_src html
 	 <<html>
 		 <body>
 			 <p>我段落标签，我独占一行，没有人能靠近我，除非你修改我的样式</p>
@@ -84,7 +84,7 @@
    #+end_src
 ** 标题组
    html5还提供了一些标题标签，他们每个的字体大小不同。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <h1>标题</h1>
@@ -100,7 +100,7 @@
    前端技术发展至今，由于html的标签只是自带一些样式的标记罢了，所以开发者在编写时常常会修改其默认的样式，由于这个原因，大家更偏向万物设计均使用 ~div~ 标签，然后在对其进行CSS修改成想要的效果，其缺点就是可读性极差，所以HTML5就为大量的标签进行了修改，让其更具有语义性，例如原本html4中的 ~b~ 标签是加粗，但它并没有起到具有语义的作用，所以就改为 ~strong~ 标签了。
 * 布局标签
   html5提供了一些用于布局的标签，其没有实际的样式，仅作为语义和布局标记。
-  #+begin_src web
+  #+begin_src html
 	<html>
 		<body>
 			<!-- 以下样式均无实际样式，仅作语义 -->
@@ -112,7 +112,7 @@
 	</html>
   #+end_src
 * 列表
-  #+begin_src web
+  #+begin_src html
 	<html>
 		<body>
 			<p>以下是无序列表</p>
@@ -134,7 +134,7 @@
   #+end_src
 * 组合
 ** 文本组合
-  #+begin_src web
+  #+begin_src html
 	<html>
 		<body>
 			<p>以下是文本组合</p>
@@ -147,7 +147,7 @@
 	</html>
   #+end_src
 ** 图文组合
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是图文组合</p>
@@ -161,7 +161,7 @@
 * 表格
 ** 基本格式
    html5提供了用于制作表格的标签，其结构跟前面提到的组合有些类似。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是表格</p>
@@ -185,7 +185,7 @@
    #+end_src
 ** 列合并
    如果想要对表格的特定行进行合并操作可以指定其 ~colspan~ 属性
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是表格</p>
@@ -205,7 +205,7 @@
    #+end_src
 ** 行合并
    又如何想要对表格特定列进行合并操作可以指定 ~rowspan~ 属性
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是表格</p>
@@ -227,7 +227,7 @@
 * 链接
 ** 最简单的链接
    链接作为网站资源的跳转链接，例如一个链接可以指定一张图片，一个网页等。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是链接</p>
@@ -246,7 +246,7 @@
 * 图片
 ** 最简单的加载图片
    网页的基本元素就是图片和内容，图片可以通过如下方式加载。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是图片</p>
@@ -257,7 +257,7 @@
    #+end_src
 ** 定位点击图片的位置
    可以通过设置ismap属性将用户点击图片的位置捕获。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是捕获图片位置，请点击图片</p>
@@ -270,7 +270,7 @@
    点击后注意观察地址栏是否存在 ?X/Y的数据，这就是捕获到的点击图片的坐标。
 ** 映射链接到图片的指定区域
    这是一个骚操作，也体现了HTML5的强大，我们可以将一个链接映射到图片的指定区域，从而实现点击图片指定区域替跳转至指定链接资源。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是映射图片，请点击图片中心</p>
@@ -289,7 +289,7 @@
 * 表单
 ** 基本表单控件
    表单是HTML十分重要的控件，其主要功能是用户通过表单填入输入，并且通过提交表单将其数据从而于服务器进行通信。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是一个表单</p>
@@ -338,7 +338,7 @@
    #+end_src
 ** 表单控件属性
    控件属性用来控制控件的行为或标记或值。
-   #+begin_src web
+   #+begin_src html
 	 <html>
 		 <body>
 			 <p>以下是多个控件的属性</p>
@@ -372,7 +372,7 @@
    #+end_src
 * 框架   
   框架可以让一个页面内嵌入另一个页面。
-  #+begin_src web
+  #+begin_src html
     <iframe src="https://www.baidu.com/" width="600" height="500" name="flag"></iframe>
   #+end_src
 
@@ -380,29 +380,29 @@
 
   通过 ~iframe~ 标签设置的name属性值，可以将 ~a~ 标签的目标与其映射。
   
-  #+begin_src web
+  #+begin_src html
   <a href="httsp://www.baidu.com" target="flag">百度</a>
   #+end_src
 * 进度条
   进度条是HTML5的新特性，凡是HTML5新特性IE9或以下版本的浏览器都不支持。
 ** progress式进度条
-   #+begin_src web
+   #+begin_src html
      <progress value="30" max="100"></progress>
    #+end_src
 ** meter式进度条
    meter式进度条相比progress具有更多的可自定义性。
-   #+begin_src web
+   #+begin_src html
      <meter value="100" min="0" low="100" high="200" max="300" optimum="200"></meter>
    #+end_src
 * 多媒体
   HTML5定义了新的多媒体文件载入方式。
 ** 音频
-   #+begin_src web
+   #+begin_src html
      <!-- src=路径 controls=是否显示控件 loop=是否循环 autoplay=是否自动播放 preload=是否预加载-->
      <audio src="path/to/audio" controls="controls" loop="loop" preload autoplay></audio>
    #+end_src
 ** 视频
-   #+begin_src web
+   #+begin_src html
      <!--
           src 视频文件路径
           poster 视频背景图片

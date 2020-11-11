@@ -1,0 +1,1059 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-11-10 二>
+#+TITLE: CSS3简明总结
+
+* 前言
+  CSS 全称为 层叠样式表，其作用是对HTML标签添加样式、布局网页、添加动画效果。
+  目前主流的 CSS版本是 CSS3。
+* 入门
+** 引入CSS的三种方式
+*** 引入外部CSS文件
+    这种方式优先级最低，但是便于管理
+    #+begin_src html
+      <html>
+          <body>
+              <head>
+                  <!-- 引入外部CSS文件 -->
+                  <link rel="stylesheet" type="text/css" href="path_to/style.css" />
+              </head>
+          </body>
+      </html>
+    #+end_src
+*** 块级样式
+    这种方式的优先级为中级，但是直接将样式表放在HTML文件内管理起来不方便。
+    #+begin_src html
+      <html>
+          <style type="text/css">
+           p{
+               color: red;
+           }
+          </style>
+          <body>
+              <p>块级样式</p>
+          </body>
+      </html>
+    #+end_src
+*** 行内样式
+    优先级最高。
+    #+begin_src html
+      <html>
+          <body>
+              <p style="color: red;">行内样式</p>
+          </body>
+      </html>
+    #+end_src
+** 优先级
+*** important标记
+    不同引入CSS代码的方式会有不同的优先级别。
+    如果想要优先级可以对属性添加特定标记。
+    #+begin_src html
+      <html>
+          <style type="text/css">
+           p{
+               /* 如果没有此标记yello将会被red覆盖。 */
+               color: yellow !important;
+               color: red;
+           }
+          </style>
+          <body>
+              <p>测试</p>
+          </body>
+      </html>
+    #+end_src
+*** 样式继承
+    一些标签拥有父子级关系，所以其部分样式属性会随之继承，但也只是部分的如果想要指定某些样式属性被继承那么可以做 ~inherit~ 标记。
+    #+begin_src html
+      <html>
+          <style type="text/css">
+           p{
+               color: red;
+           }
+          </style>
+          <body>
+            <p>
+              <strong>
+                <!-- strong标签继承了p标签的字体颜色 -->
+                hello
+              </strong>
+            </p>
+      
+            <p style="border: 2px solid orange">
+              <!-- 指定强制继承父类border属性效果。 -->
+              <strong style="border: inherit">
+                world
+              </strong>
+            </p>
+          </body>
+      </html>
+    #+end_src
+** 注释
+   CSS文件的注释语法是 ~/* */~
+* 选择器
+  选择器也就是让CSS样式应用于特定标签的规则。
+** 元素选择器
+   通过标签名选择HTML对象
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         /* 选中所有p标签 */
+          p{
+              color: red;
+          }
+          /* 选中div标签内的p标签 */
+          div p{
+              color: green;
+          }
+         </style>
+         <body>
+           <p>p1 ~</p>
+           <div>
+             <p>p2 ~</p>
+             <p>p3 ~</p>
+           </div>
+         </body>
+     </html>
+   #+end_src
+** ID选择器
+   通过ID属性选择HTML对象
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         .p {
+             color: red;
+         }
+         div .d-p{
+             color: green;
+         }
+       </style>
+         <body>
+           <p class="p">p1 ~</p>
+           <div>
+             <p class="d-p">p2 ~</p>
+             <p class="d-p">p3 ~</p>
+           </div>
+         </body>
+     </html>
+   #+end_src
+** 属性选择器
+   通过属性值选择HTML对象
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         [type="text"] {
+             color: red;
+         }
+         input[type="password"] {
+             color: green;
+         }
+       </style>
+       <body>
+         <input type="text" name="" value="" />
+         <input type="password" name="" value="" />
+       </body>
+     </html>
+   #+end_src
+** 合并选择
+   可以同时选择多个标签设置样式
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         p , div{
+             color: red;
+         }
+       </style>
+       <body>
+         <p>p~</p>
+         <div>
+           div ~
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 子类选择器
+   可以根据深度选择子元素。
+   #+begin_src html
+     <html>
+  
+       <style type="text/css">
+         /* 选择div的所有深度子标签strong */
+         div strong{
+             color: red;
+         }
+         /* 选择div的子标签strong */
+         div > strong{
+             color: green;
+         }
+       </style>
+       <body>
+         <div>
+           <strong>div > strong ~</strong>
+           <p><strong>div > p > strong ~</strong></p>
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 子类过滤器
+   根据标签排列顺序的选择器。
+   #+begin_src html
+     <html>  
+       <style type="text/css">
+         /* 选择过滤到的第一个p标签 */
+         p:first-child {
+             color: red;
+         }
+         /* 选择过滤到的第2个p标签 */
+         p:nth-child(2) {
+             color: green;
+         }
+         p:nth-child(3) {
+             color: yellow;
+         }
+         /* 选择过滤到的最后一个p标签 */
+         p:last-child{
+             color: blue;
+         }
+       </style>
+       <body>
+         <p>p1 ~</p>
+         <p>p2 ~</p>
+         <p>p3 ~</p>
+         <p>p4 ~</p>
+       </body>
+     </html>
+   #+end_src
+** 星号选择器
+   常常用于整个网页的初始化样式
+   #+begin_src html
+     <html>  
+       <style type="text/css">
+         /* 所有标签初始化都会有个红色下划线 */
+         ,* {
+             border-bottom-width: 2px;
+             border-color: red;
+             border-bottom-style: solid;
+         }
+       </style>
+       <body>
+         <p>p1 ~</p>
+         <p>p2 ~</p>
+         <p>p3 ~</p>
+         <p>p4 ~</p>
+       </body>
+     </html>
+   #+end_src
+* 颜色
+** 定义颜色的三种方式
+   #+begin_src html
+     <html>  
+       <style type="text/css">
+         .color-name{
+             color: red;
+         }
+         .hexadecimal{
+             color: #008000;
+         }
+         .rgb{
+             color : rgb(0,0,255);
+         }
+    
+       </style>
+       <body>
+         <span class="color-name">颜色名称</span>
+         <span class="hexadecimal">十六进制</span>
+         <span class="rgb">rgb</span>
+       </body>
+     </html>
+   #+end_src
+* 单位
+** px
+   px代表像素单位，其是根据显示器分辨率进行参照的测量单位。
+   #+begin_src html
+     <html>
+       <body>
+         <span style="font-size: 11px">10</span>
+         <span style="font-size: 12px">20</span>
+         <span style="font-size: 13px">30</span>
+         <span style="font-size: 14px">40</span>
+         <span style="font-size: 15px">50</span>
+       </body>
+     </html>
+   #+end_src
+** %
+   百分比单位，以浏览器默认字体大小为参照的测量单位。
+   #+begin_src html
+     <html>
+       <body>
+         <span style="font-size: 10%">10</span>
+         <span style="font-size: 20%">20</span>
+         <span style="font-size: 30%">30</span>
+         <span style="font-size: 40%">40</span>
+         <span style="font-size: 60%">60</span>
+         <span style="font-size: 70%">70</span>
+         <span style="font-size: 80%">80</span>
+         <span style="font-size: 90%">90</span>
+       </body>
+     </html>
+   #+end_src
+** em
+   相对单位，相对父标签的字体大小。
+   #+begin_src html
+     <html>
+       <body>
+         <p style="font-size: 10px;">
+           <!-- 1倍父标签字体大小 -->
+           <span style="font-size: 1em;">10px</span>
+           <!-- 1.5倍大小 -->
+           <span style="font-size: 1.5em;">15px</span>
+           <!-- 2倍大小 -->
+           <span style="font-size: 2em;">20px</span>
+         </p>
+       </body>
+     </html>
+   #+end_src
+** rem
+   相对网页初始字体大小。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         ,* {
+             font-size: 10px;
+         }
+       </style>
+    
+       <body>
+         <p style="font-size: 10px;">
+           <!-- 1倍网页字体大小 -->
+           <span style="font-size: 1rem;">10px</span>
+           <!-- 1.5倍大小 -->
+           <span style="font-size: 1.5rem;">15px</span>
+           <!-- 2倍大小 -->
+           <span style="font-size: 2rem;">20px</span>
+         </p>
+       </body>
+     </html>
+   #+end_src
+** 小节
+   ~em~ 和 ~rem~ 比 ~px~ 更加常用，因为其可以在用户改变网页默认大小或父标签大小改变时自适应改变。但是不够 ~px~ 灵活，
+* 字体
+  下面是一些字体相关的设置:
+  #+begin_src html
+    <html>
+      <style type="text/css">
+        ,* {
+            font-size: 15px;
+        }
+        @font-face{
+            font-family: SFCompactDisplay;
+            src: url{'/usr/share/fonts/OTF/SFCompactDisplay-Bold.otf'}
+        }
+      </style>
+    
+      <body>
+        <!-- 指定字体大小 -->
+        <span style="font-size: 16px;"> 字体大小 </span>
+        <!-- 指定字体风格为斜体 -->
+        <p style="font-style: italic;"> 字体斜体 </p>
+        <!-- 指定字体风格为粗体 -->
+        <p style="font-style: bold;"> 字体粗体 </p>
+        <!-- 指定字体为用户主机的字体 -->
+        <p style="font-family: Fira Code;"> hello world </p>
+        <!-- 指定在线字体 -->
+        <p style="font-family: SFCompactDisplay;"> HTML/CSS </p>
+        <!-- 多个字体设置简写成一条 -->
+        <!-- font [斜体/加粗] 字体大小 字体类型 -->
+        <p style="font: italic bold 16px Fira Code"> EvanMeek </p>
+      </body>
+    </html>
+  #+end_src
+* 文本
+** 首行缩进
+   ~text-indent~
+   #+begin_src html
+     <html>    
+       <body>
+         <p style="text-indent: 25px;">
+           一行
+           <br>
+           二行
+           <br>
+           三行
+           <br>
+           N行
+         </p>
+       </body>
+     </html>
+   #+end_src
+** 划线
+   ~text-decoration~
+   #+begin_src html
+     <html>    
+       <body>
+         <!-- 上划线 -->
+         <span style="text-decoration: overline;"> 上 </span>
+         <!-- 中划线 -->
+         <span style="text-decoration: line-through;"> 中 </span>
+         <!-- 下划线 -->
+         <span style="text-decoration: underline"> 下 </span>
+       </body>
+     </html>
+   #+end_src
+** 文本对齐
+   ~text-align~
+   #+begin_src html
+     <html>    
+       <body>
+         <p style="text-align: left;"> 左 </p>
+         <p style="text-align: center;"> 中 </p>
+         <p style="text-align: right;"> 右 </p>
+       </body>
+     </html>
+   #+end_src
+** 行高
+   ~line-height~
+   #+begin_src html
+     <html>    
+       <body>
+         <p style="line-height: 50px; border: 2px solid;">
+           1行
+           <br>
+           2行
+         </p>
+         <p style="line-height: 100px; border: 2px solid;">
+           1行
+           <br>
+           2行
+         </p>
+       </body>
+     </html>
+   #+end_src
+** 间距
+   ~letter-spacing~
+   #+begin_src html
+     <html>    
+       <body>
+         <em style="letter-spacing: 10px;">间距</em>
+       </body>
+     </html>
+   #+end_src
+** 换行
+   ~white-space~
+   #+begin_src html
+     <html>    
+       <body>
+         <!-- normal | 默认值自动换行 -->
+         <p style="background: #a3a7e4; width: 28px; white-space: normal;">换行测试</p>
+         <!-- nowrap | 默认不换行 -->
+         <p style="background: #a3a7e4; width: 28px; white-space: nowrap;">不换行测试</p>
+       </body>
+     </html>
+   #+end_src
+** 阴影
+   ~text-shadow~
+   #+begin_src html
+     <html>    
+       <body>
+         <div style="text-shadow: 2px 2px red">
+           Test
+         </div>
+       </body>
+     </html>
+   #+end_src
+* 光标
+  #+begin_src html
+    <html>
+      <style type="text/css">
+        a:hover{
+            cursor: pointer;
+            /* 可选项
+               default : 默认
+               help    : 帮助
+               wait    : 等待沙漏
+               move    : 可移动
+               text    : 选择
+           ,*/
+        }
+      </style>
+      <body>
+        <a href="https://www.baidu.com">百度</a>
+      </body>
+    </html>
+  #+end_src
+* 盒子模型
+** 元素形态
+   元素即标签，标签分为两种形态：块形态和行形态。
+   每个标签默认都有一种形态，可以通过CSS指定标签的形态。
+   #+begin_src html
+     <div style="background: green;">块元素</div>
+     <span style="background: red;">行元素</span>
+   #+end_src
+   块元素可以作为 ~盒子~ ，也就是作为其他元素的容器。
+** 修改元素形态
+   通过 ~display~ 属性可以修改元素形态。并且还可以为其设置宽高。
+   #+begin_src html
+     <div style="display: inline; background: #d0efb5;">
+       inline
+     </div>
+     <span style="display: block; background: #f3e595;">
+       block
+     </span>
+     <div style="display: none;">
+       none
+     </div>
+   #+end_src
+** 盒子大小
+   可以为盒子指定宽高。
+   #+begin_src html
+     <html>
+       <body>
+         <div style="width: 100px; height: 100px; background: blue;"></div>
+       </body>
+     </html>
+   #+end_src
+   对于响应式网站，可以设置最大最小宽高限制。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <div style="min-width: 200; min-height: 200px;">
+           宽高不能大于200px;
+         </div>2
+         <div style="min-width: 200; max-height: 200px;">
+           宽高不能大于200px;
+         </div>
+       </body>
+     </html>
+   #+end_src
+   盒子的宽高默认值是 ~auto~ 。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <div style="width: 100px; height: 100px; background: green;">
+         <!-- width: auto 于父容器等宽 -->
+         <!-- height: auto 于容器中的内容等高 -->
+           <div style="width: auto; height: auto; background: red;">
+             1. <br>
+             2.
+           </div>
+           <div style="width: auto; height: auto; background: blue;">
+             3. <br>
+             4.
+           </div>
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 盒子溢出内容处理方式
+   当内容面积大于容器面积，那么会有两种处理方式。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 不做处理 -->
+         <p style="width: 100px; background: green; white-space: nowrap;">佛系放弃治疗~~~~~</p>
+         <!-- 溢出的隐藏 -->
+         <p style="width: 50px; background: red; white-space: nowrap; overflow: hidden;">不佛系，坚持治疗~~~~~</p>
+         <!-- 自动处理 -->
+         <!-- overflow可选为overflow-y: 仅显示上下滚动条。overflow-x: 仅显示左右滚动条。 -->
+         <p style="width: 50px; background: blue; white-space: nowrap; overflow: auto;">佛系，全自动模式~~~~~</p>
+         <!-- 默认就显示滚动条 | scroll -->
+         <p style="width: 50px; background: yellow; white-space: nowrap; overflow: scroll;">你爱或者不爱，爱就在这里，不增不减~</p>
+       </body>
+     </html>
+   #+end_src
+** 占位
+   ~visibility~
+   占位的作用是可以使得内容不可见，但是位置仍然存在。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <div style="visibility: hidden; width: 20px; height: 20px;">
+           占位
+         </div>
+         <div style="width: 20px; height: 20px; background: green;"></div>
+       </body>
+     </html>
+   #+end_src
+** box-sizing
+   作用是固定大小，盒子大小不会被边框，边距所影响。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <div style="width: 100px; height: 100px; box-sizing: border-box; background: green; padding: 20px;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** content-box
+   作用是动态更变大小，受到边框、边距的影响。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         有pdding
+         <div style="width: 100px; height: 100px; box-sizing: content-box; background: blue; padding: 20px;"></div>
+         <br>
+         没有padding
+         <div style="width: 100px; height: 100px; box-sizing: content-box; background: blue;"></div>
+       </body>
+     </html>
+   #+end_src
+* 边框
+** 简单的边框
+   ~border~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <div style="width: 100px; height: 100px; border: 10px dashed green;">
+           <span style="text-align: center;">虚线边框</span>
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 圆角
+   ~border-radius~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- border-radius: 5px; 圆角的四个角的角度。 -->
+         <!-- border-radius: 1px 2px 3px 4px; (左上角 / 右上角 / 右下角 / 左下角) 顺时针-->
+         <div style="width: 100px; height: 100px; background: green; border-radius: 5px;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 轮廓
+   ~outline~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- outline语法跟border相同，但是其是包括在border之外的。 -->
+         <div style="width: 100px; height: 100px;
+                     border: 5px solid green;
+                     outline: 5px dashed red;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 阴影
+   ~box-shadow~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- box-shadow盒子阴影-参数 -->
+         <!-- 1. 水平阴影，正数靠右，负数靠左 -->
+         <!-- 2. 垂直阴影，正数靠上，负数靠下 -->
+         <!-- 3. 阴影模糊度 -->
+         <!-- 4. 颜色 -->
+         <div style="width: 100px; height: 100px;
+                     border: 1px solid black;
+                     box-shadow: 5px 5px 5px gray;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+* 边距
+  CSS不仅允许标签具有边框，还允许具有边距，边距和边框不同的是，边距是指元素与元素之间的距离。
+** 外边距
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 这里设置的外边距等于div标签与body标签的边距 -->
+         <!-- margin-参数-->
+         <!-- margin: 上 右 下 左 -->
+         <!-- 可选属性: -->
+         <!-- margin-top/right/bottom/left，可以单独设置某一边的外边距 -->
+         <div style="width: 100px; height: 100px; background: green; margin: 20px;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 内边距
+   内边距是内容离边框的距离。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <div style="width: 100px; height: 100px;
+                     border: 1px solid green;
+                     padding: 20px;">
+           <span style="border: 1px dashed red">内边距</span>
+         </div>
+       </body>
+     </html>
+   #+end_src
+* 列表
+** 符号样式
+   可以设定列表的符号样式
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <ul style="list-style-type: decimal">
+           <li>first</li>
+           <li>second</li>
+           <li>third</li>
+         </ul>
+         <!--
+         更多符号:
+         none: 取消符号
+         disc: 实心圆
+         circle: 空心圆
+         square: 方块
+         decimal: 阿拉伯数字
+         lower-alpha: 小写字母
+         upper-roman: 大写字母
+         -->
+       </body>
+     </html>
+   #+end_src
+** 符号位置
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- outside是默认值，作用是将符号显示在li标签的边框之外 -->
+         <ul style="list-style-position: outside;">
+           <li style="border: 1px solid green;">first</li>
+         </ul>
+         <!-- inside是显示在li标签边框之内。 -->
+         <ul style="list-style-position: inside;">
+           <li style="border: 1px solid red;">second</li>
+         </ul>
+       </body>
+     </html>
+   #+end_src
+* 表格
+** 表格间距
+   表格之间的间距可以使用 ~border-spacing~ 设置。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <table border="1" style="width: 200px; height: 100px;">
+           <tr>
+             <th colspan="2" style="font-size: 16px;">使用默认边距的表格</th>
+           </tr>
+           <tr style="text-align: center;">
+             <td>A</td>
+             <td>B</td>
+           </tr>
+         </table>
+         <table border="1" style="width: 200px; height: 100px; border-spacing: 5px;
+                                  margin-top: 20px;">
+           <tr>
+             <th colspan="2" style="font-size: 16px;">有边距的表格</th>
+           <tr style="text-align: center;">
+             <td>A</td>
+             <td>B</td>
+           </tr>
+           </tr>
+         </table>
+       </body>
+     </html>
+   #+end_src
+** 表格间距合并
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <table border="1" style="width: 200px; height: 100px;">
+           <tr>
+             <th colspan="2" style="font-size: 16px;">默认边距的表格</th>
+           </tr>
+           <tr style="text-align: center;">
+             <td>A</td>
+             <td>B</td>
+           </tr>
+         </table>
+         <table border="1" style="width: 200px; height: 100px; border-collapse: collapse;
+                                  margin-top: 20px;">
+           <tr>
+             <th colspan="2" style="font-size: 16px;">边距合并后的表格</th>
+           <tr style="text-align: center;">
+             <td>A</td>
+             <td>B</td>
+           </tr>
+           </tr>
+         </table>
+       </body>
+     </html>
+   #+end_src
+** 垂直高度
+   ~vertical-align~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <table border="1" style="width: 100px; height: 100px;
+                                  border-collapse: collapse;
+                                  text-align: center;
+                                  vertical-align: middle;
+                                  color: green;">
+           <tr>
+             <td>你</td>
+             <td>好</td>
+           </tr>
+           <tr>
+             <td>世</td>
+             <td>界</td>
+           </tr>
+         </table>
+       </body>
+     </html>
+   #+end_src
+** 比例分布
+   ~table-layout~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <p>动态分配大小</p>
+         <table border="1" style="width: 200px; border-collapse: collapse; table-layout: auto;">
+           <tr>
+             <td>hello</td>
+             <td>~</td>
+           </tr>
+         </table>
+         <p>等比例</p>
+         <table border="1" style="width: 200px; border-collapse: collapse; table-layout: fixed;">
+           <tr>
+             <td>world</td>
+             <td>~</td>
+           </tr>
+         </table>
+       </body>
+     </html>
+   #+end_src
+* 背景
+** 背景颜色
+   ~background-color~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 添加背景颜色 -->
+         <div style="width: 640px; height: 50px;
+                     background-color: green;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 背景图片
+   ~background-image~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 添加背景图片 -->
+         <div style="width: 640px; height: 452px;
+                     background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 重复背景图片
+   ~background-repeat~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 重复背景图片 -->
+         <!-- background-repeat: repeat-x 横向重复 -->
+         <!-- background-repeat: repeat-y 纵向重复 -->
+         <!-- background-repeat: repeat 重复直到填满 -->
+         <!-- background-repeat: no-repeat 取消重复 -->
+         <div style="width: 1000px; height: 1000px;
+                     background-repeat: repeat;
+                     background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 图片尺寸
+   ~background-size~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 图片尺寸 -->
+         <div style="width: 640px; height: 452px;
+                     background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);
+                     background-repeat: no-repeat;
+                     background-size: 320px 226px;
+                     border: 10px dashed red;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 图片位置
+   ~background-position~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 图片位置 -->
+         <div style="width: 640px; height: 452px;
+                     background-color: green;
+                     background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);
+                     background-repeat: no-repeat;
+                     background-size: 320px 226px;
+                     border: 10px dashed red;
+                     background-position: 50% 50%">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 固定背景位置
+   固定背景后滚动条滚动背景图片不会随之移动。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 固定背景位置 -->
+         <div style="width: 640px; height: 452px;
+                     background-color: green;
+                     background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);
+                     background-repeat: repeat;
+                     background-size: 320px 226px;
+                     border: 10px dashed red;
+                     background-attachment: fixed;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 简写background
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 简写background -->
+         <div style="width: 640px; height: 452px;
+                     background-color: green;
+                     background: url(https://www.jmjc.tech/public/home/img/fly.jpg) no-repeat 50% 50%;
+                     background-size: 320px 226px;
+                     border: 10px dashed red;">
+         </div>
+       </body>
+     </html>
+   #+end_src
+* 效果
+** 透明
+   ~opacity~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 透明 -->
+         <div style="opacity: 0.3; background: #ff6138;
+                     width: 100px; height: 100px;"></div>
+         <div style="opacity: 0.7; background: #ff6138;
+                     width: 100px; height: 100px;"></div>
+       </body>
+     </html>
+   #+end_src
+** 渐变
+   ~background-image: linear-gradient(方向 COLOR1 COLOR2 COLOR3)~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 渐变 -->
+         <!-- linear-gradient参数-->
+         <!-- to right/top/top right/bottom/bottom left/lef/top left color1 color2 color3-->
+         <div style="width: 640px; height: 100px;
+                     background-image: linear-gradient(to right, red, green, blue);">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 变形
+   ~transform~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 变形 -->
+         <!-- transform参数 -->
+         <!-- 倾斜 | skew(水平角度, 垂直角度) -->
+         <!-- 平移 | translate(水平方向, 垂直方向) -->
+         <!-- 缩放 | scale(水平倍数, 垂直倍数) -->
+         <!-- 旋转 | rotate(旋转角度) -->
+         <!-- 作用点 | transform-origin{单独的属性}: left/cent/right % -->
+         <div style="width: 100px; height: 100px;
+                     margin: 100px;
+                     background: red;
+                     transform: rotate(45deg);">
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 动画
+   ~animation~
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         #animation{
+             width: 100px;
+             height: 100px;
+             background: green;
+         }
+         /* 当鼠标放在此对象上 */
+         #animation:hover{
+             animation: ani 2s ease 3 0s;
+         }
+         /* 动画帧 | 0% ~ 100% 是动画生命周期的动作 */
+         @keyframes ani {
+             0% {
+                 margin-left: 0px;
+             }
+             50% {
+                 margin-left: 200px;
+             }
+             100% {
+                 margin-left: 0px;
+             }
+         }
+       </style>
+       <body>
+         <!-- 动画 -->
+         <div id="animation"></div>
+       </body>
+     </html>
+   #+end_src
+* 浮动
+  
