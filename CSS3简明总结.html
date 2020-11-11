@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-11-12 四 01:56 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS3简明总结</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">CSS3简明总结</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org151f4f9">前言</a></li>
+<li><a href="#org26dee03">入门</a>
+<ul>
+<li><a href="#org126da64">引入CSS的三种方式</a>
+<ul>
+<li><a href="#orgbd38bec">引入外部CSS文件</a></li>
+<li><a href="#orgca8e026">块级样式</a></li>
+<li><a href="#org433aba0">行内样式</a></li>
+</ul>
+</li>
+<li><a href="#org8d56c92">优先级</a>
+<ul>
+<li><a href="#orgae70aeb">important标记</a></li>
+<li><a href="#orgc76722a">样式继承</a></li>
+</ul>
+</li>
+<li><a href="#orgf398222">注释</a></li>
+</ul>
+</li>
+<li><a href="#org54391ec">选择器</a>
+<ul>
+<li><a href="#orgff4d5b3">元素选择器</a></li>
+<li><a href="#org32fd13d">ID选择器</a></li>
+<li><a href="#org3b3cb4c">属性选择器</a></li>
+<li><a href="#orgbaea56e">合并选择</a></li>
+<li><a href="#orgc2ed099">子类选择器</a></li>
+<li><a href="#org218a4e7">子类过滤器</a></li>
+<li><a href="#org70bde35">星号选择器</a></li>
+</ul>
+</li>
+<li><a href="#org1232aca">颜色</a>
+<ul>
+<li><a href="#orgce42bc3">定义颜色的三种方式</a></li>
+</ul>
+</li>
+<li><a href="#org35576d3">单位</a>
+<ul>
+<li><a href="#org234150f">px</a></li>
+<li><a href="#org848784c">%</a></li>
+<li><a href="#orgc2ffc37">em</a></li>
+<li><a href="#org5d587fd">rem</a></li>
+<li><a href="#org7ebfb33">小节</a></li>
+</ul>
+</li>
+<li><a href="#org8786a85">字体</a></li>
+<li><a href="#orgf7fe6b7">文本</a>
+<ul>
+<li><a href="#orgdcf7f40">首行缩进</a></li>
+<li><a href="#org96691d1">划线</a></li>
+<li><a href="#org4e1cb1a">文本对齐</a></li>
+<li><a href="#org78110ca">行高</a></li>
+<li><a href="#org5036fa5">间距</a></li>
+<li><a href="#orge2cf13d">换行</a></li>
+<li><a href="#org3dac411">阴影</a></li>
+</ul>
+</li>
+<li><a href="#org001be59">光标</a></li>
+<li><a href="#org55b2967">盒子模型</a>
+<ul>
+<li><a href="#orgb2ffef3">元素形态</a></li>
+<li><a href="#org69f97c1">修改元素形态</a></li>
+<li><a href="#org8264ed3">盒子大小</a></li>
+<li><a href="#org6d5744f">盒子溢出内容处理方式</a></li>
+<li><a href="#org7bdd714">占位</a></li>
+<li><a href="#org8f4a95f">box-sizing</a></li>
+<li><a href="#orgf8b52f3">content-box</a></li>
+</ul>
+</li>
+<li><a href="#org2e6b0bb">边框</a>
+<ul>
+<li><a href="#org2305b8e">简单的边框</a></li>
+<li><a href="#org6abc990">圆角</a></li>
+<li><a href="#org2394696">轮廓</a></li>
+<li><a href="#org00aabee">阴影</a></li>
+</ul>
+</li>
+<li><a href="#org79c4e63">边距</a>
+<ul>
+<li><a href="#org3c6df6f">外边距</a></li>
+<li><a href="#orgf2d26e1">内边距</a></li>
+</ul>
+</li>
+<li><a href="#org7c14f1b">列表</a>
+<ul>
+<li><a href="#orga498f9d">符号样式</a></li>
+<li><a href="#orga869abe">符号位置</a></li>
+</ul>
+</li>
+<li><a href="#org95c2d4d">表格</a>
+<ul>
+<li><a href="#orgdeeee3c">表格间距</a></li>
+<li><a href="#orgf2c4abb">表格间距合并</a></li>
+<li><a href="#orgec281a3">垂直高度</a></li>
+<li><a href="#org1c7c332">比例分布</a></li>
+</ul>
+</li>
+<li><a href="#org8abe663">背景</a>
+<ul>
+<li><a href="#org0989da9">背景颜色</a></li>
+<li><a href="#org23dc64d">背景图片</a></li>
+<li><a href="#org6f0de40">重复背景图片</a></li>
+<li><a href="#org7bdb2b8">图片尺寸</a></li>
+<li><a href="#org601b74e">图片位置</a></li>
+<li><a href="#org05c7302">固定背景位置</a></li>
+<li><a href="#org7f3a5f5">简写background</a></li>
+</ul>
+</li>
+<li><a href="#org5ab0143">效果</a>
+<ul>
+<li><a href="#org7e18587">透明</a></li>
+<li><a href="#org3397471">渐变</a></li>
+<li><a href="#org5161d18">变形</a></li>
+<li><a href="#orgf4b7ee7">动画</a></li>
+</ul>
+</li>
+<li><a href="#org0dc4497">浮动</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org151f4f9" class="outline-2">
+<h2 id="org151f4f9">前言</h2>
+<div class="outline-text-2" id="text-org151f4f9">
+<p>
+CSS 全称为 层叠样式表，其作用是对HTML标签添加样式、布局网页、添加动画效果。
+目前主流的 CSS版本是 CSS3。
+</p>
+</div>
+</div>
+<div id="outline-container-org26dee03" class="outline-2">
+<h2 id="org26dee03">入门</h2>
+<div class="outline-text-2" id="text-org26dee03">
+</div>
+<div id="outline-container-org126da64" class="outline-3">
+<h3 id="org126da64">引入CSS的三种方式</h3>
+<div class="outline-text-3" id="text-org126da64">
+</div>
+<div id="outline-container-orgbd38bec" class="outline-4">
+<h4 id="orgbd38bec">引入外部CSS文件</h4>
+<div class="outline-text-4" id="text-orgbd38bec">
+<p>
+这种方式优先级最低，但是便于管理
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+        &lt;<span style="color: #ECA964;">head</span>&gt;
+            <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#24341;&#20837;&#22806;&#37096;CSS&#25991;&#20214; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+            &lt;<span style="color: #ECA964;">link</span> <span style="color: #31C6FF;">rel</span>=<span style="color: #10CFC0;">"stylesheet"</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span> <span style="color: #31C6FF;">href</span>=<span style="color: #10CFC0;">"path_to/style.css"</span> /&gt;
+        &lt;/<span style="color: #ECA964;">head</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgca8e026" class="outline-4">
+<h4 id="orgca8e026">块级样式</h4>
+<div class="outline-text-4" id="text-orgca8e026">
+<p>
+这种方式的优先级为中级，但是直接将样式表放在HTML文件内管理起来不方便。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+    &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+     p{
+         color: red;
+     }
+    &lt;/<span style="color: #ECA964;">style</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span>&gt;&#22359;&#32423;&#26679;&#24335;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org433aba0" class="outline-4">
+<h4 id="org433aba0">行内样式</h4>
+<div class="outline-text-4" id="text-org433aba0">
+<p>
+优先级最高。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"color: red;"</span>&gt;&#34892;&#20869;&#26679;&#24335;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d56c92" class="outline-3">
+<h3 id="org8d56c92">优先级</h3>
+<div class="outline-text-3" id="text-org8d56c92">
+</div>
+<div id="outline-container-orgae70aeb" class="outline-4">
+<h4 id="orgae70aeb">important标记</h4>
+<div class="outline-text-4" id="text-orgae70aeb">
+<p>
+不同引入CSS代码的方式会有不同的优先级别。
+如果想要优先级可以对属性添加特定标记。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+    &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+     p{
+         /* &#22914;&#26524;&#27809;&#26377;&#27492;&#26631;&#35760;yello&#23558;&#20250;&#34987;red&#35206;&#30422;&#12290; */
+         color: yellow !important;
+         color: red;
+     }
+    &lt;/<span style="color: #ECA964;">style</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span>&gt;&#27979;&#35797;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc76722a" class="outline-4">
+<h4 id="orgc76722a">样式继承</h4>
+<div class="outline-text-4" id="text-orgc76722a">
+<p>
+一些标签拥有父子级关系，所以其部分样式属性会随之继承，但也只是部分的如果想要指定某些样式属性被继承那么可以做 <code>inherit</code> 标记。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+    &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+     p{
+         color: red;
+     }
+    &lt;/<span style="color: #ECA964;">style</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+      &lt;<span style="color: #ECA964;">p</span>&gt;
+        &lt;<span style="color: #ECA964;">strong</span>&gt;
+          <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">strong&#26631;&#31614;&#32487;&#25215;&#20102;p&#26631;&#31614;&#30340;&#23383;&#20307;&#39068;&#33394; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+          hello
+        &lt;/<span style="color: #ECA964;">strong</span>&gt;
+      &lt;/<span style="color: #ECA964;">p</span>&gt;
+
+      &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"border: 2px solid orange"</span>&gt;
+        <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#25351;&#23450;&#24378;&#21046;&#32487;&#25215;&#29238;&#31867;border&#23646;&#24615;&#25928;&#26524;&#12290; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+        &lt;<span style="color: #ECA964;">strong</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"border: inherit"</span>&gt;
+<span style="font-weight: bold;">          world</span>
+<span style="font-weight: bold;">        </span>&lt;/<span style="color: #ECA964;">strong</span>&gt;
+      &lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf398222" class="outline-3">
+<h3 id="orgf398222">注释</h3>
+<div class="outline-text-3" id="text-orgf398222">
+<p>
+CSS文件的注释语法是 <code>/* */</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org54391ec" class="outline-2">
+<h2 id="org54391ec">选择器</h2>
+<div class="outline-text-2" id="text-org54391ec">
+<p>
+选择器也就是让CSS样式应用于特定标签的规则。
+</p>
+</div>
+<div id="outline-container-orgff4d5b3" class="outline-3">
+<h3 id="orgff4d5b3">元素选择器</h3>
+<div class="outline-text-3" id="text-orgff4d5b3">
+<p>
+通过标签名选择HTML对象
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    /* &#36873;&#20013;&#25152;&#26377;p&#26631;&#31614; */
+     p{
+         color: red;
+     }
+     /* &#36873;&#20013;div&#26631;&#31614;&#20869;&#30340;p&#26631;&#31614; */
+     div p{
+         color: green;
+     }
+    &lt;/<span style="color: #ECA964;">style</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+      &lt;<span style="color: #ECA964;">p</span>&gt;p1 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+      &lt;<span style="color: #ECA964;">div</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span>&gt;p2 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span>&gt;p3 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+      &lt;/<span style="color: #ECA964;">div</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org32fd13d" class="outline-3">
+<h3 id="org32fd13d">ID选择器</h3>
+<div class="outline-text-3" id="text-org32fd13d">
+<p>
+通过ID属性选择HTML对象
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    .p {
+        color: red;
+    }
+    div .d-p{
+        color: green;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+    &lt;<span style="color: #ECA964;">body</span>&gt;
+      &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">class</span>=<span style="color: #10CFC0;">"p"</span>&gt;p1 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+      &lt;<span style="color: #ECA964;">div</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">class</span>=<span style="color: #10CFC0;">"d-p"</span>&gt;p2 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+        &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">class</span>=<span style="color: #10CFC0;">"d-p"</span>&gt;p3 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+      &lt;/<span style="color: #ECA964;">div</span>&gt;
+    &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b3cb4c" class="outline-3">
+<h3 id="org3b3cb4c">属性选择器</h3>
+<div class="outline-text-3" id="text-org3b3cb4c">
+<p>
+通过属性值选择HTML对象
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    [type="text"] {
+        color: red;
+    }
+    input[type="password"] {
+        color: green;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">input</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text"</span> <span style="color: #31C6FF;">name</span>=<span style="color: #10CFC0;">""</span> <span style="color: #31C6FF;">value</span>=<span style="color: #10CFC0;">""</span> /&gt;
+    &lt;<span style="color: #ECA964;">input</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"password"</span> <span style="color: #31C6FF;">name</span>=<span style="color: #10CFC0;">""</span> <span style="color: #31C6FF;">value</span>=<span style="color: #10CFC0;">""</span> /&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbaea56e" class="outline-3">
+<h3 id="orgbaea56e">合并选择</h3>
+<div class="outline-text-3" id="text-orgbaea56e">
+<p>
+可以同时选择多个标签设置样式
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    p , div{
+        color: red;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span>&gt;
+      div ~
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc2ed099" class="outline-3">
+<h3 id="orgc2ed099">子类选择器</h3>
+<div class="outline-text-3" id="text-orgc2ed099">
+<p>
+可以根据深度选择子元素。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    /* &#36873;&#25321;div&#30340;&#25152;&#26377;&#28145;&#24230;&#23376;&#26631;&#31614;strong */
+    div strong{
+        color: red;
+    }
+    /* &#36873;&#25321;div&#30340;&#23376;&#26631;&#31614;strong */
+    div &gt; strong{
+        color: green;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span>&gt;
+      &lt;<span style="color: #ECA964;">strong</span>&gt;<span style="font-weight: bold;">div &gt; strong ~</span>&lt;/<span style="color: #ECA964;">strong</span>&gt;
+      &lt;<span style="color: #ECA964;">p</span>&gt;&lt;<span style="color: #ECA964;">strong</span>&gt;<span style="font-weight: bold;">div &gt; p &gt; strong ~</span>&lt;/<span style="color: #ECA964;">strong</span>&gt;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org218a4e7" class="outline-3">
+<h3 id="org218a4e7">子类过滤器</h3>
+<div class="outline-text-3" id="text-org218a4e7">
+<p>
+根据标签排列顺序的选择器。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;  
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    /* &#36873;&#25321;&#36807;&#28388;&#21040;&#30340;&#31532;&#19968;&#20010;p&#26631;&#31614; */
+    p:first-child {
+        color: red;
+    }
+    /* &#36873;&#25321;&#36807;&#28388;&#21040;&#30340;&#31532;2&#20010;p&#26631;&#31614; */
+    p:nth-child(2) {
+        color: green;
+    }
+    p:nth-child(3) {
+        color: yellow;
+    }
+    /* &#36873;&#25321;&#36807;&#28388;&#21040;&#30340;&#26368;&#21518;&#19968;&#20010;p&#26631;&#31614; */
+    p:last-child{
+        color: blue;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p1 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p2 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p3 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p4 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org70bde35" class="outline-3">
+<h3 id="org70bde35">星号选择器</h3>
+<div class="outline-text-3" id="text-org70bde35">
+<p>
+常常用于整个网页的初始化样式
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;  
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    /* &#25152;&#26377;&#26631;&#31614;&#21021;&#22987;&#21270;&#37117;&#20250;&#26377;&#20010;&#32418;&#33394;&#19979;&#21010;&#32447; */
+    * {
+        border-bottom-width: 2px;
+        border-color: red;
+        border-bottom-style: solid;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p1 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p2 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p3 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;p4 ~&lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1232aca" class="outline-2">
+<h2 id="org1232aca">颜色</h2>
+<div class="outline-text-2" id="text-org1232aca">
+</div>
+<div id="outline-container-orgce42bc3" class="outline-3">
+<h3 id="orgce42bc3">定义颜色的三种方式</h3>
+<div class="outline-text-3" id="text-orgce42bc3">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;  
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    .color-name{
+        color: red;
+    }
+    .hexadecimal{
+        color: #008000;
+    }
+    .rgb{
+        color : rgb(0,0,255);
+    }
+
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">class</span>=<span style="color: #10CFC0;">"color-name"</span>&gt;&#39068;&#33394;&#21517;&#31216;&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">class</span>=<span style="color: #10CFC0;">"hexadecimal"</span>&gt;&#21313;&#20845;&#36827;&#21046;&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">class</span>=<span style="color: #10CFC0;">"rgb"</span>&gt;rgb&lt;/<span style="color: #ECA964;">span</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org35576d3" class="outline-2">
+<h2 id="org35576d3">单位</h2>
+<div class="outline-text-2" id="text-org35576d3">
+</div>
+<div id="outline-container-org234150f" class="outline-3">
+<h3 id="org234150f">px</h3>
+<div class="outline-text-3" id="text-org234150f">
+<p>
+px代表像素单位，其是根据显示器分辨率进行参照的测量单位。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 11px"</span>&gt;10&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 12px"</span>&gt;20&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 13px"</span>&gt;30&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 14px"</span>&gt;40&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 15px"</span>&gt;50&lt;/<span style="color: #ECA964;">span</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org848784c" class="outline-3">
+<h3 id="org848784c">%</h3>
+<div class="outline-text-3" id="text-org848784c">
+<p>
+百分比单位，以浏览器默认字体大小为参照的测量单位。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 10%"</span>&gt;10&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 20%"</span>&gt;20&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 30%"</span>&gt;30&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 40%"</span>&gt;40&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 60%"</span>&gt;60&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 70%"</span>&gt;70&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 80%"</span>&gt;80&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 90%"</span>&gt;90&lt;/<span style="color: #ECA964;">span</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc2ffc37" class="outline-3">
+<h3 id="orgc2ffc37">em</h3>
+<div class="outline-text-3" id="text-orgc2ffc37">
+<p>
+相对单位，相对父标签的字体大小。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 10px;"</span>&gt;
+      <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">1&#20493;&#29238;&#26631;&#31614;&#23383;&#20307;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 1em;"</span>&gt;10px&lt;/<span style="color: #ECA964;">span</span>&gt;
+      <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">1.5&#20493;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 1.5em;"</span>&gt;15px&lt;/<span style="color: #ECA964;">span</span>&gt;
+      <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">2&#20493;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 2em;"</span>&gt;20px&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5d587fd" class="outline-3">
+<h3 id="org5d587fd">rem</h3>
+<div class="outline-text-3" id="text-org5d587fd">
+<p>
+相对网页初始字体大小。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    * {
+        font-size: 10px;
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 10px;"</span>&gt;
+      <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">1&#20493;&#32593;&#39029;&#23383;&#20307;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 1rem;"</span>&gt;10px&lt;/<span style="color: #ECA964;">span</span>&gt;
+      <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">1.5&#20493;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 1.5rem;"</span>&gt;15px&lt;/<span style="color: #ECA964;">span</span>&gt;
+      <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">2&#20493;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 2rem;"</span>&gt;20px&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ebfb33" class="outline-3">
+<h3 id="org7ebfb33">小节</h3>
+<div class="outline-text-3" id="text-org7ebfb33">
+<p>
+<code>em</code> 和 <code>rem</code> 比 <code>px</code> 更加常用，因为其可以在用户改变网页默认大小或父标签大小改变时自适应改变。但是不够 <code>px</code> 灵活，
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8786a85" class="outline-2">
+<h2 id="org8786a85">字体</h2>
+<div class="outline-text-2" id="text-org8786a85">
+<p>
+下面是一些字体相关的设置:
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    * {
+        font-size: 15px;
+    }
+    @font-face{
+        font-family: SFCompactDisplay;
+        src: url{'/usr/share/fonts/OTF/SFCompactDisplay-Bold.otf'}
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#25351;&#23450;&#23383;&#20307;&#22823;&#23567; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 16px;"</span>&gt; &#23383;&#20307;&#22823;&#23567; &lt;/<span style="color: #ECA964;">span</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#25351;&#23450;&#23383;&#20307;&#39118;&#26684;&#20026;&#26012;&#20307; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-style: italic;"</span>&gt; &#23383;&#20307;&#26012;&#20307; &lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#25351;&#23450;&#23383;&#20307;&#39118;&#26684;&#20026;&#31895;&#20307; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-style: bold;"</span>&gt; &#23383;&#20307;&#31895;&#20307; &lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#25351;&#23450;&#23383;&#20307;&#20026;&#29992;&#25143;&#20027;&#26426;&#30340;&#23383;&#20307; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-family: Fira Code;"</span>&gt; hello world &lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#25351;&#23450;&#22312;&#32447;&#23383;&#20307; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-family: SFCompactDisplay;"</span>&gt; HTML/CSS &lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#22810;&#20010;&#23383;&#20307;&#35774;&#32622;&#31616;&#20889;&#25104;&#19968;&#26465; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">font [&#26012;&#20307;/&#21152;&#31895;] &#23383;&#20307;&#22823;&#23567; &#23383;&#20307;&#31867;&#22411; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font: italic bold 16px Fira Code"</span>&gt; EvanMeek &lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf7fe6b7" class="outline-2">
+<h2 id="orgf7fe6b7">文本</h2>
+<div class="outline-text-2" id="text-orgf7fe6b7">
+</div>
+<div id="outline-container-orgdcf7f40" class="outline-3">
+<h3 id="orgdcf7f40">首行缩进</h3>
+<div class="outline-text-3" id="text-orgdcf7f40">
+<p>
+<code>text-indent</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-indent: 25px;"</span>&gt;
+      &#19968;&#34892;
+      &lt;<span style="color: #ECA964;">br</span>&gt;
+      &#20108;&#34892;
+      &lt;<span style="color: #ECA964;">br</span>&gt;
+      &#19977;&#34892;
+      &lt;<span style="color: #ECA964;">br</span>&gt;
+      N&#34892;
+    &lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org96691d1" class="outline-3">
+<h3 id="org96691d1">划线</h3>
+<div class="outline-text-3" id="text-org96691d1">
+<p>
+<code>text-decoration</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#19978;&#21010;&#32447; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-decoration: overline;"</span>&gt; &#19978; &lt;/<span style="color: #ECA964;">span</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#20013;&#21010;&#32447; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-decoration: line-through;"</span>&gt; &#20013; &lt;/<span style="color: #ECA964;">span</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#19979;&#21010;&#32447; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-decoration: underline"</span>&gt; &#19979; &lt;/<span style="color: #ECA964;">span</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4e1cb1a" class="outline-3">
+<h3 id="org4e1cb1a">文本对齐</h3>
+<div class="outline-text-3" id="text-org4e1cb1a">
+<p>
+<code>text-align</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: left;"</span>&gt; &#24038; &lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: center;"</span>&gt; &#20013; &lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: right;"</span>&gt; &#21491; &lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org78110ca" class="outline-3">
+<h3 id="org78110ca">行高</h3>
+<div class="outline-text-3" id="text-org78110ca">
+<p>
+<code>line-height</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"line-height: 50px; border: 2px solid;"</span>&gt;
+      1&#34892;
+      &lt;<span style="color: #ECA964;">br</span>&gt;
+      2&#34892;
+    &lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"line-height: 100px; border: 2px solid;"</span>&gt;
+      1&#34892;
+      &lt;<span style="color: #ECA964;">br</span>&gt;
+      2&#34892;
+    &lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5036fa5" class="outline-3">
+<h3 id="org5036fa5">间距</h3>
+<div class="outline-text-3" id="text-org5036fa5">
+<p>
+<code>letter-spacing</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">em</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"letter-spacing: 10px;"</span>&gt;<span style="text-decoration: underline;">&#38388;&#36317;</span>&lt;/<span style="color: #ECA964;">em</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2cf13d" class="outline-3">
+<h3 id="orge2cf13d">换行</h3>
+<div class="outline-text-3" id="text-orge2cf13d">
+<p>
+<code>white-space</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">normal | &#40664;&#35748;&#20540;&#33258;&#21160;&#25442;&#34892; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"background: #a3a7e4; width: 28px; white-space: normal;"</span>&gt;&#25442;&#34892;&#27979;&#35797;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">nowrap | &#40664;&#35748;&#19981;&#25442;&#34892; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"background: #a3a7e4; width: 28px; white-space: nowrap;"</span>&gt;&#19981;&#25442;&#34892;&#27979;&#35797;&lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3dac411" class="outline-3">
+<h3 id="org3dac411">阴影</h3>
+<div class="outline-text-3" id="text-org3dac411">
+<p>
+<code>text-shadow</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;    
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-shadow: 2px 2px red"</span>&gt;
+      Test
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org001be59" class="outline-2">
+<h2 id="org001be59">光标</h2>
+<div class="outline-text-2" id="text-org001be59">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    a:hover{
+        cursor: pointer;
+        /* &#21487;&#36873;&#39033;
+           default : &#40664;&#35748;
+           help    : &#24110;&#21161;
+           wait    : &#31561;&#24453;&#27801;&#28431;
+           move    : &#21487;&#31227;&#21160;
+           text    : &#36873;&#25321;
+       */
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">a</span> <span style="color: #31C6FF;">href</span>=<span style="color: #10CFC0;">"https://www.baidu.com"</span>&gt;&#30334;&#24230;&lt;/<span style="color: #ECA964;">a</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org55b2967" class="outline-2">
+<h2 id="org55b2967">盒子模型</h2>
+<div class="outline-text-2" id="text-org55b2967">
+</div>
+<div id="outline-container-orgb2ffef3" class="outline-3">
+<h3 id="orgb2ffef3">元素形态</h3>
+<div class="outline-text-3" id="text-orgb2ffef3">
+<p>
+元素即标签，标签分为两种形态：块形态和行形态。
+每个标签默认都有一种形态，可以通过CSS指定标签的形态。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"background: green;"</span>&gt;&#22359;&#20803;&#32032;&lt;/<span style="color: #ECA964;">div</span>&gt;
+&lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"background: red;"</span>&gt;&#34892;&#20803;&#32032;&lt;/<span style="color: #ECA964;">span</span>&gt;
+</pre>
+</div>
+<p>
+块元素可以作为 <code>盒子</code> ，也就是作为其他元素的容器。
+</p>
+</div>
+</div>
+<div id="outline-container-org69f97c1" class="outline-3">
+<h3 id="org69f97c1">修改元素形态</h3>
+<div class="outline-text-3" id="text-org69f97c1">
+<p>
+通过 <code>display</code> 属性可以修改元素形态。并且还可以为其设置宽高。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"display: inline; background: #d0efb5;"</span>&gt;
+  inline
+&lt;/<span style="color: #ECA964;">div</span>&gt;
+&lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"display: block; background: #f3e595;"</span>&gt;
+  block
+&lt;/<span style="color: #ECA964;">span</span>&gt;
+&lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"display: none;"</span>&gt;
+  none
+&lt;/<span style="color: #ECA964;">div</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8264ed3" class="outline-3">
+<h3 id="org8264ed3">盒子大小</h3>
+<div class="outline-text-3" id="text-org8264ed3">
+<p>
+可以为盒子指定宽高。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; background: blue;"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+<p>
+对于响应式网站，可以设置最大最小宽高限制。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"min-width: 200; min-height: 200px;"</span>&gt;
+      &#23485;&#39640;&#19981;&#33021;&#22823;&#20110;200px;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;2
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"min-width: 200; max-height: 200px;"</span>&gt;
+      &#23485;&#39640;&#19981;&#33021;&#22823;&#20110;200px;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+<p>
+盒子的宽高默认值是 <code>auto</code> 。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; background: green;"</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">width: auto &#20110;&#29238;&#23481;&#22120;&#31561;&#23485; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">height: auto &#20110;&#23481;&#22120;&#20013;&#30340;&#20869;&#23481;&#31561;&#39640; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+      &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: auto; height: auto; background: red;"</span>&gt;
+        1. &lt;<span style="color: #ECA964;">br</span>&gt;
+        2.
+      &lt;/<span style="color: #ECA964;">div</span>&gt;
+      &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: auto; height: auto; background: blue;"</span>&gt;
+        3. &lt;<span style="color: #ECA964;">br</span>&gt;
+        4.
+      &lt;/<span style="color: #ECA964;">div</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6d5744f" class="outline-3">
+<h3 id="org6d5744f">盒子溢出内容处理方式</h3>
+<div class="outline-text-3" id="text-org6d5744f">
+<p>
+当内容面积大于容器面积，那么会有两种处理方式。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#19981;&#20570;&#22788;&#29702; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; background: green; white-space: nowrap;"</span>&gt;&#20315;&#31995;&#25918;&#24323;&#27835;&#30103;~~~~~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#28322;&#20986;&#30340;&#38544;&#34255; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 50px; background: red; white-space: nowrap; overflow: hidden;"</span>&gt;&#19981;&#20315;&#31995;&#65292;&#22362;&#25345;&#27835;&#30103;~~~~~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#33258;&#21160;&#22788;&#29702; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">overflow&#21487;&#36873;&#20026;overflow-y: &#20165;&#26174;&#31034;&#19978;&#19979;&#28378;&#21160;&#26465;&#12290;overflow-x: &#20165;&#26174;&#31034;&#24038;&#21491;&#28378;&#21160;&#26465;&#12290; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 50px; background: blue; white-space: nowrap; overflow: auto;"</span>&gt;&#20315;&#31995;&#65292;&#20840;&#33258;&#21160;&#27169;&#24335;~~~~~&lt;/<span style="color: #ECA964;">p</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#40664;&#35748;&#23601;&#26174;&#31034;&#28378;&#21160;&#26465; | scroll </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">p</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 50px; background: yellow; white-space: nowrap; overflow: scroll;"</span>&gt;&#20320;&#29233;&#25110;&#32773;&#19981;&#29233;&#65292;&#29233;&#23601;&#22312;&#36825;&#37324;&#65292;&#19981;&#22686;&#19981;&#20943;~&lt;/<span style="color: #ECA964;">p</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7bdd714" class="outline-3">
+<h3 id="org7bdd714">占位</h3>
+<div class="outline-text-3" id="text-org7bdd714">
+<p>
+<code>visibility</code>
+占位的作用是可以使得内容不可见，但是位置仍然存在。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"visibility: hidden; width: 20px; height: 20px;"</span>&gt;
+      &#21344;&#20301;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 20px; height: 20px; background: green;"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f4a95f" class="outline-3">
+<h3 id="org8f4a95f">box-sizing</h3>
+<div class="outline-text-3" id="text-org8f4a95f">
+<p>
+作用是固定大小，盒子大小不会被边框，边距所影响。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; box-sizing: border-box; background: green; padding: 20px;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf8b52f3" class="outline-3">
+<h3 id="orgf8b52f3">content-box</h3>
+<div class="outline-text-3" id="text-orgf8b52f3">
+<p>
+作用是动态更变大小，受到边框、边距的影响。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &#26377;pdding
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; box-sizing: content-box; background: blue; padding: 20px;"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+    &lt;<span style="color: #ECA964;">br</span>&gt;
+    &#27809;&#26377;padding
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; box-sizing: content-box; background: blue;"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2e6b0bb" class="outline-2">
+<h2 id="org2e6b0bb">边框</h2>
+<div class="outline-text-2" id="text-org2e6b0bb">
+</div>
+<div id="outline-container-org2305b8e" class="outline-3">
+<h3 id="org2305b8e">简单的边框</h3>
+<div class="outline-text-3" id="text-org2305b8e">
+<p>
+<code>border</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; border: 10px dashed green;"</span>&gt;
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: center;"</span>&gt;&#34394;&#32447;&#36793;&#26694;&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6abc990" class="outline-3">
+<h3 id="org6abc990">圆角</h3>
+<div class="outline-text-3" id="text-org6abc990">
+<p>
+<code>border-radius</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">border-radius: 5px; &#22278;&#35282;&#30340;&#22235;&#20010;&#35282;&#30340;&#35282;&#24230;&#12290; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">border-radius: 1px 2px 3px 4px; (&#24038;&#19978;&#35282; / &#21491;&#19978;&#35282; / &#21491;&#19979;&#35282; / &#24038;&#19979;&#35282;) &#39034;&#26102;&#38024;</span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; background: green; border-radius: 5px;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2394696" class="outline-3">
+<h3 id="org2394696">轮廓</h3>
+<div class="outline-text-3" id="text-org2394696">
+<p>
+<code>outline</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">outline&#35821;&#27861;&#36319;border&#30456;&#21516;&#65292;&#20294;&#26159;&#20854;&#26159;&#21253;&#25324;&#22312;border&#20043;&#22806;&#30340;&#12290; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px;</span>
+<span style="color: #10CFC0;">                border: 5px solid green;</span>
+<span style="color: #10CFC0;">                outline: 5px dashed red;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org00aabee" class="outline-3">
+<h3 id="org00aabee">阴影</h3>
+<div class="outline-text-3" id="text-org00aabee">
+<p>
+<code>box-shadow</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">box-shadow&#30418;&#23376;&#38452;&#24433;-&#21442;&#25968; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">1. &#27700;&#24179;&#38452;&#24433;&#65292;&#27491;&#25968;&#38752;&#21491;&#65292;&#36127;&#25968;&#38752;&#24038; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">2. &#22402;&#30452;&#38452;&#24433;&#65292;&#27491;&#25968;&#38752;&#19978;&#65292;&#36127;&#25968;&#38752;&#19979; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">3. &#38452;&#24433;&#27169;&#31946;&#24230; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">4. &#39068;&#33394; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px;</span>
+<span style="color: #10CFC0;">                border: 1px solid black;</span>
+<span style="color: #10CFC0;">                box-shadow: 5px 5px 5px gray;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org79c4e63" class="outline-2">
+<h2 id="org79c4e63">边距</h2>
+<div class="outline-text-2" id="text-org79c4e63">
+<p>
+CSS不仅允许标签具有边框，还允许具有边距，边距和边框不同的是，边距是指元素与元素之间的距离。
+</p>
+</div>
+<div id="outline-container-org3c6df6f" class="outline-3">
+<h3 id="org3c6df6f">外边距</h3>
+<div class="outline-text-3" id="text-org3c6df6f">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#36825;&#37324;&#35774;&#32622;&#30340;&#22806;&#36793;&#36317;&#31561;&#20110;div&#26631;&#31614;&#19982;body&#26631;&#31614;&#30340;&#36793;&#36317; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">margin-&#21442;&#25968;</span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">margin: &#19978; &#21491; &#19979; &#24038; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#21487;&#36873;&#23646;&#24615;: </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">margin-top/right/bottom/left&#65292;&#21487;&#20197;&#21333;&#29420;&#35774;&#32622;&#26576;&#19968;&#36793;&#30340;&#22806;&#36793;&#36317; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px; background: green; margin: 20px;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf2d26e1" class="outline-3">
+<h3 id="orgf2d26e1">内边距</h3>
+<div class="outline-text-3" id="text-orgf2d26e1">
+<p>
+内边距是内容离边框的距离。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px;</span>
+<span style="color: #10CFC0;">                border: 1px solid green;</span>
+<span style="color: #10CFC0;">                padding: 20px;"</span>&gt;
+      &lt;<span style="color: #ECA964;">span</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"border: 1px dashed red"</span>&gt;&#20869;&#36793;&#36317;&lt;/<span style="color: #ECA964;">span</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7c14f1b" class="outline-2">
+<h2 id="org7c14f1b">列表</h2>
+<div class="outline-text-2" id="text-org7c14f1b">
+</div>
+<div id="outline-container-orga498f9d" class="outline-3">
+<h3 id="orga498f9d">符号样式</h3>
+<div class="outline-text-3" id="text-orga498f9d">
+<p>
+可以设定列表的符号样式
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">ul</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"list-style-type: decimal"</span>&gt;
+      &lt;<span style="color: #ECA964;">li</span>&gt;first&lt;/<span style="color: #ECA964;">li</span>&gt;
+      &lt;<span style="color: #ECA964;">li</span>&gt;second&lt;/<span style="color: #ECA964;">li</span>&gt;
+      &lt;<span style="color: #ECA964;">li</span>&gt;third&lt;/<span style="color: #ECA964;">li</span>&gt;
+    &lt;/<span style="color: #ECA964;">ul</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!--</span>
+<span style="color: #6B7887; text-decoration: underline;">    &#26356;&#22810;&#31526;&#21495;:</span>
+<span style="color: #6B7887; text-decoration: underline;">    none: &#21462;&#28040;&#31526;&#21495;</span>
+<span style="color: #6B7887; text-decoration: underline;">    disc: &#23454;&#24515;&#22278;</span>
+<span style="color: #6B7887; text-decoration: underline;">    circle: &#31354;&#24515;&#22278;</span>
+<span style="color: #6B7887; text-decoration: underline;">    square: &#26041;&#22359;</span>
+<span style="color: #6B7887; text-decoration: underline;">    decimal: &#38463;&#25289;&#20271;&#25968;&#23383;</span>
+<span style="color: #6B7887; text-decoration: underline;">    lower-alpha: &#23567;&#20889;&#23383;&#27597;</span>
+<span style="color: #6B7887; text-decoration: underline;">    upper-roman: &#22823;&#20889;&#23383;&#27597;</span>
+<span style="color: #6B7887; text-decoration: underline;">    </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga869abe" class="outline-3">
+<h3 id="orga869abe">符号位置</h3>
+<div class="outline-text-3" id="text-orga869abe">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">outside&#26159;&#40664;&#35748;&#20540;&#65292;&#20316;&#29992;&#26159;&#23558;&#31526;&#21495;&#26174;&#31034;&#22312;li&#26631;&#31614;&#30340;&#36793;&#26694;&#20043;&#22806; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">ul</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"list-style-position: outside;"</span>&gt;
+      &lt;<span style="color: #ECA964;">li</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"border: 1px solid green;"</span>&gt;first&lt;/<span style="color: #ECA964;">li</span>&gt;
+    &lt;/<span style="color: #ECA964;">ul</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">inside&#26159;&#26174;&#31034;&#22312;li&#26631;&#31614;&#36793;&#26694;&#20043;&#20869;&#12290; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">ul</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"list-style-position: inside;"</span>&gt;
+      &lt;<span style="color: #ECA964;">li</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"border: 1px solid red;"</span>&gt;second&lt;/<span style="color: #ECA964;">li</span>&gt;
+    &lt;/<span style="color: #ECA964;">ul</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org95c2d4d" class="outline-2">
+<h2 id="org95c2d4d">表格</h2>
+<div class="outline-text-2" id="text-org95c2d4d">
+</div>
+<div id="outline-container-orgdeeee3c" class="outline-3">
+<h3 id="orgdeeee3c">表格间距</h3>
+<div class="outline-text-3" id="text-orgdeeee3c">
+<p>
+表格之间的间距可以使用 <code>border-spacing</code> 设置。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 200px; height: 100px;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">th</span> <span style="color: #31C6FF;">colspan</span>=<span style="color: #10CFC0;">"2"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 16px;"</span>&gt;&#20351;&#29992;&#40664;&#35748;&#36793;&#36317;&#30340;&#34920;&#26684;&lt;/<span style="color: #ECA964;">th</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;A&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;B&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 200px; height: 100px; border-spacing: 5px;</span>
+<span style="color: #10CFC0;">                             margin-top: 20px;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">th</span> <span style="color: #31C6FF;">colspan</span>=<span style="color: #10CFC0;">"2"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 16px;"</span>&gt;&#26377;&#36793;&#36317;&#30340;&#34920;&#26684;&lt;/<span style="color: #ECA964;">th</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;A&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;B&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf2c4abb" class="outline-3">
+<h3 id="orgf2c4abb">表格间距合并</h3>
+<div class="outline-text-3" id="text-orgf2c4abb">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 200px; height: 100px;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">th</span> <span style="color: #31C6FF;">colspan</span>=<span style="color: #10CFC0;">"2"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 16px;"</span>&gt;&#40664;&#35748;&#36793;&#36317;&#30340;&#34920;&#26684;&lt;/<span style="color: #ECA964;">th</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;A&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;B&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 200px; height: 100px; border-collapse: collapse;</span>
+<span style="color: #10CFC0;">                             margin-top: 20px;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">th</span> <span style="color: #31C6FF;">colspan</span>=<span style="color: #10CFC0;">"2"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"font-size: 16px;"</span>&gt;&#36793;&#36317;&#21512;&#24182;&#21518;&#30340;&#34920;&#26684;&lt;/<span style="color: #ECA964;">th</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;A&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;B&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgec281a3" class="outline-3">
+<h3 id="orgec281a3">垂直高度</h3>
+<div class="outline-text-3" id="text-orgec281a3">
+<p>
+<code>vertical-align</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px;</span>
+<span style="color: #10CFC0;">                             border-collapse: collapse;</span>
+<span style="color: #10CFC0;">                             text-align: center;</span>
+<span style="color: #10CFC0;">                             vertical-align: middle;</span>
+<span style="color: #10CFC0;">                             color: green;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;&#20320;&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;&#22909;&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;&#19990;&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;&#30028;&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1c7c332" class="outline-3">
+<h3 id="org1c7c332">比例分布</h3>
+<div class="outline-text-3" id="text-org1c7c332">
+<p>
+<code>table-layout</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;&#21160;&#24577;&#20998;&#37197;&#22823;&#23567;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 200px; border-collapse: collapse; table-layout: auto;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;hello&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;~&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+    &lt;<span style="color: #ECA964;">p</span>&gt;&#31561;&#27604;&#20363;&lt;/<span style="color: #ECA964;">p</span>&gt;
+    &lt;<span style="color: #ECA964;">table</span> <span style="color: #31C6FF;">border</span>=<span style="color: #10CFC0;">"1"</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 200px; border-collapse: collapse; table-layout: fixed;"</span>&gt;
+      &lt;<span style="color: #ECA964;">tr</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;world&lt;/<span style="color: #ECA964;">td</span>&gt;
+        &lt;<span style="color: #ECA964;">td</span>&gt;~&lt;/<span style="color: #ECA964;">td</span>&gt;
+      &lt;/<span style="color: #ECA964;">tr</span>&gt;
+    &lt;/<span style="color: #ECA964;">table</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8abe663" class="outline-2">
+<h2 id="org8abe663">背景</h2>
+<div class="outline-text-2" id="text-org8abe663">
+</div>
+<div id="outline-container-org0989da9" class="outline-3">
+<h3 id="org0989da9">背景颜色</h3>
+<div class="outline-text-3" id="text-org0989da9">
+<p>
+<code>background-color</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#28155;&#21152;&#32972;&#26223;&#39068;&#33394; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 50px;</span>
+<span style="color: #10CFC0;">                background-color: green;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org23dc64d" class="outline-3">
+<h3 id="org23dc64d">背景图片</h3>
+<div class="outline-text-3" id="text-org23dc64d">
+<p>
+<code>background-image</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#28155;&#21152;&#32972;&#26223;&#22270;&#29255; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 452px;</span>
+<span style="color: #10CFC0;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f0de40" class="outline-3">
+<h3 id="org6f0de40">重复背景图片</h3>
+<div class="outline-text-3" id="text-org6f0de40">
+<p>
+<code>background-repeat</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#37325;&#22797;&#32972;&#26223;&#22270;&#29255; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">background-repeat: repeat-x &#27178;&#21521;&#37325;&#22797; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">background-repeat: repeat-y &#32437;&#21521;&#37325;&#22797; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">background-repeat: repeat &#37325;&#22797;&#30452;&#21040;&#22635;&#28385; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">background-repeat: no-repeat &#21462;&#28040;&#37325;&#22797; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 1000px; height: 1000px;</span>
+<span style="color: #10CFC0;">                background-repeat: repeat;</span>
+<span style="color: #10CFC0;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7bdb2b8" class="outline-3">
+<h3 id="org7bdb2b8">图片尺寸</h3>
+<div class="outline-text-3" id="text-org7bdb2b8">
+<p>
+<code>background-size</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#22270;&#29255;&#23610;&#23544; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 452px;</span>
+<span style="color: #10CFC0;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);</span>
+<span style="color: #10CFC0;">                background-repeat: no-repeat;</span>
+<span style="color: #10CFC0;">                background-size: 320px 226px;</span>
+<span style="color: #10CFC0;">                border: 10px dashed red;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org601b74e" class="outline-3">
+<h3 id="org601b74e">图片位置</h3>
+<div class="outline-text-3" id="text-org601b74e">
+<p>
+<code>background-position</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#22270;&#29255;&#20301;&#32622; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 452px;</span>
+<span style="color: #10CFC0;">                background-color: green;</span>
+<span style="color: #10CFC0;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);</span>
+<span style="color: #10CFC0;">                background-repeat: no-repeat;</span>
+<span style="color: #10CFC0;">                background-size: 320px 226px;</span>
+<span style="color: #10CFC0;">                border: 10px dashed red;</span>
+<span style="color: #10CFC0;">                background-position: 50% 50%"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org05c7302" class="outline-3">
+<h3 id="org05c7302">固定背景位置</h3>
+<div class="outline-text-3" id="text-org05c7302">
+<p>
+固定背景后滚动条滚动背景图片不会随之移动。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#22266;&#23450;&#32972;&#26223;&#20301;&#32622; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 452px;</span>
+<span style="color: #10CFC0;">                background-color: green;</span>
+<span style="color: #10CFC0;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);</span>
+<span style="color: #10CFC0;">                background-repeat: repeat;</span>
+<span style="color: #10CFC0;">                background-size: 320px 226px;</span>
+<span style="color: #10CFC0;">                border: 10px dashed red;</span>
+<span style="color: #10CFC0;">                background-attachment: fixed;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f3a5f5" class="outline-3">
+<h3 id="org7f3a5f5">简写background</h3>
+<div class="outline-text-3" id="text-org7f3a5f5">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#31616;&#20889;background </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 452px;</span>
+<span style="color: #10CFC0;">                background-color: green;</span>
+<span style="color: #10CFC0;">                background: url(https://www.jmjc.tech/public/home/img/fly.jpg) no-repeat 50% 50%;</span>
+<span style="color: #10CFC0;">                background-size: 320px 226px;</span>
+<span style="color: #10CFC0;">                border: 10px dashed red;"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ab0143" class="outline-2">
+<h2 id="org5ab0143">效果</h2>
+<div class="outline-text-2" id="text-org5ab0143">
+</div>
+<div id="outline-container-org7e18587" class="outline-3">
+<h3 id="org7e18587">透明</h3>
+<div class="outline-text-3" id="text-org7e18587">
+<p>
+<code>opacity</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#36879;&#26126; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"opacity: 0.3; background: #ff6138;</span>
+<span style="color: #10CFC0;">                width: 100px; height: 100px;"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"opacity: 0.7; background: #ff6138;</span>
+<span style="color: #10CFC0;">                width: 100px; height: 100px;"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3397471" class="outline-3">
+<h3 id="org3397471">渐变</h3>
+<div class="outline-text-3" id="text-org3397471">
+<p>
+<code>background-image: linear-gradient(方向 COLOR1 COLOR2 COLOR3)</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#28176;&#21464; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">linear-gradient&#21442;&#25968;</span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">to right/top/top right/bottom/bottom left/lef/top left color1 color2 color3</span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 640px; height: 100px;</span>
+<span style="color: #10CFC0;">                background-image: linear-gradient(to right, red, green, blue);"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5161d18" class="outline-3">
+<h3 id="org5161d18">变形</h3>
+<div class="outline-text-3" id="text-org5161d18">
+<p>
+<code>transform</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#21464;&#24418; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">transform&#21442;&#25968; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#20542;&#26012; | skew(&#27700;&#24179;&#35282;&#24230;, &#22402;&#30452;&#35282;&#24230;) </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#24179;&#31227; | translate(&#27700;&#24179;&#26041;&#21521;, &#22402;&#30452;&#26041;&#21521;) </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#32553;&#25918; | scale(&#27700;&#24179;&#20493;&#25968;, &#22402;&#30452;&#20493;&#25968;) </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#26059;&#36716; | rotate(&#26059;&#36716;&#35282;&#24230;) </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#20316;&#29992;&#28857; | transform-origin{&#21333;&#29420;&#30340;&#23646;&#24615;}: left/cent/right % </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">style</span>=<span style="color: #10CFC0;">"width: 100px; height: 100px;</span>
+<span style="color: #10CFC0;">                margin: 100px;</span>
+<span style="color: #10CFC0;">                background: red;</span>
+<span style="color: #10CFC0;">                transform: rotate(45deg);"</span>&gt;
+    &lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf4b7ee7" class="outline-3">
+<h3 id="orgf4b7ee7">动画</h3>
+<div class="outline-text-3" id="text-orgf4b7ee7">
+<p>
+<code>animation</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #ECA964;">html</span>&gt;
+  &lt;<span style="color: #ECA964;">style</span> <span style="color: #31C6FF;">type</span>=<span style="color: #10CFC0;">"text/css"</span>&gt;
+    #animation{
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    /* &#24403;&#40736;&#26631;&#25918;&#22312;&#27492;&#23545;&#35937;&#19978; */
+    #animation:hover{
+        animation: ani 2s ease 3 0s;
+    }
+    /* &#21160;&#30011;&#24103; | 0% ~ 100% &#26159;&#21160;&#30011;&#29983;&#21629;&#21608;&#26399;&#30340;&#21160;&#20316; */
+    @keyframes ani {
+        0% {
+            margin-left: 0px;
+        }
+        50% {
+            margin-left: 200px;
+        }
+        100% {
+            margin-left: 0px;
+        }
+    }
+  &lt;/<span style="color: #ECA964;">style</span>&gt;
+  &lt;<span style="color: #ECA964;">body</span>&gt;
+    <span style="color: #6B7887; text-decoration: underline;">&lt;!-- </span><span style="color: #6B7887; text-decoration: underline;">&#21160;&#30011; </span><span style="color: #6B7887; text-decoration: underline;">--&gt;</span>
+    &lt;<span style="color: #ECA964;">div</span> <span style="color: #31C6FF;">id</span>=<span style="color: #10CFC0;">"animation"</span>&gt;&lt;/<span style="color: #ECA964;">div</span>&gt;
+  &lt;/<span style="color: #ECA964;">body</span>&gt;
+&lt;/<span style="color: #ECA964;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0dc4497" class="outline-2">
+<h2 id="org0dc4497">浮动</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-11-10 二 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-11-12 四 01:56</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
