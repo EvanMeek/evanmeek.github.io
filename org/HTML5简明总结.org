@@ -370,7 +370,7 @@
 		 </body>
 	 </html>
    #+end_src
-* 框架   
+* 框架
   框架可以让一个页面内嵌入另一个页面。
   #+begin_src html
     <iframe src="https://www.baidu.com/" width="600" height="500" name="flag"></iframe>

@@ -1056,4 +1056,324 @@
      </html>
    #+end_src
 * 浮动
-  
+  #+begin_src html
+    <html>
+      <style type="text/css">
+        #page{
+            font-size: 20px;
+            color: white;
+            font-style: bold;
+            width: 500px;
+            height: 500px;
+        }
+        header{
+            background: green;
+            width: 500px;
+            height: 100px;
+            /* 左浮动 */
+            float: left;
+        }
+        aside{
+            background: blue;
+            width: 100px;
+            height: 400px;
+            float: left;
+        }
+        details{
+            background: red;
+            width: 400px;
+            height: 400px;
+            /* 右浮动 */
+            float: right;
+        }
+        footer {
+            background: orange;
+            width: 500px;
+            height: 100px;
+            float: left;
+        }
+    
+      </style>
+      <body>
+        <div id="page">
+          <header>头部</header>
+          <aside>侧边栏</aside>
+          <details>内容</details>
+          <footer>页脚</footer>
+        </div>
+        <!-- 清除两边的浮动 -->
+        <div style="clear: both;">
+          清除两边浮动
+        </div>
+      </body>
+    </html>
+  #+end_src
+* 定位
+** 相对定位
+   相对定位允许让一个标签方便的定于为另一个标签位置之上的写法。
+   #+begin_src html
+    <html>
+      <style type="text/css">
+      </style>
+      <body>
+        <!-- relative 设置目标 -->
+        <div style="width: 640px; height: 200px; background: #f2f2f0; position: relative;"></div>
+        <!-- absolute 设置目标 | top / bottom / left / right -->
+        <div style="width: 100px; height: 100px; background: #a6ed8e; position: absolute; top: 20px; left: 20px;"></div>
+      </body>
+    </html>
+   #+end_src
+** 绝对定位
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <!-- 在没有设置目标点的情况下默认以当前窗口为定位目标 -->
+         <div style="width: 100px; height: 100px;
+                     background: green;
+                     position: absolute;
+                     top: 50%; left: 50%;">
+           我居中了
+         </div>
+       </body>
+     </html>
+   #+end_src
+** z-index
+   设置被覆盖标签的层级关系，有点类似ps的图层的层级关系， ~z-index~ 值越大越上层，最低值为1。
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         ,*{
+             margin: 0 0;
+             padding: 0 0;
+         }
+       </style>
+       <body>
+         <div style="z-index: 1;
+                     width: 200px;
+                     height: 100px;
+                     background: green;
+                     position: relative;
+                     line-height: 8em;">
+           z-index : 1应该在内层
+         </div>
+         <div style="z-index: 2;
+                     width: 200px;
+                     height: 50px;
+                     background: red;
+                     position: absolute;
+                     left: 0; top: 0;">
+           z-index : 2应该在上层
+         </div>
+       </body>
+     </html>
+   #+end_src
+** fixed
+   固定标签位置
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         ,*{
+             margin: 0 0;
+             padding: 0 0;
+         }
+       </style>
+       <body>
+         <!-- position为fixed时，此标签不受滚动页面影响。 -->
+         <div style="position: fixed;
+                     top: 0; left: 0;
+                     width: 100%;
+                     height: 50px;
+                     background: green;
+                     color: red;
+                     text-align: center;
+                     line-height: 2.5em;">
+           我是头部导航栏
+         </div>
+         <div style="width: 100%;
+                     height: 2000px;
+                     background: red;
+                     font-size: 30px;
+                     line-height: 10em;
+                     text-align: center;">
+           往下滚动页面试试
+         </div>
+       </body>
+     </html>
+   #+end_src
+* 响应式
+** viewport
+   声明页面为响应式页面，浏览器将会支持页面自动收缩
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <header>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+       </header>
+       <body>
+       </body>
+     </html>
+   #+end_src
+** 媒体查询
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         /* 1024px ~ 1920px 分辨率设备 */
+         @media (min-width: 1024px) and (max-width: 1920px){
+             ,*{background: orange}
+         }
+         @media (min-width: 768px) and (max-width: 991px){
+             ,*{background: red}
+         }
+         @media (min-width: 480px) and (max-width: 767px){
+             ,*{background: green}
+         }
+         @media (max-width: 479px){
+             ,*{background: blue}
+         }
+       </style>
+       <body>
+       </body>
+     </html>
+   #+end_src
+* Columns
+** 多列局部
+   #+begin_src html
+     <html>
+       <style type="text/css">
+       </style>
+       <body>
+         <div style="border: 2px solid green;
+                     padding: 20px;
+                     <!-- 列数 -->
+                     column-count: 4;
+                     <!-- 列宽 -->
+                     column-width: auto;
+                     <!-- 列间隙 -->
+                     column-gap: 25px;
+                     <!-- 列与列之间的分割线 -->
+                     column-rule: 1px dashed red;">
+           content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content
+         </div>
+       </body>
+     </html>
+   #+end_src
+* Flex
+  Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移动端应用。
+** 空间分割
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         #body{
+             display: flex;
+             width: 300px;
+             height: 400px;
+             color: #f0f0f0;
+         }
+         #header{
+             background: green;
+             /* 把空间比例分割成 1:3:1 */
+             flex-grow: 1;
+         }
+         #main{
+             background: red;
+             flex-grow: 2;
+         }
+         #footer{
+             background: blue;
+             flex-grow: 1;
+         }
+       </style>
+       <body>
+         <div id="body">
+           <div id="header"></div>
+           <div id="main"></div>
+           <div id="footer"></div>
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 方向调整
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         #body{
+             display: flex;
+             /* 修改元素显示方向，默认为row */
+             flex-direction: column;
+             width: 300px;
+             height: 400px;
+             color: #f0f0f0;
+         }
+         #header{
+             background: green;
+             /* 把空间比例分割成 1:3:1 */
+             flex-grow: 1;
+         }
+         #main{
+             background: red;
+             flex-grow: 2;
+         }
+         #footer{
+             background: blue;
+             flex-grow: 1;
+         }
+       </style>
+       <body>
+         <div id="body">
+           <div id="header"></div>
+           <div id="main"></div>
+           <div id="footer"></div>
+         </div>
+       </body>
+     </html>
+   #+end_src
+** 位置对齐
+   #+begin_src html
+     <html>
+       <style type="text/css">
+         #body{
+             display: flex;
+             /* 修改元素显示方向，默认为row */
+             flex-direction: column;
+             width: 300px;
+             height: 400px;
+             color: #f0f0f0;
+         }
+         #header{
+             background: green;
+             /* 把空间比例分割成 1:3:1 */
+             flex-grow: 1;
+         }
+         #main{
+             background: red;
+             flex-grow: 2;
+             display: flex;
+             /* 设置水平对齐 */
+             /* flex-start 靠左 | center 居中 | flex-end 靠右*/
+             justify-content: center;
+             /* 垂直对齐 */
+             /* 参数同上 */
+             align-items: center;
+         }
+         #footer{
+             background: blue;
+             flex-grow: 1;
+         }
+       </style>
+       <body>
+         <div id="body">
+           <div id="header"></div>
+           <div id="main">
+             <div style="width: 50px; height: 50px;
+                         background: orange;">
+          
+             </div>
+           </div>
+           <div id="footer"></div>
+         </div>
+       </body>
+     </html>
+   #+end_src

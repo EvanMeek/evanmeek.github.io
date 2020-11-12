@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-12 四 01:56 -->
+<!-- 2020-11-12 四 19:48 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -195,7 +195,7 @@ xmodmap有个问题，就是只要有软件利用了xmodmap进行设置一些键
 第一步，先查看你所需要更改的键盘的键位（利用hwdb支持根据不同设备设置不同的键位 ）。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">su - <span style="color: #6B7887; text-decoration: underline;">#</span><span style="color: #6B7887; text-decoration: underline;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
+<pre class="src src-shell">su - <span style="color: #579C4C;">#</span><span style="color: #579C4C;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
 evtest
 </pre>
 </div>
@@ -214,10 +214,10 @@ Available devices:
 /dev/input/event5:      Compx 2.4G Wireless Receiver Consumer Control
 /dev/input/event6:      Compx 2.4G Wireless Receiver System Control
 /dev/input/event7:      Compx 2.4G Wireless Receiver
-/dev/input/event8:      ITE Tech. Inc. ITE Device<span style="color: #C0C7CE;">(</span>8910<span style="color: #C0C7CE;">)</span> Keyboard
-/dev/input/event9:      ITE Tech. Inc. ITE Device<span style="color: #C0C7CE;">(</span>8910<span style="color: #C0C7CE;">)</span> Consumer Control
-/dev/input/event10:     ITE Tech. Inc. ITE Device<span style="color: #C0C7CE;">(</span>8910<span style="color: #C0C7CE;">)</span> Wireless Radio Control
-/dev/input/event11:     ITE Tech. Inc. ITE Device<span style="color: #C0C7CE;">(</span>8910<span style="color: #C0C7CE;">)</span> System Control
+/dev/input/event8:      ITE Tech. Inc. ITE Device<span style="color: #C586C0;">(</span>8910<span style="color: #C586C0;">)</span> Keyboard
+/dev/input/event9:      ITE Tech. Inc. ITE Device<span style="color: #C586C0;">(</span>8910<span style="color: #C586C0;">)</span> Consumer Control
+/dev/input/event10:     ITE Tech. Inc. ITE Device<span style="color: #C586C0;">(</span>8910<span style="color: #C586C0;">)</span> Wireless Radio Control
+/dev/input/event11:     ITE Tech. Inc. ITE Device<span style="color: #C586C0;">(</span>8910<span style="color: #C586C0;">)</span> System Control
 /dev/input/event12:     Lid Switch
 /dev/input/event13:     Power Button
 /dev/input/event14:     Power Button
@@ -229,12 +229,12 @@ Available devices:
 /dev/input/event20:     HDA Digital PCBeep
 /dev/input/event21:     HDA Intel PCH Mic
 /dev/input/event22:     HDA Intel PCH Headphone
-/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #31C6FF;">pcm</span>=3
-/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #31C6FF;">pcm</span>=7
-/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #31C6FF;">pcm</span>=8
-/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #31C6FF;">pcm</span>=9
-/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #31C6FF;">pcm</span>=10
-Select the device event number <span style="color: #C0C7CE;">[</span>0-27<span style="color: #C0C7CE;">]</span>: 
+/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #85DDFF;">pcm</span>=3
+/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #85DDFF;">pcm</span>=7
+/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #85DDFF;">pcm</span>=8
+/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #85DDFF;">pcm</span>=9
+/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #85DDFF;">pcm</span>=10
+Select the device event number <span style="color: #C586C0;">[</span>0-27<span style="color: #C586C0;">]</span>: 
 </pre>
 </div>
 
@@ -244,26 +244,26 @@ Select the device event number <span style="color: #C0C7CE;">[</span>0-27<span s
 <div class="org-src-container">
 <pre class="src src-shell">Input driver version is 1.0.1
 Input device ID: bus 0x3 vendor 0x48d product 0xc937 version 0x110
-Input device name: <span style="color: #10CFC0;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
+Input device name: <span style="color: #DB8E73;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
 Supported events:
-  Event type 0 <span style="color: #C0C7CE;">(</span>EV_SYN<span style="color: #C0C7CE;">)</span>
-  Event type 1 <span style="color: #C0C7CE;">(</span>EV_KEY<span style="color: #C0C7CE;">)</span>
-  Event code 1 <span style="color: #C0C7CE;">(</span>KEY_ESC<span style="color: #C0C7CE;">)</span>
-  Event code 2 <span style="color: #C0C7CE;">(</span>KEY_1<span style="color: #C0C7CE;">)</span>
+  Event type 0 <span style="color: #C586C0;">(</span>EV_SYN<span style="color: #C586C0;">)</span>
+  Event type 1 <span style="color: #C586C0;">(</span>EV_KEY<span style="color: #C586C0;">)</span>
+  Event code 1 <span style="color: #C586C0;">(</span>KEY_ESC<span style="color: #C586C0;">)</span>
+  Event code 2 <span style="color: #C586C0;">(</span>KEY_1<span style="color: #C586C0;">)</span>
   ...
-  Event type 4 <span style="color: #C0C7CE;">(</span>EV_MSC<span style="color: #C0C7CE;">)</span>
-  Event code 4 <span style="color: #C0C7CE;">(</span>MSC_SCAN<span style="color: #C0C7CE;">)</span>
-  Event type 17 <span style="color: #C0C7CE;">(</span>EV_LED<span style="color: #C0C7CE;">)</span>
-  Event code 0 <span style="color: #C0C7CE;">(</span>LED_NUML<span style="color: #C0C7CE;">)</span> state 0
-  Event code 1 <span style="color: #C0C7CE;">(</span>LED_CAPSL<span style="color: #C0C7CE;">)</span> state 0
-  Event code 2 <span style="color: #C0C7CE;">(</span>LED_SCROLLL<span style="color: #C0C7CE;">)</span> state 0
-  Event code 3 <span style="color: #C0C7CE;">(</span>LED_COMPOSE<span style="color: #C0C7CE;">)</span> state 0
-  Event code 4 <span style="color: #C0C7CE;">(</span>LED_KANA<span style="color: #C0C7CE;">)</span> state 0
+  Event type 4 <span style="color: #C586C0;">(</span>EV_MSC<span style="color: #C586C0;">)</span>
+  Event code 4 <span style="color: #C586C0;">(</span>MSC_SCAN<span style="color: #C586C0;">)</span>
+  Event type 17 <span style="color: #C586C0;">(</span>EV_LED<span style="color: #C586C0;">)</span>
+  Event code 0 <span style="color: #C586C0;">(</span>LED_NUML<span style="color: #C586C0;">)</span> state 0
+  Event code 1 <span style="color: #C586C0;">(</span>LED_CAPSL<span style="color: #C586C0;">)</span> state 0
+  Event code 2 <span style="color: #C586C0;">(</span>LED_SCROLLL<span style="color: #C586C0;">)</span> state 0
+  Event code 3 <span style="color: #C586C0;">(</span>LED_COMPOSE<span style="color: #C586C0;">)</span> state 0
+  Event code 4 <span style="color: #C586C0;">(</span>LED_KANA<span style="color: #C586C0;">)</span> state 0
   Key repeat handling:
-  Repeat type 20 <span style="color: #C0C7CE;">(</span>EV_REP<span style="color: #C0C7CE;">)</span>
-  Repeat code 0 <span style="color: #C0C7CE;">(</span>REP_DELAY<span style="color: #C0C7CE;">)</span>
+  Repeat type 20 <span style="color: #C586C0;">(</span>EV_REP<span style="color: #C586C0;">)</span>
+  Repeat code 0 <span style="color: #C586C0;">(</span>REP_DELAY<span style="color: #C586C0;">)</span>
   Value    250
-  Repeat code 1 <span style="color: #C0C7CE;">(</span>REP_PERIOD<span style="color: #C0C7CE;">)</span>
+  Repeat code 1 <span style="color: #C586C0;">(</span>REP_PERIOD<span style="color: #C586C0;">)</span>
   Value     33
   Properties:
 </pre>
@@ -279,11 +279,11 @@ Supported events:
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">Event: time 1603130102.353570, -------------- SYN_REPORT ------------
-Event: time 1603130102.353570, type 4 <span style="color: #C0C7CE;">(</span>EV_MSC<span style="color: #C0C7CE;">)</span>, code 4 <span style="color: #C0C7CE;">(</span>MSC_SCAN<span style="color: #C0C7CE;">)</span>, value 700e3
-Event: time 1603130102.353570, type 1 <span style="color: #C0C7CE;">(</span>EV_KEY<span style="color: #C0C7CE;">)</span>, code 56 <span style="color: #C0C7CE;">(</span>KEY_LEFTALT<span style="color: #C0C7CE;">)</span>, value 1
+Event: time 1603130102.353570, type 4 <span style="color: #C586C0;">(</span>EV_MSC<span style="color: #C586C0;">)</span>, code 4 <span style="color: #C586C0;">(</span>MSC_SCAN<span style="color: #C586C0;">)</span>, value 700e3
+Event: time 1603130102.353570, type 1 <span style="color: #C586C0;">(</span>EV_KEY<span style="color: #C586C0;">)</span>, code 56 <span style="color: #C586C0;">(</span>KEY_LEFTALT<span style="color: #C586C0;">)</span>, value 1
 Event: time 1603130102.353570, -------------- SYN_REPORT ------------
-Event: time 1603130102.441558, type 4 <span style="color: #C0C7CE;">(</span>EV_MSC<span style="color: #C0C7CE;">)</span>, code 4 <span style="color: #C0C7CE;">(</span>MSC_SCAN<span style="color: #C0C7CE;">)</span>, value 700e3
-Event: time 1603130102.441558, type 1 <span style="color: #C0C7CE;">(</span>EV_KEY<span style="color: #C0C7CE;">)</span>, code 56 <span style="color: #C0C7CE;">(</span>KEY_LEFTALT<span style="color: #C0C7CE;">)</span>, value 0
+Event: time 1603130102.441558, type 4 <span style="color: #C586C0;">(</span>EV_MSC<span style="color: #C586C0;">)</span>, code 4 <span style="color: #C586C0;">(</span>MSC_SCAN<span style="color: #C586C0;">)</span>, value 700e3
+Event: time 1603130102.441558, type 1 <span style="color: #C586C0;">(</span>EV_KEY<span style="color: #C586C0;">)</span>, code 56 <span style="color: #C586C0;">(</span>KEY_LEFTALT<span style="color: #C586C0;">)</span>, value 0
 </pre>
 </div>
 <p>
@@ -331,8 +331,8 @@ evdev表示要修改映射的设备，后面跟着的表示匹配设备的相关
 执行如下命令即可:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">udevadm hwdb --update <span style="color: #6B7887; text-decoration: underline;">#</span><span style="color: #6B7887; text-decoration: underline;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
-udevadm trigger <span style="color: #6B7887; text-decoration: underline;"># </span><span style="color: #6B7887; text-decoration: underline;">&#24212;&#29992;</span>
+<pre class="src src-shell">udevadm hwdb --update <span style="color: #579C4C;">#</span><span style="color: #579C4C;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
+udevadm trigger <span style="color: #579C4C;"># </span><span style="color: #579C4C;">&#24212;&#29992;</span>
 </pre>
 </div>
 </div>
@@ -353,7 +353,7 @@ udevadm trigger <span style="color: #6B7887; text-decoration: underline;"># </sp
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-14 二 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-12 四 01:56</p>
+<p class="date">Created: 2020-11-12 四 19:48</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
