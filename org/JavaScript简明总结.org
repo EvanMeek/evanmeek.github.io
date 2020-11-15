@@ -1,0 +1,614 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-11-15 日>
+#+TITLE: JavaScript简明总结
+
+* 前言
+  JavaScript发展至今已经是一门全栈语言了，你可以用它进行桌面应用开发，移动开发，服务端开发，前端开发等。
+* 运行
+** 运行方式
+   JavaScript和CSS一样可以有三种被引用的方式，第一种，引用外部js文件。
+
+   #+begin_src html
+     <script src="path_to/file.js" type="text/javascript"/>
+   #+end_src
+
+   第二种，直接将代码放在HTML文件中。
+
+   #+begin_src html
+     <html>
+       <head>
+         <script type="text/javascript">
+           alert('Hello World')
+         </script>
+       </head>
+       <body>
+       </body>
+     </html>
+   #+end_src
+
+   第三种，将代码放在标签的动作属性上。
+  
+   #+begin_src html
+     <html>
+       <head>
+       </head>
+       <body>
+         <em onclick="alert('Hello World')">点我</em>
+       </body>
+     </html>
+   #+end_src
+** 调试
+   调试JS代码通常由浏览器的前端调试工具提供，打开调试工具的快捷键通常是 ~F12~ 。
+   #+begin_src html
+     <html>
+         <head>
+             <script type="text/javascript">
+              /* 输出内容至控制台 */
+              console.log("Hello World")
+             </script>
+         </head>
+         <body>
+             <p>打开这个页面会在控制台输出Hello World</p>
+         </body>
+     </html>
+   #+end_src
+** 注释
+   JS代码的注释有:
+   #+begin_src js
+     // 单行注释
+     /*
+       多行注释
+       多行注释
+      */
+
+   #+end_src
+** 分号
+   JS代码结尾可以不加分号，关于是否需要写上可以根据你所在的团队和个人习惯决定。
+* 数据类型
+  JS具有一些内置的数据类型，分别是如下几种。
+** 数值型
+   数值型分为四类- ~整数~ ， ~浮点数~  ， ~NaN~ 和 ~Infinity~ 。
+*** 整数
+    #+begin_src javascript
+      console.log(1)
+      console.log(-1)
+    #+end_src
+*** 浮点数
+    #+begin_src javascript
+      console.log(1.0)
+      console.log(-1.1111)
+    #+end_src
+*** NaN
+    代表非数字
+    #+begin_src javascript
+      console.log(0 / 0) // Nan
+      Number('a')        // Nan
+
+      // 判断对象是否是NaN
+      console.log(isNaN(NaN))         // => true
+      console.log(isNaN('a'))         // => true
+      console.log(isNaN(1))           // false
+
+      // 坑，想要判断一个NaN对象，使用isNaN
+      console.log(NaN != NaN)
+    #+end_src
+*** Infinity
+    代表无穷大或小的数字
+    #+begin_src javascript
+      console.log(1 / 0)
+    #+end_src
+*** typeof
+    检查类型
+    #+begin_src javascript
+      console.log(typeof 1)        // => number
+      console.log(typeof 1.0)      // => number
+      console.log(typeof NaN)      // => number
+      console.log(typeof Infinity) // => number
+    #+end_src
+*** 数学运算
+    #+begin_src javascript
+      // 取余
+      console.log(10 % 3)
+      // 科学记数法
+      console.log(2e3)
+      // 幂
+      console.log(2 ** 3)
+      // 加 减 乘 除
+      console.log(5 + 4 - 3 * 2 / 1)
+    #+end_src
+*** 类型转换
+    #+begin_src javascript
+      // string to number
+      console.log(Number("1"))
+      console.log(Number('1.1'))
+
+      // float to integer
+      console.log(parseInt(1.1))
+      // integer to float
+      console.log(parseFloat(1))
+    #+end_src
+** 字符串
+   字符串 = String
+*** 表示方式
+
+    #+begin_src javascript
+      console.log(typeof 'single quote string')
+      console.log(typeof "double quote string")
+    #+end_src
+
+*** 索引
+    字符串也是一个 ~序列~ ，所以可以通过序列下标访问。
+    #+begin_src javascript
+      let s = "AAAB"
+      console.log(s[3]) // => B
+    #+end_src
+
+*** 不可变性质
+    字符串是一种特殊的序列，因为其不可修改。
+    #+begin_src javascript
+      let s = "AAAB"
+
+      s[3] = "A"
+
+      console.log(s) // => AAAB
+    #+end_src
+
+*** 转义字符
+    字符串中如果包含了一些特定的字符就会被自动转义成其他内容。
+    #+begin_src javascript
+      // 转义双引号
+      console.log("\'")               // '
+      // 转义 双引号
+      console.log("\"")               // "
+      // 转义ASCII码
+      console.log("\x61")             // a
+      // 转义Unicode
+      console.log("\u00061")          // a
+      // 转义 换行符
+      console.log("你好\n世界")       // 你好换行世界
+      // windows系统转义 换行符
+      console.log("你好\r\n世界")     // 你好换行世界
+      // 转义 制表符
+      console.log("你好\t世界")       // 你好    世界
+    #+end_src
+*** 多行字符串
+    需要表示多行字符串可以将字符串包裹在一个 ~``~ 之间。
+    #+begin_src javascript
+      var s = `
+      多行
+      字符串
+      OHHHHHHH!!!
+              `
+      console.log(s)
+    #+end_src
+*** 字符串拼接
+    #+begin_src javascript
+      console.log("你好" + "世界")    // 你好世界
+    #+end_src
+*** 格式化
+    格式化字符串，可以将数据跟字符串结合起来。
+    #+begin_src javascript
+      var s = "Hello World."
+      // 早期形式
+      console.log("Your first code: " + s + ".")
+      // 现代形式 必须用``
+      console.log(`Your first code: ${s}.`)
+    #+end_src
+*** 弱类型
+    不同数据类型的数据进行操作可能会被隐式转换成某个组合，不会出错。
+    #+begin_src javascript
+      // 被转换为字符串
+      console.log(1 + '2')            // 12
+    #+end_src
+*** URL编码
+    可以对指定字符串中的特殊字符进行编码翻译。
+    #+begin_src javascript
+      // 编码
+      let evanWebSite = encodeURI("https://evanmeek.github.io/JavaScript简明总结.html")
+      console.log(evanWebSite)
+      // 解码
+      console.log(decodeURI(evanWebSite))
+    #+end_src
+*** 常用的字符串方法
+    #+begin_src javascript
+      // 获取字符串长度
+      console.log('hello,world.'.length)
+      // 转为大写
+      console.log('hello,world.'.toUpperCase())
+      // 转为小写
+      console.log('HELLO,WORLD.'.toLowerCase())
+      // 获取字符参数首次出现的索引位置，不存在返回-1。
+      console.log("hello,world.".indexOf('o'))
+      // 切片获取子串，从0开始，获取2位
+      console.log("hello,world.".substr(0,2))
+      // 判断结尾字符串
+      console.log('myjs.js'.endsWith('.js'))
+      // 替换字符
+      console.log("AAAAAAB".replace("A","B"))
+      // 根据某个字符分割字符串
+      console.log("A,B,C".split(","))
+    #+end_src
+** 数组类型
+   数组 = Array
+   Array就是可以放一堆数据的集合，这些数据可以是任意类型的。
+   #+begin_src javascript
+     let arr = [1,2.2,"3",NaN,Infinity,null,true,[],{}]
+     // typeof 验证数组其类型为 object，坑之一。
+     console.log(typeof arr)
+   #+end_src   
+*** 操作数组
+    #+begin_src javascript
+      // 初始化并创建数组
+      let arr = [1,2,3]
+      // 取数组第一个值
+      console.log(arr[0])
+      // 为数组最后一个元素重新赋值
+      arr[2] = 10
+      console.log(arr[2])
+    #+end_src
+*** 常用的数组方法
+    #+begin_src javascript
+      // 数组长度
+      console.log([].length)
+      // 元素首次出现的位置，不存在返回-1
+      console.log(['a', 2, 3].indexOf('a'))
+      // 切片，从0~2位
+      console.log(['a', 'b', 'c'].slice(0, 2))
+      // 排序
+      console.log([1, 3, 2].sort())
+      // 逆序
+      console.log([3, 2, 1].reverse())
+
+      // 追加元素
+      var arr = [1, 2]
+      arr.push(3)
+      console.log(arr)
+
+      // 弹出最后元素
+      var arr = [1, 2, 3]
+      arr.pop()
+      console.log(arr)
+
+      // 添加新元素至开头，并返回长度
+      var arr = [2, 3]
+      console.log(arr.unshift(1))
+      console.log(arr)
+
+      // 合并数组
+      var arr = [1, 2, 3]
+      var arr2 = ['a', 'b', 'c']
+      var arr3 = arr.concat(arr2)
+      console.log(arr3)
+
+      // 替换
+      var arr = [1, 2, 'a', 'a', 'a', 'a', 3]
+      console.log(arr.splice(1, 2, 'a'))
+      console.log(arr)
+
+      // 删除
+      var arr = [1, 2, 3]
+      console.log(arr.splice(0, arr.length - 1))
+      console.log(arr)
+    #+end_src
+** 对象类型
+*** Object类型
+    JS的对象即 无序的 key . value 集合，用 ~{}~ 表示。
+    #+begin_src javascript
+      var student = {
+          name : "EvanMeek",
+          age  : 19
+      }
+      // 访问
+      console.log(student.name)
+      console.log(student['age'])
+      console.log(student)
+      // 赋值
+      student.age = 20
+      console.log(student)
+      // 删除
+      delete student.age
+      console.log(student)
+    #+end_src
+*** 属性监测
+    通过 ~in~ 关键词可以检查一个对象是否存在某个属性。
+    #+begin_src javascript
+      console.log("name" in {name : "EvanMeek"})
+    #+end_src
+*** 对象方法
+    #+begin_src javascript
+      // 获取所有属性(key)
+      console.log(Object.keys({ a: 1, b: 2 }))
+      // 获取所有属性值(value)
+      console.log(Object.values({ a: 1, b: 2 }))
+      // 合并两个对象
+      console.log(Object.assign({ a: 1 }, { b: 2 }))
+    #+end_src
+*** 检测对象是否为空
+    #+begin_src javascript
+      console.log({}==={})            // false，类似 NaN !== NaN
+      // console.log({}.length)	报错，{}是对象而不是序列，所有没有length属性
+      // 通过获取其所有属性的个数判断是否为空
+      console.log(Object.keys({}).length)
+    #+end_src
+** Map类型
+   ES6标准的哈系结构，用于补充Object类型。个人感觉很难用!
+   补充: Map的key不允许存在相同的
+   #+begin_src javascript
+     m = new Map([["name", 'EvanMeek'], ["age", 20]])
+     console.log(m)
+     // 取值
+     console.log(m.get(1))
+     // 添加key value
+     m.set("id", 00001)
+     console.log(m)
+     // 删除key value
+     m.delete("id")
+     // 验证是否存在某个key
+     console.log(m.has("id"))
+     // 获取长度
+     console.log(m.size)
+     // 获取keys
+     console.log(m.keys())
+     // 获取values
+     console.log(m.values())
+   #+end_src
+** Set类型
+   ~Set~ 用于存储不可变类型，所以其只能存 ~Key~。
+   #+begin_src javascript
+     s = new Set(["name", 'age'])
+     s.add("id")
+     console.log(s)
+     s.delete("id")
+     console.log(s)
+     console.log(s.has("id"))
+   #+end_src
+** null类型
+   null = 什么都没有
+   #+begin_src javascript
+     console.log(null != 0)         // true
+     console.log(null != '')        // true
+     console.log(null != [])        // true
+     console.log(null != {})        // true
+     console.log(null != new Map()) // true
+     console.log(null != new Set()) // true
+     console.log(null === null)     // true
+     console.log(typeof null)       // 'object'
+   #+end_src
+** undefined类型
+   undefined = 不存在
+   #+begin_src javascript
+     console.log(typeof 我不存在)    // 坑，typeof返回的是字符串'undefined'而不是undefined类型
+     console.log([][0])              // undefined
+
+     // 未传递参数
+     (function (a){
+         console.log(a)              // undefined
+     })();
+     // 函数无返回值
+     console.log(function () {} ()); // undefined
+   #+end_src
+** 类型检测
+   ~typeof~ 返回的都是字符串
+   #+begin_src javascript
+     console.log(typeof 123)               // number
+     console.log(typeof 'abc')             // string
+     console.log(typeof undefined)         // undefined
+     console.log(typeof true)              // boolean
+     console.log(typeof Math.abs)          // function
+     console.log( null === null)           // true
+     console.log([] instanceof Array)      // true
+     console.log({} instanceof Object)     // true
+     console.log(new Map instanceof Map)   // true
+     console.log(new Map() instanceof Map) // true
+     console.log(new Set instanceof Set)   // true
+     console.log(new Set() instanceof Set) // true
+   #+end_src
+*** 恒等和相等的区别
+    #+begin_src javascript
+      console.log('1' == 1)           // 值相等 = true
+      console.log('1' === 1)          // 值相等+类型相等 = true
+      // JS就nm离谱，由于他们都是object，所以最好还是用恒等吧..
+      console.log(undefined == null == '' == 0 == [] == {} == false) // true
+    #+end_src
+** 包装对象
+   JS的坑...之一
+   #+begin_src javascript
+     var num = 123
+     var num = Number(123)
+     // 包装对象  傻逼玩意，尽量别用
+     var num = new Number(123)
+     // 以上num的值应该都是123，但是得到的却是false
+     console.log(123 == Number(123) == new Number(123)) // false
+   #+end_src
+* 流程控制
+  即管理代码逻辑的语句
+** 逻辑判断
+   直接看代码吧，也不难
+   #+begin_src javascript
+     console.log(1 === 1)          // true  恒等
+     console.log(1 !== 1)          // false 非等
+     console.log(1 < 1)            // false 小于
+     console.log(1 > 1)            // false 大于
+     console.log(1 <= 1)           // true 小于或等于
+     console.log(1 >= 1)           // true 大于或等于
+     console.log(1 == 1 && 1 == 2) // 与运算，两边条件都得为true，整个表达式才为true。
+     console.log(1 == 1 || 1 == 2) // 或运算，其中一个条件表达式为true，则整个表达式都为true。
+   #+end_src
+** if 语句
+   if语句有几种变体:
+   #+begin_src javascript
+     // 普通型
+     if (true) {
+         // true执行体
+     }
+     // 如果否则型
+     if (true) {
+         // true执行体
+     } else {
+         // false执行体
+     }
+     // 如果再如果...否则型
+     if (false) {
+         // true执行体
+     } else if (true) {
+         // true执行体
+     } else {
+         // false 执行体
+     }
+   #+end_src
+** switch语句
+   类似if的语句，你可以理解成语法糖
+   #+begin_src javascript
+     // 简化if代码而已，但是也不是全能的！
+     let n = 1
+     switch (n) {
+         case 1:
+             console.log("当n=1时执行我")
+             // break如果不加会把case2也执行了，直到遇到break
+             break
+         case 2:
+             console.log("当n=2时执行我")
+             break
+         default:
+             console.log("当n!=2&&n!=1时执行我")
+             break
+     }
+   #+end_src
+* 循环
+  循环用于让代码重复执行。
+** for循环
+   特点是计数方便
+   #+begin_src javascript
+     // 这个例子会从0开始输出，一直输出到4.
+     /*
+       所有参数都可忽略，但是不可忽略分号
+       for (初始化变量;执行条件;每次执行的操作){
+       }
+      ,*/
+     for (var i = 0; i < 5; i++) {
+         console.log(i)
+     }
+   #+end_src
+** while循环
+   特点是使用简单:
+   #+begin_src javascript
+     var i = 0
+     // 这个循环会重复执行5次，从0输出到4.
+     while (i < 5) {
+         console.log(i)
+         i++
+     }
+     /*
+       while(条件){
+         执行体
+       }
+      ,*/
+   #+end_src
+** continue
+   跳过本次循环
+   #+begin_src javascript
+     var i = 0
+     // 这个循环会重复执行5次，从0输出到4(除了2).
+     while (i < 5) {
+
+         if(i == 2){
+             i++
+             // 当i == 2时跳过本次循环，后面的代码不会被执行
+             continue
+         }
+         console.log(i)
+         i++
+     }
+     /*
+       while(条件){
+         执行体
+       }
+      ,*/
+   #+end_src
+** break
+   退出整个循环
+   #+begin_src javascript
+     var i = 0
+     // 这个循环会执行1次，输出0
+     while (i < 5) {
+
+         if(i == 1){
+             i++
+             // 当i==1时直接杀死整个循环，不会再重复了。
+             break
+         }
+         console.log(i)
+         i++
+     }
+     /*
+       while(条件){
+         执行体
+       }
+      ,*/
+   #+end_src
+* 函数
+可以利用函数将一段代码复用
+** 基本的函数
+   基本的函数写法
+*** funtion
+    #+begin_src javascript
+      function hello(){
+          console.log("I say hello.")
+      }
+
+      /*
+        function 函数名(参量列表){
+          函数体
+        }
+      ,*/
+      // 执行函数
+      hello()
+    #+end_src
+*** return
+    #+begin_src javascript
+      // 返回num1 + num2的和
+      function plus(num1, num2) {
+          return num1 + num2
+      }
+
+      console.log(plus(1, 2))          // 3
+    #+end_src
+*** 参数
+    name,age,id就是参数
+    定义函数时的参数叫做形参，调用函数传递的参量叫做实参。
+    #+begin_src javascript
+      function pInfo(name, age, id){
+          // console.log(`NAME:${name}\n"AGE:${age}\nID:${id}`)
+          console.log("NAME: " +name+"\n"+
+                      "AGE: "+age+"\n"+
+                      "ID: "+id+"\n")
+      }
+
+
+      pInfo("EvanMeek",20,0001)
+    #+end_src
+*** 默认参数
+    默认参数即当不传递参量时自动使用的参量值。
+    #+begin_src javascript
+      function setMoeny(money=100){
+          console.log("set money: "+money)
+      }
+
+      setMoeny(0.1)
+      setMoeny()
+    #+end_src
+*** arguments参数对象
+    #+begin_src javascript
+      // 有点类似匿名函数?
+      (function (){
+          console.log(arguments)        // 获取所有实参
+          console.log(arguments.callee) // 获取当前函数对象
+      })('a','b','c')
+    #+end_src
+*** rest参数打包
+    #+begin_src javascript
+      // 参数打包
+      (function(a,b,...rest){
+          console.log(a,b,rest)       // 1 2 [3,4,5]
+      })(1,2,3,4,5)
+    #+end_src
