@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-15 日 16:03 -->
+<!-- 2020-11-17 二 00:19 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>C++虚函数小记</title>
@@ -42,33 +42,33 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #85DDFF; font-weight: bold;">#include</span> <span style="color: #C586C0;">&lt;</span><span style="color: #DB8E73;">iostream</span><span style="color: #C586C0;">&gt;</span>
-<span style="color: #85DDFF; font-weight: bold;">#include</span> <span style="color: #C586C0;">&lt;</span><span style="color: #DB8E73;">string</span><span style="color: #C586C0;">&gt;</span>
+<pre class="src src-cpp"><span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #fb4934;">&lt;</span><span style="color: #b8bb26;">iostream</span><span style="color: #fb4934;">&gt;</span>
+<span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #fb4934;">&lt;</span><span style="color: #b8bb26;">string</span><span style="color: #fb4934;">&gt;</span>
 
-<span style="color: #339CDB;">using</span> <span style="color: #339CDB;">namespace</span> <span style="color: #339CDB;">std</span>;
+<span style="color: #fb4934;">using</span> <span style="color: #fb4934;">namespace</span> <span style="color: #d3869b;">std</span>;
 
-<span style="color: #339CDB;">class</span> <span style="color: #35CDAF;">A</span> <span style="color: #C586C0;">{</span>
-<span style="color: #339CDB;">public</span>:
-  <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{</span> cout &lt;&lt; <span style="color: #DB8E73;">"A print"</span> &lt;&lt; endl; <span style="color: #DB8E73;">}</span>
-<span style="color: #C586C0;">}</span>;
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">A</span> <span style="color: #fb4934;">{</span>
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span> cout &lt;&lt; <span style="color: #b8bb26;">"A print"</span> &lt;&lt; endl; <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>;
 
-<span style="color: #339CDB;">class</span> <span style="color: #35CDAF;">B</span> : <span style="color: #339CDB;">public</span> <span style="color: #35CDAF;">A</span> <span style="color: #C586C0;">{</span>
-<span style="color: #339CDB;">public</span>:
-  <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{</span> cout &lt;&lt; <span style="color: #DB8E73;">"B print"</span> &lt;&lt; endl; <span style="color: #DB8E73;">}</span>
-<span style="color: #C586C0;">}</span>;
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">B</span> : <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span> <span style="color: #fb4934;">{</span>
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span> cout &lt;&lt; <span style="color: #b8bb26;">"B print"</span> &lt;&lt; endl; <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>;
 
-<span style="color: #339CDB;">class</span> <span style="color: #35CDAF;">C</span> : <span style="color: #339CDB;">public</span> <span style="color: #35CDAF;">A</span> <span style="color: #C586C0;">{</span>
-<span style="color: #339CDB;">public</span>:
-  <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{</span> cout &lt;&lt; <span style="color: #DB8E73;">"C print"</span> &lt;&lt; endl; <span style="color: #DB8E73;">}</span>
-<span style="color: #C586C0;">}</span>;
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">C</span> : <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span> <span style="color: #fb4934;">{</span>
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span> cout &lt;&lt; <span style="color: #b8bb26;">"C print"</span> &lt;&lt; endl; <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>;
 
-<span style="color: #35CDAF;">int</span> <span style="color: #D9DAA2;">main</span><span style="color: #C586C0;">()</span> <span style="color: #C586C0;">{</span>
-  <span style="color: #35CDAF;">A</span> *<span style="color: #85DDFF;">a</span>;
-  a = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">B</span>;
-  a-&gt;print<span style="color: #DB8E73;">()</span>;
-  a = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">C</span>;
-  a-&gt;print<span style="color: #DB8E73;">()</span>;
-<span style="color: #C586C0;">}</span>
+<span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">main</span><span style="color: #fb4934;">()</span> <span style="color: #fb4934;">{</span>
+  <span style="color: #fabd2f;">A</span> *<span style="color: #8ec07c;">a</span>;
+  a = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">B</span>;
+  a-&gt;print<span style="color: #fabd2f;">()</span>;
+  a = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">C</span>;
+  a-&gt;print<span style="color: #fabd2f;">()</span>;
+<span style="color: #fb4934;">}</span>
 </pre>
 </div>
 
@@ -98,33 +98,33 @@ nt()</b></b> 方法，这是因为C++默认是根据类型来决定具体使用�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #85DDFF; font-weight: bold;">#include</span> <span style="color: #C586C0;">&lt;</span><span style="color: #DB8E73;">iostream</span><span style="color: #C586C0;">&gt;</span>
-<span style="color: #85DDFF; font-weight: bold;">#include</span> <span style="color: #C586C0;">&lt;</span><span style="color: #DB8E73;">string</span><span style="color: #C586C0;">&gt;</span>
+<pre class="src src-cpp"><span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #fb4934;">&lt;</span><span style="color: #b8bb26;">iostream</span><span style="color: #fb4934;">&gt;</span>
+<span style="color: #8ec07c; font-weight: bold;">#include</span> <span style="color: #fb4934;">&lt;</span><span style="color: #b8bb26;">string</span><span style="color: #fb4934;">&gt;</span>
 
-<span style="color: #339CDB;">using</span> <span style="color: #339CDB;">namespace</span> <span style="color: #339CDB;">std</span>;
+<span style="color: #fb4934;">using</span> <span style="color: #fb4934;">namespace</span> <span style="color: #d3869b;">std</span>;
 
-<span style="color: #339CDB;">class</span> <span style="color: #35CDAF;">A</span> <span style="color: #C586C0;">{</span>
-<span style="color: #339CDB;">public</span>:
-  <span style="color: #339CDB;">virtual</span> <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{</span> cout &lt;&lt; <span style="color: #DB8E73;">"A print"</span> &lt;&lt; endl; <span style="color: #DB8E73;">}</span>
-<span style="color: #C586C0;">}</span>;
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">A</span> <span style="color: #fb4934;">{</span>
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #fb4934;">virtual</span> <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span> cout &lt;&lt; <span style="color: #b8bb26;">"A print"</span> &lt;&lt; endl; <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>;
 
-<span style="color: #339CDB;">class</span> <span style="color: #35CDAF;">B</span> : <span style="color: #339CDB;">public</span> <span style="color: #35CDAF;">A</span> <span style="color: #C586C0;">{</span>
-<span style="color: #339CDB;">public</span>:
-  <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{</span> cout &lt;&lt; <span style="color: #DB8E73;">"B print"</span> &lt;&lt; endl; <span style="color: #DB8E73;">}</span>
-<span style="color: #C586C0;">}</span>;
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">B</span> : <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span> <span style="color: #fb4934;">{</span>
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span> cout &lt;&lt; <span style="color: #b8bb26;">"B print"</span> &lt;&lt; endl; <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>;
 
-<span style="color: #339CDB;">class</span> <span style="color: #35CDAF;">C</span> : <span style="color: #339CDB;">public</span> <span style="color: #35CDAF;">A</span> <span style="color: #C586C0;">{</span>
-<span style="color: #339CDB;">public</span>:
-  <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{</span> cout &lt;&lt; <span style="color: #DB8E73;">"C print"</span> &lt;&lt; endl; <span style="color: #DB8E73;">}</span>
-<span style="color: #C586C0;">}</span>;
+<span style="color: #fb4934;">class</span> <span style="color: #fabd2f;">C</span> : <span style="color: #fb4934;">public</span> <span style="color: #fabd2f;">A</span> <span style="color: #fb4934;">{</span>
+<span style="color: #fb4934;">public</span>:
+  <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span> cout &lt;&lt; <span style="color: #b8bb26;">"C print"</span> &lt;&lt; endl; <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>;
 
-<span style="color: #35CDAF;">int</span> <span style="color: #D9DAA2;">main</span><span style="color: #C586C0;">()</span> <span style="color: #C586C0;">{</span>
-  <span style="color: #35CDAF;">A</span> *<span style="color: #85DDFF;">a</span>;
-  a = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">B</span>;
-  a-&gt;print<span style="color: #DB8E73;">()</span>;
-  a = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">C</span>;
-  a-&gt;print<span style="color: #DB8E73;">()</span>;
-<span style="color: #C586C0;">}</span>
+<span style="color: #fabd2f;">int</span> <span style="color: #8ec07c;">main</span><span style="color: #fb4934;">()</span> <span style="color: #fb4934;">{</span>
+  <span style="color: #fabd2f;">A</span> *<span style="color: #8ec07c;">a</span>;
+  a = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">B</span>;
+  a-&gt;print<span style="color: #fabd2f;">()</span>;
+  a = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">C</span>;
+  a-&gt;print<span style="color: #fabd2f;">()</span>;
+<span style="color: #fb4934;">}</span>
 </pre>
 </div>
 
@@ -153,7 +153,7 @@ Java中接口方法的定义，只需要不实现具体的方法就可以啦，�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #339CDB;">virtual</span> <span style="color: #35CDAF;">void</span> <span style="color: #D9DAA2;">print</span><span style="color: #C586C0;">()</span> = 0;
+<pre class="src src-cpp"><span style="color: #fb4934;">virtual</span> <span style="color: #fabd2f;">void</span> <span style="color: #8ec07c;">print</span><span style="color: #fb4934;">()</span> = 0;
 </pre>
 </div>
 
@@ -172,7 +172,7 @@ Java中接口方法的定义，只需要不实现具体的方法就可以啦，�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-17 五 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-15 日 16:03</p>
+<p class="date">Created: 2020-11-17 二 00:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

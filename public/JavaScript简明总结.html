@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-15 日 16:03 -->
+<!-- 2020-11-17 二 00:19 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JavaScript简明总结</title>
@@ -105,12 +105,55 @@
 <ul>
 <li><a href="#org35e7c1e">funtion</a></li>
 <li><a href="#org2817f67">return</a></li>
+</ul>
+</li>
 <li><a href="#org8a9b7c6">参数</a></li>
 <li><a href="#org4c4761c">默认参数</a></li>
 <li><a href="#orgfeab8cb">arguments参数对象</a></li>
 <li><a href="#orgb4d4180">rest参数打包</a></li>
+<li><a href="#org352c0fd">匿名函数</a></li>
+<li><a href="#org43eef8f">函数参数</a></li>
+<li><a href="#orgfe3e978">返回函数</a></li>
+<li><a href="#orgfc84c1c">箭头函数</a></li>
+<li><a href="#org263acf2">递归函数</a></li>
+<li><a href="#org3dd2fba">闭包特性</a>
+<ul>
+<li><a href="#org77d1fe1">内部变量</a></li>
+<li><a href="#org89c9831">闭包</a></li>
 </ul>
 </li>
+<li><a href="#org69ce87c">生成器</a></li>
+</ul>
+</li>
+<li><a href="#orga666bd6">作用域</a>
+<ul>
+<li><a href="#orged08877">let</a></li>
+<li><a href="#orgd6b2256">const</a></li>
+<li><a href="#org08da18a">strict</a></li>
+<li><a href="#org9a70ed9">this</a></li>
+<li><a href="#org06a0d25">对象冒充</a></li>
+<li><a href="#org35465df">命名空间</a></li>
+</ul>
+</li>
+<li><a href="#org21c6e68">迭代</a>
+<ul>
+<li><a href="#org497decb">字符串</a></li>
+<li><a href="#org207dd62">数组</a></li>
+<li><a href="#org6b4ac68">对象</a></li>
+<li><a href="#orge479424">Map</a></li>
+<li><a href="#orge1f6e57">Set</a></li>
+</ul>
+</li>
+<li><a href="#org4164483">面向对象</a>
+<ul>
+<li><a href="#orga447803">创建对象</a></li>
+<li><a href="#orge53806c">prototype</a></li>
+<li><a href="#orgb79be50">继承关系</a></li>
+<li><a href="#orga6280cd">dir</a></li>
+<li><a href="#org745deb0">属性检验</a></li>
+<li><a href="#org32a5de1">instanceof</a></li>
+<li><a href="#org4c38396">class</a></li>
+<li><a href="#org2ae9b4a">extends继承</a></li>
 </ul>
 </li>
 </ul>
@@ -137,7 +180,7 @@ JavaScript和CSS一样可以有三种被引用的方式，第一种，引用外�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #D9DAA2;">script</span> <span style="color: #85DDFF;">src</span>=<span style="color: #DB8E73;">"path_to/file.js"</span> <span style="color: #85DDFF;">type</span>=<span style="color: #DB8E73;">"text/javascript"</span>/&gt;
+<pre class="src src-html">&lt;<span style="color: #8ec07c;">script</span> <span style="color: #8ec07c;">src</span>=<span style="color: #b8bb26;">"path_to/file.js"</span> <span style="color: #8ec07c;">type</span>=<span style="color: #b8bb26;">"text/javascript"</span>/&gt;
 </pre>
 </div>
 
@@ -146,15 +189,15 @@ JavaScript和CSS一样可以有三种被引用的方式，第一种，引用外�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #D9DAA2;">html</span>&gt;
-  &lt;<span style="color: #D9DAA2;">head</span>&gt;
-    &lt;<span style="color: #D9DAA2;">script</span> <span style="color: #85DDFF;">type</span>=<span style="color: #DB8E73;">"text/javascript"</span>&gt;
+<pre class="src src-html">&lt;<span style="color: #8ec07c;">html</span>&gt;
+  &lt;<span style="color: #8ec07c;">head</span>&gt;
+    &lt;<span style="color: #8ec07c;">script</span> <span style="color: #8ec07c;">type</span>=<span style="color: #b8bb26;">"text/javascript"</span>&gt;
       alert('Hello World')
-    &lt;/<span style="color: #D9DAA2;">script</span>&gt;
-  &lt;/<span style="color: #D9DAA2;">head</span>&gt;
-  &lt;<span style="color: #D9DAA2;">body</span>&gt;
-  &lt;/<span style="color: #D9DAA2;">body</span>&gt;
-&lt;/<span style="color: #D9DAA2;">html</span>&gt;
+    &lt;/<span style="color: #8ec07c;">script</span>&gt;
+  &lt;/<span style="color: #8ec07c;">head</span>&gt;
+  &lt;<span style="color: #8ec07c;">body</span>&gt;
+  &lt;/<span style="color: #8ec07c;">body</span>&gt;
+&lt;/<span style="color: #8ec07c;">html</span>&gt;
 </pre>
 </div>
 
@@ -163,13 +206,13 @@ JavaScript和CSS一样可以有三种被引用的方式，第一种，引用外�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #D9DAA2;">html</span>&gt;
-  &lt;<span style="color: #D9DAA2;">head</span>&gt;
-  &lt;/<span style="color: #D9DAA2;">head</span>&gt;
-  &lt;<span style="color: #D9DAA2;">body</span>&gt;
-    &lt;<span style="color: #D9DAA2;">em</span> <span style="color: #85DDFF;">onclick</span>=<span style="color: #DB8E73;">"alert('Hello World')"</span>&gt;<span style="font-style: italic;">&#28857;&#25105;</span>&lt;/<span style="color: #D9DAA2;">em</span>&gt;
-  &lt;/<span style="color: #D9DAA2;">body</span>&gt;
-&lt;/<span style="color: #D9DAA2;">html</span>&gt;
+<pre class="src src-html">&lt;<span style="color: #8ec07c;">html</span>&gt;
+  &lt;<span style="color: #8ec07c;">head</span>&gt;
+  &lt;/<span style="color: #8ec07c;">head</span>&gt;
+  &lt;<span style="color: #8ec07c;">body</span>&gt;
+    &lt;<span style="color: #8ec07c;">em</span> <span style="color: #8ec07c;">onclick</span>=<span style="color: #b8bb26;">"alert('Hello World')"</span>&gt;<span style="font-style: italic;">&#28857;&#25105;</span>&lt;/<span style="color: #8ec07c;">em</span>&gt;
+  &lt;/<span style="color: #8ec07c;">body</span>&gt;
+&lt;/<span style="color: #8ec07c;">html</span>&gt;
 </pre>
 </div>
 </div>
@@ -181,17 +224,17 @@ JavaScript和CSS一样可以有三种被引用的方式，第一种，引用外�
 调试JS代码通常由浏览器的前端调试工具提供，打开调试工具的快捷键通常是 <code>F12</code> 。
 </p>
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #D9DAA2;">html</span>&gt;
-    &lt;<span style="color: #D9DAA2;">head</span>&gt;
-        &lt;<span style="color: #D9DAA2;">script</span> <span style="color: #85DDFF;">type</span>=<span style="color: #DB8E73;">"text/javascript"</span>&gt;
+<pre class="src src-html">&lt;<span style="color: #8ec07c;">html</span>&gt;
+    &lt;<span style="color: #8ec07c;">head</span>&gt;
+        &lt;<span style="color: #8ec07c;">script</span> <span style="color: #8ec07c;">type</span>=<span style="color: #b8bb26;">"text/javascript"</span>&gt;
          /* &#36755;&#20986;&#20869;&#23481;&#33267;&#25511;&#21046;&#21488; */
          console.log("Hello World")
-        &lt;/<span style="color: #D9DAA2;">script</span>&gt;
-    &lt;/<span style="color: #D9DAA2;">head</span>&gt;
-    &lt;<span style="color: #D9DAA2;">body</span>&gt;
-        &lt;<span style="color: #D9DAA2;">p</span>&gt;&#25171;&#24320;&#36825;&#20010;&#39029;&#38754;&#20250;&#22312;&#25511;&#21046;&#21488;&#36755;&#20986;Hello World&lt;/<span style="color: #D9DAA2;">p</span>&gt;
-    &lt;/<span style="color: #D9DAA2;">body</span>&gt;
-&lt;/<span style="color: #D9DAA2;">html</span>&gt;
+        &lt;/<span style="color: #8ec07c;">script</span>&gt;
+    &lt;/<span style="color: #8ec07c;">head</span>&gt;
+    &lt;<span style="color: #8ec07c;">body</span>&gt;
+        &lt;<span style="color: #8ec07c;">p</span>&gt;&#25171;&#24320;&#36825;&#20010;&#39029;&#38754;&#20250;&#22312;&#25511;&#21046;&#21488;&#36755;&#20986;Hello World&lt;/<span style="color: #8ec07c;">p</span>&gt;
+    &lt;/<span style="color: #8ec07c;">body</span>&gt;
+&lt;/<span style="color: #8ec07c;">html</span>&gt;
 </pre>
 </div>
 </div>
@@ -203,11 +246,11 @@ JavaScript和CSS一样可以有三种被引用的方式，第一种，引用外�
 JS代码的注释有:
 </p>
 <div class="org-src-container">
-<pre class="src src-js"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21333;&#34892;&#27880;&#37322;</span>
-<span style="color: #579C4C;">/*</span>
-<span style="color: #579C4C;">  &#22810;&#34892;&#27880;&#37322;</span>
-<span style="color: #579C4C;">  &#22810;&#34892;&#27880;&#37322;</span>
-<span style="color: #579C4C;"> */</span>
+<pre class="src src-js"><span style="color: #928374;">// </span><span style="color: #928374;">&#21333;&#34892;&#27880;&#37322;</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  &#22810;&#34892;&#27880;&#37322;</span>
+<span style="color: #928374;">  &#22810;&#34892;&#27880;&#37322;</span>
+<span style="color: #928374;"> */</span>
 
 </pre>
 </div>
@@ -240,8 +283,8 @@ JS具有一些内置的数据类型，分别是如下几种。
 <h4 id="org4062c38">整数</h4>
 <div class="outline-text-4" id="text-org4062c38">
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span>1<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>-1<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span>1<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>-1<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -250,8 +293,8 @@ console.log<span style="color: #C586C0;">(</span>-1<span style="color: #C586C0;"
 <h4 id="org4b71547">浮点数</h4>
 <div class="outline-text-4" id="text-org4b71547">
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span>1.0<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>-1.1111<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span>1.0<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>-1.1111<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -263,16 +306,16 @@ console.log<span style="color: #C586C0;">(</span>-1.1111<span style="color: #C58
 代表非数字
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span>0 / 0<span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">Nan</span>
-Number<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'a'</span><span style="color: #C586C0;">)</span>        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">Nan</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span>0 / 0<span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">Nan</span>
+Number<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'a'</span><span style="color: #fb4934;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">Nan</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21028;&#26029;&#23545;&#35937;&#26159;&#21542;&#26159;NaN</span>
-console.log<span style="color: #C586C0;">(</span>isNaN<span style="color: #DB8E73;">(</span><span style="color: #339CDB;">NaN</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>         <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; true</span>
-console.log<span style="color: #C586C0;">(</span>isNaN<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">'a'</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>         <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; true</span>
-console.log<span style="color: #C586C0;">(</span>isNaN<span style="color: #DB8E73;">(</span>1<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>           <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21028;&#26029;&#23545;&#35937;&#26159;&#21542;&#26159;NaN</span>
+console.log<span style="color: #fb4934;">(</span>isNaN<span style="color: #fabd2f;">(</span><span style="color: #d3869b;">NaN</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>         <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; true</span>
+console.log<span style="color: #fb4934;">(</span>isNaN<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'a'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>         <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; true</span>
+console.log<span style="color: #fb4934;">(</span>isNaN<span style="color: #fabd2f;">(</span>1<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>           <span style="color: #928374;">// </span><span style="color: #928374;">false</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#22353;&#65292;&#24819;&#35201;&#21028;&#26029;&#19968;&#20010;NaN&#23545;&#35937;&#65292;&#20351;&#29992;isNaN</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">NaN</span> != <span style="color: #339CDB;">NaN</span><span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#22353;&#65292;&#24819;&#35201;&#21028;&#26029;&#19968;&#20010;NaN&#23545;&#35937;&#65292;&#20351;&#29992;isNaN</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">NaN</span> != <span style="color: #d3869b;">NaN</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -284,7 +327,7 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">N
 代表无穷大或小的数字
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span>1 / 0<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span>1 / 0<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -296,10 +339,10 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">N
 检查类型
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> 1<span style="color: #C586C0;">)</span>        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; number</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> 1.0<span style="color: #C586C0;">)</span>      <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; number</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #339CDB;">NaN</span><span style="color: #C586C0;">)</span>      <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; number</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #339CDB;">Infinity</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; number</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> 1<span style="color: #fb4934;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; number</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> 1.0<span style="color: #fb4934;">)</span>      <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; number</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #d3869b;">NaN</span><span style="color: #fb4934;">)</span>      <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; number</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #d3869b;">Infinity</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; number</span>
 </pre>
 </div>
 </div>
@@ -308,14 +351,14 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">t
 <h4 id="orgeb3e859">数学运算</h4>
 <div class="outline-text-4" id="text-orgeb3e859">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21462;&#20313;</span>
-console.log<span style="color: #C586C0;">(</span>10 % 3<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#31185;&#23398;&#35760;&#25968;&#27861;</span>
-console.log<span style="color: #C586C0;">(</span>2e3<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#24130;</span>
-console.log<span style="color: #C586C0;">(</span>2 ** 3<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21152; &#20943; &#20056; &#38500;</span>
-console.log<span style="color: #C586C0;">(</span>5 + 4 - 3 * 2 / 1<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#21462;&#20313;</span>
+console.log<span style="color: #fb4934;">(</span>10 % 3<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#31185;&#23398;&#35760;&#25968;&#27861;</span>
+console.log<span style="color: #fb4934;">(</span>2e3<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#24130;</span>
+console.log<span style="color: #fb4934;">(</span>2 ** 3<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21152; &#20943; &#20056; &#38500;</span>
+console.log<span style="color: #fb4934;">(</span>5 + 4 - 3 * 2 / 1<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -324,14 +367,14 @@ console.log<span style="color: #C586C0;">(</span>5 + 4 - 3 * 2 / 1<span style="c
 <h4 id="org7d88bb4">类型转换</h4>
 <div class="outline-text-4" id="text-org7d88bb4">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">string to number</span>
-console.log<span style="color: #C586C0;">(</span>Number<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"1"</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>Number<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">'1.1'</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">string to number</span>
+console.log<span style="color: #fb4934;">(</span>Number<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"1"</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>Number<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'1.1'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">float to integer</span>
-console.log<span style="color: #C586C0;">(</span>parseInt<span style="color: #DB8E73;">(</span>1.1<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">integer to float</span>
-console.log<span style="color: #C586C0;">(</span>parseFloat<span style="color: #DB8E73;">(</span>1<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">float to integer</span>
+console.log<span style="color: #fb4934;">(</span>parseInt<span style="color: #fabd2f;">(</span>1.1<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">integer to float</span>
+console.log<span style="color: #fb4934;">(</span>parseFloat<span style="color: #fabd2f;">(</span>1<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -348,8 +391,8 @@ console.log<span style="color: #C586C0;">(</span>parseFloat<span style="color: #
 <h4 id="org3539654">表示方式</h4>
 <div class="outline-text-4" id="text-org3539654">
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #DB8E73;">'single quote string'</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #DB8E73;">"double quote string"</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #b8bb26;">'single quote string'</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #b8bb26;">"double quote string"</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -362,8 +405,8 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">t
 字符串也是一个 <code>序列</code> ，所以可以通过序列下标访问。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">let</span> <span style="color: #85DDFF;">s</span> = <span style="color: #DB8E73;">"AAAB"</span>
-console.log<span style="color: #C586C0;">(</span>s<span style="color: #DB8E73;">[</span>3<span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; B</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">s</span> = <span style="color: #b8bb26;">"AAAB"</span>
+console.log<span style="color: #fb4934;">(</span>s<span style="color: #fabd2f;">[</span>3<span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; B</span>
 </pre>
 </div>
 </div>
@@ -376,11 +419,11 @@ console.log<span style="color: #C586C0;">(</span>s<span style="color: #DB8E73;">
 字符串是一种特殊的序列，因为其不可修改。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">let</span> <span style="color: #85DDFF;">s</span> = <span style="color: #DB8E73;">"AAAB"</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">s</span> = <span style="color: #b8bb26;">"AAAB"</span>
 
-s<span style="color: #C586C0;">[</span>3<span style="color: #C586C0;">]</span> = <span style="color: #DB8E73;">"A"</span>
+s<span style="color: #fb4934;">[</span>3<span style="color: #fb4934;">]</span> = <span style="color: #b8bb26;">"A"</span>
 
-console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">=&gt; AAAB</span>
+console.log<span style="color: #fb4934;">(</span>s<span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">=&gt; AAAB</span>
 </pre>
 </div>
 </div>
@@ -393,20 +436,20 @@ console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">
 字符串中如果包含了一些特定的字符就会被自动转义成其他内容。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20041;&#21452;&#24341;&#21495;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"\'"</span><span style="color: #C586C0;">)</span>               <span style="color: #579C4C;">// </span><span style="color: #579C4C;">'</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20041; &#21452;&#24341;&#21495;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"\""</span><span style="color: #C586C0;">)</span>               <span style="color: #579C4C;">// </span><span style="color: #579C4C;">"</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20041;ASCII&#30721;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"\x61"</span><span style="color: #C586C0;">)</span>             <span style="color: #579C4C;">// </span><span style="color: #579C4C;">a</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20041;Unicode</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"\u00061"</span><span style="color: #C586C0;">)</span>          <span style="color: #579C4C;">// </span><span style="color: #579C4C;">a</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20041; &#25442;&#34892;&#31526;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"&#20320;&#22909;\n&#19990;&#30028;"</span><span style="color: #C586C0;">)</span>       <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20320;&#22909;&#25442;&#34892;&#19990;&#30028;</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">windows&#31995;&#32479;&#36716;&#20041; &#25442;&#34892;&#31526;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"&#20320;&#22909;\r\n&#19990;&#30028;"</span><span style="color: #C586C0;">)</span>     <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20320;&#22909;&#25442;&#34892;&#19990;&#30028;</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20041; &#21046;&#34920;&#31526;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"&#20320;&#22909;\t&#19990;&#30028;"</span><span style="color: #C586C0;">)</span>       <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20320;&#22909;    &#19990;&#30028;</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20041;&#21452;&#24341;&#21495;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"\'"</span><span style="color: #fb4934;">)</span>               <span style="color: #928374;">// </span><span style="color: #928374;">'</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20041; &#21452;&#24341;&#21495;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"\""</span><span style="color: #fb4934;">)</span>               <span style="color: #928374;">// </span><span style="color: #928374;">"</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20041;ASCII&#30721;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"\x61"</span><span style="color: #fb4934;">)</span>             <span style="color: #928374;">// </span><span style="color: #928374;">a</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20041;Unicode</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"\u00061"</span><span style="color: #fb4934;">)</span>          <span style="color: #928374;">// </span><span style="color: #928374;">a</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20041; &#25442;&#34892;&#31526;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"&#20320;&#22909;\n&#19990;&#30028;"</span><span style="color: #fb4934;">)</span>       <span style="color: #928374;">// </span><span style="color: #928374;">&#20320;&#22909;&#25442;&#34892;&#19990;&#30028;</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">windows&#31995;&#32479;&#36716;&#20041; &#25442;&#34892;&#31526;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"&#20320;&#22909;\r\n&#19990;&#30028;"</span><span style="color: #fb4934;">)</span>     <span style="color: #928374;">// </span><span style="color: #928374;">&#20320;&#22909;&#25442;&#34892;&#19990;&#30028;</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20041; &#21046;&#34920;&#31526;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"&#20320;&#22909;\t&#19990;&#30028;"</span><span style="color: #fb4934;">)</span>       <span style="color: #928374;">// </span><span style="color: #928374;">&#20320;&#22909;    &#19990;&#30028;</span>
 </pre>
 </div>
 </div>
@@ -418,12 +461,12 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"
 需要表示多行字符串可以将字符串包裹在一个 <code>``</code> 之间。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">s</span> = <span style="color: #DB8E73;">`</span>
-<span style="color: #DB8E73;">&#22810;&#34892;</span>
-<span style="color: #DB8E73;">&#23383;&#31526;&#20018;</span>
-<span style="color: #DB8E73;">OHHHHHHH!!!</span>
-<span style="color: #DB8E73;">        `</span>
-console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">s</span> = <span style="color: #b8bb26;">`</span>
+<span style="color: #b8bb26;">&#22810;&#34892;</span>
+<span style="color: #b8bb26;">&#23383;&#31526;&#20018;</span>
+<span style="color: #b8bb26;">OHHHHHHH!!!</span>
+<span style="color: #b8bb26;">        `</span>
+console.log<span style="color: #fb4934;">(</span>s<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -432,7 +475,7 @@ console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">
 <h4 id="orgc6e6848">字符串拼接</h4>
 <div class="outline-text-4" id="text-orgc6e6848">
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"&#20320;&#22909;"</span> + <span style="color: #DB8E73;">"&#19990;&#30028;"</span><span style="color: #C586C0;">)</span>    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20320;&#22909;&#19990;&#30028;</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"&#20320;&#22909;"</span> + <span style="color: #b8bb26;">"&#19990;&#30028;"</span><span style="color: #fb4934;">)</span>    <span style="color: #928374;">// </span><span style="color: #928374;">&#20320;&#22909;&#19990;&#30028;</span>
 </pre>
 </div>
 </div>
@@ -444,11 +487,11 @@ console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">
 格式化字符串，可以将数据跟字符串结合起来。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">s</span> = <span style="color: #DB8E73;">"Hello World."</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26089;&#26399;&#24418;&#24335;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"Your first code: "</span> + s + <span style="color: #DB8E73;">"."</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#29616;&#20195;&#24418;&#24335; &#24517;&#39035;&#29992;``</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">`Your first code: ${s}.`</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">s</span> = <span style="color: #b8bb26;">"Hello World."</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#26089;&#26399;&#24418;&#24335;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Your first code: "</span> + s + <span style="color: #b8bb26;">"."</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#29616;&#20195;&#24418;&#24335; &#24517;&#39035;&#29992;``</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">`Your first code: ${s}.`</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -460,8 +503,8 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">`
 不同数据类型的数据进行操作可能会被隐式转换成某个组合，不会出错。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#34987;&#36716;&#25442;&#20026;&#23383;&#31526;&#20018;</span>
-console.log<span style="color: #C586C0;">(</span>1 + <span style="color: #DB8E73;">'2'</span><span style="color: #C586C0;">)</span>            <span style="color: #579C4C;">// </span><span style="color: #579C4C;">12</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#34987;&#36716;&#25442;&#20026;&#23383;&#31526;&#20018;</span>
+console.log<span style="color: #fb4934;">(</span>1 + <span style="color: #b8bb26;">'2'</span><span style="color: #fb4934;">)</span>            <span style="color: #928374;">// </span><span style="color: #928374;">12</span>
 </pre>
 </div>
 </div>
@@ -473,11 +516,11 @@ console.log<span style="color: #C586C0;">(</span>1 + <span style="color: #DB8E73
 可以对指定字符串中的特殊字符进行编码翻译。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#32534;&#30721;</span>
-<span style="color: #339CDB;">let</span> <span style="color: #85DDFF;">evanWebSite</span> = encodeURI<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"https://evanmeek.github.io/JavaScript&#31616;&#26126;&#24635;&#32467;.html"</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>evanWebSite<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#35299;&#30721;</span>
-console.log<span style="color: #C586C0;">(</span>decodeURI<span style="color: #DB8E73;">(</span>evanWebSite<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#32534;&#30721;</span>
+<span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">evanWebSite</span> = encodeURI<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"https://evanmeek.github.io/JavaScript&#31616;&#26126;&#24635;&#32467;.html"</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>evanWebSite<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#35299;&#30721;</span>
+console.log<span style="color: #fb4934;">(</span>decodeURI<span style="color: #fabd2f;">(</span>evanWebSite<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -486,22 +529,22 @@ console.log<span style="color: #C586C0;">(</span>decodeURI<span style="color: #D
 <h4 id="org313ec75">常用的字符串方法</h4>
 <div class="outline-text-4" id="text-org313ec75">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#23383;&#31526;&#20018;&#38271;&#24230;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'hello,world.'</span>.length<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20026;&#22823;&#20889;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'hello,world.'</span>.toUpperCase<span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36716;&#20026;&#23567;&#20889;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'HELLO,WORLD.'</span>.toLowerCase<span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#23383;&#31526;&#21442;&#25968;&#39318;&#27425;&#20986;&#29616;&#30340;&#32034;&#24341;&#20301;&#32622;&#65292;&#19981;&#23384;&#22312;&#36820;&#22238;-1&#12290;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"hello,world."</span>.indexOf<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">'o'</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20999;&#29255;&#33719;&#21462;&#23376;&#20018;&#65292;&#20174;0&#24320;&#22987;&#65292;&#33719;&#21462;2&#20301;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"hello,world."</span>.substr<span style="color: #DB8E73;">(</span>0,2<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21028;&#26029;&#32467;&#23614;&#23383;&#31526;&#20018;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'myjs.js'</span>.endsWith<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">'.js'</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26367;&#25442;&#23383;&#31526;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"AAAAAAB"</span>.replace<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"A"</span>,<span style="color: #DB8E73;">"B"</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26681;&#25454;&#26576;&#20010;&#23383;&#31526;&#20998;&#21106;&#23383;&#31526;&#20018;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"A,B,C"</span>.split<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">","</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#23383;&#31526;&#20018;&#38271;&#24230;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'hello,world.'</span>.length<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20026;&#22823;&#20889;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'hello,world.'</span>.toUpperCase<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36716;&#20026;&#23567;&#20889;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'HELLO,WORLD.'</span>.toLowerCase<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#23383;&#31526;&#21442;&#25968;&#39318;&#27425;&#20986;&#29616;&#30340;&#32034;&#24341;&#20301;&#32622;&#65292;&#19981;&#23384;&#22312;&#36820;&#22238;-1&#12290;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"hello,world."</span>.indexOf<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'o'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20999;&#29255;&#33719;&#21462;&#23376;&#20018;&#65292;&#20174;0&#24320;&#22987;&#65292;&#33719;&#21462;2&#20301;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"hello,world."</span>.substr<span style="color: #fabd2f;">(</span>0,2<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21028;&#26029;&#32467;&#23614;&#23383;&#31526;&#20018;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'myjs.js'</span>.endsWith<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'.js'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#26367;&#25442;&#23383;&#31526;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"AAAAAAB"</span>.replace<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"A"</span>,<span style="color: #b8bb26;">"B"</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#26681;&#25454;&#26576;&#20010;&#23383;&#31526;&#20998;&#21106;&#23383;&#31526;&#20018;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"A,B,C"</span>.split<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">","</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -515,9 +558,9 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"
 Array就是可以放一堆数据的集合，这些数据可以是任意类型的。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">let</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1,2.2,<span style="color: #DB8E73;">"3"</span>,<span style="color: #339CDB;">NaN</span>,<span style="color: #339CDB;">Infinity</span>,<span style="color: #339CDB;">null</span>,<span style="color: #339CDB;">true</span>,<span style="color: #DB8E73;">[]</span>,<span style="color: #DB8E73;">{}</span><span style="color: #C586C0;">]</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">typeof &#39564;&#35777;&#25968;&#32452;&#20854;&#31867;&#22411;&#20026; object&#65292;&#22353;&#20043;&#19968;&#12290;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> arr<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1,2.2,<span style="color: #b8bb26;">"3"</span>,<span style="color: #d3869b;">NaN</span>,<span style="color: #d3869b;">Infinity</span>,<span style="color: #d3869b;">null</span>,<span style="color: #d3869b;">true</span>,<span style="color: #fabd2f;">[]</span>,<span style="color: #fabd2f;">{}</span><span style="color: #fb4934;">]</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">typeof &#39564;&#35777;&#25968;&#32452;&#20854;&#31867;&#22411;&#20026; object&#65292;&#22353;&#20043;&#19968;&#12290;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> arr<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -525,13 +568,13 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">t
 <h4 id="orgfda3293">操作数组</h4>
 <div class="outline-text-4" id="text-orgfda3293">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21021;&#22987;&#21270;&#24182;&#21019;&#24314;&#25968;&#32452;</span>
-<span style="color: #339CDB;">let</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1,2,3<span style="color: #C586C0;">]</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21462;&#25968;&#32452;&#31532;&#19968;&#20010;&#20540;</span>
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #DB8E73;">[</span>0<span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20026;&#25968;&#32452;&#26368;&#21518;&#19968;&#20010;&#20803;&#32032;&#37325;&#26032;&#36171;&#20540;</span>
-arr<span style="color: #C586C0;">[</span>2<span style="color: #C586C0;">]</span> = 10
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #DB8E73;">[</span>2<span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#21021;&#22987;&#21270;&#24182;&#21019;&#24314;&#25968;&#32452;</span>
+<span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1,2,3<span style="color: #fb4934;">]</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21462;&#25968;&#32452;&#31532;&#19968;&#20010;&#20540;</span>
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fabd2f;">[</span>0<span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20026;&#25968;&#32452;&#26368;&#21518;&#19968;&#20010;&#20803;&#32032;&#37325;&#26032;&#36171;&#20540;</span>
+arr<span style="color: #fb4934;">[</span>2<span style="color: #fb4934;">]</span> = 10
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fabd2f;">[</span>2<span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -540,47 +583,47 @@ console.log<span style="color: #C586C0;">(</span>arr<span style="color: #DB8E73;
 <h4 id="orgb4bdc39">常用的数组方法</h4>
 <div class="outline-text-4" id="text-orgb4bdc39">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#25968;&#32452;&#38271;&#24230;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[]</span>.length<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20803;&#32032;&#39318;&#27425;&#20986;&#29616;&#30340;&#20301;&#32622;&#65292;&#19981;&#23384;&#22312;&#36820;&#22238;-1</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[</span><span style="color: #DB8E73;">'a'</span>, 2, 3<span style="color: #DB8E73;">]</span>.indexOf<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">'a'</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20999;&#29255;&#65292;&#20174;0~2&#20301;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[</span><span style="color: #DB8E73;">'a'</span>, <span style="color: #DB8E73;">'b'</span>, <span style="color: #DB8E73;">'c'</span><span style="color: #DB8E73;">]</span>.slice<span style="color: #DB8E73;">(</span>0, 2<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#25490;&#24207;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[</span>1, 3, 2<span style="color: #DB8E73;">]</span>.sort<span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36870;&#24207;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[</span>3, 2, 1<span style="color: #DB8E73;">]</span>.reverse<span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#25968;&#32452;&#38271;&#24230;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[]</span>.length<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20803;&#32032;&#39318;&#27425;&#20986;&#29616;&#30340;&#20301;&#32622;&#65292;&#19981;&#23384;&#22312;&#36820;&#22238;-1</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span><span style="color: #b8bb26;">'a'</span>, 2, 3<span style="color: #fabd2f;">]</span>.indexOf<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'a'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20999;&#29255;&#65292;&#20174;0~2&#20301;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span><span style="color: #b8bb26;">'a'</span>, <span style="color: #b8bb26;">'b'</span>, <span style="color: #b8bb26;">'c'</span><span style="color: #fabd2f;">]</span>.slice<span style="color: #fabd2f;">(</span>0, 2<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#25490;&#24207;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span>1, 3, 2<span style="color: #fabd2f;">]</span>.sort<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36870;&#24207;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span>3, 2, 1<span style="color: #fabd2f;">]</span>.reverse<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36861;&#21152;&#20803;&#32032;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1, 2<span style="color: #C586C0;">]</span>
-arr.push<span style="color: #C586C0;">(</span>3<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36861;&#21152;&#20803;&#32032;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1, 2<span style="color: #fb4934;">]</span>
+arr.push<span style="color: #fb4934;">(</span>3<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#24377;&#20986;&#26368;&#21518;&#20803;&#32032;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1, 2, 3<span style="color: #C586C0;">]</span>
-arr.pop<span style="color: #C586C0;">()</span>
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#24377;&#20986;&#26368;&#21518;&#20803;&#32032;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1, 2, 3<span style="color: #fb4934;">]</span>
+arr.pop<span style="color: #fb4934;">()</span>
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#28155;&#21152;&#26032;&#20803;&#32032;&#33267;&#24320;&#22836;&#65292;&#24182;&#36820;&#22238;&#38271;&#24230;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>2, 3<span style="color: #C586C0;">]</span>
-console.log<span style="color: #C586C0;">(</span>arr.unshift<span style="color: #DB8E73;">(</span>1<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#28155;&#21152;&#26032;&#20803;&#32032;&#33267;&#24320;&#22836;&#65292;&#24182;&#36820;&#22238;&#38271;&#24230;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>2, 3<span style="color: #fb4934;">]</span>
+console.log<span style="color: #fb4934;">(</span>arr.unshift<span style="color: #fabd2f;">(</span>1<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21512;&#24182;&#25968;&#32452;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1, 2, 3<span style="color: #C586C0;">]</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr2</span> = <span style="color: #C586C0;">[</span><span style="color: #DB8E73;">'a'</span>, <span style="color: #DB8E73;">'b'</span>, <span style="color: #DB8E73;">'c'</span><span style="color: #C586C0;">]</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr3</span> = arr.concat<span style="color: #C586C0;">(</span>arr2<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>arr3<span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21512;&#24182;&#25968;&#32452;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1, 2, 3<span style="color: #fb4934;">]</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr2</span> = <span style="color: #fb4934;">[</span><span style="color: #b8bb26;">'a'</span>, <span style="color: #b8bb26;">'b'</span>, <span style="color: #b8bb26;">'c'</span><span style="color: #fb4934;">]</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr3</span> = arr.concat<span style="color: #fb4934;">(</span>arr2<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>arr3<span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26367;&#25442;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1, 2, <span style="color: #DB8E73;">'a'</span>, <span style="color: #DB8E73;">'a'</span>, <span style="color: #DB8E73;">'a'</span>, <span style="color: #DB8E73;">'a'</span>, 3<span style="color: #C586C0;">]</span>
-console.log<span style="color: #C586C0;">(</span>arr.splice<span style="color: #DB8E73;">(</span>1, 2, <span style="color: #DB8E73;">'a'</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#26367;&#25442;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1, 2, <span style="color: #b8bb26;">'a'</span>, <span style="color: #b8bb26;">'a'</span>, <span style="color: #b8bb26;">'a'</span>, <span style="color: #b8bb26;">'a'</span>, 3<span style="color: #fb4934;">]</span>
+console.log<span style="color: #fb4934;">(</span>arr.splice<span style="color: #fabd2f;">(</span>1, 2, <span style="color: #b8bb26;">'a'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fb4934;">)</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21024;&#38500;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">arr</span> = <span style="color: #C586C0;">[</span>1, 2, 3<span style="color: #C586C0;">]</span>
-console.log<span style="color: #C586C0;">(</span>arr.splice<span style="color: #DB8E73;">(</span>0, arr.length - 1<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>arr<span style="color: #C586C0;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21024;&#38500;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">arr</span> = <span style="color: #fb4934;">[</span>1, 2, 3<span style="color: #fb4934;">]</span>
+console.log<span style="color: #fb4934;">(</span>arr.splice<span style="color: #fabd2f;">(</span>0, arr.length - 1<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>arr<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -597,20 +640,20 @@ console.log<span style="color: #C586C0;">(</span>arr<span style="color: #C586C0;
 JS的对象即 无序的 key . value 集合，用 <code>{}</code> 表示。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">student</span> = <span style="color: #C586C0;">{</span>
-    name : <span style="color: #DB8E73;">"EvanMeek"</span>,
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">student</span> = <span style="color: #fb4934;">{</span>
+    name : <span style="color: #b8bb26;">"EvanMeek"</span>,
     age  : 19
-<span style="color: #C586C0;">}</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#35775;&#38382;</span>
-console.log<span style="color: #C586C0;">(</span>student.name<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>student<span style="color: #DB8E73;">[</span><span style="color: #DB8E73;">'age'</span><span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>student<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36171;&#20540;</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#35775;&#38382;</span>
+console.log<span style="color: #fb4934;">(</span>student.name<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>student<span style="color: #fabd2f;">[</span><span style="color: #b8bb26;">'age'</span><span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>student<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36171;&#20540;</span>
 student.age = 20
-console.log<span style="color: #C586C0;">(</span>student<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21024;&#38500;</span>
-<span style="color: #339CDB;">delete</span> student.age
-console.log<span style="color: #C586C0;">(</span>student<span style="color: #C586C0;">)</span>
+console.log<span style="color: #fb4934;">(</span>student<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21024;&#38500;</span>
+<span style="color: #fb4934;">delete</span> student.age
+console.log<span style="color: #fb4934;">(</span>student<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -622,7 +665,7 @@ console.log<span style="color: #C586C0;">(</span>student<span style="color: #C58
 通过 <code>in</code> 关键词可以检查一个对象是否存在某个属性。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"name"</span> <span style="color: #339CDB;">in</span> <span style="color: #DB8E73;">{</span>name : <span style="color: #DB8E73;">"EvanMeek"</span><span style="color: #DB8E73;">}</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"name"</span> <span style="color: #fb4934;">in</span> <span style="color: #fabd2f;">{</span>name : <span style="color: #b8bb26;">"EvanMeek"</span><span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -631,12 +674,12 @@ console.log<span style="color: #C586C0;">(</span>student<span style="color: #C58
 <h4 id="org648860c">对象方法</h4>
 <div class="outline-text-4" id="text-org648860c">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#25152;&#26377;&#23646;&#24615;(key)</span>
-console.log<span style="color: #C586C0;">(</span>Object.keys<span style="color: #DB8E73;">(</span><span style="color: #579C4C;">{</span> a: 1, b: 2 <span style="color: #579C4C;">}</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#25152;&#26377;&#23646;&#24615;&#20540;(value)</span>
-console.log<span style="color: #C586C0;">(</span>Object.values<span style="color: #DB8E73;">(</span><span style="color: #579C4C;">{</span> a: 1, b: 2 <span style="color: #579C4C;">}</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21512;&#24182;&#20004;&#20010;&#23545;&#35937;</span>
-console.log<span style="color: #C586C0;">(</span>Object.assign<span style="color: #DB8E73;">(</span><span style="color: #579C4C;">{</span> a: 1 <span style="color: #579C4C;">}</span>, <span style="color: #579C4C;">{</span> b: 2 <span style="color: #579C4C;">}</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#25152;&#26377;&#23646;&#24615;(key)</span>
+console.log<span style="color: #fb4934;">(</span>Object.keys<span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">{</span> a: 1, b: 2 <span style="color: #8ec07c;">}</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#25152;&#26377;&#23646;&#24615;&#20540;(value)</span>
+console.log<span style="color: #fb4934;">(</span>Object.values<span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">{</span> a: 1, b: 2 <span style="color: #8ec07c;">}</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21512;&#24182;&#20004;&#20010;&#23545;&#35937;</span>
+console.log<span style="color: #fb4934;">(</span>Object.assign<span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">{</span> a: 1 <span style="color: #8ec07c;">}</span>, <span style="color: #8ec07c;">{</span> b: 2 <span style="color: #8ec07c;">}</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -645,10 +688,10 @@ console.log<span style="color: #C586C0;">(</span>Object.assign<span style="color
 <h4 id="orgdc2f84b">检测对象是否为空</h4>
 <div class="outline-text-4" id="text-orgdc2f84b">
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">{}</span>===<span style="color: #DB8E73;">{}</span><span style="color: #C586C0;">)</span>            <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false&#65292;&#31867;&#20284; NaN !== NaN</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">console.log({}.length)   &#25253;&#38169;&#65292;{}&#26159;&#23545;&#35937;&#32780;&#19981;&#26159;&#24207;&#21015;&#65292;&#25152;&#26377;&#27809;&#26377;length&#23646;&#24615;</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36890;&#36807;&#33719;&#21462;&#20854;&#25152;&#26377;&#23646;&#24615;&#30340;&#20010;&#25968;&#21028;&#26029;&#26159;&#21542;&#20026;&#31354;</span>
-console.log<span style="color: #C586C0;">(</span>Object.keys<span style="color: #DB8E73;">(</span><span style="color: #579C4C;">{}</span><span style="color: #DB8E73;">)</span>.length<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">{}</span>===<span style="color: #fabd2f;">{}</span><span style="color: #fb4934;">)</span>            <span style="color: #928374;">// </span><span style="color: #928374;">false&#65292;&#31867;&#20284; NaN !== NaN</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">console.log({}.length)   &#25253;&#38169;&#65292;{}&#26159;&#23545;&#35937;&#32780;&#19981;&#26159;&#24207;&#21015;&#65292;&#25152;&#26377;&#27809;&#26377;length&#23646;&#24615;</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36890;&#36807;&#33719;&#21462;&#20854;&#25152;&#26377;&#23646;&#24615;&#30340;&#20010;&#25968;&#21028;&#26029;&#26159;&#21542;&#20026;&#31354;</span>
+console.log<span style="color: #fb4934;">(</span>Object.keys<span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">{}</span><span style="color: #fabd2f;">)</span>.length<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -662,23 +705,23 @@ ES6标准的哈系结构，用于补充Object类型。个人感觉很难用!
 补充: Map的key不允许存在相同的
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">m = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Map</span><span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[</span><span style="color: #579C4C;">[</span><span style="color: #DB8E73;">"name"</span>, <span style="color: #DB8E73;">'EvanMeek'</span><span style="color: #579C4C;">]</span>, <span style="color: #579C4C;">[</span><span style="color: #DB8E73;">"age"</span>, 20<span style="color: #579C4C;">]</span><span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>m<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21462;&#20540;</span>
-console.log<span style="color: #C586C0;">(</span>m.get<span style="color: #DB8E73;">(</span>1<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#28155;&#21152;key value</span>
-m.set<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"id"</span>, 00001<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>m<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21024;&#38500;key value</span>
-m.<span style="color: #339CDB;">delete</span><span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"id"</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#39564;&#35777;&#26159;&#21542;&#23384;&#22312;&#26576;&#20010;key</span>
-console.log<span style="color: #C586C0;">(</span>m.has<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"id"</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#38271;&#24230;</span>
-console.log<span style="color: #C586C0;">(</span>m.size<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;keys</span>
-console.log<span style="color: #C586C0;">(</span>m.keys<span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;values</span>
-console.log<span style="color: #C586C0;">(</span>m.values<span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">m = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Map</span><span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span><span style="color: #8ec07c;">[</span><span style="color: #b8bb26;">"name"</span>, <span style="color: #b8bb26;">'EvanMeek'</span><span style="color: #8ec07c;">]</span>, <span style="color: #8ec07c;">[</span><span style="color: #b8bb26;">"age"</span>, 20<span style="color: #8ec07c;">]</span><span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>m<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21462;&#20540;</span>
+console.log<span style="color: #fb4934;">(</span>m.get<span style="color: #fabd2f;">(</span>1<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#28155;&#21152;key value</span>
+m.set<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"id"</span>, 00001<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>m<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21024;&#38500;key value</span>
+m.<span style="color: #fb4934;">delete</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"id"</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#39564;&#35777;&#26159;&#21542;&#23384;&#22312;&#26576;&#20010;key</span>
+console.log<span style="color: #fb4934;">(</span>m.has<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"id"</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#38271;&#24230;</span>
+console.log<span style="color: #fb4934;">(</span>m.size<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;keys</span>
+console.log<span style="color: #fb4934;">(</span>m.keys<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;values</span>
+console.log<span style="color: #fb4934;">(</span>m.values<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -690,12 +733,12 @@ console.log<span style="color: #C586C0;">(</span>m.values<span style="color: #DB
 <code>Set</code> 用于存储不可变类型，所以其只能存 ~Key~。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">s = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Set</span><span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[</span><span style="color: #DB8E73;">"name"</span>, <span style="color: #DB8E73;">'age'</span><span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span>
-s.add<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"id"</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">)</span>
-s.<span style="color: #339CDB;">delete</span><span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"id"</span><span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>s<span style="color: #C586C0;">)</span>
-console.log<span style="color: #C586C0;">(</span>s.has<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"id"</span><span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript">s = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Set</span><span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span><span style="color: #b8bb26;">"name"</span>, <span style="color: #b8bb26;">'age'</span><span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>
+s.add<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"id"</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>s<span style="color: #fb4934;">)</span>
+s.<span style="color: #fb4934;">delete</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"id"</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>s<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>s.has<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"id"</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
@@ -707,14 +750,14 @@ console.log<span style="color: #C586C0;">(</span>s.has<span style="color: #DB8E7
 null = 什么都没有
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> != 0<span style="color: #C586C0;">)</span>         <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> != <span style="color: #DB8E73;">''</span><span style="color: #C586C0;">)</span>        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> != <span style="color: #DB8E73;">[]</span><span style="color: #C586C0;">)</span>        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> != <span style="color: #DB8E73;">{}</span><span style="color: #C586C0;">)</span>        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> != <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Map</span><span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> != <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Set</span><span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">null</span> === <span style="color: #339CDB;">null</span><span style="color: #C586C0;">)</span>     <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #339CDB;">null</span><span style="color: #C586C0;">)</span>       <span style="color: #579C4C;">// </span><span style="color: #579C4C;">'object'</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> != 0<span style="color: #fb4934;">)</span>         <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> != <span style="color: #b8bb26;">''</span><span style="color: #fb4934;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> != <span style="color: #fabd2f;">[]</span><span style="color: #fb4934;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> != <span style="color: #fabd2f;">{}</span><span style="color: #fb4934;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> != <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Map</span><span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> != <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Set</span><span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">null</span> === <span style="color: #d3869b;">null</span><span style="color: #fb4934;">)</span>     <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #d3869b;">null</span><span style="color: #fb4934;">)</span>       <span style="color: #928374;">// </span><span style="color: #928374;">'object'</span>
 </pre>
 </div>
 </div>
@@ -726,15 +769,15 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">t
 undefined = 不存在
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> &#25105;&#19981;&#23384;&#22312;<span style="color: #C586C0;">)</span>    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#22353;&#65292;typeof&#36820;&#22238;&#30340;&#26159;&#23383;&#31526;&#20018;'undefined'&#32780;&#19981;&#26159;undefined&#31867;&#22411;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[][</span>0<span style="color: #DB8E73;">]</span><span style="color: #C586C0;">)</span>              <span style="color: #579C4C;">// </span><span style="color: #579C4C;">undefined</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> &#25105;&#19981;&#23384;&#22312;<span style="color: #fb4934;">)</span>    <span style="color: #928374;">// </span><span style="color: #928374;">&#22353;&#65292;typeof&#36820;&#22238;&#30340;&#26159;&#23383;&#31526;&#20018;'undefined'&#32780;&#19981;&#26159;undefined&#31867;&#22411;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[][</span>0<span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>              <span style="color: #928374;">// </span><span style="color: #928374;">undefined</span>
 
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26410;&#20256;&#36882;&#21442;&#25968;</span>
-<span style="color: #C586C0;">(</span><span style="color: #339CDB;">function</span> <span style="color: #DB8E73;">(</span><span style="color: #85DDFF;">a</span><span style="color: #DB8E73;">){</span>
-    console.log<span style="color: #579C4C;">(</span>a<span style="color: #579C4C;">)</span>              <span style="color: #579C4C;">// </span><span style="color: #579C4C;">undefined</span>
-<span style="color: #DB8E73;">}</span><span style="color: #C586C0;">)()</span>;
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20989;&#25968;&#26080;&#36820;&#22238;&#20540;</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">function</span> <span style="color: #DB8E73;">()</span> <span style="color: #DB8E73;">{}</span> <span style="color: #DB8E73;">()</span><span style="color: #C586C0;">)</span>; <span style="color: #579C4C;">// </span><span style="color: #579C4C;">undefined</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#26410;&#20256;&#36882;&#21442;&#25968;</span>
+<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span> <span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">a</span><span style="color: #fabd2f;">){</span>
+    console.log<span style="color: #8ec07c;">(</span>a<span style="color: #8ec07c;">)</span>              <span style="color: #928374;">// </span><span style="color: #928374;">undefined</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)()</span>;
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20989;&#25968;&#26080;&#36820;&#22238;&#20540;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span> <span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{}</span> <span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>; <span style="color: #928374;">// </span><span style="color: #928374;">undefined</span>
 </pre>
 </div>
 </div>
@@ -746,18 +789,18 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">f
 <code>typeof</code> 返回的都是字符串
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> 123<span style="color: #C586C0;">)</span>               <span style="color: #579C4C;">// </span><span style="color: #579C4C;">number</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #DB8E73;">'abc'</span><span style="color: #C586C0;">)</span>             <span style="color: #579C4C;">// </span><span style="color: #579C4C;">string</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #339CDB;">undefined</span><span style="color: #C586C0;">)</span>         <span style="color: #579C4C;">// </span><span style="color: #579C4C;">undefined</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> <span style="color: #339CDB;">true</span><span style="color: #C586C0;">)</span>              <span style="color: #579C4C;">// </span><span style="color: #579C4C;">boolean</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">typeof</span> Math.abs<span style="color: #C586C0;">)</span>          <span style="color: #579C4C;">// </span><span style="color: #579C4C;">function</span>
-console.log<span style="color: #C586C0;">(</span> <span style="color: #339CDB;">null</span> === <span style="color: #339CDB;">null</span><span style="color: #C586C0;">)</span>           <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">[]</span> <span style="color: #339CDB;">instanceof</span> <span style="color: #35CDAF;">Array</span><span style="color: #C586C0;">)</span>      <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">{}</span> <span style="color: #339CDB;">instanceof</span> <span style="color: #35CDAF;">Object</span><span style="color: #C586C0;">)</span>     <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Map</span> <span style="color: #339CDB;">instanceof</span> <span style="color: #35CDAF;">Map</span><span style="color: #C586C0;">)</span>   <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Map</span><span style="color: #DB8E73;">()</span> <span style="color: #339CDB;">instanceof</span> <span style="color: #35CDAF;">Map</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Set</span> <span style="color: #339CDB;">instanceof</span> <span style="color: #35CDAF;">Set</span><span style="color: #C586C0;">)</span>   <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Set</span><span style="color: #DB8E73;">()</span> <span style="color: #339CDB;">instanceof</span> <span style="color: #35CDAF;">Set</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> 123<span style="color: #fb4934;">)</span>               <span style="color: #928374;">// </span><span style="color: #928374;">number</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #b8bb26;">'abc'</span><span style="color: #fb4934;">)</span>             <span style="color: #928374;">// </span><span style="color: #928374;">string</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #d3869b;">undefined</span><span style="color: #fb4934;">)</span>         <span style="color: #928374;">// </span><span style="color: #928374;">undefined</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> <span style="color: #d3869b;">true</span><span style="color: #fb4934;">)</span>              <span style="color: #928374;">// </span><span style="color: #928374;">boolean</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">typeof</span> Math.abs<span style="color: #fb4934;">)</span>          <span style="color: #928374;">// </span><span style="color: #928374;">function</span>
+console.log<span style="color: #fb4934;">(</span> <span style="color: #d3869b;">null</span> === <span style="color: #d3869b;">null</span><span style="color: #fb4934;">)</span>           <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[]</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Array</span><span style="color: #fb4934;">)</span>      <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">{}</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Object</span><span style="color: #fb4934;">)</span>     <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Map</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Map</span><span style="color: #fb4934;">)</span>   <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Map</span><span style="color: #fabd2f;">()</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Map</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Set</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Set</span><span style="color: #fb4934;">)</span>   <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Set</span><span style="color: #fabd2f;">()</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Set</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
 </pre>
 </div>
 </div>
@@ -765,10 +808,10 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">n
 <h4 id="orgaffe51c">恒等和相等的区别</h4>
 <div class="outline-text-4" id="text-orgaffe51c">
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'1'</span> == 1<span style="color: #C586C0;">)</span>           <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20540;&#30456;&#31561; = true</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">'1'</span> === 1<span style="color: #C586C0;">)</span>          <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20540;&#30456;&#31561;+&#31867;&#22411;&#30456;&#31561; = true</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">JS&#23601;nm&#31163;&#35889;&#65292;&#30001;&#20110;&#20182;&#20204;&#37117;&#26159;object&#65292;&#25152;&#20197;&#26368;&#22909;&#36824;&#26159;&#29992;&#24658;&#31561;&#21543;..</span>
-console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">undefined</span> == <span style="color: #339CDB;">null</span> == <span style="color: #DB8E73;">''</span> == 0 == <span style="color: #DB8E73;">[]</span> == <span style="color: #DB8E73;">{}</span> == <span style="color: #339CDB;">false</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'1'</span> == 1<span style="color: #fb4934;">)</span>           <span style="color: #928374;">// </span><span style="color: #928374;">&#20540;&#30456;&#31561; = true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'1'</span> === 1<span style="color: #fb4934;">)</span>          <span style="color: #928374;">// </span><span style="color: #928374;">&#20540;&#30456;&#31561;+&#31867;&#22411;&#30456;&#31561; = true</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">JS&#23601;nm&#31163;&#35889;&#65292;&#30001;&#20110;&#20182;&#20204;&#37117;&#26159;object&#65292;&#25152;&#20197;&#26368;&#22909;&#36824;&#26159;&#29992;&#24658;&#31561;&#21543;..</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">undefined</span> == <span style="color: #d3869b;">null</span> == <span style="color: #b8bb26;">''</span> == 0 == <span style="color: #fabd2f;">[]</span> == <span style="color: #fabd2f;">{}</span> == <span style="color: #d3869b;">false</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
 </pre>
 </div>
 </div>
@@ -781,12 +824,12 @@ console.log<span style="color: #C586C0;">(</span><span style="color: #339CDB;">u
 JS的坑&#x2026;之一
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">num</span> = 123
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">num</span> = Number<span style="color: #C586C0;">(</span>123<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21253;&#35013;&#23545;&#35937;  &#20667;&#36924;&#29609;&#24847;&#65292;&#23613;&#37327;&#21035;&#29992;</span>
-<span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">num</span> = <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Number</span><span style="color: #C586C0;">(</span>123<span style="color: #C586C0;">)</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#20197;&#19978;num&#30340;&#20540;&#24212;&#35813;&#37117;&#26159;123&#65292;&#20294;&#26159;&#24471;&#21040;&#30340;&#21364;&#26159;false</span>
-console.log<span style="color: #C586C0;">(</span>123 == Number<span style="color: #DB8E73;">(</span>123<span style="color: #DB8E73;">)</span> == <span style="color: #339CDB;">new</span> <span style="color: #35CDAF;">Number</span><span style="color: #DB8E73;">(</span>123<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">num</span> = 123
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">num</span> = Number<span style="color: #fb4934;">(</span>123<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21253;&#35013;&#23545;&#35937;  &#20667;&#36924;&#29609;&#24847;&#65292;&#23613;&#37327;&#21035;&#29992;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">num</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Number</span><span style="color: #fb4934;">(</span>123<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20197;&#19978;num&#30340;&#20540;&#24212;&#35813;&#37117;&#26159;123&#65292;&#20294;&#26159;&#24471;&#21040;&#30340;&#21364;&#26159;false</span>
+console.log<span style="color: #fb4934;">(</span>123 == Number<span style="color: #fabd2f;">(</span>123<span style="color: #fabd2f;">)</span> == <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Number</span><span style="color: #fabd2f;">(</span>123<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">false</span>
 </pre>
 </div>
 </div>
@@ -806,14 +849,14 @@ console.log<span style="color: #C586C0;">(</span>123 == Number<span style="color
 直接看代码吧，也不难
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript">console.log<span style="color: #C586C0;">(</span>1 === 1<span style="color: #C586C0;">)</span>          <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true  &#24658;&#31561;</span>
-console.log<span style="color: #C586C0;">(</span>1 !== 1<span style="color: #C586C0;">)</span>          <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false &#38750;&#31561;</span>
-console.log<span style="color: #C586C0;">(</span>1 &lt; 1<span style="color: #C586C0;">)</span>            <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false &#23567;&#20110;</span>
-console.log<span style="color: #C586C0;">(</span>1 &gt; 1<span style="color: #C586C0;">)</span>            <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false &#22823;&#20110;</span>
-console.log<span style="color: #C586C0;">(</span>1 &lt;= 1<span style="color: #C586C0;">)</span>           <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true &#23567;&#20110;&#25110;&#31561;&#20110;</span>
-console.log<span style="color: #C586C0;">(</span>1 &gt;= 1<span style="color: #C586C0;">)</span>           <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true &#22823;&#20110;&#25110;&#31561;&#20110;</span>
-console.log<span style="color: #C586C0;">(</span>1 == 1 &amp;&amp; 1 == 2<span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#19982;&#36816;&#31639;&#65292;&#20004;&#36793;&#26465;&#20214;&#37117;&#24471;&#20026;true&#65292;&#25972;&#20010;&#34920;&#36798;&#24335;&#25165;&#20026;true&#12290;</span>
-console.log<span style="color: #C586C0;">(</span>1 == 1 || 1 == 2<span style="color: #C586C0;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#25110;&#36816;&#31639;&#65292;&#20854;&#20013;&#19968;&#20010;&#26465;&#20214;&#34920;&#36798;&#24335;&#20026;true&#65292;&#21017;&#25972;&#20010;&#34920;&#36798;&#24335;&#37117;&#20026;true&#12290;</span>
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span>1 === 1<span style="color: #fb4934;">)</span>          <span style="color: #928374;">// </span><span style="color: #928374;">true  &#24658;&#31561;</span>
+console.log<span style="color: #fb4934;">(</span>1 !== 1<span style="color: #fb4934;">)</span>          <span style="color: #928374;">// </span><span style="color: #928374;">false &#38750;&#31561;</span>
+console.log<span style="color: #fb4934;">(</span>1 &lt; 1<span style="color: #fb4934;">)</span>            <span style="color: #928374;">// </span><span style="color: #928374;">false &#23567;&#20110;</span>
+console.log<span style="color: #fb4934;">(</span>1 &gt; 1<span style="color: #fb4934;">)</span>            <span style="color: #928374;">// </span><span style="color: #928374;">false &#22823;&#20110;</span>
+console.log<span style="color: #fb4934;">(</span>1 &lt;= 1<span style="color: #fb4934;">)</span>           <span style="color: #928374;">// </span><span style="color: #928374;">true &#23567;&#20110;&#25110;&#31561;&#20110;</span>
+console.log<span style="color: #fb4934;">(</span>1 &gt;= 1<span style="color: #fb4934;">)</span>           <span style="color: #928374;">// </span><span style="color: #928374;">true &#22823;&#20110;&#25110;&#31561;&#20110;</span>
+console.log<span style="color: #fb4934;">(</span>1 == 1 &amp;&amp; 1 == 2<span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">&#19982;&#36816;&#31639;&#65292;&#20004;&#36793;&#26465;&#20214;&#37117;&#24471;&#20026;true&#65292;&#25972;&#20010;&#34920;&#36798;&#24335;&#25165;&#20026;true&#12290;</span>
+console.log<span style="color: #fb4934;">(</span>1 == 1 || 1 == 2<span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">&#25110;&#36816;&#31639;&#65292;&#20854;&#20013;&#19968;&#20010;&#26465;&#20214;&#34920;&#36798;&#24335;&#20026;true&#65292;&#21017;&#25972;&#20010;&#34920;&#36798;&#24335;&#37117;&#20026;true&#12290;</span>
 </pre>
 </div>
 </div>
@@ -825,24 +868,24 @@ console.log<span style="color: #C586C0;">(</span>1 == 1 || 1 == 2<span style="co
 if语句有几种变体:
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26222;&#36890;&#22411;</span>
-<span style="color: #339CDB;">if</span> <span style="color: #C586C0;">(</span><span style="color: #339CDB;">true</span><span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true&#25191;&#34892;&#20307;</span>
-<span style="color: #C586C0;">}</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#22914;&#26524;&#21542;&#21017;&#22411;</span>
-<span style="color: #339CDB;">if</span> <span style="color: #C586C0;">(</span><span style="color: #339CDB;">true</span><span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true&#25191;&#34892;&#20307;</span>
-<span style="color: #C586C0;">}</span> <span style="color: #339CDB;">else</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false&#25191;&#34892;&#20307;</span>
-<span style="color: #C586C0;">}</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#22914;&#26524;&#20877;&#22914;&#26524;...&#21542;&#21017;&#22411;</span>
-<span style="color: #339CDB;">if</span> <span style="color: #C586C0;">(</span><span style="color: #339CDB;">false</span><span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true&#25191;&#34892;&#20307;</span>
-<span style="color: #C586C0;">}</span> <span style="color: #339CDB;">else</span> <span style="color: #339CDB;">if</span> <span style="color: #C586C0;">(</span><span style="color: #339CDB;">true</span><span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">true&#25191;&#34892;&#20307;</span>
-<span style="color: #C586C0;">}</span> <span style="color: #339CDB;">else</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">false &#25191;&#34892;&#20307;</span>
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#26222;&#36890;&#22411;</span>
+<span style="color: #fb4934;">if</span> <span style="color: #fb4934;">(</span><span style="color: #d3869b;">true</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">true&#25191;&#34892;&#20307;</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#22914;&#26524;&#21542;&#21017;&#22411;</span>
+<span style="color: #fb4934;">if</span> <span style="color: #fb4934;">(</span><span style="color: #d3869b;">true</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">true&#25191;&#34892;&#20307;</span>
+<span style="color: #fb4934;">}</span> <span style="color: #fb4934;">else</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">false&#25191;&#34892;&#20307;</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#22914;&#26524;&#20877;&#22914;&#26524;...&#21542;&#21017;&#22411;</span>
+<span style="color: #fb4934;">if</span> <span style="color: #fb4934;">(</span><span style="color: #d3869b;">false</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">true&#25191;&#34892;&#20307;</span>
+<span style="color: #fb4934;">}</span> <span style="color: #fb4934;">else</span> <span style="color: #fb4934;">if</span> <span style="color: #fb4934;">(</span><span style="color: #d3869b;">true</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">true&#25191;&#34892;&#20307;</span>
+<span style="color: #fb4934;">}</span> <span style="color: #fb4934;">else</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">false &#25191;&#34892;&#20307;</span>
+<span style="color: #fb4934;">}</span>
 </pre>
 </div>
 </div>
@@ -854,20 +897,20 @@ if语句有几种变体:
 类似if的语句，你可以理解成语法糖
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#31616;&#21270;if&#20195;&#30721;&#32780;&#24050;&#65292;&#20294;&#26159;&#20063;&#19981;&#26159;&#20840;&#33021;&#30340;&#65281;</span>
-<span style="color: #339CDB;">let</span> <span style="color: #85DDFF;">n</span> = 1
-<span style="color: #339CDB;">switch</span> <span style="color: #C586C0;">(</span>n<span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #339CDB;">case</span> 1:
-        console.log<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"&#24403;n=1&#26102;&#25191;&#34892;&#25105;"</span><span style="color: #DB8E73;">)</span>
-        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">break&#22914;&#26524;&#19981;&#21152;&#20250;&#25226;case2&#20063;&#25191;&#34892;&#20102;&#65292;&#30452;&#21040;&#36935;&#21040;break</span>
-        <span style="color: #339CDB;">break</span>
-    <span style="color: #339CDB;">case</span> 2:
-        console.log<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"&#24403;n=2&#26102;&#25191;&#34892;&#25105;"</span><span style="color: #DB8E73;">)</span>
-        <span style="color: #339CDB;">break</span>
-    <span style="color: #339CDB;">default</span>:
-        console.log<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"&#24403;n!=2&amp;&amp;n!=1&#26102;&#25191;&#34892;&#25105;"</span><span style="color: #DB8E73;">)</span>
-        <span style="color: #339CDB;">break</span>
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#31616;&#21270;if&#20195;&#30721;&#32780;&#24050;&#65292;&#20294;&#26159;&#20063;&#19981;&#26159;&#20840;&#33021;&#30340;&#65281;</span>
+<span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">n</span> = 1
+<span style="color: #fb4934;">switch</span> <span style="color: #fb4934;">(</span>n<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #fb4934;">case</span> 1:
+        console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"&#24403;n=1&#26102;&#25191;&#34892;&#25105;"</span><span style="color: #fabd2f;">)</span>
+        <span style="color: #928374;">// </span><span style="color: #928374;">break&#22914;&#26524;&#19981;&#21152;&#20250;&#25226;case2&#20063;&#25191;&#34892;&#20102;&#65292;&#30452;&#21040;&#36935;&#21040;break</span>
+        <span style="color: #fb4934;">break</span>
+    <span style="color: #fb4934;">case</span> 2:
+        console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"&#24403;n=2&#26102;&#25191;&#34892;&#25105;"</span><span style="color: #fabd2f;">)</span>
+        <span style="color: #fb4934;">break</span>
+    <span style="color: #fb4934;">default</span>:
+        console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"&#24403;n!=2&amp;&amp;n!=1&#26102;&#25191;&#34892;&#25105;"</span><span style="color: #fabd2f;">)</span>
+        <span style="color: #fb4934;">break</span>
+<span style="color: #fb4934;">}</span>
 </pre>
 </div>
 </div>
@@ -887,15 +930,15 @@ if语句有几种变体:
 特点是计数方便
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36825;&#20010;&#20363;&#23376;&#20250;&#20174;0&#24320;&#22987;&#36755;&#20986;&#65292;&#19968;&#30452;&#36755;&#20986;&#21040;4.</span>
-<span style="color: #579C4C;">/*</span>
-<span style="color: #579C4C;">  &#25152;&#26377;&#21442;&#25968;&#37117;&#21487;&#24573;&#30053;&#65292;&#20294;&#26159;&#19981;&#21487;&#24573;&#30053;&#20998;&#21495;</span>
-<span style="color: #579C4C;">  for (&#21021;&#22987;&#21270;&#21464;&#37327;;&#25191;&#34892;&#26465;&#20214;;&#27599;&#27425;&#25191;&#34892;&#30340;&#25805;&#20316;){</span>
-<span style="color: #579C4C;">  }</span>
-<span style="color: #579C4C;"> */</span>
-<span style="color: #339CDB;">for</span> <span style="color: #C586C0;">(</span><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">i</span> = 0; i &lt; 5; i++<span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    console.log<span style="color: #DB8E73;">(</span>i<span style="color: #DB8E73;">)</span>
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#36825;&#20010;&#20363;&#23376;&#20250;&#20174;0&#24320;&#22987;&#36755;&#20986;&#65292;&#19968;&#30452;&#36755;&#20986;&#21040;4.</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  &#25152;&#26377;&#21442;&#25968;&#37117;&#21487;&#24573;&#30053;&#65292;&#20294;&#26159;&#19981;&#21487;&#24573;&#30053;&#20998;&#21495;</span>
+<span style="color: #928374;">  for (&#21021;&#22987;&#21270;&#21464;&#37327;;&#25191;&#34892;&#26465;&#20214;;&#27599;&#27425;&#25191;&#34892;&#30340;&#25805;&#20316;){</span>
+<span style="color: #928374;">  }</span>
+<span style="color: #928374;"> */</span>
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">i</span> = 0; i &lt; 5; i++<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>i<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
 </pre>
 </div>
 </div>
@@ -907,17 +950,17 @@ if语句有几种变体:
 特点是使用简单:
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">i</span> = 0
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36825;&#20010;&#24490;&#29615;&#20250;&#37325;&#22797;&#25191;&#34892;5&#27425;&#65292;&#20174;0&#36755;&#20986;&#21040;4.</span>
-<span style="color: #339CDB;">while</span> <span style="color: #C586C0;">(</span>i &lt; 5<span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    console.log<span style="color: #DB8E73;">(</span>i<span style="color: #DB8E73;">)</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">i</span> = 0
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36825;&#20010;&#24490;&#29615;&#20250;&#37325;&#22797;&#25191;&#34892;5&#27425;&#65292;&#20174;0&#36755;&#20986;&#21040;4.</span>
+<span style="color: #fb4934;">while</span> <span style="color: #fb4934;">(</span>i &lt; 5<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>i<span style="color: #fabd2f;">)</span>
     i++
-<span style="color: #C586C0;">}</span>
-<span style="color: #579C4C;">/*</span>
-<span style="color: #579C4C;">  while(&#26465;&#20214;){</span>
-<span style="color: #579C4C;">    &#25191;&#34892;&#20307;</span>
-<span style="color: #579C4C;">  }</span>
-<span style="color: #579C4C;"> */</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  while(&#26465;&#20214;){</span>
+<span style="color: #928374;">    &#25191;&#34892;&#20307;</span>
+<span style="color: #928374;">  }</span>
+<span style="color: #928374;"> */</span>
 </pre>
 </div>
 </div>
@@ -929,23 +972,23 @@ if语句有几种变体:
 跳过本次循环
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">i</span> = 0
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36825;&#20010;&#24490;&#29615;&#20250;&#37325;&#22797;&#25191;&#34892;5&#27425;&#65292;&#20174;0&#36755;&#20986;&#21040;4(&#38500;&#20102;2).</span>
-<span style="color: #339CDB;">while</span> <span style="color: #C586C0;">(</span>i &lt; 5<span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">i</span> = 0
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36825;&#20010;&#24490;&#29615;&#20250;&#37325;&#22797;&#25191;&#34892;5&#27425;&#65292;&#20174;0&#36755;&#20986;&#21040;4(&#38500;&#20102;2).</span>
+<span style="color: #fb4934;">while</span> <span style="color: #fb4934;">(</span>i &lt; 5<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
 
-    <span style="color: #339CDB;">if</span><span style="color: #DB8E73;">(</span>i == 2<span style="color: #DB8E73;">){</span>
+    <span style="color: #fb4934;">if</span><span style="color: #fabd2f;">(</span>i == 2<span style="color: #fabd2f;">){</span>
         i++
-        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#24403;i == 2&#26102;&#36339;&#36807;&#26412;&#27425;&#24490;&#29615;&#65292;&#21518;&#38754;&#30340;&#20195;&#30721;&#19981;&#20250;&#34987;&#25191;&#34892;</span>
-        <span style="color: #339CDB;">continue</span>
-    <span style="color: #DB8E73;">}</span>
-    console.log<span style="color: #DB8E73;">(</span>i<span style="color: #DB8E73;">)</span>
+        <span style="color: #928374;">// </span><span style="color: #928374;">&#24403;i == 2&#26102;&#36339;&#36807;&#26412;&#27425;&#24490;&#29615;&#65292;&#21518;&#38754;&#30340;&#20195;&#30721;&#19981;&#20250;&#34987;&#25191;&#34892;</span>
+        <span style="color: #fb4934;">continue</span>
+    <span style="color: #fabd2f;">}</span>
+    console.log<span style="color: #fabd2f;">(</span>i<span style="color: #fabd2f;">)</span>
     i++
-<span style="color: #C586C0;">}</span>
-<span style="color: #579C4C;">/*</span>
-<span style="color: #579C4C;">  while(&#26465;&#20214;){</span>
-<span style="color: #579C4C;">    &#25191;&#34892;&#20307;</span>
-<span style="color: #579C4C;">  }</span>
-<span style="color: #579C4C;"> */</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  while(&#26465;&#20214;){</span>
+<span style="color: #928374;">    &#25191;&#34892;&#20307;</span>
+<span style="color: #928374;">  }</span>
+<span style="color: #928374;"> */</span>
 </pre>
 </div>
 </div>
@@ -957,23 +1000,23 @@ if语句有几种变体:
 退出整个循环
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">var</span> <span style="color: #85DDFF;">i</span> = 0
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36825;&#20010;&#24490;&#29615;&#20250;&#25191;&#34892;1&#27425;&#65292;&#36755;&#20986;0</span>
-<span style="color: #339CDB;">while</span> <span style="color: #C586C0;">(</span>i &lt; 5<span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">i</span> = 0
+<span style="color: #928374;">// </span><span style="color: #928374;">&#36825;&#20010;&#24490;&#29615;&#20250;&#25191;&#34892;1&#27425;&#65292;&#36755;&#20986;0</span>
+<span style="color: #fb4934;">while</span> <span style="color: #fb4934;">(</span>i &lt; 5<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
 
-    <span style="color: #339CDB;">if</span><span style="color: #DB8E73;">(</span>i == 1<span style="color: #DB8E73;">){</span>
+    <span style="color: #fb4934;">if</span><span style="color: #fabd2f;">(</span>i == 1<span style="color: #fabd2f;">){</span>
         i++
-        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#24403;i==1&#26102;&#30452;&#25509;&#26432;&#27515;&#25972;&#20010;&#24490;&#29615;&#65292;&#19981;&#20250;&#20877;&#37325;&#22797;&#20102;&#12290;</span>
-        <span style="color: #339CDB;">break</span>
-    <span style="color: #DB8E73;">}</span>
-    console.log<span style="color: #DB8E73;">(</span>i<span style="color: #DB8E73;">)</span>
+        <span style="color: #928374;">// </span><span style="color: #928374;">&#24403;i==1&#26102;&#30452;&#25509;&#26432;&#27515;&#25972;&#20010;&#24490;&#29615;&#65292;&#19981;&#20250;&#20877;&#37325;&#22797;&#20102;&#12290;</span>
+        <span style="color: #fb4934;">break</span>
+    <span style="color: #fabd2f;">}</span>
+    console.log<span style="color: #fabd2f;">(</span>i<span style="color: #fabd2f;">)</span>
     i++
-<span style="color: #C586C0;">}</span>
-<span style="color: #579C4C;">/*</span>
-<span style="color: #579C4C;">  while(&#26465;&#20214;){</span>
-<span style="color: #579C4C;">    &#25191;&#34892;&#20307;</span>
-<span style="color: #579C4C;">  }</span>
-<span style="color: #579C4C;"> */</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  while(&#26465;&#20214;){</span>
+<span style="color: #928374;">    &#25191;&#34892;&#20307;</span>
+<span style="color: #928374;">  }</span>
+<span style="color: #928374;"> */</span>
 </pre>
 </div>
 </div>
@@ -997,17 +1040,17 @@ if语句有几种变体:
 <h4 id="org35e7c1e">funtion</h4>
 <div class="outline-text-4" id="text-org35e7c1e">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">function</span> <span style="color: #D9DAA2;">hello</span><span style="color: #C586C0;">(){</span>
-    console.log<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"I say hello."</span><span style="color: #DB8E73;">)</span>
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">hello</span><span style="color: #fb4934;">(){</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"I say hello."</span><span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
 
-<span style="color: #579C4C;">/*</span>
-<span style="color: #579C4C;">  function &#20989;&#25968;&#21517;(&#21442;&#37327;&#21015;&#34920;){</span>
-<span style="color: #579C4C;">    &#20989;&#25968;&#20307;</span>
-<span style="color: #579C4C;">  }</span>
-<span style="color: #579C4C;">*/</span>
-<span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#25191;&#34892;&#20989;&#25968;</span>
-hello<span style="color: #C586C0;">()</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  function &#20989;&#25968;&#21517;(&#21442;&#37327;&#21015;&#34920;){</span>
+<span style="color: #928374;">    &#20989;&#25968;&#20307;</span>
+<span style="color: #928374;">  }</span>
+<span style="color: #928374;">*/</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#25191;&#34892;&#20989;&#25968;</span>
+hello<span style="color: #fb4934;">()</span>
 </pre>
 </div>
 </div>
@@ -1016,77 +1059,718 @@ hello<span style="color: #C586C0;">()</span>
 <h4 id="org2817f67">return</h4>
 <div class="outline-text-4" id="text-org2817f67">
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#36820;&#22238;num1 + num2&#30340;&#21644;</span>
-<span style="color: #339CDB;">function</span> <span style="color: #D9DAA2;">plus</span><span style="color: #C586C0;">(</span><span style="color: #85DDFF;">num1</span>, <span style="color: #85DDFF;">num2</span><span style="color: #C586C0;">)</span> <span style="color: #C586C0;">{</span>
-    <span style="color: #339CDB;">return</span> num1 + num2
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#36820;&#22238;num1 + num2&#30340;&#21644;</span>
+<span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">plus</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">num1</span>, <span style="color: #8ec07c;">num2</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #fb4934;">return</span> num1 + num2
+<span style="color: #fb4934;">}</span>
 
-console.log<span style="color: #C586C0;">(</span>plus<span style="color: #DB8E73;">(</span>1, 2<span style="color: #DB8E73;">)</span><span style="color: #C586C0;">)</span>          <span style="color: #579C4C;">// </span><span style="color: #579C4C;">3</span>
+console.log<span style="color: #fb4934;">(</span>plus<span style="color: #fabd2f;">(</span>1, 2<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>          <span style="color: #928374;">// </span><span style="color: #928374;">3</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org8a9b7c6" class="outline-4">
-<h4 id="org8a9b7c6">参数</h4>
-<div class="outline-text-4" id="text-org8a9b7c6">
+</div>
+<div id="outline-container-org8a9b7c6" class="outline-3">
+<h3 id="org8a9b7c6">参数</h3>
+<div class="outline-text-3" id="text-org8a9b7c6">
 <p>
 name,age,id就是参数
 定义函数时的参数叫做形参，调用函数传递的参量叫做实参。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">function</span> <span style="color: #D9DAA2;">pInfo</span><span style="color: #C586C0;">(</span><span style="color: #85DDFF;">name</span>, <span style="color: #85DDFF;">age</span>, <span style="color: #85DDFF;">id</span><span style="color: #C586C0;">){</span>
-    <span style="color: #579C4C;">// </span><span style="color: #579C4C;">console.log(`NAME:${name}\n"AGE:${age}\nID:${id}`)</span>
-    console.log<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"NAME: "</span> +name+<span style="color: #DB8E73;">"\n"</span>+
-                <span style="color: #DB8E73;">"AGE: "</span>+age+<span style="color: #DB8E73;">"\n"</span>+
-                <span style="color: #DB8E73;">"ID: "</span>+id+<span style="color: #DB8E73;">"\n"</span><span style="color: #DB8E73;">)</span>
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">pInfo</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">name</span>, <span style="color: #8ec07c;">age</span>, <span style="color: #8ec07c;">id</span><span style="color: #fb4934;">){</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">console.log(`NAME:${name}\n"AGE:${age}\nID:${id}`)</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"NAME: "</span> +name+<span style="color: #b8bb26;">"\n"</span>+
+                <span style="color: #b8bb26;">"AGE: "</span>+age+<span style="color: #b8bb26;">"\n"</span>+
+                <span style="color: #b8bb26;">"ID: "</span>+id+<span style="color: #b8bb26;">"\n"</span><span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
 
 
-pInfo<span style="color: #C586C0;">(</span><span style="color: #DB8E73;">"EvanMeek"</span>,20,0001<span style="color: #C586C0;">)</span>
+pInfo<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"EvanMeek"</span>,20,0001<span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4c4761c" class="outline-4">
-<h4 id="org4c4761c">默认参数</h4>
-<div class="outline-text-4" id="text-org4c4761c">
+<div id="outline-container-org4c4761c" class="outline-3">
+<h3 id="org4c4761c">默认参数</h3>
+<div class="outline-text-3" id="text-org4c4761c">
 <p>
 默认参数即当不传递参量时自动使用的参量值。
 </p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #339CDB;">function</span> <span style="color: #D9DAA2;">setMoeny</span><span style="color: #C586C0;">(</span><span style="color: #85DDFF;">money</span>=100<span style="color: #C586C0;">){</span>
-    console.log<span style="color: #DB8E73;">(</span><span style="color: #DB8E73;">"set money: "</span>+money<span style="color: #DB8E73;">)</span>
-<span style="color: #C586C0;">}</span>
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">setMoeny</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">money</span>=100<span style="color: #fb4934;">){</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"set money: "</span>+money<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
 
-setMoeny<span style="color: #C586C0;">(</span>0.1<span style="color: #C586C0;">)</span>
-setMoeny<span style="color: #C586C0;">()</span>
+setMoeny<span style="color: #fb4934;">(</span>0.1<span style="color: #fb4934;">)</span>
+setMoeny<span style="color: #fb4934;">()</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfeab8cb" class="outline-4">
-<h4 id="orgfeab8cb">arguments参数对象</h4>
-<div class="outline-text-4" id="text-orgfeab8cb">
+<div id="outline-container-orgfeab8cb" class="outline-3">
+<h3 id="orgfeab8cb">arguments参数对象</h3>
+<div class="outline-text-3" id="text-orgfeab8cb">
+<p>
+根据arguments对象，可以获取所有实参等相关信息。
+</p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#26377;&#28857;&#31867;&#20284;&#21311;&#21517;&#20989;&#25968;?</span>
-<span style="color: #C586C0;">(</span><span style="color: #339CDB;">function</span> <span style="color: #DB8E73;">(){</span>
-    console.log<span style="color: #579C4C;">(</span><span style="color: #339CDB;">arguments</span><span style="color: #579C4C;">)</span>        <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#25152;&#26377;&#23454;&#21442;</span>
-    console.log<span style="color: #579C4C;">(</span><span style="color: #339CDB;">arguments</span>.callee<span style="color: #579C4C;">)</span> <span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#33719;&#21462;&#24403;&#21069;&#20989;&#25968;&#23545;&#35937;</span>
-<span style="color: #DB8E73;">}</span><span style="color: #C586C0;">)(</span><span style="color: #DB8E73;">'a'</span>,<span style="color: #DB8E73;">'b'</span>,<span style="color: #DB8E73;">'c'</span><span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#26377;&#28857;&#31867;&#20284;&#21311;&#21517;&#20989;&#25968;?</span>
+<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span> <span style="color: #fabd2f;">(){</span>
+    console.log<span style="color: #8ec07c;">(</span><span style="color: #d3869b;">arguments</span><span style="color: #8ec07c;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#25152;&#26377;&#23454;&#21442;</span>
+    console.log<span style="color: #8ec07c;">(</span><span style="color: #d3869b;">arguments</span>.callee<span style="color: #8ec07c;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">&#33719;&#21462;&#24403;&#21069;&#20989;&#25968;&#23545;&#35937;</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)(</span><span style="color: #b8bb26;">'a'</span>,<span style="color: #b8bb26;">'b'</span>,<span style="color: #b8bb26;">'c'</span><span style="color: #fb4934;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb4d4180" class="outline-4">
-<h4 id="orgb4d4180">rest参数打包</h4>
-<div class="outline-text-4" id="text-orgb4d4180">
+<div id="outline-container-orgb4d4180" class="outline-3">
+<h3 id="orgb4d4180">rest参数打包</h3>
+<div class="outline-text-3" id="text-orgb4d4180">
+<p>
+形参数量可以跟实参参量数量不同，多余的实参会被构造成一个Array。
+</p>
 <div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #579C4C;">// </span><span style="color: #579C4C;">&#21442;&#25968;&#25171;&#21253;</span>
-<span style="color: #C586C0;">(</span><span style="color: #339CDB;">function</span><span style="color: #DB8E73;">(</span><span style="color: #85DDFF;">a</span>,<span style="color: #85DDFF;">b</span>,...<span style="color: #85DDFF;">rest</span><span style="color: #DB8E73;">){</span>
-    console.log<span style="color: #579C4C;">(</span>a,b,rest<span style="color: #579C4C;">)</span>       <span style="color: #579C4C;">// </span><span style="color: #579C4C;">1 2 [3,4,5]</span>
-<span style="color: #DB8E73;">}</span><span style="color: #C586C0;">)(</span>1,2,3,4,5<span style="color: #C586C0;">)</span>
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#21442;&#25968;&#25171;&#21253;</span>
+<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span><span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">a</span>,<span style="color: #8ec07c;">b</span>,...<span style="color: #8ec07c;">rest</span><span style="color: #fabd2f;">){</span>
+    console.log<span style="color: #8ec07c;">(</span>a,b,rest<span style="color: #8ec07c;">)</span>       <span style="color: #928374;">// </span><span style="color: #928374;">1 2 [3,4,5]</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)(</span>1,2,3,4,5<span style="color: #fb4934;">)</span>
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-org352c0fd" class="outline-3">
+<h3 id="org352c0fd">匿名函数</h3>
+<div class="outline-text-3" id="text-org352c0fd">
+<p>
+<code>函数式编程</code> 的一个重要特性。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#21311;&#21517;&#20989;&#25968;</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">f</span> = <span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+    console.log<span style="color: #8ec07c;">(</span><span style="color: #b8bb26;">"I am a anonymous function."</span><span style="color: #8ec07c;">)</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)</span>;
+
+<span style="color: #928374;">// </span><span style="color: #928374;">&#35843;&#29992;&#23384;&#25918;&#20989;&#25968;&#21464;&#37327;&#65292;&#27880;&#24847;&#24517;&#39035;&#21152;&#19978;&#20998;&#21495;&#12290;</span>
+f<span style="color: #fb4934;">()</span>;
+
+<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+    console.log<span style="color: #8ec07c;">(</span><span style="color: #b8bb26;">"auto execute."</span><span style="color: #8ec07c;">)</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)()</span>;
+<span style="color: #928374;">// </span><span style="color: #928374;">&#24403;&#21311;&#21517;&#20989;&#25968;&#26368;&#21518;&#21152;&#19978;()&#65292;&#23601;&#20250;&#34987;&#33258;&#21160;&#35843;&#29992;&#65292;&#20854;&#29992;&#26469;&#20256;&#20837;&#23454;&#21442;&#12290;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org43eef8f" class="outline-3">
+<h3 id="org43eef8f">函数参数</h3>
+<div class="outline-text-3" id="text-org43eef8f">
+<p>
+函数作为参数被传递
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">executeFunc</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">f</span><span style="color: #fb4934;">){</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">&#25191;&#34892;&#25509;&#21463;&#21040;&#30340;&#20989;&#25968;</span>
+    f<span style="color: #fabd2f;">()</span>;
+<span style="color: #fb4934;">}</span>;
+
+executeFunc<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">(</span><span style="color: #fb4934;">function</span><span style="color: #8ec07c;">(){</span>
+    console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"anonymous func."</span><span style="color: #fb4934;">)</span>
+<span style="color: #8ec07c;">}</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfe3e978" class="outline-3">
+<h3 id="orgfe3e978">返回函数</h3>
+<div class="outline-text-3" id="text-orgfe3e978">
+<p>
+函数作为返回值
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">executeFunc</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">f</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">&#25191;&#34892;&#25509;&#21463;&#21040;&#30340;&#20989;&#25968;</span>
+    f<span style="color: #fabd2f;">()</span>;
+<span style="color: #fb4934;">}</span>;
+
+executeFunc<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">(</span><span style="color: #fb4934;">function</span><span style="color: #8ec07c;">(</span><span style="color: #8ec07c;">f</span><span style="color: #8ec07c;">)</span> <span style="color: #8ec07c;">{</span>
+    <span style="color: #fb4934;">return</span> f;
+<span style="color: #8ec07c;">}</span><span style="color: #fabd2f;">)(</span><span style="color: #8ec07c;">(</span><span style="color: #fb4934;">function</span><span style="color: #fb4934;">()</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"anonymous func."</span><span style="color: #fabd2f;">)</span>;
+<span style="color: #fb4934;">}</span><span style="color: #8ec07c;">)</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc84c1c" class="outline-3">
+<h3 id="orgfc84c1c">箭头函数</h3>
+<div class="outline-text-3" id="text-orgfc84c1c">
+<p>
+<code>ES6</code> 标准提供的新特性，用于简化匿名函数的编写。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">plus</span> = <span style="color: #fb4934;">(</span><span style="color: #fabd2f;">(</span>num<span style="color: #fabd2f;">)</span> =&gt; <span style="color: #fabd2f;">{</span>
+    <span style="color: #fb4934;">return</span> num + num;
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)</span>;
+
+console.log<span style="color: #fb4934;">(</span>plus<span style="color: #fabd2f;">(</span>10<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>;
+<span style="color: #928374;">// </span><span style="color: #928374;">&#22914;&#26524;&#21311;&#21517;&#20989;&#25968;&#20307;&#20165;&#26377;&#19968;&#34892;&#65292;&#21487;&#20197;&#24573;&#30053;{}&#21644;return</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">less_1</span> = num =&gt; num - 1;
+console.log<span style="color: #fb4934;">(</span>less_1<span style="color: #fabd2f;">(</span>10<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org263acf2" class="outline-3">
+<h3 id="org263acf2">递归函数</h3>
+<div class="outline-text-3" id="text-org263acf2">
+<p>
+函数调用自身称为递归，其本质是 <code>循环</code> 调用自身。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">plus</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">i</span> = 0, <span style="color: #8ec07c;">n</span> = 0<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    i++;
+    <span style="color: #fb4934;">if</span> <span style="color: #fabd2f;">(</span>n &lt;= 0<span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #fb4934;">return</span> i;
+    <span style="color: #fabd2f;">}</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"n:"</span> + n<span style="color: #fabd2f;">)</span>;
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"i:"</span> + i<span style="color: #fabd2f;">)</span>;
+    plus<span style="color: #fabd2f;">(</span>i, n - 1<span style="color: #fabd2f;">)</span>;
+<span style="color: #fb4934;">}</span>
+
+
+console.log<span style="color: #fb4934;">(</span>plus<span style="color: #fabd2f;">(</span>1, 100<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3dd2fba" class="outline-3">
+<h3 id="org3dd2fba">闭包特性</h3>
+<div class="outline-text-3" id="text-org3dd2fba">
+<p>
+正常的函数在函数体外是无法修改函数内部变量的，但是通过闭包可以修改函数内部的函数。
+</p>
+</div>
+<div id="outline-container-org77d1fe1" class="outline-4">
+<h4 id="org77d1fe1">内部变量</h4>
+<div class="outline-text-4" id="text-org77d1fe1">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">f</span> = <span style="color: #fb4934;">()</span>=&gt;<span style="color: #fb4934;">{</span>
+    <span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">n</span> = 1;
+    n++;
+    <span style="color: #fb4934;">return</span> n;
+<span style="color: #fb4934;">}</span>
+console.log<span style="color: #fb4934;">(</span>f<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;               <span style="color: #928374;">// </span><span style="color: #928374;">2</span>
+console.log<span style="color: #fb4934;">(</span>f<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;               <span style="color: #928374;">// </span><span style="color: #928374;">2</span>
+console.log<span style="color: #fb4934;">(</span>f<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;               <span style="color: #928374;">// </span><span style="color: #928374;">2</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#26080;&#27861;&#20462;&#25913;&#20869;&#37096;&#21464;&#37327;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org89c9831" class="outline-4">
+<h4 id="org89c9831">闭包</h4>
+<div class="outline-text-4" id="text-org89c9831">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">f</span> = <span style="color: #fb4934;">(</span><span style="color: #fabd2f;">()</span> =&gt; <span style="color: #fabd2f;">{</span>
+    <span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">n</span> = 1;
+    <span style="color: #fb4934;">return</span> <span style="color: #8ec07c;">(</span><span style="color: #fb4934;">()</span> =&gt; <span style="color: #fb4934;">{</span>
+        console.log<span style="color: #fabd2f;">(</span>++n<span style="color: #fabd2f;">)</span>
+    <span style="color: #fb4934;">}</span><span style="color: #8ec07c;">)</span>
+
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)</span>
+exeF = f<span style="color: #fb4934;">()</span>
+exeF<span style="color: #fb4934;">()</span>                            <span style="color: #928374;">// </span><span style="color: #928374;">2</span>
+exeF<span style="color: #fb4934;">()</span>                            <span style="color: #928374;">// </span><span style="color: #928374;">3</span>
+exeF<span style="color: #fb4934;">()</span>                            <span style="color: #928374;">// </span><span style="color: #928374;">4</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org69ce87c" class="outline-3">
+<h3 id="org69ce87c">生成器</h3>
+<div class="outline-text-3" id="text-org69ce87c">
+<p>
+<code>ES6</code> 提供的新特性，生成器可以理解成一个 <code>惰性的序列</code> 。其特性是可边生成数据边读取数据。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span>* <span style="color: #8ec07c;">f</span><span style="color: #fb4934;">(){</span>
+    <span style="color: #fb4934;">for</span> <span style="color: #fabd2f;">(</span><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">i</span> = 0; i &lt; 5; i++<span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #fb4934;">yield</span> i
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">f</span> = f<span style="color: #fb4934;">()</span>
+console.log<span style="color: #fb4934;">(</span>f.next<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;          <span style="color: #928374;">// </span><span style="color: #928374;">0</span>
+console.log<span style="color: #fb4934;">(</span>f.next<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;          <span style="color: #928374;">// </span><span style="color: #928374;">1</span>
+console.log<span style="color: #fb4934;">(</span>f.next<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;          <span style="color: #928374;">// </span><span style="color: #928374;">2</span>
+console.log<span style="color: #fb4934;">(</span>f.next<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;          <span style="color: #928374;">// </span><span style="color: #928374;">3</span>
+console.log<span style="color: #fb4934;">(</span>f.next<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;          <span style="color: #928374;">// </span><span style="color: #928374;">4</span>
+console.log<span style="color: #fb4934;">(</span>f.next<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>;          <span style="color: #928374;">// </span><span style="color: #928374;">undefined , done: true</span>
+</pre>
+</div>
+<p>
+其工作原理是每次执行 next() 函数就执行已一次 yield。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga666bd6" class="outline-2">
+<h2 id="orga666bd6">作用域</h2>
+<div class="outline-text-2" id="text-orga666bd6">
+<p>
+函数内部的变量有属于自己的作用域
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">n</span> = 1
+console.log<span style="color: #fb4934;">(</span>n<span style="color: #fb4934;">)</span>
+
+;<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+    <span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">n</span> = 2;
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)()</span>
+
+
+console.log<span style="color: #fb4934;">(</span>n<span style="color: #fb4934;">)</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-orged08877" class="outline-3">
+<h3 id="orged08877">let</h3>
+<div class="outline-text-3" id="text-orged08877">
+<p>
+<code>ES6</code> 标准提供的新特性，可以用来定义变量，跟 <code>var</code> 的区别是其具有 <code>块级作用域</code> 。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">i</span> = 0; i &lt; 5; i++<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span> <span style="color: #fb4934;">}</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#21487;&#20197;&#35775;&#38382;i</span>
+console.log<span style="color: #fb4934;">(</span>i<span style="color: #fb4934;">)</span>;
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">j</span> = 0; j &lt; 5; j++<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span> <span style="color: #fb4934;">}</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#19981;&#33021;&#35775;&#38382;j</span>
+console.log<span style="color: #fb4934;">(</span>j<span style="color: #fb4934;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6b2256" class="outline-3">
+<h3 id="orgd6b2256">const</h3>
+<div class="outline-text-3" id="text-orgd6b2256">
+<p>
+<code>ES6</code> 标准提供的新特性，可以将变量设置为常量，一旦定义则无法修改其值。且和 <code>let</code> 具有相同的块级作用域。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">const</span> <span style="color: #8ec07c;">a</span> = 10;
+a = 20;                         <span style="color: #928374;">// </span><span style="color: #928374;">error</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org08da18a" class="outline-3">
+<h3 id="org08da18a">strict</h3>
+<div class="outline-text-3" id="text-org08da18a">
+<p>
+严格模式，开启严格模式后，会对不规范的代码进行报错。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #b8bb26;">'use strict'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9a70ed9" class="outline-3">
+<h3 id="org9a70ed9">this</h3>
+<div class="outline-text-3" id="text-org9a70ed9">
+<p>
+指定访问当前作用域下的对象。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">obj</span> = <span style="color: #fb4934;">{</span>
+    name: <span style="color: #b8bb26;">""</span>,
+    <span style="color: #8ec07c;">getName</span>: <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #928374;">// </span><span style="color: #928374;">getName()&#20989;&#25968;&#20316;&#29992;&#22495;&#22312;obj&#23545;&#35937;&#20869;&#65292;&#25152;&#26377;&#36890;&#36807;this.name&#21487;&#20197;&#35775;&#38382;name&#12290;</span>
+        <span style="color: #fb4934;">return</span> <span style="color: #d3869b;">this</span>.name
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+obj.name = <span style="color: #b8bb26;">"EvanMeek"</span>
+console.log<span style="color: #fb4934;">(</span>obj.getName<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">obj</span> = <span style="color: #fb4934;">{</span>
+    name: <span style="color: #b8bb26;">""</span>,
+    <span style="color: #8ec07c;">getName</span>: <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #928374;">// </span><span style="color: #928374;">&#23884;&#22871;&#22810;&#23618;&#20989;&#25968;&#20250;&#35753;this&#22833;&#25928;&#12290;</span>
+        <span style="color: #fb4934;">return</span> <span style="color: #8ec07c;">(</span><span style="color: #fb4934;">function</span><span style="color: #fb4934;">()</span> <span style="color: #fb4934;">{</span> <span style="color: #fb4934;">return</span> <span style="color: #d3869b;">this</span>.name <span style="color: #fb4934;">}()</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+obj.name = <span style="color: #b8bb26;">"EvanMeek"</span>
+gname = obj.getName<span style="color: #fb4934;">()</span>
+console.log<span style="color: #fb4934;">(</span>gname<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">obj</span> = <span style="color: #fb4934;">{</span>
+    name: <span style="color: #b8bb26;">""</span>,
+    <span style="color: #8ec07c;">getName</span>: <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #928374;">// </span><span style="color: #928374;">&#20351;&#29992;&#31661;&#22836;&#20989;&#25968;&#20462;&#22797;&#20102;this&#22833;&#25928;&#38382;&#39064;&#12290;</span>
+        <span style="color: #fb4934;">return</span> <span style="color: #8ec07c;">()</span> =&gt; <span style="color: #d3869b;">this</span>.name
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+obj.name = <span style="color: #b8bb26;">"EvanMeek"</span>
+gname = obj.getName<span style="color: #fb4934;">()</span>
+console.log<span style="color: #fb4934;">(</span>gname<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+</pre>
+</div>
+<p>
+如果尝试用this访问当前作用域下没有的成员时:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">f</span><span style="color: #fb4934;">()</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"func: f"</span><span style="color: #fabd2f;">)</span>
+    console.log<span style="color: #fabd2f;">(</span><span style="color: #d3869b;">this</span>.name<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">obj</span> = <span style="color: #fb4934;">{</span>
+    name: <span style="color: #b8bb26;">""</span>,
+    getName: f
+<span style="color: #fb4934;">}</span>
+obj.name = <span style="color: #b8bb26;">"EvanMeek"</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#24403;&#21069;&#20316;&#29992;&#22495;&#19979;&#27809;&#26377;this.name&#21464;&#37327;&#65292;&#25152;&#20197;&#26080;&#27861;&#33719;&#21462;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #d3869b;">this</span>.name<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#25152;&#20197;&#25191;&#34892;f&#20989;&#25968;&#33258;&#28982;&#20063;&#26080;&#27861;&#25214;&#21040;&#65292;&#36755;&#20986;&#20026;: func:f undefined</span>
+console.log<span style="color: #fb4934;">(</span>f<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org06a0d25" class="outline-3">
+<h3 id="org06a0d25">对象冒充</h3>
+<div class="outline-text-3" id="text-org06a0d25">
+<p>
+对象冒充可以突破作用域的限制。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">f</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">name</span>, <span style="color: #8ec07c;">age</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #d3869b;">this</span>.name = name
+    <span style="color: #d3869b;">this</span>.age = age
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">obj</span> = <span style="color: #fb4934;">{</span>
+    name: <span style="color: #b8bb26;">""</span>,
+    age: -1,
+    setNameAge: f,
+    <span style="color: #8ec07c;">getNameAge</span>: <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        console.log<span style="color: #8ec07c;">(</span><span style="color: #b8bb26;">"Name: "</span> + <span style="color: #d3869b;">this</span>.name + <span style="color: #b8bb26;">"\tAge: "</span> + <span style="color: #d3869b;">this</span>.age<span style="color: #8ec07c;">)</span>;
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#30452;&#25509;&#35843;&#29992;f&#20989;&#25968;&#26159;&#26080;&#27861;&#25805;&#20316;obj&#30340;name&#21644;age&#23646;&#24615;&#30340;&#12290;</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">f("EvanMeek", 20)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">&#20294;&#26159;&#36890;&#36807;call&#23558;f&#20989;&#25968;&#30340;&#20316;&#29992;&#22495;&#35774;&#32622;&#20026;obj&#21363;&#21487;&#12290;</span>
+f.call<span style="color: #fb4934;">(</span>obj, <span style="color: #b8bb26;">"EvanMeek"</span>, 20<span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">apply&#25928;&#26524;&#21516;&#19978;&#65292;&#21482;&#26159;&#20256;&#21442;&#26041;&#24335;&#19981;&#21516;</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">f.apply(obj, ["EvanMeek", 19])</span>
+obj.getNameAge<span style="color: #fb4934;">()</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org35465df" class="outline-3">
+<h3 id="org35465df">命名空间</h3>
+<div class="outline-text-3" id="text-org35465df">
+<p>
+可以设置一个对象结构的命名空间。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">custom_namespace</span> = <span style="color: #fb4934;">{}</span>
+custom_namespace.name = <span style="color: #b8bb26;">"EvanMeek"</span>
+name = <span style="color: #b8bb26;">"Her name, plz."</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Current scope's name: "</span> + name<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Custom namespace's name: "</span> + custom_namespace.name<span style="color: #fb4934;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org21c6e68" class="outline-2">
+<h2 id="org21c6e68">迭代</h2>
+<div class="outline-text-2" id="text-org21c6e68">
+<p>
+迭代是一种语法糖，可以快速遍历一些序列。
+</p>
+</div>
+<div id="outline-container-org497decb" class="outline-3">
+<h3 id="org497decb">字符串</h3>
+<div class="outline-text-3" id="text-org497decb">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">for of</span>
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">c</span> of <span style="color: #b8bb26;">'Hello World'</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>c<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org207dd62" class="outline-3">
+<h3 id="org207dd62">数组</h3>
+<div class="outline-text-3" id="text-org207dd62">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">for of</span>
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">i</span> of <span style="color: #fabd2f;">[</span>1, 2, 3, 4<span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>i<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #928374;">// </span><span style="color: #928374;">forEach</span>
+<span style="color: #fb4934;">[</span><span style="color: #b8bb26;">'a'</span>, <span style="color: #b8bb26;">'1'</span>, <span style="color: #b8bb26;">'b'</span>, <span style="color: #b8bb26;">'2'</span>, <span style="color: #b8bb26;">'c'</span>, <span style="color: #b8bb26;">'3'</span><span style="color: #fb4934;">]</span>.forEach<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span><span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">ele</span>, <span style="color: #8ec07c;">i</span>, <span style="color: #8ec07c;">arr</span><span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">This round iter element</span>
+    console.log<span style="color: #8ec07c;">(</span>ele<span style="color: #8ec07c;">)</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">This round iter index</span>
+    console.log<span style="color: #8ec07c;">(</span>i<span style="color: #8ec07c;">)</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">This round iter object</span>
+    console.log<span style="color: #8ec07c;">(</span>arr<span style="color: #8ec07c;">)</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6b4ac68" class="outline-3">
+<h3 id="org6b4ac68">对象</h3>
+<div class="outline-text-3" id="text-org6b4ac68">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">obj</span> = <span style="color: #fb4934;">{</span> name: <span style="color: #b8bb26;">""</span>, age: -1 <span style="color: #fb4934;">}</span>
+obj.name = <span style="color: #b8bb26;">"EvanMeek"</span>
+obj.age = 19
+<span style="color: #928374;">// </span><span style="color: #928374;">for in &#27880;&#24847; &#21464;&#37327;&#23545;&#35937;&#35201;&#29992;for in</span>
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">o</span> <span style="color: #fb4934;">in</span> obj<span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">key</span>
+    console.log<span style="color: #fabd2f;">(</span>o<span style="color: #fabd2f;">)</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">value</span>
+    console.log<span style="color: #fabd2f;">(</span>obj<span style="color: #8ec07c;">[</span>o<span style="color: #8ec07c;">]</span><span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge479424" class="outline-3">
+<h3 id="orge479424">Map</h3>
+<div class="outline-text-3" id="text-orge479424">
+<div class="org-src-container">
+<pre class="src src-javascript">m = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Map</span><span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[</span><span style="color: #8ec07c;">[</span><span style="color: #b8bb26;">"name"</span>, <span style="color: #b8bb26;">"EvanMeek"</span><span style="color: #8ec07c;">]</span>, <span style="color: #8ec07c;">[</span><span style="color: #b8bb26;">"age"</span>, <span style="color: #b8bb26;">"19"</span><span style="color: #8ec07c;">]</span><span style="color: #fabd2f;">]</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"==========for Each=========="</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">forEach</span>
+m.forEach<span style="color: #fb4934;">(</span><span style="color: #fb4934;">function</span><span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">k</span>, <span style="color: #8ec07c;">v</span>, <span style="color: #8ec07c;">map</span><span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+    console.log<span style="color: #8ec07c;">(</span>k<span style="color: #8ec07c;">)</span>
+    console.log<span style="color: #8ec07c;">(</span>v<span style="color: #8ec07c;">)</span>
+    console.log<span style="color: #8ec07c;">(</span>map<span style="color: #8ec07c;">)</span>
+<span style="color: #fabd2f;">}</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"===========for of==========="</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">for of</span>
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">k</span> of m.keys<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>k<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">v</span> of m.values<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>v<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge1f6e57" class="outline-3">
+<h3 id="orge1f6e57">Set</h3>
+<div class="outline-text-3" id="text-orge1f6e57">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">for</span> <span style="color: #fb4934;">(</span><span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">s</span> of <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Set</span><span style="color: #fabd2f;">(</span><span style="color: #8ec07c;">[</span>1, 2<span style="color: #8ec07c;">]</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    console.log<span style="color: #fabd2f;">(</span>s<span style="color: #fabd2f;">)</span>
+<span style="color: #fb4934;">}</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4164483" class="outline-2">
+<h2 id="org4164483">面向对象</h2>
+<div class="outline-text-2" id="text-org4164483">
+<p>
+让我们领略下怪异的JavaScript语法吧!
+</p>
+</div>
+<div id="outline-container-orga447803" class="outline-3">
+<h3 id="orga447803">创建对象</h3>
+<div class="outline-text-3" id="text-orga447803">
+<p>
+创建对象是用function，你就说怪不怪吧!
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">Student</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">name</span>, <span style="color: #8ec07c;">age</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #d3869b;">this</span>.name = name
+    <span style="color: #d3869b;">this</span>.age = age
+    <span style="color: #d3869b;">this</span>.getName = <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #fb4934;">return</span> name
+    <span style="color: #fabd2f;">}</span>
+    <span style="color: #d3869b;">this</span>.getAge = <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #fb4934;">return</span> age
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">stu</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Student</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"EvanMeek"</span>, 19<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>stu.getName<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>stu.getAge<span style="color: #fabd2f;">()</span><span style="color: #fb4934;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge53806c" class="outline-3">
+<h3 id="orge53806c">prototype</h3>
+<div class="outline-text-3" id="text-orge53806c">
+<p>
+JS允许使用prototype将多个对象实例进行数据关联。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb79be50" class="outline-3">
+<h3 id="orgb79be50">继承关系</h3>
+<div class="outline-text-3" id="text-orgb79be50">
+<p>
+JS继承很&#x2026;让我有些迷惑，不过问题不大，就是想要获取它的父类是通过属性获取的。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">name</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #d3869b;">this</span>.name = name
+<span style="color: #fb4934;">}</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">cat</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Cat"</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">/*</span>
+<span style="color: #928374;">  JS&#30340;&#32487;&#25215;&#20851;&#31995;</span>
+<span style="color: #928374;">  cat -&gt; Animal -&gt; Object -&gt; null</span>
+<span style="color: #928374;">  &#20174;&#36825;&#20010;&#20851;&#31995;&#30475;&#20986;&#65292;JS&#19975;&#29289;&#36215;&#28304;&#26159;null</span>
+<span style="color: #928374;">  ===============================</span>
+<span style="color: #928374;">  prototype : &#25351;&#21521;&#24403;&#21069;&#23545;&#35937;&#30340;prototype</span>
+<span style="color: #928374;">  __proto__ : &#25351;&#21521;&#29238;&#31867;&#23545;&#35937;&#30340;prototype</span>
+<span style="color: #928374;">  */</span>
+console.log<span style="color: #fb4934;">(</span>cat.__proto__ === Animal.<span style="color: #d3869b;">prototype</span><span style="color: #fb4934;">)</span>              <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span>Animal.<span style="color: #d3869b;">prototype</span>.__proto__ === Object.<span style="color: #d3869b;">prototype</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span>Object.<span style="color: #d3869b;">prototype</span>.__proto__ === <span style="color: #d3869b;">null</span><span style="color: #fb4934;">)</span>             <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga6280cd" class="outline-3">
+<h3 id="orga6280cd">dir</h3>
+<div class="outline-text-3" id="text-orga6280cd">
+<p>
+用于列出指定对象的所有方法。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">dir<span style="color: #fb4934;">(</span>Array<span style="color: #fb4934;">)</span>
+</pre>
+</div>
+<p>
+dir方法中有prototype属性，里面的所有方法都是共享的，可能包含父类的可用方法，由于Array继承于Object，所以Array对象可以使用Object方法。
+</p>
+</div>
+</div>
+<div id="outline-container-org745deb0" class="outline-3">
+<h3 id="org745deb0">属性检验</h3>
+<div class="outline-text-3" id="text-org745deb0">
+<p>
+验证对象属性 访问权限关系。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #928374;">// </span><span style="color: #928374;">&#36890;&#36807;in&#39564;&#35777;&#23545;&#35937; &#31169;&#26377;&#12289;&#20844;&#26377;&#12289;&#29238;&#31867;&#30340;&#26041;&#27861;&#12290;</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'constructor'</span> <span style="color: #fb4934;">in</span> <span style="color: #fabd2f;">[]</span><span style="color: #fb4934;">)</span>               <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'pop'</span> <span style="color: #fb4934;">in</span> <span style="color: #fabd2f;">[]</span><span style="color: #fb4934;">)</span>                       <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+
+
+<span style="color: #fb4934;">function</span> <span style="color: #8ec07c;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #8ec07c;">name</span><span style="color: #fb4934;">)</span> <span style="color: #fb4934;">{</span>
+    <span style="color: #d3869b;">this</span>.name = name
+    <span style="color: #d3869b;">this</span>.sleep = <span style="color: #fb4934;">function</span><span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        console.log<span style="color: #8ec07c;">(</span><span style="color: #b8bb26;">"sleep..Zzzz..."</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">car</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Cat"</span><span style="color: #fb4934;">)</span>
+<span style="color: #928374;">// </span><span style="color: #928374;">hasOwnProperty &#39564;&#35777;&#31169;&#26377;&#23646;&#24615;/&#26041;&#27861;</span>
+console.log<span style="color: #fb4934;">(</span>car.hasOwnProperty<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'name'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>        <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span>car.hasOwnProperty<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'sleep'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>       <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span>car.hasOwnProperty<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">'constructor'</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">false</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org32a5de1" class="outline-3">
+<h3 id="org32a5de1">instanceof</h3>
+<div class="outline-text-3" id="text-org32a5de1">
+<p>
+验证对象实例归属。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">console.log<span style="color: #fb4934;">(</span><span style="color: #fabd2f;">[]</span> <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Array</span><span style="color: #fb4934;">)</span>     <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+console.log<span style="color: #fb4934;">(</span>Array <span style="color: #fb4934;">instanceof</span> <span style="color: #fabd2f;">Object</span><span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c38396" class="outline-3">
+<h3 id="org4c38396">class</h3>
+<div class="outline-text-3" id="text-org4c38396">
+<p>
+<code>ES6</code> 标准提供了 <code>class</code> 关键字来定义对象，但是其只是个语法糖，本质上还是基于prototype的原型链。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">class</span> Animal <span style="color: #fb4934;">{</span>
+    <span style="color: #928374;">// </span><span style="color: #928374;">&#26500;&#36896;&#20989;&#25968;</span>
+    constructor<span style="color: #fabd2f;">(</span>name<span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #d3869b;">this</span>.name = name
+    <span style="color: #fabd2f;">}</span>
+    sleep<span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        console.log<span style="color: #8ec07c;">(</span><span style="color: #d3869b;">this</span>.name + <span style="color: #b8bb26;">" is sleep..Zzzzz..."</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">cat</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'Cat'</span><span style="color: #fb4934;">)</span>
+<span style="color: #fb4934;">let</span> <span style="color: #8ec07c;">dog</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">'Dog'</span><span style="color: #fb4934;">)</span>
+
+console.log<span style="color: #fb4934;">(</span>cat.name<span style="color: #fb4934;">)</span>
+console.log<span style="color: #fb4934;">(</span>dog.name<span style="color: #fb4934;">)</span>
+cat.sleep<span style="color: #fb4934;">()</span>
+dog.sleep<span style="color: #fb4934;">()</span>
+console.log<span style="color: #fb4934;">(</span>cat.sleep === dog.sleep<span style="color: #fb4934;">)</span> <span style="color: #928374;">// </span><span style="color: #928374;">true</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2ae9b4a" class="outline-3">
+<h3 id="org2ae9b4a">extends继承</h3>
+<div class="outline-text-3" id="text-org2ae9b4a">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fb4934;">class</span> Animal <span style="color: #fb4934;">{</span>
+    constructor<span style="color: #fabd2f;">(</span>name<span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #d3869b;">this</span>.name = name
+    <span style="color: #fabd2f;">}</span>
+    sleep<span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        console.log<span style="color: #8ec07c;">(</span><span style="color: #d3869b;">this</span>.name + <span style="color: #b8bb26;">" sleep."</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+<span style="color: #fb4934;">class</span> Cat <span style="color: #fb4934;">extends</span> Animal <span style="color: #fb4934;">{</span>
+    constructor<span style="color: #fabd2f;">(</span>name<span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #fb4934;">super</span><span style="color: #8ec07c;">(</span>name<span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+    sleep<span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        console.log<span style="color: #8ec07c;">(</span><span style="color: #b8bb26;">"Cat sleep."</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">class</span> Dog <span style="color: #fb4934;">extends</span> Animal <span style="color: #fb4934;">{</span>
+    constructor<span style="color: #fabd2f;">(</span>name<span style="color: #fabd2f;">)</span> <span style="color: #fabd2f;">{</span>
+        <span style="color: #fb4934;">super</span><span style="color: #8ec07c;">(</span>name<span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+    sleep<span style="color: #fabd2f;">()</span> <span style="color: #fabd2f;">{</span>
+        console.log<span style="color: #8ec07c;">(</span><span style="color: #b8bb26;">"Dog sleep."</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #fabd2f;">}</span>
+<span style="color: #fb4934;">}</span>
+
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">dog</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Dog</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Dog"</span><span style="color: #fb4934;">)</span>;
+dog.sleep<span style="color: #fb4934;">()</span>                     <span style="color: #928374;">// </span><span style="color: #928374;">Dog sleep.</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">cat</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Cat</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Cat"</span><span style="color: #fb4934;">)</span>;
+cat.sleep<span style="color: #fb4934;">()</span>                     <span style="color: #928374;">// </span><span style="color: #928374;">Cat sleep.</span>
+<span style="color: #fb4934;">var</span> <span style="color: #8ec07c;">pig</span> = <span style="color: #fb4934;">new</span> <span style="color: #fabd2f;">Animal</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Pig"</span><span style="color: #fb4934;">)</span>;
+pig.sleep<span style="color: #fb4934;">()</span>                     <span style="color: #928374;">// </span><span style="color: #928374;">Pig sleep.</span>
+</pre>
 </div>
 </div>
 </div>
@@ -1095,7 +1779,7 @@ setMoeny<span style="color: #C586C0;">()</span>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-11-15 日 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-15 日 16:03</p>
+<p class="date">Created: 2020-11-17 二 00:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

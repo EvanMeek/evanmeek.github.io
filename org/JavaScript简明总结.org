@@ -573,42 +573,498 @@
 
       console.log(plus(1, 2))          // 3
     #+end_src
-*** 参数
-    name,age,id就是参数
-    定义函数时的参数叫做形参，调用函数传递的参量叫做实参。
+** 参数
+   name,age,id就是参数
+   定义函数时的参数叫做形参，调用函数传递的参量叫做实参。
+   #+begin_src javascript
+     function pInfo(name, age, id){
+         // console.log(`NAME:${name}\n"AGE:${age}\nID:${id}`)
+         console.log("NAME: " +name+"\n"+
+                     "AGE: "+age+"\n"+
+                     "ID: "+id+"\n")
+     }
+
+
+     pInfo("EvanMeek",20,0001)
+   #+end_src
+** 默认参数
+   默认参数即当不传递参量时自动使用的参量值。
+   #+begin_src javascript
+     function setMoeny(money=100){
+         console.log("set money: "+money)
+     }
+
+     setMoeny(0.1)
+     setMoeny()
+   #+end_src
+** arguments参数对象
+   根据arguments对象，可以获取所有实参等相关信息。
+   #+begin_src javascript
+     // 有点类似匿名函数?
+     (function (){
+         console.log(arguments)        // 获取所有实参
+         console.log(arguments.callee) // 获取当前函数对象
+     })('a','b','c')
+   #+end_src
+** rest参数打包
+   形参数量可以跟实参参量数量不同，多余的实参会被构造成一个Array。
+   #+begin_src javascript
+     // 参数打包
+     (function(a,b,...rest){
+         console.log(a,b,rest)       // 1 2 [3,4,5]
+     })(1,2,3,4,5)
+   #+end_src
+** 匿名函数
+   ~函数式编程~ 的一个重要特性。
+   #+begin_src javascript
+     // 匿名函数
+     var f = (function() {
+         console.log("I am a anonymous function.")
+     });
+
+     // 调用存放函数变量，注意必须加上分号。
+     f();
+
+     (function() {
+         console.log("auto execute.")
+     })();
+     // 当匿名函数最后加上()，就会被自动调用，其用来传入实参。
+   #+end_src
+** 函数参数
+   函数作为参数被传递
+   #+begin_src javascript
+     function executeFunc(f){
+         // 执行接受到的函数
+         f();
+     };
+
+     executeFunc((function(){
+         console.log("anonymous func.")
+     }));
+   #+end_src
+** 返回函数
+   函数作为返回值
+   #+begin_src javascript
+     function executeFunc(f) {
+         // 执行接受到的函数
+         f();
+     };
+
+     executeFunc((function(f) {
+         return f;
+     })((function() {
+         console.log("anonymous func.");
+     })));
+   #+end_src
+** 箭头函数
+   ~ES6~ 标准提供的新特性，用于简化匿名函数的编写。
+   #+begin_src javascript
+     var plus = ((num) => {
+         return num + num;
+     });
+
+     console.log(plus(10));
+     // 如果匿名函数体仅有一行，可以忽略{}和return
+     var less_1 = num => num - 1;
+     console.log(less_1(10));
+   #+end_src
+** 递归函数
+   函数调用自身称为递归，其本质是 ~循环~ 调用自身。
+   #+begin_src javascript
+     function plus(i = 0, n = 0) {
+         i++;
+         if (n <= 0) {
+             return i;
+         }
+         console.log("n:" + n);
+         console.log("i:" + i);
+         plus(i, n - 1);
+     }
+
+
+     console.log(plus(1, 100));
+   #+end_src
+** 闭包特性
+   正常的函数在函数体外是无法修改函数内部变量的，但是通过闭包可以修改函数内部的函数。
+*** 内部变量
     #+begin_src javascript
-      function pInfo(name, age, id){
-          // console.log(`NAME:${name}\n"AGE:${age}\nID:${id}`)
-          console.log("NAME: " +name+"\n"+
-                      "AGE: "+age+"\n"+
-                      "ID: "+id+"\n")
+      var f = ()=>{
+          var n = 1;
+          n++;
+          return n;
       }
+      console.log(f());               // 2
+      console.log(f());               // 2
+      console.log(f());               // 2
+      // 无法修改内部变量
+    #+end_src
+*** 闭包
+    #+begin_src javascript
+      var f = (() => {
+          var n = 1;
+          return (() => {
+              console.log(++n)
+          })
+
+      })
+      exeF = f()
+      exeF()                            // 2
+      exeF()                            // 3
+      exeF()                            // 4
+    #+end_src
+** 生成器
+   ~ES6~ 提供的新特性，生成器可以理解成一个 ~惰性的序列~ 。其特性是可边生成数据边读取数据。
+   #+begin_src javascript
+     function* f(){
+         for (var i = 0; i < 5; i++) {
+             yield i
+         }
+     }
+
+     var f = f()
+     console.log(f.next());          // 0
+     console.log(f.next());          // 1
+     console.log(f.next());          // 2
+     console.log(f.next());          // 3
+     console.log(f.next());          // 4
+     console.log(f.next());          // undefined , done: true
+   #+end_src
+   其工作原理是每次执行 next() 函数就执行已一次 yield。
+* 作用域
+  函数内部的变量有属于自己的作用域
+  #+begin_src javascript
+    var n = 1
+    console.log(n)
+
+    ;(function() {
+        var n = 2;
+    })()
 
 
-      pInfo("EvanMeek",20,0001)
-    #+end_src
-*** 默认参数
-    默认参数即当不传递参量时自动使用的参量值。
-    #+begin_src javascript
-      function setMoeny(money=100){
-          console.log("set money: "+money)
-      }
+    console.log(n)
+  #+end_src
+** let
+   ~ES6~ 标准提供的新特性，可以用来定义变量，跟 ~var~ 的区别是其具有 ~块级作用域~ 。
+   #+begin_src javascript
+     for (var i = 0; i < 5; i++) { }
+     // 可以访问i
+     console.log(i);
+     for (let j = 0; j < 5; j++) { }
+     // 不能访问j
+     console.log(j);
+   #+end_src
+** const
+   ~ES6~ 标准提供的新特性，可以将变量设置为常量，一旦定义则无法修改其值。且和 ~let~ 具有相同的块级作用域。
+   #+begin_src javascript
+     const a = 10;
+     a = 20;                         // error
+   #+end_src
+** strict
+   严格模式，开启严格模式后，会对不规范的代码进行报错。
+   #+begin_src javascript
+     'use strict'
+   #+end_src
+** this
+   指定访问当前作用域下的对象。
+   #+begin_src javascript
+     var obj = {
+         name: "",
+         getName: function() {
+             // getName()函数作用域在obj对象内，所有通过this.name可以访问name。
+             return this.name
+         }
+     }
 
-      setMoeny(0.1)
-      setMoeny()
-    #+end_src
-*** arguments参数对象
-    #+begin_src javascript
-      // 有点类似匿名函数?
-      (function (){
-          console.log(arguments)        // 获取所有实参
-          console.log(arguments.callee) // 获取当前函数对象
-      })('a','b','c')
-    #+end_src
-*** rest参数打包
-    #+begin_src javascript
-      // 参数打包
-      (function(a,b,...rest){
-          console.log(a,b,rest)       // 1 2 [3,4,5]
-      })(1,2,3,4,5)
-    #+end_src
+     obj.name = "EvanMeek"
+     console.log(obj.getName())
+
+     var obj = {
+         name: "",
+         getName: function() {
+             // 嵌套多层函数会让this失效。
+             return (function() { return this.name }())
+         }
+     }
+     obj.name = "EvanMeek"
+     gname = obj.getName()
+     console.log(gname())
+
+     var obj = {
+         name: "",
+         getName: function() {
+             // 使用箭头函数修复了this失效问题。
+             return () => this.name
+         }
+     }
+
+     obj.name = "EvanMeek"
+     gname = obj.getName()
+     console.log(gname())
+   #+end_src
+   如果尝试用this访问当前作用域下没有的成员时:
+   #+begin_src javascript
+     function f() {
+         console.log("func: f")
+         console.log(this.name)
+     }
+
+     var obj = {
+         name: "",
+         getName: f
+     }
+     obj.name = "EvanMeek"
+     // 当前作用域下没有this.name变量，所以无法获取
+     console.log(this.name)
+     // 所以执行f函数自然也无法找到，输出为: func:f undefined
+     console.log(f())
+   #+end_src
+** 对象冒充
+   对象冒充可以突破作用域的限制。
+   #+begin_src javascript
+     function f(name, age) {
+         this.name = name
+         this.age = age
+     }
+
+     var obj = {
+         name: "",
+         age: -1,
+         setNameAge: f,
+         getNameAge: function() {
+             console.log("Name: " + this.name + "\tAge: " + this.age);
+         }
+     }
+     // 直接调用f函数是无法操作obj的name和age属性的。
+     // f("EvanMeek", 20)
+     // 但是通过call将f函数的作用域设置为obj即可。
+     f.call(obj, "EvanMeek", 20)
+     // apply效果同上，只是传参方式不同
+     // f.apply(obj, ["EvanMeek", 19])
+     obj.getNameAge()
+   #+end_src
+** 命名空间
+   可以设置一个对象结构的命名空间。
+   #+begin_src javascript
+     var custom_namespace = {}
+     custom_namespace.name = "EvanMeek"
+     name = "Her name, plz."
+     console.log("Current scope's name: " + name)
+     console.log("Custom namespace's name: " + custom_namespace.name)
+   #+end_src
+* 迭代
+  迭代是一种语法糖，可以快速遍历一些序列。
+** 字符串
+   #+begin_src javascript
+     // for of
+     for (let c of 'Hello World') {
+         console.log(c)
+     }
+   #+end_src
+** 数组
+   #+begin_src javascript
+     // for of
+     for (let i of [1, 2, 3, 4]) {
+         console.log(i)
+     }
+
+     // forEach
+     ['a', '1', 'b', '2', 'c', '3'].forEach(function(ele, i, arr) {
+         // This round iter element
+         console.log(ele)
+         // This round iter index
+         console.log(i)
+         // This round iter object
+         console.log(arr)
+     })
+   #+end_src
+** 对象
+   #+begin_src javascript
+     var obj = { name: "", age: -1 }
+     obj.name = "EvanMeek"
+     obj.age = 19
+     // for in 注意 变量对象要用for in
+     for (let o in obj) {
+         // key
+         console.log(o)
+         // value
+         console.log(obj[o])
+     }
+   #+end_src
+** Map
+   #+begin_src javascript
+     m = new Map([["name", "EvanMeek"], ["age", "19"]])
+     console.log("==========for Each==========")
+     // forEach
+     m.forEach(function(k, v, map) {
+         console.log(k)
+         console.log(v)
+         console.log(map)
+     })
+     console.log("===========for of===========")
+     // for of
+     for (let k of m.keys()) {
+         console.log(k)
+     }
+     for (let v of m.values()) {
+         console.log(v)
+     }
+   #+end_src
+** Set
+   #+begin_src javascript
+     for (let s of new Set([1, 2])) {
+         console.log(s)
+     }
+   #+end_src
+* 面向对象
+  让我们领略下怪异的JavaScript语法吧!
+** 创建对象
+   创建对象是用function，你就说怪不怪吧!
+   #+begin_src javascript
+     function Student(name, age) {
+         this.name = name
+         this.age = age
+         this.getName = function() {
+             return name
+         }
+         this.getAge = function() {
+             return age
+         }
+     }
+
+     var stu = new Student("EvanMeek", 19)
+     console.log(stu.getName())
+     console.log(stu.getAge())
+   #+end_src
+** prototype
+   JS允许使用prototype将多个对象实例进行数据关联。
+   #+begin_export javascript
+   function Animal(name) {
+       this.name = name
+       this.sleep = function() {
+           console.log("sleep..Zzzzz...")
+       }
+   }
+   var cat = new Animal("Cat")
+   var dog = new Animal("Dog")
+   // 对象实例之间独立
+   console.log(cat === dog)        // false
+
+   function Animal(name) {
+       this.name = name
+   }
+   // 如果存在prototype声明的变量则实例之间是数据共享的。
+   Animal.prototype.sleep = function() {
+       console.log("sleep..Zzzzz...")
+   }
+   var cat = new Animal("Cat")
+   var dog = new Animal("Dog")
+   console.log(cat.sleep === dog.sleep)        // true
+   #+end_export
+** 继承关系
+   JS继承很...让我有些迷惑，不过问题不大，就是想要获取它的父类是通过属性获取的。
+   #+begin_src javascript
+     function Animal(name) {
+         this.name = name
+     }
+     var cat = new Animal("Cat")
+     /*
+       JS的继承关系
+       cat -> Animal -> Object -> null
+       从这个关系看出，JS万物起源是null
+       ===============================
+       prototype : 指向当前对象的prototype
+       __proto__ : 指向父类对象的prototype
+       */
+     console.log(cat.__proto__ === Animal.prototype)              // true
+     console.log(Animal.prototype.__proto__ === Object.prototype) // true
+     console.log(Object.prototype.__proto__ === null)             // true
+   #+end_src
+** dir
+   用于列出指定对象的所有方法。
+   #+begin_src javascript
+     dir(Array)
+   #+end_src
+   dir方法中有prototype属性，里面的所有方法都是共享的，可能包含父类的可用方法，由于Array继承于Object，所以Array对象可以使用Object方法。
+** 属性检验
+   验证对象属性 访问权限关系。
+   #+begin_src javascript
+     // 通过in验证对象 私有、公有、父类的方法。
+     console.log('constructor' in [])               // true
+     console.log('pop' in [])                       // true
+
+
+     function Animal(name) {
+         this.name = name
+         this.sleep = function() {
+             console.log("sleep..Zzzz...")
+         }
+     }
+     var car = new Animal("Cat")
+     // hasOwnProperty 验证私有属性/方法
+     console.log(car.hasOwnProperty('name'))        // true
+     console.log(car.hasOwnProperty('sleep'))       // true
+     console.log(car.hasOwnProperty('constructor')) // false
+   #+end_src
+** instanceof
+   验证对象实例归属。
+   #+begin_src javascript
+     console.log([] instanceof Array)     // true
+     console.log(Array instanceof Object) // true
+   #+end_src
+** class
+   ~ES6~ 标准提供了 ~class~ 关键字来定义对象，但是其只是个语法糖，本质上还是基于prototype的原型链。
+   #+begin_src javascript
+     class Animal {
+         // 构造函数
+         constructor(name) {
+             this.name = name
+         }
+         sleep() {
+             console.log(this.name + " is sleep..Zzzzz...")
+         }
+     }
+
+     let cat = new Animal('Cat')
+     let dog = new Animal('Dog')
+
+     console.log(cat.name)
+     console.log(dog.name)
+     cat.sleep()
+     dog.sleep()
+     console.log(cat.sleep === dog.sleep) // true
+   #+end_src
+** extends继承
+   #+begin_src javascript
+     class Animal {
+         constructor(name) {
+             this.name = name
+         }
+         sleep() {
+             console.log(this.name + " sleep.")
+         }
+     }
+     class Cat extends Animal {
+         constructor(name) {
+             super(name)
+         }
+         sleep() {
+             console.log("Cat sleep.")
+         }
+     }
+
+     class Dog extends Animal {
+         constructor(name) {
+             super(name)
+         }
+         sleep() {
+             console.log("Dog sleep.")
+         }
+     }
+
+     var dog = new Dog("Dog");
+     dog.sleep()                     // Dog sleep.
+     var cat = new Cat("Cat");
+     cat.sleep()                     // Cat sleep.
+     var pig = new Animal("Pig");
+     pig.sleep()                     // Pig sleep.
+   #+end_src
