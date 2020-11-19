@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-17 二 00:19 -->
+<!-- 2020-11-19 四 16:00 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>浅谈Python写中的正则表达式</title>
@@ -114,12 +114,12 @@ Python中的正则是由`re`模块提供的。
 的，如果没有找到则返回None。
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
 
-<span style="color: #8ec07c;">pattern</span> = <span style="color: #b8bb26;">"python"</span>
-<span style="color: #8ec07c;">string</span> = <span style="color: #b8bb26;">"www.python.org"</span>
-<span style="color: #fb4934;">if</span> re.search<span style="color: #fb4934;">(</span>pattern,string<span style="color: #fb4934;">)</span>:
-    <span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Found it."</span><span style="color: #fb4934;">)</span>
+<span style="color: #076678;">pattern</span> = <span style="color: #79740e;">"python"</span>
+<span style="color: #076678;">string</span> = <span style="color: #79740e;">"www.python.org"</span>
+<span style="color: #9d0006;">if</span> re.search<span style="color: #076678;">(</span>pattern,string<span style="color: #076678;">)</span>:
+    <span style="color: #9d0006;">print</span><span style="color: #076678;">(</span><span style="color: #79740e;">"Found it."</span><span style="color: #076678;">)</span>
 </pre>
 </div>
 </div>
@@ -134,12 +134,12 @@ Python中的正则是由`re`模块提供的。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
 
-<span style="color: #8ec07c;">pattern</span> = <span style="color: #b8bb26;">"p"</span>
-<span style="color: #8ec07c;">string</span> = <span style="color: #b8bb26;">"python"</span>
-<span style="color: #fb4934;">if</span> re.match<span style="color: #fb4934;">(</span>pattern, string<span style="color: #fb4934;">)</span>:
-    <span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span><span style="color: #b8bb26;">"Found it!"</span><span style="color: #fb4934;">)</span>
+<span style="color: #076678;">pattern</span> = <span style="color: #79740e;">"p"</span>
+<span style="color: #076678;">string</span> = <span style="color: #79740e;">"python"</span>
+<span style="color: #9d0006;">if</span> re.match<span style="color: #076678;">(</span>pattern, string<span style="color: #076678;">)</span>:
+    <span style="color: #9d0006;">print</span><span style="color: #076678;">(</span><span style="color: #79740e;">"Found it!"</span><span style="color: #076678;">)</span>
 </pre>
 </div>
 </div>
@@ -152,13 +152,13 @@ Python中的正则是由`re`模块提供的。
 用于将参量pattern(string)与参量string进行匹配，然后通过匹配的子串进行分割string。
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
 
-<span style="color: #8ec07c;">pattern</span> = <span style="color: #b8bb26;">"[,]+"</span>
-<span style="color: #8ec07c;">string</span> = <span style="color: #b8bb26;">"Hello,My name is EvanMeek,Nice to meet you"</span>
+<span style="color: #076678;">pattern</span> = <span style="color: #79740e;">"[,]+"</span>
+<span style="color: #076678;">string</span> = <span style="color: #79740e;">"Hello,My name is EvanMeek,Nice to meet you"</span>
 
-<span style="color: #8ec07c;">string</span> = re.split<span style="color: #fb4934;">(</span>pattern, string<span style="color: #fb4934;">)</span>
-<span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span>string<span style="color: #fb4934;">)</span>
+<span style="color: #076678;">string</span> = re.split<span style="color: #076678;">(</span>pattern, string<span style="color: #076678;">)</span>
+<span style="color: #9d0006;">print</span><span style="color: #076678;">(</span>string<span style="color: #076678;">)</span>
 </pre>
 </div>
 
@@ -173,11 +173,11 @@ Python中的正则是由`re`模块提供的。
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
-<span style="color: #8ec07c;">pattern</span> = <span style="color: #b8bb26;">"o(o)+"</span>
-<span style="color: #8ec07c;">string</span> = <span style="color: #b8bb26;">"FoooooBar"</span>
-<span style="color: #8ec07c;">string</span> = re.split<span style="color: #fb4934;">(</span>pattern, string<span style="color: #fb4934;">)</span>
-<span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span>string<span style="color: #fb4934;">)</span>
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
+<span style="color: #076678;">pattern</span> = <span style="color: #79740e;">"o(o)+"</span>
+<span style="color: #076678;">string</span> = <span style="color: #79740e;">"FoooooBar"</span>
+<span style="color: #076678;">string</span> = re.split<span style="color: #076678;">(</span>pattern, string<span style="color: #076678;">)</span>
+<span style="color: #9d0006;">print</span><span style="color: #076678;">(</span>string<span style="color: #076678;">)</span>
 </pre>
 </div>
 </div>
@@ -190,11 +190,11 @@ Python中的正则是由`re`模块提供的。
 findall()会将匹配的所有的子串生成一个列表。
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
 
-<span style="color: #8ec07c;">pattern</span> = <span style="color: #b8bb26;">"[a-zA-Z]+"</span>
-<span style="color: #8ec07c;">string</span> = <span style="color: #b8bb26;">"Hmm...You really thing so?"</span>
-<span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span>re.findall<span style="color: #fabd2f;">(</span>pattern, string<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #076678;">pattern</span> = <span style="color: #79740e;">"[a-zA-Z]+"</span>
+<span style="color: #076678;">string</span> = <span style="color: #79740e;">"Hmm...You really thing so?"</span>
+<span style="color: #9d0006;">print</span><span style="color: #076678;">(</span>re.findall<span style="color: #b16286;">(</span>pattern, string<span style="color: #b16286;">)</span><span style="color: #076678;">)</span>
 </pre>
 </div>
 </div>
@@ -207,12 +207,12 @@ findall()会将匹配的所有的子串生成一个列表。
 sub()可以将匹配到的子串从左往右依次用参量repl替换掉。
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
 
-<span style="color: #8ec07c;">pat</span> = <span style="color: #b8bb26;">"{name}"</span>
-<span style="color: #8ec07c;">repl</span>= <span style="color: #b8bb26;">"EvanMeek"</span>
-<span style="color: #8ec07c;">string</span> = <span style="color: #b8bb26;">"Hi, Your name is {name}?\nYes! My name is {name}."</span>
-<span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span>re.sub<span style="color: #fabd2f;">(</span>pat, repl, string<span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #076678;">pat</span> = <span style="color: #79740e;">"{name}"</span>
+<span style="color: #076678;">repl</span>= <span style="color: #79740e;">"EvanMeek"</span>
+<span style="color: #076678;">string</span> = <span style="color: #79740e;">"Hi, Your name is {name}?\nYes! My name is {name}."</span>
+<span style="color: #9d0006;">print</span><span style="color: #076678;">(</span>re.sub<span style="color: #b16286;">(</span>pat, repl, string<span style="color: #b16286;">)</span><span style="color: #076678;">)</span>
 
 </pre>
 </div>
@@ -226,9 +226,9 @@ sub()可以将匹配到的子串从左往右依次用参量repl替换掉。
 escape()会把参量string中所有包含正则表达式特殊字符的都进行转义，就像这样:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4934;">import</span> re
+<pre class="src src-python"><span style="color: #9d0006;">import</span> re
 
-<span style="color: #fb4934;">print</span><span style="color: #fb4934;">(</span>re.escape<span style="color: #fabd2f;">(</span><span style="color: #b8bb26;">"www.python.org"</span><span style="color: #fabd2f;">)</span><span style="color: #fb4934;">)</span>
+<span style="color: #9d0006;">print</span><span style="color: #076678;">(</span>re.escape<span style="color: #b16286;">(</span><span style="color: #79740e;">"www.python.org"</span><span style="color: #b16286;">)</span><span style="color: #076678;">)</span>
 </pre>
 </div>
 </div>
@@ -237,7 +237,7 @@ escape()会把参量string中所有包含正则表达式特殊字符的都进行
 <div id="postamble" class="status">
 <p class="date">Date: 2020-08-19 三 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-17 二 00:19</p>
+<p class="date">Created: 2020-11-19 四 16:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

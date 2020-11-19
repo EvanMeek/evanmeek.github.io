@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-17 二 00:19 -->
+<!-- 2020-11-19 四 16:00 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#org34ecf45">批处理操作系统</a>
 <ul>
-<li><a href="#org1cc8b32">基本工作方式</a></li>
+<li><a href="#org68add8b">基本工作方式</a></li>
 <li><a href="#org50ca72f">特点与分类</a></li>
 <li><a href="#org3a4291b">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org71a6e46">分时系统</a>
 <ul>
-<li><a href="#org68add8b">基本工作方式</a></li>
+<li><a href="#org52d9da5">基本工作方式</a></li>
 <li><a href="#org5560415">设计思想</a></li>
 <li><a href="#orga55c47b">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org8f10375">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#orgf0a3053">程序状态字(PSW)</a></li>
+<li><a href="#orgb83444c">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org75f1bb1">计算机系统硬件部件</a>
@@ -140,7 +140,7 @@
 <li><a href="#org0c4a3ee">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#orged09c54">思考题与练习题</a></li>
+<li><a href="#org0cb13d8">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org21b7ab3">第三章-进程与线程</a>
@@ -154,7 +154,7 @@
 <li><a href="#org3c4d02b">线程</a></li>
 <li><a href="#org55648ed">进程调度</a></li>
 <li><a href="#org587e171">系统内核</a></li>
-<li><a href="#org0cb13d8">思考题与练习题</a></li>
+<li><a href="#orgaea5f92">思考题与练习题</a></li>
 </ul>
 </li>
 </ul>
@@ -178,9 +178,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-org1cc8b32" class="outline-5">
-<h5 id="org1cc8b32">基本工作方式</h5>
-<div class="outline-text-5" id="text-org1cc8b32">
+<div id="outline-container-org68add8b" class="outline-5">
+<h5 id="org68add8b">基本工作方式</h5>
+<div class="outline-text-5" id="text-org68add8b">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -226,9 +226,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org68add8b" class="outline-5">
-<h5 id="org68add8b">基本工作方式</h5>
-<div class="outline-text-5" id="text-org68add8b">
+<div id="outline-container-org52d9da5" class="outline-5">
+<h5 id="org52d9da5">基本工作方式</h5>
+<div class="outline-text-5" id="text-org52d9da5">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -554,8 +554,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="orgbb69901"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-orgbb69901">
+<li><a id="orgf0a3053"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-orgf0a3053">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -671,9 +671,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-orgf0a3053" class="outline-4">
-<h4 id="orgf0a3053">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-orgf0a3053">
+<div id="outline-container-orgb83444c" class="outline-4">
+<h4 id="orgb83444c">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-orgb83444c">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1228,9 +1228,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orged09c54" class="outline-3">
-<h3 id="orged09c54">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orged09c54">
+<div id="outline-container-org0cb13d8" class="outline-3">
+<h3 id="org0cb13d8">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org0cb13d8">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1462,9 +1462,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="outline-container-org587e171" class="outline-3">
 <h3 id="org587e171">系统内核</h3>
 </div>
-<div id="outline-container-org0cb13d8" class="outline-3">
-<h3 id="org0cb13d8">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org0cb13d8">
+<div id="outline-container-orgaea5f92" class="outline-3">
+<h3 id="orgaea5f92">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgaea5f92">
 <ol class="org-ol">
 <li>什么是多道程序设计？</li>
 <li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
@@ -1618,7 +1618,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-17 二 00:19</p>
+<p class="date">Created: 2020-11-19 四 16:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
