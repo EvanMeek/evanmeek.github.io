@@ -1068,3 +1068,129 @@
      var pig = new Animal("Pig");
      pig.sleep()                     // Pig sleep.
    #+end_src
+* 内置对象
+** Date
+   Date是JS的时间对象。
+   #+begin_src javascript
+     console.log(new Date() instanceof Date) // true
+     // 通过标准时间格式指定
+     console.log(new Date("2020-11-17 00:00:00"))
+     // 通过时间戳指定
+     console.log(new Date(100000000000000))
+   #+end_src
+*** 常用方法
+    #+begin_src javascript
+      console.log("年: " + new Date().getFullYear())
+      console.log("月: " + new Date().getMonth()) // 0~12
+      console.log("日: " + new Date().getDate())  // 0~30
+      console.log("时: " + new Date().getHours()) // 0~23
+      console.log("分: " + new Date().getMinutes()) // 0~59
+      console.log("秒: " + new Date().getSeconds()) // 0~59
+      console.log("ms: " + new Date().getMilliseconds())
+      console.log("Timestamp: " + new Date().getTime())
+    #+end_src
+*** 时间运算
+    编程中常常是通过对时间戳进行加减进行时间运算，输出时再将时间戳转换为标准时间。
+    #+begin_src javascript
+      console.log("两小时之后: " + new Date(new Date().getTime() + (60 * 60 * 2 * 1000)))
+    #+end_src
+*** 标准时间格式
+    由于JS的时间库很垃圾，甚至连标准时间格式都不支持，就算支持也不是标准的，所以只好通过一些第三方库来实现，或者自己拼装。
+    #+begin_src javascript
+      // 自己拼装
+      var currentTime = new Date()
+      console.log("current time: " + currentTime.getFullYear() + "/" + currentTime.getMonth() + "/" + currentTime.getDate() + " " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds())
+
+      // 官方库
+      console.log(currentTime.toLocaleDateString())
+      console.log(currentTime.toLocaleString())
+      // 第三方库使用moment
+    #+end_src
+** Math
+   Math是JS中的数学对象。
+   #+begin_export javascript
+   // 求绝对值
+   console.log(Math.abs(-1))       // 1
+   console.log(Math.random()) // 0~1随机数
+   // 比较最大值
+   console.log(Math.max(0, 99))    // 99
+   // 比较最小值
+   console.log(Math.min(0, 99))     // 0
+   // 向上取舍
+   console.log(Math.ceil(1.1))     // 2
+   // 向下取舍
+   console.log(Math.floor(1.9))    // 1
+   // 四舍五入
+   console.log(Math.round(1.4))    // 2
+   #+end_export
+** Json
+   #+begin_src javascript
+     var student = {
+         name: "EvanMeek",
+         age: 19,
+         score: [99, 98, 97]
+     }
+
+     // JSON对象转为JSON字符串
+     // 正常格式化
+     console.log(JSON.stringify(student))
+     // 友好显示
+     console.log(JSON.stringify(student, null))
+     // 过滤，仅显示指定的key-value
+     console.log(JSON.stringify(student, ["name"]))
+     // 自定义，更高级的过滤
+     console.log(JSON.stringify(student, function(k, v) {
+         if (k === "name") {
+             return v + "-suffix"
+         }
+         return v
+     }))
+   #+end_src
+* 异步
+  JS是单线程的，且其执行规则不是同步而是异步的，下面将简单演示下JS中的“阻塞感”。
+** setTimeout
+   由于是单线程的，如果是正常的同步阻塞那么遇到阻塞时整个线程都会暂停，但是异步阻塞不会影响后面代码的执行。
+   #+begin_src javascript
+     console.log("a")
+     console.log(new Date().getSeconds())
+     // 异步阻塞3秒后输出b
+     setTimeout(() => {
+         console.log(new Date().getSeconds())
+         console.log("b")
+     }, 3000)
+     console.log(new Date().getSeconds())
+     console.log("c")
+   #+end_src
+** setInterval
+   ~循环阻塞~
+   setTimeout在遇到循环时会有一些问题，需要用到setInterval解决。
+   #+begin_src javascript
+     // 这段代码想要实现，每隔1秒输出一次i的值，但实际上每次i的值都是5，因为在异步阻塞时循环已经跑完了。
+     for (let i = 0; i < 5; i++) {
+         setTimeout(() => {
+             console.log(new Date().getSeconds())
+             console.log(i)
+         }, 1000)
+     }
+     console.log("=================setInterval=================")
+     // 解决方法是使用setInterval
+     let i = 1
+     let loop = setInterval(() => {
+         console.log(new Date().getSeconds())
+         console.log(i)
+         if (i >= 5) {
+             clearInterval(loop)
+         }
+         i++
+     }, 1000)
+   #+end_src
+** callback
+   ~回调函数~
+   #+begin_src javascript
+     function callback_func() {
+         console.log("callback")
+     }
+
+     setTimeout(callback_func, 1000)
+     console.log(".....")
+   #+end_src
