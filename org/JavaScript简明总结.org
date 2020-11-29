@@ -1194,3 +1194,96 @@
      setTimeout(callback_func, 1000)
      console.log(".....")
    #+end_src
+* 异常处理
+** try-catch
+   #+begin_src javascript
+     try {
+         b = a + 1
+     } catch (err) {
+         console.log(err.message)
+     }
+   #+end_src
+** finally
+   #+begin_src javascript
+     try {
+         b = a + 1
+     } catch (err) {
+         console.log(err.message)
+     } finally {
+         console.log("不管怎样我都会执行。")
+     }
+   #+end_src
+** 错误类型
+   由 ~catch~ 捕获到的错误具有多种类型。
+   #+begin_src javascript
+     try {
+         b = a + 1
+     } catch (err) {
+         console.log(err instanceof Error)          // true
+         console.log(err instanceof ReferenceError) // true
+         console.log(err instanceof SyntaxError)    // false
+     }
+   #+end_src
+** 抛出
+   通过 ~throw~ 关键字抛出指定错误
+   #+begin_src javascript
+     try {
+         throw new TypeError('自定义抛出错误')
+     } catch (err) {
+         console.log(err)
+     }
+   #+end_src
+** 异步与错误
+   无法捕获异步执行的错误。
+   #+begin_src javascript
+     try {
+         setTimeout(() => {
+             throw new TypeError("ERROR")
+         },100)
+     } catch (err) {
+         console.log(err.message)
+     }
+   #+end_src
+* 浏览器中的JavaScript
+  前面都是JS的基础语法，JS可以作为前端 => 浏览器，后端 => nodejs使用。
+** window对象
+   #+begin_src javascript
+     console.log("显示区域高度" + window.innerHeight)
+     console.log("显示区域宽度" + window.innerWidth)
+     console.log("浏览器高度" + window.outerHeight)
+     console.log("浏览器宽度" + window.outerWidth)
+
+     console.log(navigator.appName)                // 浏览器名称
+     console.log(navigator.appVersion)             // 版本
+     console.log(navigator.language)               // 语言
+     console.log(navigator.platform)               // 操作系统
+     console.log(navigator.userAgent)              // User-Agent
+
+     console.log(screen.width)                     // 分辨率-宽
+     console.log(screen.height)                    // 分辨率-高
+
+     console.log(location.protocol)                // 协议
+     console.log(location.host)                    // 主机
+     console.log(location.port)                    // 端口号
+     console.log(location.href)                    // 当前地址
+     console.log(location.pathname)                // 当前目录
+     console.log(location.search)                  // 参数
+     console.log(location.reload())                // 刷新当前页面
+     console.log(location.assign("www.baidu.com")) // 跳转至指定URL
+     console.log(location.href = "www.baidu.com")  // 跳转至指定URL
+
+     console.log(document.referrer)                // 上次访问的地址
+
+     console.log(history.back())                   // 回退页面
+     console.log(history.forward())                // 前进页面
+
+     // 弹窗
+     /*
+       Param:
+       1. 新窗口地址
+       2. 新窗口名称
+       3. 新窗口大小和显示位置
+     ,*/
+     window.open(url, name, 'width=100,height=100,top=0,left=0')
+   #+end_src
+

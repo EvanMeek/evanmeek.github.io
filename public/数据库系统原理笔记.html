@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-19 四 16:00 -->
+<!-- 2020-11-29 Sun 08:23 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -36,86 +36,86 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org63d9309">数据库系统概述</a>
+<li><a href="#org3c1ce12">数据库系统概述</a>
 <ul>
-<li><a href="#org4bef206">数据库的基本概念:</a></li>
-<li><a href="#orgcafb0c6">数据库管理技术发展</a></li>
-<li><a href="#orgc9aac0e">数据库系统的结构</a></li>
-<li><a href="#org726c3d8">数据模型</a></li>
+<li><a href="#org317a893">数据库的基本概念:</a></li>
+<li><a href="#orgf205d47">数据库管理技术发展</a></li>
+<li><a href="#org0e67a9e">数据库系统的结构</a></li>
+<li><a href="#org5325ccb">数据模型</a></li>
 </ul>
 </li>
-<li><a href="#orga81d494">关系数据模型（重点）</a>
+<li><a href="#org11d2ad8">关系数据模型（重点）</a>
 <ul>
-<li><a href="#org57b93af">关系数据库的概述:</a></li>
-<li><a href="#org4a1b4d8">关系数据库模型:</a></li>
-<li><a href="#org46fd100">关系数据库的规范化理论(范式)</a></li>
+<li><a href="#org6051ceb">关系数据库的概述:</a></li>
+<li><a href="#org33eb731">关系数据库模型:</a></li>
+<li><a href="#org1946404">关系数据库的规范化理论(范式)</a></li>
 </ul>
 </li>
-<li><a href="#org487c673">数据库设计</a>
+<li><a href="#org853db20">数据库设计</a>
 <ul>
-<li><a href="#orgbbd9ce3">数据库设计概述</a></li>
-<li><a href="#org3ef33e1">数据库设计的基本步骤</a></li>
-<li><a href="#org9160939">关系数据库设计方法</a></li>
+<li><a href="#org4cbdb17">数据库设计概述</a></li>
+<li><a href="#org0188f27">数据库设计的基本步骤</a></li>
+<li><a href="#orgb9b0cf5">关系数据库设计方法</a></li>
 </ul>
 </li>
-<li><a href="#org0abf0d3">SQL与关系数据库基本操作</a>
+<li><a href="#orge22d593">SQL与关系数据库基本操作</a>
 <ul>
-<li><a href="#org6768e65">SQL概述</a></li>
-<li><a href="#orge474d00">MySQL预备知识</a></li>
-<li><a href="#org8d8e40c">数据定义</a></li>
-<li><a href="#org15cfa34">GROUP BY 子句可以包含任意数目的列，使得其可对分组进行嵌套，为数据分组提供更加细致的控制。</a></li>
-<li><a href="#org5c39cb9">如果在 GROUP BY 子句中嵌套了分组，那么将按 GROUP BY 子句中列的排列顺序的逆序方式依次进行汇总，</a></li>
-<li><a href="#org5a66c92">GROUP BY 子句中列出的每个列都必须是检索列或有效的表达式，但不能是聚合函数。</a></li>
-<li><a href="#orga474402">除聚合函数之外， SELECT 语句中的每个列都必须在 GROUP BY 子句中给出。</a></li>
-<li><a href="#orgc532705">如果用于分组的列中含有 NULL 值，则 NULL 将作为一个单独的分组返回；</a></li>
-<li><a href="#orgcb23813">WHERE 子句主要用于过滤数据行，而 HAVING 子句主要用于过滤分组，</a></li>
-<li><a href="#org7a8656d">HAVING 子句中的条件可以包含聚合函数，而 WHERE 子句中则不可以。</a></li>
-<li><a href="#orgb10b1cb">WHERE 子句会在数据分组前进行过滤， HAVING 子句则会在数据分组后进行过滤。因而，</a></li>
+<li><a href="#orgd57b926">SQL概述</a></li>
+<li><a href="#orgac93ca5">MySQL预备知识</a></li>
+<li><a href="#org711bae3">数据定义</a></li>
+<li><a href="#org87c7b12">GROUP BY 子句可以包含任意数目的列，使得其可对分组进行嵌套，为数据分组提供更加细致的控制。</a></li>
+<li><a href="#org73d5bcf">如果在 GROUP BY 子句中嵌套了分组，那么将按 GROUP BY 子句中列的排列顺序的逆序方式依次进行汇总，</a></li>
+<li><a href="#org704759d">GROUP BY 子句中列出的每个列都必须是检索列或有效的表达式，但不能是聚合函数。</a></li>
+<li><a href="#orgf6bdcd7">除聚合函数之外， SELECT 语句中的每个列都必须在 GROUP BY 子句中给出。</a></li>
+<li><a href="#orgd231377">如果用于分组的列中含有 NULL 值，则 NULL 将作为一个单独的分组返回；</a></li>
+<li><a href="#orge299969">WHERE 子句主要用于过滤数据行，而 HAVING 子句主要用于过滤分组，</a></li>
+<li><a href="#org2dfed0c">HAVING 子句中的条件可以包含聚合函数，而 WHERE 子句中则不可以。</a></li>
+<li><a href="#orgc786bc2">WHERE 子句会在数据分组前进行过滤， HAVING 子句则会在数据分组后进行过滤。因而，</a></li>
 </ul>
 </li>
-<li><a href="#org51c13de">数据库编程</a>
+<li><a href="#org210971a">数据库编程</a>
 <ul>
-<li><a href="#org23bc90c">存储过程</a></li>
-<li><a href="#org0213f5b">存储函数</a></li>
+<li><a href="#orgc16489e">存储过程</a></li>
+<li><a href="#org1fcc543">存储函数</a></li>
 </ul>
 </li>
-<li><a href="#org15fd411">数据库安全与保护</a>
+<li><a href="#org7732da1">数据库安全与保护</a>
 <ul>
-<li><a href="#org2d787d8">数据库完整性</a></li>
-<li><a href="#org98114a8">触发器</a></li>
-<li><a href="#org0480c29">安全性与访问控制</a></li>
-<li><a href="#org327c4c5">事物与并发处理</a></li>
+<li><a href="#org5f7d018">数据库完整性</a></li>
+<li><a href="#orga1006e7">触发器</a></li>
+<li><a href="#orgc1348f0">安全性与访问控制</a></li>
+<li><a href="#org4f2f1c3">事物与并发处理</a></li>
 </ul>
 </li>
-<li><a href="#orgf49ab10">数据库应用设计与开发实例(高校在线选课系统)</a>
+<li><a href="#orge0a6a3b">数据库应用设计与开发实例(高校在线选课系统)</a>
 <ul>
-<li><a href="#orge2f544e">需求描述与分析(选择填空)</a></li>
-<li><a href="#org8b824df">系统设计(解答实操)</a></li>
-<li><a href="#org82e920d">系统实现(解答实操)</a></li>
-<li><a href="#orgdbd2d3a">系统测试与维护(选择填空)</a></li>
+<li><a href="#orgf58e355">需求描述与分析(选择填空)</a></li>
+<li><a href="#org92bd310">系统设计(解答实操)</a></li>
+<li><a href="#orgb7756db">系统实现(解答实操)</a></li>
+<li><a href="#orga25ec69">系统测试与维护(选择填空)</a></li>
 </ul>
 </li>
-<li><a href="#orgc99a26e">数据库管理技术的发展</a>
+<li><a href="#org7c4f2e0">数据库管理技术的发展</a>
 <ul>
-<li><a href="#orged1f131">数据库技术发展阶段概述(选择填空)</a></li>
-<li><a href="#org4cbb913">数据库仓库与数据挖掘</a></li>
-<li><a href="#org39542ce">大数据管理技术</a></li>
-<li><a href="#org19d23bb">通过PHP编程语言编写相应的服务端代码,完成前台页面与后台数据的交互操作,</a></li>
-<li><a href="#org8e9e5d4">PHP内置了许多函数,通过使用内置函数 mysql,PHP程序可以很好地与MYSQL数据库进行交互.</a></li>
-<li><a href="#org530faa8">PHP操作MYSQL数据库的基本步骤如下:</a></li>
-<li><a href="#org001d375">建立数据库连接的方法(mysql()函数的用法)</a></li>
+<li><a href="#orgabe4899">数据库技术发展阶段概述(选择填空)</a></li>
+<li><a href="#org25cb3d6">数据库仓库与数据挖掘</a></li>
+<li><a href="#org7136caa">大数据管理技术</a></li>
+<li><a href="#orgba1e964">通过PHP编程语言编写相应的服务端代码,完成前台页面与后台数据的交互操作,</a></li>
+<li><a href="#org4eb7e9f">PHP内置了许多函数,通过使用内置函数 mysql,PHP程序可以很好地与MYSQL数据库进行交互.</a></li>
+<li><a href="#orgf39153b">PHP操作MYSQL数据库的基本步骤如下:</a></li>
+<li><a href="#orga13c86e">建立数据库连接的方法(mysql()函数的用法)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org63d9309" class="outline-2">
-<h2 id="org63d9309">数据库系统概述</h2>
-<div class="outline-text-2" id="text-org63d9309">
+<div id="outline-container-org3c1ce12" class="outline-2">
+<h2 id="org3c1ce12">数据库系统概述</h2>
+<div class="outline-text-2" id="text-org3c1ce12">
 </div>
-<div id="outline-container-org4bef206" class="outline-3">
-<h3 id="org4bef206">数据库的基本概念:</h3>
-<div class="outline-text-3" id="text-org4bef206">
+<div id="outline-container-org317a893" class="outline-3">
+<h3 id="org317a893">数据库的基本概念:</h3>
+<div class="outline-text-3" id="text-org317a893">
 <p>
 1&gt;数据(Data)
   1)含义:数据是描述事物的 符号记录 ,是指利用物理符号记录下来的,可以鉴别的信息;
@@ -184,9 +184,9 @@ DBS构成示意图:
 </div>
 </div>
 
-<div id="outline-container-orgcafb0c6" class="outline-3">
-<h3 id="orgcafb0c6">数据库管理技术发展</h3>
-<div class="outline-text-3" id="text-orgcafb0c6">
+<div id="outline-container-orgf205d47" class="outline-3">
+<h3 id="orgf205d47">数据库管理技术发展</h3>
+<div class="outline-text-3" id="text-orgf205d47">
 <p>
 *1数据的组织
   分为逻辑组织和物理组织两种，这二者可以相互独立的
@@ -294,9 +294,9 @@ DBS构成示意图:
 </div>
 </div>
 
-<div id="outline-container-orgc9aac0e" class="outline-3">
-<h3 id="orgc9aac0e">数据库系统的结构</h3>
-<div class="outline-text-3" id="text-orgc9aac0e">
+<div id="outline-container-org0e67a9e" class="outline-3">
+<h3 id="org0e67a9e">数据库系统的结构</h3>
+<div class="outline-text-3" id="text-org0e67a9e">
 <p>
 1&gt;数据库系统的结构分类(识记)
   1)从DBA(数据库管理员)的视角看:
@@ -387,9 +387,9 @@ DBS构成示意图:
 </div>
 </div>
 
-<div id="outline-container-org726c3d8" class="outline-3">
-<h3 id="org726c3d8">数据模型</h3>
-<div class="outline-text-3" id="text-org726c3d8">
+<div id="outline-container-org5325ccb" class="outline-3">
+<h3 id="org5325ccb">数据模型</h3>
+<div class="outline-text-3" id="text-org5325ccb">
 <p>
 1&gt;数据模型(Data Model)
   含义:是现实世界数据特征的抽象,描述的是数据的共性内容,它是模型化数据和信息的工具,
@@ -589,13 +589,13 @@ DBS构成示意图:
 </div>
 </div>
 
-<div id="outline-container-orga81d494" class="outline-2">
-<h2 id="orga81d494">关系数据模型（重点）</h2>
-<div class="outline-text-2" id="text-orga81d494">
+<div id="outline-container-org11d2ad8" class="outline-2">
+<h2 id="org11d2ad8">关系数据模型（重点）</h2>
+<div class="outline-text-2" id="text-org11d2ad8">
 </div>
-<div id="outline-container-org57b93af" class="outline-3">
-<h3 id="org57b93af">关系数据库的概述:</h3>
-<div class="outline-text-3" id="text-org57b93af">
+<div id="outline-container-org6051ceb" class="outline-3">
+<h3 id="org6051ceb">关系数据库的概述:</h3>
+<div class="outline-text-3" id="text-org6051ceb">
 <p>
 1&gt;关系数据库的产生历史:
   1)关系代数&#x2014;&gt;关系模型(1970年)
@@ -607,9 +607,9 @@ DBS构成示意图:
 </div>
 </div>
 
-<div id="outline-container-org4a1b4d8" class="outline-3">
-<h3 id="org4a1b4d8">关系数据库模型:</h3>
-<div class="outline-text-3" id="text-org4a1b4d8">
+<div id="outline-container-org33eb731" class="outline-3">
+<h3 id="org33eb731">关系数据库模型:</h3>
+<div class="outline-text-3" id="text-org33eb731">
 <p>
 1&gt;关系模型的组成要素(<b>**</b>)
   1)关系数据结构;
@@ -1011,9 +1011,9 @@ a2  b4  12     b3  2
 </div>
 </div>
 
-<div id="outline-container-org46fd100" class="outline-3">
-<h3 id="org46fd100">关系数据库的规范化理论(范式)</h3>
-<div class="outline-text-3" id="text-org46fd100">
+<div id="outline-container-org1946404" class="outline-3">
+<h3 id="org1946404">关系数据库的规范化理论(范式)</h3>
+<div class="outline-text-3" id="text-org1946404">
 <p>
 1&gt;关系模式中可能存在的冗余和异常问题(简单应用)
 </p>
@@ -1252,13 +1252,13 @@ C03   数据结构  |   数据结构  王中  |
 </div>
 </div>
 
-<div id="outline-container-org487c673" class="outline-2">
-<h2 id="org487c673">数据库设计</h2>
-<div class="outline-text-2" id="text-org487c673">
+<div id="outline-container-org853db20" class="outline-2">
+<h2 id="org853db20">数据库设计</h2>
+<div class="outline-text-2" id="text-org853db20">
 </div>
-<div id="outline-container-orgbbd9ce3" class="outline-3">
-<h3 id="orgbbd9ce3">数据库设计概述</h3>
-<div class="outline-text-3" id="text-orgbbd9ce3">
+<div id="outline-container-org4cbdb17" class="outline-3">
+<h3 id="org4cbdb17">数据库设计概述</h3>
+<div class="outline-text-3" id="text-org4cbdb17">
 <p>
 1&gt;数据库的生命周期(选择,填空和解答)
   *.从数据库演变过程的角度来看,数据库的生命周期可分为两个阶段:
@@ -1438,9 +1438,9 @@ C03   数据结构  |   数据结构  王中  |
 </div>
 </div>
 
-<div id="outline-container-org3ef33e1" class="outline-3">
-<h3 id="org3ef33e1">数据库设计的基本步骤</h3>
-<div class="outline-text-3" id="text-org3ef33e1">
+<div id="outline-container-org0188f27" class="outline-3">
+<h3 id="org0188f27">数据库设计的基本步骤</h3>
+<div class="outline-text-3" id="text-org0188f27">
 <p>
 1&gt;需求分析(领会)
   1)目标:(解答题)
@@ -1754,9 +1754,9 @@ C03   数据结构  |   数据结构  王中  |
 </div>
 </div>
 
-<div id="outline-container-org9160939" class="outline-3">
-<h3 id="org9160939">关系数据库设计方法</h3>
-<div class="outline-text-3" id="text-org9160939">
+<div id="outline-container-orgb9b0cf5" class="outline-3">
+<h3 id="orgb9b0cf5">关系数据库设计方法</h3>
+<div class="outline-text-3" id="text-orgb9b0cf5">
 <p>
 1&gt;关系数据库设计过程与各级模式(识记)
   应用要求-&gt;概念模式-&gt;逻辑模式(外模式)-&gt;内模式(物理模式)
@@ -1995,13 +1995,13 @@ C03   数据结构  |   数据结构  王中  |
 </div>
 </div>
 
-<div id="outline-container-org0abf0d3" class="outline-2">
-<h2 id="org0abf0d3">SQL与关系数据库基本操作</h2>
-<div class="outline-text-2" id="text-org0abf0d3">
+<div id="outline-container-orge22d593" class="outline-2">
+<h2 id="orge22d593">SQL与关系数据库基本操作</h2>
+<div class="outline-text-2" id="text-orge22d593">
 </div>
-<div id="outline-container-org6768e65" class="outline-3">
-<h3 id="org6768e65">SQL概述</h3>
-<div class="outline-text-3" id="text-org6768e65">
+<div id="outline-container-orgd57b926" class="outline-3">
+<h3 id="orgd57b926">SQL概述</h3>
+<div class="outline-text-3" id="text-orgd57b926">
 <p>
 1&gt;SQL的概念(Structured Query Language, SQL)(选择填空)
   结构化查询语言是专门用来与数据库通信的语言,它可以帮助用户操作关系数据库;
@@ -2152,9 +2152,9 @@ SQL的组成 &lt;  *2.数据操纵语言(DML)        &lt;                       
 </div>
 </div>
 
-<div id="outline-container-orge474d00" class="outline-3">
-<h3 id="orge474d00">MySQL预备知识</h3>
-<div class="outline-text-3" id="text-orge474d00">
+<div id="outline-container-orgac93ca5" class="outline-3">
+<h3 id="orgac93ca5">MySQL预备知识</h3>
+<div class="outline-text-3" id="text-orgac93ca5">
 <p>
 1&gt;MySQL使用基础(选择填空)
   1)关系数据库管理系统(RDBMS)
@@ -2408,9 +2408,9 @@ SQL的组成 &lt;  *2.数据操纵语言(DML)        &lt;                       
 </div>
 </div>
 
-<div id="outline-container-org8d8e40c" class="outline-3">
-<h3 id="org8d8e40c">数据定义</h3>
-<div class="outline-text-3" id="text-org8d8e40c">
+<div id="outline-container-org711bae3" class="outline-3">
+<h3 id="org711bae3">数据定义</h3>
+<div class="outline-text-3" id="text-org711bae3">
 <p>
 1&gt;数据库模型定义(简答题)
 </p>
@@ -3360,29 +3360,29 @@ mysql&gt; select CTitle,CName,count(*) as '授课项数'
 </p>
 </div>
 </div>
-<div id="outline-container-org15cfa34" class="outline-3">
-<h3 id="org15cfa34">GROUP BY 子句可以包含任意数目的列，使得其可对分组进行嵌套，为数据分组提供更加细致的控制。</h3>
+<div id="outline-container-org87c7b12" class="outline-3">
+<h3 id="org87c7b12">GROUP BY 子句可以包含任意数目的列，使得其可对分组进行嵌套，为数据分组提供更加细致的控制。</h3>
 </div>
-<div id="outline-container-org5c39cb9" class="outline-3">
-<h3 id="org5c39cb9">如果在 GROUP BY 子句中嵌套了分组，那么将按 GROUP BY 子句中列的排列顺序的逆序方式依次进行汇总，</h3>
-<div class="outline-text-3" id="text-org5c39cb9">
+<div id="outline-container-org73d5bcf" class="outline-3">
+<h3 id="org73d5bcf">如果在 GROUP BY 子句中嵌套了分组，那么将按 GROUP BY 子句中列的排列顺序的逆序方式依次进行汇总，</h3>
+<div class="outline-text-3" id="text-org73d5bcf">
 <p>
 并将在最后规定的分组上进行一个完全汇总。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5a66c92" class="outline-3">
-<h3 id="org5a66c92">GROUP BY 子句中列出的每个列都必须是检索列或有效的表达式，但不能是聚合函数。</h3>
+<div id="outline-container-org704759d" class="outline-3">
+<h3 id="org704759d">GROUP BY 子句中列出的每个列都必须是检索列或有效的表达式，但不能是聚合函数。</h3>
 </div>
 
-<div id="outline-container-orga474402" class="outline-3">
-<h3 id="orga474402">除聚合函数之外， SELECT 语句中的每个列都必须在 GROUP BY 子句中给出。</h3>
+<div id="outline-container-orgf6bdcd7" class="outline-3">
+<h3 id="orgf6bdcd7">除聚合函数之外， SELECT 语句中的每个列都必须在 GROUP BY 子句中给出。</h3>
 </div>
 
-<div id="outline-container-orgc532705" class="outline-3">
-<h3 id="orgc532705">如果用于分组的列中含有 NULL 值，则 NULL 将作为一个单独的分组返回；</h3>
-<div class="outline-text-3" id="text-orgc532705">
+<div id="outline-container-orgd231377" class="outline-3">
+<h3 id="orgd231377">如果用于分组的列中含有 NULL 值，则 NULL 将作为一个单独的分组返回；</h3>
+<div class="outline-text-3" id="text-orgd231377">
 <p>
 如果该列中存在多个 NULL 值，则将这些 NULL 值所在的行分为一组。
 </p>
@@ -3408,22 +3408,22 @@ HAVING 子句与 WHERE 子句两者之间存在哪些差异？：
 </p>
 </div>
 </div>
-<div id="outline-container-orgcb23813" class="outline-3">
-<h3 id="orgcb23813">WHERE 子句主要用于过滤数据行，而 HAVING 子句主要用于过滤分组，</h3>
-<div class="outline-text-3" id="text-orgcb23813">
+<div id="outline-container-orge299969" class="outline-3">
+<h3 id="orge299969">WHERE 子句主要用于过滤数据行，而 HAVING 子句主要用于过滤分组，</h3>
+<div class="outline-text-3" id="text-orge299969">
 <p>
 即 HAVING 子句可基于分组的聚合值而不是特定行的值来过滤数据。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7a8656d" class="outline-3">
-<h3 id="org7a8656d">HAVING 子句中的条件可以包含聚合函数，而 WHERE 子句中则不可以。</h3>
+<div id="outline-container-org2dfed0c" class="outline-3">
+<h3 id="org2dfed0c">HAVING 子句中的条件可以包含聚合函数，而 WHERE 子句中则不可以。</h3>
 </div>
 
-<div id="outline-container-orgb10b1cb" class="outline-3">
-<h3 id="orgb10b1cb">WHERE 子句会在数据分组前进行过滤， HAVING 子句则会在数据分组后进行过滤。因而，</h3>
-<div class="outline-text-3" id="text-orgb10b1cb">
+<div id="outline-container-orgc786bc2" class="outline-3">
+<h3 id="orgc786bc2">WHERE 子句会在数据分组前进行过滤， HAVING 子句则会在数据分组后进行过滤。因而，</h3>
+<div class="outline-text-3" id="text-orgc786bc2">
 <p>
 WHERE 子句排除的行不包含在分组中，这就会可能改变计算值，从而影响 HAVING 子句基于
 这些值过滤掉的分组。
@@ -3738,13 +3738,13 @@ mysql&gt;select cust<sub>name,cust</sub><sub>address</sub>
 </div>
 </div>
 
-<div id="outline-container-org51c13de" class="outline-2">
-<h2 id="org51c13de">数据库编程</h2>
-<div class="outline-text-2" id="text-org51c13de">
+<div id="outline-container-org210971a" class="outline-2">
+<h2 id="org210971a">数据库编程</h2>
+<div class="outline-text-2" id="text-org210971a">
 </div>
-<div id="outline-container-org23bc90c" class="outline-3">
-<h3 id="org23bc90c">存储过程</h3>
-<div class="outline-text-3" id="text-org23bc90c">
+<div id="outline-container-orgc16489e" class="outline-3">
+<h3 id="orgc16489e">存储过程</h3>
+<div class="outline-text-3" id="text-orgc16489e">
 <p>
 1&gt;存储过程的基本概念(填空)
 </p>
@@ -3961,9 +3961,9 @@ drop procedure [if exists] sp<sub>name</sub>;
 </p>
 </div>
 </div>
-<div id="outline-container-org0213f5b" class="outline-3">
-<h3 id="org0213f5b">存储函数</h3>
-<div class="outline-text-3" id="text-org0213f5b">
+<div id="outline-container-org1fcc543" class="outline-3">
+<h3 id="org1fcc543">存储函数</h3>
+<div class="outline-text-3" id="text-org1fcc543">
 <p>
 1&gt;存储函数的基本概念(填空选择)
 </p>
@@ -4038,13 +4038,13 @@ drop function[if exists] sp<sub>name</sub>;
 </div>
 </div>
 
-<div id="outline-container-org15fd411" class="outline-2">
-<h2 id="org15fd411">数据库安全与保护</h2>
-<div class="outline-text-2" id="text-org15fd411">
+<div id="outline-container-org7732da1" class="outline-2">
+<h2 id="org7732da1">数据库安全与保护</h2>
+<div class="outline-text-2" id="text-org7732da1">
 </div>
-<div id="outline-container-org2d787d8" class="outline-3">
-<h3 id="org2d787d8">数据库完整性</h3>
-<div class="outline-text-3" id="text-org2d787d8">
+<div id="outline-container-org5f7d018" class="outline-3">
+<h3 id="org5f7d018">数据库完整性</h3>
+<div class="outline-text-3" id="text-org5f7d018">
 <p>
 1&gt;数据库完整性(选择填空)
  数据库完整性是指数据库中数据的正确性和相容性.
@@ -4191,9 +4191,9 @@ mysql&gt; create table orders  (创建表orders)
 </p>
 </div>
 </div>
-<div id="outline-container-org98114a8" class="outline-3">
-<h3 id="org98114a8">触发器</h3>
-<div class="outline-text-3" id="text-org98114a8">
+<div id="outline-container-orga1006e7" class="outline-3">
+<h3 id="orga1006e7">触发器</h3>
+<div class="outline-text-3" id="text-orga1006e7">
 <p>
 1&gt;创建触发器
 </p>
@@ -4301,9 +4301,9 @@ mysql&gt; drop trigger if exists mysql<sub>test.customers</sub><sub>insert</sub>
 </p>
 </div>
 </div>
-<div id="outline-container-org0480c29" class="outline-3">
-<h3 id="org0480c29">安全性与访问控制</h3>
-<div class="outline-text-3" id="text-org0480c29">
+<div id="outline-container-orgc1348f0" class="outline-3">
+<h3 id="orgc1348f0">安全性与访问控制</h3>
+<div class="outline-text-3" id="text-orgc1348f0">
 <p>
 1&gt;用户账号管理(选择填空)
 </p>
@@ -4496,9 +4496,9 @@ mysql&gt; revoke select
 </div>
 
 
-<div id="outline-container-org327c4c5" class="outline-3">
-<h3 id="org327c4c5">事物与并发处理</h3>
-<div class="outline-text-3" id="text-org327c4c5">
+<div id="outline-container-org4f2f1c3" class="outline-3">
+<h3 id="org4f2f1c3">事物与并发处理</h3>
+<div class="outline-text-3" id="text-org4f2f1c3">
 <p>
 1&gt;事务的概念
    事务是用户定义的一个数据操作序列,这些操作可作为一个完整的工作单元,
@@ -4806,13 +4806,13 @@ mysql&gt; load data infile 'E/:BACKUP/backupfile.txt'
 </div>
 </div>
 
-<div id="outline-container-orgf49ab10" class="outline-2">
-<h2 id="orgf49ab10">数据库应用设计与开发实例(高校在线选课系统)</h2>
-<div class="outline-text-2" id="text-orgf49ab10">
+<div id="outline-container-orge0a6a3b" class="outline-2">
+<h2 id="orge0a6a3b">数据库应用设计与开发实例(高校在线选课系统)</h2>
+<div class="outline-text-2" id="text-orge0a6a3b">
 </div>
-<div id="outline-container-orge2f544e" class="outline-3">
-<h3 id="orge2f544e">需求描述与分析(选择填空)</h3>
-<div class="outline-text-3" id="text-orge2f544e">
+<div id="outline-container-orgf58e355" class="outline-3">
+<h3 id="orgf58e355">需求描述与分析(选择填空)</h3>
+<div class="outline-text-3" id="text-orgf58e355">
 <p>
 1&gt;功能性需求:分功能模块(管理员后台模块  学生使用模块  教师使用模块)
 2&gt;非功能需求:在线:B-S:web服务器,浏览器/服务器结构,网卡 wamp(windows(系统) Apache(web服务器) MySQL,PHP)
@@ -4825,9 +4825,9 @@ mysql&gt; load data infile 'E/:BACKUP/backupfile.txt'
 </div>
 </div>
 
-<div id="outline-container-org8b824df" class="outline-3">
-<h3 id="org8b824df">系统设计(解答实操)</h3>
-<div class="outline-text-3" id="text-org8b824df">
+<div id="outline-container-org92bd310" class="outline-3">
+<h3 id="org92bd310">系统设计(解答实操)</h3>
+<div class="outline-text-3" id="text-org92bd310">
 <p>
 1&gt;功能模块设计
    1)登录验证模块
@@ -4937,9 +4937,9 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </p>
 </div>
 </div>
-<div id="outline-container-org82e920d" class="outline-3">
-<h3 id="org82e920d">系统实现(解答实操)</h3>
-<div class="outline-text-3" id="text-org82e920d">
+<div id="outline-container-orgb7756db" class="outline-3">
+<h3 id="orgb7756db">系统实现(解答实操)</h3>
+<div class="outline-text-3" id="text-orgb7756db">
 <p>
 1&gt;实现数据库行为
   1)安全控制(限制权限)
@@ -4970,9 +4970,9 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </p>
 </div>
 </div>
-<div id="outline-container-orgdbd2d3a" class="outline-3">
-<h3 id="orgdbd2d3a">系统测试与维护(选择填空)</h3>
-<div class="outline-text-3" id="text-orgdbd2d3a">
+<div id="outline-container-orga25ec69" class="outline-3">
+<h3 id="orga25ec69">系统测试与维护(选择填空)</h3>
+<div class="outline-text-3" id="text-orga25ec69">
 <p>
 1&gt;登录验证测试
 </p>
@@ -4987,13 +4987,13 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </div>
 </div>
 </div>
-<div id="outline-container-orgc99a26e" class="outline-2">
-<h2 id="orgc99a26e">数据库管理技术的发展</h2>
-<div class="outline-text-2" id="text-orgc99a26e">
+<div id="outline-container-org7c4f2e0" class="outline-2">
+<h2 id="org7c4f2e0">数据库管理技术的发展</h2>
+<div class="outline-text-2" id="text-org7c4f2e0">
 </div>
-<div id="outline-container-orged1f131" class="outline-3">
-<h3 id="orged1f131">数据库技术发展阶段概述(选择填空)</h3>
-<div class="outline-text-3" id="text-orged1f131">
+<div id="outline-container-orgabe4899" class="outline-3">
+<h3 id="orgabe4899">数据库技术发展阶段概述(选择填空)</h3>
+<div class="outline-text-3" id="text-orgabe4899">
 <p>
 1&gt;人工管理阶段
 </p>
@@ -5073,9 +5073,9 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </p>
 </div>
 </div>
-<div id="outline-container-org4cbb913" class="outline-3">
-<h3 id="org4cbb913">数据库仓库与数据挖掘</h3>
-<div class="outline-text-3" id="text-org4cbb913">
+<div id="outline-container-org25cb3d6" class="outline-3">
+<h3 id="org25cb3d6">数据库仓库与数据挖掘</h3>
+<div class="outline-text-3" id="text-org25cb3d6">
 <p>
 1&gt;数据仓库及其特征
 </p>
@@ -5160,9 +5160,9 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </p>
 </div>
 </div>
-<div id="outline-container-org39542ce" class="outline-3">
-<h3 id="org39542ce">大数据管理技术</h3>
-<div class="outline-text-3" id="text-org39542ce">
+<div id="outline-container-org7136caa" class="outline-3">
+<h3 id="org7136caa">大数据管理技术</h3>
+<div class="outline-text-3" id="text-org7136caa">
 <p>
 1&gt;大数据及其特征(2008年提出)
   1)大数据是指无法在可容忍的时间内用现有信息技术和软,硬件工具符其进行感知,
@@ -5193,22 +5193,22 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </p>
 </div>
 </div>
-<div id="outline-container-org19d23bb" class="outline-3">
-<h3 id="org19d23bb">通过PHP编程语言编写相应的服务端代码,完成前台页面与后台数据的交互操作,</h3>
-<div class="outline-text-3" id="text-org19d23bb">
+<div id="outline-container-orgba1e964" class="outline-3">
+<h3 id="orgba1e964">通过PHP编程语言编写相应的服务端代码,完成前台页面与后台数据的交互操作,</h3>
+<div class="outline-text-3" id="text-orgba1e964">
 <p>
 具体建立与MYSQL数据库服务器的链接.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8e9e5d4" class="outline-3">
-<h3 id="org8e9e5d4">PHP内置了许多函数,通过使用内置函数 mysql,PHP程序可以很好地与MYSQL数据库进行交互.</h3>
+<div id="outline-container-org4eb7e9f" class="outline-3">
+<h3 id="org4eb7e9f">PHP内置了许多函数,通过使用内置函数 mysql,PHP程序可以很好地与MYSQL数据库进行交互.</h3>
 </div>
 
-<div id="outline-container-org530faa8" class="outline-3">
-<h3 id="org530faa8">PHP操作MYSQL数据库的基本步骤如下:</h3>
-<div class="outline-text-3" id="text-org530faa8">
+<div id="outline-container-orgf39153b" class="outline-3">
+<h3 id="orgf39153b">PHP操作MYSQL数据库的基本步骤如下:</h3>
+<div class="outline-text-3" id="text-orgf39153b">
 <p>
 1&gt;首先建立与MYSQL数据库服务器的连接;
 2&gt;然后要对其进行操作的数据库;
@@ -5218,9 +5218,9 @@ N:M关系 :建立一个中间表,以两表之间的联系为实体,
 </div>
 </div>
 
-<div id="outline-container-org001d375" class="outline-3">
-<h3 id="org001d375">建立数据库连接的方法(mysql()函数的用法)</h3>
-<div class="outline-text-3" id="text-org001d375">
+<div id="outline-container-orga13c86e" class="outline-3">
+<h3 id="orga13c86e">建立数据库连接的方法(mysql()函数的用法)</h3>
+<div class="outline-text-3" id="text-orga13c86e">
 <p>
 //localhost:3306表示连接本地主机中的MYSQL数据库服务器
 mysql<sub>php程序名</sub>("localhost:3306","用户名","密码");
@@ -5260,7 +5260,7 @@ connect.php //文件名,用文本编辑器打开编辑
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-19 四 16:00</p>
+<p class="date">Created: 2020-11-29 Sun 08:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
