@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-11-29 Sun 08:23 -->
+<!-- 2020-12-04 Fri 21:51 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Idea</title>
@@ -62,6 +62,8 @@
 <li><a href="#org73873e3"><span class="timestamp-wrapper"><span class="timestamp">[2020-11-28 Sat 12:36] </span></span> - 心态爆炸怎么办?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></a></li>
 <li><a href="#org6ea2383"><span class="timestamp-wrapper"><span class="timestamp">[2020-11-28 Sat 13:23] </span></span> - 我的情绪真的很差&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></a></li>
 <li><a href="#orgbead31a"><span class="timestamp-wrapper"><span class="timestamp">[2020-11-29 Sun 08:23] </span></span> - 早安!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></a></li>
+<li><a href="#orgd2f458a"><span class="timestamp-wrapper"><span class="timestamp">[2020-12-01 Tue 19:06] </span></span> - 大厂的力量&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></a></li>
+<li><a href="#orgfc098c6"><span class="timestamp-wrapper"><span class="timestamp">[2020-12-03 Thu 15:01] </span></span> - 比较&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></a></li>
 </ul>
 </li>
 </ul>
@@ -438,12 +440,55 @@ NULL
 </p>
 </div>
 </div>
+<div id="outline-container-orgd2f458a" class="outline-3">
+<h3 id="orgd2f458a"><span class="timestamp-wrapper"><span class="timestamp">[2020-12-01 Tue 19:06] </span></span> - 大厂的力量&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></h3>
+<div class="outline-text-3" id="text-orgd2f458a">
+<p>
+由微软开发并开源的LSP协议，是否强大，其原本给予VSCODE使用的，但是其开源，意味着其他编辑器也可以获取其无限接近IDE的对代码的分析能力，从最基本的自动补全，到寻找引用，寻找定义，随后每个不同的编程语言又拥有不同的功能，例如Dart就是一个例子，其除了上面所提到的功能之外还有很多其自身所需的功能，例如跟Flutter交互，利用dap-mode方便得进行调试运行，以及十分方便的进行单元测试，还有一些针对其UI方面能力的扩展。但是反观Python就不一样了，Python有很多LSP插件但是，显然是大家对其不满意又重新造，造完又有人觉得不满意，就又重新造，这么来来回回的没有一个持续的生态发展下去，除了VSCode本身还算不错之外，其他依偎于LSP的编辑器的Python LSP 就没那么舒服了，各种性能差，功能少等问题层出不穷，就是因为没有大厂直接接手，都是由社区的开发者进行维护的，难免技术上，协作能力上都不如大厂统一管理得好，这么说来其实大厂也有大厂的好处，大厂结合开源那对整个技术圈子都是一个不错的结合。
+</p>
+</div>
+</div>
+<div id="outline-container-orgfc098c6" class="outline-3">
+<h3 id="orgfc098c6"><span class="timestamp-wrapper"><span class="timestamp">[2020-12-03 Thu 15:01] </span></span> - 比较&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Life">Life</span></span></h3>
+<div class="outline-text-3" id="text-orgfc098c6">
+<p>
+A = 10，B = 20，所以A &lt; B。
+Emacs = emacs-lisp + text-editor, Vim = vimscript + text-editor
+so if emacs-lisp &gt; vimscript then Emacs &gt; VIM = t;
+</p>
+
+<p>
+   上面这个成立么，当不成立，但是往往人们就是喜欢把问题思考的那么简单。从而犯了叫做比较异常错误。
+原本两个事物无法直接进行比较，却硬要进行比较，最后比较出来的结果那肯定是不准确的，如果非要简单的进行思考，其实可以直接从自身属性出发即可，例如。
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">xiaoming =
+    <span style="color: #51afef;">{</span>
+        key_style: <span style="color: #98be65;">"HJKL"</span>,
+        environment: <span style="color: #98be65;">"GNU/Linux"</span>,
+        text_editor:<span style="color: #a9a1e1;">undefined</span>
+        finger_length: 12cm
+    <span style="color: #51afef;">}</span>
+
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">(</span>xiaoming.finger_length &gt;= 12cm<span style="color: #51afef;">){</span>
+    xiaoming.text_editor = <span style="color: #98be65;">"Emacs"</span>
+<span style="color: #51afef;">}</span><span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span><span style="color: #51afef;">(</span>xiaoming.key_style === <span style="color: #98be65;">"Ctrl,ALT,A-Z"</span><span style="color: #51afef;">){</span>
+    xiaoming.text_editor = <span style="color: #98be65;">"Emacs"</span>
+<span style="color: #51afef;">}</span><span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span><span style="color: #51afef;">(</span>xiaoming.environment === <span style="color: #98be65;">"Windows"</span><span style="color: #51afef;">){</span>
+    xiaoming.text_editor = <span style="color: #98be65;">"VSCODE"</span>
+<span style="color: #51afef;">}</span><span style="color: #51afef;">else</span><span style="color: #51afef;">{</span>
+    xiaoming.text_editor = <span style="color: #98be65;">"Vim"</span>
+<span style="color: #51afef;">}</span>
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-20 Mon 20:48</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-11-29 Sun 08:23</p>
+<p class="date">Created: 2020-12-04 Fri 21:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

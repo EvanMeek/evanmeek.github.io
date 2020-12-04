@@ -132,3 +132,33 @@
    我们不是很般配，你的理性比我更加干脆。
 ** [2020-11-29 Sun 08:23] - 早安!                                      :Life:
    早上好呀，今天也要加油喔!
+** [2020-12-01 Tue 19:06] - 大厂的力量                                 :Life:
+   由微软开发并开源的LSP协议，是否强大，其原本给予VSCODE使用的，但是其开源，意味着其他编辑器也可以获取其无限接近IDE的对代码的分析能力，从最基本的自动补全，到寻找引用，寻找定义，随后每个不同的编程语言又拥有不同的功能，例如Dart就是一个例子，其除了上面所提到的功能之外还有很多其自身所需的功能，例如跟Flutter交互，利用dap-mode方便得进行调试运行，以及十分方便的进行单元测试，还有一些针对其UI方面能力的扩展。但是反观Python就不一样了，Python有很多LSP插件但是，显然是大家对其不满意又重新造，造完又有人觉得不满意，就又重新造，这么来来回回的没有一个持续的生态发展下去，除了VSCode本身还算不错之外，其他依偎于LSP的编辑器的Python LSP 就没那么舒服了，各种性能差，功能少等问题层出不穷，就是因为没有大厂直接接手，都是由社区的开发者进行维护的，难免技术上，协作能力上都不如大厂统一管理得好，这么说来其实大厂也有大厂的好处，大厂结合开源那对整个技术圈子都是一个不错的结合。
+** [2020-12-03 Thu 15:01] - 比较                                       :Life:
+   A = 10，B = 20，所以A < B。
+   Emacs = emacs-lisp + text-editor, Vim = vimscript + text-editor
+   so if emacs-lisp > vimscript then Emacs > VIM = t;
+   
+   上面这个成立么，当不成立，但是往往人们就是喜欢把问题思考的那么简单。从而犯了叫做比较异常错误。
+原本两个事物无法直接进行比较，却硬要进行比较，最后比较出来的结果那肯定是不准确的，如果非要简单的进行思考，其实可以直接从自身属性出发即可，例如。
+    #+begin_src javascript
+      xiaoming =
+          {
+              key_style: "HJKL",
+              environment: "GNU/Linux",
+              text_editor:undefined
+              finger_length: 12cm
+          }
+
+      if (xiaoming.finger_length >= 12cm){
+          xiaoming.text_editor = "Emacs"
+      }else if(xiaoming.key_style === "Ctrl,ALT,A-Z"){
+          xiaoming.text_editor = "Emacs"
+      }else if(xiaoming.environment === "Windows"){
+          xiaoming.text_editor = "VSCODE"
+      }else{
+          xiaoming.text_editor = "Vim"
+      }
+    #+end_src
+
+
