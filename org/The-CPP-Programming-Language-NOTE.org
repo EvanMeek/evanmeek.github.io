@@ -7,6 +7,8 @@
     bo(4) hua(4)
   - 遴选
     lin(2) xuan(3)
+  - 皮洛士式的胜利
+    指付出极大代价才获得的胜利
 
 * 值得记录的句子
   * 4th前言-第4段
@@ -30,7 +32,7 @@
     #+begin_quote
     C++的设计理念是同时提供
     1. 将内置操作和内置类型直接映射到硬件，从而提供高效的内存利用和高校的底层操作。
-    2. 灵活且低开销的抽象机制，使得用户自定义类型无论是符号表达，使用范围还是性能都与内置类型相当。   
+    2. 灵活且低开销的抽象机制，使得用户自定义类型无论是符号表达，使用范围还是性能都与内置类型相当。
     #+end_quote
     这应该就是为什么C++十分强大，但执行速度又非常高的原因了吧。
   * p11-第2段-第1-2句话
@@ -42,6 +44,113 @@
     #+begin_quote
     一个精心设计的用户自定义类型与内置类型的区别仅仅在于定义的方式，而使用方式则是完全一样的。
     #+end_quote
-    
+  * p14-第4段-第2-3句话
+    #+begin_quote
+    语言特性的存在是为了支持各种程序设计风格和技术。因此，语言的学习应该更关注掌握其固有、内在的风格。
+    #+end_quote
+  * p59-第1段-最后一句话
+    #+begin_quote
+    如果类包含虚函数，则该类的每个对象需要一个额外的指针；另外每个这样的需要一个vtbl。
+    #+end_quote
+  * p70-第2段-第一句话
+    #+begin_quote
+    用于指明通用算法关键操作含义的函数对象被称为策略对象(policy object)。
+    #+end_quote
 
+* 学到的新东西
+** 遍历数组
+   在以前我写C++时遍历数组我通常是这样做的:
+   #+begin_src cpp
+     void iter_arr1() {
+       const int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+       for (int i = 0; i < 10; ++i)
+         cout << arr[i] << endl;
+     }
+   #+end_src
+   这种方式叫做计数遍历吧，通过将i递增，依次访问数组arr的值。
 
+   现在我学会了通过范围For来进行遍历数组:
+   #+begin_src cpp
+     void iter_arr2() {
+       const int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+       for (auto x : arr)
+         cout << x << endl;
+     }
+   #+end_src
+   这种方式就简单多了。
+
+   不过上面这种方式会将arr的值拷贝给x，随后再将x输出，中间是会占用一些内存的，我们可以通过下面这种引用的方式来访问，就省去了拷贝的操作。
+   #+begin_src cpp
+     void iter_arr3() {
+       int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+       for (auto &x : arr)
+         cout << ++x << endl;
+     }
+   #+end_src
+   需要注意的是由于其访问是通过对其地址递增，所以它迭代的数组也必须是可迭代对象，不能是const。
+
+   有关范围for的内容还未结束，后面还会记录更多！
+** 真正的空指针
+   以前写CPP时一直是用NULL和0当空指针的，现在C++11添加了个 ~nullprt~ 用于单独表示空指针。
+** 虚函数表
+   当一个抽象类的纯虚函数被多个类实现了，且有函数形参是抽象类类型，但实参分别是两个实现类时，编译器是如何找到正确的实现函数的呢？
+   #+begin_src cpp
+     #include <iostream>
+     #include <string>
+
+     using namespace std;
+
+     class Car {
+     public:
+       virtual string getCar() = 0;
+     };
+
+     class Ford : public Car {
+     public:
+       string getCar() override { return "福特"; }
+     };
+
+     class Nissan : public Car {
+     public:
+       string getCar() { return "尼桑"; }
+     };
+     void printCar(Car &);
+
+     int main(int argc, char *argv[]) {
+       Ford f;
+       Nissan n;
+       printCar(f);
+       printCar(n);
+       return 0;
+     }
+     void printCar(Car &c) { cout << c.getCar() << endl; }
+   #+end_src
+   代码的执行结果是:
+   #+begin_src shell
+   g++ abstract-demo.cpp -o abstract-demo -std=c++11 && ./abstract-demo
+   福特
+   尼桑
+   #+end_src
+   其实是通过 =虚函数表= 来寻找对应实现类的函数进行执行。
+   有关 =虚函数表= 会在后面的小节提到。
+** 删除拷贝、移动构造函数
+   书中说:
+   #+begin_quote
+   对于深层次的类来说，使用默认的拷贝或移动操作常常意味着风险。
+   #+end_quote
+   所以可以将类默认隐式生成的拷贝、移动构造函数删除掉。例如:
+   #+begin_src cpp
+     class Car {
+     public:
+       // 删除拷贝构造函数
+       Car(const Car &) = delete;
+       // 删除拷贝赋值运算符
+       Car &operator=(const Car &) = delete;
+
+       // 删除移动构造函数
+       Car(const Car &&) = delete;
+       // 删除移动赋值运算符
+       Car &operator=(const Car &&) = delete;
+     };
+   #+end_src
+   不过如果你显式定义了 =析构函数= 的话，是可以不用删除的。
