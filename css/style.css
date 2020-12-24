@@ -1,3 +1,4 @@
+
 /* Init style of taobao */
 /* ****************************************************************** */
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
@@ -11,7 +12,10 @@ html { font-size: 100px; }
 /* html, body { height: 100%; } */
 
 /* Background options */
-body, #content::before,#postamble::before { background: url('../images/bg/girl.jpg') center center / cover no-repeat fixed;}
+body, #content::before,#postamble::before {
+    /* background: url('../images/bg/lightcolor.jpg') center center / cover no-repeat fixed; */
+    background-color: #f5f5d5;
+}
 
 #postamble::before,
 #content::before {
@@ -20,7 +24,7 @@ body, #content::before,#postamble::before { background: url('../images/bg/girl.j
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     filter: blur(20px);
-    margin: -30px;
+    /* margin: -30px; */
     z-index: -1;
 }
 
@@ -33,15 +37,55 @@ body, #content::before,#postamble::before { background: url('../images/bg/girl.j
     padding: 0 .16rem;
     line-height: 1.6;
     font-size: .16rem;
-    font-family: Monaco, Consolas, "kaiti";
+    /* font-family: Monaco, Consolas, "kaiti"; */
+    font-family: Consolas, Monaco, "kaiti";
 
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+/* Self annotations */
+.js-note {
+    position: absolute;
+    right: -30%;
+    width: 29.5%;
+    /* border: 2px solid #19f; */
+    /* box-shadow: 0 0 3px #369; */
+    /* border-radius: 5px; */
+    padding: 6px;
+    color: #666;
+    box-sizing: border-box;
+    /* background-color: rgba(250, 250, 240, .9); */
+    font-size: 12px;
+}
+
+.js-note::before {
+    content: '☜';
+    position: absolute;
+    top: -36px;
+    font-size: 32px;
+}
+
+.js-essay {
+    position: relative;
+    display: block;
+    margin: .16rem auto;
+    padding: .2rem;
+    font-size: .15rem;
+    background-color: rgba(255, 255, 230, .6);
+    color: #003333;
+}
+.js-essay::before {
+    content: '✍';
+    position: absolute;
+    font-size: .30rem;
+    right: 0;
+    top: -30px;
 }
 
 /* Page init style */
 /* ********************************* */
 p { margin: .16rem 0; }
-img { max-width: 100%; margin-top: .16rem; margin-bottom: .16rem; }
+img { max-width: 100%; }
 
 a { color: #19f; }
 a:hover { color:#E69; text-shadow: 0px 0px 1px #E69;}
@@ -84,9 +128,11 @@ li > ul, li > ol { padding-left: .16rem; }
 }
 
 .validation {
-    margin-top: .32rem;
+    margin-top: .22rem;
     text-align: center;
     color: #369;
+    margin-bottom: 0;
+    padding-bottom: .16rem;
 }
 
 .validation a {
@@ -119,11 +165,32 @@ h2, h3, h4, h5, h6 {
     color: transparent;
 }
 
+h3 { 
+    background: linear-gradient(to bottom, #FF9999, #996699);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h4 { 
+    background: linear-gradient(to bottom, #669999, #336666);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h5 { 
+    background: linear-gradient(to bottom, #CCCC66, #339933);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 h2 { font-size: .20rem; }
 h2:before { content: "🐬 "; }
-h3:before { content: "💕 "; }
-h4:before { content: "🌵 "; }
-h5:before { content: "🌀 "; }
+h3:before { content: "❤ "; }
+h4:before { content: "🍁 "; }
+h5:before { content: "🍀 "; }
 
 h2 code:last-child,
 h3 code:last-child,
@@ -168,11 +235,15 @@ pre {
     margin: .16rem 0;
     padding: .14rem;
     padding-left: .08rem;
-    border: 2px solid #eee;
+    background: rgba(255, 255, 255, .6);
     color: #135;
     font-size: 0.14rem;
     font-family: Monaco, Consolas, 'monospace', "kaiti";
     overflow: hidden;
+    /* monokai background */
+    border: 2px solid rgba(234, 234, 234, 0.8);
+    /* color: #ccc; */
+    /* background: #272822; */
 }
 
 pre:hover { overflow: auto; }
@@ -194,7 +265,6 @@ span.linenr {
     right: 0;
     margin: 0 .05rem;
     color: #999;
-    z-index: -1;
 }
 
 pre:hover .js-code-src { display: none; }
@@ -367,7 +437,10 @@ th:last-child, td:last-child { border-right: rgba(255, 255, 255, 0); }
 
 .js-outline-3:nth-child(even) { background-color: rgba(200, 200, 200, .1); }
 .js-outline-3:nth-child(odd)  { background-color: rgba(255, 255, 255, .5); }
-.js-outline-3:nth-child(odd) pre { border: 2px solid #ddd; }
+.js-outline-3:nth-child(odd) pre { 
+    /* border: 2px solid #ddd; */
+    border: 2px solid rgba(234, 234, 234, 0.2);
+ }
 .js-outline-3:nth-child(odd) .js-code-src { z-index: 0; }
 
 .js-outline-3 h3 {
@@ -377,6 +450,8 @@ th:last-child, td:last-child { border-right: rgba(255, 255, 255, 0); }
     color: #abc!important;
     font-size: .12rem;
 }
+
+.js-outline-3 h3:before { content: ""; }
 
 .js-outline-3:hover { box-shadow: 5px 5px 9px #ccc; }
 
@@ -438,9 +513,20 @@ th:last-child, td:last-child { border-right: rgba(255, 255, 255, 0); }
 /* Mobile UI */
 /* ****************************************************************** */
 @media screen and (max-width: 1026px) {
-    body, #content::before, #postamble::before { background: url('../images/bg/bgrose.jpg') center center / cover no-repeat fixed; }
+    /* body, #content::before, #postamble::before { background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; } */
 
     #content, #postamble { width: 91%; }
+    #postamble::before,
+    #content::before {
+        width: 100%;
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        filter: blur(20px);
+        /* margin: -30px; */
+        z-index: -1;
+    }
 
     .title {
         font-size: .28rem;
@@ -490,5 +576,17 @@ th:last-child, td:last-child { border-right: rgba(255, 255, 255, 0); }
         /* font-style: oblique; */
         font-size: .14rem;
         /* color: #666; */
+    }
+
+    .js-note,
+    .js-note::before {
+        position: initial;
+        float: right;
+    }
+    
+    .js-essay::before {
+        font-size: .24rem;
+        right: 0;
+        top: -20px;
     }
 }
