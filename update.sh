@@ -7,7 +7,7 @@ then
     mv "public" "public.bak"
 
     echo -e "START pull the latest repo...\n"
-    git pull virgo master
+    git pull virgo blog
     echo -e "... ... ...\n"
     echo -e "Pull DONE."
 
