@@ -10,6 +10,8 @@
 
 **保持谦卑**
 
+**盛年不重来，一日难再晨。及时当勉励，岁月不待人。**
+
 [[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]] ➯ [[file:diary.org][_我的日记_]] ➯ 
 
 | 最新                     |
@@ -21,6 +23,7 @@
 | 关于我的 |
 |----------|
 | [[file:aboutMe.org][AboutMe]]  |
+| [[file:我要重学C++.org][我要重学C++]]         |
 
 | Emacs                    |
 |--------------------------|
@@ -30,13 +33,18 @@
 |--------------------------------|
 | [[file:linux_降低CPU频率以提高续航.org][ArchLinux降低CPU频率以提高续航]] |
 | [[file:ArchLinux降级软件包.org][ArchLinux降级软件包]]            |
+| [[file:ArchLinux获取AUR包的PKGBUILD并安装.org][ArchLinux获取AUR包的PKGBUILD并安装]] |
+
+| Linux桌面 |
+|-----------|
+| [[file:i3wm切换布局工具.org][i3wm布局切换工具]]          |
 
 
 | C/C++                             |
 |-----------------------------------|
 | [[file:cc_菱形继承.org][C++菱形继承小记]]                   |
 | [[file:cc_虚函数.org][C++虚函数小记]]                     |
-| [[The-CPP-Programming-Language-笔记]] |
+| [[file:The-CPP-Programming-Language-NOTE.org][The-CPP-Programming-language-笔记]] |
 
 | 技术               |
 |--------------------|
@@ -54,7 +62,7 @@
 
 #+BEGIN_EXPORT html
 <div class="me">
-  <span><b>Contact me via :)</b><span>
+  <span><b>通过如下方式联系我 :)</b><span>
   <div class="contact">
     <i class="wechat fab fa-weixin animated heartBeat delay-2s slower"></i>
     <a href="mailto:the_lty_mail@foxmail.com" target="_blank"><i class="fab fa-mailchimp animated heartBeat delay-2s slower"></i></a>

@@ -1,0 +1,16 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-12-06 Sun>
+#+TITLE: ArchLinux获取AUR包的PKGBUILD并安装
+
+我是一名ArchLinux用户，虽然我已经使用Arch近乎一年，但是我仍然没有尝试过自己编译并安装一个包，更不要说打包了。
+这次由于Python 3.9的更新，有部分AUR Python包需要自己手动makepkg，我也只好来试试啦，据说十分简单！
+
+* 获取PKGBUILD
+  比较快捷的方式是将其clone下来。
+  #+begin_src shell
+  git clone https://aur.archlinux.org/package-name.git  
+  #+end_src
+* 安装
+  进入到包目录内执行 ~makepkg -si~  即可。
+* 其他
+  以后我也会尝试自己打包，为Arch做一些微薄之力！。

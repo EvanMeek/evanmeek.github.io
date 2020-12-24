@@ -1,7 +1,9 @@
 #+SETUPFILE: ../theme-rose.setup
 #+DATE: <2020-12-04 Fri>
 #+TITLE: The-CPP-Programming-Language-NOTE
-
+#+begin_quote
+持续更新中...
+#+end_quote
 * 书中生词/字记录
   - 擘划
     bo(4) hua(4)
@@ -55,6 +57,18 @@
   * p70-第2段-第一句话
     #+begin_quote
     用于指明通用算法关键操作含义的函数对象被称为策略对象(policy object)。
+    #+end_quote
+  * p81-第四段-最后一句话
+    #+begin_quote
+    为给定的任务提供合适的容器以及之上有用的基本操作，是构建任何程序的重要步骤。
+    #+end_quote
+  * p126-第四段
+    #+begin_quote
+    所谓单精度，双精度和扩展精度的确切含义是依赖于具体实现的。程序员只有对浮点运算有非常深刻的理解才能在解决实际问题时做出最好的选择。如果你做不到这一点，最好向有经验的程序员寻求建议或自学。实在不行就优先选择double类型，这是一种折中的选择，比较稳妥。
+    #+end_quote
+  * p194-开头的话
+    #+begin_quote
+    程序员就是一台能把咖啡因变成代码的机器。
     #+end_quote
 
 * 学到的新东西
@@ -154,3 +168,63 @@
      };
    #+end_src
    不过如果你显式定义了 =析构函数= 的话，是可以不用删除的。
+** map容器搜索注意项
+   map容器是提供了根据下标来查找元素的，但是通过下标的方式查找在未找到时是相当于插入了一个新的数据(值为类型的默认值，例如整型的默认值0)。
+   如果不想要上面所说的副作用，那么可以使用 ~find()~ 或 ~insert()~ 。
+** 窄化转换出错 
+   窄化转换是C++11引进的新特性，我在初始化变量时遇到过。
+   C++11可以通过初始化列表的方式对变量进行初始化，这样的好处就在于如果当给定初始化值与需初始化变量类型不匹配，就会引发窄化转换出错。
+   而曾经的那种初始化方式就不会出错，因为发生了隐式转换。
+   #+begin_src cpp
+     using namespace std;
+     int main() {
+       bool a = 10;
+       cout << a << endl;            // 1
+       bool b{10};                   // 出错
+       return 0;
+     }
+   #+end_src
+   如果想要在初始化列表不要发生窄化转换出错可以利用一些CPP的特性进行转换，例如:
+   #+begin_src cpp
+     #include <iostream>
+     using namespace std;
+
+     void f(int i) {
+       bool b = i != 0;
+       cout << b << endl;            // 1
+     }
+     int main() {
+       f(10);
+       return 0;
+     }
+   #+end_src
+   这是因为在算术逻辑表达式中，bool会被自动转换为1，具有相同特性的还有位逻辑表达式。
+** void*
+   void*最常用在当不知对象确切类型的情况下，而又需要在内存中的地址进行存储或传递对象的情景。
+   其含义是 =指向未知类型对象的指针= 。
+*** void*使用注重点
+    - 由于编译器不知道void*类型的指针到底是什么类型(void类型就是代表什么类型都不是)，所以任何类型的指针都可以转换为void类型，不过转换成void类型后，原本类型可用操作会无法使用。
+      #+begin_src cpp
+      #include <iostream>
+      using namespace std;
+
+      int main(int argv, char *argc[]) {
+        int a = 10;
+        int *p = &a;
+        cout << ++*p; // 正确，a=11
+        void *vp = p; // 发生了隐式转换，从int变为void
+        // cout << ++*vp;
+        // 错误，void类型没有++操作
+
+        return 0;
+      }
+      #+end_src
+
+    - 函数指针和指向类成员的指针无法指向void* 类型。
+** nullptr
+   nullptr即空指针，用于替代旧版本的以0作为空指针的写法。
+*** nullptr和NULL(0)的区别
+    在C++11之前，大家都用0表示空指针，这样有个缺点就是当一个函数允许传递的参数既有指针又有整型，就容易引起歧义，因为可以用整型0代表空指针。
+    #+begin_quote
+    nullptr只能被赋予指针类型，而不能被赋予内置类型。
+    #+end_quote

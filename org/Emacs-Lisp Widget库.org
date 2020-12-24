@@ -1,0 +1,11 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-12-22 Tue>
+#+TITLE: Emacs-Lisp Widget库
+
+#+begin_quote
+有需求就有工具，Emacs身为一个文本编辑器存在大量的根据文本UI实现的各种功能。但这种实现太过繁琐，在我实现生词插件时就遇到了这个问题，最近正好没有事情，就来看看Emacs-Lisp手册中的Widget库是如何使用的!
+#+end_quote
+
+* Widget提供了哪些功能
+  
+  

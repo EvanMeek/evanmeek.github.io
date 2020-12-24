@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-12-24 Thu 15:42 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArchLinux获取AUR包的PKGBUILD并安装</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ArchLinux获取AUR包的PKGBUILD并安装</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbd52efc">获取PKGBUILD</a></li>
+<li><a href="#orgf66a07c">安装</a></li>
+<li><a href="#orgc1da454">其他</a></li>
+</ul>
+</div>
+</div>
+<p>
+我是一名ArchLinux用户，虽然我已经使用Arch近乎一年，但是我仍然没有尝试过自己编译并安装一个包，更不要说打包了。
+这次由于Python 3.9的更新，有部分AUR Python包需要自己手动makepkg，我也只好来试试啦，据说十分简单！
+</p>
+
+<div id="outline-container-orgbd52efc" class="outline-2">
+<h2 id="orgbd52efc">获取PKGBUILD</h2>
+<div class="outline-text-2" id="text-orgbd52efc">
+<p>
+比较快捷的方式是将其clone下来。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git clone https://aur.archlinux.org/package-name.git  
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf66a07c" class="outline-2">
+<h2 id="orgf66a07c">安装</h2>
+<div class="outline-text-2" id="text-orgf66a07c">
+<p>
+进入到包目录内执行 <code>makepkg -si</code>  即可。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc1da454" class="outline-2">
+<h2 id="orgc1da454">其他</h2>
+<div class="outline-text-2" id="text-orgc1da454">
+<p>
+以后我也会尝试自己打包，为Arch做一些微薄之力！。
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-12-06 Sun 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-12-24 Thu 15:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

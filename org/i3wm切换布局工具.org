@@ -1,0 +1,54 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2020-12-24 Thu>
+#+TITLE: i3wm切换布局工具
+
+* 前言
+	i3wm是一个简单且功能完善的窗口管理器，其容易上手的特质让其拥有大量使用窗口管理器的用户。但用过dwm或awesome-wm的同学可能很喜欢他们新建窗口的规则(最新创建的占半个屏幕)，而i3wm默认是均分的，如果想要达到类似的效果，还手动进行调整。
+
+	那有没有什么工具可以让其自动调整呢？答案就是 **i3-instant-layout** ，这是一个用Python编写的用于快速切换i3wm当前工作区窗口布局的工具，其支持大量的布局方式，并且使用起来也十分的简单，下面就进入安装环节吧！
+
+* 安装
+  使用 `pip` 进行安装。
+  #+begin_src shell
+    sudo pip install i3-instant-layout
+  #+end_src
+  
+* 使用
+  想要使用它，必须将下列配置加入 `i3 config` 中。
+  #+begin_src conf
+    for_window              [class="^.*"] border pixel 1
+  #+end_src
+
+  随后便我们为选择布局方式添加一个快捷键。
+  #+begin_src conf
+    bindsym                $mod+Escape exec "i3-instant-layout --list | rofi -dmenu -i | i3-instant-layout -"
+  #+end_src
+
+  **注意** 我这里使用的是 `rofi` ，效果大概是这样的。
+
+  #+begin_export html
+    <img src="/images/i3wm-layout.png" width="60%" />
+  #+end_export
+
+  随后你就可以选择你想要的布局啦！类似dwm的布局叫做 `mainLeft`
+  
+* 效果展示
+  
+  **mainLeft**
+
+  #+begin_export html
+  <img src="/images/i3wm-layout-ml.png" width="60%" />
+  #+end_export
+  
+  **mainCenter**
+  #+begin_export html
+  <img src="/images/i3wm-layout-mc.png" width="60%" />
+  #+end_export
+
+  **matrix**
+  #+begin_export html
+  <img src="/images/i3wm-layout-matrix.png" width="60%" />
+  #+end_export
+  
+  
+  
