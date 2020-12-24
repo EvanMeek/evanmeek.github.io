@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-12-24 Thu 15:42 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>i3wm切换布局工具</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">i3wm切换布局工具</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbed0a22">前言</a></li>
+<li><a href="#org3fb8703">安装</a></li>
+<li><a href="#org43baa2f">使用</a></li>
+<li><a href="#org43da6d2">效果展示</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbed0a22" class="outline-2">
+<h2 id="orgbed0a22">前言</h2>
+<div class="outline-text-2" id="text-orgbed0a22">
+<p>
+i3wm是一个简单且功能完善的窗口管理器，其容易上手的特质让其拥有大量使用窗口管理器的用户。但用过dwm或awesome-wm的同学可能很喜欢他们新建窗口的规则(最新创建的占半个屏幕)，而i3wm默认是均分的，如果想要达到类似的效果，还手动进行调整。
+</p>
+
+<p>
+那有没有什么工具可以让其自动调整呢？答案就是 <b><b>i3-instant-layout</b></b> ，这是一个用Python编写的用于快速切换i3wm当前工作区窗口布局的工具，其支持大量的布局方式，并且使用起来也十分的简单，下面就进入安装环节吧！
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3fb8703" class="outline-2">
+<h2 id="org3fb8703">安装</h2>
+<div class="outline-text-2" id="text-org3fb8703">
+<p>
+使用 `pip` 进行安装。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo pip install i3-instant-layout
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43baa2f" class="outline-2">
+<h2 id="org43baa2f">使用</h2>
+<div class="outline-text-2" id="text-org43baa2f">
+<p>
+想要使用它，必须将下列配置加入 `i3 config` 中。
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #00538b;">for_window              [class</span>=<span style="color: #2544bb;">"^.*"</span>] border pixel 1
+</pre>
+</div>
+
+<p>
+随后便我们为选择布局方式添加一个快捷键。
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym                $mod+Escape exec <span style="color: #2544bb;">"i3-instant-layout --list | rofi -dmenu -i | i3-instant-layout -"</span>
+</pre>
+</div>
+
+<p>
+<b><b>注意</b></b> 我这里使用的是 `rofi` ，效果大概是这样的。
+</p>
+
+<img src="/images/i3wm-layout.png" width="60%" />
+
+<p>
+随后你就可以选择你想要的布局啦！类似dwm的布局叫做 `mainLeft`
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43da6d2" class="outline-2">
+<h2 id="org43da6d2">效果展示</h2>
+<div class="outline-text-2" id="text-org43da6d2">
+<p>
+<b><b>mainLeft</b></b>
+</p>
+
+<img src="/images/i3wm-layout-ml.png" width="60%" />
+
+<p>
+<b><b>mainCenter</b></b>
+</p>
+<img src="/images/i3wm-layout-mc.png" width="60%" />
+
+<p>
+<b><b>matrix</b></b>
+</p>
+<img src="/images/i3wm-layout-matrix.png" width="60%" />
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-12-24 Thu 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2020-12-24 Thu 15:42</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
