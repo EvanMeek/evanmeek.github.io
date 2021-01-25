@@ -14,11 +14,12 @@
 
 [[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]] ➯ [[file:diary.org][_我的日记_]] ➯ 
 
-| 最新                     |
-|--------------------------|
-| [[file:iamback.org][我回来了!]]                |
-| [[file:浅谈Python写中的正则表达式.org][浅谈Python中的正则表达式]] |
-| [[file:openSUSE風滾草入坑指北.org][openSUSE風滾草入坑指北]] |
+| 最新                          |
+|-------------------------------|
+| [[file:iamback.org][我回来了!]]                     |
+| [[file:浅谈Python写中的正则表达式.org][浅谈Python中的正则表达式]]      |
+| [[file:openSUSE風滾草入坑指北.org][openSUSE風滾草入坑指北]]        |
+| [[file:提升Emacs启动速度——Emacs Dump.org][提升Emacs启动速度——Emacs Dump]] |                               
 
 | 关于我的 |
 |----------|
@@ -28,6 +29,7 @@
 | Emacs                    |
 |--------------------------|
 | [[file:emacs_Emacs中优雅地加载GUI配置.org][Emacs中优雅地加载GUI配置]] |
+| [[file:提升Emacs启动速度——Emacs Dump.org][提升Emacs启动速度——Emacs Dump]]                         |
 
 | GNU/Linux                      |
 |--------------------------------|

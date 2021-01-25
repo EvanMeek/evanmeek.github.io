@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-12-24 Thu 16:04 -->
+<!-- 2021-01-25 Mon 15:36 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -196,7 +196,7 @@ xmodmap有个问题，就是只要有软件利用了xmodmap进行设置一些键
 第一步，先查看你所需要更改的键盘的键位（利用hwdb支持根据不同设备设置不同的键位 ）。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">su - <span style="color: #505050;">#</span><span style="color: #505050;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
+<pre class="src src-shell">su - <span style="color: #a89984;">#</span><span style="color: #a89984;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
 evtest
 </pre>
 </div>
@@ -230,11 +230,11 @@ Available devices:
 /dev/input/event20:     HDA Digital PCBeep
 /dev/input/event21:     HDA Intel PCH Mic
 /dev/input/event22:     HDA Intel PCH Headphone
-/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #00538b;">pcm</span>=3
-/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #00538b;">pcm</span>=7
-/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #00538b;">pcm</span>=8
-/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #00538b;">pcm</span>=9
-/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #00538b;">pcm</span>=10
+/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #076678;">pcm</span>=3
+/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #076678;">pcm</span>=7
+/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #076678;">pcm</span>=8
+/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #076678;">pcm</span>=9
+/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #076678;">pcm</span>=10
 Select the device event number [0-27]: 
 </pre>
 </div>
@@ -245,7 +245,7 @@ Select the device event number [0-27]:
 <div class="org-src-container">
 <pre class="src src-shell">Input driver version is 1.0.1
 Input device ID: bus 0x3 vendor 0x48d product 0xc937 version 0x110
-Input device name: <span style="color: #2544bb;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
+Input device name: <span style="color: #79740e;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
 Supported events:
   Event type 0 (EV_SYN)
   Event type 1 (EV_KEY)
@@ -332,8 +332,8 @@ evdev表示要修改映射的设备，后面跟着的表示匹配设备的相关
 执行如下命令即可:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">udevadm hwdb --update <span style="color: #505050;">#</span><span style="color: #505050;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
-udevadm trigger <span style="color: #505050;"># </span><span style="color: #505050;">&#24212;&#29992;</span>
+<pre class="src src-shell">udevadm hwdb --update <span style="color: #a89984;">#</span><span style="color: #a89984;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
+udevadm trigger <span style="color: #a89984;"># </span><span style="color: #a89984;">&#24212;&#29992;</span>
 </pre>
 </div>
 </div>
@@ -362,8 +362,8 @@ udevadm trigger <span style="color: #505050;"># </span><span style="color: #5050
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-14 Tue 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2020-12-24 Thu 16:04</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-01-25 Mon 15:36</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

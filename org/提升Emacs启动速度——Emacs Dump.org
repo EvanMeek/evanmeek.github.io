@@ -1,0 +1,116 @@
+#+SETUPFILE: ../theme-rose.setup
+#+DATE: <2021-01-25 Mon>
+#+TITLE: 提升Emacs启动速度——Emacs Dump
+
+* 了解dump
+
+dump是一种将内存中的数据保存至本地的技术，利用这种技术可以做到类似预加载的功能。由于Emacs的插件包数量众多，且存在部分插件包加载时间较长，明明是一个编辑器却拥有和IDE一般的启动速度。
+
+* 优化Emacs插件加载的历史
+
+Emacs从很早就有让插件加载速度变快的需求了，从一开始的无脑 ~(require)~ 到后来的 ~autoload(惰性加载)~ 再到现在(其实dump曾经也有过，但是当时的方案现在已经无法使用了)的 ~dump(预加载)~ 各种让Emacs的启动速度变快的方案也是层出不穷。而现在Emacs 28分支又有一种技术叫做 ~(native-comp)~ 可以把Elisp代码转为字节码，这样性能就会提升一些(我尝试过，但是并没有明显的感觉)。从这些属于Emacs的历史可以了解到，Emacs一直在进步，虽然这编辑器的年龄比我还大，但是至今却仍然保持着十分活跃的开发与讨论，再想想每天葛优躺的自己，竟不如一个编辑器。。。啊不对，是操作系统。
+
+* 正式开始实现
+
+先说点理论的话术：dump所需做的工作并不大，但是你需要理解它才能快速入手。我本人有145个在使用的插件，几乎都是用use-package管理的，而我不用修改什么软件包就可让几乎所有插件dump，所以你们也知道了并不是所有的插件都可以dump，不能dump的让其autoload就行。
+
+下面你需要修改这几个文件：
+** dump.sh
+   一个用于dump的脚本。
+   
+   由于这个文件足够简单，就直接提供内容了：
+   #+begin_src shell
+   #!/usr/bin/bash
+   LC_TYPE=en_US.UTF-8 emacs --batch -q -l ~/.emacs.d/dump.el
+   #+end_src
+
+
+   #+begin_quote
+   注意dump.el的路径
+   #+end_quote
+** init.el
+   没有dump前你Emacs配置的入口，通常来说是 ~~/.emacs.d/init.el~ 。这个文件主要是管理使用dump时的Emacs和不使用dump时Emacs所需加载配置的逻辑和少量处理dump带来的load-path的问题。
+
+   下面看代码吧，注释写的足够清晰。
+   #+begin_src emacs-lisp
+     ;;; -*- lexical-binding: t -*-
+
+
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+     ;; 我觉得有必要说一下dump和没有dump的逻辑关系。                                                                           ;;
+     ;; 下面的注释中提到的dump，是指当前你启动的emacs加载的是通过dump.sh生成的pdmp文件加载的 。                                       ;;
+     ;; 而注释中提到的非dump配置是指你不以pdmp文件加载emacs，也就是正常启动emacs。                                                  ;;
+     ;; 这样区分的好处是可以让你想用pdmp时就用，不想用时可以正常用Emacs，但是我推荐你这样做，不然可能会出现一些问题。                          ;;
+     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+     ;; dump后load-path值，当这个变量为nil时是不会加载pdmp的。
+     (defvar +dumped-load-path nil
+       "Not nil when using dump.")
+
+     ;; 通过dump启动时的配置
+     (when +dumped-load-path
+       ;;恢复load-path
+       (setq load-path +dumped-load-path)
+       ;; 修改一下报错等级，这个读者按心意加，不影响dump
+       (setq warning-minimum-level :emergency)
+       ;; 一些功能失常的mode，需要重新开启
+       (global-font-lock-mode t)
+       (transient-mark-mode t))
+
+     ;; 非dump启动方式所需加载的配置
+     (unless +dumped-load-path
+       ;; 下面的内容于dump无关，这里的内容只需要做你原本init.el内做的事情就够了。
+       ;; 向我这里就是正常将目录或子目录加到load-path中，因为我的配置是模块化的，不同模块放在不同目录下的，你只要知道下面的内容不要照抄就行，再说一边，下面的内容就是你原本init.el中的内容
+  
+       ;; 递归遍历加载路径
+       (defun add-subdirs-to-load-path(dir)
+         "Recursive add directories to `load-path`."
+         (let ((default-directory (file-name-as-directory dir)))
+           (add-to-list 'load-path dir)
+           (normal-top-level-add-subdirs-to-load-path)))
+       ;; 设置load-path
+       (let ((gc-cons-threshold most-positive-fixnum)
+             (file-name-handler-alist nil))
+         (add-subdirs-to-load-path "~/.emacs.d/etc/"))
+
+       (require 'init-config))
+
+   #+end_src
+** dump.el
+   一个用于dumping时加载的代码，内容几乎是管理所需dump插件白名单和维护一下dump带来的load-path的小问题
+
+   还是老规矩吧，看代码
+
+   #+begin_src emacs-lisp
+     ;; 先将Emacs加载一下。注意这时候init.el执行时的逻辑应该是非dump方式的代码。
+     ;; 这样也就将你的原本配置中的插件都加载到内存中了，随后就可以设置dump插件黑名单了。
+     (load (expand-file-name "init.el"))
+
+     ;; 这里就是不需要dump的插件，也就是黑名单。
+     (setq +dump-exclude-packages '(telega
+                                    meow
+                                    hydra-posframe))
+
+     ;; 这里是加载配置的过程，作用将所有已安装的插件都加载到内容，但是会排除黑名单中的插件。
+     (dolist (package package-activated-list)
+       (unless (member package +dump-exclude-packages)
+         (require package)))
+
+     ;; 现在需要创建一个变量，其作用是让init.el里有两种不同启动时加载逻辑以及解决dump带来的load-path的问题
+     (setq +dumped-load-path load-path)
+
+     ;; 关闭gc，可选
+     (setq gc-cons-threshold most-positive-fixnum
+           gc-cons-percentage 0.6)
+
+     ;; 真正做dump工作的函数，你可以自定义生成的文件的路径
+     (dump-emacs-portable "~/.emacs.d/emacs.pdmp")
+
+   #+end_src
+** 下一步
+   下面你只需要退出Emacs，随后执行 ~dump.sh~ 再通过下面的命令启动emacs即可。
+   #+begin_src shell
+   emacs --dump-file ~/.emacs.d/emacs.pdmp
+   #+end_src
+* 最后
+  感谢狗哥=>[[https://github.com/doglooksgood][点我到Github主页]]的大力支持，没有你的耐心教导，我用不上如此优秀的技术，十分感谢！
