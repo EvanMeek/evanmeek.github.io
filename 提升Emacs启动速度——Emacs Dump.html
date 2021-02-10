@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-01-25 Mon 15:36 -->
+<!-- 2021-02-11 Thu 01:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>提升Emacs启动速度——Emacs Dump</title>
@@ -22,42 +22,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org364d04c">了解dump</a></li>
-<li><a href="#org9c64f56">优化Emacs插件加载的历史</a></li>
-<li><a href="#orged98206">正式开始实现</a>
+<li><a href="#orgd879b8a">了解dump</a></li>
+<li><a href="#orgbe175c9">优化Emacs插件加载的历史</a></li>
+<li><a href="#orga35400e">正式开始实现</a>
 <ul>
-<li><a href="#org97ec70d">dump.sh</a></li>
-<li><a href="#org0db55f5">init.el</a></li>
-<li><a href="#orgf7ea68e">dump.el</a></li>
-<li><a href="#org487d17f">下一步</a></li>
+<li><a href="#org10ab707">dump.sh</a></li>
+<li><a href="#orgbd774ee">init.el</a></li>
+<li><a href="#org06f77e5">dump.el</a></li>
+<li><a href="#org280b4ac">下一步</a></li>
 </ul>
 </li>
-<li><a href="#org435d5c5">最后</a></li>
+<li><a href="#org7f14ffb">最后</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org364d04c" class="outline-2">
-<h2 id="org364d04c">了解dump</h2>
-<div class="outline-text-2" id="text-org364d04c">
+<div id="outline-container-orgd879b8a" class="outline-2">
+<h2 id="orgd879b8a">了解dump</h2>
+<div class="outline-text-2" id="text-orgd879b8a">
 <p>
 dump是一种将内存中的数据保存至本地的技术，利用这种技术可以做到类似预加载的功能。由于Emacs的插件包数量众多，且存在部分插件包加载时间较长，明明是一个编辑器却拥有和IDE一般的启动速度。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9c64f56" class="outline-2">
-<h2 id="org9c64f56">优化Emacs插件加载的历史</h2>
-<div class="outline-text-2" id="text-org9c64f56">
+<div id="outline-container-orgbe175c9" class="outline-2">
+<h2 id="orgbe175c9">优化Emacs插件加载的历史</h2>
+<div class="outline-text-2" id="text-orgbe175c9">
 <p>
 Emacs从很早就有让插件加载速度变快的需求了，从一开始的无脑 <code>(require)</code> 到后来的 <code>autoload(惰性加载)</code> 再到现在(其实dump曾经也有过，但是当时的方案现在已经无法使用了)的 <code>dump(预加载)</code> 各种让Emacs的启动速度变快的方案也是层出不穷。而现在Emacs 28分支又有一种技术叫做 <code>(native-comp)</code> 可以把Elisp代码转为字节码，这样性能就会提升一些(我尝试过，但是并没有明显的感觉)。从这些属于Emacs的历史可以了解到，Emacs一直在进步，虽然这编辑器的年龄比我还大，但是至今却仍然保持着十分活跃的开发与讨论，再想想每天葛优躺的自己，竟不如一个编辑器。。。啊不对，是操作系统。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orged98206" class="outline-2">
-<h2 id="orged98206">正式开始实现</h2>
-<div class="outline-text-2" id="text-orged98206">
+<div id="outline-container-orga35400e" class="outline-2">
+<h2 id="orga35400e">正式开始实现</h2>
+<div class="outline-text-2" id="text-orga35400e">
 <p>
 先说点理论的话术：dump所需做的工作并不大，但是你需要理解它才能快速入手。我本人有145个在使用的插件，几乎都是用use-package管理的，而我不用修改什么软件包就可让几乎所有插件dump，所以你们也知道了并不是所有的插件都可以dump，不能dump的让其autoload就行。
 </p>
@@ -66,9 +66,9 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 下面你需要修改这几个文件：
 </p>
 </div>
-<div id="outline-container-org97ec70d" class="outline-3">
-<h3 id="org97ec70d">dump.sh</h3>
-<div class="outline-text-3" id="text-org97ec70d">
+<div id="outline-container-org10ab707" class="outline-3">
+<h3 id="org10ab707">dump.sh</h3>
+<div class="outline-text-3" id="text-org10ab707">
 <p>
 一个用于dump的脚本。
 </p>
@@ -77,8 +77,8 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 由于这个文件足够简单，就直接提供内容了：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #a89984;">#</span><span style="color: #a89984;">!/usr/bin/</span><span style="color: #9d0006;">bash</span>
-<span style="color: #076678;">LC_TYPE</span>=en_US.UTF-8 emacs --batch -q -l ~/.emacs.d/dump.el
+<pre class="src src-shell"><span style="color: #5B6268;">#</span><span style="color: #5B6268;">!/usr/bin/</span><span style="color: #51afef;">bash</span>
+<span style="color: #dcaeea;">LC_TYPE</span>=en_US.UTF-8 emacs --batch -q -l ~/.emacs.d/dump.el
 </pre>
 </div>
 
@@ -90,9 +90,9 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org0db55f5" class="outline-3">
-<h3 id="org0db55f5">init.el</h3>
-<div class="outline-text-3" id="text-org0db55f5">
+<div id="outline-container-orgbd774ee" class="outline-3">
+<h3 id="orgbd774ee">init.el</h3>
+<div class="outline-text-3" id="text-orgbd774ee">
 <p>
 没有dump前你Emacs配置的入口，通常来说是 <code>~/.emacs.d/init.el</code> 。这个文件主要是管理使用dump时的Emacs和不使用dump时Emacs所需加载配置的逻辑和少量处理dump带来的load-path的问题。
 </p>
@@ -101,55 +101,55 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 下面看代码吧，注释写的足够清晰。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #a89984;">;;; </span><span style="color: #a89984;">-*- lexical-binding: t -*-</span>
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;;; </span><span style="color: #5B6268;">-*- lexical-binding: t -*-</span>
 
 
-<span style="color: #a89984;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#25105;&#35273;&#24471;&#26377;&#24517;&#35201;&#35828;&#19968;&#19979;dump&#21644;&#27809;&#26377;dump&#30340;&#36923;&#36753;&#20851;&#31995;&#12290;                                                                           ;;</span>
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#19979;&#38754;&#30340;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;dump&#65292;&#26159;&#25351;&#24403;&#21069;&#20320;&#21551;&#21160;&#30340;emacs&#21152;&#36733;&#30340;&#26159;&#36890;&#36807;dump.sh&#29983;&#25104;&#30340;pdmp&#25991;&#20214;&#21152;&#36733;&#30340; &#12290;                                       ;;</span>
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#32780;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;&#38750;dump&#37197;&#32622;&#26159;&#25351;&#20320;&#19981;&#20197;pdmp&#25991;&#20214;&#21152;&#36733;emacs&#65292;&#20063;&#23601;&#26159;&#27491;&#24120;&#21551;&#21160;emacs&#12290;                                                  ;;</span>
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#36825;&#26679;&#21306;&#20998;&#30340;&#22909;&#22788;&#26159;&#21487;&#20197;&#35753;&#20320;&#24819;&#29992;pdmp&#26102;&#23601;&#29992;&#65292;&#19981;&#24819;&#29992;&#26102;&#21487;&#20197;&#27491;&#24120;&#29992;Emacs&#65292;&#20294;&#26159;&#25105;&#25512;&#33616;&#20320;&#36825;&#26679;&#20570;&#65292;&#19981;&#28982;&#21487;&#33021;&#20250;&#20986;&#29616;&#19968;&#20123;&#38382;&#39064;&#12290;                          ;;</span>
-<span style="color: #a89984;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #5B6268;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#25105;&#35273;&#24471;&#26377;&#24517;&#35201;&#35828;&#19968;&#19979;dump&#21644;&#27809;&#26377;dump&#30340;&#36923;&#36753;&#20851;&#31995;&#12290;                                                                           ;;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#19979;&#38754;&#30340;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;dump&#65292;&#26159;&#25351;&#24403;&#21069;&#20320;&#21551;&#21160;&#30340;emacs&#21152;&#36733;&#30340;&#26159;&#36890;&#36807;dump.sh&#29983;&#25104;&#30340;pdmp&#25991;&#20214;&#21152;&#36733;&#30340; &#12290;                                       ;;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#32780;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;&#38750;dump&#37197;&#32622;&#26159;&#25351;&#20320;&#19981;&#20197;pdmp&#25991;&#20214;&#21152;&#36733;emacs&#65292;&#20063;&#23601;&#26159;&#27491;&#24120;&#21551;&#21160;emacs&#12290;                                                  ;;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#26679;&#21306;&#20998;&#30340;&#22909;&#22788;&#26159;&#21487;&#20197;&#35753;&#20320;&#24819;&#29992;pdmp&#26102;&#23601;&#29992;&#65292;&#19981;&#24819;&#29992;&#26102;&#21487;&#20197;&#27491;&#24120;&#29992;Emacs&#65292;&#20294;&#26159;&#25105;&#25512;&#33616;&#20320;&#36825;&#26679;&#20570;&#65292;&#19981;&#28982;&#21487;&#33021;&#20250;&#20986;&#29616;&#19968;&#20123;&#38382;&#39064;&#12290;                          ;;</span>
+<span style="color: #5B6268;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">dump&#21518;load-path&#20540;&#65292;&#24403;&#36825;&#20010;&#21464;&#37327;&#20026;nil&#26102;&#26159;&#19981;&#20250;&#21152;&#36733;pdmp&#30340;&#12290;</span>
-(<span style="color: #9d0006;">defvar</span> <span style="color: #076678;">+dumped-load-path</span> nil
-  <span style="color: #79740e; font-style: italic;">"Not nil when using dump."</span>)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">dump&#21518;load-path&#20540;&#65292;&#24403;&#36825;&#20010;&#21464;&#37327;&#20026;nil&#26102;&#26159;&#19981;&#20250;&#21152;&#36733;pdmp&#30340;&#12290;</span>
+(<span style="color: #51afef;">defvar</span> <span style="color: #dcaeea;">+dumped-load-path</span> nil
+  <span style="color: #83898d;">"Not nil when using dump."</span>)
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#36890;&#36807;dump&#21551;&#21160;&#26102;&#30340;&#37197;&#32622;</span>
-(<span style="color: #9d0006;">when</span> +dumped-load-path
-  <span style="color: #a89984;">;;</span><span style="color: #a89984;">&#24674;&#22797;load-path</span>
-  (<span style="color: #9d0006;">setq</span> load-path +dumped-load-path)
-  <span style="color: #a89984;">;; </span><span style="color: #a89984;">&#20462;&#25913;&#19968;&#19979;&#25253;&#38169;&#31561;&#32423;&#65292;&#36825;&#20010;&#35835;&#32773;&#25353;&#24515;&#24847;&#21152;&#65292;&#19981;&#24433;&#21709;dump</span>
-  (<span style="color: #9d0006;">setq</span> warning-minimum-level <span style="color: #af3a03;">:emergency</span>)
-  <span style="color: #a89984;">;; </span><span style="color: #a89984;">&#19968;&#20123;&#21151;&#33021;&#22833;&#24120;&#30340;mode&#65292;&#38656;&#35201;&#37325;&#26032;&#24320;&#21551;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36890;&#36807;dump&#21551;&#21160;&#26102;&#30340;&#37197;&#32622;</span>
+(<span style="color: #51afef;">when</span> +dumped-load-path
+  <span style="color: #5B6268;">;;</span><span style="color: #5B6268;">&#24674;&#22797;load-path</span>
+  (<span style="color: #51afef;">setq</span> load-path +dumped-load-path)
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#20462;&#25913;&#19968;&#19979;&#25253;&#38169;&#31561;&#32423;&#65292;&#36825;&#20010;&#35835;&#32773;&#25353;&#24515;&#24847;&#21152;&#65292;&#19981;&#24433;&#21709;dump</span>
+  (<span style="color: #51afef;">setq</span> warning-minimum-level <span style="color: #c678dd;">:emergency</span>)
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#19968;&#20123;&#21151;&#33021;&#22833;&#24120;&#30340;mode&#65292;&#38656;&#35201;&#37325;&#26032;&#24320;&#21551;</span>
   (global-font-lock-mode t)
   (transient-mark-mode t))
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#38750;dump&#21551;&#21160;&#26041;&#24335;&#25152;&#38656;&#21152;&#36733;&#30340;&#37197;&#32622;</span>
-(<span style="color: #9d0006;">unless</span> +dumped-load-path
-  <span style="color: #a89984;">;; </span><span style="color: #a89984;">&#19979;&#38754;&#30340;&#20869;&#23481;&#20110;dump&#26080;&#20851;&#65292;&#36825;&#37324;&#30340;&#20869;&#23481;&#21482;&#38656;&#35201;&#20570;&#20320;&#21407;&#26412;init.el&#20869;&#20570;&#30340;&#20107;&#24773;&#23601;&#22815;&#20102;&#12290;</span>
-  <span style="color: #a89984;">;; </span><span style="color: #a89984;">&#21521;&#25105;&#36825;&#37324;&#23601;&#26159;&#27491;&#24120;&#23558;&#30446;&#24405;&#25110;&#23376;&#30446;&#24405;&#21152;&#21040;load-path&#20013;&#65292;&#22240;&#20026;&#25105;&#30340;&#37197;&#32622;&#26159;&#27169;&#22359;&#21270;&#30340;&#65292;&#19981;&#21516;&#27169;&#22359;&#25918;&#22312;&#19981;&#21516;&#30446;&#24405;&#19979;&#30340;&#65292;&#20320;&#21482;&#35201;&#30693;&#36947;&#19979;&#38754;&#30340;&#20869;&#23481;&#19981;&#35201;&#29031;&#25220;&#23601;&#34892;&#65292;&#20877;&#35828;&#19968;&#36793;&#65292;&#19979;&#38754;&#30340;&#20869;&#23481;&#23601;&#26159;&#20320;&#21407;&#26412;init.el&#20013;&#30340;&#20869;&#23481;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#38750;dump&#21551;&#21160;&#26041;&#24335;&#25152;&#38656;&#21152;&#36733;&#30340;&#37197;&#32622;</span>
+(<span style="color: #51afef;">unless</span> +dumped-load-path
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#19979;&#38754;&#30340;&#20869;&#23481;&#20110;dump&#26080;&#20851;&#65292;&#36825;&#37324;&#30340;&#20869;&#23481;&#21482;&#38656;&#35201;&#20570;&#20320;&#21407;&#26412;init.el&#20869;&#20570;&#30340;&#20107;&#24773;&#23601;&#22815;&#20102;&#12290;</span>
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#21521;&#25105;&#36825;&#37324;&#23601;&#26159;&#27491;&#24120;&#23558;&#30446;&#24405;&#25110;&#23376;&#30446;&#24405;&#21152;&#21040;load-path&#20013;&#65292;&#22240;&#20026;&#25105;&#30340;&#37197;&#32622;&#26159;&#27169;&#22359;&#21270;&#30340;&#65292;&#19981;&#21516;&#27169;&#22359;&#25918;&#22312;&#19981;&#21516;&#30446;&#24405;&#19979;&#30340;&#65292;&#20320;&#21482;&#35201;&#30693;&#36947;&#19979;&#38754;&#30340;&#20869;&#23481;&#19981;&#35201;&#29031;&#25220;&#23601;&#34892;&#65292;&#20877;&#35828;&#19968;&#36793;&#65292;&#19979;&#38754;&#30340;&#20869;&#23481;&#23601;&#26159;&#20320;&#21407;&#26412;init.el&#20013;&#30340;&#20869;&#23481;</span>
 
-  <span style="color: #a89984;">;; </span><span style="color: #a89984;">&#36882;&#24402;&#36941;&#21382;&#21152;&#36733;&#36335;&#24452;</span>
-  (<span style="color: #9d0006;">defun</span> <span style="color: #b57614;">add-subdirs-to-load-path</span>(dir)
-    <span style="color: #79740e; font-style: italic;">"Recursive add directories to `load-path`."</span>
-    (<span style="color: #9d0006;">let</span> ((default-directory (file-name-as-directory dir)))
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36882;&#24402;&#36941;&#21382;&#21152;&#36733;&#36335;&#24452;</span>
+  (<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">add-subdirs-to-load-path</span>(dir)
+    <span style="color: #83898d;">"Recursive add directories to `load-path`."</span>
+    (<span style="color: #51afef;">let</span> ((default-directory (file-name-as-directory dir)))
       (add-to-list 'load-path dir)
       (normal-top-level-add-subdirs-to-load-path)))
-  <span style="color: #a89984;">;; </span><span style="color: #a89984;">&#35774;&#32622;load-path</span>
-  (<span style="color: #9d0006;">let</span> ((gc-cons-threshold most-positive-fixnum)
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#35774;&#32622;load-path</span>
+  (<span style="color: #51afef;">let</span> ((gc-cons-threshold most-positive-fixnum)
         (file-name-handler-alist nil))
-    (add-subdirs-to-load-path <span style="color: #79740e;">"~/.emacs.d/etc/"</span>))
+    (add-subdirs-to-load-path <span style="color: #98be65;">"~/.emacs.d/etc/"</span>))
 
-  (<span style="color: #9d0006;">require</span> '<span style="color: #8f3f71;">init-config</span>))
+  (<span style="color: #51afef;">require</span> '<span style="color: #a9a1e1;">init-config</span>))
 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf7ea68e" class="outline-3">
-<h3 id="orgf7ea68e">dump.el</h3>
-<div class="outline-text-3" id="text-orgf7ea68e">
+<div id="outline-container-org06f77e5" class="outline-3">
+<h3 id="org06f77e5">dump.el</h3>
+<div class="outline-text-3" id="text-org06f77e5">
 <p>
 一个用于dumping时加载的代码，内容几乎是管理所需dump插件白名单和维护一下dump带来的load-path的小问题
 </p>
@@ -159,37 +159,37 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #a89984;">;; </span><span style="color: #a89984;">&#20808;&#23558;Emacs&#21152;&#36733;&#19968;&#19979;&#12290;&#27880;&#24847;&#36825;&#26102;&#20505;init.el&#25191;&#34892;&#26102;&#30340;&#36923;&#36753;&#24212;&#35813;&#26159;&#38750;dump&#26041;&#24335;&#30340;&#20195;&#30721;&#12290;</span>
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#36825;&#26679;&#20063;&#23601;&#23558;&#20320;&#30340;&#21407;&#26412;&#37197;&#32622;&#20013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#20102;&#65292;&#38543;&#21518;&#23601;&#21487;&#20197;&#35774;&#32622;dump&#25554;&#20214;&#40657;&#21517;&#21333;&#20102;&#12290;</span>
-(load (expand-file-name <span style="color: #79740e;">"init.el"</span>))
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#20808;&#23558;Emacs&#21152;&#36733;&#19968;&#19979;&#12290;&#27880;&#24847;&#36825;&#26102;&#20505;init.el&#25191;&#34892;&#26102;&#30340;&#36923;&#36753;&#24212;&#35813;&#26159;&#38750;dump&#26041;&#24335;&#30340;&#20195;&#30721;&#12290;</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#26679;&#20063;&#23601;&#23558;&#20320;&#30340;&#21407;&#26412;&#37197;&#32622;&#20013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#20102;&#65292;&#38543;&#21518;&#23601;&#21487;&#20197;&#35774;&#32622;dump&#25554;&#20214;&#40657;&#21517;&#21333;&#20102;&#12290;</span>
+(load (expand-file-name <span style="color: #98be65;">"init.el"</span>))
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#36825;&#37324;&#23601;&#26159;&#19981;&#38656;&#35201;dump&#30340;&#25554;&#20214;&#65292;&#20063;&#23601;&#26159;&#40657;&#21517;&#21333;&#12290;</span>
-(<span style="color: #9d0006;">setq</span> +dump-exclude-packages '(telega
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#37324;&#23601;&#26159;&#19981;&#38656;&#35201;dump&#30340;&#25554;&#20214;&#65292;&#20063;&#23601;&#26159;&#40657;&#21517;&#21333;&#12290;</span>
+(<span style="color: #51afef;">setq</span> +dump-exclude-packages '(telega
                                meow
                                hydra-posframe))
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#36825;&#37324;&#26159;&#21152;&#36733;&#37197;&#32622;&#30340;&#36807;&#31243;&#65292;&#20316;&#29992;&#23558;&#25152;&#26377;&#24050;&#23433;&#35013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23481;&#65292;&#20294;&#26159;&#20250;&#25490;&#38500;&#40657;&#21517;&#21333;&#20013;&#30340;&#25554;&#20214;&#12290;</span>
-(<span style="color: #9d0006;">dolist</span> (package package-activated-list)
-  (<span style="color: #9d0006;">unless</span> (member package +dump-exclude-packages)
-    (<span style="color: #9d0006;">require</span> <span style="color: #8f3f71;">package</span>)))
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#37324;&#26159;&#21152;&#36733;&#37197;&#32622;&#30340;&#36807;&#31243;&#65292;&#20316;&#29992;&#23558;&#25152;&#26377;&#24050;&#23433;&#35013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23481;&#65292;&#20294;&#26159;&#20250;&#25490;&#38500;&#40657;&#21517;&#21333;&#20013;&#30340;&#25554;&#20214;&#12290;</span>
+(<span style="color: #51afef;">dolist</span> (package package-activated-list)
+  (<span style="color: #51afef;">unless</span> (member package +dump-exclude-packages)
+    (<span style="color: #51afef;">require</span> <span style="color: #a9a1e1;">package</span>)))
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#29616;&#22312;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#21464;&#37327;&#65292;&#20854;&#20316;&#29992;&#26159;&#35753;init.el&#37324;&#26377;&#20004;&#31181;&#19981;&#21516;&#21551;&#21160;&#26102;&#21152;&#36733;&#36923;&#36753;&#20197;&#21450;&#35299;&#20915;dump&#24102;&#26469;&#30340;load-path&#30340;&#38382;&#39064;</span>
-(<span style="color: #9d0006;">setq</span> +dumped-load-path load-path)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#29616;&#22312;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#21464;&#37327;&#65292;&#20854;&#20316;&#29992;&#26159;&#35753;init.el&#37324;&#26377;&#20004;&#31181;&#19981;&#21516;&#21551;&#21160;&#26102;&#21152;&#36733;&#36923;&#36753;&#20197;&#21450;&#35299;&#20915;dump&#24102;&#26469;&#30340;load-path&#30340;&#38382;&#39064;</span>
+(<span style="color: #51afef;">setq</span> +dumped-load-path load-path)
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#20851;&#38381;gc&#65292;&#21487;&#36873;</span>
-(<span style="color: #9d0006;">setq</span> gc-cons-threshold most-positive-fixnum
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#20851;&#38381;gc&#65292;&#21487;&#36873;</span>
+(<span style="color: #51afef;">setq</span> gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.6)
 
-<span style="color: #a89984;">;; </span><span style="color: #a89984;">&#30495;&#27491;&#20570;dump&#24037;&#20316;&#30340;&#20989;&#25968;&#65292;&#20320;&#21487;&#20197;&#33258;&#23450;&#20041;&#29983;&#25104;&#30340;&#25991;&#20214;&#30340;&#36335;&#24452;</span>
-(dump-emacs-portable <span style="color: #79740e;">"~/.emacs.d/emacs.pdmp"</span>)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#30495;&#27491;&#20570;dump&#24037;&#20316;&#30340;&#20989;&#25968;&#65292;&#20320;&#21487;&#20197;&#33258;&#23450;&#20041;&#29983;&#25104;&#30340;&#25991;&#20214;&#30340;&#36335;&#24452;</span>
+(dump-emacs-portable <span style="color: #98be65;">"~/.emacs.d/emacs.pdmp"</span>)
 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org487d17f" class="outline-3">
-<h3 id="org487d17f">下一步</h3>
-<div class="outline-text-3" id="text-org487d17f">
+<div id="outline-container-org280b4ac" class="outline-3">
+<h3 id="org280b4ac">下一步</h3>
+<div class="outline-text-3" id="text-org280b4ac">
 <p>
 下面你只需要退出Emacs，随后执行 <code>dump.sh</code> 再通过下面的命令启动emacs即可。
 </p>
@@ -200,9 +200,9 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 </div>
 </div>
 </div>
-<div id="outline-container-org435d5c5" class="outline-2">
-<h2 id="org435d5c5">最后</h2>
-<div class="outline-text-2" id="text-org435d5c5">
+<div id="outline-container-org7f14ffb" class="outline-2">
+<h2 id="org7f14ffb">最后</h2>
+<div class="outline-text-2" id="text-org7f14ffb">
 <p>
 感谢狗哥=&gt;<a href="https://github.com/doglooksgood">点我到Github主页</a>的大力支持，没有你的耐心教导，我用不上如此优秀的技术，十分感谢！
 </p>
@@ -212,7 +212,7 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 <div id="postamble" class="status">
 <p class="date">Date: 2021-01-25 Mon 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-01-25 Mon 15:36</p>
+<p class="date">Created: 2021-02-11 Thu 01:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

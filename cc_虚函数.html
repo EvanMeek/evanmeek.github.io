@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-01-25 Mon 15:36 -->
+<!-- 2021-02-11 Thu 01:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>C++虚函数小记</title>
@@ -22,9 +22,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0fd404d">不用虚函数存在的问题</a></li>
-<li><a href="#org51b1e2c">解决这个问题</a></li>
-<li><a href="#orgace84cd">其他说明</a></li>
+<li><a href="#org21d5705">不用虚函数存在的问题</a></li>
+<li><a href="#org344a58d">解决这个问题</a></li>
+<li><a href="#org66bf1a3">其他说明</a></li>
 </ul>
 </div>
 </div>
@@ -32,9 +32,9 @@
 虚函数有点类似Java中的重写父类方法。不过主要还是解决C++中重写父类方法可能会存在的问题。
 </p>
 
-<div id="outline-container-org0fd404d" class="outline-2">
-<h2 id="org0fd404d">不用虚函数存在的问题</h2>
-<div class="outline-text-2" id="text-org0fd404d">
+<div id="outline-container-org21d5705" class="outline-2">
+<h2 id="org21d5705">不用虚函数存在的问题</h2>
+<div class="outline-text-2" id="text-org21d5705">
 <p>
 下面我们需要实现一个小例子，这个例子是这样的，类 <b><b>A</b></b> 是 类 <b><b>B</b></b> 和 <b><b>C</b></b> 的父类，
 然后他们都有一个同名同参数的成员函数 <b><b>print</b></b> ，我们会实例化各一个B类和C对象，然后调
@@ -42,31 +42,31 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #076678; font-weight: bold;">#include</span> <span style="color: #79740e;">&lt;iostream&gt;</span>
-<span style="color: #076678; font-weight: bold;">#include</span> <span style="color: #79740e;">&lt;string&gt;</span>
+<pre class="src src-cpp"><span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">&lt;iostream&gt;</span>
+<span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">&lt;string&gt;</span>
 
-<span style="color: #9d0006;">using</span> <span style="color: #9d0006;">namespace</span> <span style="color: #8f3f71;">std</span>;
+<span style="color: #51afef;">using</span> <span style="color: #51afef;">namespace</span> <span style="color: #a9a1e1;">std</span>;
 
-<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">A</span> {
-<span style="color: #9d0006;">public</span>:
-  <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() { cout &lt;&lt; <span style="color: #79740e;">"A print"</span> &lt;&lt; endl; }
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">A</span> {
+<span style="color: #51afef;">public</span>:
+  <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() { cout &lt;&lt; <span style="color: #98be65;">"A print"</span> &lt;&lt; endl; }
 };
 
-<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">B</span> : <span style="color: #9d0006;">public</span> <span style="color: #8f3f71;">A</span> {
-<span style="color: #9d0006;">public</span>:
-  <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() { cout &lt;&lt; <span style="color: #79740e;">"B print"</span> &lt;&lt; endl; }
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">B</span> : <span style="color: #51afef;">public</span> <span style="color: #ECBE7B;">A</span> {
+<span style="color: #51afef;">public</span>:
+  <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() { cout &lt;&lt; <span style="color: #98be65;">"B print"</span> &lt;&lt; endl; }
 };
 
-<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">C</span> : <span style="color: #9d0006;">public</span> <span style="color: #8f3f71;">A</span> {
-<span style="color: #9d0006;">public</span>:
-  <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() { cout &lt;&lt; <span style="color: #79740e;">"C print"</span> &lt;&lt; endl; }
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">C</span> : <span style="color: #51afef;">public</span> <span style="color: #ECBE7B;">A</span> {
+<span style="color: #51afef;">public</span>:
+  <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() { cout &lt;&lt; <span style="color: #98be65;">"C print"</span> &lt;&lt; endl; }
 };
 
-<span style="color: #8f3f71;">int</span> <span style="color: #b57614;">main</span>() {
-  <span style="color: #8f3f71;">A</span> *<span style="color: #076678;">a</span>;
-  a = <span style="color: #9d0006;">new</span> <span style="color: #8f3f71;">B</span>;
+<span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span>() {
+  <span style="color: #ECBE7B;">A</span> *<span style="color: #dcaeea;">a</span>;
+  a = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">B</span>;
   a-&gt;print();
-  a = <span style="color: #9d0006;">new</span> <span style="color: #8f3f71;">C</span>;
+  a = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">C</span>;
   a-&gt;print();
 }
 </pre>
@@ -84,9 +84,9 @@ A print
 </div>
 </div>
 
-<div id="outline-container-org51b1e2c" class="outline-2">
-<h2 id="org51b1e2c">解决这个问题</h2>
-<div class="outline-text-2" id="text-org51b1e2c">
+<div id="outline-container-org344a58d" class="outline-2">
+<h2 id="org344a58d">解决这个问题</h2>
+<div class="outline-text-2" id="text-org344a58d">
 <p>
 我们发现我们虽然实例化的是 <b><b>B</b></b> 和 <b><b>C</b></b> 类对象，但实际上调用的是 类 <b><b>A</b></b> 的 <b><b>pri
 nt()</b></b> 方法，这是因为C++默认是根据类型来决定具体使用哪个方法的，而想要解决这个问题就需要将
@@ -98,31 +98,31 @@ nt()</b></b> 方法，这是因为C++默认是根据类型来决定具体使用�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #076678; font-weight: bold;">#include</span> <span style="color: #79740e;">&lt;iostream&gt;</span>
-<span style="color: #076678; font-weight: bold;">#include</span> <span style="color: #79740e;">&lt;string&gt;</span>
+<pre class="src src-cpp"><span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">&lt;iostream&gt;</span>
+<span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">&lt;string&gt;</span>
 
-<span style="color: #9d0006;">using</span> <span style="color: #9d0006;">namespace</span> <span style="color: #8f3f71;">std</span>;
+<span style="color: #51afef;">using</span> <span style="color: #51afef;">namespace</span> <span style="color: #a9a1e1;">std</span>;
 
-<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">A</span> {
-<span style="color: #9d0006;">public</span>:
-  <span style="color: #9d0006;">virtual</span> <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() { cout &lt;&lt; <span style="color: #79740e;">"A print"</span> &lt;&lt; endl; }
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">A</span> {
+<span style="color: #51afef;">public</span>:
+  <span style="color: #51afef;">virtual</span> <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() { cout &lt;&lt; <span style="color: #98be65;">"A print"</span> &lt;&lt; endl; }
 };
 
-<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">B</span> : <span style="color: #9d0006;">public</span> <span style="color: #8f3f71;">A</span> {
-<span style="color: #9d0006;">public</span>:
-  <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() { cout &lt;&lt; <span style="color: #79740e;">"B print"</span> &lt;&lt; endl; }
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">B</span> : <span style="color: #51afef;">public</span> <span style="color: #ECBE7B;">A</span> {
+<span style="color: #51afef;">public</span>:
+  <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() { cout &lt;&lt; <span style="color: #98be65;">"B print"</span> &lt;&lt; endl; }
 };
 
-<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">C</span> : <span style="color: #9d0006;">public</span> <span style="color: #8f3f71;">A</span> {
-<span style="color: #9d0006;">public</span>:
-  <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() { cout &lt;&lt; <span style="color: #79740e;">"C print"</span> &lt;&lt; endl; }
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">C</span> : <span style="color: #51afef;">public</span> <span style="color: #ECBE7B;">A</span> {
+<span style="color: #51afef;">public</span>:
+  <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() { cout &lt;&lt; <span style="color: #98be65;">"C print"</span> &lt;&lt; endl; }
 };
 
-<span style="color: #8f3f71;">int</span> <span style="color: #b57614;">main</span>() {
-  <span style="color: #8f3f71;">A</span> *<span style="color: #076678;">a</span>;
-  a = <span style="color: #9d0006;">new</span> <span style="color: #8f3f71;">B</span>;
+<span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span>() {
+  <span style="color: #ECBE7B;">A</span> *<span style="color: #dcaeea;">a</span>;
+  a = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">B</span>;
   a-&gt;print();
-  a = <span style="color: #9d0006;">new</span> <span style="color: #8f3f71;">C</span>;
+  a = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">C</span>;
   a-&gt;print();
 }
 </pre>
@@ -144,16 +144,16 @@ C print
 </div>
 </div>
 
-<div id="outline-container-orgace84cd" class="outline-2">
-<h2 id="orgace84cd">其他说明</h2>
-<div class="outline-text-2" id="text-orgace84cd">
+<div id="outline-container-org66bf1a3" class="outline-2">
+<h2 id="org66bf1a3">其他说明</h2>
+<div class="outline-text-2" id="text-org66bf1a3">
 <p>
 其实虚函式为了实现C++中的多态，跟虚函数类似的一个C++术语叫做 <b><b>纯虚函数</b></b> ，其用于类似
 Java中接口方法的定义，只需要不实现具体的方法就可以啦，具体写法如下:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #9d0006;">virtual</span> <span style="color: #8f3f71;">void</span> <span style="color: #b57614;">print</span>() = 0;
+<pre class="src src-cpp"><span style="color: #51afef;">virtual</span> <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">print</span>() = 0;
 </pre>
 </div>
 
@@ -172,7 +172,7 @@ Java中接口方法的定义，只需要不实现具体的方法就可以啦，�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-17 Fri 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-01-25 Mon 15:36</p>
+<p class="date">Created: 2021-02-11 Thu 01:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
