@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-<!-- 2021-02-21 Sun 15:20 -->
-=======
-<!-- 2021-02-11 Thu 01:11 -->
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<!-- 2021-02-21 Sun 15:23 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -26,207 +22,173 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga9afe46">第一章-操作系统概述</a>
+<li><a href="#orgb7b07be">第一章-操作系统概述</a>
 <ul>
-<li><a href="#org0106d28">操作系统分类</a>
+<li><a href="#org5c7bd21">操作系统分类</a>
 <ul>
-<li><a href="#orgb5e23bb">批处理操作系统</a>
+<li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<<<<<<< HEAD
-<li><a href="#org8ff6b0f">基本工作方式</a></li>
+<li><a href="#org124264c">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
-=======
-<li><a href="#org3645f31">基本工作方式</a></li>
-<li><a href="#org9538820">特点与分类</a></li>
-<li><a href="#orga5dd13c">SPOOLing技术</a></li>
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </ul>
 </li>
-<li><a href="#org248a2d6">分时系统</a>
+<li><a href="#org03dcbef">分时系统</a>
 <ul>
-<<<<<<< HEAD
-<li><a href="#org124264c">基本工作方式</a></li>
+<li><a href="#org47382b2">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
-=======
-<li><a href="#orgb505046">基本工作方式</a></li>
-<li><a href="#org7dfb7d9">设计思想</a></li>
-<li><a href="#org5371928">特点</a></li>
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </ul>
 </li>
-<li><a href="#orgc2bf0a0">实时操作系统</a></li>
-<li><a href="#orga28b678">嵌入式操作系统</a></li>
-<li><a href="#org90117f8">个人计算机操作系统</a></li>
-<li><a href="#org7d2c73f">网络操作系统</a></li>
-<li><a href="#org80064fe">分布式操作系统</a></li>
+<li><a href="#org03c31e6">实时操作系统</a></li>
+<li><a href="#orgd5ceaf6">嵌入式操作系统</a></li>
+<li><a href="#orgd04bf33">个人计算机操作系统</a></li>
+<li><a href="#org7eb4afc">网络操作系统</a></li>
+<li><a href="#org303c451">分布式操作系统</a></li>
 </ul>
 </li>
-<li><a href="#orgfc8ed4e">操作系统设计</a>
+<li><a href="#org1482ae6">操作系统设计</a>
 <ul>
-<li><a href="#org92fd97e">操作系统的设计过程</a></li>
-<li><a href="#org6b70d16">操作系统的设计目标</a></li>
-<li><a href="#orgb0ee7a5">操作系统的结构</a></li>
+<li><a href="#orgab5ee19">操作系统的设计过程</a></li>
+<li><a href="#orgf743597">操作系统的设计目标</a></li>
+<li><a href="#orgdcc68d4">操作系统的结构</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga94d9ca">第二章-操作系统运行环境</a>
+<li><a href="#orgb14baef">第二章-操作系统运行环境</a>
 <ul>
-<li><a href="#org6af8649">处理器</a>
+<li><a href="#orgb833c61">处理器</a>
 <ul>
-<li><a href="#orgeb903cb">处理器的构成与基本工作方式</a>
+<li><a href="#org5e7cfb5">处理器的构成与基本工作方式</a>
 <ul>
-<li><a href="#orga11b1da">处理器中的寄存器</a></li>
-<li><a href="#orge9f9509">指令执行的基本过程</a></li>
+<li><a href="#orge80f980">处理器中的寄存器</a></li>
+<li><a href="#orgd49ca6c">指令执行的基本过程</a></li>
 </ul>
 </li>
-<li><a href="#org659cfb3">特权指令</a></li>
-<li><a href="#orged344e6">非特权指令</a></li>
-<li><a href="#org6a66d77">处理器工作状态</a>
+<li><a href="#orgbfc97fd">特权指令</a></li>
+<li><a href="#orgdb46976">非特权指令</a></li>
+<li><a href="#orgff86aa5">处理器工作状态</a>
 <ul>
-<li><a href="#org7206ba7">管态和目态</a></li>
-<li><a href="#org8a515ac">处理器工作状态的转换</a></li>
-<li><a href="#org4e411fd">限制用户程序执行特权指令</a></li>
+<li><a href="#orga2d4601">管态和目态</a></li>
+<li><a href="#org66ec0ce">处理器工作状态的转换</a></li>
+<li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<<<<<<< HEAD
-<li><a href="#orgb4cbd11">程序状态字(PSW)</a></li>
-=======
-<li><a href="#org75e90ed">程序状态字(PSW)</a></li>
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<li><a href="#org2567459">程序状态字(PSW)</a></li>
 </ul>
 </li>
-<li><a href="#org5be93cb">计算机系统硬件部件</a>
+<li><a href="#org2cbeff3">计算机系统硬件部件</a>
 <ul>
-<li><a href="#org2fe6b5e">存储系统</a>
+<li><a href="#org1ef5291">存储系统</a>
 <ul>
-<li><a href="#org874ccfc">存储器的类型</a></li>
-<li><a href="#orga93f06b">存储分块</a></li>
-<li><a href="#orga6b04ae">存储器的层次结构</a></li>
+<li><a href="#org354fef2">存储器的类型</a></li>
+<li><a href="#orge88bd29">存储分块</a></li>
+<li><a href="#org991e6ac">存储器的层次结构</a></li>
 </ul>
 </li>
-<li><a href="#org6875db9">I/O部件</a>
+<li><a href="#org267eb70">I/O部件</a>
 <ul>
-<li><a href="#org68ebdf0">I/O结构</a></li>
-<li><a href="#org3c4ba80">通道</a></li>
-<li><a href="#org4fd3de0">DMA(Direct Memory Access)技术</a></li>
-<li><a href="#org3f1b362">缓冲技术</a></li>
+<li><a href="#orgfd7321b">I/O结构</a></li>
+<li><a href="#orgb85afcc">通道</a></li>
+<li><a href="#orgd7874d1">DMA(Direct Memory Access)技术</a></li>
+<li><a href="#org5a88595">缓冲技术</a></li>
 </ul>
 </li>
-<li><a href="#orga7ec176">时钟部件</a>
+<li><a href="#orgd54d5d4">时钟部件</a>
 <ul>
-<li><a href="#org802047a">硬件时钟</a></li>
-<li><a href="#orgca67e96">软件时钟</a></li>
-<li><a href="#org5e7bf1f">两种时钟的对比</a></li>
+<li><a href="#org56c56c1">硬件时钟</a></li>
+<li><a href="#org55b4707">软件时钟</a></li>
+<li><a href="#org04f583a">两种时钟的对比</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org54575ee">中断机制</a>
+<li><a href="#org287d35a">中断机制</a>
 <ul>
-<li><a href="#orgb110630">中断与异常的概念</a>
+<li><a href="#orgcd214bb">中断与异常的概念</a>
 <ul>
-<li><a href="#org29a62bc">中断与异常</a></li>
-<li><a href="#org4b072b5">中断与异常的分类</a></li>
+<li><a href="#orge5d2f08">中断与异常</a></li>
+<li><a href="#orgcf31cb6">中断与异常的分类</a></li>
 </ul>
 </li>
-<li><a href="#org5477bb2">中断系统</a>
+<li><a href="#orgc7d2922">中断系统</a>
 <ul>
-<li><a href="#org43a0feb">中断请求的接收</a></li>
-<li><a href="#org4ba9e7e">中断响应</a></li>
-<li><a href="#org554c1df">中断处理</a></li>
-<li><a href="#org7993ae0">几种典型中断的处理</a></li>
+<li><a href="#org4d3bb76">中断请求的接收</a></li>
+<li><a href="#org0602ae0">中断响应</a></li>
+<li><a href="#org41580b3">中断处理</a></li>
+<li><a href="#org0a66425">几种典型中断的处理</a></li>
 </ul>
 </li>
-<li><a href="#org64e8ccc">中断优先级、中断屏蔽与中断嵌套</a>
+<li><a href="#orgd26c55a">中断优先级、中断屏蔽与中断嵌套</a>
 <ul>
-<li><a href="#org270c2a2">多级中断和中断优先级</a></li>
+<li><a href="#org5984e5b">多级中断和中断优先级</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org9d98644">系统调用</a>
+<li><a href="#org9a19104">系统调用</a>
 <ul>
-<li><a href="#org4d887d5">系统调用与函数调用的区别</a></li>
-<li><a href="#orge77de23">系统调用的分类</a></li>
-<li><a href="#org25fea95">系统调用与库函数、API、内核函数的关系</a></li>
+<li><a href="#org3d77efc">系统调用与函数调用的区别</a></li>
+<li><a href="#org01b3068">系统调用的分类</a></li>
+<li><a href="#org3c40de9">系统调用与库函数、API、内核函数的关系</a></li>
 </ul>
 </li>
-<li><a href="#org157d4f5">系统调用的处理过程</a>
+<li><a href="#orgc6c8b1f">系统调用的处理过程</a>
 <ul>
-<li><a href="#org1af7dcf">基本原理</a></li>
-<li><a href="#orge6bf1c9">具体实现</a></li>
+<li><a href="#orgd53c3d4">基本原理</a></li>
+<li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<<<<<<< HEAD
-<li><a href="#org3c93694">思考题与练习题</a></li>
-=======
-<li><a href="#orgca43c49">思考题与练习题</a></li>
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<li><a href="#org9b98715">思考题与练习题</a></li>
 </ul>
 </li>
-<li><a href="#org3fc2dd0">第三章-进程与线程</a>
+<li><a href="#org295dfb3">第三章-进程与线程</a>
 <ul>
-<li><a href="#orgba5fc2c">多道程序设计</a>
+<li><a href="#orgd38f44f">多道程序设计</a>
 <ul>
-<li><a href="#org4eae53e">程序的顺序执行</a></li>
+<li><a href="#org74f7ef7">程序的顺序执行</a></li>
 </ul>
 </li>
-<<<<<<< HEAD
 <li><a href="#orgf641927">进程</a></li>
 <li><a href="#org663d895">线程</a></li>
 <li><a href="#orgd605793">进程调度</a></li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org9b98715">思考题与练习题</a></li>
-=======
-<li><a href="#org2a80bd0">进程</a></li>
-<li><a href="#orgc759a41">线程</a></li>
-<li><a href="#org11791c5">进程调度</a></li>
-<li><a href="#org33edb62">系统内核</a></li>
-<li><a href="#orgf3c5fa7">思考题与练习题</a></li>
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<li><a href="#orga23ce7a">思考题与练习题</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga9afe46" class="outline-2">
-<h2 id="orga9afe46">第一章-操作系统概述</h2>
-<div class="outline-text-2" id="text-orga9afe46">
+<div id="outline-container-orgb7b07be" class="outline-2">
+<h2 id="orgb7b07be">第一章-操作系统概述</h2>
+<div class="outline-text-2" id="text-orgb7b07be">
 </div>
-<div id="outline-container-org0106d28" class="outline-3">
-<h3 id="org0106d28">操作系统分类</h3>
-<div class="outline-text-3" id="text-org0106d28">
+<div id="outline-container-org5c7bd21" class="outline-3">
+<h3 id="org5c7bd21">操作系统分类</h3>
+<div class="outline-text-3" id="text-org5c7bd21">
 <p>
 操作系统从早期到如今发展了很久，下面介绍从早到如今的操作系统类别
 </p>
 </div>
-<div id="outline-container-orgb5e23bb" class="outline-4">
-<h4 id="orgb5e23bb">批处理操作系统</h4>
-<div class="outline-text-4" id="text-orgb5e23bb">
+<div id="outline-container-orgc87582e" class="outline-4">
+<h4 id="orgc87582e">批处理操作系统</h4>
+<div class="outline-text-4" id="text-orgc87582e">
 <p>
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<<<<<<< HEAD
-<div id="outline-container-org8ff6b0f" class="outline-5">
-<h5 id="org8ff6b0f">基本工作方式</h5>
-<div class="outline-text-5" id="text-org8ff6b0f">
-=======
-<div id="outline-container-org3645f31" class="outline-5">
-<h5 id="org3645f31">基本工作方式</h5>
-<div class="outline-text-5" id="text-org3645f31">
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<div id="outline-container-org124264c" class="outline-5">
+<h5 id="org124264c">基本工作方式</h5>
+<div class="outline-text-5" id="text-org124264c">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
 </div>
 </div>
-<div id="outline-container-org9538820" class="outline-5">
-<h5 id="org9538820">特点与分类</h5>
-<div class="outline-text-5" id="text-org9538820">
+<div id="outline-container-orgc717034" class="outline-5">
+<h5 id="orgc717034">特点与分类</h5>
+<div class="outline-text-5" id="text-orgc717034">
 <p>
 成批处理。
 </p>
@@ -244,9 +206,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orga5dd13c" class="outline-5">
-<h5 id="orga5dd13c">SPOOLing技术</h5>
-<div class="outline-text-5" id="text-orga5dd13c">
+<div id="outline-container-org1dabbde" class="outline-5">
+<h5 id="org1dabbde">SPOOLing技术</h5>
+<div class="outline-text-5" id="text-org1dabbde">
 <p>
 为了提高硬件资源的利用率，人们在监控程序中间引入了缓冲技术和多道程序设计的概念。使得简单的批处理系统发展为更为高级的多道批处理系统。
 </p>
@@ -257,38 +219,32 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 </div>
 </div>
 </div>
-<div id="outline-container-org248a2d6" class="outline-4">
-<h4 id="org248a2d6">分时系统</h4>
-<div class="outline-text-4" id="text-org248a2d6">
+<div id="outline-container-org03dcbef" class="outline-4">
+<h4 id="org03dcbef">分时系统</h4>
+<div class="outline-text-4" id="text-org03dcbef">
 <p>
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<<<<<<< HEAD
-<div id="outline-container-org124264c" class="outline-5">
-<h5 id="org124264c">基本工作方式</h5>
-<div class="outline-text-5" id="text-org124264c">
-=======
-<div id="outline-container-orgb505046" class="outline-5">
-<h5 id="orgb505046">基本工作方式</h5>
-<div class="outline-text-5" id="text-orgb505046">
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<div id="outline-container-org47382b2" class="outline-5">
+<h5 id="org47382b2">基本工作方式</h5>
+<div class="outline-text-5" id="text-org47382b2">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
 </div>
 </div>
-<div id="outline-container-org7dfb7d9" class="outline-5">
-<h5 id="org7dfb7d9">设计思想</h5>
-<div class="outline-text-5" id="text-org7dfb7d9">
+<div id="outline-container-orga3617cf" class="outline-5">
+<h5 id="orga3617cf">设计思想</h5>
+<div class="outline-text-5" id="text-orga3617cf">
 <p>
 分时操作系统将处理器运行时间划分为多个小片段，称为时间片。每个时间片极快，处理器将会依次处理这些时间片的命令，由于速度极快，用户通常无法感受到卡顿。
 </p>
 </div>
 </div>
-<div id="outline-container-org5371928" class="outline-5">
-<h5 id="org5371928">特点</h5>
-<div class="outline-text-5" id="text-org5371928">
+<div id="outline-container-orgcc294e8" class="outline-5">
+<h5 id="orgcc294e8">特点</h5>
+<div class="outline-text-5" id="text-orgcc294e8">
 <p>
 交互性，“独占”性，及时性，多路性
 </p>
@@ -306,9 +262,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 </div>
 </div>
 </div>
-<div id="outline-container-orgc2bf0a0" class="outline-4">
-<h4 id="orgc2bf0a0">实时操作系统</h4>
-<div class="outline-text-4" id="text-orgc2bf0a0">
+<div id="outline-container-org03c31e6" class="outline-4">
+<h4 id="org03c31e6">实时操作系统</h4>
+<div class="outline-text-4" id="text-org03c31e6">
 <p>
 RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其使计算机在规定时间内，及时响应外部事件的请求，同时完成对该事件的处理，并且能够控制所有实时设备和实时人物协调一致地工作。
 实时操作系统是较少有人为干预的监督和控制系统
@@ -358,9 +314,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </ul>
 </div>
 </div>
-<div id="outline-container-orga28b678" class="outline-4">
-<h4 id="orga28b678">嵌入式操作系统</h4>
-<div class="outline-text-4" id="text-orga28b678">
+<div id="outline-container-orgd5ceaf6" class="outline-4">
+<h4 id="orgd5ceaf6">嵌入式操作系统</h4>
+<div class="outline-text-4" id="text-orgd5ceaf6">
 <p>
 嵌入式操作系统运行在嵌入式芯片环境中。
 其优点是:
@@ -379,9 +335,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </div>
-<div id="outline-container-org90117f8" class="outline-4">
-<h4 id="org90117f8">个人计算机操作系统</h4>
-<div class="outline-text-4" id="text-org90117f8">
+<div id="outline-container-orgd04bf33" class="outline-4">
+<h4 id="orgd04bf33">个人计算机操作系统</h4>
+<div class="outline-text-4" id="text-orgd04bf33">
 <p>
 个人计算机操作系统(Personal Computer OPertaing System)，是一种单用户多任务的操作系统。
 其特点是:
@@ -393,9 +349,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </ul>
 </div>
 </div>
-<div id="outline-container-org7d2c73f" class="outline-4">
-<h4 id="org7d2c73f">网络操作系统</h4>
-<div class="outline-text-4" id="text-org7d2c73f">
+<div id="outline-container-org7eb4afc" class="outline-4">
+<h4 id="org7eb4afc">网络操作系统</h4>
+<div class="outline-text-4" id="text-org7eb4afc">
 <p>
 网络操作系统(Network Operating System)基于计算机网络。
 用于将计算机网络上的各个计算机连接，目的是互相通信，资源共享。
@@ -415,9 +371,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </div>
-<div id="outline-container-org80064fe" class="outline-4">
-<h4 id="org80064fe">分布式操作系统</h4>
-<div class="outline-text-4" id="text-org80064fe">
+<div id="outline-container-org303c451" class="outline-4">
+<h4 id="org303c451">分布式操作系统</h4>
+<div class="outline-text-4" id="text-org303c451">
 <p>
 分布式操作系统(Distributed System)由大量计算机通过网络连结起来。
 特点:
@@ -433,9 +389,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </div>
 </div>
 
-<div id="outline-container-orgfc8ed4e" class="outline-3">
-<h3 id="orgfc8ed4e">操作系统设计</h3>
-<div class="outline-text-3" id="text-orgfc8ed4e">
+<div id="outline-container-org1482ae6" class="outline-3">
+<h3 id="org1482ae6">操作系统设计</h3>
+<div class="outline-text-3" id="text-org1482ae6">
 <p>
 本小节谈谈操作系统的设计开发所面临的问题，以及对操作系统的设计阶段、设计目标及结构设计做探讨。
 </p>
@@ -458,9 +414,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 由于操作系统的复杂性，研发周期会随之变长。</li>
 </ol>
 </div>
-<div id="outline-container-org92fd97e" class="outline-4">
-<h4 id="org92fd97e">操作系统的设计过程</h4>
-<div class="outline-text-4" id="text-org92fd97e">
+<div id="outline-container-orgab5ee19" class="outline-4">
+<h4 id="orgab5ee19">操作系统的设计过程</h4>
+<div class="outline-text-4" id="text-orgab5ee19">
 <p>
 由三个过程涵盖，并且每方面是互相渗透，不能截然分开。
 </p>
@@ -474,17 +430,17 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </ol>
 </div>
 </div>
-<div id="outline-container-org6b70d16" class="outline-4">
-<h4 id="org6b70d16">操作系统的设计目标</h4>
-<div class="outline-text-4" id="text-org6b70d16">
+<div id="outline-container-orgf743597" class="outline-4">
+<h4 id="orgf743597">操作系统的设计目标</h4>
+<div class="outline-text-4" id="text-orgf743597">
 <p>
 作了解即可。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb0ee7a5" class="outline-4">
-<h4 id="orgb0ee7a5">操作系统的结构</h4>
-<div class="outline-text-4" id="text-orgb0ee7a5">
+<div id="outline-container-orgdcc68d4" class="outline-4">
+<h4 id="orgdcc68d4">操作系统的结构</h4>
+<div class="outline-text-4" id="text-orgdcc68d4">
 <p>
 作了解即可。
 </p>
@@ -492,17 +448,17 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </div>
 </div>
 </div>
-<div id="outline-container-orga94d9ca" class="outline-2">
-<h2 id="orga94d9ca">第二章-操作系统运行环境</h2>
-<div class="outline-text-2" id="text-orga94d9ca">
+<div id="outline-container-orgb14baef" class="outline-2">
+<h2 id="orgb14baef">第二章-操作系统运行环境</h2>
+<div class="outline-text-2" id="text-orgb14baef">
 </div>
-<div id="outline-container-org6af8649" class="outline-3">
-<h3 id="org6af8649">处理器</h3>
-<div class="outline-text-3" id="text-org6af8649">
+<div id="outline-container-orgb833c61" class="outline-3">
+<h3 id="orgb833c61">处理器</h3>
+<div class="outline-text-3" id="text-orgb833c61">
 </div>
-<div id="outline-container-orgeb903cb" class="outline-4">
-<h4 id="orgeb903cb">处理器的构成与基本工作方式</h4>
-<div class="outline-text-4" id="text-orgeb903cb">
+<div id="outline-container-org5e7cfb5" class="outline-4">
+<h4 id="org5e7cfb5">处理器的构成与基本工作方式</h4>
+<div class="outline-text-4" id="text-org5e7cfb5">
 <table>
 
 
@@ -541,34 +497,34 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </table>
 </div>
 
-<div id="outline-container-orga11b1da" class="outline-5">
-<h5 id="orga11b1da">处理器中的寄存器</h5>
-<div class="outline-text-5" id="text-orga11b1da">
+<div id="outline-container-orge80f980" class="outline-5">
+<h5 id="orge80f980">处理器中的寄存器</h5>
+<div class="outline-text-5" id="text-orge80f980">
 </div>
 <ul class="org-ul">
-<li><a id="org1bb70ed"></a>可见寄存器<br>
-<div class="outline-text-6" id="text-org1bb70ed">
+<li><a id="org30f4780"></a>可见寄存器<br>
+<div class="outline-text-6" id="text-org30f4780">
 <p>
 常由编译器使用，其通过具体算法的分配使用寄存器，作用是最大限度减少程序运行时访问内存储器的次数
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org26c43c9"></a>数据寄存器(Data Register)<br>
-<div class="outline-text-7" id="text-org26c43c9">
+<li><a id="org7c37f24"></a>数据寄存器(Data Register)<br>
+<div class="outline-text-7" id="text-org7c37f24">
 <p>
 可称为通用寄存器，用处是算数逻辑执行和访存指令
 </p>
 </div>
 </li>
-<li><a id="org13af733"></a>地址寄存器(Address Register)<br>
-<div class="outline-text-7" id="text-org13af733">
+<li><a id="org0eb927a"></a>地址寄存器(Address Register)<br>
+<div class="outline-text-7" id="text-org0eb927a">
 <p>
 存储数据及指令的物理地址、线性地址或有效地址，以及特殊方式的寻址
 </p>
 </div>
 </li>
-<li><a id="orga538f8f"></a>条件码寄存器<br>
-<div class="outline-text-7" id="text-orga538f8f">
+<li><a id="org3893df3"></a>条件码寄存器<br>
+<div class="outline-text-7" id="text-org3893df3">
 <p>
 保存处理器操作结果的标记位。
 </p>
@@ -576,35 +532,30 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </li>
 </ul>
 </li>
-<li><a id="org651650d"></a>控制和状态寄存器<br>
-<div class="outline-text-6" id="text-org651650d">
+<li><a id="orgc32bfa7"></a>控制和状态寄存器<br>
+<div class="outline-text-6" id="text-orgc32bfa7">
 <p>
 控制处理器的操作，由具有特权的操作系统代码使用，以控制其他程序的执行
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgf408f4e"></a>程序计数器(Program Counter,PC)<br>
-<div class="outline-text-7" id="text-orgf408f4e">
+<li><a id="org4832e8c"></a>程序计数器(Program Counter,PC)<br>
+<div class="outline-text-7" id="text-org4832e8c">
 <p>
 较为常见的控制和状态寄存器
 主要用于记录要取出指令的地址
 </p>
 </div>
 </li>
-<li><a id="org252b6e6"></a>指令寄存器(Instruction Register,IR)<br>
-<div class="outline-text-7" id="text-org252b6e6">
+<li><a id="orgac468de"></a>指令寄存器(Instruction Register,IR)<br>
+<div class="outline-text-7" id="text-orgac468de">
 <p>
 存储最近取出的指令
 </p>
 </div>
 </li>
-<<<<<<< HEAD
-<li><a id="org055e39a"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org055e39a">
-=======
-<li><a id="orgbd52b7d"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-orgbd52b7d">
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<li><a id="orgb4cbd11"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-orgb4cbd11">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -614,9 +565,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </li>
 </ul>
 </div>
-<div id="outline-container-orge9f9509" class="outline-5">
-<h5 id="orge9f9509">指令执行的基本过程</h5>
-<div class="outline-text-5" id="text-orge9f9509">
+<div id="outline-container-orgd49ca6c" class="outline-5">
+<h5 id="orgd49ca6c">指令执行的基本过程</h5>
+<div class="outline-text-5" id="text-orgd49ca6c">
 <p>
 两个步骤:
 </p>
@@ -645,9 +596,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </div>
 </div>
 </div>
-<div id="outline-container-org659cfb3" class="outline-4">
-<h4 id="org659cfb3">特权指令</h4>
-<div class="outline-text-4" id="text-org659cfb3">
+<div id="outline-container-orgbfc97fd" class="outline-4">
+<h4 id="orgbfc97fd">特权指令</h4>
+<div class="outline-text-4" id="text-orgbfc97fd">
 <ul class="org-ul">
 <li>解释
 只能由操作系统使用的指令。</li>
@@ -657,21 +608,21 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </div>
 </div>
 
-<div id="outline-container-orged344e6" class="outline-4">
-<h4 id="orged344e6">非特权指令</h4>
-<div class="outline-text-4" id="text-orged344e6">
+<div id="outline-container-orgdb46976" class="outline-4">
+<h4 id="orgdb46976">非特权指令</h4>
+<div class="outline-text-4" id="text-orgdb46976">
 <p>
 操作系统和用户程序都能使用的指令。
 </p>
 </div>
 </div>
-<div id="outline-container-org6a66d77" class="outline-4">
-<h4 id="org6a66d77">处理器工作状态</h4>
-<div class="outline-text-4" id="text-org6a66d77">
+<div id="outline-container-orgff86aa5" class="outline-4">
+<h4 id="orgff86aa5">处理器工作状态</h4>
+<div class="outline-text-4" id="text-orgff86aa5">
 </div>
-<div id="outline-container-org7206ba7" class="outline-5">
-<h5 id="org7206ba7">管态和目态</h5>
-<div class="outline-text-5" id="text-org7206ba7">
+<div id="outline-container-orga2d4601" class="outline-5">
+<h5 id="orga2d4601">管态和目态</h5>
+<div class="outline-text-5" id="text-orga2d4601">
 <ul class="org-ul">
 <li>管态
 指OS管理程序运行的状态，有较高的特权级别
@@ -697,9 +648,9 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </ul>
 </div>
 </div>
-<div id="outline-container-org8a515ac" class="outline-5">
-<h5 id="org8a515ac">处理器工作状态的转换</h5>
-<div class="outline-text-5" id="text-org8a515ac">
+<div id="outline-container-org66ec0ce" class="outline-5">
+<h5 id="org66ec0ce">处理器工作状态的转换</h5>
+<div class="outline-text-5" id="text-org66ec0ce">
 <ul class="org-ul">
 <li>目态到管态的转换
 通过中断实现。中断响应时交换中断向量，随后将新的中断向量的PSW(程序状态字)的CPU状态位标志为管态。</li>
@@ -711,24 +662,18 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </ul>
 </div>
 </div>
-<div id="outline-container-org4e411fd" class="outline-5">
-<h5 id="org4e411fd">限制用户程序执行特权指令</h5>
-<div class="outline-text-5" id="text-org4e411fd">
+<div id="outline-container-org4248a69" class="outline-5">
+<h5 id="org4248a69">限制用户程序执行特权指令</h5>
+<div class="outline-text-5" id="text-org4248a69">
 <p>
 当CPU处理用户程序时，应当在目态下工作，若出现意外用户程序取得特权指令，CPU会拒绝执行，并触发“非法操作”事件，随中断机制捕获该事件后，转交至OS处理，例如由OS通知用户程序：“程序中有非法指令”
 </p>
 </div>
 </div>
 </div>
-<<<<<<< HEAD
-<div id="outline-container-orgb4cbd11" class="outline-4">
-<h4 id="orgb4cbd11">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-orgb4cbd11">
-=======
-<div id="outline-container-org75e90ed" class="outline-4">
-<h4 id="org75e90ed">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org75e90ed">
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<div id="outline-container-org2567459" class="outline-4">
+<h4 id="org2567459">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org2567459">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -765,17 +710,17 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 </div>
 </div>
 </div>
-<div id="outline-container-org5be93cb" class="outline-3">
-<h3 id="org5be93cb">计算机系统硬件部件</h3>
-<div class="outline-text-3" id="text-org5be93cb">
+<div id="outline-container-org2cbeff3" class="outline-3">
+<h3 id="org2cbeff3">计算机系统硬件部件</h3>
+<div class="outline-text-3" id="text-org2cbeff3">
 </div>
-<div id="outline-container-org2fe6b5e" class="outline-4">
-<h4 id="org2fe6b5e">存储系统</h4>
-<div class="outline-text-4" id="text-org2fe6b5e">
+<div id="outline-container-org1ef5291" class="outline-4">
+<h4 id="org1ef5291">存储系统</h4>
+<div class="outline-text-4" id="text-org1ef5291">
 </div>
-<div id="outline-container-org874ccfc" class="outline-5">
-<h5 id="org874ccfc">存储器的类型</h5>
-<div class="outline-text-5" id="text-org874ccfc">
+<div id="outline-container-org354fef2" class="outline-5">
+<h5 id="org354fef2">存储器的类型</h5>
+<div class="outline-text-5" id="text-org354fef2">
 <ul class="org-ul">
 <li>RAM(Random Access Memory随机访问内存)
 随时可写可读的存储器，主要作用是存储需要随机存取的程序的数据</li>
@@ -788,9 +733,9 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 </ul>
 </div>
 </div>
-<div id="outline-container-orga93f06b" class="outline-5">
-<h5 id="orga93f06b">存储分块</h5>
-<div class="outline-text-5" id="text-orga93f06b">
+<div id="outline-container-orge88bd29" class="outline-5">
+<h5 id="orge88bd29">存储分块</h5>
+<div class="outline-text-5" id="text-orge88bd29">
 <dl class="org-dl">
 <dt>二进制位</dt><dd>存储数据最小单位
 0/1</dd>
@@ -804,9 +749,9 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 </p>
 </div>
 </div>
-<div id="outline-container-orga6b04ae" class="outline-5">
-<h5 id="orga6b04ae">存储器的层次结构</h5>
-<div class="outline-text-5" id="text-orga6b04ae">
+<div id="outline-container-org991e6ac" class="outline-5">
+<h5 id="org991e6ac">存储器的层次结构</h5>
+<div class="outline-text-5" id="text-org991e6ac">
 <p>
 设计存储器的三个考虑要点:
 </p>
@@ -817,15 +762,15 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 </ul>
 </div>
 <ul class="org-ul">
-<li><a id="orgb552957"></a>容量、速度和成本的匹配<br>
-<div class="outline-text-6" id="text-orgb552957">
+<li><a id="org04f9699"></a>容量、速度和成本的匹配<br>
+<div class="outline-text-6" id="text-org04f9699">
 <p>
 容量、速度、成本这三者无法兼得，容量大，速度慢，成本低，速度快，容量小，成本高。
 </p>
 </div>
 </li>
-<li><a id="org0113372"></a>存储访问局部性原理<br>
-<div class="outline-text-6" id="text-org0113372">
+<li><a id="org8924544"></a>存储访问局部性原理<br>
+<div class="outline-text-6" id="text-org8924544">
 <p>
 由于现代程序设计技术大量采用程序代码复用，所以一旦进入这些程序段，OS就会存取相同的指令集合。
 总的来说就是速度快的存储器，CPU更愿意使用它，因为这样更快。
@@ -834,8 +779,8 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 </p>
 </div>
 </li>
-<li><a id="org7ca7998"></a>存储器保护<br>
-<div class="outline-text-6" id="text-org7ca7998">
+<li><a id="org8af080c"></a>存储器保护<br>
+<div class="outline-text-6" id="text-org8af080c">
 <p>
 为了防止数据安全，健全性，必须实现存储保护，并且存储保护必须会有硬件的支持。
 常见的存储保护技术:
@@ -851,13 +796,13 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 </ul>
 </div>
 </div>
-<div id="outline-container-org6875db9" class="outline-4">
-<h4 id="org6875db9">I/O部件</h4>
-<div class="outline-text-4" id="text-org6875db9">
+<div id="outline-container-org267eb70" class="outline-4">
+<h4 id="org267eb70">I/O部件</h4>
+<div class="outline-text-4" id="text-org267eb70">
 </div>
-<div id="outline-container-org68ebdf0" class="outline-5">
-<h5 id="org68ebdf0">I/O结构</h5>
-<div class="outline-text-5" id="text-org68ebdf0">
+<div id="outline-container-orgfd7321b" class="outline-5">
+<h5 id="orgfd7321b">I/O结构</h5>
+<div class="outline-text-5" id="text-orgfd7321b">
 <ul class="org-ul">
 <li>原理
 一台计算机有大量的外部设备，这些设备会进行I/O操作，为了对这些设备进行控制，提高处理器与外部设备的运行效率，出现各种不同的I/O硬件结构。
@@ -867,9 +812,9 @@ CPU为了处理I/O设备控制器的请求，必须花费时间轮询它们，�
 </ul>
 </div>
 </div>
-<div id="outline-container-org3c4ba80" class="outline-5">
-<h5 id="org3c4ba80">通道</h5>
-<div class="outline-text-5" id="text-org3c4ba80">
+<div id="outline-container-orgb85afcc" class="outline-5">
+<h5 id="orgb85afcc">通道</h5>
+<div class="outline-text-5" id="text-orgb85afcc">
 <p>
 通道主要在大型机系统上使用，其原理:
 </p>
@@ -886,9 +831,9 @@ CPU按照程序执行顺序依次执行指令，若执行到启动I/O指令时�
 </ul>
 </div>
 </div>
-<div id="outline-container-org4fd3de0" class="outline-5">
-<h5 id="org4fd3de0">DMA(Direct Memory Access)技术</h5>
-<div class="outline-text-5" id="text-org4fd3de0">
+<div id="outline-container-orgd7874d1" class="outline-5">
+<h5 id="orgd7874d1">DMA(Direct Memory Access)技术</h5>
+<div class="outline-text-5" id="text-orgd7874d1">
 <ul class="org-ul">
 <li>原理
 DMA技术将数据成块的在内存和外部设备之间传输，例如当处理器需要读写一整块数据时，DMA控制单元发送命令，命令包含了外部设备的编址，需要读写的内存编址以及传输的数据长度，是否请求一次读或写等信息。
@@ -900,9 +845,9 @@ DMA技术将数据成块的在内存和外部设备之间传输，例如当处�
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f1b362" class="outline-5">
-<h5 id="org3f1b362">缓冲技术</h5>
-<div class="outline-text-5" id="text-org3f1b362">
+<div id="outline-container-org5a88595" class="outline-5">
+<h5 id="org5a88595">缓冲技术</h5>
+<div class="outline-text-5" id="text-org5a88595">
 <ul class="org-ul">
 <li>用途
 <ul class="org-ul">
@@ -917,9 +862,9 @@ CPU处理速度与设备传输速度不相匹配。</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orga7ec176" class="outline-4">
-<h4 id="orga7ec176">时钟部件</h4>
-<div class="outline-text-4" id="text-orga7ec176">
+<div id="outline-container-orgd54d5d4" class="outline-4">
+<h4 id="orgd54d5d4">时钟部件</h4>
+<div class="outline-text-4" id="text-orgd54d5d4">
 <p>
 时钟部件的作用:
 </p>
@@ -932,9 +877,9 @@ CPU处理速度与设备传输速度不相匹配。</li>
 <li>记录用户和系统所需要的绝对时间，年月日。</li>
 </ul>
 </div>
-<div id="outline-container-org802047a" class="outline-5">
-<h5 id="org802047a">硬件时钟</h5>
-<div class="outline-text-5" id="text-org802047a">
+<div id="outline-container-org56c56c1" class="outline-5">
+<h5 id="org56c56c1">硬件时钟</h5>
+<div class="outline-text-5" id="text-org56c56c1">
 <p>
 主要用于绝对时间
 </p>
@@ -944,9 +889,9 @@ CPU处理速度与设备传输速度不相匹配。</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgca67e96" class="outline-5">
-<h5 id="orgca67e96">软件时钟</h5>
-<div class="outline-text-5" id="text-orgca67e96">
+<div id="outline-container-org55b4707" class="outline-5">
+<h5 id="org55b4707">软件时钟</h5>
+<div class="outline-text-5" id="text-org55b4707">
 <p>
 主要用于相对时间
 </p>
@@ -956,9 +901,9 @@ CPU处理速度与设备传输速度不相匹配。</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5e7bf1f" class="outline-5">
-<h5 id="org5e7bf1f">两种时钟的对比</h5>
-<div class="outline-text-5" id="text-org5e7bf1f">
+<div id="outline-container-org04f583a" class="outline-5">
+<h5 id="org04f583a">两种时钟的对比</h5>
+<div class="outline-text-5" id="text-org04f583a">
 <ul class="org-ul">
 <li>软件时钟(相对时钟)
 相对时钟只计算某一时间初值开始的一段时间间隔。</li>
@@ -969,25 +914,25 @@ CPU处理速度与设备传输速度不相匹配。</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org54575ee" class="outline-3">
-<h3 id="org54575ee">中断机制</h3>
-<div class="outline-text-3" id="text-org54575ee">
+<div id="outline-container-org287d35a" class="outline-3">
+<h3 id="org287d35a">中断机制</h3>
+<div class="outline-text-3" id="text-org287d35a">
 <p>
 这一节很重要。
 中断机制依赖硬件支持。
 </p>
 </div>
-<div id="outline-container-orgb110630" class="outline-4">
-<h4 id="orgb110630">中断与异常的概念</h4>
-<div class="outline-text-4" id="text-orgb110630">
+<div id="outline-container-orgcd214bb" class="outline-4">
+<h4 id="orgcd214bb">中断与异常的概念</h4>
+<div class="outline-text-4" id="text-orgcd214bb">
 </div>
-<div id="outline-container-org29a62bc" class="outline-5">
-<h5 id="org29a62bc">中断与异常</h5>
-<div class="outline-text-5" id="text-org29a62bc">
+<div id="outline-container-orge5d2f08" class="outline-5">
+<h5 id="orge5d2f08">中断与异常</h5>
+<div class="outline-text-5" id="text-orge5d2f08">
 </div>
 <ul class="org-ul">
-<li><a id="orgfc3a58a"></a>中断的概念<br>
-<div class="outline-text-6" id="text-orgfc3a58a">
+<li><a id="orgb490cd4"></a>中断的概念<br>
+<div class="outline-text-6" id="text-orgb490cd4">
 <ul class="org-ul">
 <li>中断的定义
 中断是指CPU对OS中或OS外发生的异常事件的响应。
@@ -1024,8 +969,8 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ul>
 </div>
 </li>
-<li><a id="orgb274c58"></a>异常<br>
-<div class="outline-text-6" id="text-orgb274c58">
+<li><a id="org8e34f70"></a>异常<br>
+<div class="outline-text-6" id="text-org8e34f70">
 <p>
 异常跟中断早期是一个概念，后来区分开来。
 异常是正在执行的指令引发的，而中断是由外部事件引发的。
@@ -1034,9 +979,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </li>
 </ul>
 </div>
-<div id="outline-container-org4b072b5" class="outline-5">
-<h5 id="org4b072b5">中断与异常的分类</h5>
-<div class="outline-text-5" id="text-org4b072b5">
+<div id="outline-container-orgcf31cb6" class="outline-5">
+<h5 id="orgcf31cb6">中断与异常的分类</h5>
+<div class="outline-text-5" id="text-orgcf31cb6">
 <p>
 典型的中断包括:
 </p>
@@ -1062,16 +1007,16 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org5477bb2" class="outline-4">
-<h4 id="org5477bb2">中断系统</h4>
-<div class="outline-text-4" id="text-org5477bb2">
+<div id="outline-container-orgc7d2922" class="outline-4">
+<h4 id="orgc7d2922">中断系统</h4>
+<div class="outline-text-4" id="text-orgc7d2922">
 <p>
 中断系统由硬件和软件结合，可把其分为两大组合: 中断系统的硬件中断装置和软件中断处理程序。
 </p>
 </div>
-<div id="outline-container-org43a0feb" class="outline-5">
-<h5 id="org43a0feb">中断请求的接收</h5>
-<div class="outline-text-5" id="text-org43a0feb">
+<div id="outline-container-org4d3bb76" class="outline-5">
+<h5 id="org4d3bb76">中断请求的接收</h5>
+<div class="outline-text-5" id="text-org4d3bb76">
 <p>
 中断系统通过硬件的中断逻辑线路和中断寄存器实现接受中断源的请求。
 </p>
@@ -1081,9 +1026,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ba9e7e" class="outline-5">
-<h5 id="org4ba9e7e">中断响应</h5>
-<div class="outline-text-5" id="text-org4ba9e7e">
+<div id="outline-container-org0602ae0" class="outline-5">
+<h5 id="org0602ae0">中断响应</h5>
+<div class="outline-text-5" id="text-org0602ae0">
 <p>
 简单来说分为五步
 </p>
@@ -1096,9 +1041,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org554c1df" class="outline-5">
-<h5 id="org554c1df">中断处理</h5>
-<div class="outline-text-5" id="text-org554c1df">
+<div id="outline-container-org41580b3" class="outline-5">
+<h5 id="org41580b3">中断处理</h5>
+<div class="outline-text-5" id="text-org41580b3">
 <p>
 中断处理程序工作步骤:
 </p>
@@ -1112,9 +1057,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org7993ae0" class="outline-5">
-<h5 id="org7993ae0">几种典型中断的处理</h5>
-<div class="outline-text-5" id="text-org7993ae0">
+<div id="outline-container-org0a66425" class="outline-5">
+<h5 id="org0a66425">几种典型中断的处理</h5>
+<div class="outline-text-5" id="text-org0a66425">
 <ol class="org-ol">
 <li>I/O中断
 由I/O设备控制器或通道发出，分为两类:
@@ -1133,17 +1078,17 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org64e8ccc" class="outline-4">
-<h4 id="org64e8ccc">中断优先级、中断屏蔽与中断嵌套</h4>
-<div class="outline-text-4" id="text-org64e8ccc">
+<div id="outline-container-orgd26c55a" class="outline-4">
+<h4 id="orgd26c55a">中断优先级、中断屏蔽与中断嵌套</h4>
+<div class="outline-text-4" id="text-orgd26c55a">
 </div>
-<div id="outline-container-org270c2a2" class="outline-5">
-<h5 id="org270c2a2">多级中断和中断优先级</h5>
-<div class="outline-text-5" id="text-org270c2a2">
+<div id="outline-container-org5984e5b" class="outline-5">
+<h5 id="org5984e5b">多级中断和中断优先级</h5>
+<div class="outline-text-5" id="text-org5984e5b">
 </div>
 <ul class="org-ul">
-<li><a id="org112127b"></a>多级中断<br>
-<div class="outline-text-6" id="text-org112127b">
+<li><a id="orga27bea4"></a>多级中断<br>
+<div class="outline-text-6" id="text-orga27bea4">
 <ul class="org-ul">
 <li>定义
 从硬件上看，多级的中断系统表现为有多根中断请求线从不同设备连接到中断逻辑线路上。</li>
@@ -1157,8 +1102,8 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ul>
 </div>
 </li>
-<li><a id="org4fa53dc"></a>中断屏蔽<br>
-<div class="outline-text-6" id="text-org4fa53dc">
+<li><a id="org7303214"></a>中断屏蔽<br>
+<div class="outline-text-6" id="text-org7303214">
 <ul class="org-ul">
 <li>定义
 中断系统中，可以允许或禁止中断系统对某些类别中断的响应。</li>
@@ -1169,8 +1114,8 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ul>
 </div>
 </li>
-<li><a id="org92aa05a"></a>中断嵌套<br>
-<div class="outline-text-6" id="text-org92aa05a">
+<li><a id="org2846d1d"></a>中断嵌套<br>
+<div class="outline-text-6" id="text-org2846d1d">
 <p>
 中断嵌套是由多级中断引发的
 </p>
@@ -1196,18 +1141,18 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org9d98644" class="outline-3">
-<h3 id="org9d98644">系统调用</h3>
-<div class="outline-text-3" id="text-org9d98644">
+<div id="outline-container-org9a19104" class="outline-3">
+<h3 id="org9a19104">系统调用</h3>
+<div class="outline-text-3" id="text-org9a19104">
 <p>
 本节主要讲解的是，系统调用的概念，系统调用的分类，系统调用的执行过程。
 系统调用主要是提供给编程人员的接口，并且也是唯一能操作硬件的接口。
 系统调用的具体动作不会被用户察觉，用户只知道其有关功能。
 </p>
 </div>
-<div id="outline-container-org4d887d5" class="outline-4">
-<h4 id="org4d887d5">系统调用与函数调用的区别</h4>
-<div class="outline-text-4" id="text-org4d887d5">
+<div id="outline-container-org3d77efc" class="outline-4">
+<h4 id="org3d77efc">系统调用与函数调用的区别</h4>
+<div class="outline-text-4" id="text-org3d77efc">
 <ol class="org-ol">
 <li>运行在不同的系统状态下
 普通函数调用，调用者和被调用者都在目态。
@@ -1221,9 +1166,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orge77de23" class="outline-4">
-<h4 id="orge77de23">系统调用的分类</h4>
-<div class="outline-text-4" id="text-orge77de23">
+<div id="outline-container-org01b3068" class="outline-4">
+<h4 id="org01b3068">系统调用的分类</h4>
+<div class="outline-text-4" id="text-org01b3068">
 <p>
 系统调用分为，系统自身需要和用户服务需要。可将系统提供的系统调用分为以下几个方面:
 </p>
@@ -1241,9 +1186,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org25fea95" class="outline-4">
-<h4 id="org25fea95">系统调用与库函数、API、内核函数的关系</h4>
-<div class="outline-text-4" id="text-org25fea95">
+<div id="outline-container-org3c40de9" class="outline-4">
+<h4 id="org3c40de9">系统调用与库函数、API、内核函数的关系</h4>
+<div class="outline-text-4" id="text-org3c40de9">
 <p>
 用户可以通过库函数或API来使用内核函数从而使用系统调用，其关系图如下:
 <img src="../images/2-7系统调用与库函数-API-内核函数的关系.png" alt="2-7系统调用与库函数-API-内核函数的关系.png">
@@ -1251,13 +1196,13 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org157d4f5" class="outline-3">
-<h3 id="org157d4f5">系统调用的处理过程</h3>
-<div class="outline-text-3" id="text-org157d4f5">
+<div id="outline-container-orgc6c8b1f" class="outline-3">
+<h3 id="orgc6c8b1f">系统调用的处理过程</h3>
+<div class="outline-text-3" id="text-orgc6c8b1f">
 </div>
-<div id="outline-container-org1af7dcf" class="outline-4">
-<h4 id="org1af7dcf">基本原理</h4>
-<div class="outline-text-4" id="text-org1af7dcf">
+<div id="outline-container-orgd53c3d4" class="outline-4">
+<h4 id="orgd53c3d4">基本原理</h4>
+<div class="outline-text-4" id="text-orgd53c3d4">
 <ul class="org-ul">
 <li>前提条件
 操作系统内提前编写好了实现系统调用功能的子程序，随后编程人员根据给定的系统调用名使用。</li>
@@ -1273,9 +1218,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge6bf1c9" class="outline-4">
-<h4 id="orge6bf1c9">具体实现</h4>
-<div class="outline-text-4" id="text-orge6bf1c9">
+<div id="outline-container-orga523dc6" class="outline-4">
+<h4 id="orga523dc6">具体实现</h4>
+<div class="outline-text-4" id="text-orga523dc6">
 <p>
 见书本p73页，图2-8上的一段。
 <img src="../images/2-8系统调用的处理过程.png" alt="2-8系统调用的处理过程.png">
@@ -1283,15 +1228,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<<<<<<< HEAD
-<div id="outline-container-org3c93694" class="outline-3">
-<h3 id="org3c93694">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org3c93694">
-=======
-<div id="outline-container-orgca43c49" class="outline-3">
-<h3 id="orgca43c49">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgca43c49">
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<div id="outline-container-org9b98715" class="outline-3">
+<h3 id="org9b98715">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org9b98715">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1481,13 +1420,13 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org3fc2dd0" class="outline-2">
-<h2 id="org3fc2dd0">第三章-进程与线程</h2>
-<div class="outline-text-2" id="text-org3fc2dd0">
+<div id="outline-container-org295dfb3" class="outline-2">
+<h2 id="org295dfb3">第三章-进程与线程</h2>
+<div class="outline-text-2" id="text-org295dfb3">
 </div>
-<div id="outline-container-orgba5fc2c" class="outline-3">
-<h3 id="orgba5fc2c">多道程序设计</h3>
-<div class="outline-text-3" id="text-orgba5fc2c">
+<div id="outline-container-orgd38f44f" class="outline-3">
+<h3 id="orgd38f44f">多道程序设计</h3>
+<div class="outline-text-3" id="text-orgd38f44f">
 <ul class="org-ul">
 <li>作用
 提高处理器利用率。</li>
@@ -1495,9 +1434,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 充分发挥处理器与外围设备以及外围设备之间的并行工作能力。</li>
 </ul>
 </div>
-<div id="outline-container-org4eae53e" class="outline-4">
-<h4 id="org4eae53e">程序的顺序执行</h4>
-<div class="outline-text-4" id="text-org4eae53e">
+<div id="outline-container-org74f7ef7" class="outline-4">
+<h4 id="org74f7ef7">程序的顺序执行</h4>
+<div class="outline-text-4" id="text-org74f7ef7">
 <p>
 由程序独占CPU直到得到结果的过程称为顺序执行。
 </p>
@@ -1511,27 +1450,21 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 
-<div id="outline-container-org2a80bd0" class="outline-3">
-<h3 id="org2a80bd0">进程</h3>
+<div id="outline-container-orgf641927" class="outline-3">
+<h3 id="orgf641927">进程</h3>
 </div>
-<div id="outline-container-orgc759a41" class="outline-3">
-<h3 id="orgc759a41">线程</h3>
+<div id="outline-container-org663d895" class="outline-3">
+<h3 id="org663d895">线程</h3>
 </div>
-<div id="outline-container-org11791c5" class="outline-3">
-<h3 id="org11791c5">进程调度</h3>
+<div id="outline-container-orgd605793" class="outline-3">
+<h3 id="orgd605793">进程调度</h3>
 </div>
-<div id="outline-container-org33edb62" class="outline-3">
-<h3 id="org33edb62">系统内核</h3>
+<div id="outline-container-org42f10e1" class="outline-3">
+<h3 id="org42f10e1">系统内核</h3>
 </div>
-<<<<<<< HEAD
-<div id="outline-container-org9b98715" class="outline-3">
-<h3 id="org9b98715">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org9b98715">
-=======
-<div id="outline-container-orgf3c5fa7" class="outline-3">
-<h3 id="orgf3c5fa7">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgf3c5fa7">
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<div id="outline-container-orga23ce7a" class="outline-3">
+<h3 id="orga23ce7a">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orga23ce7a">
 <ol class="org-ol">
 <li>什么是多道程序设计？</li>
 <li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
@@ -1685,11 +1618,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 Thu 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<<<<<<< HEAD
-<p class="date">Created: 2021-02-21 Sun 15:20</p>
-=======
-<p class="date">Created: 2021-02-11 Thu 01:11</p>
->>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
+<p class="date">Created: 2021-02-21 Sun 15:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
