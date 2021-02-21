@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <!-- 2021-02-21 Sun 15:20 -->
+=======
+<!-- 2021-02-11 Thu 01:11 -->
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSS3简明总结</title>
@@ -22,53 +26,54 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4211b74">前言</a></li>
-<li><a href="#org24e4772">入门</a>
+<li><a href="#org7a7da49">前言</a></li>
+<li><a href="#org10be392">入门</a>
 <ul>
-<li><a href="#org7c0040d">引入CSS的三种方式</a>
+<li><a href="#org56bd914">引入CSS的三种方式</a>
 <ul>
-<li><a href="#org490c5d3">引入外部CSS文件</a></li>
-<li><a href="#org30bb0a4">块级样式</a></li>
-<li><a href="#org9b422be">行内样式</a></li>
+<li><a href="#org27de228">引入外部CSS文件</a></li>
+<li><a href="#orgb1003fb">块级样式</a></li>
+<li><a href="#orgbd306bb">行内样式</a></li>
 </ul>
 </li>
-<li><a href="#org8dd052c">优先级</a>
+<li><a href="#org3f0302d">优先级</a>
 <ul>
-<li><a href="#org0619482">important标记</a></li>
-<li><a href="#org7706f2a">样式继承</a></li>
+<li><a href="#orgf3a9648">important标记</a></li>
+<li><a href="#orgc8e7569">样式继承</a></li>
 </ul>
 </li>
-<li><a href="#org7efa79c">注释</a></li>
+<li><a href="#orgad551dd">注释</a></li>
 </ul>
 </li>
-<li><a href="#org7e533fb">选择器</a>
+<li><a href="#org60cb30a">选择器</a>
 <ul>
-<li><a href="#orgf6ca99f">元素选择器</a></li>
-<li><a href="#org41b43c1">ID选择器</a></li>
-<li><a href="#org837beb5">属性选择器</a></li>
-<li><a href="#orgdaaf51a">合并选择</a></li>
-<li><a href="#orgb87cbe6">子类选择器</a></li>
-<li><a href="#org4e787b5">子类过滤器</a></li>
-<li><a href="#org0559304">星号选择器</a></li>
+<li><a href="#org5ce6e6d">元素选择器</a></li>
+<li><a href="#orgc4b926a">ID选择器</a></li>
+<li><a href="#org98e353b">属性选择器</a></li>
+<li><a href="#orgdfebe7f">合并选择</a></li>
+<li><a href="#org917a920">子类选择器</a></li>
+<li><a href="#org2e8e994">子类过滤器</a></li>
+<li><a href="#orgf71501d">星号选择器</a></li>
 </ul>
 </li>
-<li><a href="#orgbd7d2b7">颜色</a>
+<li><a href="#orgb853131">颜色</a>
 <ul>
-<li><a href="#orga2325d6">定义颜色的三种方式</a></li>
+<li><a href="#org05db4ca">定义颜色的三种方式</a></li>
 </ul>
 </li>
-<li><a href="#org52675eb">单位</a>
+<li><a href="#org0d58fd5">单位</a>
 <ul>
-<li><a href="#orgb017354">px</a></li>
-<li><a href="#orgd888dc6">%</a></li>
-<li><a href="#orgd4777ac">em</a></li>
-<li><a href="#org38c083d">rem</a></li>
-<li><a href="#org6f34f3c">小节</a></li>
+<li><a href="#orgc540209">px</a></li>
+<li><a href="#org1befa0a">%</a></li>
+<li><a href="#org85b8abf">em</a></li>
+<li><a href="#orga27ba72">rem</a></li>
+<li><a href="#orgbf8a13b">小节</a></li>
 </ul>
 </li>
-<li><a href="#orgde7a72f">字体</a></li>
-<li><a href="#org05c7084">文本</a>
+<li><a href="#org9299bda">字体</a></li>
+<li><a href="#orgdf310bd">文本</a>
 <ul>
+<<<<<<< HEAD
 <li><a href="#org3973ce3">首行缩进</a></li>
 <li><a href="#orgb1b2105">划线</a></li>
 <li><a href="#org4d89a9a">文本对齐</a></li>
@@ -76,122 +81,139 @@
 <li><a href="#orga2750e5">间距</a></li>
 <li><a href="#org76c2205">换行</a></li>
 <li><a href="#org3e9747d">阴影</a></li>
+=======
+<li><a href="#orgc5c1b18">首行缩进</a></li>
+<li><a href="#org353a08e">划线</a></li>
+<li><a href="#org2e29d5a">文本对齐</a></li>
+<li><a href="#org3d7f3e5">行高</a></li>
+<li><a href="#orgcceae3d">间距</a></li>
+<li><a href="#org62f9897">换行</a></li>
+<li><a href="#orgd6de395">阴影</a></li>
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </ul>
 </li>
-<li><a href="#org3ebebb3">光标</a></li>
-<li><a href="#org99b233c">盒子模型</a>
+<li><a href="#orge9f1e16">光标</a></li>
+<li><a href="#orge1d9d65">盒子模型</a>
 <ul>
-<li><a href="#org2ec126d">元素形态</a></li>
-<li><a href="#org72ac653">修改元素形态</a></li>
-<li><a href="#org7a1c238">盒子大小</a></li>
-<li><a href="#orga0d55b0">盒子溢出内容处理方式</a></li>
-<li><a href="#orgae49f18">占位</a></li>
-<li><a href="#org858dfb7">box-sizing</a></li>
-<li><a href="#org92cf028">content-box</a></li>
+<li><a href="#org5ded624">元素形态</a></li>
+<li><a href="#org7250062">修改元素形态</a></li>
+<li><a href="#org1f1c6f2">盒子大小</a></li>
+<li><a href="#org9a43e9e">盒子溢出内容处理方式</a></li>
+<li><a href="#org4b532b1">占位</a></li>
+<li><a href="#org8c53b69">box-sizing</a></li>
+<li><a href="#org2b8ed7e">content-box</a></li>
 </ul>
 </li>
-<li><a href="#orge07301c">边框</a>
+<li><a href="#org429a5f7">边框</a>
 <ul>
+<<<<<<< HEAD
 <li><a href="#org76c1f35">简单的边框</a></li>
 <li><a href="#orgeafa1fb">圆角</a></li>
 <li><a href="#org7b9dd1f">轮廓</a></li>
 <li><a href="#org179fa05">阴影</a></li>
+=======
+<li><a href="#orgbd3805e">简单的边框</a></li>
+<li><a href="#org082c19c">圆角</a></li>
+<li><a href="#org7ca0e50">轮廓</a></li>
+<li><a href="#orgc14dfbc">阴影</a></li>
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </ul>
 </li>
-<li><a href="#org0830fa4">边距</a>
+<li><a href="#orgf226209">边距</a>
 <ul>
-<li><a href="#org25ca606">外边距</a></li>
-<li><a href="#org768e2d2">内边距</a></li>
+<li><a href="#org524acc4">外边距</a></li>
+<li><a href="#orgede8d62">内边距</a></li>
 </ul>
 </li>
-<li><a href="#org108661d">列表</a>
+<li><a href="#org72d1df4">列表</a>
 <ul>
-<li><a href="#org6dcf6c4">符号样式</a></li>
-<li><a href="#org71ff073">符号位置</a></li>
+<li><a href="#org52e2435">符号样式</a></li>
+<li><a href="#org3858263">符号位置</a></li>
 </ul>
 </li>
-<li><a href="#org305db77">表格</a>
+<li><a href="#org1de6f67">表格</a>
 <ul>
-<li><a href="#org280f1a0">表格间距</a></li>
-<li><a href="#org82398da">表格间距合并</a></li>
-<li><a href="#org9e05147">垂直高度</a></li>
-<li><a href="#org2c64c5c">比例分布</a></li>
+<li><a href="#org2300f7f">表格间距</a></li>
+<li><a href="#orgc37dffb">表格间距合并</a></li>
+<li><a href="#org758b31c">垂直高度</a></li>
+<li><a href="#org886622b">比例分布</a></li>
 </ul>
 </li>
-<li><a href="#orgd511e4b">背景</a>
+<li><a href="#orgc6617a2">背景</a>
 <ul>
-<li><a href="#orgbb5e88c">背景颜色</a></li>
-<li><a href="#orga7daec6">背景图片</a></li>
-<li><a href="#org0ddbb54">重复背景图片</a></li>
-<li><a href="#org2c2d5a8">图片尺寸</a></li>
-<li><a href="#org7624b89">图片位置</a></li>
-<li><a href="#org4290b8f">固定背景位置</a></li>
-<li><a href="#org62f76e0">简写background</a></li>
+<li><a href="#orgb041e82">背景颜色</a></li>
+<li><a href="#orgfe1b3b1">背景图片</a></li>
+<li><a href="#orgf28c0d8">重复背景图片</a></li>
+<li><a href="#org9a287b2">图片尺寸</a></li>
+<li><a href="#org525e05d">图片位置</a></li>
+<li><a href="#org0882ff5">固定背景位置</a></li>
+<li><a href="#org2b649ba">简写background</a></li>
 </ul>
 </li>
-<li><a href="#org75b5b44">效果</a>
+<li><a href="#org86c4cb5">效果</a>
 <ul>
-<li><a href="#org07f1e25">透明</a></li>
-<li><a href="#orgc33d7b1">渐变</a></li>
-<li><a href="#org11a54fd">变形</a></li>
-<li><a href="#orgde6eb34">动画</a></li>
+<li><a href="#orgf0e6052">透明</a></li>
+<li><a href="#orgcd73323">渐变</a></li>
+<li><a href="#orga393477">变形</a></li>
+<li><a href="#orgabf6c28">动画</a></li>
 </ul>
 </li>
-<li><a href="#orgaccd31b">浮动</a></li>
-<li><a href="#org4384d40">定位</a>
+<li><a href="#org5ef76f9">浮动</a></li>
+<li><a href="#org2e4e826">定位</a>
 <ul>
-<li><a href="#org494ea85">相对定位</a></li>
-<li><a href="#org97fdcd9">绝对定位</a></li>
-<li><a href="#org253820f">z-index</a></li>
-<li><a href="#org7c0cd81">fixed</a></li>
+<li><a href="#orgb4275cd">相对定位</a></li>
+<li><a href="#org3998014">绝对定位</a></li>
+<li><a href="#org44f69a6">z-index</a></li>
+<li><a href="#orgd85e00a">fixed</a></li>
 </ul>
 </li>
-<li><a href="#orgda9bbdc">响应式</a>
+<li><a href="#orgd95879a">响应式</a>
 <ul>
-<li><a href="#org46f04d6">viewport</a></li>
-<li><a href="#orgcccb214">媒体查询</a></li>
+<li><a href="#org2375e99">viewport</a></li>
+<li><a href="#org4e8417c">媒体查询</a></li>
 </ul>
 </li>
-<li><a href="#org72ee489">Columns</a>
+<li><a href="#org4a27dc3">Columns</a>
 <ul>
-<li><a href="#org55f2911">多列局部</a></li>
+<li><a href="#org2b12c2c">多列局部</a></li>
 </ul>
 </li>
-<li><a href="#orga2ac9d5">Flex</a>
+<li><a href="#org3efe5bb">Flex</a>
 <ul>
-<li><a href="#org5c1734d">空间分割</a></li>
-<li><a href="#org2d46157">方向调整</a></li>
-<li><a href="#org0f16754">位置对齐</a></li>
+<li><a href="#orgb70ea66">空间分割</a></li>
+<li><a href="#org550e4d3">方向调整</a></li>
+<li><a href="#orge636922">位置对齐</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4211b74" class="outline-2">
-<h2 id="org4211b74">前言</h2>
-<div class="outline-text-2" id="text-org4211b74">
+<div id="outline-container-org7a7da49" class="outline-2">
+<h2 id="org7a7da49">前言</h2>
+<div class="outline-text-2" id="text-org7a7da49">
 <p>
 CSS 全称为 层叠样式表，其作用是对HTML标签添加样式、布局网页、添加动画效果。
 目前主流的 CSS版本是 CSS3。
 </p>
 </div>
 </div>
-<div id="outline-container-org24e4772" class="outline-2">
-<h2 id="org24e4772">入门</h2>
-<div class="outline-text-2" id="text-org24e4772">
+<div id="outline-container-org10be392" class="outline-2">
+<h2 id="org10be392">入门</h2>
+<div class="outline-text-2" id="text-org10be392">
 </div>
-<div id="outline-container-org7c0040d" class="outline-3">
-<h3 id="org7c0040d">引入CSS的三种方式</h3>
-<div class="outline-text-3" id="text-org7c0040d">
+<div id="outline-container-org56bd914" class="outline-3">
+<h3 id="org56bd914">引入CSS的三种方式</h3>
+<div class="outline-text-3" id="text-org56bd914">
 </div>
-<div id="outline-container-org490c5d3" class="outline-4">
-<h4 id="org490c5d3">引入外部CSS文件</h4>
-<div class="outline-text-4" id="text-org490c5d3">
+<div id="outline-container-org27de228" class="outline-4">
+<h4 id="org27de228">引入外部CSS文件</h4>
+<div class="outline-text-4" id="text-org27de228">
 <p>
 这种方式优先级最低，但是便于管理
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
     &lt;<span style="color: #a626a4;">body</span>&gt;
         &lt;<span style="color: #a626a4;">head</span>&gt;
@@ -200,17 +222,28 @@ CSS 全称为 层叠样式表，其作用是对HTML标签添加样式、布局�
         &lt;/<span style="color: #a626a4;">head</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+        &lt;<span style="color: #c678dd;">head</span>&gt;
+            <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#24341;&#20837;&#22806;&#37096;CSS&#25991;&#20214; </span><span style="color: #5B6268;">--&gt;</span>
+            &lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">rel</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"path_to/style.css"</span> /&gt;
+        &lt;/<span style="color: #c678dd;">head</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org30bb0a4" class="outline-4">
-<h4 id="org30bb0a4">块级样式</h4>
-<div class="outline-text-4" id="text-org30bb0a4">
+<div id="outline-container-orgb1003fb" class="outline-4">
+<h4 id="orgb1003fb">块级样式</h4>
+<div class="outline-text-4" id="text-orgb1003fb">
 <p>
 这种方式的优先级为中级，但是直接将样式表放在HTML文件内管理起来不方便。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
     &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
      p{
@@ -221,62 +254,96 @@ CSS 全称为 层叠样式表，其作用是对HTML标签添加样式、布局�
         &lt;<span style="color: #a626a4;">p</span>&gt;&#22359;&#32423;&#26679;&#24335;&lt;/<span style="color: #a626a4;">p</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+    &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+     p{
+         color: red;
+     }
+    &lt;/<span style="color: #c678dd;">style</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span>&gt;&#22359;&#32423;&#26679;&#24335;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9b422be" class="outline-4">
-<h4 id="org9b422be">行内样式</h4>
-<div class="outline-text-4" id="text-org9b422be">
+<div id="outline-container-orgbd306bb" class="outline-4">
+<h4 id="orgbd306bb">行内样式</h4>
+<div class="outline-text-4" id="text-orgbd306bb">
 <p>
 优先级最高。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
     &lt;<span style="color: #a626a4;">body</span>&gt;
         &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"color: red;"</span>&gt;&#34892;&#20869;&#26679;&#24335;&lt;/<span style="color: #a626a4;">p</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"color: red;"</span>&gt;&#34892;&#20869;&#26679;&#24335;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org8dd052c" class="outline-3">
-<h3 id="org8dd052c">优先级</h3>
-<div class="outline-text-3" id="text-org8dd052c">
+<div id="outline-container-org3f0302d" class="outline-3">
+<h3 id="org3f0302d">优先级</h3>
+<div class="outline-text-3" id="text-org3f0302d">
 </div>
-<div id="outline-container-org0619482" class="outline-4">
-<h4 id="org0619482">important标记</h4>
-<div class="outline-text-4" id="text-org0619482">
+<div id="outline-container-orgf3a9648" class="outline-4">
+<h4 id="orgf3a9648">important标记</h4>
+<div class="outline-text-4" id="text-orgf3a9648">
 <p>
 不同引入CSS代码的方式会有不同的优先级别。
 如果想要优先级可以对属性添加特定标记。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
     &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+    &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
      p{
          /* &#22914;&#26524;&#27809;&#26377;&#27492;&#26631;&#35760;yello&#23558;&#20250;&#34987;red&#35206;&#30422;&#12290; */
          color: yellow !important;
          color: red;
      }
+<<<<<<< HEAD
     &lt;/<span style="color: #a626a4;">style</span>&gt;
     &lt;<span style="color: #a626a4;">body</span>&gt;
         &lt;<span style="color: #a626a4;">p</span>&gt;&#27979;&#35797;&lt;/<span style="color: #a626a4;">p</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+    &lt;/<span style="color: #c678dd;">style</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span>&gt;&#27979;&#35797;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7706f2a" class="outline-4">
-<h4 id="org7706f2a">样式继承</h4>
-<div class="outline-text-4" id="text-org7706f2a">
+<div id="outline-container-orgc8e7569" class="outline-4">
+<h4 id="orgc8e7569">样式继承</h4>
+<div class="outline-text-4" id="text-orgc8e7569">
 <p>
 一些标签拥有父子级关系，所以其部分样式属性会随之继承，但也只是部分的如果想要指定某些样式属性被继承那么可以做 <code>inherit</code> 标记。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
     &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
      p{
@@ -299,36 +366,65 @@ CSS 全称为 层叠样式表，其作用是对HTML标签添加样式、布局�
       &lt;/<span style="color: #a626a4;">p</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+    &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+     p{
+         color: red;
+     }
+    &lt;/<span style="color: #c678dd;">style</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+      &lt;<span style="color: #c678dd;">p</span>&gt;
+        &lt;<span style="color: #c678dd;">strong</span>&gt;
+          <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">strong&#26631;&#31614;&#32487;&#25215;&#20102;p&#26631;&#31614;&#30340;&#23383;&#20307;&#39068;&#33394; </span><span style="color: #5B6268;">--&gt;</span>
+          hello
+        &lt;/<span style="color: #c678dd;">strong</span>&gt;
+      &lt;/<span style="color: #c678dd;">p</span>&gt;
+
+      &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"border: 2px solid orange"</span>&gt;
+        <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#25351;&#23450;&#24378;&#21046;&#32487;&#25215;&#29238;&#31867;border&#23646;&#24615;&#25928;&#26524;&#12290; </span><span style="color: #5B6268;">--&gt;</span>
+        &lt;<span style="color: #c678dd;">strong</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"border: inherit"</span>&gt;
+<span style="font-weight: bold;">          world</span>
+<span style="font-weight: bold;">        </span>&lt;/<span style="color: #c678dd;">strong</span>&gt;
+      &lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org7efa79c" class="outline-3">
-<h3 id="org7efa79c">注释</h3>
-<div class="outline-text-3" id="text-org7efa79c">
+<div id="outline-container-orgad551dd" class="outline-3">
+<h3 id="orgad551dd">注释</h3>
+<div class="outline-text-3" id="text-orgad551dd">
 <p>
 CSS文件的注释语法是 <code>/* */</code>
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org7e533fb" class="outline-2">
-<h2 id="org7e533fb">选择器</h2>
-<div class="outline-text-2" id="text-org7e533fb">
+<div id="outline-container-org60cb30a" class="outline-2">
+<h2 id="org60cb30a">选择器</h2>
+<div class="outline-text-2" id="text-org60cb30a">
 <p>
 选择器也就是让CSS样式应用于特定标签的规则。
 </p>
 </div>
-<div id="outline-container-orgf6ca99f" class="outline-3">
-<h3 id="orgf6ca99f">元素选择器</h3>
-<div class="outline-text-3" id="text-orgf6ca99f">
+<div id="outline-container-org5ce6e6d" class="outline-3">
+<h3 id="org5ce6e6d">元素选择器</h3>
+<div class="outline-text-3" id="text-org5ce6e6d">
 <p>
 通过标签名选择HTML对象
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     /* &#36873;&#20013;&#25152;&#26377;p&#26631;&#31614; */
      p{
          color: red;
@@ -337,6 +433,7 @@ CSS文件的注释语法是 <code>/* */</code>
      div p{
          color: green;
      }
+<<<<<<< HEAD
     &lt;/<span style="color: #a626a4;">style</span>&gt;
     &lt;<span style="color: #a626a4;">body</span>&gt;
       &lt;<span style="color: #a626a4;">p</span>&gt;p1 ~&lt;/<span style="color: #a626a4;">p</span>&gt;
@@ -346,25 +443,42 @@ CSS文件的注释语法是 <code>/* */</code>
       &lt;/<span style="color: #a626a4;">div</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+    &lt;/<span style="color: #c678dd;">style</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+      &lt;<span style="color: #c678dd;">p</span>&gt;p1 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span>&gt;p2 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span>&gt;p3 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org41b43c1" class="outline-3">
-<h3 id="org41b43c1">ID选择器</h3>
-<div class="outline-text-3" id="text-org41b43c1">
+<div id="outline-container-orgc4b926a" class="outline-3">
+<h3 id="orgc4b926a">ID选择器</h3>
+<div class="outline-text-3" id="text-orgc4b926a">
 <p>
 通过ID属性选择HTML对象
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     .p {
         color: red;
     }
     div .d-p{
         color: green;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
     &lt;<span style="color: #a626a4;">body</span>&gt;
       &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"p"</span>&gt;p1 ~&lt;/<span style="color: #a626a4;">p</span>&gt;
@@ -374,42 +488,68 @@ CSS文件的注释语法是 <code>/* */</code>
       &lt;/<span style="color: #a626a4;">div</span>&gt;
     &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+    &lt;<span style="color: #c678dd;">body</span>&gt;
+      &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"p"</span>&gt;p1 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"d-p"</span>&gt;p2 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+        &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"d-p"</span>&gt;p3 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org837beb5" class="outline-3">
-<h3 id="org837beb5">属性选择器</h3>
-<div class="outline-text-3" id="text-org837beb5">
+<div id="outline-container-org98e353b" class="outline-3">
+<h3 id="org98e353b">属性选择器</h3>
+<div class="outline-text-3" id="text-org98e353b">
 <p>
 通过属性值选择HTML对象
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     [type="text"] {
         color: red;
     }
     input[type="password"] {
         color: green;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">input</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text"</span> <span style="color: #6a1868;">name</span>=<span style="color: #50a14f;">""</span> <span style="color: #6a1868;">value</span>=<span style="color: #50a14f;">""</span> /&gt;
     &lt;<span style="color: #a626a4;">input</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"password"</span> <span style="color: #6a1868;">name</span>=<span style="color: #50a14f;">""</span> <span style="color: #6a1868;">value</span>=<span style="color: #50a14f;">""</span> /&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">input</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text"</span> <span style="color: #dcaeea;">name</span>=<span style="color: #98be65;">""</span> <span style="color: #dcaeea;">value</span>=<span style="color: #98be65;">""</span> /&gt;
+    &lt;<span style="color: #c678dd;">input</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"password"</span> <span style="color: #dcaeea;">name</span>=<span style="color: #98be65;">""</span> <span style="color: #dcaeea;">value</span>=<span style="color: #98be65;">""</span> /&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdaaf51a" class="outline-3">
-<h3 id="orgdaaf51a">合并选择</h3>
-<div class="outline-text-3" id="text-orgdaaf51a">
+<div id="outline-container-orgdfebe7f" class="outline-3">
+<h3 id="orgdfebe7f">合并选择</h3>
+<div class="outline-text-3" id="text-orgdfebe7f">
 <p>
 可以同时选择多个标签设置样式
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
     p , div{
@@ -423,20 +563,41 @@ CSS文件的注释语法是 <code>/* */</code>
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+    p , div{
+        color: red;
+    }
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span>&gt;
+      div ~
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb87cbe6" class="outline-3">
-<h3 id="orgb87cbe6">子类选择器</h3>
-<div class="outline-text-3" id="text-orgb87cbe6">
+<div id="outline-container-org917a920" class="outline-3">
+<h3 id="org917a920">子类选择器</h3>
+<div class="outline-text-3" id="text-org917a920">
 <p>
 可以根据深度选择子元素。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
 
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     /* &#36873;&#25321;div&#30340;&#25152;&#26377;&#28145;&#24230;&#23376;&#26631;&#31614;strong */
     div strong{
         color: red;
@@ -445,6 +606,7 @@ CSS文件的注释语法是 <code>/* */</code>
     div &gt; strong{
         color: green;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span>&gt;
@@ -453,19 +615,34 @@ CSS文件的注释语法是 <code>/* */</code>
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">strong</span>&gt;<span style="font-weight: bold;">div &gt; strong ~</span>&lt;/<span style="color: #c678dd;">strong</span>&gt;
+      &lt;<span style="color: #c678dd;">p</span>&gt;&lt;<span style="color: #c678dd;">strong</span>&gt;<span style="font-weight: bold;">div &gt; p &gt; strong ~</span>&lt;/<span style="color: #c678dd;">strong</span>&gt;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4e787b5" class="outline-3">
-<h3 id="org4e787b5">子类过滤器</h3>
-<div class="outline-text-3" id="text-org4e787b5">
+<div id="outline-container-org2e8e994" class="outline-3">
+<h3 id="org2e8e994">子类过滤器</h3>
+<div class="outline-text-3" id="text-org2e8e994">
 <p>
 根据标签排列顺序的选择器。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;  
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;  
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     /* &#36873;&#25321;&#36807;&#28388;&#21040;&#30340;&#31532;&#19968;&#20010;p&#26631;&#31614; */
     p:first-child {
         color: red;
@@ -481,6 +658,7 @@ CSS文件的注释语法是 <code>/* */</code>
     p:last-child{
         color: blue;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">p</span>&gt;p1 ~&lt;/<span style="color: #a626a4;">p</span>&gt;
@@ -489,25 +667,41 @@ CSS文件的注释语法是 <code>/* */</code>
     &lt;<span style="color: #a626a4;">p</span>&gt;p4 ~&lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p1 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p2 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p3 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p4 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0559304" class="outline-3">
-<h3 id="org0559304">星号选择器</h3>
-<div class="outline-text-3" id="text-org0559304">
+<div id="outline-container-orgf71501d" class="outline-3">
+<h3 id="orgf71501d">星号选择器</h3>
+<div class="outline-text-3" id="text-orgf71501d">
 <p>
 常常用于整个网页的初始化样式
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;  
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;  
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     /* &#25152;&#26377;&#26631;&#31614;&#21021;&#22987;&#21270;&#37117;&#20250;&#26377;&#20010;&#32418;&#33394;&#19979;&#21010;&#32447; */
     * {
         border-bottom-width: 2px;
         border-color: red;
         border-bottom-style: solid;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">p</span>&gt;p1 ~&lt;/<span style="color: #a626a4;">p</span>&gt;
@@ -516,21 +710,36 @@ CSS文件的注释语法是 <code>/* */</code>
     &lt;<span style="color: #a626a4;">p</span>&gt;p4 ~&lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p1 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p2 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p3 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;p4 ~&lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd7d2b7" class="outline-2">
-<h2 id="orgbd7d2b7">颜色</h2>
-<div class="outline-text-2" id="text-orgbd7d2b7">
+<div id="outline-container-orgb853131" class="outline-2">
+<h2 id="orgb853131">颜色</h2>
+<div class="outline-text-2" id="text-orgb853131">
 </div>
-<div id="outline-container-orga2325d6" class="outline-3">
-<h3 id="orga2325d6">定义颜色的三种方式</h3>
-<div class="outline-text-3" id="text-orga2325d6">
+<div id="outline-container-org05db4ca" class="outline-3">
+<h3 id="org05db4ca">定义颜色的三种方式</h3>
+<div class="outline-text-3" id="text-org05db4ca">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;  
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;  
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     .color-name{
         color: red;
     }
@@ -541,6 +750,7 @@ CSS文件的注释语法是 <code>/* */</code>
         color : rgb(0,0,255);
     }
 
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"color-name"</span>&gt;&#39068;&#33394;&#21517;&#31216;&lt;/<span style="color: #a626a4;">span</span>&gt;
@@ -548,22 +758,32 @@ CSS文件的注释语法是 <code>/* */</code>
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"rgb"</span>&gt;rgb&lt;/<span style="color: #a626a4;">span</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"color-name"</span>&gt;&#39068;&#33394;&#21517;&#31216;&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"hexadecimal"</span>&gt;&#21313;&#20845;&#36827;&#21046;&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"rgb"</span>&gt;rgb&lt;/<span style="color: #c678dd;">span</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org52675eb" class="outline-2">
-<h2 id="org52675eb">单位</h2>
-<div class="outline-text-2" id="text-org52675eb">
+<div id="outline-container-org0d58fd5" class="outline-2">
+<h2 id="org0d58fd5">单位</h2>
+<div class="outline-text-2" id="text-org0d58fd5">
 </div>
-<div id="outline-container-orgb017354" class="outline-3">
-<h3 id="orgb017354">px</h3>
-<div class="outline-text-3" id="text-orgb017354">
+<div id="outline-container-orgc540209" class="outline-3">
+<h3 id="orgc540209">px</h3>
+<div class="outline-text-3" id="text-orgc540209">
 <p>
 px代表像素单位，其是根据显示器分辨率进行参照的测量单位。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"font-size: 11px"</span>&gt;10&lt;/<span style="color: #a626a4;">span</span>&gt;
@@ -573,17 +793,29 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"font-size: 15px"</span>&gt;50&lt;/<span style="color: #a626a4;">span</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 11px"</span>&gt;10&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 12px"</span>&gt;20&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 13px"</span>&gt;30&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 14px"</span>&gt;40&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 15px"</span>&gt;50&lt;/<span style="color: #c678dd;">span</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd888dc6" class="outline-3">
-<h3 id="orgd888dc6">%</h3>
-<div class="outline-text-3" id="text-orgd888dc6">
+<div id="outline-container-org1befa0a" class="outline-3">
+<h3 id="org1befa0a">%</h3>
+<div class="outline-text-3" id="text-org1befa0a">
 <p>
 百分比单位，以浏览器默认字体大小为参照的测量单位。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"font-size: 10%"</span>&gt;10&lt;/<span style="color: #a626a4;">span</span>&gt;
@@ -596,17 +828,32 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"font-size: 90%"</span>&gt;90&lt;/<span style="color: #a626a4;">span</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 10%"</span>&gt;10&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 20%"</span>&gt;20&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 30%"</span>&gt;30&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 40%"</span>&gt;40&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 60%"</span>&gt;60&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 70%"</span>&gt;70&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 80%"</span>&gt;80&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 90%"</span>&gt;90&lt;/<span style="color: #c678dd;">span</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd4777ac" class="outline-3">
-<h3 id="orgd4777ac">em</h3>
-<div class="outline-text-3" id="text-orgd4777ac">
+<div id="outline-container-org85b8abf" class="outline-3">
+<h3 id="org85b8abf">em</h3>
+<div class="outline-text-3" id="text-org85b8abf">
 <p>
 相对单位，相对父标签的字体大小。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"font-size: 10px;"</span>&gt;
@@ -619,17 +866,32 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 10px;"</span>&gt;
+      <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">1&#20493;&#29238;&#26631;&#31614;&#23383;&#20307;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 1em;"</span>&gt;10px&lt;/<span style="color: #c678dd;">span</span>&gt;
+      <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">1.5&#20493;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 1.5em;"</span>&gt;15px&lt;/<span style="color: #c678dd;">span</span>&gt;
+      <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">2&#20493;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2em;"</span>&gt;20px&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org38c083d" class="outline-3">
-<h3 id="org38c083d">rem</h3>
-<div class="outline-text-3" id="text-org38c083d">
+<div id="outline-container-orga27ba72" class="outline-3">
+<h3 id="orga27ba72">rem</h3>
+<div class="outline-text-3" id="text-orga27ba72">
 <p>
 相对网页初始字体大小。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
     * {
@@ -648,28 +910,53 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+    * {
+        font-size: 10px;
+    }
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 10px;"</span>&gt;
+      <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">1&#20493;&#32593;&#39029;&#23383;&#20307;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 1rem;"</span>&gt;10px&lt;/<span style="color: #c678dd;">span</span>&gt;
+      <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">1.5&#20493;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 1.5rem;"</span>&gt;15px&lt;/<span style="color: #c678dd;">span</span>&gt;
+      <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">2&#20493;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem;"</span>&gt;20px&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6f34f3c" class="outline-3">
-<h3 id="org6f34f3c">小节</h3>
-<div class="outline-text-3" id="text-org6f34f3c">
+<div id="outline-container-orgbf8a13b" class="outline-3">
+<h3 id="orgbf8a13b">小节</h3>
+<div class="outline-text-3" id="text-orgbf8a13b">
 <p>
 <code>em</code> 和 <code>rem</code> 比 <code>px</code> 更加常用，因为其可以在用户改变网页默认大小或父标签大小改变时自适应改变。但是不够 <code>px</code> 灵活，
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgde7a72f" class="outline-2">
-<h2 id="orgde7a72f">字体</h2>
-<div class="outline-text-2" id="text-orgde7a72f">
+<div id="outline-container-org9299bda" class="outline-2">
+<h2 id="org9299bda">字体</h2>
+<div class="outline-text-2" id="text-org9299bda">
 <p>
 下面是一些字体相关的设置:
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     * {
         font-size: 15px;
     }
@@ -677,6 +964,7 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
         font-family: SFCompactDisplay;
         src: url{'/usr/share/fonts/OTF/SFCompactDisplay-Bold.otf'}
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
 
   &lt;<span style="color: #a626a4;">body</span>&gt;
@@ -695,10 +983,31 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"font: italic bold 16px Fira Code"</span>&gt; EvanMeek &lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#25351;&#23450;&#23383;&#20307;&#22823;&#23567; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 16px;"</span>&gt; &#23383;&#20307;&#22823;&#23567; &lt;/<span style="color: #c678dd;">span</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#25351;&#23450;&#23383;&#20307;&#39118;&#26684;&#20026;&#26012;&#20307; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-style: italic;"</span>&gt; &#23383;&#20307;&#26012;&#20307; &lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#25351;&#23450;&#23383;&#20307;&#39118;&#26684;&#20026;&#31895;&#20307; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-style: bold;"</span>&gt; &#23383;&#20307;&#31895;&#20307; &lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#25351;&#23450;&#23383;&#20307;&#20026;&#29992;&#25143;&#20027;&#26426;&#30340;&#23383;&#20307; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-family: Fira Code;"</span>&gt; hello world &lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#25351;&#23450;&#22312;&#32447;&#23383;&#20307; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-family: SFCompactDisplay;"</span>&gt; HTML/CSS &lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#22810;&#20010;&#23383;&#20307;&#35774;&#32622;&#31616;&#20889;&#25104;&#19968;&#26465; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">font [&#26012;&#20307;/&#21152;&#31895;] &#23383;&#20307;&#22823;&#23567; &#23383;&#20307;&#31867;&#22411; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font: italic bold 16px Fira Code"</span>&gt; EvanMeek &lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org05c7084" class="outline-2">
 <h2 id="org05c7084">文本</h2>
 <div class="outline-text-2" id="text-org05c7084">
@@ -706,10 +1015,20 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
 <div id="outline-container-org3973ce3" class="outline-3">
 <h3 id="org3973ce3">首行缩进</h3>
 <div class="outline-text-3" id="text-org3973ce3">
+=======
+<div id="outline-container-orgdf310bd" class="outline-2">
+<h2 id="orgdf310bd">文本</h2>
+<div class="outline-text-2" id="text-orgdf310bd">
+</div>
+<div id="outline-container-orgc5c1b18" class="outline-3">
+<h3 id="orgc5c1b18">首行缩进</h3>
+<div class="outline-text-3" id="text-orgc5c1b18">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>text-indent</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"text-indent: 25px;"</span>&gt;
@@ -723,17 +1042,33 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-indent: 25px;"</span>&gt;
+      &#19968;&#34892;
+      &lt;<span style="color: #c678dd;">br</span>&gt;
+      &#20108;&#34892;
+      &lt;<span style="color: #c678dd;">br</span>&gt;
+      &#19977;&#34892;
+      &lt;<span style="color: #c678dd;">br</span>&gt;
+      N&#34892;
+    &lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb1b2105" class="outline-3">
-<h3 id="orgb1b2105">划线</h3>
-<div class="outline-text-3" id="text-orgb1b2105">
+<div id="outline-container-org353a08e" class="outline-3">
+<h3 id="org353a08e">划线</h3>
+<div class="outline-text-3" id="text-org353a08e">
 <p>
 <code>text-decoration</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#19978;&#21010;&#32447; </span><span style="color: #9ca0a4;">--&gt;</span>
@@ -744,17 +1079,30 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"text-decoration: underline"</span>&gt; &#19979; &lt;/<span style="color: #a626a4;">span</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#19978;&#21010;&#32447; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-decoration: overline;"</span>&gt; &#19978; &lt;/<span style="color: #c678dd;">span</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#20013;&#21010;&#32447; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-decoration: line-through;"</span>&gt; &#20013; &lt;/<span style="color: #c678dd;">span</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#19979;&#21010;&#32447; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-decoration: underline"</span>&gt; &#19979; &lt;/<span style="color: #c678dd;">span</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4d89a9a" class="outline-3">
-<h3 id="org4d89a9a">文本对齐</h3>
-<div class="outline-text-3" id="text-org4d89a9a">
+<div id="outline-container-org2e29d5a" class="outline-3">
+<h3 id="org2e29d5a">文本对齐</h3>
+<div class="outline-text-3" id="text-org2e29d5a">
 <p>
 <code>text-align</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"text-align: left;"</span>&gt; &#24038; &lt;/<span style="color: #a626a4;">p</span>&gt;
@@ -762,17 +1110,27 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"text-align: right;"</span>&gt; &#21491; &lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: left;"</span>&gt; &#24038; &lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: center;"</span>&gt; &#20013; &lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: right;"</span>&gt; &#21491; &lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1955cfa" class="outline-3">
-<h3 id="org1955cfa">行高</h3>
-<div class="outline-text-3" id="text-org1955cfa">
+<div id="outline-container-org3d7f3e5" class="outline-3">
+<h3 id="org3d7f3e5">行高</h3>
+<div class="outline-text-3" id="text-org3d7f3e5">
 <p>
 <code>line-height</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"line-height: 50px; border: 2px solid;"</span>&gt;
@@ -787,33 +1145,58 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"line-height: 50px; border: 2px solid;"</span>&gt;
+      1&#34892;
+      &lt;<span style="color: #c678dd;">br</span>&gt;
+      2&#34892;
+    &lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"line-height: 100px; border: 2px solid;"</span>&gt;
+      1&#34892;
+      &lt;<span style="color: #c678dd;">br</span>&gt;
+      2&#34892;
+    &lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga2750e5" class="outline-3">
-<h3 id="orga2750e5">间距</h3>
-<div class="outline-text-3" id="text-orga2750e5">
+<div id="outline-container-orgcceae3d" class="outline-3">
+<h3 id="orgcceae3d">间距</h3>
+<div class="outline-text-3" id="text-orgcceae3d">
 <p>
 <code>letter-spacing</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">em</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"letter-spacing: 10px;"</span>&gt;<span style="font-style: italic;">&#38388;&#36317;</span>&lt;/<span style="color: #a626a4;">em</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">em</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"letter-spacing: 10px;"</span>&gt;<span style="font-style: italic;">&#38388;&#36317;</span>&lt;/<span style="color: #c678dd;">em</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org76c2205" class="outline-3">
-<h3 id="org76c2205">换行</h3>
-<div class="outline-text-3" id="text-org76c2205">
+<div id="outline-container-org62f9897" class="outline-3">
+<h3 id="org62f9897">换行</h3>
+<div class="outline-text-3" id="text-org62f9897">
 <p>
 <code>white-space</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">normal | &#40664;&#35748;&#20540;&#33258;&#21160;&#25442;&#34892; </span><span style="color: #9ca0a4;">--&gt;</span>
@@ -822,17 +1205,34 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"background: #a3a7e4; width: 28px; white-space: nowrap;"</span>&gt;&#19981;&#25442;&#34892;&#27979;&#35797;&lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">normal | &#40664;&#35748;&#20540;&#33258;&#21160;&#25442;&#34892; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"background: #a3a7e4; width: 28px; white-space: normal;"</span>&gt;&#25442;&#34892;&#27979;&#35797;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">nowrap | &#40664;&#35748;&#19981;&#25442;&#34892; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"background: #a3a7e4; width: 28px; white-space: nowrap;"</span>&gt;&#19981;&#25442;&#34892;&#27979;&#35797;&lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org3e9747d" class="outline-3">
 <h3 id="org3e9747d">阴影</h3>
 <div class="outline-text-3" id="text-org3e9747d">
+=======
+<div id="outline-container-orgd6de395" class="outline-3">
+<h3 id="orgd6de395">阴影</h3>
+<div class="outline-text-3" id="text-orgd6de395">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>text-shadow</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;    
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"text-shadow: 2px 2px red"</span>&gt;
@@ -840,17 +1240,31 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;    
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-shadow: 2px 2px red"</span>&gt;
+      Test
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org3ebebb3" class="outline-2">
-<h2 id="org3ebebb3">光标</h2>
-<div class="outline-text-2" id="text-org3ebebb3">
+<div id="outline-container-orge9f1e16" class="outline-2">
+<h2 id="orge9f1e16">光标</h2>
+<div class="outline-text-2" id="text-orge9f1e16">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     a:hover{
         cursor: pointer;
         /* &#21487;&#36873;&#39033;
@@ -861,29 +1275,42 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
            text    : &#36873;&#25321;
        */
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">a</span> <span style="color: #6a1868;">href</span>=<span style="color: #50a14f;">"https://www.baidu.com"</span>&gt;&#30334;&#24230;&lt;/<span style="color: #a626a4;">a</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">a</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"https://www.baidu.com"</span>&gt;&#30334;&#24230;&lt;/<span style="color: #c678dd;">a</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org99b233c" class="outline-2">
-<h2 id="org99b233c">盒子模型</h2>
-<div class="outline-text-2" id="text-org99b233c">
+<div id="outline-container-orge1d9d65" class="outline-2">
+<h2 id="orge1d9d65">盒子模型</h2>
+<div class="outline-text-2" id="text-orge1d9d65">
 </div>
-<div id="outline-container-org2ec126d" class="outline-3">
-<h3 id="org2ec126d">元素形态</h3>
-<div class="outline-text-3" id="text-org2ec126d">
+<div id="outline-container-org5ded624" class="outline-3">
+<h3 id="org5ded624">元素形态</h3>
+<div class="outline-text-3" id="text-org5ded624">
 <p>
 元素即标签，标签分为两种形态：块形态和行形态。
 每个标签默认都有一种形态，可以通过CSS指定标签的形态。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"background: green;"</span>&gt;&#22359;&#20803;&#32032;&lt;/<span style="color: #a626a4;">div</span>&gt;
 &lt;<span style="color: #a626a4;">span</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"background: red;"</span>&gt;&#34892;&#20803;&#32032;&lt;/<span style="color: #a626a4;">span</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"background: green;"</span>&gt;&#22359;&#20803;&#32032;&lt;/<span style="color: #c678dd;">div</span>&gt;
+&lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"background: red;"</span>&gt;&#34892;&#20803;&#32032;&lt;/<span style="color: #c678dd;">span</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 <p>
@@ -891,13 +1318,14 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
 </p>
 </div>
 </div>
-<div id="outline-container-org72ac653" class="outline-3">
-<h3 id="org72ac653">修改元素形态</h3>
-<div class="outline-text-3" id="text-org72ac653">
+<div id="outline-container-org7250062" class="outline-3">
+<h3 id="org7250062">修改元素形态</h3>
+<div class="outline-text-3" id="text-org7250062">
 <p>
 通过 <code>display</code> 属性可以修改元素形态。并且还可以为其设置宽高。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"display: inline; background: #d0efb5;"</span>&gt;
   inline
 &lt;/<span style="color: #a626a4;">div</span>&gt;
@@ -907,28 +1335,48 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
 &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"display: none;"</span>&gt;
   none
 &lt;/<span style="color: #a626a4;">div</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"display: inline; background: #d0efb5;"</span>&gt;
+  inline
+&lt;/<span style="color: #c678dd;">div</span>&gt;
+&lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"display: block; background: #f3e595;"</span>&gt;
+  block
+&lt;/<span style="color: #c678dd;">span</span>&gt;
+&lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"display: none;"</span>&gt;
+  none
+&lt;/<span style="color: #c678dd;">div</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7a1c238" class="outline-3">
-<h3 id="org7a1c238">盒子大小</h3>
-<div class="outline-text-3" id="text-org7a1c238">
+<div id="outline-container-org1f1c6f2" class="outline-3">
+<h3 id="org1f1c6f2">盒子大小</h3>
+<div class="outline-text-3" id="text-org1f1c6f2">
 <p>
 可以为盒子指定宽高。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"width: 100px; height: 100px; background: blue;"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; background: blue;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 <p>
 对于响应式网站，可以设置最大最小宽高限制。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -941,12 +1389,27 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"min-width: 200; min-height: 200px;"</span>&gt;
+      &#23485;&#39640;&#19981;&#33021;&#22823;&#20110;200px;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;2
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"min-width: 200; max-height: 200px;"</span>&gt;
+      &#23485;&#39640;&#19981;&#33021;&#22823;&#20110;200px;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 <p>
 盒子的宽高默认值是 <code>auto</code> 。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -964,17 +1427,37 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; background: green;"</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">width: auto &#20110;&#29238;&#23481;&#22120;&#31561;&#23485; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">height: auto &#20110;&#23481;&#22120;&#20013;&#30340;&#20869;&#23481;&#31561;&#39640; </span><span style="color: #5B6268;">--&gt;</span>
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: auto; height: auto; background: red;"</span>&gt;
+        1. &lt;<span style="color: #c678dd;">br</span>&gt;
+        2.
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: auto; height: auto; background: blue;"</span>&gt;
+        3. &lt;<span style="color: #c678dd;">br</span>&gt;
+        4.
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga0d55b0" class="outline-3">
-<h3 id="orga0d55b0">盒子溢出内容处理方式</h3>
-<div class="outline-text-3" id="text-orga0d55b0">
+<div id="outline-container-org9a43e9e" class="outline-3">
+<h3 id="org9a43e9e">盒子溢出内容处理方式</h3>
+<div class="outline-text-3" id="text-org9a43e9e">
 <p>
 当内容面积大于容器面积，那么会有两种处理方式。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -990,18 +1473,36 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"width: 50px; background: yellow; white-space: nowrap; overflow: scroll;"</span>&gt;&#20320;&#29233;&#25110;&#32773;&#19981;&#29233;&#65292;&#29233;&#23601;&#22312;&#36825;&#37324;&#65292;&#19981;&#22686;&#19981;&#20943;~&lt;/<span style="color: #a626a4;">p</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#19981;&#20570;&#22788;&#29702; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; background: green; white-space: nowrap;"</span>&gt;&#20315;&#31995;&#25918;&#24323;&#27835;&#30103;~~~~~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#28322;&#20986;&#30340;&#38544;&#34255; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 50px; background: red; white-space: nowrap; overflow: hidden;"</span>&gt;&#19981;&#20315;&#31995;&#65292;&#22362;&#25345;&#27835;&#30103;~~~~~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#33258;&#21160;&#22788;&#29702; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">overflow&#21487;&#36873;&#20026;overflow-y: &#20165;&#26174;&#31034;&#19978;&#19979;&#28378;&#21160;&#26465;&#12290;overflow-x: &#20165;&#26174;&#31034;&#24038;&#21491;&#28378;&#21160;&#26465;&#12290; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 50px; background: blue; white-space: nowrap; overflow: auto;"</span>&gt;&#20315;&#31995;&#65292;&#20840;&#33258;&#21160;&#27169;&#24335;~~~~~&lt;/<span style="color: #c678dd;">p</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#40664;&#35748;&#23601;&#26174;&#31034;&#28378;&#21160;&#26465; | scroll </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 50px; background: yellow; white-space: nowrap; overflow: scroll;"</span>&gt;&#20320;&#29233;&#25110;&#32773;&#19981;&#29233;&#65292;&#29233;&#23601;&#22312;&#36825;&#37324;&#65292;&#19981;&#22686;&#19981;&#20943;~&lt;/<span style="color: #c678dd;">p</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgae49f18" class="outline-3">
-<h3 id="orgae49f18">占位</h3>
-<div class="outline-text-3" id="text-orgae49f18">
+<div id="outline-container-org4b532b1" class="outline-3">
+<h3 id="org4b532b1">占位</h3>
+<div class="outline-text-3" id="text-org4b532b1">
 <p>
 <code>visibility</code>
 占位的作用是可以使得内容不可见，但是位置仍然存在。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1012,17 +1513,30 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"width: 20px; height: 20px; background: green;"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"visibility: hidden; width: 20px; height: 20px;"</span>&gt;
+      &#21344;&#20301;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 20px; height: 20px; background: green;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org858dfb7" class="outline-3">
-<h3 id="org858dfb7">box-sizing</h3>
-<div class="outline-text-3" id="text-org858dfb7">
+<div id="outline-container-org8c53b69" class="outline-3">
+<h3 id="org8c53b69">box-sizing</h3>
+<div class="outline-text-3" id="text-org8c53b69">
 <p>
 作用是固定大小，盒子大小不会被边框，边距所影响。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1031,17 +1545,28 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; box-sizing: border-box; background: green; padding: 20px;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org92cf028" class="outline-3">
-<h3 id="org92cf028">content-box</h3>
-<div class="outline-text-3" id="text-org92cf028">
+<div id="outline-container-org2b8ed7e" class="outline-3">
+<h3 id="org2b8ed7e">content-box</h3>
+<div class="outline-text-3" id="text-org2b8ed7e">
 <p>
 作用是动态更变大小，受到边框、边距的影响。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1053,22 +1578,36 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"width: 100px; height: 100px; box-sizing: content-box; background: blue;"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &#26377;pdding
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; box-sizing: content-box; background: blue; padding: 20px;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;<span style="color: #c678dd;">br</span>&gt;
+    &#27809;&#26377;padding
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; box-sizing: content-box; background: blue;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orge07301c" class="outline-2">
-<h2 id="orge07301c">边框</h2>
-<div class="outline-text-2" id="text-orge07301c">
+<div id="outline-container-org429a5f7" class="outline-2">
+<h2 id="org429a5f7">边框</h2>
+<div class="outline-text-2" id="text-org429a5f7">
 </div>
-<div id="outline-container-org76c1f35" class="outline-3">
-<h3 id="org76c1f35">简单的边框</h3>
-<div class="outline-text-3" id="text-org76c1f35">
+<div id="outline-container-orgbd3805e" class="outline-3">
+<h3 id="orgbd3805e">简单的边框</h3>
+<div class="outline-text-3" id="text-orgbd3805e">
 <p>
 <code>border</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1078,17 +1617,29 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; border: 10px dashed green;"</span>&gt;
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: center;"</span>&gt;&#34394;&#32447;&#36793;&#26694;&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgeafa1fb" class="outline-3">
-<h3 id="orgeafa1fb">圆角</h3>
-<div class="outline-text-3" id="text-orgeafa1fb">
+<div id="outline-container-org082c19c" class="outline-3">
+<h3 id="org082c19c">圆角</h3>
+<div class="outline-text-3" id="text-org082c19c">
 <p>
 <code>border-radius</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1099,17 +1650,30 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">border-radius: 5px; &#22278;&#35282;&#30340;&#22235;&#20010;&#35282;&#30340;&#35282;&#24230;&#12290; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">border-radius: 1px 2px 3px 4px; (&#24038;&#19978;&#35282; / &#21491;&#19978;&#35282; / &#21491;&#19979;&#35282; / &#24038;&#19979;&#35282;) &#39034;&#26102;&#38024;</span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; background: green; border-radius: 5px;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7b9dd1f" class="outline-3">
-<h3 id="org7b9dd1f">轮廓</h3>
-<div class="outline-text-3" id="text-org7b9dd1f">
+<div id="outline-container-org7ca0e50" class="outline-3">
+<h3 id="org7ca0e50">轮廓</h3>
+<div class="outline-text-3" id="text-org7ca0e50">
 <p>
 <code>outline</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1121,17 +1685,37 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">outline&#35821;&#27861;&#36319;border&#30456;&#21516;&#65292;&#20294;&#26159;&#20854;&#26159;&#21253;&#25324;&#22312;border&#20043;&#22806;&#30340;&#12290; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px;</span>
+<span style="color: #98be65;">                border: 5px solid green;</span>
+<span style="color: #98be65;">                outline: 5px dashed red;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org179fa05" class="outline-3">
 <h3 id="org179fa05">阴影</h3>
 <div class="outline-text-3" id="text-org179fa05">
+=======
+<div id="outline-container-orgc14dfbc" class="outline-3">
+<h3 id="orgc14dfbc">阴影</h3>
+<div class="outline-text-3" id="text-orgc14dfbc">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>box-shadow</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1147,22 +1731,40 @@ px代表像素单位，其是根据显示器分辨率进行参照的测量单位
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">box-shadow&#30418;&#23376;&#38452;&#24433;-&#21442;&#25968; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">1. &#27700;&#24179;&#38452;&#24433;&#65292;&#27491;&#25968;&#38752;&#21491;&#65292;&#36127;&#25968;&#38752;&#24038; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">2. &#22402;&#30452;&#38452;&#24433;&#65292;&#27491;&#25968;&#38752;&#19978;&#65292;&#36127;&#25968;&#38752;&#19979; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">3. &#38452;&#24433;&#27169;&#31946;&#24230; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">4. &#39068;&#33394; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px;</span>
+<span style="color: #98be65;">                border: 1px solid black;</span>
+<span style="color: #98be65;">                box-shadow: 5px 5px 5px gray;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org0830fa4" class="outline-2">
-<h2 id="org0830fa4">边距</h2>
-<div class="outline-text-2" id="text-org0830fa4">
+<div id="outline-container-orgf226209" class="outline-2">
+<h2 id="orgf226209">边距</h2>
+<div class="outline-text-2" id="text-orgf226209">
 <p>
 CSS不仅允许标签具有边框，还允许具有边距，边距和边框不同的是，边距是指元素与元素之间的距离。
 </p>
 </div>
-<div id="outline-container-org25ca606" class="outline-3">
-<h3 id="org25ca606">外边距</h3>
-<div class="outline-text-3" id="text-org25ca606">
+<div id="outline-container-org524acc4" class="outline-3">
+<h3 id="org524acc4">外边距</h3>
+<div class="outline-text-3" id="text-org524acc4">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1176,17 +1778,33 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#36825;&#37324;&#35774;&#32622;&#30340;&#22806;&#36793;&#36317;&#31561;&#20110;div&#26631;&#31614;&#19982;body&#26631;&#31614;&#30340;&#36793;&#36317; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">margin-&#21442;&#25968;</span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">margin: &#19978; &#21491; &#19979; &#24038; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#21487;&#36873;&#23646;&#24615;: </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">margin-top/right/bottom/left&#65292;&#21487;&#20197;&#21333;&#29420;&#35774;&#32622;&#26576;&#19968;&#36793;&#30340;&#22806;&#36793;&#36317; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; background: green; margin: 20px;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org768e2d2" class="outline-3">
-<h3 id="org768e2d2">内边距</h3>
-<div class="outline-text-3" id="text-org768e2d2">
+<div id="outline-container-orgede8d62" class="outline-3">
+<h3 id="orgede8d62">内边距</h3>
+<div class="outline-text-3" id="text-orgede8d62">
 <p>
 内边距是内容离边框的距离。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1198,22 +1816,36 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px;</span>
+<span style="color: #98be65;">                border: 1px solid green;</span>
+<span style="color: #98be65;">                padding: 20px;"</span>&gt;
+      &lt;<span style="color: #c678dd;">span</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"border: 1px dashed red"</span>&gt;&#20869;&#36793;&#36317;&lt;/<span style="color: #c678dd;">span</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org108661d" class="outline-2">
-<h2 id="org108661d">列表</h2>
-<div class="outline-text-2" id="text-org108661d">
+<div id="outline-container-org72d1df4" class="outline-2">
+<h2 id="org72d1df4">列表</h2>
+<div class="outline-text-2" id="text-org72d1df4">
 </div>
-<div id="outline-container-org6dcf6c4" class="outline-3">
-<h3 id="org6dcf6c4">符号样式</h3>
-<div class="outline-text-3" id="text-org6dcf6c4">
+<div id="outline-container-org52e2435" class="outline-3">
+<h3 id="org52e2435">符号样式</h3>
+<div class="outline-text-3" id="text-org52e2435">
 <p>
 可以设定列表的符号样式
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1235,10 +1867,34 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
 <span style="color: #9ca0a4;">    </span><span style="color: #9ca0a4;">--&gt;</span>
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">ul</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"list-style-type: decimal"</span>&gt;
+      &lt;<span style="color: #c678dd;">li</span>&gt;first&lt;/<span style="color: #c678dd;">li</span>&gt;
+      &lt;<span style="color: #c678dd;">li</span>&gt;second&lt;/<span style="color: #c678dd;">li</span>&gt;
+      &lt;<span style="color: #c678dd;">li</span>&gt;third&lt;/<span style="color: #c678dd;">li</span>&gt;
+    &lt;/<span style="color: #c678dd;">ul</span>&gt;
+    <span style="color: #5B6268;">&lt;!--</span>
+<span style="color: #5B6268;">    &#26356;&#22810;&#31526;&#21495;:</span>
+<span style="color: #5B6268;">    none: &#21462;&#28040;&#31526;&#21495;</span>
+<span style="color: #5B6268;">    disc: &#23454;&#24515;&#22278;</span>
+<span style="color: #5B6268;">    circle: &#31354;&#24515;&#22278;</span>
+<span style="color: #5B6268;">    square: &#26041;&#22359;</span>
+<span style="color: #5B6268;">    decimal: &#38463;&#25289;&#20271;&#25968;&#23383;</span>
+<span style="color: #5B6268;">    lower-alpha: &#23567;&#20889;&#23383;&#27597;</span>
+<span style="color: #5B6268;">    upper-roman: &#22823;&#20889;&#23383;&#27597;</span>
+<span style="color: #5B6268;">    </span><span style="color: #5B6268;">--&gt;</span>
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org71ff073" class="outline-3">
 <h3 id="org71ff073">符号位置</h3>
 <div class="outline-text-3" id="text-org71ff073">
@@ -1257,11 +1913,32 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">ul</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<div id="outline-container-org3858263" class="outline-3">
+<h3 id="org3858263">符号位置</h3>
+<div class="outline-text-3" id="text-org3858263">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">outside&#26159;&#40664;&#35748;&#20540;&#65292;&#20316;&#29992;&#26159;&#23558;&#31526;&#21495;&#26174;&#31034;&#22312;li&#26631;&#31614;&#30340;&#36793;&#26694;&#20043;&#22806; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">ul</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"list-style-position: outside;"</span>&gt;
+      &lt;<span style="color: #c678dd;">li</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"border: 1px solid green;"</span>&gt;first&lt;/<span style="color: #c678dd;">li</span>&gt;
+    &lt;/<span style="color: #c678dd;">ul</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">inside&#26159;&#26174;&#31034;&#22312;li&#26631;&#31614;&#36793;&#26694;&#20043;&#20869;&#12290; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">ul</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"list-style-position: inside;"</span>&gt;
+      &lt;<span style="color: #c678dd;">li</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"border: 1px solid red;"</span>&gt;second&lt;/<span style="color: #c678dd;">li</span>&gt;
+    &lt;/<span style="color: #c678dd;">ul</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org305db77" class="outline-2">
 <h2 id="org305db77">表格</h2>
 <div class="outline-text-2" id="text-org305db77">
@@ -1269,10 +1946,20 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
 <div id="outline-container-org280f1a0" class="outline-3">
 <h3 id="org280f1a0">表格间距</h3>
 <div class="outline-text-3" id="text-org280f1a0">
+=======
+<div id="outline-container-org1de6f67" class="outline-2">
+<h2 id="org1de6f67">表格</h2>
+<div class="outline-text-2" id="text-org1de6f67">
+</div>
+<div id="outline-container-org2300f7f" class="outline-3">
+<h3 id="org2300f7f">表格间距</h3>
+<div class="outline-text-3" id="text-org2300f7f">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 表格之间的间距可以使用 <code>border-spacing</code> 设置。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1298,10 +1985,38 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">table</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 200px; height: 100px;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">th</span> <span style="color: #dcaeea;">colspan</span>=<span style="color: #98be65;">"2"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 16px;"</span>&gt;&#20351;&#29992;&#40664;&#35748;&#36793;&#36317;&#30340;&#34920;&#26684;&lt;/<span style="color: #c678dd;">th</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;A&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;B&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 200px; height: 100px; border-spacing: 5px;</span>
+<span style="color: #98be65;">                             margin-top: 20px;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">th</span> <span style="color: #dcaeea;">colspan</span>=<span style="color: #98be65;">"2"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 16px;"</span>&gt;&#26377;&#36793;&#36317;&#30340;&#34920;&#26684;&lt;/<span style="color: #c678dd;">th</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;A&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;B&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org82398da" class="outline-3">
 <h3 id="org82398da">表格间距合并</h3>
 <div class="outline-text-3" id="text-org82398da">
@@ -1331,17 +2046,55 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">table</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<div id="outline-container-orgc37dffb" class="outline-3">
+<h3 id="orgc37dffb">表格间距合并</h3>
+<div class="outline-text-3" id="text-orgc37dffb">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 200px; height: 100px;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">th</span> <span style="color: #dcaeea;">colspan</span>=<span style="color: #98be65;">"2"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 16px;"</span>&gt;&#40664;&#35748;&#36793;&#36317;&#30340;&#34920;&#26684;&lt;/<span style="color: #c678dd;">th</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;A&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;B&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 200px; height: 100px; border-collapse: collapse;</span>
+<span style="color: #98be65;">                             margin-top: 20px;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">th</span> <span style="color: #dcaeea;">colspan</span>=<span style="color: #98be65;">"2"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 16px;"</span>&gt;&#36793;&#36317;&#21512;&#24182;&#21518;&#30340;&#34920;&#26684;&lt;/<span style="color: #c678dd;">th</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"text-align: center;"</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;A&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;B&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org9e05147" class="outline-3">
 <h3 id="org9e05147">垂直高度</h3>
 <div class="outline-text-3" id="text-org9e05147">
+=======
+<div id="outline-container-org758b31c" class="outline-3">
+<h3 id="org758b31c">垂直高度</h3>
+<div class="outline-text-3" id="text-org758b31c">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>vertical-align</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1362,17 +2115,46 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">table</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px;</span>
+<span style="color: #98be65;">                             border-collapse: collapse;</span>
+<span style="color: #98be65;">                             text-align: center;</span>
+<span style="color: #98be65;">                             vertical-align: middle;</span>
+<span style="color: #98be65;">                             color: green;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;&#20320;&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;&#22909;&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;&#19990;&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;&#30028;&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org2c64c5c" class="outline-3">
 <h3 id="org2c64c5c">比例分布</h3>
 <div class="outline-text-3" id="text-org2c64c5c">
+=======
+<div id="outline-container-org886622b" class="outline-3">
+<h3 id="org886622b">比例分布</h3>
+<div class="outline-text-3" id="text-org886622b">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>table-layout</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1393,11 +2175,34 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">table</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;&#21160;&#24577;&#20998;&#37197;&#22823;&#23567;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 200px; border-collapse: collapse; table-layout: auto;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;hello&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;~&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+    &lt;<span style="color: #c678dd;">p</span>&gt;&#31561;&#27604;&#20363;&lt;/<span style="color: #c678dd;">p</span>&gt;
+    &lt;<span style="color: #c678dd;">table</span> <span style="color: #dcaeea;">border</span>=<span style="color: #98be65;">"1"</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 200px; border-collapse: collapse; table-layout: fixed;"</span>&gt;
+      &lt;<span style="color: #c678dd;">tr</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;world&lt;/<span style="color: #c678dd;">td</span>&gt;
+        &lt;<span style="color: #c678dd;">td</span>&gt;~&lt;/<span style="color: #c678dd;">td</span>&gt;
+      &lt;/<span style="color: #c678dd;">tr</span>&gt;
+    &lt;/<span style="color: #c678dd;">table</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-orgd511e4b" class="outline-2">
 <h2 id="orgd511e4b">背景</h2>
 <div class="outline-text-2" id="text-orgd511e4b">
@@ -1405,10 +2210,20 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
 <div id="outline-container-orgbb5e88c" class="outline-3">
 <h3 id="orgbb5e88c">背景颜色</h3>
 <div class="outline-text-3" id="text-orgbb5e88c">
+=======
+<div id="outline-container-orgc6617a2" class="outline-2">
+<h2 id="orgc6617a2">背景</h2>
+<div class="outline-text-2" id="text-orgc6617a2">
+</div>
+<div id="outline-container-orgb041e82" class="outline-3">
+<h3 id="orgb041e82">背景颜色</h3>
+<div class="outline-text-3" id="text-orgb041e82">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>background-color</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1419,17 +2234,30 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#28155;&#21152;&#32972;&#26223;&#39068;&#33394; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 50px;</span>
+<span style="color: #98be65;">                background-color: green;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga7daec6" class="outline-3">
-<h3 id="orga7daec6">背景图片</h3>
-<div class="outline-text-3" id="text-orga7daec6">
+<div id="outline-container-orgfe1b3b1" class="outline-3">
+<h3 id="orgfe1b3b1">背景图片</h3>
+<div class="outline-text-3" id="text-orgfe1b3b1">
 <p>
 <code>background-image</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1440,17 +2268,30 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#28155;&#21152;&#32972;&#26223;&#22270;&#29255; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 452px;</span>
+<span style="color: #98be65;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0ddbb54" class="outline-3">
-<h3 id="org0ddbb54">重复背景图片</h3>
-<div class="outline-text-3" id="text-org0ddbb54">
+<div id="outline-container-orgf28c0d8" class="outline-3">
+<h3 id="orgf28c0d8">重复背景图片</h3>
+<div class="outline-text-3" id="text-orgf28c0d8">
 <p>
 <code>background-repeat</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1466,17 +2307,35 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#37325;&#22797;&#32972;&#26223;&#22270;&#29255; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">background-repeat: repeat-x &#27178;&#21521;&#37325;&#22797; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">background-repeat: repeat-y &#32437;&#21521;&#37325;&#22797; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">background-repeat: repeat &#37325;&#22797;&#30452;&#21040;&#22635;&#28385; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">background-repeat: no-repeat &#21462;&#28040;&#37325;&#22797; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 1000px; height: 1000px;</span>
+<span style="color: #98be65;">                background-repeat: repeat;</span>
+<span style="color: #98be65;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2c2d5a8" class="outline-3">
-<h3 id="org2c2d5a8">图片尺寸</h3>
-<div class="outline-text-3" id="text-org2c2d5a8">
+<div id="outline-container-org9a287b2" class="outline-3">
+<h3 id="org9a287b2">图片尺寸</h3>
+<div class="outline-text-3" id="text-org9a287b2">
 <p>
 <code>background-size</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1490,17 +2349,33 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#22270;&#29255;&#23610;&#23544; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 452px;</span>
+<span style="color: #98be65;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);</span>
+<span style="color: #98be65;">                background-repeat: no-repeat;</span>
+<span style="color: #98be65;">                background-size: 320px 226px;</span>
+<span style="color: #98be65;">                border: 10px dashed red;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7624b89" class="outline-3">
-<h3 id="org7624b89">图片位置</h3>
-<div class="outline-text-3" id="text-org7624b89">
+<div id="outline-container-org525e05d" class="outline-3">
+<h3 id="org525e05d">图片位置</h3>
+<div class="outline-text-3" id="text-org525e05d">
 <p>
 <code>background-position</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1516,17 +2391,35 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#22270;&#29255;&#20301;&#32622; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 452px;</span>
+<span style="color: #98be65;">                background-color: green;</span>
+<span style="color: #98be65;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);</span>
+<span style="color: #98be65;">                background-repeat: no-repeat;</span>
+<span style="color: #98be65;">                background-size: 320px 226px;</span>
+<span style="color: #98be65;">                border: 10px dashed red;</span>
+<span style="color: #98be65;">                background-position: 50% 50%"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4290b8f" class="outline-3">
-<h3 id="org4290b8f">固定背景位置</h3>
-<div class="outline-text-3" id="text-org4290b8f">
+<div id="outline-container-org0882ff5" class="outline-3">
+<h3 id="org0882ff5">固定背景位置</h3>
+<div class="outline-text-3" id="text-org0882ff5">
 <p>
 固定背景后滚动条滚动背景图片不会随之移动。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1542,14 +2435,32 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#22266;&#23450;&#32972;&#26223;&#20301;&#32622; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 452px;</span>
+<span style="color: #98be65;">                background-color: green;</span>
+<span style="color: #98be65;">                background-image: url(https://www.jmjc.tech/public/home/img/fly.jpg);</span>
+<span style="color: #98be65;">                background-repeat: repeat;</span>
+<span style="color: #98be65;">                background-size: 320px 226px;</span>
+<span style="color: #98be65;">                border: 10px dashed red;</span>
+<span style="color: #98be65;">                background-attachment: fixed;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org62f76e0" class="outline-3">
-<h3 id="org62f76e0">简写background</h3>
-<div class="outline-text-3" id="text-org62f76e0">
+<div id="outline-container-org2b649ba" class="outline-3">
+<h3 id="org2b649ba">简写background</h3>
+<div class="outline-text-3" id="text-org2b649ba">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1563,22 +2474,38 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#31616;&#20889;background </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 452px;</span>
+<span style="color: #98be65;">                background-color: green;</span>
+<span style="color: #98be65;">                background: url(https://www.jmjc.tech/public/home/img/fly.jpg) no-repeat 50% 50%;</span>
+<span style="color: #98be65;">                background-size: 320px 226px;</span>
+<span style="color: #98be65;">                border: 10px dashed red;"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org75b5b44" class="outline-2">
-<h2 id="org75b5b44">效果</h2>
-<div class="outline-text-2" id="text-org75b5b44">
+<div id="outline-container-org86c4cb5" class="outline-2">
+<h2 id="org86c4cb5">效果</h2>
+<div class="outline-text-2" id="text-org86c4cb5">
 </div>
-<div id="outline-container-org07f1e25" class="outline-3">
-<h3 id="org07f1e25">透明</h3>
-<div class="outline-text-3" id="text-org07f1e25">
+<div id="outline-container-orgf0e6052" class="outline-3">
+<h3 id="orgf0e6052">透明</h3>
+<div class="outline-text-3" id="text-orgf0e6052">
 <p>
 <code>opacity</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1590,17 +2517,31 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
 <span style="color: #50a14f;">                width: 100px; height: 100px;"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#36879;&#26126; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"opacity: 0.3; background: #ff6138;</span>
+<span style="color: #98be65;">                width: 100px; height: 100px;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"opacity: 0.7; background: #ff6138;</span>
+<span style="color: #98be65;">                width: 100px; height: 100px;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc33d7b1" class="outline-3">
-<h3 id="orgc33d7b1">渐变</h3>
-<div class="outline-text-3" id="text-orgc33d7b1">
+<div id="outline-container-orgcd73323" class="outline-3">
+<h3 id="orgcd73323">渐变</h3>
+<div class="outline-text-3" id="text-orgcd73323">
 <p>
 <code>background-image: linear-gradient(方向 COLOR1 COLOR2 COLOR3)</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1613,17 +2554,32 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#28176;&#21464; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">linear-gradient&#21442;&#25968;</span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">to right/top/top right/bottom/bottom left/lef/top left color1 color2 color3</span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 100px;</span>
+<span style="color: #98be65;">                background-image: linear-gradient(to right, red, green, blue);"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org11a54fd" class="outline-3">
-<h3 id="org11a54fd">变形</h3>
-<div class="outline-text-3" id="text-org11a54fd">
+<div id="outline-container-orga393477" class="outline-3">
+<h3 id="orga393477">变形</h3>
+<div class="outline-text-3" id="text-orga393477">
 <p>
 <code>transform</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1642,19 +2598,50 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#21464;&#24418; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">transform&#21442;&#25968; </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#20542;&#26012; | skew(&#27700;&#24179;&#35282;&#24230;, &#22402;&#30452;&#35282;&#24230;) </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#24179;&#31227; | translate(&#27700;&#24179;&#26041;&#21521;, &#22402;&#30452;&#26041;&#21521;) </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#32553;&#25918; | scale(&#27700;&#24179;&#20493;&#25968;, &#22402;&#30452;&#20493;&#25968;) </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#26059;&#36716; | rotate(&#26059;&#36716;&#35282;&#24230;) </span><span style="color: #5B6268;">--&gt;</span>
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#20316;&#29992;&#28857; | transform-origin{&#21333;&#29420;&#30340;&#23646;&#24615;}: left/cent/right % </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px;</span>
+<span style="color: #98be65;">                margin: 100px;</span>
+<span style="color: #98be65;">                background: red;</span>
+<span style="color: #98be65;">                transform: rotate(45deg);"</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-orgde6eb34" class="outline-3">
 <h3 id="orgde6eb34">动画</h3>
 <div class="outline-text-3" id="text-orgde6eb34">
+=======
+<div id="outline-container-orgabf6c28" class="outline-3">
+<h3 id="orgabf6c28">动画</h3>
+<div class="outline-text-3" id="text-orgabf6c28">
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p>
 <code>animation</code>
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     #animation{
         width: 100px;
         height: 100px;
@@ -1676,23 +2663,37 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
             margin-left: 0px;
         }
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21160;&#30011; </span><span style="color: #9ca0a4;">--&gt;</span>
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"animation"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#21160;&#30011; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"animation"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgaccd31b" class="outline-2">
-<h2 id="orgaccd31b">浮动</h2>
-<div class="outline-text-2" id="text-orgaccd31b">
+<div id="outline-container-org5ef76f9" class="outline-2">
+<h2 id="org5ef76f9">浮动</h2>
+<div class="outline-text-2" id="text-org5ef76f9">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     #page{
         font-size: 20px;
         color: white;
@@ -1727,6 +2728,7 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
         float: left;
     }
 
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"page"</span>&gt;
@@ -1741,21 +2743,38 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"page"</span>&gt;
+      &lt;<span style="color: #c678dd;">header</span>&gt;&#22836;&#37096;&lt;/<span style="color: #c678dd;">header</span>&gt;
+      &lt;<span style="color: #c678dd;">aside</span>&gt;&#20391;&#36793;&#26639;&lt;/<span style="color: #c678dd;">aside</span>&gt;
+      &lt;<span style="color: #c678dd;">details</span>&gt;&#20869;&#23481;&lt;/<span style="color: #c678dd;">details</span>&gt;
+      &lt;<span style="color: #c678dd;">footer</span>&gt;&#39029;&#33050;&lt;/<span style="color: #c678dd;">footer</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#28165;&#38500;&#20004;&#36793;&#30340;&#28014;&#21160; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"clear: both;"</span>&gt;
+      &#28165;&#38500;&#20004;&#36793;&#28014;&#21160;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4384d40" class="outline-2">
-<h2 id="org4384d40">定位</h2>
-<div class="outline-text-2" id="text-org4384d40">
+<div id="outline-container-org2e4e826" class="outline-2">
+<h2 id="org2e4e826">定位</h2>
+<div class="outline-text-2" id="text-org2e4e826">
 </div>
-<div id="outline-container-org494ea85" class="outline-3">
-<h3 id="org494ea85">相对定位</h3>
-<div class="outline-text-3" id="text-org494ea85">
+<div id="outline-container-orgb4275cd" class="outline-3">
+<h3 id="orgb4275cd">相对定位</h3>
+<div class="outline-text-3" id="text-orgb4275cd">
 <p>
 相对定位允许让一个标签方便的定于为另一个标签位置之上的写法。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1766,10 +2785,23 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"width: 100px; height: 100px; background: #a6ed8e; position: absolute; top: 20px; left: 20px;"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">relative &#35774;&#32622;&#30446;&#26631; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 640px; height: 200px; background: #f2f2f0; position: relative;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">absolute &#35774;&#32622;&#30446;&#26631; | top / bottom / left / right </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px; background: #a6ed8e; position: absolute; top: 20px; left: 20px;"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-org97fdcd9" class="outline-3">
 <h3 id="org97fdcd9">绝对定位</h3>
 <div class="outline-text-3" id="text-org97fdcd9">
@@ -1787,23 +2819,48 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<div id="outline-container-org3998014" class="outline-3">
+<h3 id="org3998014">绝对定位</h3>
+<div class="outline-text-3" id="text-org3998014">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">&#22312;&#27809;&#26377;&#35774;&#32622;&#30446;&#26631;&#28857;&#30340;&#24773;&#20917;&#19979;&#40664;&#35748;&#20197;&#24403;&#21069;&#31383;&#21475;&#20026;&#23450;&#20301;&#30446;&#26631; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100px; height: 100px;</span>
+<span style="color: #98be65;">                background: green;</span>
+<span style="color: #98be65;">                position: absolute;</span>
+<span style="color: #98be65;">                top: 50%; left: 50%;"</span>&gt;
+      &#25105;&#23621;&#20013;&#20102;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org253820f" class="outline-3">
-<h3 id="org253820f">z-index</h3>
-<div class="outline-text-3" id="text-org253820f">
+<div id="outline-container-org44f69a6" class="outline-3">
+<h3 id="org44f69a6">z-index</h3>
+<div class="outline-text-3" id="text-org44f69a6">
 <p>
 设置被覆盖标签的层级关系，有点类似ps的图层的层级关系， <code>z-index</code> 值越大越上层，最低值为1。
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     *{
         margin: 0 0;
         padding: 0 0;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"z-index: 1;</span>
@@ -1824,23 +2881,51 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"z-index: 1;</span>
+<span style="color: #98be65;">                width: 200px;</span>
+<span style="color: #98be65;">                height: 100px;</span>
+<span style="color: #98be65;">                background: green;</span>
+<span style="color: #98be65;">                position: relative;</span>
+<span style="color: #98be65;">                line-height: 8em;"</span>&gt;
+      z-index : 1&#24212;&#35813;&#22312;&#20869;&#23618;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"z-index: 2;</span>
+<span style="color: #98be65;">                width: 200px;</span>
+<span style="color: #98be65;">                height: 50px;</span>
+<span style="color: #98be65;">                background: red;</span>
+<span style="color: #98be65;">                position: absolute;</span>
+<span style="color: #98be65;">                left: 0; top: 0;"</span>&gt;
+      z-index : 2&#24212;&#35813;&#22312;&#19978;&#23618;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7c0cd81" class="outline-3">
-<h3 id="org7c0cd81">fixed</h3>
-<div class="outline-text-3" id="text-org7c0cd81">
+<div id="outline-container-orgd85e00a" class="outline-3">
+<h3 id="orgd85e00a">fixed</h3>
+<div class="outline-text-3" id="text-orgd85e00a">
 <p>
 固定标签位置
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     *{
         margin: 0 0;
         padding: 0 0;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">position&#20026;fixed&#26102;&#65292;&#27492;&#26631;&#31614;&#19981;&#21463;&#28378;&#21160;&#39029;&#38754;&#24433;&#21709;&#12290; </span><span style="color: #9ca0a4;">--&gt;</span>
@@ -1864,22 +2949,48 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    <span style="color: #5B6268;">&lt;!-- </span><span style="color: #5B6268;">position&#20026;fixed&#26102;&#65292;&#27492;&#26631;&#31614;&#19981;&#21463;&#28378;&#21160;&#39029;&#38754;&#24433;&#21709;&#12290; </span><span style="color: #5B6268;">--&gt;</span>
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"position: fixed;</span>
+<span style="color: #98be65;">                top: 0; left: 0;</span>
+<span style="color: #98be65;">                width: 100%;</span>
+<span style="color: #98be65;">                height: 50px;</span>
+<span style="color: #98be65;">                background: green;</span>
+<span style="color: #98be65;">                color: red;</span>
+<span style="color: #98be65;">                text-align: center;</span>
+<span style="color: #98be65;">                line-height: 2.5em;"</span>&gt;
+      &#25105;&#26159;&#22836;&#37096;&#23548;&#33322;&#26639;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 100%;</span>
+<span style="color: #98be65;">                height: 2000px;</span>
+<span style="color: #98be65;">                background: red;</span>
+<span style="color: #98be65;">                font-size: 30px;</span>
+<span style="color: #98be65;">                line-height: 10em;</span>
+<span style="color: #98be65;">                text-align: center;"</span>&gt;
+      &#24448;&#19979;&#28378;&#21160;&#39029;&#38754;&#35797;&#35797;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgda9bbdc" class="outline-2">
-<h2 id="orgda9bbdc">响应式</h2>
-<div class="outline-text-2" id="text-orgda9bbdc">
+<div id="outline-container-orgd95879a" class="outline-2">
+<h2 id="orgd95879a">响应式</h2>
+<div class="outline-text-2" id="text-orgd95879a">
 </div>
-<div id="outline-container-org46f04d6" class="outline-3">
-<h3 id="org46f04d6">viewport</h3>
-<div class="outline-text-3" id="text-org46f04d6">
+<div id="outline-container-org2375e99" class="outline-3">
+<h3 id="org2375e99">viewport</h3>
+<div class="outline-text-3" id="text-org2375e99">
 <p>
 声明页面为响应式页面，浏览器将会支持页面自动收缩
 </p>
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1889,16 +3000,32 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
   &lt;<span style="color: #a626a4;">body</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">header</span>&gt;
+    &lt;<span style="color: #c678dd;">meta</span> <span style="color: #dcaeea;">name</span>=<span style="color: #98be65;">"viewport"</span> <span style="color: #dcaeea;">content</span>=<span style="color: #98be65;">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> /&gt;
+  &lt;/<span style="color: #c678dd;">header</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcccb214" class="outline-3">
-<h3 id="orgcccb214">媒体查询</h3>
-<div class="outline-text-3" id="text-orgcccb214">
+<div id="outline-container-org4e8417c" class="outline-3">
+<h3 id="org4e8417c">媒体查询</h3>
+<div class="outline-text-3" id="text-org4e8417c">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     /* 1024px ~ 1920px &#20998;&#36776;&#29575;&#35774;&#22791; */
     @media (min-width: 1024px) and (max-width: 1920px){
         *{background: orange}
@@ -1912,23 +3039,31 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     @media (max-width: 479px){
         *{background: blue}
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org72ee489" class="outline-2">
-<h2 id="org72ee489">Columns</h2>
-<div class="outline-text-2" id="text-org72ee489">
+<div id="outline-container-org4a27dc3" class="outline-2">
+<h2 id="org4a27dc3">Columns</h2>
+<div class="outline-text-2" id="text-org4a27dc3">
 </div>
-<div id="outline-container-org55f2911" class="outline-3">
-<h3 id="org55f2911">多列局部</h3>
-<div class="outline-text-3" id="text-org55f2911">
+<div id="outline-container-org2b12c2c" class="outline-3">
+<h3 id="org2b12c2c">多列局部</h3>
+<div class="outline-text-3" id="text-org2b12c2c">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
   &lt;/<span style="color: #a626a4;">style</span>&gt;
@@ -1947,24 +3082,49 @@ CSS不仅允许标签具有边框，还允许具有边距，边距和边框不�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"border: 2px solid green;</span>
+<span style="color: #98be65;">                padding: 20px;</span>
+<span style="color: #98be65;">                &lt;!-- &#21015;&#25968; --&gt;</span>
+<span style="color: #98be65;">                column-count: 4;</span>
+<span style="color: #98be65;">                &lt;!-- &#21015;&#23485; --&gt;</span>
+<span style="color: #98be65;">                column-width: auto;</span>
+<span style="color: #98be65;">                &lt;!-- &#21015;&#38388;&#38553; --&gt;</span>
+<span style="color: #98be65;">                column-gap: 25px;</span>
+<span style="color: #98be65;">                &lt;!-- &#21015;&#19982;&#21015;&#20043;&#38388;&#30340;&#20998;&#21106;&#32447; --&gt;</span>
+<span style="color: #98be65;">                column-rule: 1px dashed red;"</span>&gt;
+      content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orga2ac9d5" class="outline-2">
-<h2 id="orga2ac9d5">Flex</h2>
-<div class="outline-text-2" id="text-orga2ac9d5">
+<div id="outline-container-org3efe5bb" class="outline-2">
+<h2 id="org3efe5bb">Flex</h2>
+<div class="outline-text-2" id="text-org3efe5bb">
 <p>
 Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移动端应用。
 </p>
 </div>
-<div id="outline-container-org5c1734d" class="outline-3">
-<h3 id="org5c1734d">空间分割</h3>
-<div class="outline-text-3" id="text-org5c1734d">
+<div id="outline-container-orgb70ea66" class="outline-3">
+<h3 id="orgb70ea66">空间分割</h3>
+<div class="outline-text-3" id="text-orgb70ea66">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     #body{
         display: flex;
         width: 300px;
@@ -1984,6 +3144,7 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
         background: blue;
         flex-grow: 1;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"body"</span>&gt;
@@ -1993,16 +3154,32 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"body"</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"header"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"main"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"footer"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2d46157" class="outline-3">
-<h3 id="org2d46157">方向调整</h3>
-<div class="outline-text-3" id="text-org2d46157">
+<div id="outline-container-org550e4d3" class="outline-3">
+<h3 id="org550e4d3">方向调整</h3>
+<div class="outline-text-3" id="text-org550e4d3">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     #body{
         display: flex;
         /* &#20462;&#25913;&#20803;&#32032;&#26174;&#31034;&#26041;&#21521;&#65292;&#40664;&#35748;&#20026;row */
@@ -2024,6 +3201,7 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
         background: blue;
         flex-grow: 1;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"body"</span>&gt;
@@ -2033,16 +3211,32 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"body"</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"header"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"main"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"footer"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0f16754" class="outline-3">
-<h3 id="org0f16754">位置对齐</h3>
-<div class="outline-text-3" id="text-org0f16754">
+<div id="outline-container-orge636922" class="outline-3">
+<h3 id="orge636922">位置对齐</h3>
+<div class="outline-text-3" id="text-orge636922">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-html">&lt;<span style="color: #a626a4;">html</span>&gt;
   &lt;<span style="color: #a626a4;">style</span> <span style="color: #6a1868;">type</span>=<span style="color: #50a14f;">"text/css"</span>&gt;
+=======
+<pre class="src src-html">&lt;<span style="color: #c678dd;">html</span>&gt;
+  &lt;<span style="color: #c678dd;">style</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text/css"</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
     #body{
         display: flex;
         /* &#20462;&#25913;&#20803;&#32032;&#26174;&#31034;&#26041;&#21521;&#65292;&#40664;&#35748;&#20026;row */
@@ -2071,6 +3265,7 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
         background: blue;
         flex-grow: 1;
     }
+<<<<<<< HEAD
   &lt;/<span style="color: #a626a4;">style</span>&gt;
   &lt;<span style="color: #a626a4;">body</span>&gt;
     &lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"body"</span>&gt;
@@ -2085,6 +3280,22 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
     &lt;/<span style="color: #a626a4;">div</span>&gt;
   &lt;/<span style="color: #a626a4;">body</span>&gt;
 &lt;/<span style="color: #a626a4;">html</span>&gt;
+=======
+  &lt;/<span style="color: #c678dd;">style</span>&gt;
+  &lt;<span style="color: #c678dd;">body</span>&gt;
+    &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"body"</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"header"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"main"</span>&gt;
+        &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"width: 50px; height: 50px;</span>
+<span style="color: #98be65;">                    background: orange;"</span>&gt;
+
+        &lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"footer"</span>&gt;&lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;/<span style="color: #c678dd;">body</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
@@ -2094,7 +3305,11 @@ Flex相比浮动和定位进行布局的方式更加灵活，也更适用于移�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-11-10 Tue 00:00</p>
 <p class="author">Author: Evan Meek</p>
+<<<<<<< HEAD
 <p class="date">Created: 2021-02-21 Sun 15:20</p>
+=======
+<p class="date">Created: 2021-02-11 Thu 01:11</p>
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

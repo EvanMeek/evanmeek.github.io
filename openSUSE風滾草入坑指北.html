@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <!-- 2021-02-21 Sun 15:20 -->
+=======
+<!-- 2021-02-11 Thu 01:11 -->
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>openSUSE風滾草入坑指北!</title>
@@ -22,16 +26,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc6ecf0b">獲取ISO鏡像</a></li>
-<li><a href="#org24d90c9">安裝過程</a></li>
-<li><a href="#orgef536db">添加必要源-視頻解碼器</a></li>
-<li><a href="#org5384573">一些有用的包</a>
+<li><a href="#orgd1d888c">獲取ISO鏡像</a></li>
+<li><a href="#org67265fc">安裝過程</a></li>
+<li><a href="#org133e38c">添加必要源-視頻解碼器</a></li>
+<li><a href="#org71c050c">一些有用的包</a>
 <ul>
-<li><a href="#org44f7efb">obs源下載工具</a></li>
-<li><a href="#org5419480">fcitx5</a></li>
-<li><a href="#orge0f5960">QV2ray</a></li>
-<li><a href="#org6913a59">網易云音樂</a></li>
-<li><a href="#orgcc013b0">Emacs</a></li>
+<li><a href="#org178d109">obs源下載工具</a></li>
+<li><a href="#orgfd0b483">fcitx5</a></li>
+<li><a href="#orge281c56">QV2ray</a></li>
+<li><a href="#orge53b184">網易云音樂</a></li>
+<li><a href="#org71616cc">Emacs</a></li>
 </ul>
 </li>
 </ul>
@@ -43,25 +47,25 @@
 </p>
 </blockquote>
 
-<div id="outline-container-orgc6ecf0b" class="outline-2">
-<h2 id="orgc6ecf0b">獲取ISO鏡像</h2>
-<div class="outline-text-2" id="text-orgc6ecf0b">
+<div id="outline-container-orgd1d888c" class="outline-2">
+<h2 id="orgd1d888c">獲取ISO鏡像</h2>
+<div class="outline-text-2" id="text-orgd1d888c">
 <p>
 清華源風滾草DVD安裝鏡像: <a href="https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso">點我下載</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org24d90c9" class="outline-2">
-<h2 id="org24d90c9">安裝過程</h2>
-<div class="outline-text-2" id="text-org24d90c9">
+<div id="outline-container-org67265fc" class="outline-2">
+<h2 id="org67265fc">安裝過程</h2>
+<div class="outline-text-2" id="text-org67265fc">
 <p>
 安裝過程直接省略，因爲本身openSUSE的安裝程序的引導性就不錯了。
 </p>
 </div>
 </div>
-<div id="outline-container-orgef536db" class="outline-2">
-<h2 id="orgef536db">添加必要源-視頻解碼器</h2>
-<div class="outline-text-2" id="text-orgef536db">
+<div id="outline-container-org133e38c" class="outline-2">
+<h2 id="org133e38c">添加必要源-視頻解碼器</h2>
+<div class="outline-text-2" id="text-org133e38c">
 <ul class="org-ul">
 <li>packman源</li>
 </ul>
@@ -94,13 +98,13 @@ packman源即第三方源，其包含了大量的軟件，類似ArchLinux的Arch
 </div>
 </div>
 
-<div id="outline-container-org5384573" class="outline-2">
-<h2 id="org5384573">一些有用的包</h2>
-<div class="outline-text-2" id="text-org5384573">
+<div id="outline-container-org71c050c" class="outline-2">
+<h2 id="org71c050c">一些有用的包</h2>
+<div class="outline-text-2" id="text-org71c050c">
 </div>
-<div id="outline-container-org44f7efb" class="outline-3">
-<h3 id="org44f7efb">obs源下載工具</h3>
-<div class="outline-text-3" id="text-org44f7efb">
+<div id="outline-container-org178d109" class="outline-3">
+<h3 id="org178d109">obs源下載工具</h3>
+<div class="outline-text-3" id="text-org178d109">
 <div class="org-src-container">
 <pre class="src src-shellxo">zypper install opi
 </pre>
@@ -108,24 +112,32 @@ packman源即第三方源，其包含了大量的軟件，類似ArchLinux的Arch
 </div>
 </div>
 
-<div id="outline-container-org5419480" class="outline-3">
-<h3 id="org5419480">fcitx5</h3>
-<div class="outline-text-3" id="text-org5419480">
+<div id="outline-container-orgfd0b483" class="outline-3">
+<h3 id="orgfd0b483">fcitx5</h3>
+<div class="outline-text-3" id="text-orgfd0b483">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-shell"><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#28155;&#21152;M17N&#20489;&#24235;&#65292;&#27492;&#21629;&#20196;&#30340;M17N&#20195;&#34920;&#36889;&#20491;&#20489;&#24235;&#30340;&#21029;&#21517;</span>
 zypper addrepo https://download.opensuse.org/repositories/M17N/openSUSE_Tumbleweed/ M17N
 <span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#21368;&#36617;fcitx&#30456;&#38364;&#21253;&#65292;*&#20195;&#34920;&#36010;&#23146;&#21305;&#37197;&#65292;&#24847;&#21619;&#30528;&#25152;&#26377;fcitx&#21069;&#32180;&#21253;&#21517;&#30340;&#21253;&#37117;&#26371;&#34987;&#21034;&#38500;&#12290;</span>
 zypper remove <span style="color: #50a14f;">"fcitx*"</span>
 <span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#23433;&#35037;fcitx5</span>
+=======
+<pre class="src src-shell"><span style="color: #5B6268;"># </span><span style="color: #5B6268;">&#28155;&#21152;M17N&#20489;&#24235;&#65292;&#27492;&#21629;&#20196;&#30340;M17N&#20195;&#34920;&#36889;&#20491;&#20489;&#24235;&#30340;&#21029;&#21517;</span>
+zypper addrepo https://download.opensuse.org/repositories/M17N/openSUSE_Tumbleweed/ M17N
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&#21368;&#36617;fcitx&#30456;&#38364;&#21253;&#65292;*&#20195;&#34920;&#36010;&#23146;&#21305;&#37197;&#65292;&#24847;&#21619;&#30528;&#25152;&#26377;fcitx&#21069;&#32180;&#21253;&#21517;&#30340;&#21253;&#37117;&#26371;&#34987;&#21034;&#38500;&#12290;</span>
+zypper remove <span style="color: #98be65;">"fcitx*"</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&#23433;&#35037;fcitx5</span>
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 zypper install fcitx5 fcitx5-chinese-addons fcitx5-chinese-addons-devel fcitx5-configtool fcitx5-gtk2 fcitx5-qt-devel fcitx5-qt5 fcitx5-rime
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge0f5960" class="outline-3">
-<h3 id="orge0f5960">QV2ray</h3>
-<div class="outline-text-3" id="text-orge0f5960">
+<div id="outline-container-orge281c56" class="outline-3">
+<h3 id="orge281c56">QV2ray</h3>
+<div class="outline-text-3" id="text-orge281c56">
 <p>
 @
 </p>
@@ -136,9 +148,9 @@ zypper install fcitx5 fcitx5-chinese-addons fcitx5-chinese-addons-devel fcitx5-c
 </div>
 </div>
 
-<div id="outline-container-org6913a59" class="outline-3">
-<h3 id="org6913a59">網易云音樂</h3>
-<div class="outline-text-3" id="text-org6913a59">
+<div id="outline-container-orge53b184" class="outline-3">
+<h3 id="orge53b184">網易云音樂</h3>
+<div class="outline-text-3" id="text-orge53b184">
 <div class="org-src-container">
 <pre class="src src-shell">opi netease-cloud-music
 </pre>
@@ -146,11 +158,15 @@ zypper install fcitx5 fcitx5-chinese-addons fcitx5-chinese-addons-devel fcitx5-c
 </div>
 </div>
 
-<div id="outline-container-orgcc013b0" class="outline-3">
-<h3 id="orgcc013b0">Emacs</h3>
-<div class="outline-text-3" id="text-orgcc013b0">
+<div id="outline-container-org71616cc" class="outline-3">
+<h3 id="org71616cc">Emacs</h3>
+<div class="outline-text-3" id="text-org71616cc">
 <div class="org-src-container">
+<<<<<<< HEAD
 <pre class="src src-shell">zypper<span style="color: #e45649;"> in</span> emacs
+=======
+<pre class="src src-shell">zypper<span style="color: #51afef;"> in</span> emacs
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 </pre>
 </div>
 </div>
@@ -160,7 +176,11 @@ zypper install fcitx5 fcitx5-chinese-addons fcitx5-chinese-addons-devel fcitx5-c
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-19 Sat 00:00</p>
 <p class="author">Author: Evan Meek</p>
+<<<<<<< HEAD
 <p class="date">Created: 2021-02-21 Sun 15:20</p>
+=======
+<p class="date">Created: 2021-02-11 Thu 01:11</p>
+>>>>>>> b352ff6ffc95cb29eb35064e50bd0e18d77c0398
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
