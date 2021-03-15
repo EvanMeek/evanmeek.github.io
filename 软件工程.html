@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-03-16 二 01:22 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&lrm;</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0bd6225">绪论</a>
+<ul>
+<li><a href="#org9505d89">软件的定义及特点</a>
+<ul>
+<li><a href="#orgfbfe8c9">定义</a></li>
+<li><a href="#org862867a">特点</a></li>
+</ul>
+</li>
+<li><a href="#org5062516">软件的分类</a>
+<ul>
+<li><a href="#org40b76a7">基于软件的功能划分</a></li>
+</ul>
+</li>
+<li><a href="#org6d5fd13">软件危机</a>
+<ul>
+<li><a href="#org6697e00">定义</a></li>
+<li><a href="#orge7102d1">原因</a></li>
+<li><a href="#org0e8996a">解决方法</a>
+<ul>
+<li><a href="#orgbd8a8da">组织管理</a></li>
+<li><a href="#orgb4711ad">技术措施</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org113be7d">软件工程概念</a></li>
+<li><a href="#org44f0455">软件工程基本原理</a></li>
+</ul>
+</li>
+<li><a href="#org06f15c3">软件需求与软件需求</a></li>
+<li><a href="#orgdf2704a">结构化方法::重点</a></li>
+<li><a href="#org757cc8d">面向对象方法——UML::重点</a></li>
+<li><a href="#orgdd08214">面向对象方法——RUP::重点</a></li>
+<li><a href="#orgf83594e">软件测试</a></li>
+<li><a href="#orgae23ffd">软件生存周期过程与管理</a></li>
+<li><a href="#org0598ec3">集成化能力成熟度模型(CMMI)</a></li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+软件工程笔记记录，不跟随课堂
+</p>
+</blockquote>
+<div id="outline-container-org0bd6225" class="outline-2">
+<h2 id="org0bd6225">绪论</h2>
+<div class="outline-text-2" id="text-org0bd6225">
+</div>
+<div id="outline-container-org9505d89" class="outline-3">
+<h3 id="org9505d89">软件的定义及特点</h3>
+<div class="outline-text-3" id="text-org9505d89">
+</div>
+<div id="outline-container-orgfbfe8c9" class="outline-4">
+<h4 id="orgfbfe8c9">定义</h4>
+<div class="outline-text-4" id="text-orgfbfe8c9">
+<p>
+<code>软件是计算机系统中的程序、相关数据、及其说明文档。</code> 其中 <code>程序</code> 是按照事先设计的功能和性能要求执行的指令序列； <code>数据</code> 是程序能正常操纵信息的数据结构； <code>说明文档</code> 包含与程序开发、维护和使用过程中有关的各种图文数据。
+</p>
+</div>
+</div>
+<div id="outline-container-org862867a" class="outline-4">
+<h4 id="org862867a">特点</h4>
+<div class="outline-text-4" id="text-org862867a">
+<ol class="org-ol">
+<li>软件是一种逻辑实体，而不是具体的物理实体。</li>
+<li>软件的生产与硬件不同</li>
+<li>软件的运行在使用间无硬件的机械磨损。</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5062516" class="outline-3">
+<h3 id="org5062516">软件的分类</h3>
+<div class="outline-text-3" id="text-org5062516">
+</div>
+<div id="outline-container-org40b76a7" class="outline-4">
+<h4 id="org40b76a7">基于软件的功能划分</h4>
+<div class="outline-text-4" id="text-org40b76a7">
+<ol class="org-ol">
+<li>系统软件</li>
+<li>支撑软件</li>
+<li>应用软件</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org6d5fd13" class="outline-3">
+<h3 id="org6d5fd13">软件危机</h3>
+<div class="outline-text-3" id="text-org6d5fd13">
+</div>
+<div id="outline-container-org6697e00" class="outline-4">
+<h4 id="org6697e00">定义</h4>
+<div class="outline-text-4" id="text-org6697e00">
+<p>
+软件在开发和维护过程遇到的严重问题称之为软件危机。
+两大难题：
+</p>
+<ul class="org-ul">
+<li>如何开发软件，怎样满足对软件日益增长的需求。</li>
+<li>如何维护数量不断膨胀的已有软件。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge7102d1" class="outline-4">
+<h4 id="orge7102d1">原因</h4>
+<div class="outline-text-4" id="text-orge7102d1">
+<ol class="org-ol">
+<li>忽略了需求分析。</li>
+<li>开发过程无统一、规范的方法论，文件资料不齐全，忽略人与人的交流。</li>
+<li>忽略测试阶段的工作，提交用户的软件质量差。</li>
+<li>忽略软件的维护。</li>
+<li>缺少规范而盲目编写程序。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0e8996a" class="outline-4">
+<h4 id="org0e8996a">解决方法</h4>
+<div class="outline-text-4" id="text-org0e8996a">
+</div>
+<div id="outline-container-orgbd8a8da" class="outline-5">
+<h5 id="orgbd8a8da">组织管理</h5>
+<div class="outline-text-5" id="text-orgbd8a8da">
+<p>
+工程项目管理方法
+</p>
+</div>
+</div>
+<div id="outline-container-orgb4711ad" class="outline-5">
+<h5 id="orgb4711ad">技术措施</h5>
+<div class="outline-text-5" id="text-orgb4711ad">
+<p>
+软件开发与方法
+软件工程
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org113be7d" class="outline-3">
+<h3 id="org113be7d">软件工程概念</h3>
+<div class="outline-text-3" id="text-org113be7d">
+<p>
+概念提出的目的是 <code>倡导以工程的原理、原则和方法进行软件开发</code> 。
+</p>
+</div>
+</div>
+<div id="outline-container-org44f0455" class="outline-3">
+<h3 id="org44f0455">软件工程基本原理</h3>
+<div class="outline-text-3" id="text-org44f0455">
+<ol class="org-ol">
+<li>分阶段生命周期计划并严格管理</li>
+<li>坚持进行阶段评审</li>
+<li>实行严格的产品控制</li>
+<li>采用现代程序设计技术</li>
+<li>结果能清楚地审查</li>
+<li>开发小组的人员应该少而精</li>
+<li>承认不断改进软件工程实践的必要性</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org06f15c3" class="outline-2">
+<h2 id="org06f15c3">软件需求与软件需求</h2>
+</div>
+<div id="outline-container-orgdf2704a" class="outline-2">
+<h2 id="orgdf2704a">结构化方法::重点</h2>
+</div>
+<div id="outline-container-org757cc8d" class="outline-2">
+<h2 id="org757cc8d">面向对象方法——UML::重点</h2>
+</div>
+<div id="outline-container-orgdd08214" class="outline-2">
+<h2 id="orgdd08214">面向对象方法——RUP::重点</h2>
+</div>
+<div id="outline-container-orgf83594e" class="outline-2">
+<h2 id="orgf83594e">软件测试</h2>
+</div>
+<div id="outline-container-orgae23ffd" class="outline-2">
+<h2 id="orgae23ffd">软件生存周期过程与管理</h2>
+</div>
+<div id="outline-container-org0598ec3" class="outline-2">
+<h2 id="org0598ec3">集成化能力成熟度模型(CMMI)</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2021-03-16 二 01:22</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

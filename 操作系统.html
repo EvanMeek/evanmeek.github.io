@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-04 四 01:06 -->
+<!-- 2021-03-16 二 01:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<li><a href="#org0b78f7b">基本工作方式</a></li>
+<li><a href="#org49ab134">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org49ab134">基本工作方式</a></li>
+<li><a href="#org7d5a70b">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org43cc082">程序状态字(PSW)</a></li>
+<li><a href="#org6268845">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -140,7 +140,7 @@
 <li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#orgf68a897">思考题与练习题</a></li>
+<li><a href="#orgdc39cf8">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org295dfb3">第三章-进程与线程</a>
@@ -148,13 +148,20 @@
 <li><a href="#orgd38f44f">多道程序设计</a>
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
+<li><a href="#org7fc3eee">程序的并发执行</a></li>
+<li><a href="#org034d79b">多道程序设计</a></li>
 </ul>
 </li>
-<li><a href="#orgf641927">进程</a></li>
+<li><a href="#orgf641927">进程</a>
+<ul>
+<li><a href="#org2c2e1d5">进程的定义</a></li>
+<li><a href="#org9fc66b8">进程的状态与转换</a></li>
+</ul>
+</li>
 <li><a href="#org663d895">线程</a></li>
 <li><a href="#orgd605793">进程调度</a></li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#orgdc39cf8">思考题与练习题</a></li>
+<li><a href="#org999d5c7">思考题与练习题</a></li>
 </ul>
 </li>
 </ul>
@@ -178,9 +185,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-org0b78f7b" class="outline-5">
-<h5 id="org0b78f7b">基本工作方式</h5>
-<div class="outline-text-5" id="text-org0b78f7b">
+<div id="outline-container-org49ab134" class="outline-5">
+<h5 id="org49ab134">基本工作方式</h5>
+<div class="outline-text-5" id="text-org49ab134">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -226,9 +233,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org49ab134" class="outline-5">
-<h5 id="org49ab134">基本工作方式</h5>
-<div class="outline-text-5" id="text-org49ab134">
+<div id="outline-container-org7d5a70b" class="outline-5">
+<h5 id="org7d5a70b">基本工作方式</h5>
+<div class="outline-text-5" id="text-org7d5a70b">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -554,8 +561,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="org047e9fa"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org047e9fa">
+<li><a id="org43cc082"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-org43cc082">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -671,9 +678,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org43cc082" class="outline-4">
-<h4 id="org43cc082">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org43cc082">
+<div id="outline-container-org6268845" class="outline-4">
+<h4 id="org6268845">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org6268845">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1228,9 +1235,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf68a897" class="outline-3">
-<h3 id="orgf68a897">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgf68a897">
+<div id="outline-container-orgdc39cf8" class="outline-3">
+<h3 id="orgdc39cf8">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgdc39cf8">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1439,19 +1446,214 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div class="outline-text-4" id="text-org74f7ef7">
 <p>
 由程序独占CPU直到得到结果的过程称为顺序执行。
+下面是顺序执行方式的几种特点：
 </p>
 <ol class="org-ol">
 <li>顺序性
 程序根据规定顺序在机器上执行。</li>
 <li>封闭性
-程序运行时，</li>
+程序运行的结果只由程序本身决定。也就是说程序执行的结果是由给定的初始条件决定的。</li>
+<li>程序执行结果的确定性
+程序执行结果与时间、执行速度无关。</li>
+<li>程序执行结果的可再现性
+结果不应该由时间，速度决定，只要初始条件相同则结果必定相同。</li>
+</ol>
+
+<p>
+顺序执行优点：
+    程序顺序执行结果的可再现性对程序检测、矫正错误带来了方便。
+</p>
+</div>
+</div>
+<div id="outline-container-org7fc3eee" class="outline-4">
+<h4 id="org7fc3eee">程序的并发执行</h4>
+<div class="outline-text-4" id="text-org7fc3eee">
+<p>
+<code>多个程序同时处于正在执行且尚未结束执行的状态，叫做程序并发执行。</code>
+并发执行优点：
+    充分利用系统资源，提高计算机处理能力。
+并发执行特征：
+</p>
+<ol class="org-ol">
+<li>在执行期间并发程序相互制约
+由于多个程序之间对资源的共享、竞争，从而程序之间造成了制约，所以会影响各道程序的执行速度。</li>
+<li>程序与计算不再一一对应
+允许由多个用户调用同一个程序。例如一个编译器可以由多个用户同时编译程序。</li>
+<li>并发程序的执行结果不可再现
+由于并发执行中程序之间相互联系且每个程序的执行速度不同，所以执行结果无法确定。</li>
+<li>程序的并行与并发执行
+并发从宏观上看是多个程序同时执行，但从为微观上看仍然是顺序执行，原因是由于每个指令处理周期超快，从感觉上看是同时执行的。
+并行是从宏观还是微观都是同时执行，但其需要多处理器的架构。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org034d79b" class="outline-4">
+<h4 id="org034d79b">多道程序设计</h4>
+<div class="outline-text-4" id="text-org034d79b">
+<p>
+<code>能使多个硬件并行工作即多道程序设计</code>
+</p>
+<ol class="org-ol">
+<li>引入
+引入多道程序设计是为了提高系统硬件的利用率。
+多道程序设计可以运行在单处理器和多处理器硬件状况下：
+<ul class="org-ul">
+<li>单处理器
+每个程序根据时间片交替地执行。</li>
+<li>多处理器
+每个处理器运行一个程序。</li>
+</ul></li>
+<li>特点
+<ol class="org-ol">
+<li>独立性
+类似顺序程序设计的封闭性，每道程序的逻辑独立，且执行速度与其他程序无关。</li>
+<li>随机性
+程序数据的输入输出执行时间都是随机的。</li>
+<li>资源共享性
+多个程序共享同一个硬件设备。</li>
+</ol></li>
+<li>缺点
+<ol class="org-ol">
+<li>延长执行时间</li>
+<li>效率提高有限</li>
+</ol></li>
 </ol>
 </div>
 </div>
 </div>
-
 <div id="outline-container-orgf641927" class="outline-3">
 <h3 id="orgf641927">进程</h3>
+<div class="outline-text-3" id="text-orgf641927">
+<p>
+进程是一种概念，是为了描述多道程序设计的并发执行，实现操作系统的并发性和共享性。
+</p>
+</div>
+<div id="outline-container-org2c2e1d5" class="outline-4">
+<h4 id="org2c2e1d5">进程的定义</h4>
+<div class="outline-text-4" id="text-org2c2e1d5">
+<p>
+<code>进程是具有一定独立功能的程序在某个数据集合上的一次运行活动，是系统进行资源分配和调度的一个独立单位。</code>
+</p>
+
+<p>
+进程可以被分为用户级进程和系统级进程，用户级进程用于运行用户程序而系统级进程则是完成操作系统的某些功能。
+进程具有优先级，系统级进程通常比用户级进程高。
+</p>
+<ol class="org-ol">
+<li>进程与程序的联系和区别
+<ul class="org-ul">
+<li>联系
+进程由程序构成。进程的运行目标是执行其所对应的程序。</li>
+<li>区别
+进程是动态的，程序是静态的。程序的存在理论上可以永久保存。而进程具有生命周期。</li>
+</ul></li>
+<li>可再入程序
+一个程序如果在运行时会修改自身，那么这个程序就不能称之为“可再入”。
+可再入程序是指，一个能被多用户同时调用且不会程序执行时不会修改自身代码的程序。</li>
+<li><p>
+进程的特性
+进程是操作系统实现并发的重要概念。其具有两个基本属性：
+</p>
+<ol class="org-ol">
+<li>可拥有源的独立单位</li>
+<li>可单独调度和分派的基本单位</li>
+</ol>
+<p>
+进程具有以下特性：
+</p>
+<ul class="org-ul">
+<li>并发性
+多个进程可以同时执行，意味着某个进程可以再另一个进程结束之前运行。</li>
+<li>动态性
+进程具有生命周期，且在周期内进程状态会发生变化。</li>
+<li>独立性
+进程是具有完整资源分配的单位。</li>
+<li>交往性
+进程之间可存在间接或直接的交互。</li>
+<li>异步性
+进程生命周期是独立的，周期时间不可预知。</li>
+<li>结构性
+进程由程序、数据、进程控制块组成。</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9fc66b8" class="outline-4">
+<h4 id="org9fc66b8">进程的状态与转换</h4>
+<div class="outline-text-4" id="text-org9fc66b8">
+<p>
+进程具有生命周期，不同周期具有不同状态，每个状态进程都有不同执行方式。
+以下是几种常用的进程模型：
+进程的动态性由进程的状态体现。
+</p>
+<ol class="org-ol">
+<li><p>
+三状态进程模型
+以下三种状态都可互相转换，且一个进程同时只能拥有一种进程状态。
+</p>
+<ul class="org-ul">
+<li>运行状态（Running）
+进程已分配到处理器资源，正在执行的进程。这种状态的进程在单处理器架构上仅能存在一个。</li>
+<li>就绪状态（Ready）
+所有资源已分配，就差处理器资源了，当获取到处理器资源时随时可以步入运行状态。可存在多个就绪状态的进程。</li>
+<li>等待状态（Waiting）
+当某些原因使得正在运行的进程暂停就会变成这种状态，当等待结束后进程会步入就绪状态。</li>
+</ul>
+
+<p>
+三种状态之间的转换原因如下：
+</p>
+<ul class="org-ul">
+<li>就绪-&gt;运行
+由于处于就绪状态的进程已经具有运行的条件，可却没有获得处理器资源，所以不能直接执行。就绪状态的程序会由进程调度程序根据调度算法将处理器分配给就绪进程。</li>
+<li>运行-&gt;就绪
+这种转换原因通常发生在分时操作系统中，当运行状态的进程的规定运行时间用完，超时中断处理程序会将其修改为就绪状态。且根据其自身特性放置到就绪队列的特定位置，保留进场相关信息，回收处理器，转入进程调度程序。</li>
+<li>运行-&gt;等待
+当运行中的程序因为某些原因，例如等待输入或其他进程同步这种额外事件。会将其设置为等待状态，就算额外事件已解决也不会立刻进入运行状态，而是进入就绪状态。</li>
+<li>等待-&gt;就绪
+当等待状态进程的额外事件处理完毕，会根据调度算法将等待状态进程设置为就绪状态进程。</li>
+</ul></li>
+<li><p>
+五状态进程模型
+五状态模型相对于三状态模型多了两种状态：创建，结束状态。
+</p>
+<ul class="org-ul">
+<li>运行状态
+与三状态进程模型中的运行状态类似。</li>
+<li>就绪状态
+与三状态进程模型中的就绪状态类似。</li>
+<li>阻塞状态（Blocked）
+与三状态进程模型中的等待状态类似。</li>
+<li>创建状态（New）
+表示了进程创建的过程的状态，在此状态时的进程是无法转变为运行状态的。其工作是用于创建进程所需资源。</li>
+<li>结束状态（Exit）
+表示进程结束时的状态，其工作是用于回收部分资源。</li>
+</ul>
+
+<p>
+五状态之间的转换原因如下：
+</p>
+<ul class="org-ul">
+<li>创建新进程
+用于创建新进程，原因有很多例如操作系统需要提供某些服务，便运行某个程序进而创建了新进程。</li>
+<li>提交
+完成创建一个进程，并将其设置为就绪状态。</li>
+<li>调度运行
+根据调度算法从就绪队列中选择就绪状态的进程运行。</li>
+<li>释放
+运行中的进程执行完毕或失败。这时候会释放掉其进程相关信息。
+就绪状态进程转换为阻塞或结束状态也可能存在释放转换。</li>
+<li>超时
+运行状态进程的时间片用完或被高优先级进程抢占时发生的转换。</li>
+<li>事件等待
+等待进程要求的事件未出现出现的转换，原因可能是I/O操作。</li>
+<li>事件出现
+进程等待的时间出现时的转换。</li>
+</ul></li>
+<li>七状态进程模型</li>
+</ol>
+</div>
+</div>
 </div>
 <div id="outline-container-org663d895" class="outline-3">
 <h3 id="org663d895">线程</h3>
@@ -1462,9 +1664,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="outline-container-org42f10e1" class="outline-3">
 <h3 id="org42f10e1">系统内核</h3>
 </div>
-<div id="outline-container-orgdc39cf8" class="outline-3">
-<h3 id="orgdc39cf8">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgdc39cf8">
+<div id="outline-container-org999d5c7" class="outline-3">
+<h3 id="org999d5c7">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org999d5c7">
 <ol class="org-ol">
 <li>什么是多道程序设计？</li>
 <li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
@@ -1618,7 +1820,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-04 四 01:06</p>
+<p class="date">Created: 2021-03-16 二 01:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
