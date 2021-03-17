@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-16 二 01:22 -->
+<!-- 2021-03-17 三 21:47 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>提升Emacs启动速度——Emacs Dump</title>
@@ -77,8 +77,8 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 由于这个文件足够简单，就直接提供内容了：
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #5B6268;">#</span><span style="color: #5B6268;">!/usr/bin/</span><span style="color: #51afef;">bash</span>
-<span style="color: #dcaeea;">LC_TYPE</span>=en_US.UTF-8 emacs --batch -q -l ~/.emacs.d/dump.el
+<pre class="src src-shell"><span style="color: #a8a8a8;">#</span><span style="color: #a8a8a8;">!/usr/bin/</span><span style="color: #b6a0ff;">bash</span>
+<span style="color: #00d3d0;">LC_TYPE</span>=en_US.UTF-8 emacs --batch -q -l ~/.emacs.d/dump.el
 </pre>
 </div>
 
@@ -101,47 +101,47 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 下面看代码吧，注释写的足够清晰。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;;; </span><span style="color: #5B6268;">-*- lexical-binding: t -*-</span>
+<pre class="src src-emacs-lisp"><span style="color: #a8a8a8;">;;; </span><span style="color: #a8a8a8;">-*- lexical-binding: t -*-</span>
 
 
-<span style="color: #5B6268;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#25105;&#35273;&#24471;&#26377;&#24517;&#35201;&#35828;&#19968;&#19979;dump&#21644;&#27809;&#26377;dump&#30340;&#36923;&#36753;&#20851;&#31995;&#12290;                                                                           ;;</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#19979;&#38754;&#30340;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;dump&#65292;&#26159;&#25351;&#24403;&#21069;&#20320;&#21551;&#21160;&#30340;emacs&#21152;&#36733;&#30340;&#26159;&#36890;&#36807;dump.sh&#29983;&#25104;&#30340;pdmp&#25991;&#20214;&#21152;&#36733;&#30340; &#12290;                                       ;;</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#32780;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;&#38750;dump&#37197;&#32622;&#26159;&#25351;&#20320;&#19981;&#20197;pdmp&#25991;&#20214;&#21152;&#36733;emacs&#65292;&#20063;&#23601;&#26159;&#27491;&#24120;&#21551;&#21160;emacs&#12290;                                                  ;;</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#26679;&#21306;&#20998;&#30340;&#22909;&#22788;&#26159;&#21487;&#20197;&#35753;&#20320;&#24819;&#29992;pdmp&#26102;&#23601;&#29992;&#65292;&#19981;&#24819;&#29992;&#26102;&#21487;&#20197;&#27491;&#24120;&#29992;Emacs&#65292;&#20294;&#26159;&#25105;&#25512;&#33616;&#20320;&#36825;&#26679;&#20570;&#65292;&#19981;&#28982;&#21487;&#33021;&#20250;&#20986;&#29616;&#19968;&#20123;&#38382;&#39064;&#12290;                          ;;</span>
-<span style="color: #5B6268;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #a8a8a8;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#25105;&#35273;&#24471;&#26377;&#24517;&#35201;&#35828;&#19968;&#19979;dump&#21644;&#27809;&#26377;dump&#30340;&#36923;&#36753;&#20851;&#31995;&#12290;                                                                           ;;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#19979;&#38754;&#30340;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;dump&#65292;&#26159;&#25351;&#24403;&#21069;&#20320;&#21551;&#21160;&#30340;emacs&#21152;&#36733;&#30340;&#26159;&#36890;&#36807;dump.sh&#29983;&#25104;&#30340;pdmp&#25991;&#20214;&#21152;&#36733;&#30340; &#12290;                                       ;;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#32780;&#27880;&#37322;&#20013;&#25552;&#21040;&#30340;&#38750;dump&#37197;&#32622;&#26159;&#25351;&#20320;&#19981;&#20197;pdmp&#25991;&#20214;&#21152;&#36733;emacs&#65292;&#20063;&#23601;&#26159;&#27491;&#24120;&#21551;&#21160;emacs&#12290;                                                  ;;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#36825;&#26679;&#21306;&#20998;&#30340;&#22909;&#22788;&#26159;&#21487;&#20197;&#35753;&#20320;&#24819;&#29992;pdmp&#26102;&#23601;&#29992;&#65292;&#19981;&#24819;&#29992;&#26102;&#21487;&#20197;&#27491;&#24120;&#29992;Emacs&#65292;&#20294;&#26159;&#25105;&#25512;&#33616;&#20320;&#36825;&#26679;&#20570;&#65292;&#19981;&#28982;&#21487;&#33021;&#20250;&#20986;&#29616;&#19968;&#20123;&#38382;&#39064;&#12290;                          ;;</span>
+<span style="color: #a8a8a8;">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">dump&#21518;load-path&#20540;&#65292;&#24403;&#36825;&#20010;&#21464;&#37327;&#20026;nil&#26102;&#26159;&#19981;&#20250;&#21152;&#36733;pdmp&#30340;&#12290;</span>
-(<span style="color: #51afef;">defvar</span> <span style="color: #dcaeea;">+dumped-load-path</span> nil
-  <span style="color: #83898d;">"Not nil when using dump."</span>)
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">dump&#21518;load-path&#20540;&#65292;&#24403;&#36825;&#20010;&#21464;&#37327;&#20026;nil&#26102;&#26159;&#19981;&#20250;&#21152;&#36733;pdmp&#30340;&#12290;</span>
+(<span style="color: #b6a0ff;">defvar</span> <span style="color: #00d3d0;">+dumped-load-path</span> nil
+  <span style="color: #c6eaff;">"Not nil when using dump."</span>)
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36890;&#36807;dump&#21551;&#21160;&#26102;&#30340;&#37197;&#32622;</span>
-(<span style="color: #51afef;">when</span> +dumped-load-path
-  <span style="color: #5B6268;">;;</span><span style="color: #5B6268;">&#24674;&#22797;load-path</span>
-  (<span style="color: #51afef;">setq</span> load-path +dumped-load-path)
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#20462;&#25913;&#19968;&#19979;&#25253;&#38169;&#31561;&#32423;&#65292;&#36825;&#20010;&#35835;&#32773;&#25353;&#24515;&#24847;&#21152;&#65292;&#19981;&#24433;&#21709;dump</span>
-  (<span style="color: #51afef;">setq</span> warning-minimum-level <span style="color: #c678dd;">:emergency</span>)
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#19968;&#20123;&#21151;&#33021;&#22833;&#24120;&#30340;mode&#65292;&#38656;&#35201;&#37325;&#26032;&#24320;&#21551;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#36890;&#36807;dump&#21551;&#21160;&#26102;&#30340;&#37197;&#32622;</span>
+(<span style="color: #b6a0ff;">when</span> +dumped-load-path
+  <span style="color: #a8a8a8;">;;</span><span style="color: #a8a8a8;">&#24674;&#22797;load-path</span>
+  (<span style="color: #b6a0ff;">setq</span> load-path +dumped-load-path)
+  <span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#20462;&#25913;&#19968;&#19979;&#25253;&#38169;&#31561;&#32423;&#65292;&#36825;&#20010;&#35835;&#32773;&#25353;&#24515;&#24847;&#21152;&#65292;&#19981;&#24433;&#21709;dump</span>
+  (<span style="color: #b6a0ff;">setq</span> warning-minimum-level <span style="color: #f78fe7;">:emergency</span>)
+  <span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#19968;&#20123;&#21151;&#33021;&#22833;&#24120;&#30340;mode&#65292;&#38656;&#35201;&#37325;&#26032;&#24320;&#21551;</span>
   (global-font-lock-mode t)
   (transient-mark-mode t))
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#38750;dump&#21551;&#21160;&#26041;&#24335;&#25152;&#38656;&#21152;&#36733;&#30340;&#37197;&#32622;</span>
-(<span style="color: #51afef;">unless</span> +dumped-load-path
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#19979;&#38754;&#30340;&#20869;&#23481;&#20110;dump&#26080;&#20851;&#65292;&#36825;&#37324;&#30340;&#20869;&#23481;&#21482;&#38656;&#35201;&#20570;&#20320;&#21407;&#26412;init.el&#20869;&#20570;&#30340;&#20107;&#24773;&#23601;&#22815;&#20102;&#12290;</span>
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#21521;&#25105;&#36825;&#37324;&#23601;&#26159;&#27491;&#24120;&#23558;&#30446;&#24405;&#25110;&#23376;&#30446;&#24405;&#21152;&#21040;load-path&#20013;&#65292;&#22240;&#20026;&#25105;&#30340;&#37197;&#32622;&#26159;&#27169;&#22359;&#21270;&#30340;&#65292;&#19981;&#21516;&#27169;&#22359;&#25918;&#22312;&#19981;&#21516;&#30446;&#24405;&#19979;&#30340;&#65292;&#20320;&#21482;&#35201;&#30693;&#36947;&#19979;&#38754;&#30340;&#20869;&#23481;&#19981;&#35201;&#29031;&#25220;&#23601;&#34892;&#65292;&#20877;&#35828;&#19968;&#36793;&#65292;&#19979;&#38754;&#30340;&#20869;&#23481;&#23601;&#26159;&#20320;&#21407;&#26412;init.el&#20013;&#30340;&#20869;&#23481;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#38750;dump&#21551;&#21160;&#26041;&#24335;&#25152;&#38656;&#21152;&#36733;&#30340;&#37197;&#32622;</span>
+(<span style="color: #b6a0ff;">unless</span> +dumped-load-path
+  <span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#19979;&#38754;&#30340;&#20869;&#23481;&#20110;dump&#26080;&#20851;&#65292;&#36825;&#37324;&#30340;&#20869;&#23481;&#21482;&#38656;&#35201;&#20570;&#20320;&#21407;&#26412;init.el&#20869;&#20570;&#30340;&#20107;&#24773;&#23601;&#22815;&#20102;&#12290;</span>
+  <span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#21521;&#25105;&#36825;&#37324;&#23601;&#26159;&#27491;&#24120;&#23558;&#30446;&#24405;&#25110;&#23376;&#30446;&#24405;&#21152;&#21040;load-path&#20013;&#65292;&#22240;&#20026;&#25105;&#30340;&#37197;&#32622;&#26159;&#27169;&#22359;&#21270;&#30340;&#65292;&#19981;&#21516;&#27169;&#22359;&#25918;&#22312;&#19981;&#21516;&#30446;&#24405;&#19979;&#30340;&#65292;&#20320;&#21482;&#35201;&#30693;&#36947;&#19979;&#38754;&#30340;&#20869;&#23481;&#19981;&#35201;&#29031;&#25220;&#23601;&#34892;&#65292;&#20877;&#35828;&#19968;&#36793;&#65292;&#19979;&#38754;&#30340;&#20869;&#23481;&#23601;&#26159;&#20320;&#21407;&#26412;init.el&#20013;&#30340;&#20869;&#23481;</span>
 
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36882;&#24402;&#36941;&#21382;&#21152;&#36733;&#36335;&#24452;</span>
-  (<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">add-subdirs-to-load-path</span>(dir)
-    <span style="color: #83898d;">"Recursive add directories to `load-path`."</span>
-    (<span style="color: #51afef;">let</span> ((default-directory (file-name-as-directory dir)))
+  <span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#36882;&#24402;&#36941;&#21382;&#21152;&#36733;&#36335;&#24452;</span>
+  (<span style="color: #b6a0ff;">defun</span> <span style="color: #feacd0;">add-subdirs-to-load-path</span>(dir)
+    <span style="color: #c6eaff;">"Recursive add directories to `load-path`."</span>
+    (<span style="color: #b6a0ff;">let</span> ((default-directory (file-name-as-directory dir)))
       (add-to-list 'load-path dir)
       (normal-top-level-add-subdirs-to-load-path)))
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#35774;&#32622;load-path</span>
-  (<span style="color: #51afef;">let</span> ((gc-cons-threshold most-positive-fixnum)
+  <span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#35774;&#32622;load-path</span>
+  (<span style="color: #b6a0ff;">let</span> ((gc-cons-threshold most-positive-fixnum)
         (file-name-handler-alist nil))
-    (add-subdirs-to-load-path <span style="color: #98be65;">"~/.emacs.d/etc/"</span>))
+    (add-subdirs-to-load-path <span style="color: #72a4ff;">"~/.emacs.d/etc/"</span>))
 
-  (<span style="color: #51afef;">require</span> '<span style="color: #a9a1e1;">init-config</span>))
+  (<span style="color: #b6a0ff;">require</span> '<span style="color: #00bdfa;">init-config</span>))
 
 </pre>
 </div>
@@ -159,29 +159,29 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#20808;&#23558;Emacs&#21152;&#36733;&#19968;&#19979;&#12290;&#27880;&#24847;&#36825;&#26102;&#20505;init.el&#25191;&#34892;&#26102;&#30340;&#36923;&#36753;&#24212;&#35813;&#26159;&#38750;dump&#26041;&#24335;&#30340;&#20195;&#30721;&#12290;</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#26679;&#20063;&#23601;&#23558;&#20320;&#30340;&#21407;&#26412;&#37197;&#32622;&#20013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#20102;&#65292;&#38543;&#21518;&#23601;&#21487;&#20197;&#35774;&#32622;dump&#25554;&#20214;&#40657;&#21517;&#21333;&#20102;&#12290;</span>
-(load (expand-file-name <span style="color: #98be65;">"init.el"</span>))
+<pre class="src src-emacs-lisp"><span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#20808;&#23558;Emacs&#21152;&#36733;&#19968;&#19979;&#12290;&#27880;&#24847;&#36825;&#26102;&#20505;init.el&#25191;&#34892;&#26102;&#30340;&#36923;&#36753;&#24212;&#35813;&#26159;&#38750;dump&#26041;&#24335;&#30340;&#20195;&#30721;&#12290;</span>
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#36825;&#26679;&#20063;&#23601;&#23558;&#20320;&#30340;&#21407;&#26412;&#37197;&#32622;&#20013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23384;&#20013;&#20102;&#65292;&#38543;&#21518;&#23601;&#21487;&#20197;&#35774;&#32622;dump&#25554;&#20214;&#40657;&#21517;&#21333;&#20102;&#12290;</span>
+(load (expand-file-name <span style="color: #72a4ff;">"init.el"</span>))
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#37324;&#23601;&#26159;&#19981;&#38656;&#35201;dump&#30340;&#25554;&#20214;&#65292;&#20063;&#23601;&#26159;&#40657;&#21517;&#21333;&#12290;</span>
-(<span style="color: #51afef;">setq</span> +dump-exclude-packages '(telega
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#36825;&#37324;&#23601;&#26159;&#19981;&#38656;&#35201;dump&#30340;&#25554;&#20214;&#65292;&#20063;&#23601;&#26159;&#40657;&#21517;&#21333;&#12290;</span>
+(<span style="color: #b6a0ff;">setq</span> +dump-exclude-packages '(telega
                                meow
                                hydra-posframe))
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#36825;&#37324;&#26159;&#21152;&#36733;&#37197;&#32622;&#30340;&#36807;&#31243;&#65292;&#20316;&#29992;&#23558;&#25152;&#26377;&#24050;&#23433;&#35013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23481;&#65292;&#20294;&#26159;&#20250;&#25490;&#38500;&#40657;&#21517;&#21333;&#20013;&#30340;&#25554;&#20214;&#12290;</span>
-(<span style="color: #51afef;">dolist</span> (package package-activated-list)
-  (<span style="color: #51afef;">unless</span> (member package +dump-exclude-packages)
-    (<span style="color: #51afef;">require</span> <span style="color: #a9a1e1;">package</span>)))
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#36825;&#37324;&#26159;&#21152;&#36733;&#37197;&#32622;&#30340;&#36807;&#31243;&#65292;&#20316;&#29992;&#23558;&#25152;&#26377;&#24050;&#23433;&#35013;&#30340;&#25554;&#20214;&#37117;&#21152;&#36733;&#21040;&#20869;&#23481;&#65292;&#20294;&#26159;&#20250;&#25490;&#38500;&#40657;&#21517;&#21333;&#20013;&#30340;&#25554;&#20214;&#12290;</span>
+(<span style="color: #b6a0ff;">dolist</span> (package package-activated-list)
+  (<span style="color: #b6a0ff;">unless</span> (member package +dump-exclude-packages)
+    (<span style="color: #b6a0ff;">require</span> <span style="color: #00bdfa;">package</span>)))
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#29616;&#22312;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#21464;&#37327;&#65292;&#20854;&#20316;&#29992;&#26159;&#35753;init.el&#37324;&#26377;&#20004;&#31181;&#19981;&#21516;&#21551;&#21160;&#26102;&#21152;&#36733;&#36923;&#36753;&#20197;&#21450;&#35299;&#20915;dump&#24102;&#26469;&#30340;load-path&#30340;&#38382;&#39064;</span>
-(<span style="color: #51afef;">setq</span> +dumped-load-path load-path)
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#29616;&#22312;&#38656;&#35201;&#21019;&#24314;&#19968;&#20010;&#21464;&#37327;&#65292;&#20854;&#20316;&#29992;&#26159;&#35753;init.el&#37324;&#26377;&#20004;&#31181;&#19981;&#21516;&#21551;&#21160;&#26102;&#21152;&#36733;&#36923;&#36753;&#20197;&#21450;&#35299;&#20915;dump&#24102;&#26469;&#30340;load-path&#30340;&#38382;&#39064;</span>
+(<span style="color: #b6a0ff;">setq</span> +dumped-load-path load-path)
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#20851;&#38381;gc&#65292;&#21487;&#36873;</span>
-(<span style="color: #51afef;">setq</span> gc-cons-threshold most-positive-fixnum
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#20851;&#38381;gc&#65292;&#21487;&#36873;</span>
+(<span style="color: #b6a0ff;">setq</span> gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.6)
 
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#30495;&#27491;&#20570;dump&#24037;&#20316;&#30340;&#20989;&#25968;&#65292;&#20320;&#21487;&#20197;&#33258;&#23450;&#20041;&#29983;&#25104;&#30340;&#25991;&#20214;&#30340;&#36335;&#24452;</span>
-(dump-emacs-portable <span style="color: #98be65;">"~/.emacs.d/emacs.pdmp"</span>)
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#30495;&#27491;&#20570;dump&#24037;&#20316;&#30340;&#20989;&#25968;&#65292;&#20320;&#21487;&#20197;&#33258;&#23450;&#20041;&#29983;&#25104;&#30340;&#25991;&#20214;&#30340;&#36335;&#24452;</span>
+(dump-emacs-portable <span style="color: #72a4ff;">"~/.emacs.d/emacs.pdmp"</span>)
 
 </pre>
 </div>
@@ -212,7 +212,7 @@ Emacs从很早就有让插件加载速度变快的需求了，从一开始的无
 <div id="postamble" class="status">
 <p class="date">Date: 2021-01-25 一 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-16 二 01:22</p>
+<p class="date">Created: 2021-03-17 三 21:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

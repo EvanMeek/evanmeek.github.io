@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-16 二 01:22 -->
+<!-- 2021-03-17 三 21:47 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs中优雅地加载GUI配置</title>
@@ -81,7 +81,7 @@ SERVER启动了之后咱们就可以随时以一种超级快速的方式启动CL
 TUI模式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">emacsclient -t -a <span style="color: #98be65;">""</span>
+<pre class="src src-shell">emacsclient -t -a <span style="color: #72a4ff;">""</span>
 </pre>
 </div>
 
@@ -89,7 +89,7 @@ TUI模式
 GUI模式
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">emacsclient -c -a <span style="color: #98be65;">""</span>
+<pre class="src src-shell">emacsclient -c -a <span style="color: #72a4ff;">""</span>
 </pre>
 </div>
 </div>
@@ -129,7 +129,7 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #51afef;">setq</span> graphic-only-plugins-setting ())
+<pre class="src src-emacs-lisp">(<span style="color: #b6a0ff;">setq</span> graphic-only-plugins-setting ())
 </pre>
 </div>
 
@@ -138,11 +138,11 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Emacs&#19979;&#30340;pdf&#26597;&#30475;&#24037;&#20855;&#65292;&#40664;&#35748;&#38750;&#22270;&#24418;&#21270;&#19981;&#24320;&#21551;</span>
-(<span style="color: #51afef;">push</span> '(<span style="color: #51afef;">use-package</span> 
+<pre class="src src-emacs-lisp"><span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">Emacs&#19979;&#30340;pdf&#26597;&#30475;&#24037;&#20855;&#65292;&#40664;&#35748;&#38750;&#22270;&#24418;&#21270;&#19981;&#24320;&#21551;</span>
+(<span style="color: #b6a0ff;">push</span> '(<span style="color: #b6a0ff;">use-package</span> 
          pdf-tools 
-         <span style="color: #c678dd;">:ensure</span> t 
-         <span style="color: #c678dd;">:hook</span> ('doc-view-mode 'pdf-view-mode)) <span style="color: #ECBE7B;">graphic-only-plugins-setting)</span>
+         <span style="color: #f78fe7;">:ensure</span> t 
+         <span style="color: #f78fe7;">:hook</span> ('doc-view-mode 'pdf-view-mode)) <span style="color: #efdf00;">graphic-only-plugins-setting)</span>
 </pre>
 </div>
 
@@ -151,18 +151,18 @@ GUI模式
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">graphic-p</span> ()
-  <span style="color: #83898d;">"&#21028;&#26029;&#24403;&#21069;&#29615;&#22659;&#26159;&#21542;&#20026;&#22270;&#24418;&#29615;&#22659;"</span>
-  (<span style="color: #51afef;">if</span> (display-graphic-p)
+<pre class="src src-emacs-lisp">(<span style="color: #b6a0ff;">defun</span> <span style="color: #feacd0;">graphic-p</span> ()
+  <span style="color: #c6eaff;">"&#21028;&#26029;&#24403;&#21069;&#29615;&#22659;&#26159;&#21542;&#20026;&#22270;&#24418;&#29615;&#22659;"</span>
+  (<span style="color: #b6a0ff;">if</span> (display-graphic-p)
       t))
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#22270;&#24418;&#21270;&#25554;&#20214;&#29305;&#27530;&#35774;&#32622;</span>
-(<span style="color: #51afef;">if</span> (not (graphic-p))
+<span style="color: #a8a8a8;">;; </span><span style="color: #a8a8a8;">&#22270;&#24418;&#21270;&#25554;&#20214;&#29305;&#27530;&#35774;&#32622;</span>
+(<span style="color: #b6a0ff;">if</span> (not (graphic-p))
     (add-hook 'after-make-frame-functions
-              (<span style="color: #51afef;">lambda</span> (new-frame)
+              (<span style="color: #b6a0ff;">lambda</span> (new-frame)
                 (select-frame new-frame)
-                (<span style="color: #51afef;">dolist</span> (elisp-code graphic-only-plugins-setting)
+                (<span style="color: #b6a0ff;">dolist</span> (elisp-code graphic-only-plugins-setting)
                   (eval elisp-code))))
-  (<span style="color: #51afef;">dolist</span> (elisp-code graphic-only-plugins-setting)
+  (<span style="color: #b6a0ff;">dolist</span> (elisp-code graphic-only-plugins-setting)
     (eval elisp-code)))
 </pre>
 </div>
@@ -196,7 +196,7 @@ GUI模式
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-17 五 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-16 二 01:22</p>
+<p class="date">Created: 2021-03-17 三 21:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
