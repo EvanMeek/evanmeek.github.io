@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-16 二 01:22 -->
+<!-- 2021-03-17 三 21:47 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<li><a href="#org49ab134">基本工作方式</a></li>
+<li><a href="#orgf155ea3">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org7d5a70b">基本工作方式</a></li>
+<li><a href="#org0637b48">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org6268845">程序状态字(PSW)</a></li>
+<li><a href="#orgc3255c5">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -140,28 +140,41 @@
 <li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#orgdc39cf8">思考题与练习题</a></li>
+<li><a href="#orgd42990f">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org295dfb3">第三章-进程与线程</a>
 <ul>
-<li><a href="#orgd38f44f">多道程序设计</a>
+<li><a href="#orge188b8d">多道程序设计</a>
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
 <li><a href="#org7fc3eee">程序的并发执行</a></li>
-<li><a href="#org034d79b">多道程序设计</a></li>
+<li><a href="#orgd60f289">多道程序设计</a></li>
 </ul>
 </li>
 <li><a href="#orgf641927">进程</a>
 <ul>
 <li><a href="#org2c2e1d5">进程的定义</a></li>
 <li><a href="#org9fc66b8">进程的状态与转换</a></li>
+<li><a href="#org12e8e2d">进程控制块</a></li>
 </ul>
 </li>
-<li><a href="#org663d895">线程</a></li>
-<li><a href="#orgd605793">进程调度</a></li>
+<li><a href="#org663d895">线程</a>
+<ul>
+<li><a href="#orgf0c1801">线程的基本概念</a></li>
+<li><a href="#orgf1b695d">进程和线程</a></li>
+<li><a href="#orgc3972de">线程实现机制</a></li>
+</ul>
+</li>
+<li><a href="#orgd605793">进程调度</a>
+<ul>
+<li><a href="#org3c4210f">概述</a></li>
+<li><a href="#orge03a03a">调度算法设计原则</a></li>
+<li><a href="#orgf1e9ca6">进程调度算法</a></li>
+</ul>
+</li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org999d5c7">思考题与练习题</a></li>
+<li><a href="#orge4c8bf4">思考题与练习题</a></li>
 </ul>
 </li>
 </ul>
@@ -185,9 +198,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-org49ab134" class="outline-5">
-<h5 id="org49ab134">基本工作方式</h5>
-<div class="outline-text-5" id="text-org49ab134">
+<div id="outline-container-orgf155ea3" class="outline-5">
+<h5 id="orgf155ea3">基本工作方式</h5>
+<div class="outline-text-5" id="text-orgf155ea3">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -233,9 +246,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org7d5a70b" class="outline-5">
-<h5 id="org7d5a70b">基本工作方式</h5>
-<div class="outline-text-5" id="text-org7d5a70b">
+<div id="outline-container-org0637b48" class="outline-5">
+<h5 id="org0637b48">基本工作方式</h5>
+<div class="outline-text-5" id="text-org0637b48">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -561,8 +574,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="org43cc082"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org43cc082">
+<li><a id="orgc434f70"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-orgc434f70">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -678,9 +691,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org6268845" class="outline-4">
-<h4 id="org6268845">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org6268845">
+<div id="outline-container-orgc3255c5" class="outline-4">
+<h4 id="orgc3255c5">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-orgc3255c5">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1235,9 +1248,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdc39cf8" class="outline-3">
-<h3 id="orgdc39cf8">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgdc39cf8">
+<div id="outline-container-orgd42990f" class="outline-3">
+<h3 id="orgd42990f">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgd42990f">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1431,9 +1444,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <h2 id="org295dfb3">第三章-进程与线程</h2>
 <div class="outline-text-2" id="text-org295dfb3">
 </div>
-<div id="outline-container-orgd38f44f" class="outline-3">
-<h3 id="orgd38f44f">多道程序设计</h3>
-<div class="outline-text-3" id="text-orgd38f44f">
+<div id="outline-container-orge188b8d" class="outline-3">
+<h3 id="orge188b8d">多道程序设计</h3>
+<div class="outline-text-3" id="text-orge188b8d">
 <ul class="org-ul">
 <li>作用
 提高处理器利用率。</li>
@@ -1487,9 +1500,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org034d79b" class="outline-4">
-<h4 id="org034d79b">多道程序设计</h4>
-<div class="outline-text-4" id="text-org034d79b">
+<div id="outline-container-orgd60f289" class="outline-4">
+<h4 id="orgd60f289">多道程序设计</h4>
+<div class="outline-text-4" id="text-orgd60f289">
 <p>
 <code>能使多个硬件并行工作即多道程序设计</code>
 </p>
@@ -1650,23 +1663,364 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <li>事件出现
 进程等待的时间出现时的转换。</li>
 </ul></li>
-<li>七状态进程模型</li>
+<li><p>
+七状态进程模型 
+七状态进程模型做了较大的改变，原因是因为此时操作系统出现虚拟内存技术，所以需要区别内存和外存的区别。
+优点：
+</p>
+<ul class="org-ul">
+<li>提高处理器效率</li>
+<li>减少内存压力</li>
+<li>方便程序调试</li>
+</ul>
+
+<img src="/images/七状态进程模型.png" width="50%"/>
+
+<p>
+状态：
+</p>
+<ul class="org-ul">
+<li>就绪（Ready）
+进程已创建在 <code>内存</code> 且可立即进入运行状态。</li>
+
+<li>阻塞（Blocked）
+进程已创建在 <code>内存</code> 且正在等待事件出现。</li>
+
+<li>阻塞挂起（Blocked，Suspend）
+进程已创建在 <code>外存</code> 且正在等待事件出现。</li>
+
+<li>就绪挂起（Blocked，Suspend）
+进程已创建在 <code>外存</code> 但只要进入内存即可运行。</li>
+</ul>
+
+<p>
+进程交换原因：
+</p>
+<ol class="org-ol">
+<li>挂起（Suspend）： <code>进程从内存至外存</code>
+<ul class="org-ul">
+<li>阻塞————阻塞挂起
+无进程处于就绪或就绪进程要求更多内存时。</li>
+<li>就绪————就绪挂起
+当高优先级就绪进程和低优先级就绪进程同时存在就会被低优先级进程挂起。</li>
+<li>运行————就绪挂起
+抢先式分时系统中，若高优先级阻塞挂起进程进入就绪挂起，则可能会将运行中的进程设置为就绪挂起状态。</li>
+</ul></li>
+<li>激活（Activate）： <code>进程内存至外存</code>
+<ul class="org-ul">
+<li>就绪挂起————就绪
+就绪挂起进程优先级比就绪进程高。</li>
+<li>阻塞挂起————阻塞
+内存足够时，将高优先级阻塞挂起进程设置为阻塞状态进程。</li>
+</ul></li>
+<li>事件出现（Event Occurs）： <code>进程等待事件出现</code>
+<ul class="org-ul">
+<li>阻塞到就绪
+内存中的进程的事件出现。</li>
+<li>阻塞挂起到就绪挂起
+外存中的进程的事件出现。</li>
+</ul></li>
+<li>提交（Admit）： <code>创建进程的过程</code></li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org12e8e2d" class="outline-4">
+<h4 id="org12e8e2d">进程控制块</h4>
+<div class="outline-text-4" id="text-org12e8e2d">
+<p>
+进程控制块————（process control block），也就是PCB，用于方便系统控制和描述进程
+<code>每个进程都对应一个PCB。</code>
+活动过程的数据结构。
+</p>
+<ol class="org-ol">
+<li>PCB的内容
+分为两大类：
+<ul class="org-ul">
+<li>调度信息：进程调度时使用
+调度信息包含多种信息，分别是：
+<ol class="org-ol">
+<li>进程名
+标记进程的标识</li>
+<li>进程号
+唯一标记进程标识</li>
+<li>地址空间信息
+每个进程可用内存的信息</li>
+<li>优先级
+进程的优先级</li>
+<li>当期状态
+进程状态</li>
+<li>资源清单
+进程运行状态所需资源</li>
+<li>家族关系
+进程的父子级关系</li>
+<li>消息队列指针
+进程所属消息队列所在地址</li>
+<li>进程队列指针
+进程所属队列的地址</li>
+<li>已打开文件
+进程正在使用的文件。</li>
+</ol></li>
+<li>现场信息：描述进程运行情况，仅记录会被其他进程改变的寄存器。</li>
+</ul></li>
+<li>进程的组成
+三个部分：
+<ol class="org-ol">
+<li>程序
+描述进程要实现的功能</li>
+<li>数据
+程序要操作的对象</li>
+<li>PCB :: 灵魂
+控制进程的必需品。</li>
+</ol></li>
+<li>PCB组织
+操作系统将PCB用几种方式将其组织方便管理。
+<ol class="org-ol">
+<li><p>
+线性
+</p>
+<img src="/images/PCB线性组织.png" width="50%"/>
+<p>
+将PCB们不分状态放在一个连续表内。
+优点：
+</p>
+<ul class="org-ul">
+<li>简单。</li>
+</ul>
+<p>
+缺点：
+</p>
+<ul class="org-ul">
+<li>PCB表数据多了后效率很低。</li>
+</ul></li>
+<li><p>
+索引
+</p>
+<img src="/images/PCB索引组织.png" width="50%"/>
+<p>
+根据PCB状态分组为PCB索引表。
+可将进程分为两种索引表，且每种索引表有指向表起始地址的指针。
+</p></li>
+<li><p>
+链接
+</p>
+<img src="/images/PCB链接组织.png" width="50%"/>
+<p>
+根据进程的状态部分，分为几种不同的队列。
+</p></li>
+</ol></li>
+<li>进程的队列
+系统将所有进程的PCB排成若干个队列，队列分类如下：
+<ol class="org-ol">
+<li>就绪队列
+就绪队列可存在多个，进程入队出次序和调度算法有关。</li>
+<li>等待队列
+多个等待事件组成一个队列，当阻塞状态进程等待某事件时，将进程放入此队列。</li>
+<li>运行队列
+单处理器系统上仅有一个运行指针，指向当前运行的程序。</li>
+</ol></li>
+<li>进程队列的组成
+进程队列通过前面提到的链接实现，常用的链接方式分为：
+<ol class="org-ol">
+<li>单向链接
+前一进程的指针值为其下一进程的PCB地址，且最后一个进程的指针值为0。</li>
+<li><p>
+双向链接
+双向链接相比单向链接多了一个指针，分别是只想前一个PCB地址的前项指针和后项指针。
+且这种队列方式还存在一个指向队列首的队首指针和只想队列尾巴的队尾指针。
+</p>
+
+<p>
+由于进程状态的转换，一个PCB经常需要在各种状态队列中移动，那么就有两个概念“出队”和“入队”。
+下面是几种情况和对应的解释：
+</p>
+<ol class="org-ol">
+<li>队首进程出队
+将该进程的后继进程的前后指针修改为0，再将出队进程的后向指针送入队首指针单元中。</li>
+<li>非队首（或队尾）进程出队
+假定PCB-B要出队，其前PCB是A，后是C，那么就将B的后向指针替换给A的后向指针，将B的前向指针替换给C的前向指针。</li>
+<li>队尾进程出队
+将队尾PCB的前继PCB的后向指针修改为0即可。</li>
+</ol></li>
+</ol></li>
+<li>进程控制
+操作系统的进程控制由 <code>原语</code> 实现。
+<ol class="org-ol">
+<li>进程控制原语
+<ul class="org-ul">
+<li>创建原语
+此原语可以创建新的进程。</li>
+<li>撤销原语
+此原语用于销毁执行完成的进程。</li>
+<li>阻塞原语
+将进程状态设置为阻塞</li>
+<li>唤醒原语
+当阻塞进程的等待事件出现后利用此原语将其唤醒。</li>
+</ul></li>
+</ol></li>
 </ol>
 </div>
 </div>
 </div>
 <div id="outline-container-org663d895" class="outline-3">
 <h3 id="org663d895">线程</h3>
+<div class="outline-text-3" id="text-org663d895">
+<p>
+线程是比进程更小且能独立运行的基本单位。
+</p>
 </div>
+<div id="outline-container-orgf0c1801" class="outline-4">
+<h4 id="orgf0c1801">线程的基本概念</h4>
+<div class="outline-text-4" id="text-orgf0c1801">
+<p>
+由于操作系统调度进程时耗时较大，频繁的调度会使得浪费时间，便有了线程。
+</p>
+<ol class="org-ol">
+<li>什么是线程
+<code>线程是进程的一个实体，是处理器调度的和分派的基本单位</code>
+线程相比进程少了大量系统资源，仅有部分必不可少的资源，例如：程序计数，一组寄存器和栈等。</li>
+<li>线程的属性
+<ol class="org-ol">
+<li>线程由线程描述表记录线程执行的现场状态，且拥有一个唯一标志符号。</li>
+<li>一个程序对应多个线程。而进程是一个程序对应一个进程。</li>
+<li>同进程的多个线程可共享内存。</li>
+<li>线程可像进程一样作为独立的调度单位，可被独占处理器。</li>
+<li>线程也具有生命周期。</li>
+</ol></li>
+<li>引入线程的好处
+<ol class="org-ol">
+<li>新建线程速度快，系统开销小。</li>
+<li>线程切换状态速度快。</li>
+<li>多个线程之间共享内存快，信息传递速度快。</li>
+<li>线程同样能独占处理器，具有并行工作能力。</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf1b695d" class="outline-4">
+<h4 id="orgf1b695d">进程和线程</h4>
+<div class="outline-text-4" id="text-orgf1b695d">
+<p>
+进程可被称之为重量级进程，线程可被称之为轻量级进程。
+下面从调度、并发、开销、资源等方面对两者进行比较：
+</p>
+<ol class="org-ol">
+<li>调度
+具有线程特性的操作系统中，线程作为调度和分派的基本单位，进程作为资源的基本单位。
+同进程中切换线程不会引起进程切换，但由一个进程的线程切换至另一个进程的线程会导致进程切换。</li>
+<li>并发性
+线程为操作系统提高了并发性，例如在没有线程特性的操作系统中，操作文件的进程在遇到等待事件时会被调度为阻塞，而在有线程特性的操作系统中可以设置多个线程处理不同的任务，当一个任务暂停时，不会阻塞进程，而是会切换另外一个线程执行。</li>
+<li>拥有资源
+线程不具备的系统资源（除了少部分必要的），进程则具有大量系统资源。</li>
+<li>系统开销
+线程在创建回收等操作上只需要处理少量数据，而进程则需要处理大量数据。
+所以线程比进程开销小很多。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc3972de" class="outline-4">
+<h4 id="orgc3972de">线程实现机制</h4>
+<div class="outline-text-4" id="text-orgc3972de">
+<p>
+不同操作系统实现方式不同，下面是几种典型的实现方式。
+</p>
+<img src="/images/3-7用户级线程结构.png" width="50%"/>
+<ol class="org-ol">
+<li>用户级线程（User-Level Threads）
+仅存在与用户态中，与内核无关，实现不受限制，即使不支持线程的操作系统也可通过函数库简单实现。
+需要额外的运行时系统，大部分关于线程的控制豆油运行时系统管理。
+每个进程都对应一个线程表。</li>
+<li>内核级线程（Kernel-Supported Threads）
+这种方式的线程实现依赖于内核，但是其不需要额外的运行时系统。线程表中记录了所有进程中的线程，
+所有线程要求的系统调用都需要由操作系统实现，开销较大。</li>
+<li><p>
+混合实现方式
+现代操作系统通常将内核级、用户级线程混合实现，将两者各有的优点结合。
+</p>
+
+<p>
+将内核级线程和用户级线程多路复用，这种方式有极大的灵活度。
+这种方式操作系统仅会对内核级线程进行调度，而部分内核级线程会被用户级现场复用。
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgd605793" class="outline-3">
 <h3 id="orgd605793">进程调度</h3>
+<div class="outline-text-3" id="text-orgd605793">
+<p>
+进程调度即处理器调度，原因是因为进程数量比处理器数量大得多，为了提高利用率，进程有多种调度算法。以下调度方式也适用于线程。
+</p>
+</div>
+<div id="outline-container-org3c4210f" class="outline-4">
+<h4 id="org3c4210f">概述</h4>
+<div class="outline-text-4" id="text-org3c4210f">
+<ol class="org-ol">
+<li>进程调度的主要功能
+记录系统中所有进程的状态，并根据调度算法切换进程的状态。</li>
+<li>进程调度的时机
+以下是集中可能进行调度的情况：
+<ul class="org-ul">
+<li>进程执行完毕</li>
+<li>进程因错误中止</li>
+<li>进程时间片用完</li>
+<li>进程阻塞</li>
+<li>创建新进程</li>
+<li>进程激活</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge03a03a" class="outline-4">
+<h4 id="orge03a03a">调度算法设计原则</h4>
+<div class="outline-text-4" id="text-orge03a03a">
+<ol class="org-ol">
+<li>进程行为
+进程行为的耗时可以分为两类，I/O密集型和计算密集型。
+   其中I/O密集型是指进程大部分操作时间都在等待I/O设备的阻塞。而计算密集型是指大部分操作时间都是在等待计算。</li>
+<li>系统分类
+不同操作系统应对不同场景，也会有不同的调度算法，通常分为三类：批处理，交互式，实时系统。
+<ul class="org-ul">
+<li>批处理
+常用于商业领域。</li>
+<li>交互式
+必须要有抢占式调度，不能让某些发生错误的进程永久的执行下去。</li>
+<li>实时系统
+不是任何时候都需要抢占，因为某些场景不希望在时间浪费在切换进程状态中。</li>
+</ul></li>
+<li>调度算法的设计目标
+不同分类的系统设计目标不同：
+<ul class="org-ul">
+<li>批处理
+吞吐量和周转时间最重要，
+吞吐量是指单位时间内执行完毕的进程数量。
+周转时间是指进程创建到回收的统计平均时间。</li>
+<li>交互式
+最小响应时间最重要</li>
+<li>实时系统
+进程运行结束时间尽量满足进程的截止时间要求。</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf1e9ca6" class="outline-4">
+<h4 id="orgf1e9ca6">进程调度算法</h4>
+<div class="outline-text-4" id="text-orgf1e9ca6">
+<p>
+进程调度算法解决了对不同就绪状态进程进行处理器分配以及按何种时间比例进行占用处理器。
+本小节内容放在了这里： <a href="进程调度算法.html">进程调度算法</a>
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-org42f10e1" class="outline-3">
 <h3 id="org42f10e1">系统内核</h3>
 </div>
-<div id="outline-container-org999d5c7" class="outline-3">
-<h3 id="org999d5c7">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org999d5c7">
+<div id="outline-container-orge4c8bf4" class="outline-3">
+<h3 id="orge4c8bf4">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orge4c8bf4">
 <ol class="org-ol">
 <li>什么是多道程序设计？</li>
 <li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
@@ -1820,7 +2174,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-16 二 01:22</p>
+<p class="date">Created: 2021-03-17 三 21:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-03-17 三 21:47 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>进程调度算法</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">进程调度算法</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org61ccd2f">先来先服务算法</a></li>
+<li><a href="#org6face02">最短进程优先算法</a></li>
+<li><a href="#org21600a8">最短剩余时间优先算法</a></li>
+<li><a href="#orgc2eecba">最高响应比优先算法</a></li>
+<li><a href="#orgb499e99">轮转算法</a></li>
+<li><a href="#orgc5651eb">最高优先级算法</a></li>
+<li><a href="#orga65417b">多级反馈队列算法</a></li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+本篇文章解释各种操作系统的进程调度算法，大部分是用于总结操作系统自考的算法。
+</p>
+</blockquote>
+
+<div id="outline-container-org61ccd2f" class="outline-2">
+<h2 id="org61ccd2f">先来先服务算法</h2>
+<div class="outline-text-2" id="text-org61ccd2f">
+<p>
+洋文 First-Come First-Served
+洋文简称 FCFS
+</p>
+<ul class="org-ul">
+<li>优点
+便于理解，实现简单。</li>
+<li>原理
+非抢占式。以一种单向链表的方式进行进程调度，当第一个进程进入可以直接运行，当第二个进入时，若第一个没有运行完会将第二个进程放置队尾，等待第一个进程运行完毕后立刻运行。任意进程在运行时遇到阻塞时其原本还是就绪状态时的后一个进程会立刻进入运行状态，当等待事件处理完毕，重新激活后也只是重新放置到就绪队列队尾。</li>
+<li>缺点
+当遇到需要处理长进程时，其后面的短进程的周转时间会大大增加。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6face02" class="outline-2">
+<h2 id="org6face02">最短进程优先算法</h2>
+</div>
+
+<div id="outline-container-org21600a8" class="outline-2">
+<h2 id="org21600a8">最短剩余时间优先算法</h2>
+</div>
+<div id="outline-container-orgc2eecba" class="outline-2">
+<h2 id="orgc2eecba">最高响应比优先算法</h2>
+</div>
+<div id="outline-container-orgb499e99" class="outline-2">
+<h2 id="orgb499e99">轮转算法</h2>
+</div>
+<div id="outline-container-orgc5651eb" class="outline-2">
+<h2 id="orgc5651eb">最高优先级算法</h2>
+</div>
+<div id="outline-container-orga65417b" class="outline-2">
+<h2 id="orga65417b">多级反馈队列算法</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-03-17 三 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2021-03-17 三 21:47</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
