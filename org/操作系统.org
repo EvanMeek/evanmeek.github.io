@@ -815,7 +815,7 @@
        操作系统将PCB用几种方式将其组织方便管理。
        1. 线性
           #+begin_export html
-          <img src="/images/PCB线性组织.png" width="50%"/>
+          <img src="/images/PCB线性组织.png" width="50%" height="30%"/>
           #+end_export
           将PCB们不分状态放在一个连续表内。
           优点：
@@ -830,7 +830,7 @@
           可将进程分为两种索引表，且每种索引表有指向表起始地址的指针。
        3. 链接
           #+begin_export html
-          <img src="/images/PCB链接组织.png" width="50%"/>
+          <img src="/images/PCB链接组合.png" width="50%"/>
           #+end_export
           根据进程的状态部分，分为几种不同的队列。
     4. 进程的队列
