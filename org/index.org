@@ -8,45 +8,19 @@
 # </audio>
 # #+END_EXPORT
 
-**保持谦卑**
+**做事就像长征，有的人开始就放弃，成了孤魂野鬼；有的人半路逃跑，成了卖国贼；有的人路上牺牲，成了烈士；有的人坚持走完，享受革命奋斗成功的喜悦。**
 
-**盛年不重来，一日难再晨。及时当勉励，岁月不待人。**
+[[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]] ➯ [[file:diary.org][_我的日记_]] ➯ [[file:aboutMe.org][_关于我_]]
 
-[[./nav.org][_导航_]] ➭ [[./idea.org][_我的想法_]] ➯ [[./wiki.org][_我的百科_]] ➯ [[file:diary.org][_我的日记_]] ➯ 
+| 最新 |
+|------|
+| [[file:进程调度算法.org][盘点常用进程调度算法]]     |
 
-| 最新                          |
+| 杂碎                          |
 |-------------------------------|
-| [[file:iamback.org][我回来了!]]                     |
-| [[file:浅谈Python写中的正则表达式.org][浅谈Python中的正则表达式]]      |
-| [[file:openSUSE風滾草入坑指北.org][openSUSE風滾草入坑指北]]        |
-| [[file:提升Emacs启动速度——Emacs Dump.org][提升Emacs启动速度——Emacs Dump]] |                               
-
-| 关于我的 |
-|----------|
-| [[file:aboutMe.org][AboutMe]]  |
 | [[file:我要重学C++.org][我要重学C++]]         |
+| [[file:一次奇怪的星巴克体验.org][如何让星巴克小姐姐怀疑人生]] |
 
-| Emacs                    |
-|--------------------------|
-| [[file:emacs_Emacs中优雅地加载GUI配置.org][Emacs中优雅地加载GUI配置]] |
-| [[file:提升Emacs启动速度——Emacs Dump.org][提升Emacs启动速度——Emacs Dump]]                         |
-
-| GNU/Linux                      |
-|--------------------------------|
-| [[file:linux_降低CPU频率以提高续航.org][ArchLinux降低CPU频率以提高续航]] |
-| [[file:ArchLinux降级软件包.org][ArchLinux降级软件包]]            |
-| [[file:ArchLinux获取AUR包的PKGBUILD并安装.org][ArchLinux获取AUR包的PKGBUILD并安装]] |
-
-| Linux桌面 |
-|-----------|
-| [[file:i3wm切换布局工具.org][i3wm布局切换工具]]          |
-
-
-| C/C++                             |
-|-----------------------------------|
-| [[file:cc_菱形继承.org][C++菱形继承小记]]                   |
-| [[file:cc_虚函数.org][C++虚函数小记]]                     |
-| [[file:The-CPP-Programming-Language-NOTE.org][The-CPP-Programming-language-笔记]] |
 
 | 技术               |
 |--------------------|
@@ -54,13 +28,21 @@
 | [[file:计算机网络原理笔记.org][計算機網絡原理筆記]] |
 | [[file:HTML5简明总结.org][HTML5简明总结]]      |
 | [[file:CSS3简明总结.org][CSS3简明总结]]       |
+| [[file:浅谈Python写中的正则表达式.org][浅谈Python中的正则表达式]]      |
+| [[file:openSUSE風滾草入坑指北.org][openSUSE風滾草入坑指北]]        |
+| [[file:提升Emacs启动速度——Emacs Dump.org][提升Emacs启动速度——Emacs Dump]]     |
+| [[file:emacs_Emacs中优雅地加载GUI配置.org][Emacs中优雅地加载GUI配置]] |
+| [[file:linux_降低CPU频率以提高续航.org][ArchLinux降低CPU频率以提高续航]] |
+| [[file:ArchLinux降级软件包.org][ArchLinux降级软件包]]            |
+| [[file:ArchLinux获取AUR包的PKGBUILD并安装.org][ArchLinux获取AUR包的PKGBUILD并安装]] |
+| [[file:cc_菱形继承.org][C++菱形继承小记]]                   |
+| [[file:cc_虚函数.org][C++虚函数小记]]                     |
+| [[file:The-CPP-Programming-Language-NOTE.org][The-CPP-Programming-language-笔记]] |
+| [[file:进程调度算法.org][盘点常用进程调度算法]]     |
 
-
-| 生活                       |
-|----------------------------|
-| [[file:一次奇怪的星巴克体验.org][如何让星巴克小姐姐怀疑人生]] |
-
-
+| Linux桌面 |
+|-----------|
+| [[file:i3wm切换布局工具.org][i3wm布局切换工具]]          |
 
 #+BEGIN_EXPORT html
 <div class="me">
