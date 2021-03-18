@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-17 三 21:50 -->
+<!-- 2021-03-18 四 11:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>进程调度算法</title>
@@ -45,11 +45,17 @@
 洋文 First-Come First-Served
 洋文简称 FCFS
 </p>
+
 <ul class="org-ul">
+<li>特点
+偏向于长进程。</li>
+
 <li>优点
 便于理解，实现简单。</li>
+
 <li>原理
 非抢占式。以一种单向链表的方式进行进程调度，当第一个进程进入可以直接运行，当第二个进入时，若第一个没有运行完会将第二个进程放置队尾，等待第一个进程运行完毕后立刻运行。任意进程在运行时遇到阻塞时其原本还是就绪状态时的后一个进程会立刻进入运行状态，当等待事件处理完毕，重新激活后也只是重新放置到就绪队列队尾。</li>
+
 <li>缺点
 当遇到需要处理长进程时，其后面的短进程的周转时间会大大增加。</li>
 </ul>
@@ -57,28 +63,206 @@
 </div>
 <div id="outline-container-org6face02" class="outline-2">
 <h2 id="org6face02">最短进程优先算法</h2>
+<div class="outline-text-2" id="text-org6face02">
+<p>
+洋文 Shortest Job First
+洋文简称 SJF
+</p>
+
+<ul class="org-ul">
+<li>特点
+偏向于短进程。</li>
+
+<li>优点
+提升平均周转时间。</li>
+
+<li>原理
+预测多个进程的运行时间，将运行时间短的先运行，能够提高平均周转时间。
+举例：有ABCD四个进程，他们的平均周转时间是这样计算 <code>(4A+3B+2C+D)/4</code> ，我们发现其中最影响平均周转时间的是A进程，而D进程的周转时间仅取决于自身运行时间，所以尽量将运行速度较快的进程先运行。</li>
+
+<li>缺点
+有一定限制，这个算法的使用场景最好是在所有进程都可运行的情况下调度，如果某些进程在等待，那么就没那么有效了。</li>
+</ul>
+</div>
 </div>
 
 <div id="outline-container-org21600a8" class="outline-2">
 <h2 id="org21600a8">最短剩余时间优先算法</h2>
+<div class="outline-text-2" id="text-org21600a8">
+<p>
+洋文 Shortest Remaining Time Next
+洋文简称 SRTN
+</p>
+
+<ul class="org-ul">
+<li>特点
+偏向于短进程。</li>
+
+<li>优点
+新进程运行时间较短的情况可以直接运行无需等待。</li>
+
+<li>原理
+此算法是SJF算法的抢占式版本，其总是选择剩余运行时间最短的进程优先运行，例如当创建了新的进程时，采用此调度算法的调度程序会将新进程的运行时间与当前运行进程的剩余运行时间比较，如果时间更短会将当前进程挂起后运行新的进程。</li>
+
+<li>缺点
+可能会导致饥饿现象，那些运行时间较长的进程可能永远得不到处理器资源，造成时间的浪费。</li>
+</ul>
+</div>
 </div>
 <div id="outline-container-orgc2eecba" class="outline-2">
 <h2 id="orgc2eecba">最高响应比优先算法</h2>
+<div class="outline-text-2" id="text-orgc2eecba">
+<p>
+洋文 Highest Response Rate First
+洋文简称 HRRF
+</p>
+<ul class="org-ul">
+<li>特点
+根据更加公平的响应比算法调度。</li>
+
+<li>优点
+可适应长短进程混合的系统，调度指标合理。</li>
+
+<li>原理
+将响应比最高的进程设置为运行状态。
+响应比算法： <code>(等待时间 + 预计运行时间) / 预计运行时间 = 周转时间/预计运行时间 = 响应比Rp</code>
+这种情况下，等待时间长的进程会被运行，不会造成饥饿，而当等待时间没有过长的进程时预计运行时间较短的短进程就又可以快速运行提高利用率。</li>
+
+<li><p>
+举例
+有ABC三个进程，他们分别的预计运行时间为80s 20s 40s，等待时间为 60s 40s 0s，且说明当三个进程都到达时调度程序再进行调度，根据响应比算法它们的响应比分别是:
+A = 1+60/80 = 1.75
+</p>
+
+<p>
+B = 1+40/20 = 3
+</p>
+
+<p>
+C = 1+0/40 = 1
+</p>
+
+<p>
+那么B会被先执行，当B执行完毕后其他两个进程的响应比也发生了变化，
+A = 1+80/80 = 2
+</p>
+
+<p>
+C = 1+20/40 = 1.5
+</p>
+
+<p>
+那么A会被执行，C留到最后再执行。
+</p></li>
+
+<li>缺点
+每次调度前都会计算就绪队列中的响应比，存在一定的系统开销。</li>
+</ul>
 </div>
+</div>
+
 <div id="outline-container-orgb499e99" class="outline-2">
 <h2 id="orgb499e99">轮转算法</h2>
+<div class="outline-text-2" id="text-orgb499e99">
+<p>
+洋文 Round-Robin
+洋文简称 RR
+</p>
+<ul class="org-ul">
+<li>特点
+进程的运行时间取决于时间片。</li>
+
+<li>优点
+简单易行。</li>
+
+<li><p>
+原理
+此算法最早来自分时系统，处理器的时间会被划分为一个个时间片，时间片决定了一个单次运行状态可执行的时间，时间片用完，但尚未运算结束的进程仍然会被放置于队列队尾，而每个进程依次进入就绪队列，依次进入运行状态。
+</p>
+
+<img src="/images/3-8时间片轮转算法.png" width="50%" height="50%"/>
+
+<p>
+影响时间片的因素如下：
+</p>
+<ol class="org-ol">
+<li>系统响应时间
+时间片随着进程数目和响应时间而变化：
+时间片Q，进程数目N，响应时间T，则 <code>Q=T/N</code></li>
+
+<li>就绪进程的数目
+响应时间T不变时，时间片Q的大小反比于就绪进程数。</li>
+
+<li>计算机的处理能力
+计算机性能越强，时间片越小。</li>
+</ol></li>
+
+<li>缺点
+时间片太长平均周转时间没其他算法块，时间片太短，切换状态的消耗太大，又很类似先来先服务了。</li>
+</ul>
 </div>
+</div>
+
 <div id="outline-container-orgc5651eb" class="outline-2">
 <h2 id="orgc5651eb">最高优先级算法</h2>
+<div class="outline-text-2" id="text-orgc5651eb">
+<p>
+洋文 Highest Priority First
+洋文简称 HPF
+</p>
+<ul class="org-ul">
+<li>特点
+引入了优先级别的概念。</li>
+
+<li>优点
+此算法和其他处理器调度方式相结合，做到了一个比较好的平衡。</li>
+
+<li>原理
+将就绪进程分组，每组有着不同的优先级，每组之间采用优先级调度，而每组之内的进程采用轮转调度。</li>
+
+<li>缺点
+如果是抢占式的算法，那么必定有一定的系统开销。</li>
+</ul>
+</div>
 </div>
 <div id="outline-container-orga65417b" class="outline-2">
 <h2 id="orga65417b">多级反馈队列算法</h2>
+<div class="outline-text-2" id="text-orga65417b">
+<p>
+洋文 Multilevel Feedback Queue Scheduling
+洋文简称 MFQS
+</p>
+<ul class="org-ul">
+<li>特点
+结合了各种算法的优点。</li>
+
+<li>优点
+适用场景很多，没有什么太大的瓶颈，调度指标也比较平衡。</li>
+
+<li>原理
+由最高优先级算法作为主要调度模式：
+<ol class="org-ol">
+<li>根据优先级对就绪进程设置不同的就绪队列，不同就绪队列有不同的时间片。优先级高的队列分配较小的时间片。</li>
+
+<li>第N级队列按轮转算法调度，其他各级队列按FCFS算法调度。</li>
+
+<li>调度算法总是先调度级别高的队列。</li>
+
+<li><p>
+进程优先级会被调整，当运行中进程阻塞后进入就绪队列会被放入次一级就绪队列，当等待进程激活后会又会进入同等级就绪队列，便抢占处理器。
+</p>
+<img src="images/3-9多级反馈队列.png" width="50%" height="50%"/></li>
+</ol></li>
+<li>缺点
+实现难度较大，对性能有一定的要求。</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-03-17 三 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-17 三 21:50</p>
+<p class="date">Created: 2021-03-18 四 11:14</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
