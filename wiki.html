@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-18 四 11:14 -->
+<!-- 2021-03-23 二 14:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -54,6 +54,9 @@
 </ul>
 </li>
 <li><a href="#orgc81f7a1">Emacs道友们推荐的保温杯品牌 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-12-04 五&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="life">life</span></span></a></li>
+<li><a href="#orgaffc7c4">Rust单元测试不要输出 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-18 四&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="rust">rust</span></span></a></li>
+<li><a href="#org38d40ac">删除Git远程仓库的文件 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></a></li>
+<li><a href="#org8c34ea9">修改lsp-mode的prefix-key <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span></span></a></li>
 </ul>
 </li>
 </ul>
@@ -196,7 +199,7 @@ xmodmap有个问题，就是只要有软件利用了xmodmap进行设置一些键
 第一步，先查看你所需要更改的键盘的键位（利用hwdb支持根据不同设备设置不同的键位 ）。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">su - <span style="color: #a0a1a7; font-weight: bold;">#</span><span style="color: #a0a1a7;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
+<pre class="src src-shell">su - <span style="color: #a5a4a5;">#</span><span style="color: #a5a4a5;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
 evtest
 </pre>
 </div>
@@ -230,11 +233,11 @@ Available devices:
 /dev/input/event20:     HDA Digital PCBeep
 /dev/input/event21:     HDA Intel PCH Mic
 /dev/input/event22:     HDA Intel PCH Headphone
-/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #8b4513;">pcm</span>=3
-/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #8b4513;">pcm</span>=7
-/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #8b4513;">pcm</span>=8
-/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #8b4513;">pcm</span>=9
-/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #8b4513;">pcm</span>=10
+/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #c82829;">pcm</span>=3
+/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #c82829;">pcm</span>=7
+/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #c82829;">pcm</span>=8
+/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #c82829;">pcm</span>=9
+/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #c82829;">pcm</span>=10
 Select the device event number [0-27]: 
 </pre>
 </div>
@@ -245,7 +248,7 @@ Select the device event number [0-27]:
 <div class="org-src-container">
 <pre class="src src-shell">Input driver version is 1.0.1
 Input device ID: bus 0x3 vendor 0x48d product 0xc937 version 0x110
-Input device name: <span style="color: #50a14f;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
+Input device name: <span style="color: #718c00;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
 Supported events:
   Event type 0 (EV_SYN)
   Event type 1 (EV_KEY)
@@ -332,8 +335,8 @@ evdev表示要修改映射的设备，后面跟着的表示匹配设备的相关
 执行如下命令即可:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">udevadm hwdb --update <span style="color: #a0a1a7; font-weight: bold;">#</span><span style="color: #a0a1a7;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
-udevadm trigger <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#24212;&#29992;</span>
+<pre class="src src-shell">udevadm hwdb --update <span style="color: #a5a4a5;">#</span><span style="color: #a5a4a5;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
+udevadm trigger <span style="color: #a5a4a5;"># </span><span style="color: #a5a4a5;">&#24212;&#29992;</span>
 </pre>
 </div>
 </div>
@@ -357,12 +360,67 @@ udevadm trigger <span style="color: #a0a1a7; font-weight: bold;"># </span><span 
 </p>
 </div>
 </div>
+<div id="outline-container-orgaffc7c4" class="outline-3">
+<h3 id="orgaffc7c4">Rust单元测试不要输出 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-18 四&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="rust">rust</span></span></h3>
+<div class="outline-text-3" id="text-orgaffc7c4">
+<p>
+给Cargo Test传入参数 &#x2013; &#x2013;nocapture即可
+</p>
+</div>
+</div>
+<div id="outline-container-org38d40ac" class="outline-3">
+<h3 id="org38d40ac">删除Git远程仓库的文件 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></h3>
+<div class="outline-text-3" id="text-org38d40ac">
+<p>
+先加上 <code>-n</code> 参数看看有哪些需要删除的。 <code>-n</code> 会把要删除的文件路径输出，不会真正的删除。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git rm -r -n --cached &lt;&#25351;&#23450;&#25991;&#20214;&#25110;&#30446;&#24405;&gt;
+</pre>
+</div>
+
+<p>
+再真正的删除
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git rm -r --cached &lt;&#25351;&#23450;&#25991;&#20214;&#25110;&#30446;&#24405;&gt;
+</pre>
+</div>
+
+<p>
+提交
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git commit -m <span style="color: #718c00;">"&#25552;&#20132;&#20449;&#24687;"</span>
+</pre>
+</div>
+
+<p>
+推送本地分支到指定远程分支上
+</p>
+<pre class="example">
+git push [连接的远程仓库的本地名称] [本地分支]
+</pre>
+</div>
+</div>
+<div id="outline-container-org8c34ea9" class="outline-3">
+<h3 id="org8c34ea9">修改lsp-mode的prefix-key <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span></span></h3>
+<div class="outline-text-3" id="text-org8c34ea9">
+<p>
+将下面这段代码放入use-package的:init中。
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #8959a8;">setq</span> lsp-keymap-prefix <span style="color: #718c00;">"s-v"</span>)
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-14 二 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-18 四 11:14</p>
+<p class="date">Created: 2021-03-23 二 14:13</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

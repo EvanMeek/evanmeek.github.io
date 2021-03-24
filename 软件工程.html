@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-18 四 11:14 -->
+<!-- 2021-03-24 三 20:35 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -18,7 +18,7 @@
 <ul>
 <li><a href="#org9505d89">软件的定义及特点</a>
 <ul>
-<li><a href="#orga29cabe">定义</a></li>
+<li><a href="#org04667ca">定义</a></li>
 <li><a href="#org862867a">特点</a></li>
 </ul>
 </li>
@@ -29,7 +29,7 @@
 </li>
 <li><a href="#org6d5fd13">软件危机</a>
 <ul>
-<li><a href="#org9b3045f">定义</a></li>
+<li><a href="#orgf9c9dbc">定义</a></li>
 <li><a href="#orge7102d1">原因</a></li>
 <li><a href="#org0e8996a">解决方法</a>
 <ul>
@@ -41,9 +41,45 @@
 </li>
 <li><a href="#org113be7d">软件工程概念</a></li>
 <li><a href="#org44f0455">软件工程基本原理</a></li>
+<li><a href="#orgdaa2c50">软件工程项目的基本目标</a></li>
+<li><a href="#org4ccf804">软件工程的基本原则</a></li>
+<li><a href="#orgfa0aa7a">软件生命周期</a></li>
+<li><a href="#org85ed2eb">软件开发过程模型</a>
+<ul>
+<li><a href="#org45fb176">瀑布模型</a>
+<ul>
+<li><a href="#orgd1ea5a9">实际的瀑布模型</a></li>
 </ul>
 </li>
-<li><a href="#org06f15c3">软件需求与软件需求</a></li>
+<li><a href="#org99d33a7">快速原型模型</a></li>
+<li><a href="#org0e3719f">螺旋模型</a></li>
+<li><a href="#org8facab4">增量模型</a></li>
+<li><a href="#org7708951">喷泉模型</a></li>
+<li><a href="#org2a7a8e3">构件组装模型</a></li>
+<li><a href="#org3b839a8">统一过程RUP模型</a></li>
+<li><a href="#orgf5f48dc">微软过程模型</a></li>
+</ul>
+</li>
+<li><a href="#org7e21b71">软件的开发工具</a></li>
+<li><a href="#org5d3d6c5">软件工程的最新发展动向</a>
+<ul>
+<li><a href="#orga98a141">软件工程合理的开发治理</a></li>
+<li><a href="#orgf8b528b">软件工程全球化协作发展</a></li>
+<li><a href="#org1d1e6da">软件工程模块化</a></li>
+<li><a href="#orgffa580d">软件工程开放式计算</a></li>
+</ul>
+</li>
+<li><a href="#orgee99db2">软件开发的本质</a></li>
+</ul>
+</li>
+<li><a href="#org06f15c3">软件需求与软件需求</a>
+<ul>
+<li><a href="#org2452ae0">需求的基本性质</a></li>
+<li><a href="#org4f239cf">功能需求</a></li>
+<li><a href="#orgd2e8929">性能需求</a></li>
+<li><a href="#org5eae1c6">外部接口需求</a></li>
+</ul>
+</li>
 <li><a href="#orgdf2704a">结构化方法::重点</a></li>
 <li><a href="#org757cc8d">面向对象方法——UML::重点</a></li>
 <li><a href="#orgdd08214">面向对象方法——RUP::重点</a></li>
@@ -66,9 +102,9 @@
 <h3 id="org9505d89">软件的定义及特点</h3>
 <div class="outline-text-3" id="text-org9505d89">
 </div>
-<div id="outline-container-orga29cabe" class="outline-4">
-<h4 id="orga29cabe">定义</h4>
-<div class="outline-text-4" id="text-orga29cabe">
+<div id="outline-container-org04667ca" class="outline-4">
+<h4 id="org04667ca">定义</h4>
+<div class="outline-text-4" id="text-org04667ca">
 <p>
 <code>软件是计算机系统中的程序、相关数据、及其说明文档。</code> 其中 <code>程序</code> 是按照事先设计的功能和性能要求执行的指令序列； <code>数据</code> 是程序能正常操纵信息的数据结构； <code>说明文档</code> 包含与程序开发、维护和使用过程中有关的各种图文数据。
 </p>
@@ -104,9 +140,9 @@
 <h3 id="org6d5fd13">软件危机</h3>
 <div class="outline-text-3" id="text-org6d5fd13">
 </div>
-<div id="outline-container-org9b3045f" class="outline-4">
-<h4 id="org9b3045f">定义</h4>
-<div class="outline-text-4" id="text-org9b3045f">
+<div id="outline-container-orgf9c9dbc" class="outline-4">
+<h4 id="orgf9c9dbc">定义</h4>
+<div class="outline-text-4" id="text-orgf9c9dbc">
 <p>
 软件在开发和维护过程遇到的严重问题称之为软件危机。
 两大难题：
@@ -174,9 +210,247 @@
 </ol>
 </div>
 </div>
+<div id="outline-container-orgdaa2c50" class="outline-3">
+<h3 id="orgdaa2c50">软件工程项目的基本目标</h3>
+<div class="outline-text-3" id="text-orgdaa2c50">
+<p>
+软件工程的主要目标是生产具有正确性，可用性以及开销合适的产品。
+</p>
+</div>
+</div>
+<div id="outline-container-org4ccf804" class="outline-3">
+<h3 id="org4ccf804">软件工程的基本原则</h3>
+<div class="outline-text-3" id="text-org4ccf804">
+<ol class="org-ol">
+<li>抽象 abstract</li>
+<li>信息隐藏 Information hiding</li>
+<li>模块化 Modular</li>
+<li>局部性 Locality</li>
+<li>一致性 consistency</li>
+<li>完整性 Completeness</li>
+<li>可预测性 Predictability</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfa0aa7a" class="outline-3">
+<h3 id="orgfa0aa7a">软件生命周期</h3>
+<div class="outline-text-3" id="text-orgfa0aa7a">
+<p>
+计划, 开发, 运行
+</p>
+</div>
+</div>
+<div id="outline-container-org85ed2eb" class="outline-3">
+<h3 id="org85ed2eb">软件开发过程模型</h3>
+<div class="outline-text-3" id="text-org85ed2eb">
+<p>
+问题模型：指运用所掌握的知识，通过抽象，给出该问题的一个结构。
+</p>
+</div>
+<div id="outline-container-org45fb176" class="outline-4">
+<h4 id="org45fb176">瀑布模型</h4>
+<div class="outline-text-4" id="text-org45fb176">
+<p>
+六个基本活动，自上而下互相衔接的固定次序，如同“瀑布”一般，逐级下落。
+</p>
+</div>
+<div id="outline-container-orgd1ea5a9" class="outline-5">
+<h5 id="orgd1ea5a9">实际的瀑布模型</h5>
+<div class="outline-text-5" id="text-orgd1ea5a9">
+<p>
+问题所在：
+</p>
+<ol class="org-ol">
+<li>各个阶段的划分完全固定，阶段之间产生大量的文档，极大地增加了工作量；</li>
+<li>由于开发模型是线性的，用户只有等到整个过程的末期才能看到开发成果，从而增加了开发的风险；</li>
+<li>早期的错误可能要等到开发后期的测试才能发现。</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org99d33a7" class="outline-4">
+<h4 id="org99d33a7">快速原型模型</h4>
+<div class="outline-text-4" id="text-org99d33a7">
+<p>
+快速建立一个原型，随后再细化软件的需求，最后再实现完整的原型系统。
+</p>
+</div>
+</div>
+<div id="outline-container-org0e3719f" class="outline-4">
+<h4 id="org0e3719f">螺旋模型</h4>
+<div class="outline-text-4" id="text-org0e3719f">
+<p>
+将瀑布模型和快速原型模型结合，适用于大型复杂的系统。
+</p>
+</div>
+</div>
+<div id="outline-container-org8facab4" class="outline-4">
+<h4 id="org8facab4">增量模型</h4>
+<div class="outline-text-4" id="text-org8facab4">
+<p>
+软件被作为一系列的增量构建来设计，实现，继承和测试，每个构件是能够满足一定功能，并且能够最终组合成一个具有完整功能软件的模块。
+</p>
+</div>
+</div>
+<div id="outline-container-org7708951" class="outline-4">
+<h4 id="org7708951">喷泉模型</h4>
+<div class="outline-text-4" id="text-org7708951">
+<p>
+相比传统模型，具有更多的增量和迭代性质。
+</p>
+</div>
+</div>
+<div id="outline-container-org2a7a8e3" class="outline-4">
+<h4 id="org2a7a8e3">构件组装模型</h4>
+<div class="outline-text-4" id="text-org2a7a8e3">
+<p>
+通过面向对象的方式构件模型，将多个模型一一组合。
+</p>
+</div>
+</div>
+<div id="outline-container-org3b839a8" class="outline-4">
+<h4 id="org3b839a8">统一过程RUP模型</h4>
+<div class="outline-text-4" id="text-org3b839a8">
+<p>
+RUP（Rational unified process）统一软件开发过程。
+</p>
+<ul class="org-ul">
+<li>RUP的核心工作流程
+<ul class="org-ul">
+<li>商业建模</li>
+<li>需求</li>
+<li>分析和设计</li>
+<li>实现</li>
+<li>测试</li>
+<li>部署</li>
+<li>配置和变更管理</li>
+<li>项目管理</li>
+<li>环境</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf5f48dc" class="outline-4">
+<h4 id="orgf5f48dc">微软过程模型</h4>
+<div class="outline-text-4" id="text-orgf5f48dc">
+<p>
+规划阶段-&gt;设计阶段-&gt;开发阶段-&gt;稳定阶段-&gt;发布阶段
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e21b71" class="outline-3">
+<h3 id="org7e21b71">软件的开发工具</h3>
+<div class="outline-text-3" id="text-org7e21b71">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">类型</th>
+<th scope="col" class="org-left">工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">项目管理</td>
+<td class="org-left">RUP</td>
+</tr>
+
+<tr>
+<td class="org-left">配置管理</td>
+<td class="org-left">ClearCase</td>
+</tr>
+
+<tr>
+<td class="org-left">需求管理</td>
+<td class="org-left">RequisitePro</td>
+</tr>
+
+<tr>
+<td class="org-left">可视化建模</td>
+<td class="org-left">Rose</td>
+</tr>
+
+<tr>
+<td class="org-left">自动化</td>
+<td class="org-left">Robot</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5d3d6c5" class="outline-3">
+<h3 id="org5d3d6c5">软件工程的最新发展动向</h3>
+<div class="outline-text-3" id="text-org5d3d6c5">
+</div>
+<div id="outline-container-orga98a141" class="outline-4">
+<h4 id="orga98a141">软件工程合理的开发治理</h4>
+</div>
+<div id="outline-container-orgf8b528b" class="outline-4">
+<h4 id="orgf8b528b">软件工程全球化协作发展</h4>
+</div>
+<div id="outline-container-org1d1e6da" class="outline-4">
+<h4 id="org1d1e6da">软件工程模块化</h4>
+</div>
+<div id="outline-container-orgffa580d" class="outline-4">
+<h4 id="orgffa580d">软件工程开放式计算</h4>
+</div>
+</div>
+<div id="outline-container-orgee99db2" class="outline-3">
+<h3 id="orgee99db2">软件开发的本质</h3>
+<div class="outline-text-3" id="text-orgee99db2">
+<p>
+问题域到不同抽象层之间的概念和计算罗的映射，不同抽象层术语之间的“映射”，以及不同抽象层处理逻辑之间的“映射”。
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-org06f15c3" class="outline-2">
 <h2 id="org06f15c3">软件需求与软件需求</h2>
+<div class="outline-text-2" id="text-org06f15c3">
+</div>
+<div id="outline-container-org2452ae0" class="outline-3">
+<h3 id="org2452ae0">需求的基本性质</h3>
+<div class="outline-text-3" id="text-org2452ae0">
+<ul class="org-ul">
+<li>必要的</li>
+<li>无歧义的</li>
+<li>可测试的</li>
+<li>可跟踪的</li>
+<li>可测量的</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4f239cf" class="outline-3">
+<h3 id="org4f239cf">功能需求</h3>
+<div class="outline-text-3" id="text-org4f239cf">
+<p>
+功能需求规约了系统或系统构建必须执行的功能。
+</p>
+</div>
+</div>
+<div id="outline-container-orgd2e8929" class="outline-3">
+<h3 id="orgd2e8929">性能需求</h3>
+<div class="outline-text-3" id="text-orgd2e8929">
+<p>
+规约了一个系统或系统构建在性能方面具有的一些特性
+</p>
+</div>
+</div>
+<div id="outline-container-org5eae1c6" class="outline-3">
+<h3 id="org5eae1c6">外部接口需求</h3>
+<div class="outline-text-3" id="text-org5eae1c6">
+<p>
+规约了系统或系统构建必须与之交互的用户、硬件、软件或数据库元素。
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-orgdf2704a" class="outline-2">
 <h2 id="orgdf2704a">结构化方法::重点</h2>
@@ -199,8 +473,8 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-18 四 11:14</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-03-24 三 20:35</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
