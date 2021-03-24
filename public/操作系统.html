@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-24 三 20:36 -->
+<!-- 2021-03-24 三 20:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -35,7 +35,7 @@
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org5214d8f">基本工作方式</a></li>
+<li><a href="#org834e086">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org89d5a00">程序状态字(PSW)</a></li>
+<li><a href="#org8657d3c">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -149,7 +149,7 @@
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
 <li><a href="#org7fc3eee">程序的并发执行</a></li>
-<li><a href="#org679a73f">多道程序设计</a></li>
+<li><a href="#org254de08">多道程序设计</a></li>
 </ul>
 </li>
 <li><a href="#orgf641927">进程</a>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org7d31c9c">思考题与练习题</a></li>
+<li><a href="#org523e99a">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org8ecc0e3">第四章-进程同步与互斥</a>
@@ -208,7 +208,7 @@
 <li><a href="#orgb399640">多个生产者——消费者问题</a></li>
 </ul>
 </li>
-<li><a href="#orgfaf48e5">管程</a>
+<li><a href="#orgaba2a04">管程</a>
 <ul>
 <li><a href="#org2f1c811">管程的提出</a></li>
 <li><a href="#org11ebfa4">管程的概念及组成</a></li>
@@ -228,37 +228,37 @@
 </li>
 </ul>
 </li>
-<li><a href="#orgc01c33c">第五章-死锁</a>
+<li><a href="#orgbb395c8">第五章-死锁</a>
 <ul>
-<li><a href="#orga548036">死锁的产生</a>
+<li><a href="#org4e9f261">死锁的产生</a>
 <ul>
-<li><a href="#orgd6b275e">死锁的定义</a></li>
-<li><a href="#org5dd7bb0">死锁产生的原因</a>
+<li><a href="#org4210c8a">死锁的定义</a></li>
+<li><a href="#org4edb338">死锁产生的原因</a>
 <ul>
-<li><a href="#orgc0e8994">资源的概念</a></li>
-<li><a href="#org322b751">死锁的例子</a></li>
+<li><a href="#org2b99353">资源的概念</a></li>
+<li><a href="#org34932dd">死锁的例子</a></li>
 </ul>
 </li>
-<li><a href="#org84b107c">死锁产生的必要条件</a></li>
+<li><a href="#orgb42f1a0">死锁产生的必要条件</a></li>
 </ul>
 </li>
-<li><a href="#orgb6e8664">死锁预防</a>
+<li><a href="#org4559088">死锁预防</a>
 <ul>
-<li><a href="#org462db29">死锁预防的概念</a></li>
-<li><a href="#org13b2efa">资源的静态分配策略</a></li>
+<li><a href="#org7af65b1">死锁预防的概念</a></li>
+<li><a href="#org7075788">资源的静态分配策略</a></li>
 </ul>
 </li>
-<li><a href="#org87ad949">死锁避免</a>
+<li><a href="#orgb469e61">死锁避免</a>
 <ul>
-<li><a href="#org53ae3ce">死锁避免的概念</a></li>
-<li><a href="#orgb6f4962">安全状态与安全序列</a></li>
-<li><a href="#orgdd7942c">银行家算法</a></li>
+<li><a href="#orgbbee997">死锁避免的概念</a></li>
+<li><a href="#org8872df8">安全状态与安全序列</a></li>
+<li><a href="#orga6ebda8">银行家算法</a></li>
 </ul>
 </li>
-<li><a href="#org76d7f7f">死锁的检测与解除</a>
+<li><a href="#org9e16fa3">死锁的检测与解除</a>
 <ul>
-<li><a href="#orgcc39665">死锁检测的时机</a></li>
-<li><a href="#org09a54b6">死锁检测的算法</a></li>
+<li><a href="#org9c0741d">死锁检测的时机</a></li>
+<li><a href="#org8060645">死锁检测的算法</a></li>
 </ul>
 </li>
 </ul>
@@ -332,9 +332,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org5214d8f" class="outline-5">
-<h5 id="org5214d8f">基本工作方式</h5>
-<div class="outline-text-5" id="text-org5214d8f">
+<div id="outline-container-org834e086" class="outline-5">
+<h5 id="org834e086">基本工作方式</h5>
+<div class="outline-text-5" id="text-org834e086">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -777,9 +777,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org89d5a00" class="outline-4">
-<h4 id="org89d5a00">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org89d5a00">
+<div id="outline-container-org8657d3c" class="outline-4">
+<h4 id="org8657d3c">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org8657d3c">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1586,9 +1586,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org679a73f" class="outline-4">
-<h4 id="org679a73f">多道程序设计</h4>
-<div class="outline-text-4" id="text-org679a73f">
+<div id="outline-container-org254de08" class="outline-4">
+<h4 id="org254de08">多道程序设计</h4>
+<div class="outline-text-4" id="text-org254de08">
 <p>
 <code>能使多个硬件并行工作即多道程序设计</code>
 </p>
@@ -2110,9 +2110,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org7d31c9c" class="outline-3">
-<h3 id="org7d31c9c">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org7d31c9c">
+<div id="outline-container-org523e99a" class="outline-3">
+<h3 id="org523e99a">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org523e99a">
 <ol class="org-ol">
 <li>什么是多道程序设计？
 答： 多道程序设计是一种能够提高处理器利用率，充分发挥处理器与外围设备以及外围设备之间的并行工作能力的程序设计方式。</li>
@@ -2621,9 +2621,9 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-orgfaf48e5" class="outline-3">
-<h3 id="orgfaf48e5">管程</h3>
-<div class="outline-text-3" id="text-orgfaf48e5">
+<div id="outline-container-orgaba2a04" class="outline-3">
+<h3 id="orgaba2a04">管程</h3>
+<div class="outline-text-3" id="text-orgaba2a04">
 </div>
 <div id="outline-container-org2f1c811" class="outline-4">
 <h4 id="org2f1c811">管程的提出</h4>
@@ -2730,20 +2730,20 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-orgc01c33c" class="outline-2">
-<h2 id="orgc01c33c">第五章-死锁</h2>
-<div class="outline-text-2" id="text-orgc01c33c">
+<div id="outline-container-orgbb395c8" class="outline-2">
+<h2 id="orgbb395c8">第五章-死锁</h2>
+<div class="outline-text-2" id="text-orgbb395c8">
 </div>
-<div id="outline-container-orga548036" class="outline-3">
-<h3 id="orga548036">死锁的产生</h3>
-<div class="outline-text-3" id="text-orga548036">
+<div id="outline-container-org4e9f261" class="outline-3">
+<h3 id="org4e9f261">死锁的产生</h3>
+<div class="outline-text-3" id="text-org4e9f261">
 <p>
 死锁的产生其原因必定满足四个必要条件。
 </p>
 </div>
-<div id="outline-container-orgd6b275e" class="outline-4">
-<h4 id="orgd6b275e">死锁的定义</h4>
-<div class="outline-text-4" id="text-orgd6b275e">
+<div id="outline-container-org4210c8a" class="outline-4">
+<h4 id="org4210c8a">死锁的定义</h4>
+<div class="outline-text-4" id="text-org4210c8a">
 <p>
 死锁是指在多道程序系统中的一种现象，当一组进程的中每个进程均进入无限期等待被该组进程中的另一个进程锁占有且永远不会释放的资源。
 </p>
@@ -2754,17 +2754,17 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 
-<div id="outline-container-org5dd7bb0" class="outline-4">
-<h4 id="org5dd7bb0">死锁产生的原因</h4>
-<div class="outline-text-4" id="text-org5dd7bb0">
+<div id="outline-container-org4edb338" class="outline-4">
+<h4 id="org4edb338">死锁产生的原因</h4>
+<div class="outline-text-4" id="text-org4edb338">
 <p>
 有两个主要的原因：1. 竞争资源，资源分配程序出错，多个进程相互争夺使得资源谁都无法获取。2. 多道程序运行时，进程推进顺序不合理。
 </p>
 </div>
 
-<div id="outline-container-orgc0e8994" class="outline-5">
-<h5 id="orgc0e8994">资源的概念</h5>
-<div class="outline-text-5" id="text-orgc0e8994">
+<div id="outline-container-org2b99353" class="outline-5">
+<h5 id="org2b99353">资源的概念</h5>
+<div class="outline-text-5" id="text-org2b99353">
 <ul class="org-ul">
 <li>永久性资源
 计算机内部可长久使用的资源，一般是指硬件（CPU，内存，外部设备），也存在一些可以保存的数据文件，程序，软件等。</li>
@@ -2776,18 +2776,18 @@ PV操作使用不当也有可能出现死锁的情况。
 </p>
 </div>
 </div>
-<div id="outline-container-org322b751" class="outline-5">
-<h5 id="org322b751">死锁的例子</h5>
-<div class="outline-text-5" id="text-org322b751">
+<div id="outline-container-org34932dd" class="outline-5">
+<h5 id="org34932dd">死锁的例子</h5>
+<div class="outline-text-5" id="text-org34932dd">
 <p>
 建议看书-p140。ps: 其实ps讲得很绕。。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org84b107c" class="outline-4">
-<h4 id="org84b107c">死锁产生的必要条件</h4>
-<div class="outline-text-4" id="text-org84b107c">
+<div id="outline-container-orgb42f1a0" class="outline-4">
+<h4 id="orgb42f1a0">死锁产生的必要条件</h4>
+<div class="outline-text-4" id="text-orgb42f1a0">
 <ul class="org-ul">
 <li>互斥条件
 资源是同一时刻只能被一个进程所使用。若其他进程想要使用，必须先请求并等待资源被占用者释放。</li>
@@ -2816,16 +2816,16 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-orgb6e8664" class="outline-3">
-<h3 id="orgb6e8664">死锁预防</h3>
-<div class="outline-text-3" id="text-orgb6e8664">
+<div id="outline-container-org4559088" class="outline-3">
+<h3 id="org4559088">死锁预防</h3>
+<div class="outline-text-3" id="text-org4559088">
 <p>
 预防需要使得成立死锁的四个条件不成立。
 </p>
 </div>
-<div id="outline-container-org462db29" class="outline-4">
-<h4 id="org462db29">死锁预防的概念</h4>
-<div class="outline-text-4" id="text-org462db29">
+<div id="outline-container-org7af65b1" class="outline-4">
+<h4 id="org7af65b1">死锁预防的概念</h4>
+<div class="outline-text-4" id="text-org7af65b1">
 <p>
 针对死锁不同成立条件我们需要制定不同的预防方式，对于 <b>互斥条件</b> 不能任何资源都只能被一个进程所使用，需要区别对待。
 </p>
@@ -2835,9 +2835,9 @@ PV操作使用不当也有可能出现死锁的情况。
 </p>
 </div>
 </div>
-<div id="outline-container-org13b2efa" class="outline-4">
-<h4 id="org13b2efa">资源的静态分配策略</h4>
-<div class="outline-text-4" id="text-org13b2efa">
+<div id="outline-container-org7075788" class="outline-4">
+<h4 id="org7075788">资源的静态分配策略</h4>
+<div class="outline-text-4" id="text-org7075788">
 <p>
 使用静态分配策略可以使得一些死锁条件不成立。
 </p>
@@ -2853,24 +2853,24 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-org87ad949" class="outline-3">
-<h3 id="org87ad949">死锁避免</h3>
-<div class="outline-text-3" id="text-org87ad949">
+<div id="outline-container-orgb469e61" class="outline-3">
+<h3 id="orgb469e61">死锁避免</h3>
+<div class="outline-text-3" id="text-orgb469e61">
 <p>
 死锁预防所提到的避免死锁问题基本上都有性能问题，下面看一些施加了较少的限制条件，以获得较满意的系统性能。
 </p>
 </div>
-<div id="outline-container-org53ae3ce" class="outline-4">
-<h4 id="org53ae3ce">死锁避免的概念</h4>
-<div class="outline-text-4" id="text-org53ae3ce">
+<div id="outline-container-orgbbee997" class="outline-4">
+<h4 id="orgbbee997">死锁避免的概念</h4>
+<div class="outline-text-4" id="text-orgbbee997">
 <p>
 死锁避免与死锁预防的区别在于分配策略，死锁避免允许死锁必要条件存在，但死锁预防不允许，死锁避免是动态的资源分配策略，而死锁预防是静态的，死锁避免是在系统运行时检测并注意避免死锁的发生，而死锁预防则是在进程还未运行之前进程的操作。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb6f4962" class="outline-4">
-<h4 id="orgb6f4962">安全状态与安全序列</h4>
-<div class="outline-text-4" id="text-orgb6f4962">
+<div id="outline-container-org8872df8" class="outline-4">
+<h4 id="org8872df8">安全状态与安全序列</h4>
+<div class="outline-text-4" id="text-org8872df8">
 <p>
 动态资源分配需要动态地申请资源，所以在分配资源之前会分析资源分配的安全性。
 </p>
@@ -2888,9 +2888,9 @@ PV操作使用不当也有可能出现死锁的情况。
 </p>
 </div>
 </div>
-<div id="outline-container-orgdd7942c" class="outline-4">
-<h4 id="orgdd7942c">银行家算法</h4>
-<div class="outline-text-4" id="text-orgdd7942c">
+<div id="outline-container-orga6ebda8" class="outline-4">
+<h4 id="orga6ebda8">银行家算法</h4>
+<div class="outline-text-4" id="text-orga6ebda8">
 <p>
 著名的死锁避免算法，其概念是将操作系统中抽象的资源分配策略比作现实的银行贷款：
 </p>
@@ -2915,25 +2915,25 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-org76d7f7f" class="outline-3">
-<h3 id="org76d7f7f">死锁的检测与解除</h3>
-<div class="outline-text-3" id="text-org76d7f7f">
+<div id="outline-container-org9e16fa3" class="outline-3">
+<h3 id="org9e16fa3">死锁的检测与解除</h3>
+<div class="outline-text-3" id="text-org9e16fa3">
 <p>
 死锁的检测与解除与前面两种方式不同，这种是在死锁已经发生后，干掉死锁的方式。
 也就是用于解决第四种死锁必要条件的方法。
 </p>
 </div>
-<div id="outline-container-orgcc39665" class="outline-4">
-<h4 id="orgcc39665">死锁检测的时机</h4>
-<div class="outline-text-4" id="text-orgcc39665">
+<div id="outline-container-org9c0741d" class="outline-4">
+<h4 id="org9c0741d">死锁检测的时机</h4>
+<div class="outline-text-4" id="text-org9c0741d">
 <p>
 根据“死锁检测”程序的算法进行检测，周期可为 资源分配后，调度后。
 </p>
 </div>
 </div>
-<div id="outline-container-org09a54b6" class="outline-4">
-<h4 id="org09a54b6">死锁检测的算法</h4>
-<div class="outline-text-4" id="text-org09a54b6">
+<div id="outline-container-org8060645" class="outline-4">
+<h4 id="org8060645">死锁检测的算法</h4>
+<div class="outline-text-4" id="text-org8060645">
 <p>
 死锁检测需要标记一些信息，所以需要创建几个表。
 </p>
@@ -2955,7 +2955,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-24 三 20:36</p>
+<p class="date">Created: 2021-03-24 三 20:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
