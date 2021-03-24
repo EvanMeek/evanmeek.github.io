@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-18 四 11:14 -->
+<!-- 2021-03-24 三 20:36 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<li><a href="#orgfe37daa">基本工作方式</a></li>
+<li><a href="#orga88c483">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org8fa8fa5">基本工作方式</a></li>
+<li><a href="#org5214d8f">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org8827f55">程序状态字(PSW)</a></li>
+<li><a href="#org89d5a00">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -140,16 +140,16 @@
 <li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#orgd11ade0">思考题与练习题</a></li>
+<li><a href="#orgcc008dd">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org295dfb3">第三章-进程与线程</a>
 <ul>
-<li><a href="#org5139d57">多道程序设计</a>
+<li><a href="#orgc8b269d">多道程序设计</a>
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
 <li><a href="#org7fc3eee">程序的并发执行</a></li>
-<li><a href="#org40f2086">多道程序设计</a></li>
+<li><a href="#org679a73f">多道程序设计</a></li>
 </ul>
 </li>
 <li><a href="#orgf641927">进程</a>
@@ -174,7 +174,93 @@
 </ul>
 </li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org6b773f2">思考题与练习题</a></li>
+<li><a href="#org7d31c9c">思考题与练习题</a></li>
+</ul>
+</li>
+<li><a href="#org8ecc0e3">第四章-进程同步与互斥</a>
+<ul>
+<li><a href="#org906fd93">进程间相互作用</a>
+<ul>
+<li><a href="#org57c0d16">相关进程和无关进程</a></li>
+<li><a href="#org47d47eb">与时间有关的错误</a></li>
+</ul>
+</li>
+<li><a href="#org7ce4cd8">进程的同步与互斥</a>
+<ul>
+<li><a href="#org7a505d7">进程的同步</a></li>
+<li><a href="#org8fd16cd">进程的互斥</a></li>
+<li><a href="#org91f854a">临界区</a></li>
+</ul>
+</li>
+<li><a href="#org2603942">信号量及P、V操作</a>
+<ul>
+<li><a href="#org45839d1">信号量</a></li>
+<li><a href="#orgb879062">P、V操作</a></li>
+<li><a href="#orga33b1c8">信号量与P、V操作的物理含义</a></li>
+<li><a href="#orgd6a23a6">用P、V操作实现进程之间的互斥</a></li>
+<li><a href="#org5b6cbb9">用P、V操作实现进程间的同步</a></li>
+<li><a href="#orgb1a03fd">信号量及P、V操作小结</a></li>
+</ul>
+</li>
+<li><a href="#orga68eb78">经典的进程同步问题</a>
+<ul>
+<li><a href="#org949bd11">简单生产者——消费者问题</a></li>
+<li><a href="#orgb399640">多个生产者——消费者问题</a></li>
+</ul>
+</li>
+<li><a href="#orgfaf48e5">管程</a>
+<ul>
+<li><a href="#org2f1c811">管程的提出</a></li>
+<li><a href="#org11ebfa4">管程的概念及组成</a></li>
+</ul>
+</li>
+<li><a href="#org8e985a1">进程通信</a>
+<ul>
+<li><a href="#org996efc1">共享内存</a></li>
+<li><a href="#org904fd36">消息机制</a>
+<ul>
+<li><a href="#org74ced49">消息缓冲通信</a></li>
+<li><a href="#orgfb94981">信箱通信</a></li>
+<li><a href="#org33c0bc7">管道通信</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc01c33c">第五章-死锁</a>
+<ul>
+<li><a href="#orga548036">死锁的产生</a>
+<ul>
+<li><a href="#orgd6b275e">死锁的定义</a></li>
+<li><a href="#org5dd7bb0">死锁产生的原因</a>
+<ul>
+<li><a href="#orgc0e8994">资源的概念</a></li>
+<li><a href="#org322b751">死锁的例子</a></li>
+</ul>
+</li>
+<li><a href="#org84b107c">死锁产生的必要条件</a></li>
+</ul>
+</li>
+<li><a href="#orgb6e8664">死锁预防</a>
+<ul>
+<li><a href="#org462db29">死锁预防的概念</a></li>
+<li><a href="#org13b2efa">资源的静态分配策略</a></li>
+</ul>
+</li>
+<li><a href="#org87ad949">死锁避免</a>
+<ul>
+<li><a href="#org53ae3ce">死锁避免的概念</a></li>
+<li><a href="#orgb6f4962">安全状态与安全序列</a></li>
+<li><a href="#orgdd7942c">银行家算法</a></li>
+</ul>
+</li>
+<li><a href="#org76d7f7f">死锁的检测与解除</a>
+<ul>
+<li><a href="#orgcc39665">死锁检测的时机</a></li>
+<li><a href="#org09a54b6">死锁检测的算法</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -198,9 +284,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-orgfe37daa" class="outline-5">
-<h5 id="orgfe37daa">基本工作方式</h5>
-<div class="outline-text-5" id="text-orgfe37daa">
+<div id="outline-container-orga88c483" class="outline-5">
+<h5 id="orga88c483">基本工作方式</h5>
+<div class="outline-text-5" id="text-orga88c483">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -246,9 +332,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org8fa8fa5" class="outline-5">
-<h5 id="org8fa8fa5">基本工作方式</h5>
-<div class="outline-text-5" id="text-org8fa8fa5">
+<div id="outline-container-org5214d8f" class="outline-5">
+<h5 id="org5214d8f">基本工作方式</h5>
+<div class="outline-text-5" id="text-org5214d8f">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -574,8 +660,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="org486532d"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org486532d">
+<li><a id="org32d2b86"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-org32d2b86">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -691,9 +777,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org8827f55" class="outline-4">
-<h4 id="org8827f55">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org8827f55">
+<div id="outline-container-org89d5a00" class="outline-4">
+<h4 id="org89d5a00">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org89d5a00">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1248,9 +1334,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd11ade0" class="outline-3">
-<h3 id="orgd11ade0">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgd11ade0">
+<div id="outline-container-orgcc008dd" class="outline-3">
+<h3 id="orgcc008dd">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgcc008dd">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1444,9 +1530,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <h2 id="org295dfb3">第三章-进程与线程</h2>
 <div class="outline-text-2" id="text-org295dfb3">
 </div>
-<div id="outline-container-org5139d57" class="outline-3">
-<h3 id="org5139d57">多道程序设计</h3>
-<div class="outline-text-3" id="text-org5139d57">
+<div id="outline-container-orgc8b269d" class="outline-3">
+<h3 id="orgc8b269d">多道程序设计</h3>
+<div class="outline-text-3" id="text-orgc8b269d">
 <ul class="org-ul">
 <li>作用
 提高处理器利用率。</li>
@@ -1500,9 +1586,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org40f2086" class="outline-4">
-<h4 id="org40f2086">多道程序设计</h4>
-<div class="outline-text-4" id="text-org40f2086">
+<div id="outline-container-org679a73f" class="outline-4">
+<h4 id="org679a73f">多道程序设计</h4>
+<div class="outline-text-4" id="text-org679a73f">
 <p>
 <code>能使多个硬件并行工作即多道程序设计</code>
 </p>
@@ -1562,7 +1648,8 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ul></li>
 <li>可再入程序
 一个程序如果在运行时会修改自身，那么这个程序就不能称之为“可再入”。
-可再入程序是指，一个能被多用户同时调用且不会程序执行时不会修改自身代码的程序。</li>
+可再入程序的数据与程序是分离的。
+可再入程序是指，一个能被多用户同时调用且程序执行时不会修改自身代码的程序。</li>
 <li><p>
 进程的特性
 进程是操作系统实现并发的重要概念。其具有两个基本属性：
@@ -1717,9 +1804,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <ul class="org-ul">
 <li>阻塞到就绪
 内存中的进程的事件出现。</li>
-<li>阻塞挂起到就绪挂起
-外存中的进程的事件出现。</li>
+<li>阻塞挂起到就绪挂起</li>
 </ul></li>
+
 <li>提交（Admit）： <code>创建进程的过程</code></li>
 </ol></li>
 </ol>
@@ -1748,7 +1835,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 每个进程可用内存的信息</li>
 <li>优先级
 进程的优先级</li>
-<li>当期状态
+<li>当前状态
 进程状态</li>
 <li>资源清单
 进程运行状态所需资源</li>
@@ -2017,28 +2104,196 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 <div id="outline-container-org42f10e1" class="outline-3">
 <h3 id="org42f10e1">系统内核</h3>
+<div class="outline-text-3" id="text-org42f10e1">
+<p>
+系统内核即计算机系统中最接近裸机的部分。其不受其他程序的影响，主要功能都是为了服务其他程序，例如中断处理程序、进程同步与互斥、进程调度、控制与通信、存储管理的基本操作以及时钟管理。
+</p>
 </div>
-<div id="outline-container-org6b773f2" class="outline-3">
-<h3 id="org6b773f2">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org6b773f2">
+</div>
+<div id="outline-container-org7d31c9c" class="outline-3">
+<h3 id="org7d31c9c">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org7d31c9c">
 <ol class="org-ol">
-<li>什么是多道程序设计？</li>
-<li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？</li>
-<li>操作系统中为什么要引入“进程”进程和程序有什么区别？</li>
-<li>程序的并发执行有什么特点？并发和并行有什么区别？</li>
-<li>可再入程序有什么特点？</li>
-<li>进程有哪些基本状态？它们的变化关系是怎样的？</li>
-<li>系统中有n(n&gt;1)个进程，在任一时刻，处于运行、就绪和等待状态的进程最多、最少各有几个？</li>
-<li>进程控制块的作用是什么？其主要内容有哪些？</li>
-<li>进程能否修改访问自己的进程控制块内容？</li>
+<li>什么是多道程序设计？
+答： 多道程序设计是一种能够提高处理器利用率，充分发挥处理器与外围设备以及外围设备之间的并行工作能力的程序设计方式。</li>
+
+<li>多道程序设计怎样提高系统效率？多道程序设计一定能提高系统效率么？
+答： 
+<ul class="org-ul">
+<li>多道程序设计根据不同硬件有不同效果，根据将程序运行的基本单位引入线程和进程概念，使得线程或进程可由多种调度算法控制，从而使得提高了系统硬件利用率。</li>
+
+<li>不一定能提高系统效率，如果没有选择合适的调度算法可能造成系统利用率降低，所以进程调度算法是十分重要的。</li>
+</ul></li>
+
+<li>操作系统中为什么要引入“进程”进程和程序有什么区别？
+答:
+<ul class="org-ul">
+<li>引入进程的概念是为了实现操作系统的并发性和共享性。</li>
+
+<li>进程是动态的，而程序是静态的。进程有多种状态，具有生命周期，而程序如果没有删除等行为可以长久保存。</li>
+</ul></li>
+
+<li>程序的并发执行有什么特点？并发和并行有什么区别？
+答：
+<ul class="org-ul">
+<li>特点
+<ul class="org-ul">
+<li>在执行期间并发程序相互制约</li>
+
+<li>程序与计算不再一一对应</li>
+
+<li>并发程序的执行结果不可再现</li>
+</ul></li>
+
+<li>区别
+
+<ul class="org-ul">
+<li>并发
+并发从宏观上看是多个程序同时运行，但从微观上看仍是顺序执行，原因是由于每个指令处理周期速度超快，从人的感受上来看是同时执行的。</li>
+
+<li>并行
+并行是从宏观还是微观的角度看都是同时执行，单其需要多处理器的架构。</li>
+</ul></li>
+</ul></li>
+
+<li>可再入程序有什么特点？
+答：可再入程序不允许程序作为进程在运行时修改自身，且数据与程序是分离的，且能被多个用户同时调用程序执行时不会修改自身代码。</li>
+
+<li><p>
+进程有哪些基本状态？它们的变化关系是怎样的？
+答：
+三状态模型的进程的基本状态如下：
+</p>
+<ul class="org-ul">
+<li>运行状态</li>
+<li>就绪状态</li>
+<li>等待状态</li>
+</ul>
+
+<p>
+它们之间的变化关系是：
+</p>
+<ul class="org-ul">
+<li>就绪-&gt;运行
+当就绪队列的进程拿到了处理器独占权即可进入运行状态</li>
+<li>运行-&gt;就绪
+常出现在分时操作系统中，运行状态程序因为时间片用完，随后将其设置为就绪状态，再随后转入进程调度器。</li>
+<li>运行-&gt;等待
+运行时的进程由于某些原因，例如等待事件未出现，就会将进程设置为等待状态，其等待事件出现后，又由进度调度器将其设置为就绪状态。</li>
+<li>等待-&gt;就绪
+当等待状态进程的等待事件出现后，根据进程调度器算法将其设置为就绪状态。</li>
+</ul></li>
+
+<li>系统中有n(n&gt;1)个进程，在任一时刻，处于运行、就绪和等待状态的进程最多、最少各有几个？
+答：
+<ul class="org-ul">
+<li>运行状态，最多1个，最少0个。</li>
+
+<li>就绪状态，最多n-1个，最少0个。</li>
+
+<li>等待状态，最多n个，最少0个。</li>
+</ul></li>
+
+<li>进程控制块的作用是什么？其主要内容有哪些？
+答：
+作用： 方便系统控制和描述进程。
+主要内容：
+   两类：
+<ul class="org-ul">
+<li>调度信息
+<ul class="org-ul">
+<li>进程名</li>
+
+<li>进程号</li>
+
+<li>地址空间信息</li>
+
+<li>优先级</li>
+
+<li>当前状态</li>
+
+<li>资源清单</li>
+
+<li>家族关系</li>
+
+<li>消息队列指针</li>
+
+<li>进程队列指针</li>
+
+<li>已打开文件</li>
+</ul></li>
+<li>现场信息
+描述进程运行清空，仅记录会被其他进程改变的寄存器。</li>
+</ul></li>
+<li>进程能否修改访问自己的进程控制块内容？
+答：不能，PCB是系统资源，普通用户态程序无法对系统资源进行操作，只能由进程控制程序修改。</li>
 <li>当进程调度选中一个进程后，怎样才能让它占用处理器？</li>
-<li>为什么要引入线程？线程和进程之间的区别和联系是什么？</li>
-<li>为什么说线程间的状态切换比进程间的状态切换开销更低？同一个进程中的两个线程切换的开销是否也比不同进程中两个线程切换的开销少？</li>
-<li>进程调度的作用是什么？引起进程调度的因素有哪些？</li>
-<li>抢占式调度的和非抢占式调度有何区别？</li>
-<li>对于进程调度，较小的优先级值是表示较低的优先级还是表示较高的优先级？</li>
-<li>在一个单处理器的多道程序设计系统中，现有两道进程同时执行，其中一道以计算为主，另一道以输出为主，将怎样赋予进程占有处理器的优先数？解释为什么。</li>
+<li><p>
+为什么要引入线程？线程和进程之间的区别和联系是什么？
+答：
+为什么引入：
+</p>
+<ul class="org-ul">
+<li>新建线程速度快，系统开销小</li>
+<li>线程切换状态速度块</li>
+<li>多个线程之间共享内存块，信息传递速度快</li>
+<li>线程同样能独占处理器，</li>
+</ul>
+<p>
+线程和进程的区别：
+由四个角度进行比较
+</p>
+<ul class="org-ul">
+<li>调度
+线程是作为调度和分派的基本单位，进程是作为资源的基本单位
+同进程中切换线程不会引起进程切换，但由一个进程的线程切换至另一个进程的线程会导致进程切换。</li>
+<li>并发性
+线程为操作系统提高了并发性，进程遇到等待事件后只能被调度为阻塞，而线程可以为一个程序设置多个线程，分别处理多项任务，当某个任务暂停时不会阻塞进程，而是切换到另外一个线程运行。</li>
+<li>拥有资源
+线程不具有系统资源（除了少部分必要的），而进程泽反之。</li>
+<li>系统开销
+线程创建、回收等操作上只需要处理少量数据，进程则需要处理全部数据。</li>
+</ul></li>
+
+<li>为什么说线程间的状态切换比进程间的状态切换开销更低？同一个进程中的两个线程切换的开销是否也比不同进程中两个线程切换的开销少？
+答：
+<ol class="org-ol">
+<li>因为线程拥有的资源相比进程会少，线程切换时只需要处理少量数据，而进程则是需要处理包括线程PCB等一系自身的数据。</li>
+<li>是的，因为同进程之间切换线程不会造成进程状态切换，而不同进程之间的线程之间切换则会造何曾进程状态切换。</li>
+</ol></li>
+<li>进程调度的作用是什么？引起进程调度的因素有哪些？
+答：
+<ol class="org-ol">
+<li>作用是提高处理器利用率。</li>
+
+<li>因素如下：
+<ul class="org-ul">
+<li>进程执行完毕</li>
+<li>进程因错误终止</li>
+<li>进程时间片用完</li>
+<li>进程阻塞</li>
+<li>创建新进程</li>
+<li>进程激活</li>
+</ul></li>
+</ol></li>
+<li>抢占式调度的和非抢占式调度有何区别？
+答：
+区别：
+<ol class="org-ol">
+<li>抢占式调度一般根据不同的优先级算法来将程序进行调度。</li>
+
+<li>抢占式调度相比非抢占式调度的可控性强。</li>
+
+<li>非抢占性调度的可能会遇到错误却仍然一直执行。</li>
+
+<li>非抢占性调度常用与批处理系统，而抢占式调度常用于现代操作系统，例如交互式。</li>
+</ol></li>
+<li>对于进程调度，较小的优先级值是表示较低的优先级还是表示较高的优先级？
+答：是表示较高的优先级。</li>
+<li>在一个单处理器的多道程序设计系统中，现有两道进程同时执行，其中一道以计算为主，另一道以输出为主，将怎样赋予进程占有处理器的优先数？解释为什么。
+答： 应当让输出为主的作业具有较高的优先级，这种作业占用处理器时，因常常要启动外围设备，当外围设备一旦启动，它就会让出处理器，另一道作业便可占用处理器，使得处理器和外围设备都处于忙碌状态。</li>
 <li>假定就绪队列中的进程按优先数目自大到小顺序排列，当有进程要加入就绪队列时，应按它的优先数排入相应的位置，试就单向链接的方式写出实现进程入队的程序。</li>
+
 <li><p>
 考虑下表的若干进程：
 </p>
@@ -2170,12 +2425,538 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
+<div id="outline-container-org8ecc0e3" class="outline-2">
+<h2 id="org8ecc0e3">第四章-进程同步与互斥</h2>
+<div class="outline-text-2" id="text-org8ecc0e3">
+<p>
+进程之间不管是否有联系，都会针对于一个计算机系统中的资源进行竞争，所以不可避免地相互发生关系。
+</p>
+</div>
+<div id="outline-container-org906fd93" class="outline-3">
+<h3 id="org906fd93">进程间相互作用</h3>
+<div class="outline-text-3" id="text-org906fd93">
+</div>
+<div id="outline-container-org57c0d16" class="outline-4">
+<h4 id="org57c0d16">相关进程和无关进程</h4>
+<div class="outline-text-4" id="text-org57c0d16">
+<ul class="org-ul">
+<li>无关进程
+无关进程是指任意多个进程之间没有任何关系，不会影响对方，互相没有共享数据，就算当一方出错，另一方也能顺利执行。</li>
+<li>相关进程
+相关进程是指任意多个进程之间有联系，存在依赖，相互可能存在共享数据，一方进程依赖于另一方进程的执行，只有当其依赖项进程执行完毕本进程才能执行。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47d47eb" class="outline-4">
+<h4 id="org47d47eb">与时间有关的错误</h4>
+<div class="outline-text-4" id="text-org47d47eb">
+<p>
+与时间有关的错误是指任意多个存在共享数据的相关进程同时以各自独立的速度向前推进，共享数据可能被同时操作，造成的数据出错问题。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ce4cd8" class="outline-3">
+<h3 id="org7ce4cd8">进程的同步与互斥</h3>
+<div class="outline-text-3" id="text-org7ce4cd8">
+<p>
+有关进程之间必有练习，所以它们需要相互协调，彼此交换信息，这就是进程之间的通信。
+</p>
+</div>
+<div id="outline-container-org7a505d7" class="outline-4">
+<h4 id="org7a505d7">进程的同步</h4>
+<div class="outline-text-4" id="text-org7a505d7">
+<p>
+进程的同步是指进程之间一种直接的协同工作关系，一些进程相互合作，共同完成一项任务。
+为了实现这样的同步，引出了“同步机制”。
+</p>
+</div>
+</div>
+<div id="outline-container-org8fd16cd" class="outline-4">
+<h4 id="org8fd16cd">进程的互斥</h4>
+<div class="outline-text-4" id="text-org8fd16cd">
+<p>
+进程之间共享资源存在互斥关系，即这些资源要求具有排他性，即资源不能同时被多个进程所使用。
+进程的互斥是进程间的一种简介制约关系。
+</p>
+</div>
+</div>
+<div id="outline-container-org91f854a" class="outline-4">
+<h4 id="org91f854a">临界区</h4>
+<div class="outline-text-4" id="text-org91f854a">
+<p>
+若在系统中的某些资源只允许一个进程使用，则这类资源称为临界资源或共享变量，而在进程中访问临界资源的进程称为临界区。若有若干进程共享某一临界区，则该临界区为相关临界区。
+</p>
+
+<p>
+临界区防止了资源交叉访问的问题。
+</p>
+
+<p>
+针对临界区，有以下几点原则：
+</p>
+
+<ol class="org-ol">
+<li>有空让进
+当临界区为空是，若有一个进程要求进入临界区，应当允许它立即进入临界区</li>
+<li>无空等待
+若有一个进程已在临界区时，其他要求进入临界区的进程必须等待</li>
+<li>多中择一
+当没有进程在临界区，而同时有多个进程要求进入临界区，只能让其中之一进入临界区，其他进程必须等待。</li>
+<li>有限等待
+任一进程进入临界区的要求应在有限时间满足</li>
+<li>让权等待
+处于等待状态的进程应当放弃占用处理器</li>
+</ol>
+
+<p>
+以上原则中1表示要有效利用临界资源、2反映了互斥的基本含义，即临界区资源具有排他性、3是1，2的特殊情况、4，5是避免进程之间出现饥饿和死锁。   
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org2603942" class="outline-3">
+<h3 id="org2603942">信号量及P、V操作</h3>
+<div class="outline-text-3" id="text-org2603942">
+<p>
+进程同步通过同步机制实现，同步机制需要做到描述能力强能解决不各种进程之间同步互斥问题，实现简单，效率高，使用方便。
+同步机制还有多种类型，如硬件同步机制，软件同步机制，信号量及P、V操作。
+</p>
+</div>
+<div id="outline-container-org45839d1" class="outline-4">
+<h4 id="org45839d1">信号量</h4>
+<div class="outline-text-4" id="text-org45839d1">
+<p>
+信号量是用来表述共享资源的使用情况的，信号量会被试试P和V操作。
+P和V操作分别是“等待”和“发信号“的意思。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb879062" class="outline-4">
+<h4 id="orgb879062">P、V操作</h4>
+<div class="outline-text-4" id="text-orgb879062">
+<p>
+啥鸡巴没看懂-&gt;看懂了一点点
+P(S){S=S-1;}
+若S&lt;0，将该进程状态设置为等待状态。
+</p>
+
+<p>
+{
+V(S)
+}
+S=S+1;
+若S&lt;=0，则释放S信号量队列中等待的一个进程。 将其状态改变为就绪态。随后执行本操作的进程继续执行。
+</p>
+</div>
+</div>
+<div id="outline-container-orga33b1c8" class="outline-4">
+<h4 id="orga33b1c8">信号量与P、V操作的物理含义</h4>
+<div class="outline-text-4" id="text-orga33b1c8">
+<p>
+啥鸡巴没看懂-&gt;只能看懂一点点
+</p>
+
+<p>
+信号量S表示了可用的临界资源，不同的临界资源用不同的信号量表示。
+</p>
+
+<p>
+当S &gt; 0时，S值决定了某类可用资源的数量。
+当S &lt; 0时，表示没有可分配的资源数量。其绝对值为等待队列的数目。
+</p>
+
+<p>
+P操作意味着请求的进程分配到了一个资源，V操作意味着进程释放了资源。
+</p>
+</div>
+</div>
+<div id="outline-container-orgd6a23a6" class="outline-4">
+<h4 id="orgd6a23a6">用P、V操作实现进程之间的互斥</h4>
+<div class="outline-text-4" id="text-orgd6a23a6">
+<p>
+啥鸡巴没看懂-&gt;还是啥鸡巴没看懂
+</p>
+</div>
+</div>
+<div id="outline-container-org5b6cbb9" class="outline-4">
+<h4 id="org5b6cbb9">用P、V操作实现进程间的同步</h4>
+<div class="outline-text-4" id="text-org5b6cbb9">
+<p>
+啥鸡巴没看懂-&gt;还是啥鸡巴没看懂
+</p>
+</div>
+</div>
+<div id="outline-container-orgb1a03fd" class="outline-4">
+<h4 id="orgb1a03fd">信号量及P、V操作小结</h4>
+<div class="outline-text-4" id="text-orgb1a03fd">
+<p>
+P、V操作在操作时必须一一对应，且同时只能申请释放同一个资源，若一个进程同时需要多个资源，那么会需要执行多次PV操作，则会增加程序的复杂性。
+PV操作使用不当也有可能出现死锁的情况。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga68eb78" class="outline-3">
+<h3 id="orga68eb78">经典的进程同步问题</h3>
+<div class="outline-text-3" id="text-orga68eb78">
+<p>
+本章引入两个经典例子，用以解释和透彻理解进程同步问题。
+</p>
+</div>
+<div id="outline-container-org949bd11" class="outline-4">
+<h4 id="org949bd11">简单生产者——消费者问题</h4>
+<div class="outline-text-4" id="text-org949bd11">
+<p>
+看书去吧，不好解释。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb399640" class="outline-4">
+<h4 id="orgb399640">多个生产者——消费者问题</h4>
+<div class="outline-text-4" id="text-orgb399640">
+<p>
+看书去吧不好解释
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfaf48e5" class="outline-3">
+<h3 id="orgfaf48e5">管程</h3>
+<div class="outline-text-3" id="text-orgfaf48e5">
+</div>
+<div id="outline-container-org2f1c811" class="outline-4">
+<h4 id="org2f1c811">管程的提出</h4>
+<div class="outline-text-4" id="text-org2f1c811">
+<p>
+因为信号量即PV同步机制编写程序有以下缺点：易读性差，维护困难，难以保证健壮型
+</p>
+</div>
+</div>
+<div id="outline-container-org11ebfa4" class="outline-4">
+<h4 id="org11ebfa4">管程的概念及组成</h4>
+<div class="outline-text-4" id="text-org11ebfa4">
+<p>
+管程是由过程、变量、数据结构组成的集合。
+</p>
+<img src="./images/4-5管程的组成.png" width="50%" height="50%" />
+<p>
+懒得写，自考的书就是一到复杂的地方就讲不明白了！
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e985a1" class="outline-3">
+<h3 id="org8e985a1">进程通信</h3>
+<div class="outline-text-3" id="text-org8e985a1">
+<p>
+进程之间具有需要交换大量信息的任务，这种任务不适合交给类似P、V操作这种低级通信原语，下面就是介绍了几种常见的进程通信方式。
+</p>
+</div>
+<div id="outline-container-org996efc1" class="outline-4">
+<h4 id="org996efc1">共享内存</h4>
+<div class="outline-text-4" id="text-org996efc1">
+<p>
+建立公共内存区，不同进程之间对这个区域可读可写。
+需要解决的问题，1.如何建立此区块 2.如何使得读写操作是互斥的。
+</p>
+</div>
+</div>
+<div id="outline-container-org904fd36" class="outline-4">
+<h4 id="org904fd36">消息机制</h4>
+<div class="outline-text-4" id="text-org904fd36">
+<p>
+消息机制即进程之间进行通信的机制。
+</p>
+</div>
+<div id="outline-container-org74ced49" class="outline-5">
+<h5 id="org74ced49">消息缓冲通信</h5>
+<div class="outline-text-5" id="text-org74ced49">
+<p>
+“生产者——消费者”原理，利用内存中公用消息缓冲区实现进程之间的信息交换。
+消息缓冲区通信机制:
+</p>
+
+<ol class="org-ol">
+<li>消息缓冲区
+有如下几种数据结构:
+<ul class="org-ul">
+<li>消息长度</li>
+<li>消息正文</li>
+<li>发送者</li>
+<li>消息队列指针</li>
+</ul></li>
+<li>消息队列首指针 <code>m_q</code> 保存在PCB中</li>
+<li>互斥信号量 <code>m_mutex</code> 初值为1，用于互斥访问消息队列，在PCB中设置。</li>
+<li>同步信号量 <code>m_syn</code> 初值为0，用于消息计数，在PBC中设置。</li>
+<li>发送消息原语 <code>send</code></li>
+<li>接收消息原语 <code>receive</code></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfb94981" class="outline-5">
+<h5 id="orgfb94981">信箱通信</h5>
+<div class="outline-text-5" id="text-orgfb94981">
+<p>
+原理，想要实现进程A和进程B之间通信，需要具有信箱，进程A首先将信件（也就是需要传输的通知）放入信箱，随后进程B可以在任何时间从信箱内拿去已经存在的信件。
+</p>
+
+<p>
+信箱的结构由信箱头和各个信件组成。
+</p>
+
+<img src="./images/4-8信箱通信.png" width="50%" height="50%" />
+
+<p>
+状态改变：
+当信箱中为空，接受进程会被设置为“等信件”状态。当信箱中已满，发送进程会被设置为“等信箱“状态。当不满足上面的情况，状态会被释放。
+</p>
+</div>
+</div>
+<div id="outline-container-org33c0bc7" class="outline-5">
+<h5 id="org33c0bc7">管道通信</h5>
+<div class="outline-text-5" id="text-org33c0bc7">
+<p>
+管道——Pipe
+首先出现在 <b>UNIX</b> 操作系统中
+</p>
+
+<p>
+这种机制必须基于文件系统。发送进程于接收进程之间打开一个共享的文件流，发送进程写数据，而接受进程则可以读系统。
+这种机制相比前面两种速度较慢。
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc01c33c" class="outline-2">
+<h2 id="orgc01c33c">第五章-死锁</h2>
+<div class="outline-text-2" id="text-orgc01c33c">
+</div>
+<div id="outline-container-orga548036" class="outline-3">
+<h3 id="orga548036">死锁的产生</h3>
+<div class="outline-text-3" id="text-orga548036">
+<p>
+死锁的产生其原因必定满足四个必要条件。
+</p>
+</div>
+<div id="outline-container-orgd6b275e" class="outline-4">
+<h4 id="orgd6b275e">死锁的定义</h4>
+<div class="outline-text-4" id="text-orgd6b275e">
+<p>
+死锁是指在多道程序系统中的一种现象，当一组进程的中每个进程均进入无限期等待被该组进程中的另一个进程锁占有且永远不会释放的资源。
+</p>
+
+<p>
+死锁发生时，进程队列中的所有进程都将会停止，死锁的进程个数至少为两个。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5dd7bb0" class="outline-4">
+<h4 id="org5dd7bb0">死锁产生的原因</h4>
+<div class="outline-text-4" id="text-org5dd7bb0">
+<p>
+有两个主要的原因：1. 竞争资源，资源分配程序出错，多个进程相互争夺使得资源谁都无法获取。2. 多道程序运行时，进程推进顺序不合理。
+</p>
+</div>
+
+<div id="outline-container-orgc0e8994" class="outline-5">
+<h5 id="orgc0e8994">资源的概念</h5>
+<div class="outline-text-5" id="text-orgc0e8994">
+<ul class="org-ul">
+<li>永久性资源
+计算机内部可长久使用的资源，一般是指硬件（CPU，内存，外部设备），也存在一些可以保存的数据文件，程序，软件等。</li>
+<li>消耗型资源
+由进程使用过的资源，且使用过便不会使用的资源，如I/O和时钟信号中断，同步信号，消息等。</li>
+</ul>
+<p>
+以上两种资源都有可能导致死锁  
+</p>
+</div>
+</div>
+<div id="outline-container-org322b751" class="outline-5">
+<h5 id="org322b751">死锁的例子</h5>
+<div class="outline-text-5" id="text-org322b751">
+<p>
+建议看书-p140。ps: 其实ps讲得很绕。。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org84b107c" class="outline-4">
+<h4 id="org84b107c">死锁产生的必要条件</h4>
+<div class="outline-text-4" id="text-org84b107c">
+<ul class="org-ul">
+<li>互斥条件
+资源是同一时刻只能被一个进程所使用。若其他进程想要使用，必须先请求并等待资源被占用者释放。</li>
+<li>不可剥夺条件
+正在运行进程的资源未释放之间，其他进程不能使用此资源。</li>
+<li>请求和保持条件
+资源可被分块申请，进程可以仅申请一部分资源，且占用。</li>
+<li>循环等待条件
+进程之间为了争夺一个资源而发生了循环等待，即当前A进程占有了B进程的资源，但是其又将获取B进程占有的资源，而B进程又刚好想获取A进程占有的资源。</li>
+</ul>
+
+<p>
+当上述条件都具备，那么进程必定产生死锁。想要预防，就必须解决其中之一。
+</p>
+
+<ul class="org-ul">
+<li>预防死锁
+设置严格的限制，破坏产生死锁的必要条件。缺点：可能导致系统利用率降低。</li>
+<li>避免死锁
+设置较弱的限制条件，破坏产生死锁的必要条件</li>
+<li>检测与解除死锁
+设定程序，定时检测每个进程是否进入死锁状态，如果存在</li>
+<li>忽略死锁
+对于触发死锁机率低，解决死锁消耗资源大，无法解决的死锁问题不予理睬。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb6e8664" class="outline-3">
+<h3 id="orgb6e8664">死锁预防</h3>
+<div class="outline-text-3" id="text-orgb6e8664">
+<p>
+预防需要使得成立死锁的四个条件不成立。
+</p>
+</div>
+<div id="outline-container-org462db29" class="outline-4">
+<h4 id="org462db29">死锁预防的概念</h4>
+<div class="outline-text-4" id="text-org462db29">
+<p>
+针对死锁不同成立条件我们需要制定不同的预防方式，对于 <b>互斥条件</b> 不能任何资源都只能被一个进程所使用，需要区别对待。
+</p>
+
+<p>
+总之预防死锁就得保证 预防所需资源不能过高，但又有效。
+</p>
+</div>
+</div>
+<div id="outline-container-org13b2efa" class="outline-4">
+<h4 id="org13b2efa">资源的静态分配策略</h4>
+<div class="outline-text-4" id="text-org13b2efa">
+<p>
+使用静态分配策略可以使得一些死锁条件不成立。
+</p>
+<ul class="org-ul">
+<li>破坏不可剥夺条件
+将一些等待进程的资源强行释放。
+缺点，可能造成进程前期工作失败，从而使得进程疯狂申请资源，发生错误。</li>
+
+<li>破坏请求和保持条件
+进程运行前必须申请完所有需要的资源，仅当系统满足其所需资源之后，该进程才能开始执行。
+缺点，降低了系统利用率，严重浪费系统资源。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org87ad949" class="outline-3">
+<h3 id="org87ad949">死锁避免</h3>
+<div class="outline-text-3" id="text-org87ad949">
+<p>
+死锁预防所提到的避免死锁问题基本上都有性能问题，下面看一些施加了较少的限制条件，以获得较满意的系统性能。
+</p>
+</div>
+<div id="outline-container-org53ae3ce" class="outline-4">
+<h4 id="org53ae3ce">死锁避免的概念</h4>
+<div class="outline-text-4" id="text-org53ae3ce">
+<p>
+死锁避免与死锁预防的区别在于分配策略，死锁避免允许死锁必要条件存在，但死锁预防不允许，死锁避免是动态的资源分配策略，而死锁预防是静态的，死锁避免是在系统运行时检测并注意避免死锁的发生，而死锁预防则是在进程还未运行之前进程的操作。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb6f4962" class="outline-4">
+<h4 id="orgb6f4962">安全状态与安全序列</h4>
+<div class="outline-text-4" id="text-orgb6f4962">
+<p>
+动态资源分配需要动态地申请资源，所以在分配资源之前会分析资源分配的安全性。
+</p>
+
+<p>
+安全状态是指：操作系统能够在有限时间内为每个进程分配所需的全部资源。
+</p>
+
+<p>
+安全序列是指：(&lt; 某个进程所需的资源量 (+ 系统剩余资源量  所有进程占有资源量))
+</p>
+
+<p>
+书中有一个例子讲了系统是如何判断安全状态和不安全状态的，可以去看一下，讲得还挺清晰的。P-144
+</p>
+</div>
+</div>
+<div id="outline-container-orgdd7942c" class="outline-4">
+<h4 id="orgdd7942c">银行家算法</h4>
+<div class="outline-text-4" id="text-orgdd7942c">
+<p>
+著名的死锁避免算法，其概念是将操作系统中抽象的资源分配策略比作现实的银行贷款：
+</p>
+<ul class="org-ul">
+<li>操作系统资源——周转资金</li>
+<li>申请资源——向银行贷款的顾客</li>
+</ul>
+
+<p>
+为了保证银行不会破产（安全状态），规定又如下：
+</p>
+<ul class="org-ul">
+<li>顾客贷款金额不能超过银行现有储备金</li>
+<li>顾客可分期贷款，但总量不可超过银行现有储备金</li>
+<li>当储备金无法满足顾客贷款所需金额，则分期支持贷款。但必须使顾客在限定时间内得到贷款。</li>
+<li>当顾客获取到所有贷款资金后，可以在限定时间内归还所有资金。</li>
+</ul>
+
+<p>
+书中有详细说明银行家算法的示例，推荐去看：
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org76d7f7f" class="outline-3">
+<h3 id="org76d7f7f">死锁的检测与解除</h3>
+<div class="outline-text-3" id="text-org76d7f7f">
+<p>
+死锁的检测与解除与前面两种方式不同，这种是在死锁已经发生后，干掉死锁的方式。
+也就是用于解决第四种死锁必要条件的方法。
+</p>
+</div>
+<div id="outline-container-orgcc39665" class="outline-4">
+<h4 id="orgcc39665">死锁检测的时机</h4>
+<div class="outline-text-4" id="text-orgcc39665">
+<p>
+根据“死锁检测”程序的算法进行检测，周期可为 资源分配后，调度后。
+</p>
+</div>
+</div>
+<div id="outline-container-org09a54b6" class="outline-4">
+<h4 id="org09a54b6">死锁检测的算法</h4>
+<div class="outline-text-4" id="text-org09a54b6">
+<p>
+死锁检测需要标记一些信息，所以需要创建几个表。
+</p>
+<ol class="org-ol">
+<li>为进程和资源指定唯一编号</li>
+<li>设置资源分配状态表，记录了资源对应的进程，表目包含了“资源号”和“进程号”。</li>
+<li>设置进程分配状态表，表目包含了“进程号”以及对应请求的资源的“资源号”。</li>
+<li>算法规则：当某个进程申请一块被其他进程占用的资源时，对资源分配状态表和进程分配状态表进行分析，得出是否会形成环路，若是则确定出现死锁。</li>
+</ol>
+
+<p>
+具体的死锁检测算法在书上有详细的例子。P148   
+</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-18 四 11:14</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-03-24 三 20:36</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

@@ -1,0 +1,30 @@
+Info 0    [20:34:41.592] Starting TS Server
+Info 1    [20:34:41.598] Version: 3.9.3
+Info 2    [20:34:41.598] Arguments: /usr/bin/node /home/evanmeek/.emacs.d/var/.cache/lsp/npm/typescript/bin/tsserver --logFile /home/evanmeek/Documents/site/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/96c420ca2032eb6a1d11e36391b87cae/tscancellation*
+Info 3    [20:34:41.598] Platform: linux NodeVersion: 15 CaseSensitive: true
+Info 4    [20:34:41.609] Search path: /home/evanmeek/Documents/site/js
+Info 5    [20:34:41.610] For info: /home/evanmeek/Documents/site/js/main.js :: No config files found.
+Info 6    [20:34:41.615] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [20:34:42.299] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 684ms
+Info 8    [20:34:42.299] Project '/dev/null/inferredProject1*' (Inferred)
+Info 9    [20:34:42.299] 	Files (6)
+
+Info 10   [20:34:42.299] -----------------------------------------------
+Info 11   [20:34:43.652] Search path: /home/evanmeek/Documents/site/js
+Info 12   [20:34:43.652] For info: /home/evanmeek/Documents/site/js/darkreader.js :: No config files found.
+Info 13   [20:34:43.653] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 14   [20:34:43.887] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 1 structureChanged: true Elapsed: 234ms
+Info 15   [20:34:43.887] Project '/dev/null/inferredProject2*' (Inferred)
+Info 16   [20:34:43.887] 	Files (6)
+
+Info 17   [20:34:43.887] -----------------------------------------------
+Info 18   [20:34:43.932] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 19   [20:34:44.149] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 2 structureChanged: false Elapsed: 217ms
+Info 20   [20:34:44.149] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 21   [20:34:48.328] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 22   [20:34:48.328] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false Elapsed: 0ms
+Info 23   [20:34:48.328] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 24   [20:34:48.328] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 3 structureChanged: false Elapsed: 0ms
+Info 25   [20:34:50.578] Before ensureProjectForOpenFiles:
+Info 26   [20:34:50.579] After ensureProjectForOpenFiles:
+Info 27   [20:34:50.579] got projects updated in background, updating diagnostics for /home/evanmeek/Documents/site/js/main.js,/home/evanmeek/Documents/site/js/darkreader.js
