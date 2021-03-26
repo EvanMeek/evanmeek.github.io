@@ -502,6 +502,7 @@ th:last-child, td:last-child { border-right: rgba(255, 255, 255, 0); }
 /* ****************************************************************** */
 .js-home-content {
     background: url('../images/bg/GNU.png') no-repeat right;
+    background-size: 40%;
 }
 
 .js-home-content table { background-color: rgba(255, 255, 255, 0.16); }
