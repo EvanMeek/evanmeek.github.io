@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-24 三 20:48 -->
+<!-- 2021-03-26 五 20:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The-CPP-Programming-Language-NOTE</title>
@@ -202,9 +202,9 @@ p194-开头的话
 在以前我写C++时遍历数组我通常是这样做的:
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #f0c674;">void</span> <span style="color: #81a2be;">iter_arr1</span>() {
-  <span style="color: #b294bb;">const</span> <span style="color: #f0c674;">int</span> <span style="color: #cc6666;">arr</span>[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-  <span style="color: #b294bb;">for</span> (<span style="color: #f0c674;">int</span> <span style="color: #cc6666;">i</span> = 0; i &lt; 10; ++i)
+<pre class="src src-cpp"><span style="color: #00b8ff;">void</span> <span style="color: #eec900;">iter_arr1</span>() {
+  <span style="color: #004FFF;">const</span> <span style="color: #00b8ff;">int</span> <span style="color: #eec900;">arr</span>[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+  <span style="color: #004FFF;">for</span> (<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">i</span> = 0; i &lt; 10; ++i)
     cout &lt;&lt; arr[i] &lt;&lt; endl;
 }
 </pre>
@@ -217,9 +217,9 @@ p194-开头的话
 现在我学会了通过范围For来进行遍历数组:
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #f0c674;">void</span> <span style="color: #81a2be;">iter_arr2</span>() {
-  <span style="color: #b294bb;">const</span> <span style="color: #f0c674;">int</span> <span style="color: #cc6666;">arr</span>[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-  <span style="color: #b294bb;">for</span> (<span style="color: #b294bb;">auto</span> <span style="color: #cc6666;">x</span> : arr)
+<pre class="src src-cpp"><span style="color: #00b8ff;">void</span> <span style="color: #eec900;">iter_arr2</span>() {
+  <span style="color: #004FFF;">const</span> <span style="color: #00b8ff;">int</span> <span style="color: #eec900;">arr</span>[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+  <span style="color: #004FFF;">for</span> (<span style="color: #004FFF;">auto</span> <span style="color: #eec900;">x</span> : arr)
     cout &lt;&lt; x &lt;&lt; endl;
 }
 </pre>
@@ -232,9 +232,9 @@ p194-开头的话
 不过上面这种方式会将arr的值拷贝给x，随后再将x输出，中间是会占用一些内存的，我们可以通过下面这种引用的方式来访问，就省去了拷贝的操作。
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #f0c674;">void</span> <span style="color: #81a2be;">iter_arr3</span>() {
-  <span style="color: #f0c674;">int</span> <span style="color: #cc6666;">arr</span>[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-  <span style="color: #b294bb;">for</span> (<span style="color: #b294bb;">auto</span> &amp;<span style="color: #cc6666;">x</span> : arr)
+<pre class="src src-cpp"><span style="color: #00b8ff;">void</span> <span style="color: #eec900;">iter_arr3</span>() {
+  <span style="color: #00b8ff;">int</span> <span style="color: #eec900;">arr</span>[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+  <span style="color: #004FFF;">for</span> (<span style="color: #004FFF;">auto</span> &amp;<span style="color: #eec900;">x</span> : arr)
     cout &lt;&lt; ++x &lt;&lt; endl;
 }
 </pre>
@@ -263,35 +263,35 @@ p194-开头的话
 当一个抽象类的纯虚函数被多个类实现了，且有函数形参是抽象类类型，但实参分别是两个实现类时，编译器是如何找到正确的实现函数的呢？
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #c5c8c6; font-weight: bold;">#include</span> <span style="color: #b5bd68;">&lt;iostream&gt;</span>
-<span style="color: #c5c8c6; font-weight: bold;">#include</span> <span style="color: #b5bd68;">&lt;string&gt;</span>
+<pre class="src src-cpp"><span style="color: #00cdcd; font-weight: bold;">#include</span> <span style="color: #DFD67A;">&lt;iostream&gt;</span>
+<span style="color: #00cdcd; font-weight: bold;">#include</span> <span style="color: #DFD67A;">&lt;string&gt;</span>
 
-<span style="color: #b294bb;">using</span> <span style="color: #b294bb;">namespace</span> <span style="color: #de935f;">std</span>;
+<span style="color: #004FFF;">using</span> <span style="color: #004FFF;">namespace</span> <span style="color: #bd00ff;">std</span>;
 
-<span style="color: #b294bb;">class</span> <span style="color: #f0c674;">Car</span> {
-<span style="color: #b294bb;">public</span>:
-  <span style="color: #b294bb;">virtual</span> <span style="color: #f0c674;">string</span> <span style="color: #81a2be;">getCar</span>() = 0;
+<span style="color: #004FFF;">class</span> <span style="color: #00b8ff;">Car</span> {
+<span style="color: #004FFF;">public</span>:
+  <span style="color: #004FFF;">virtual</span> <span style="color: #00b8ff;">string</span> <span style="color: #eec900;">getCar</span>() = 0;
 };
 
-<span style="color: #b294bb;">class</span> <span style="color: #f0c674;">Ford</span> : <span style="color: #b294bb;">public</span> <span style="color: #f0c674;">Car</span> {
-<span style="color: #b294bb;">public</span>:
-  <span style="color: #f0c674;">string</span> <span style="color: #81a2be;">getCar</span>() <span style="color: #b294bb;">override</span> { <span style="color: #b294bb;">return</span> <span style="color: #b5bd68;">"&#31119;&#29305;"</span>; }
+<span style="color: #004FFF;">class</span> <span style="color: #00b8ff;">Ford</span> : <span style="color: #004FFF;">public</span> <span style="color: #00b8ff;">Car</span> {
+<span style="color: #004FFF;">public</span>:
+  <span style="color: #00b8ff;">string</span> <span style="color: #eec900;">getCar</span>() <span style="color: #004FFF;">override</span> { <span style="color: #004FFF;">return</span> <span style="color: #DFD67A;">"&#31119;&#29305;"</span>; }
 };
 
-<span style="color: #b294bb;">class</span> <span style="color: #f0c674;">Nissan</span> : <span style="color: #b294bb;">public</span> <span style="color: #f0c674;">Car</span> {
-<span style="color: #b294bb;">public</span>:
-  <span style="color: #f0c674;">string</span> <span style="color: #81a2be;">getCar</span>() { <span style="color: #b294bb;">return</span> <span style="color: #b5bd68;">"&#23612;&#26705;"</span>; }
+<span style="color: #004FFF;">class</span> <span style="color: #00b8ff;">Nissan</span> : <span style="color: #004FFF;">public</span> <span style="color: #00b8ff;">Car</span> {
+<span style="color: #004FFF;">public</span>:
+  <span style="color: #00b8ff;">string</span> <span style="color: #eec900;">getCar</span>() { <span style="color: #004FFF;">return</span> <span style="color: #DFD67A;">"&#23612;&#26705;"</span>; }
 };
-<span style="color: #f0c674;">void</span> <span style="color: #81a2be;">printCar</span>(<span style="color: #f0c674;">Car</span> &amp;);
+<span style="color: #00b8ff;">void</span> <span style="color: #eec900;">printCar</span>(<span style="color: #00b8ff;">Car</span> &amp;);
 
-<span style="color: #f0c674;">int</span> <span style="color: #81a2be;">main</span>(<span style="color: #f0c674;">int</span> <span style="color: #cc6666;">argc</span>, <span style="color: #f0c674;">char</span> *<span style="color: #cc6666;">argv</span>[]) {
-  <span style="color: #f0c674;">Ford</span> <span style="color: #cc6666;">f</span>;
-  <span style="color: #f0c674;">Nissan</span> <span style="color: #cc6666;">n</span>;
+<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">main</span>(<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">argc</span>, <span style="color: #00b8ff;">char</span> *<span style="color: #eec900;">argv</span>[]) {
+  <span style="color: #00b8ff;">Ford</span> <span style="color: #eec900;">f</span>;
+  <span style="color: #00b8ff;">Nissan</span> <span style="color: #eec900;">n</span>;
   printCar(f);
   printCar(n);
-  <span style="color: #b294bb;">return</span> 0;
+  <span style="color: #004FFF;">return</span> 0;
 }
-<span style="color: #f0c674;">void</span> <span style="color: #81a2be;">printCar</span>(<span style="color: #f0c674;">Car</span> &amp;<span style="color: #cc6666;">c</span>) { cout &lt;&lt; c.getCar() &lt;&lt; endl; }
+<span style="color: #00b8ff;">void</span> <span style="color: #eec900;">printCar</span>(<span style="color: #00b8ff;">Car</span> &amp;<span style="color: #eec900;">c</span>) { cout &lt;&lt; c.getCar() &lt;&lt; endl; }
 </pre>
 </div>
 <p>
@@ -324,17 +324,17 @@ p194-开头的话
 所以可以将类默认隐式生成的拷贝、移动构造函数删除掉。例如:
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #b294bb;">class</span> <span style="color: #f0c674;">Car</span> {
-<span style="color: #b294bb;">public</span>:
-  <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#21024;&#38500;&#25335;&#36125;&#26500;&#36896;&#20989;&#25968;</span>
-  <span style="color: #81a2be;">Car</span>(<span style="color: #b294bb;">const</span> <span style="color: #f0c674;">Car</span> &amp;) = <span style="color: #b294bb;">delete</span>;
-  <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#21024;&#38500;&#25335;&#36125;&#36171;&#20540;&#36816;&#31639;&#31526;</span>
-  <span style="color: #f0c674;">Car</span> &amp;<span style="color: #b294bb;">operator</span><span style="color: #81a2be;">=</span>(<span style="color: #b294bb;">const</span> <span style="color: #f0c674;">Car</span> &amp;) = <span style="color: #b294bb;">delete</span>;
+<pre class="src src-cpp"><span style="color: #004FFF;">class</span> <span style="color: #00b8ff;">Car</span> {
+<span style="color: #004FFF;">public</span>:
+  <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#21024;&#38500;&#25335;&#36125;&#26500;&#36896;&#20989;&#25968;</span>
+  <span style="color: #eec900;">Car</span>(<span style="color: #004FFF;">const</span> <span style="color: #00b8ff;">Car</span> &amp;) = <span style="color: #004FFF;">delete</span>;
+  <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#21024;&#38500;&#25335;&#36125;&#36171;&#20540;&#36816;&#31639;&#31526;</span>
+  <span style="color: #00b8ff;">Car</span> &amp;<span style="color: #004FFF;">operator</span><span style="color: #eec900;">=</span>(<span style="color: #004FFF;">const</span> <span style="color: #00b8ff;">Car</span> &amp;) = <span style="color: #004FFF;">delete</span>;
 
-  <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#21024;&#38500;&#31227;&#21160;&#26500;&#36896;&#20989;&#25968;</span>
-  <span style="color: #81a2be;">Car</span>(<span style="color: #b294bb;">const</span> <span style="color: #f0c674;">Car</span> &amp;&amp;) = <span style="color: #b294bb;">delete</span>;
-  <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#21024;&#38500;&#31227;&#21160;&#36171;&#20540;&#36816;&#31639;&#31526;</span>
-  <span style="color: #f0c674;">Car</span> &amp;<span style="color: #b294bb;">operator</span><span style="color: #81a2be;">=</span>(<span style="color: #b294bb;">const</span> <span style="color: #f0c674;">Car</span> &amp;&amp;) = <span style="color: #b294bb;">delete</span>;
+  <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#21024;&#38500;&#31227;&#21160;&#26500;&#36896;&#20989;&#25968;</span>
+  <span style="color: #eec900;">Car</span>(<span style="color: #004FFF;">const</span> <span style="color: #00b8ff;">Car</span> &amp;&amp;) = <span style="color: #004FFF;">delete</span>;
+  <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#21024;&#38500;&#31227;&#21160;&#36171;&#20540;&#36816;&#31639;&#31526;</span>
+  <span style="color: #00b8ff;">Car</span> &amp;<span style="color: #004FFF;">operator</span><span style="color: #eec900;">=</span>(<span style="color: #004FFF;">const</span> <span style="color: #00b8ff;">Car</span> &amp;&amp;) = <span style="color: #004FFF;">delete</span>;
 };
 </pre>
 </div>
@@ -361,12 +361,12 @@ C++11可以通过初始化列表的方式对变量进行初始化，这样的好
 而曾经的那种初始化方式就不会出错，因为发生了隐式转换。
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #b294bb;">using</span> <span style="color: #b294bb;">namespace</span> <span style="color: #de935f;">std</span>;
-<span style="color: #f0c674;">int</span> <span style="color: #81a2be;">main</span>() {
-  <span style="color: #f0c674;">bool</span> <span style="color: #cc6666;">a</span> = 10;
-  cout &lt;&lt; a &lt;&lt; endl;            <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">1</span>
-  <span style="color: #f0c674;">bool</span> <span style="color: #cc6666;">b</span>{10};                   <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#20986;&#38169;</span>
-  <span style="color: #b294bb;">return</span> 0;
+<pre class="src src-cpp"><span style="color: #004FFF;">using</span> <span style="color: #004FFF;">namespace</span> <span style="color: #bd00ff;">std</span>;
+<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">main</span>() {
+  <span style="color: #00b8ff;">bool</span> <span style="color: #eec900;">a</span> = 10;
+  cout &lt;&lt; a &lt;&lt; endl;            <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">1</span>
+  <span style="color: #00b8ff;">bool</span> <span style="color: #eec900;">b</span>{10};                   <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#20986;&#38169;</span>
+  <span style="color: #004FFF;">return</span> 0;
 }
 </pre>
 </div>
@@ -374,16 +374,16 @@ C++11可以通过初始化列表的方式对变量进行初始化，这样的好
 如果想要在初始化列表不要发生窄化转换出错可以利用一些CPP的特性进行转换，例如:
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #c5c8c6; font-weight: bold;">#include</span> <span style="color: #b5bd68;">&lt;iostream&gt;</span>
-<span style="color: #b294bb;">using</span> <span style="color: #b294bb;">namespace</span> <span style="color: #de935f;">std</span>;
+<pre class="src src-cpp"><span style="color: #00cdcd; font-weight: bold;">#include</span> <span style="color: #DFD67A;">&lt;iostream&gt;</span>
+<span style="color: #004FFF;">using</span> <span style="color: #004FFF;">namespace</span> <span style="color: #bd00ff;">std</span>;
 
-<span style="color: #f0c674;">void</span> <span style="color: #81a2be;">f</span>(<span style="color: #f0c674;">int</span> <span style="color: #cc6666;">i</span>) {
-  <span style="color: #f0c674;">bool</span> <span style="color: #cc6666;">b</span> = i != 0;
-  cout &lt;&lt; b &lt;&lt; endl;            <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">1</span>
+<span style="color: #00b8ff;">void</span> <span style="color: #eec900;">f</span>(<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">i</span>) {
+  <span style="color: #00b8ff;">bool</span> <span style="color: #eec900;">b</span> = i != 0;
+  cout &lt;&lt; b &lt;&lt; endl;            <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">1</span>
 }
-<span style="color: #f0c674;">int</span> <span style="color: #81a2be;">main</span>() {
+<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">main</span>() {
   f(10);
-  <span style="color: #b294bb;">return</span> 0;
+  <span style="color: #004FFF;">return</span> 0;
 }
 </pre>
 </div>
@@ -408,18 +408,18 @@ void*最常用在当不知对象确切类型的情况下，而又需要在内存
 由于编译器不知道void*类型的指针到底是什么类型(void类型就是代表什么类型都不是)，所以任何类型的指针都可以转换为void类型，不过转换成void类型后，原本类型可用操作会无法使用。
 </p>
 <div class="org-src-container">
-<pre class="src src-cpp"><span style="color: #c5c8c6; font-weight: bold;">#include</span> <span style="color: #b5bd68;">&lt;iostream&gt;</span>
-<span style="color: #b294bb;">using</span> <span style="color: #b294bb;">namespace</span> <span style="color: #de935f;">std</span>;
+<pre class="src src-cpp"><span style="color: #00cdcd; font-weight: bold;">#include</span> <span style="color: #DFD67A;">&lt;iostream&gt;</span>
+<span style="color: #004FFF;">using</span> <span style="color: #004FFF;">namespace</span> <span style="color: #bd00ff;">std</span>;
 
-<span style="color: #f0c674;">int</span> <span style="color: #81a2be;">main</span>(<span style="color: #f0c674;">int</span> <span style="color: #cc6666;">argv</span>, <span style="color: #f0c674;">char</span> *<span style="color: #cc6666;">argc</span>[]) {
-  <span style="color: #f0c674;">int</span> <span style="color: #cc6666;">a</span> = 10;
-  <span style="color: #f0c674;">int</span> *<span style="color: #cc6666;">p</span> = &amp;a;
-  cout &lt;&lt; ++*p; <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#27491;&#30830;&#65292;a=11</span>
-  <span style="color: #f0c674;">void</span> *<span style="color: #cc6666;">vp</span> = p; <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#21457;&#29983;&#20102;&#38544;&#24335;&#36716;&#25442;&#65292;&#20174;int&#21464;&#20026;void</span>
-  <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">cout &lt;&lt; ++*vp;</span>
-  <span style="color: #5a5b5a;">// </span><span style="color: #5a5b5a;">&#38169;&#35823;&#65292;void&#31867;&#22411;&#27809;&#26377;++&#25805;&#20316;</span>
+<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">main</span>(<span style="color: #00b8ff;">int</span> <span style="color: #eec900;">argv</span>, <span style="color: #00b8ff;">char</span> *<span style="color: #eec900;">argc</span>[]) {
+  <span style="color: #00b8ff;">int</span> <span style="color: #eec900;">a</span> = 10;
+  <span style="color: #00b8ff;">int</span> *<span style="color: #eec900;">p</span> = &amp;a;
+  cout &lt;&lt; ++*p; <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#27491;&#30830;&#65292;a=11</span>
+  <span style="color: #00b8ff;">void</span> *<span style="color: #eec900;">vp</span> = p; <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#21457;&#29983;&#20102;&#38544;&#24335;&#36716;&#25442;&#65292;&#20174;int&#21464;&#20026;void</span>
+  <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">cout &lt;&lt; ++*vp;</span>
+  <span style="color: #a7a7a7;">// </span><span style="color: #a7a7a7;">&#38169;&#35823;&#65292;void&#31867;&#22411;&#27809;&#26377;++&#25805;&#20316;</span>
 
-  <span style="color: #b294bb;">return</span> 0;
+  <span style="color: #004FFF;">return</span> 0;
 }
 </pre>
 </div></li>
@@ -455,7 +455,7 @@ nullptr只能被赋予指针类型，而不能被赋予内置类型。
 <div id="postamble" class="status">
 <p class="date">Date: 2020-12-04 五 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-24 三 20:48</p>
+<p class="date">Created: 2021-03-26 五 20:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

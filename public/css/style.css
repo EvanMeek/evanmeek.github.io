@@ -501,7 +501,7 @@ th:last-child, td:last-child { border-right: rgba(255, 255, 255, 0); }
 /* Home page style */
 /* ****************************************************************** */
 .js-home-content {
-    background: url('../images/bg/bggirl.gif') no-repeat right;
+    background: url('../images/bg/GNU.png') no-repeat right;
 }
 
 .js-home-content table { background-color: rgba(255, 255, 255, 0.16); }

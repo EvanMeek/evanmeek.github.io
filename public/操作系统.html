@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-24 三 20:48 -->
+<!-- 2021-03-26 五 20:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<li><a href="#org834e086">基本工作方式</a></li>
+<li><a href="#org254de03">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org0cac5c6">基本工作方式</a></li>
+<li><a href="#org255ccfb">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#org5ddf7ef">程序状态字(PSW)</a></li>
+<li><a href="#org1555de7">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -140,16 +140,16 @@
 <li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#org523e99a">思考题与练习题</a></li>
+<li><a href="#org6908b5b">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org295dfb3">第三章-进程与线程</a>
 <ul>
-<li><a href="#org254de08">多道程序设计</a>
+<li><a href="#org688d18e">多道程序设计</a>
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
 <li><a href="#org7fc3eee">程序的并发执行</a></li>
-<li><a href="#org6839d0e">多道程序设计</a></li>
+<li><a href="#orge6ba541">多道程序设计</a></li>
 </ul>
 </li>
 <li><a href="#orgf641927">进程</a>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org1dd8665">思考题与练习题</a></li>
+<li><a href="#orgcd07f6f">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org8ecc0e3">第四章-进程同步与互斥</a>
@@ -261,6 +261,52 @@
 <li><a href="#org8060645">死锁检测的算法</a></li>
 </ul>
 </li>
+<li><a href="#org59e3ece">资源分配图</a>
+<ul>
+<li><a href="#org233bec7">资源分配图</a></li>
+<li><a href="#orga7cbd51">死锁定理</a></li>
+</ul>
+</li>
+<li><a href="#orgd1c7374">哲学家就餐问题</a></li>
+</ul>
+</li>
+<li><a href="#orgb988cfe">第六章-存储管理</a>
+<ul>
+<li><a href="#orgd4c25a3">存储管理概述</a>
+<ul>
+<li><a href="#org66e37e5">存储体系</a></li>
+<li><a href="#org5de8d13">存储管理的任务</a>
+<ul>
+<li><a href="#org253f55d">内存的分配和回收</a></li>
+<li><a href="#orge6b98cb">存储共享</a></li>
+<li><a href="#org70bd739">存储保护</a></li>
+<li><a href="#org6eada16">“扩充”内存容量</a></li>
+</ul>
+</li>
+<li><a href="#orgd587776">地址转换</a>
+<ul>
+<li><a href="#org0798afc">地址重定位</a></li>
+<li><a href="#orgf5876bc">静态重定位</a></li>
+<li><a href="#orgb599308">动态重定位</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgcf7eac5">分区管理方案</a>
+<ul>
+<li><a href="#org50613a1">固定区域</a></li>
+<li><a href="#orgb33b858">内存分配表与分区的分配、回收</a></li>
+<li><a href="#org1888f90">可变分区</a></li>
+<li><a href="#org484caf2">分区管理方案的优缺点</a></li>
+</ul>
+</li>
+<li><a href="#org67cdad8">覆盖与交换技术</a>
+<ul>
+<li><a href="#org5088ea4">覆盖技术</a></li>
+<li><a href="#org8491e7e">交换技术</a></li>
+</ul>
+</li>
+<li><a href="#org04a6b62">虚拟页式存储管理方案</a></li>
 </ul>
 </li>
 </ul>
@@ -284,9 +330,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-org834e086" class="outline-5">
-<h5 id="org834e086">基本工作方式</h5>
-<div class="outline-text-5" id="text-org834e086">
+<div id="outline-container-org254de03" class="outline-5">
+<h5 id="org254de03">基本工作方式</h5>
+<div class="outline-text-5" id="text-org254de03">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -332,9 +378,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org0cac5c6" class="outline-5">
-<h5 id="org0cac5c6">基本工作方式</h5>
-<div class="outline-text-5" id="text-org0cac5c6">
+<div id="outline-container-org255ccfb" class="outline-5">
+<h5 id="org255ccfb">基本工作方式</h5>
+<div class="outline-text-5" id="text-org255ccfb">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -660,8 +706,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="org8657d3c"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org8657d3c">
+<li><a id="orge46ae7f"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-orge46ae7f">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -777,9 +823,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-org5ddf7ef" class="outline-4">
-<h4 id="org5ddf7ef">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-org5ddf7ef">
+<div id="outline-container-org1555de7" class="outline-4">
+<h4 id="org1555de7">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org1555de7">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1334,9 +1380,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org523e99a" class="outline-3">
-<h3 id="org523e99a">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org523e99a">
+<div id="outline-container-org6908b5b" class="outline-3">
+<h3 id="org6908b5b">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org6908b5b">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1530,9 +1576,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <h2 id="org295dfb3">第三章-进程与线程</h2>
 <div class="outline-text-2" id="text-org295dfb3">
 </div>
-<div id="outline-container-org254de08" class="outline-3">
-<h3 id="org254de08">多道程序设计</h3>
-<div class="outline-text-3" id="text-org254de08">
+<div id="outline-container-org688d18e" class="outline-3">
+<h3 id="org688d18e">多道程序设计</h3>
+<div class="outline-text-3" id="text-org688d18e">
 <ul class="org-ul">
 <li>作用
 提高处理器利用率。</li>
@@ -1586,9 +1632,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org6839d0e" class="outline-4">
-<h4 id="org6839d0e">多道程序设计</h4>
-<div class="outline-text-4" id="text-org6839d0e">
+<div id="outline-container-orge6ba541" class="outline-4">
+<h4 id="orge6ba541">多道程序设计</h4>
+<div class="outline-text-4" id="text-orge6ba541">
 <p>
 <code>能使多个硬件并行工作即多道程序设计</code>
 </p>
@@ -2110,9 +2156,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org1dd8665" class="outline-3">
-<h3 id="org1dd8665">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org1dd8665">
+<div id="outline-container-orgcd07f6f" class="outline-3">
+<h3 id="orgcd07f6f">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgcd07f6f">
 <ol class="org-ol">
 <li>什么是多道程序设计？
 答： 多道程序设计是一种能够提高处理器利用率，充分发挥处理器与外围设备以及外围设备之间的并行工作能力的程序设计方式。</li>
@@ -2947,7 +2993,601 @@ PV操作使用不当也有可能出现死锁的情况。
 <p>
 具体的死锁检测算法在书上有详细的例子。P148   
 </p>
+
+<p>
+检测到死锁进程之后需要解除，下面是解除死锁进程需要考虑的问题：
+</p>
+<ol class="org-ol">
+<li>选择剥夺一个进程的资源。</li>
+<li>重新运行或回退到某点继续运行。</li>
+<li>确保不要总是剥夺同一进程，否则会造成“饥饿”状态。</li>
+<li>如果要回则需要使用 最小代价的算法。</li>
+</ol>
+
+<p>
+可以将死锁剥夺的问题分为两类：
+</p>
+<ul class="org-ul">
+<li><p>
+剥夺资源
+由于直接将进程重新运行的开销很大，所以需要有一定的算法进行剥夺，可以利用挂起/激活机制挂起进程，等待资源满足后再激活挂起的进程。
+</p>
+
+<p>
+由于需要将普通进程的资源剥夺基于死锁进程，所以需要安全的释放资源，为了安全则采用死锁进程返回到分配资源前的某一点，可以使用两种方法：
+</p>
+<ol class="org-ol">
+<li>还原算法，恢复计算结果和状态</li>
+<li>建立检查点</li>
+</ol></li>
+
+<li><p>
+撤销进程
+撤销进程的方式将死锁进程依次撤销分配的资源，直到死锁解除为止。
+而撤销的顺序需要按照如下规则执行：
+</p>
+<ol class="org-ol">
+<li>进程优先数，被撤销进程的优先数</li>
+
+<li>进程类外部代价，进程类别提供各自撤销的代价，取最小代价的进程类。</li>
+
+<li>运行代价，即将进程回到某个点重新允许所需的代价，</li>
+</ol>
+
+<p>
+撤销进程的优点是简单明了，好实现，缺点是可能一股脑将大部分死锁进程撤销还没解决死锁的问题。   
+</p></li>
+</ul>
 </div>
+</div>
+</div>
+<div id="outline-container-org59e3ece" class="outline-3">
+<h3 id="org59e3ece">资源分配图</h3>
+<div class="outline-text-3" id="text-org59e3ece">
+<p>
+资源分配图用于描述死锁，使用此分配图可以对当前系统资源分配和申请情况一目了然。
+</p>
+</div>
+<div id="outline-container-org233bec7" class="outline-4">
+<h4 id="org233bec7">资源分配图</h4>
+<div class="outline-text-4" id="text-org233bec7">
+<p>
+看书吧，这种涉及到数学的我都不太行。。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga7cbd51" class="outline-4">
+<h4 id="orga7cbd51">死锁定理</h4>
+<div class="outline-text-4" id="text-orga7cbd51">
+<ul class="org-ul">
+<li>如果资源分配图中没有环路，则系统没有死锁。</li>
+<li>如果系统分配途中出现了环路，则系统可能存在死锁。</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1c7374" class="outline-3">
+<h3 id="orgd1c7374">哲学家就餐问题</h3>
+</div>
+</div>
+<div id="outline-container-orgb988cfe" class="outline-2">
+<h2 id="orgb988cfe">第六章-存储管理</h2>
+<div class="outline-text-2" id="text-orgb988cfe">
+</div>
+<div id="outline-container-orgd4c25a3" class="outline-3">
+<h3 id="orgd4c25a3">存储管理概述</h3>
+<div class="outline-text-3" id="text-orgd4c25a3">
+<p>
+不同存储部件具有不同的体系结构，我们需要一一理解它们才能掌握存储管理的基础。
+</p>
+</div>
+<div id="outline-container-org66e37e5" class="outline-4">
+<h4 id="org66e37e5">存储体系</h4>
+<div class="outline-text-4" id="text-org66e37e5">
+<p>
+存储体系图如下：
+</p>
+<img src="./images/6-1存储体系.png" width="50%" height="50%" />
+
+<p>
+存储体系特点：
+</p>
+<ol class="org-ol">
+<li>容量小-速度快-单位价格高</li>
+<li>容量大-速度慢-单位价格低</li>
+</ol>
+
+<p>
+快速小型存储器需要和慢速大容量存储器构成一个整体，以方便处理器进行使用，操作系统用于协调了各个存储之间的层次结构。
+</p>
+</div>
+</div>
+<div id="outline-container-org5de8d13" class="outline-4">
+<h4 id="org5de8d13">存储管理的任务</h4>
+<div class="outline-text-4" id="text-org5de8d13">
+<p>
+存储器由内存和外存组成。
+用来存储正在运行程序的代码及数据的存储器是内存，也可称为内存空间。
+内存空间可分为两区，系统区和用户区，系统区用于存储操作系统等系统资源，用户区用于存储用户创建的资源。
+</p>
+
+<p>
+内存管理问题包括了：
+</p>
+<ul class="org-ul">
+<li>内存管理</li>
+<li>内存分配和释放算法</li>
+<li>虚拟存储器管理</li>
+<li>控制内外存之间的数据流动方法</li>
+<li>地址变换技术</li>
+<li>内存数据保护与共享技术</li>
+</ul>
+</div>
+<div id="outline-container-org253f55d" class="outline-5">
+<h5 id="org253f55d">内存的分配和回收</h5>
+<div class="outline-text-5" id="text-org253f55d">
+<p>
+有效的存储分配机制应快速响应需求，精准回收不需要的资源，需要具有以下功能：
+</p>
+<ol class="org-ol">
+<li>根据存储区域的状态，设置分配表。</li>
+<li>实时分配，用户有需求就进行分配。</li>
+<li>回收数据，回收需要释放的用户释放的区域。</li>
+</ol>
+<p>
+以上功能根据内存分配表实现，其组织方式包括：
+</p>
+<ol class="org-ol">
+<li>位示图表示法
+用一位（bit）表示一个空闲页面。</li>
+<li>空闲页面表
+记录了首页面号以及空闲页面个数，以及连续若干的页面。</li>
+<li>空闲块表
+空闲块首地址与空闲块长度。</li>
+</ol>
+
+<p>
+内存分配的两种方式：
+</p>
+<ul class="org-ul">
+<li>静态
+一次性完成分配，在程序执行前将所有所需要的资源分配好，程序运行时无法分配内存。</li>
+<li>动态
+允许程序在运行时以及运行前逐步完成内存分配。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge6b98cb" class="outline-5">
+<h5 id="orge6b98cb">存储共享</h5>
+<div class="outline-text-5" id="text-orge6b98cb">
+<p>
+多个进程之间可共用同一块内存区域。
+作用：节省内存控件，提高内存利用率，实现进程通信。
+</p>
+</div>
+</div>
+<div id="outline-container-org70bd739" class="outline-5">
+<h5 id="org70bd739">存储保护</h5>
+<div class="outline-text-5" id="text-org70bd739">
+<p>
+存储保护是指根据系统和用户的区分将内存划分为系统区的用户区。
+用户进程不允许直接访问系统区的资源，用户进程之间不能直接访问不属于自身进程的内存区。
+</p>
+<ol class="org-ol">
+<li>地址越界保护
+当进程访问的内存区域超过了自身分配的内存区域，可能会造成对系统区进程或其他用户进程的错误。所以遇到类似问题操作系统会产生中断，阻止其访问。</li>
+<li>权限保护
+对于多个进程共享的内存区域，每个进程有不同的访问权限，例如某些进程具有写入读取权限，而某些进程仅有读取权限。解释如下：
+<ul class="org-ul">
+<li>进程自身的内存区域，可读可写</li>
+<li>多进程共享区域根据授权判断是否可读可写。</li>
+<li>未授权的区域，不可读不可写。</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6eada16" class="outline-5">
+<h5 id="org6eada16">“扩充”内存容量</h5>
+<div class="outline-text-5" id="text-org6eada16">
+<p>
+相比于内存，外存的容量要大得多。操作系统需要让用户尽量不要收到内存容量的限制，需要使用某些技术将软硬件结合，使得内存从逻辑上看起来大得多。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd587776" class="outline-4">
+<h4 id="orgd587776">地址转换</h4>
+<div class="outline-text-4" id="text-orgd587776">
+<p>
+通常，存储器将以8个二进制为一个字节为编址单位，每个字节都有对应的内存地址，这些地址被称为“绝对地址”，绝对地址对应的内存区域称为“物理地址空间“。
+由于内存地址实际上是从0依次往后排的，而每个进程分配到内存空间前都是无法知道自己所对应的物理内存控件地址的，为了方便进程的使用，每个用户进程在分配到内存区域后都的起始地址都从“0”地址开始，从进程的角度看起始地址是从0开始，而从物理地址的角度看则是具体到n个序号的空间。所以进程所看到的地址称为“逻辑地址”，逻辑地址所对应的控件可称为“逻辑地址空间”。
+</p>
+</div>
+<div id="outline-container-org0798afc" class="outline-5">
+<h5 id="org0798afc">地址重定位</h5>
+<div class="outline-text-5" id="text-org0798afc">
+<p>
+进程所使用的是逻辑地址空间，操作系统在处理时必须将其映射到绝对地址，因为逻辑地址实际上是对应的绝对地址的n顺序，例如有进程A的绝对地址空间是从进程B的绝对地址空间结束位开始分配的，分配了k个字节空间，那么A的绝对地址空间范围大小就是B的结束位+k。由于进程无法直接看到自己所处的绝对地址空间，所以才有逻辑地址空间的概念，而操作系统则是需要将逻辑地址转换为绝对地址。这就叫做地址重定位技术。
+</p>
+
+<p>
+地址重定位分为两种，分别是静态和动态，下面将会一一讲解。
+</p>
+</div>
+</div>
+<div id="outline-container-orgf5876bc" class="outline-5">
+<h5 id="orgf5876bc">静态重定位</h5>
+<div class="outline-text-5" id="text-orgf5876bc">
+<p>
+静态重定位用于那些被使用静态分配内存策略的进程，其转换方式较为简单，如图所示：
+</p>
+<img src="./images/6-2静态重定位.png" width="50%" height="50%" />
+
+<p>
+用户进程的逻辑地址空间共需要168个字节，那假设从绝对地址的第800号区域开始分配，那么对应的结束位置则是968，当进程的逻辑地址中的第18号地址被使用（也就是+操作），那么就需要找到绝对地址的818号地址，从而获取+操作。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb599308" class="outline-5">
+<h5 id="orgb599308">动态重定位</h5>
+<div class="outline-text-5" id="text-orgb599308">
+<p>
+程序加载到内存时，不直接进行地址转换，而是直接将其装入到分配的内存区域中，随后进程的任何一条指令需要执行时都通过硬件的地址转换机构将指令中的逻辑地址转化为绝对地址。
+</p>
+
+<img src="./images/6-3动态重定位.png" width="50%" height="50%"/>
+
+<p>
+动态分配内存的进程需要将程序内存区域的起始地址，存入基址寄存器中。
+</p>
+
+<p>
+当程序运行时，操作系统就会根据每次执行那个的指令将原本是逻辑地址的数据根据基质寄存器来得到绝对地址。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcf7eac5" class="outline-3">
+<h3 id="orgcf7eac5">分区管理方案</h3>
+<div class="outline-text-3" id="text-orgcf7eac5">
+<p>
+为满足多道程序设计，则提出内存分区管理方案，其基本思想是将内存划分为可变分区和固定分区，没类分区都是若干个连续区域。
+</p>
+</div>
+<div id="outline-container-org50613a1" class="outline-4">
+<h4 id="org50613a1">固定区域</h4>
+<div class="outline-text-4" id="text-org50613a1">
+<ol class="org-ol">
+<li>基本思想
+系统会把内存划分陈若干大小固定的分区，这些分区在系统运行时无法重新划分。</li>
+</ol>
+<p>
+这种方式会对程序申请内存大小时有限制，程序在申请内存区域的时候必须指出最大所需申请量。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb33b858" class="outline-4">
+<h4 id="orgb33b858">内存分配表与分区的分配、回收</h4>
+<div class="outline-text-4" id="text-orgb33b858">
+<p>
+固定分区需要一张分区说明表，说明了每个内存区域的区号、大小、起始地址、以及状态。当程序运行时根据其所需内存大小找到可用的区号，并将分区状态设置为占用。当进程使用完毕后由系统回收。
+</p>
+<img src="./images/6-4固定分区示例"  width="50%" height="50%"/>
+
+<p>
+缺点：不是所有程序所需内存都与分区大小是对齐的，如果不是对齐那将很浪费。并且也十分得不灵活。
+</p>
+</div>
+</div>
+<div id="outline-container-org1888f90" class="outline-4">
+<h4 id="org1888f90">可变分区</h4>
+<div class="outline-text-4" id="text-org1888f90">
+<ol class="org-ol">
+<li>基本思想
+动态分配内存空间，当一个程序申请内存时就划分一块大小与申请内存同等大小的区域，随着内存的分配回收，内存区域被划分为多个间断或连续的内存空间，操作系统会将连续的空闲内存空间合并。这里有一个示例，去看书吧P166，必须得看书，不然下一节的紧缩技术就不会了。</li>
+
+<li><p>
+紧缩技术
+当分配、回收内存空间次数多了之后，就会存在“碎片”（内存总容量可满足进程申请内存大小，但是单个内存区块大小却不够），操作系统会在适当的时候将碎片进行整理，这个技术就称为“紧缩技术”或“压缩技术”。
+书上有具体的例子，建议去看看P168。
+</p>
+
+<p>
+紧缩技术的优点：
+</p>
+<ul class="org-ul">
+<li>将分散区集中</li>
+<li>提高内存的利用率</li>
+<li>动态扩充内存</li>
+</ul>
+<p>
+紧缩技术的缺点：
+</p>
+<ul class="org-ul">
+<li>增加系统开销
+移动内存块需要大量操作，例如修改内存分配表、进程控制块。</li>
+<li>移动内存块时有限制
+正在被进程使用的内存块无法移动。</li>
+</ul></li>
+<li><p>
+可变分区的实现
+可变分区的实现依赖地址转换机构以及两个专用控制寄存器：基址寄存器和限长寄存器。
+</p>
+
+<p>
+基址寄存器：存储进程在内存分区的起始地址
+限长寄存器：存储进程在内存分区的所占长度
+</p>
+
+<p>
+判断新进程所需内存大小是否有足够的内存块分配的算法是：
+</p>
+<ul class="org-ul">
+<li>当申请的内存需求大小 &lt; 限长寄存器中的内存块大小时
+可以直接将逻辑地址转换为绝对地址，因为够用。</li>
+
+<li>当申请的内存需要大小 &gt; 限长寄存器中的内存块大小时
+形成“地址越界”程序性中断事件。</li>
+</ul>
+
+<p>
+以下是此算法的逻辑图：
+</p>
+<img src="./images/6-8可变分区地址转换.png" width="50%" height="50%" />
+
+<p>
+操作系统为了管理内存的分配和释放，建立了两个表用于管理：
+</p>
+
+<ul class="org-ul">
+<li><p>
+已分配区表
+记录了每个进程(Pn)在内存地址空间中的起始位置和长度
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-right">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">起始地址</th>
+<th scope="col" class="org-right">长度</th>
+<th scope="col" class="org-left">标志</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">500</td>
+<td class="org-right">800</td>
+<td class="org-left">P1</td>
+</tr>
+
+<tr>
+<td class="org-right">1500</td>
+<td class="org-right">400</td>
+<td class="org-left">P2</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">NULL</td>
+</tr>
+
+<tr>
+<td class="org-right">&#x2026;</td>
+<td class="org-right">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+空闲区表
+记录了内存地址空间中可供分配的内存的起始位置和长度
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-right">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">起始地址</th>
+<th scope="col" class="org-right">长度</th>
+<th scope="col" class="org-left">标志</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1300</td>
+<td class="org-right">200</td>
+<td class="org-left">未分配</td>
+</tr>
+
+<tr>
+<td class="org-right">1900</td>
+<td class="org-right">650</td>
+<td class="org-left">未分配</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">NULL</td>
+</tr>
+
+<tr>
+<td class="org-right">&#x2026;</td>
+<td class="org-right">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li>空闲分区的分配策略
+有三种算法：
+<ul class="org-ul">
+<li><p>
+最先适应算法
+最简单的算法，当接到内存申请时顺序查找空闲表中的可用内存块，直接分配。
+</p>
+<img src="./images/6-10最先适应算法" width="50%" height="50%" />
+<p>
+书中的图如下：
+</p></li>
+<li>最优适应算法
+碎片较多，找到能满足申请大小的最小空闲区，并将其分割分配。</li>
+<li>最坏适应算法
+找到能满足申请大小的最大空闲区，将其分割分配。</li>
+</ul></li>
+<li><p>
+分区的回收
+当回收分区时需要检查被回收分区的上邻和下邻分区是否为空闲分区，如果是的话需要采取一些方式进行合并。
+</p>
+
+<p>
+那么就存在四种可能：
+  设进程归还区起始位置S，长度为L，空闲表中第i个登记栏的起始位置为I，长度为N，空闲表中第k个登记栏的起始位置为K,长度为P。
+</p>
+<ul class="org-ul">
+<li>上邻分区是空闲
+当S = I + L 时，将归还区与上邻分区合并。</li>
+
+<li>下邻分区是空闲
+当 I = S + L，那么修改i登记栏的起始位置为S，长度为 = N + L即可合并。</li>
+
+<li>上下邻分区都是空闲
+当 (S = I + L) &amp;&amp; (K = S + L) 时将这个三个分区合并。</li>
+<li>上下邻分区都不是空闲
+直接占用一个标识为 "NULL" 的登记栏。</li>
+</ul></li>
+<li>分区的保护
+有两种保护方式
+<ul class="org-ul">
+<li><p>
+界限寄存器
+界限寄存器又分为使用上、下界寄存器和基址、限长寄存器方法，下面是不同方法寄存器中的大小限制。
+</p>
+<img src="./images/6-12界限寄存器.png" width="50%" height="50%"/>
+
+<p>
+进程的执行过程中访问内存地址的时候，就会根据界限寄存器来判断是否越界。
+如果使用上下界寄存器，那么访问的内存地址不能小于下届和大于上界。
+如果使用基址限长寄存器，那么访问的内存地址不能小于基址寄存器和基址寄存器+限长寄存器。
+</p></li>
+<li>保护键方法
+每个分区对应一个保护键，每个进程分配一个能打开分区保护的钥匙，存放与程序状态字中。当进程访问内存时，检查钥匙和锁是否匹配，若不匹配泽发出保护性中断。</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org484caf2" class="outline-4">
+<h4 id="org484caf2">分区管理方案的优缺点</h4>
+<div class="outline-text-4" id="text-org484caf2">
+<p>
+优点：
+</p>
+<ul class="org-ul">
+<li>共享资源
+有效的利用了处理器和I/O设备。</li>
+<li>实现简单
+分区存储算法简单，内存额外开销较少，存储保护措施也很简单。</li>
+</ul>
+<p>
+缺点：
+</p>
+<ul class="org-ul">
+<li>存在严重的碎片问题</li>
+<li>解决碎片问题需要额外的系统开销</li>
+<li>内存大小还是物理存储器的大小</li>
+<li>进程必须全部装入内存，才能使用</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org67cdad8" class="outline-3">
+<h3 id="org67cdad8">覆盖与交换技术</h3>
+<div class="outline-text-3" id="text-org67cdad8">
+<p>
+本节将介绍覆盖与交换技术，其效果是让内存可用容量变的跟外存一样大。
+</p>
+</div>
+<div id="outline-container-org5088ea4" class="outline-4">
+<h4 id="org5088ea4">覆盖技术</h4>
+<div class="outline-text-4" id="text-org5088ea4">
+<p>
+效果：对于若干个程序段，可将相关联的程序放在内存中，而其他的部分则放在磁盘，等待内存中的程序段运行完再从磁盘中选区程序段放入内存中，以达到覆盖效果。
+</p>
+
+<p>
+特点：覆盖技术可以由用户级程序提供，例如编译程序。
+缺点：要求开发者对程序的各个部分都十分了解，否则无法提供覆盖技术所需的覆盖结构。
+</p>
+
+<p>
+书上有详细的例子，建议阅读，还是挺容易理解的P173
+</p>
+</div>
+</div>
+<div id="outline-container-org8491e7e" class="outline-4">
+<h4 id="org8491e7e">交换技术</h4>
+<div class="outline-text-4" id="text-org8491e7e">
+<p>
+作用：允许进程所需内存大小比物理硬件的内存大小容量大，原理是将当前需要运行的进程放置在物理内存中，而暂时不需要运行的进程则放置在磁盘上，等需要时再装入内存。
+</p>
+
+<p>
+交换技术多用于分时系统中，且现代操作系统基本都是使用交换技术。
+</p>
+
+<p>
+具体原理:
+</p>
+
+<ol class="org-ol">
+<li>换出进程的选择
+根据时间片轮转法或基于优先数的调度算法，尽量选择段时间内不会立刻投入运行的。</li>
+<li>交换时机的确定
+当内存快不够时调换。</li>
+<li>交换空间的分配
+分两种方式分配，分别是：
+<ul class="org-ul">
+<li>每次交换进程被放置的磁盘位置不同</li>
+<li>每次交换进程被放置的磁盘位置相同
+因为在进程创建时就已经为其分配了交换空间对应的空间，这种方式交换空间也中的内存也需要被回收。</li>
+</ul></li>
+
+<li>换入进程换回内存时位置的确定
+磁盘中的进程回到内存时是根据进入磁盘前其地址的种类不同来确定的，如果进入前是绝对地址，那么必须回到原来的位置，如果是相对地址那么需要进行地址重定位</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org04a6b62" class="outline-3">
+<h3 id="org04a6b62">虚拟页式存储管理方案</h3>
+<div class="outline-text-3" id="text-org04a6b62">
+<p>
+这一节我要单独拿出来讲，因为涉及到现代操作系统的设计，有很高的阅读价值。
+<a href="虚拟页式存储管理方案到底是什么.html">虚拟页式存储管理方案</a>
+</p>
 </div>
 </div>
 </div>
@@ -2955,7 +3595,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 四 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-24 三 20:48</p>
+<p class="date">Created: 2021-03-26 五 20:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

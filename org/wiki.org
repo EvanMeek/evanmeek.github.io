@@ -196,3 +196,29 @@
    #+begin_src emacs-lisp
      (setq lsp-keymap-prefix "s-v")
    #+end_src
+** 为Emacs窗口自定义分割线 <2021-03-24 三>                            :emacs:
+   今天越看mode-line越丑，所以决定将这个东西替换掉。早前就尝试过space-modeline和mini-modeline以及doom-modeline但是都不满意，今天再次尝试了一下awesome-tray-modeline感觉真不错，多个窗口只需要一个modeline就够了。但是也带来了一些问题，请让我一一道来。
+   首先就是得先把mode-line给隐藏了，因为awesome-tray的实现方式是将modeline放在minibuffer内，并且清除了mode-line，但是部分插件还是会添加内容到modeline之上，所以可以使用 ~hide-mode-line~ 来解决这个问题。
+   #+begin_src emacs-lisp
+     (use-package hide-mode-line
+         :ensure t
+         :hook (after-init . global-hide-mode-line-mode))
+   #+end_src
+   但是貌似这样设置了之后窗口的分割线就不见了，所以就需要另外一个buildin包来解决了。
+
+   使用window-divider解决：
+   #+begin_src emacs-lisp
+     (use-package window-divider-mode
+       :hook (after-init . window-divider-mode)
+       :custom
+       ;; 设置右边线宽度
+       (window-divider-default-right-width 1)
+       ;; 设置下边线宽度
+       (window-divider-default-bottom-width 1)
+       ;; 设置分割线位置，t为右和下都需要
+       (window-divider-default-places t))
+   #+end_src
+
+   这样就解决啦！
+
+   感谢一下狗哥，因为是他说有这个window-divider的，让我学到了新东西。
