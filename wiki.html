@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-24 三 20:48 -->
+<!-- 2021-03-26 五 20:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
@@ -57,6 +57,7 @@
 <li><a href="#orgaffc7c4">Rust单元测试不要输出 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-18 四&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="rust">rust</span></span></a></li>
 <li><a href="#org38d40ac">删除Git远程仓库的文件 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="git">git</span></span></a></li>
 <li><a href="#org8c34ea9">修改lsp-mode的prefix-key <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 六&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span></span></a></li>
+<li><a href="#org15b75c3">为Emacs窗口自定义分割线 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-24 三&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span></span></a></li>
 </ul>
 </li>
 </ul>
@@ -199,7 +200,7 @@ xmodmap有个问题，就是只要有软件利用了xmodmap进行设置一些键
 第一步，先查看你所需要更改的键盘的键位（利用hwdb支持根据不同设备设置不同的键位 ）。
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">su - <span style="color: #5a5b5a;">#</span><span style="color: #5a5b5a;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
+<pre class="src src-shell">su - <span style="color: #a7a7a7;">#</span><span style="color: #a7a7a7;">&#20999;&#25442;&#21040;root&#29992;&#25143;&#65292;&#19981;&#33021;&#29992;sudo</span>
 evtest
 </pre>
 </div>
@@ -233,11 +234,11 @@ Available devices:
 /dev/input/event20:     HDA Digital PCBeep
 /dev/input/event21:     HDA Intel PCH Mic
 /dev/input/event22:     HDA Intel PCH Headphone
-/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #cc6666;">pcm</span>=3
-/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #cc6666;">pcm</span>=7
-/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #cc6666;">pcm</span>=8
-/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #cc6666;">pcm</span>=9
-/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #cc6666;">pcm</span>=10
+/dev/input/event23:     HDA Intel PCH HDMI/DP,<span style="color: #eec900;">pcm</span>=3
+/dev/input/event24:     HDA Intel PCH HDMI/DP,<span style="color: #eec900;">pcm</span>=7
+/dev/input/event25:     HDA Intel PCH HDMI/DP,<span style="color: #eec900;">pcm</span>=8
+/dev/input/event26:     HDA Intel PCH HDMI/DP,<span style="color: #eec900;">pcm</span>=9
+/dev/input/event27:     HDA Intel PCH HDMI/DP,<span style="color: #eec900;">pcm</span>=10
 Select the device event number [0-27]: 
 </pre>
 </div>
@@ -248,7 +249,7 @@ Select the device event number [0-27]:
 <div class="org-src-container">
 <pre class="src src-shell">Input driver version is 1.0.1
 Input device ID: bus 0x3 vendor 0x48d product 0xc937 version 0x110
-Input device name: <span style="color: #b5bd68;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
+Input device name: <span style="color: #DFD67A;">"ITE Tech. Inc. ITE Device(8910) Keyboard"</span>
 Supported events:
   Event type 0 (EV_SYN)
   Event type 1 (EV_KEY)
@@ -335,8 +336,8 @@ evdev表示要修改映射的设备，后面跟着的表示匹配设备的相关
 执行如下命令即可:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">udevadm hwdb --update <span style="color: #5a5b5a;">#</span><span style="color: #5a5b5a;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
-udevadm trigger <span style="color: #5a5b5a;"># </span><span style="color: #5a5b5a;">&#24212;&#29992;</span>
+<pre class="src src-shell">udevadm hwdb --update <span style="color: #a7a7a7;">#</span><span style="color: #a7a7a7;">&#26356;&#26032;&#38190;&#30424;&#26144;&#23556;&#25968;&#25454;&#24211;</span>
+udevadm trigger <span style="color: #a7a7a7;"># </span><span style="color: #a7a7a7;">&#24212;&#29992;</span>
 </pre>
 </div>
 </div>
@@ -391,7 +392,7 @@ udevadm trigger <span style="color: #5a5b5a;"># </span><span style="color: #5a5b
 提交
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">git commit -m <span style="color: #b5bd68;">"&#25552;&#20132;&#20449;&#24687;"</span>
+<pre class="src src-shell">git commit -m <span style="color: #DFD67A;">"&#25552;&#20132;&#20449;&#24687;"</span>
 </pre>
 </div>
 
@@ -410,9 +411,51 @@ git push [连接的远程仓库的本地名称] [本地分支]
 将下面这段代码放入use-package的:init中。
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #b294bb;">setq</span> lsp-keymap-prefix <span style="color: #b5bd68;">"s-v"</span>)
+<pre class="src src-emacs-lisp">(<span style="color: #004FFF;">setq</span> lsp-keymap-prefix <span style="color: #DFD67A;">"s-v"</span>)
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-org15b75c3" class="outline-3">
+<h3 id="org15b75c3">为Emacs窗口自定义分割线 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-24 三&gt;</span></span>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span></span></h3>
+<div class="outline-text-3" id="text-org15b75c3">
+<p>
+今天越看mode-line越丑，所以决定将这个东西替换掉。早前就尝试过space-modeline和mini-modeline以及doom-modeline但是都不满意，今天再次尝试了一下awesome-tray-modeline感觉真不错，多个窗口只需要一个modeline就够了。但是也带来了一些问题，请让我一一道来。
+首先就是得先把mode-line给隐藏了，因为awesome-tray的实现方式是将modeline放在minibuffer内，并且清除了mode-line，但是部分插件还是会添加内容到modeline之上，所以可以使用 <code>hide-mode-line</code> 来解决这个问题。
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #004FFF;">use-package</span> <span style="color: #bd00ff;">hide-mode-line</span>
+    <span style="color: #00b8ff;">:ensure</span> t
+    <span style="color: #00b8ff;">:hook</span> (after-init . global-hide-mode-line-mode))
+</pre>
+</div>
+<p>
+但是貌似这样设置了之后窗口的分割线就不见了，所以就需要另外一个buildin包来解决了。
+</p>
+
+<p>
+使用window-divider解决：
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="color: #004FFF;">use-package</span> <span style="color: #bd00ff;">window-divider-mode</span>
+  <span style="color: #00b8ff;">:hook</span> (after-init . window-divider-mode)
+  <span style="color: #00b8ff;">:custom</span>
+  <span style="color: #a7a7a7;">;; </span><span style="color: #a7a7a7;">&#35774;&#32622;&#21491;&#36793;&#32447;&#23485;&#24230;</span>
+  (window-divider-default-right-width 1)
+  <span style="color: #a7a7a7;">;; </span><span style="color: #a7a7a7;">&#35774;&#32622;&#19979;&#36793;&#32447;&#23485;&#24230;</span>
+  (window-divider-default-bottom-width 1)
+  <span style="color: #a7a7a7;">;; </span><span style="color: #a7a7a7;">&#35774;&#32622;&#20998;&#21106;&#32447;&#20301;&#32622;&#65292;t&#20026;&#21491;&#21644;&#19979;&#37117;&#38656;&#35201;</span>
+  (window-divider-default-places t))
+</pre>
+</div>
+
+<p>
+这样就解决啦！
+</p>
+
+<p>
+感谢一下狗哥，因为是他说有这个window-divider的，让我学到了新东西。
+</p>
 </div>
 </div>
 </div>
@@ -420,7 +463,7 @@ git push [连接的远程仓库的本地名称] [本地分支]
 <div id="postamble" class="status">
 <p class="date">Date: 2020-07-14 二 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-24 三 20:48</p>
+<p class="date">Created: 2021-03-26 五 20:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
