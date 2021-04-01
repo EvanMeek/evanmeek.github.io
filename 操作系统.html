@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-03-26 五 20:57 -->
+<!-- 2021-04-01 Thu 15:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<li><a href="#org9a976c1">基本工作方式</a></li>
+<li><a href="#orgc9b43e7">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org9b4995b">基本工作方式</a></li>
+<li><a href="#orgf6a3c82">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#orgd632a8d">程序状态字(PSW)</a></li>
+<li><a href="#orgb3229ae">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -140,16 +140,16 @@
 <li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#org517bc93">思考题与练习题</a></li>
+<li><a href="#org2913841">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org295dfb3">第三章-进程与线程</a>
 <ul>
-<li><a href="#orgcfc422b">多道程序设计</a>
+<li><a href="#orga408c54">多道程序设计</a>
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
 <li><a href="#org7fc3eee">程序的并发执行</a></li>
-<li><a href="#orgad6f981">多道程序设计</a></li>
+<li><a href="#org9bbda8e">多道程序设计</a></li>
 </ul>
 </li>
 <li><a href="#orgf641927">进程</a>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org08b1031">思考题与练习题</a></li>
+<li><a href="#orgce75063">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org8ecc0e3">第四章-进程同步与互斥</a>
@@ -261,9 +261,9 @@
 <li><a href="#org8060645">死锁检测的算法</a></li>
 </ul>
 </li>
-<li><a href="#orga8d4ab8">资源分配图</a>
+<li><a href="#org08e91b9">资源分配图</a>
 <ul>
-<li><a href="#orgfc966d4">资源分配图</a></li>
+<li><a href="#orgc958216">资源分配图</a></li>
 <li><a href="#orga7cbd51">死锁定理</a></li>
 </ul>
 </li>
@@ -309,6 +309,54 @@
 <li><a href="#org04a6b62">虚拟页式存储管理方案</a></li>
 </ul>
 </li>
+<li><a href="#orge57a568">第七章-文件系统</a>
+<ul>
+<li><a href="#orgd624401">文件系统的基本概念</a>
+<ul>
+<li><a href="#org909b1d7">文件系统的任务</a></li>
+<li><a href="#orgc700938">文件的存储介质及存取方式</a></li>
+<li><a href="#orgd7a6642">文件的分类</a></li>
+</ul>
+</li>
+<li><a href="#org69e133b">文件的逻辑结构和物理结构</a>
+<ul>
+<li><a href="#orga8b7328">文件的逻辑结构</a></li>
+<li><a href="#org4505214">文件的物理结构</a></li>
+<li><a href="#org7cf8e1c">UNIX的三级索引结构</a></li>
+</ul>
+</li>
+<li><a href="#org748ba1b">文件目录</a>
+<ul>
+<li><a href="#org0b0c444">文件控制块</a></li>
+<li><a href="#org2d27220">文件目录和当前目录</a>
+<ul>
+<li><a href="#orgbe8def1">单级目录</a></li>
+<li><a href="#org19646b2">二级目录</a></li>
+<li><a href="#org525f20a">多级目录</a></li>
+<li><a href="#orgebff25d">当前目录与目录检索</a></li>
+</ul>
+</li>
+<li><a href="#org88208b8">目录项和目录文件</a>
+<ul>
+<li><a href="#org002a3a8">目录项</a></li>
+<li><a href="#org4546197">目录文件</a></li>
+</ul>
+</li>
+<li><a href="#orgabeee70">目录项分解法</a></li>
+<li><a href="#orgab05ca2">UNIX的文件目录实现</a></li>
+<li><a href="#orgba68401">FAT文件系统的实现</a></li>
+</ul>
+</li>
+<li><a href="#orga189b51">文件存储空间管理</a>
+<ul>
+<li><a href="#orgebf5b02">磁盘空间管理</a></li>
+<li><a href="#org80fe155">磁盘空间的分配回收算法</a></li>
+<li><a href="#org158b773">空闲块成组链接法</a></li>
+</ul>
+</li>
+<li><a href="#org59e93b8">实现文件系统的表目</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -330,9 +378,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-org9a976c1" class="outline-5">
-<h5 id="org9a976c1">基本工作方式</h5>
-<div class="outline-text-5" id="text-org9a976c1">
+<div id="outline-container-orgc9b43e7" class="outline-5">
+<h5 id="orgc9b43e7">基本工作方式</h5>
+<div class="outline-text-5" id="text-orgc9b43e7">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -378,9 +426,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org9b4995b" class="outline-5">
-<h5 id="org9b4995b">基本工作方式</h5>
-<div class="outline-text-5" id="text-org9b4995b">
+<div id="outline-container-orgf6a3c82" class="outline-5">
+<h5 id="orgf6a3c82">基本工作方式</h5>
+<div class="outline-text-5" id="text-orgf6a3c82">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -594,7 +642,7 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 <h4 id="orgdcc68d4">操作系统的结构</h4>
 <div class="outline-text-4" id="text-orgdcc68d4">
 <p>
-作了解即可。
+作了解即可
 </p>
 </div>
 </div>
@@ -706,8 +754,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="org2553ef0"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-org2553ef0">
+<li><a id="org7141981"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-org7141981">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -823,9 +871,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-orgd632a8d" class="outline-4">
-<h4 id="orgd632a8d">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-orgd632a8d">
+<div id="outline-container-orgb3229ae" class="outline-4">
+<h4 id="orgb3229ae">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-orgb3229ae">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -926,7 +974,7 @@ PSW在不同的CPU下有不同的格式，其包含的信息也不同，常见�
 <p>
 由于现代程序设计技术大量采用程序代码复用，所以一旦进入这些程序段，OS就会存取相同的指令集合。
 总的来说就是速度快的存储器，CPU更愿意使用它，因为这样更快。
-<img src="../images/2-2计算机系统中的存储装置.png" alt="2-2计算机系统中的存储装置.png">
+<img src="./images/2-2计算机系统中的存储装置.png" alt="2-2计算机系统中的存储装置.png">
 <b><b>基于这一原理，就有充分的理由设计出多级存储的体系结构，并使得存储级别较低的存储器的比率小于存储级别较高的存储器的比率</b></b>
 </p>
 </div>
@@ -1343,7 +1391,7 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div class="outline-text-4" id="text-org3c40de9">
 <p>
 用户可以通过库函数或API来使用内核函数从而使用系统调用，其关系图如下:
-<img src="../images/2-7系统调用与库函数-API-内核函数的关系.png" alt="2-7系统调用与库函数-API-内核函数的关系.png">
+<img src="./images/2-7系统调用与库函数-API-内核函数的关系.png" alt="2-7系统调用与库函数-API-内核函数的关系.png">
 </p>
 </div>
 </div>
@@ -1375,14 +1423,14 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <div class="outline-text-4" id="text-orga523dc6">
 <p>
 见书本p73页，图2-8上的一段。
-<img src="../images/2-8系统调用的处理过程.png" alt="2-8系统调用的处理过程.png">
+<img src="./images/2-8系统调用的处理过程.png" alt="2-8系统调用的处理过程.png">
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org517bc93" class="outline-3">
-<h3 id="org517bc93">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org517bc93">
+<div id="outline-container-org2913841" class="outline-3">
+<h3 id="org2913841">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org2913841">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1576,9 +1624,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <h2 id="org295dfb3">第三章-进程与线程</h2>
 <div class="outline-text-2" id="text-org295dfb3">
 </div>
-<div id="outline-container-orgcfc422b" class="outline-3">
-<h3 id="orgcfc422b">多道程序设计</h3>
-<div class="outline-text-3" id="text-orgcfc422b">
+<div id="outline-container-orga408c54" class="outline-3">
+<h3 id="orga408c54">多道程序设计</h3>
+<div class="outline-text-3" id="text-orga408c54">
 <ul class="org-ul">
 <li>作用
 提高处理器利用率。</li>
@@ -1632,9 +1680,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgad6f981" class="outline-4">
-<h4 id="orgad6f981">多道程序设计</h4>
-<div class="outline-text-4" id="text-orgad6f981">
+<div id="outline-container-org9bbda8e" class="outline-4">
+<h4 id="org9bbda8e">多道程序设计</h4>
+<div class="outline-text-4" id="text-org9bbda8e">
 <p>
 <code>能使多个硬件并行工作即多道程序设计</code>
 </p>
@@ -2156,9 +2204,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org08b1031" class="outline-3">
-<h3 id="org08b1031">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org08b1031">
+<div id="outline-container-orgce75063" class="outline-3">
+<h3 id="orgce75063">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgce75063">
 <ol class="org-ol">
 <li>什么是多道程序设计？
 答： 多道程序设计是一种能够提高处理器利用率，充分发挥处理器与外围设备以及外围设备之间的并行工作能力的程序设计方式。</li>
@@ -2685,7 +2733,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <p>
 管程是由过程、变量、数据结构组成的集合。
 </p>
-<img src="./images/4-5管程的组成.png" width="50%" height="50%" />
+<img src="/images/4-5管程的组成.png" width="50%" height="50%" />
 <p>
 懒得写，自考的书就是一到复杂的地方就讲不明白了！
 </p>
@@ -2751,7 +2799,7 @@ PV操作使用不当也有可能出现死锁的情况。
 信箱的结构由信箱头和各个信件组成。
 </p>
 
-<img src="./images/4-8信箱通信.png" width="50%" height="50%" />
+<img src="/images/4-8信箱通信.png" width="50%" height="50%" />
 
 <p>
 状态改变：
@@ -3041,16 +3089,16 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-orga8d4ab8" class="outline-3">
-<h3 id="orga8d4ab8">资源分配图</h3>
-<div class="outline-text-3" id="text-orga8d4ab8">
+<div id="outline-container-org08e91b9" class="outline-3">
+<h3 id="org08e91b9">资源分配图</h3>
+<div class="outline-text-3" id="text-org08e91b9">
 <p>
 资源分配图用于描述死锁，使用此分配图可以对当前系统资源分配和申请情况一目了然。
 </p>
 </div>
-<div id="outline-container-orgfc966d4" class="outline-4">
-<h4 id="orgfc966d4">资源分配图</h4>
-<div class="outline-text-4" id="text-orgfc966d4">
+<div id="outline-container-orgc958216" class="outline-4">
+<h4 id="orgc958216">资源分配图</h4>
+<div class="outline-text-4" id="text-orgc958216">
 <p>
 看书吧，这种涉及到数学的我都不太行。。
 </p>
@@ -3089,7 +3137,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <p>
 存储体系图如下：
 </p>
-<img src="./images/6-1存储体系.png" width="50%" height="50%" />
+<img src="/images/6-1存储体系.png" width="50%" height="50%" />
 
 <p>
 存储体系特点：
@@ -3223,7 +3271,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <p>
 静态重定位用于那些被使用静态分配内存策略的进程，其转换方式较为简单，如图所示：
 </p>
-<img src="./images/6-2静态重定位.png" width="50%" height="50%" />
+<img src="/images/6-2静态重定位.png" width="50%" height="50%" />
 
 <p>
 用户进程的逻辑地址空间共需要168个字节，那假设从绝对地址的第800号区域开始分配，那么对应的结束位置则是968，当进程的逻辑地址中的第18号地址被使用（也就是+操作），那么就需要找到绝对地址的818号地址，从而获取+操作。
@@ -3237,7 +3285,7 @@ PV操作使用不当也有可能出现死锁的情况。
 程序加载到内存时，不直接进行地址转换，而是直接将其装入到分配的内存区域中，随后进程的任何一条指令需要执行时都通过硬件的地址转换机构将指令中的逻辑地址转化为绝对地址。
 </p>
 
-<img src="./images/6-3动态重定位.png" width="50%" height="50%"/>
+<img src="/images/6-3动态重定位.png" width="50%" height="50%"/>
 
 <p>
 动态分配内存的进程需要将程序内存区域的起始地址，存入基址寄存器中。
@@ -3275,7 +3323,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <p>
 固定分区需要一张分区说明表，说明了每个内存区域的区号、大小、起始地址、以及状态。当程序运行时根据其所需内存大小找到可用的区号，并将分区状态设置为占用。当进程使用完毕后由系统回收。
 </p>
-<img src="./images/6-4固定分区示例"  width="50%" height="50%"/>
+<img src="/images/6-4固定分区示例"  width="50%" height="50%"/>
 
 <p>
 缺点：不是所有程序所需内存都与分区大小是对齐的，如果不是对齐那将很浪费。并且也十分得不灵活。
@@ -3336,7 +3384,7 @@ PV操作使用不当也有可能出现死锁的情况。
 <p>
 以下是此算法的逻辑图：
 </p>
-<img src="./images/6-8可变分区地址转换.png" width="50%" height="50%" />
+<img src="/images/6-8可变分区地址转换.png" width="50%" height="50%" />
 
 <p>
 操作系统为了管理内存的分配和释放，建立了两个表用于管理：
@@ -3449,7 +3497,7 @@ PV操作使用不当也有可能出现死锁的情况。
 最先适应算法
 最简单的算法，当接到内存申请时顺序查找空闲表中的可用内存块，直接分配。
 </p>
-<img src="./images/6-10最先适应算法" width="50%" height="50%" />
+<img src="/images/6-10最先适应算法" width="50%" height="50%" />
 <p>
 书中的图如下：
 </p></li>
@@ -3486,7 +3534,7 @@ PV操作使用不当也有可能出现死锁的情况。
 界限寄存器
 界限寄存器又分为使用上、下界寄存器和基址、限长寄存器方法，下面是不同方法寄存器中的大小限制。
 </p>
-<img src="./images/6-12界限寄存器.png" width="50%" height="50%"/>
+<img src="/images/6-12界限寄存器.png" width="50%" height="50%"/>
 
 <p>
 进程的执行过程中访问内存地址的时候，就会根据界限寄存器来判断是否越界。
@@ -3591,11 +3639,607 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
+<div id="outline-container-orge57a568" class="outline-2">
+<h2 id="orge57a568">第七章-文件系统</h2>
+<div class="outline-text-2" id="text-orge57a568">
+<p>
+操作系统的文件系统用于存储程序和数据，文件系统可作为用户与底层I/O设备交互的一个抽象，例如一个文件从底层上看就是一堆二进制内容个，而从用户角度看则是单个文件，里面是存储的文件内容，文件系统就是作为一个抽象层，使得用户层与I/O设备交互起来方便很多。
+</p>
+</div>
+<div id="outline-container-orgd624401" class="outline-3">
+<h3 id="orgd624401">文件系统的基本概念</h3>
+<div class="outline-text-3" id="text-orgd624401">
+</div>
+<div id="outline-container-org909b1d7" class="outline-4">
+<h4 id="org909b1d7">文件系统的任务</h4>
+<div class="outline-text-4" id="text-org909b1d7">
+<p>
+从两种观点上去看文件系统可分为：用户观点、操作系统观点。它们每个关心的内容不同，文件系统针对它们所做的事情也不同。
+</p>
+<ol class="org-ol">
+<li>文件的定义
+经典读一遍理解不了的解释: <code>文件可以被解释为一组带标识的、在逻辑上有完整意义的信息项的序列。</code> 其中标识是指文件名，信息项是指文件的内容。</li>
+<li><p>
+文件系统的定义
+一句话解释：对于用户来说提供文件、检索、更新、安全的使用方式。对系统来说，提供文件目录的实现，如何管理存储控件，文件存储位置，磁盘实际运作方式，存取速度，磁盘利用率。
+</p>
+
+<p>
+文件系统的具体作用：
+</p>
+<ul class="org-ul">
+<li>统一管理磁盘存储控件，实施分配与回收。</li>
+
+<li>实现名字空间到外存空间的映射。</li>
+
+<li>实现文件信息共享，提供文件保护和加密措施。</li>
+
+<li>对用户所需针对文件的操作提供方便的接口。</li>
+
+<li>系统维护及项用户提供有关信息。</li>
+
+<li>保证磁盘执行效率。</li>
+
+<li>提供统一的I/O接口。</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc700938" class="outline-4">
+<h4 id="orgc700938">文件的存储介质及存取方式</h4>
+<div class="outline-text-4" id="text-orgc700938">
+<p>
+存储介质及外部设备，例如磁盘，闪存。存取方式及针对不同的设备存取文件的方式不同。
+</p>
+<ol class="org-ol">
+<li>外存储设备的特点
+外存储设备相比于CPU的寄存器来说，有大容量，断电后可保存信息，速度较慢，成本低等特点。</li>
+<li>外存储设备的存储介质文件在存储设备中的存取方式
+常见的几种外存存储设备有以下几种。
+<ul class="org-ul">
+<li>磁带
+最廉价，容量大，缺点是仅能顺序读写。</li>
+<li><p>
+磁盘
+分为软盘和硬盘。其中软盘容量小，易磨损，保存不便已经被淘汰。
+</p>
+
+<p>
+硬盘目前十分常用，其物理结构图如下：
+</p>
+<img src="/images/7-2磁盘的结构.png" width="50%" height="50%"/>
+
+<p>
+由图可看出，一个磁盘的物理结构还是十分复杂的，其主要原理是通过中心的转柱，转动盘面，读写磁头即可访问其中的数据。
+下面是具体的工作原理解释：
+每个盘面都是具有磁性的，原因是其是由无数个小块磁铁，磁铁的磁极具有正负之分，正好可以用来表示0和1。盘面上有一个个的磁道，磁道的半径不同，磁道也就是那些小磁铁存在的地方。可以将磁道划分为多个扇面（扇区），每个扇区可保存的bit数和磁面总扇区数可得出磁盘总容量。
+读取磁盘是通过读写磁头来实现的，读写磁头实际上是一个转动臂，转动臂的尾部有两个装置，分别用来读和写。先说写，通过对磁头放电，可将磁道上的小磁铁的磁极进行转换，从而实现了写入0和1的方式。再说读，读取是通过一个磁头臂上的装置读取小磁铁的磁极从而获取到数据。
+不管是读取还是写入，磁头都需要进行寻道，磁头本身的转动臂是由马达驱动的，所以其可以来回移动，而扇面会高速自转，从而达到寻道的过程。
+寻道是根据物理地址来确定位置的，物理地址是根据驻面号（磁道号）、磁头号（盘面号）、扇区号组成的。
+</p></li>
+<li>光盘
+利用激光对物理介质进行读写。
+通常光盘都是只读式的，随着技术的进步，出现了可读写光盘，且速度能和磁盘接近，价格也很便宜。
+但大量便携式计算机都移出了光驱设备。</li>
+<li><p>
+闪存
+特点：
+</p>
+<ul class="org-ul">
+<li>可随机读写</li>
+
+<li>寿命高，无机械损耗</li>
+
+<li>速度块</li>
+</ul>
+
+<p>
+缺点：
+</p>
+
+<ul class="org-ul">
+<li>价格高
+相比于磁盘来说，闪存的价格较高。</li>
+</ul></li>
+</ul></li>
+
+<li><p>
+文件在存储设备中的存取方式
+用户对外存储设备的要求：
+</p>
+<ul class="org-ul">
+<li>读写外存时不涉及硬件细节。</li>
+
+<li>外存读写速度要快，容量要大，利用率要高。</li>
+
+<li>外存中的信息要保证安全。</li>
+
+<li>可方便地共享。</li>
+
+<li>存储控件可动态调整大小。</li>
+
+<li>尽可能代价小地完成如上所述。</li>
+</ul>
+
+<p>
+用户层面看文件是逻辑结构，而文件实际上是物理结构。
+用户访问文件时，需要转换机制将文件的逻辑地址转换为对应的物理地址。
+</p>
+
+<p>
+文件存取方式有顺序存取和随机存取两种方式：
+</p>
+
+<ul class="org-ul">
+<li>顺序存储
+从前往后依次读取各个信息项。</li>
+<li>随机存取
+任意次序读取信息项。</li>
+</ul>
+
+<p>
+下面是两种典型不同存取方式的设备的结构图：
+</p>
+
+<img src="/images/7-3文件结构-文件存取方式存储介质.png" width="50%" height="50%"/></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd7a6642" class="outline-4">
+<h4 id="orgd7a6642">文件的分类</h4>
+<div class="outline-text-4" id="text-orgd7a6642">
+<p>
+文件系统会根据文件类型或性质进行分类。
+</p>
+<ol class="org-ol">
+<li>按文件的用途分类
+操作系统的系统应用程序和数据组成的文件。用户及可通过系统提供的接口来执行。
+<ul class="org-ul">
+<li>库函数文件
+用户可执行或读取，但不允许修改。</li>
+<li>用户文件
+用户的文件，不同用户的文件有不同的权限。由源程序、目标程序、用户数据文件，用户数据库组成。</li>
+</ul></li>
+<li>按文件的组织形式分类
+<ol class="org-ol">
+<li>普通文件
+一般格式的文件，文件内容可以是数据或程序。也可以是用户文件、库函数文件和用户实用程序文件。</li>
+<li>目录文件
+用来描述文件目录信息的文件，是一种特殊的文件。</li>
+<li>特殊文件
+类似I/O设备都是以文件形式存在的，若对文件直接进行读写也就对对应的设备进行了修改。</li>
+</ol></li>
+<li><p>
+一些常见的文件分类方式
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">保护方式</th>
+<th scope="col" class="org-left">信息的流向</th>
+<th scope="col" class="org-left">存放时限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">只读文件</td>
+<td class="org-left">输入文件</td>
+<td class="org-left">临时文件</td>
+</tr>
+
+<tr>
+<td class="org-left">读写文件</td>
+<td class="org-left">输出文件</td>
+<td class="org-left">永久文件</td>
+</tr>
+
+<tr>
+<td class="org-left">可执行文件</td>
+<td class="org-left">输入输出文件</td>
+<td class="org-left">档案文件</td>
+</tr>
+
+<tr>
+<td class="org-left">无保护文件</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table></li>
+<li>Unix类操作系统中文件的分类
+<ol class="org-ol">
+<li>普通文件
+一般格式的文件，文件内容可以是数据或程序。也可以是用户文件、库函数文件和用户实用程序文件。</li>
+<li>目录文件
+用来描述文件目录信息的文件，是一种特殊的文件。</li>
+<li>特殊文件
+类似I/O设备都是以文件形式存在的，若对文件直接进行读写也就对对应的设备进行了修改。</li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org69e133b" class="outline-3">
+<h3 id="org69e133b">文件的逻辑结构和物理结构</h3>
+<div class="outline-text-3" id="text-org69e133b">
+<p>
+逻辑结构是用户所能看到的。
+</p>
+</div>
+<div id="outline-container-orga8b7328" class="outline-4">
+<h4 id="orga8b7328">文件的逻辑结构</h4>
+<div class="outline-text-4" id="text-orga8b7328">
+<ol class="org-ol">
+<li>设计文件逻辑结构的原则
+<ul class="org-ul">
+<li>易于操作</li>
+<li>查找快捷</li>
+<li>修改方便</li>
+<li>空间紧凑</li>
+</ul></li>
+<li><p>
+文件的逻辑结构
+</p>
+<img src="/images/7-4逻辑文件的种类.png" width="50%" height="50%"/>
+<p>
+文件逻辑结构是一种经过抽象的结构，所描述的是文件中信息的组织形式，与文件在物理介质上的具体存储结构不同。
+</p>
+<ol class="org-ol">
+<li>流式文件
+无结构的有序字符的集合，基本单位是字符。</li>
+<li>记录式文件
+一组有序记录的集合。基本单位是记录。
+记录分为定长记录和不定长记录。
+定长记录可以根据记录号和长度获取此记录的逻辑地址。
+不定长记录的长度不等，查找时必须依次遍历才能找到所需记录。</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4505214" class="outline-4">
+<h4 id="org4505214">文件的物理结构</h4>
+<div class="outline-text-4" id="text-org4505214">
+<p>
+常用的文件物理结构有顺序结构，链接结构，索引结构。
+</p>
+<ol class="org-ol">
+<li>顺序结构
+<ul class="org-ul">
+<li>原理
+最简单的文件物理结构，逻辑上连续的文件信息依次按编号排列在物理块中。</li>
+<li>优点
+可以根据起始块号和文件长度快速存取。</li>
+<li>缺点
+文件无法动态增长。
+若文件所在物理块较靠后，则查找速度较慢。
+这种方式也不利于插入和删除。</li>
+</ul></li>
+<li>链接结构
+<ul class="org-ul">
+<li>原理
+将物理块上的文件以链表的方式存储，每个物理块都有一个指向前继和后继的指针。</li>
+<li>优点
+解决了存储碎片问题。
+有利于文件动态扩充。
+有利于文件插入和删除。
+提高了磁盘利用率。</li>
+<li>缺点
+链接结构的文件是不连续分配的，其文件对应的物理块在磁盘上是分散分布的，所以查询起来要慢。</li>
+</ul></li>
+<li>索引结构
+<ul class="org-ul">
+<li><p>
+原理
+分配内存块时，将所分配的内存块的物理地址记录在一个文件索引表中，当需要读写指定内存块时，仅需要检索索引表即可。
+</p>
+<img src="/images/7-7索引文件结构.png" width="50%" height="50%"/></li>
+
+<li>优点
+保持了链接结构的优点，
+同时适合顺序读写和随机读写，
+同样可以满足文件动态增长的需求。</li>
+<li>缺点
+寻道次数和时间会增加。索引表本身也占有存储空间。</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7cf8e1c" class="outline-4">
+<h4 id="org7cf8e1c">UNIX的三级索引结构</h4>
+<div class="outline-text-4" id="text-org7cf8e1c">
+<img src="/images/7-8三级索引结构.png" width="50%" height="50%"/>
+
+<p>
+UNIX中任何文件会拥有一个i结点表，这个表内记录了两大块，分别是直接盘块和间接盘块。
+直接盘块数量是12个，通过它们可以直接找到对应的磁盘块，而间接盘块从13、14、15个开始依次排列为一级索引，二级索引，三级索引，每个索引内又有多个额外的磁盘地址。
+</p>
+
+<p>
+优点：
+这种多级索引结构所占用空间比一般的多级索引结构的文件要少。
+同时适合小文件和大型文件使用。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org748ba1b" class="outline-3">
+<h3 id="org748ba1b">文件目录</h3>
+<div class="outline-text-3" id="text-org748ba1b">
+<p>
+为了方便对文件进行管理，文件系统设置了文件目录，用于检索系统中的文件。
+</p>
+</div>
+<div id="outline-container-org0b0c444" class="outline-4">
+<h4 id="org0b0c444">文件控制块</h4>
+<div class="outline-text-4" id="text-org0b0c444">
+<p>
+FCB-文件控制块-File Control Block，作用是描述一个文件。
+</p>
+
+<p>
+文件目录即包含多个FCB的集合，且它实际上是文件符号名到文件物理地址的一种映射。
+</p>
+
+<p>
+文件控制块的内容如下：
+</p>
+<img src="/images/7-9文件控制块.png" width="50%" height="50%"/>
+
+<p>
+对应的解释如下：
+</p>
+
+<ul class="org-ul">
+<li>文件名
+用户指定文件的名称</li>
+<li>文件代号
+唯一标识一个文件的编号</li>
+<li>用户名
+该文件的创建者</li>
+<li>文件物理结构
+标识了文件内存是顺序、链接还是索引结构。</li>
+<li>文件逻辑结构
+流式/记录式</li>
+<li>文件物理位置
+根据文件物理结构有不同的值，例如文件是链接结构，那么物理位置是该文件记录的首地址，若是索引则是该文件记录的索引表中的地址。</li>
+<li>文件长度和记录大小</li>
+<li>文件类型
+例如源程序文件，可执行文件，字符文件，数据文件，语音、视频文件</li>
+<li>文件属性
+只读、可读写、可执行</li>
+<li>口令
+访问文件时所需的密码</li>
+<li>保存期限
+文件的保管时间</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d27220" class="outline-4">
+<h4 id="org2d27220">文件目录和当前目录</h4>
+<div class="outline-text-4" id="text-org2d27220">
+<p>
+文件目录也分等级，有单级、二级、多级目录结构。
+</p>
+</div>
+<div id="outline-container-orgbe8def1" class="outline-5">
+<h5 id="orgbe8def1">单级目录</h5>
+<div class="outline-text-5" id="text-orgbe8def1">
+<p>
+单级目录实现简单，是最原始的文件目录结构。
+</p>
+<img src="/images/7-10一级目录结构.png" width="50%" height="50%"/>
+<p>
+缺点：
+搜索效率低，文件不能存在同名
+</p>
+</div>
+</div>
+<div id="outline-container-org19646b2" class="outline-5">
+<h5 id="org19646b2">二级目录</h5>
+<div class="outline-text-5" id="text-org19646b2">
+<p>
+二级目录解决了一级目录的重名问题。每个二级表存储了不同用户的用户名和子目录指针，随后想要找到具体某个用户的某个文件可以通过子目录指针找到所对应的二级目录。
+结构图如下：
+</p>
+<img src="/images/7-11二级目录结构.png" width="50%" height="50%"/>
+</div>
+</div>
+
+<div id="outline-container-org525f20a" class="outline-5">
+<h5 id="org525f20a">多级目录</h5>
+<div class="outline-text-5" id="text-org525f20a">
+<p>
+又称之为树形目录结构。
+目录结构图：
+</p>
+<img src="/images/7-12多级目录结构.png" width="50%" height="50%"/>
+
+<p>
+每级都具有文件目录和文件，最高级为根目录，最低级为文件，且根目录是唯一的。
+特点：
+</p>
+<ul class="org-ul">
+<li>层次清晰</li>
+<li>解决了文件重名问题</li>
+<li>查找速度快</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgebff25d" class="outline-5">
+<h5 id="orgebff25d">当前目录与目录检索</h5>
+<div class="outline-text-5" id="text-orgebff25d">
+<p>
+当前目录即用户当前所操作文件的所在目录，当需要访问文件时，分为两种方式查找文件，分别是通过过：
+</p>
+<ul class="org-ul">
+<li>绝对路径
+绝对路径需要将文件从根目录开始依次提供文件目录的路径。</li>
+<li>相对路径
+相对路径是对于当前文件要找到的文件的路径。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org88208b8" class="outline-4">
+<h4 id="org88208b8">目录项和目录文件</h4>
+<div class="outline-text-4" id="text-org88208b8">
+<p>
+目录项即管理目录定长的记录的基本数据结构。
+目录文件即目录项的有序集合。
+</p>
+</div>
+<div id="outline-container-org002a3a8" class="outline-5">
+<h5 id="org002a3a8">目录项</h5>
+<div class="outline-text-5" id="text-org002a3a8">
+<p>
+创建新文件时，该文件的信息和属性记录在文件控制块内。
+这些文件控制块被保存在目录文件中，每一条记录就是一条目录项。
+</p>
+</div>
+</div>
+<div id="outline-container-org4546197" class="outline-5">
+<h5 id="org4546197">目录文件</h5>
+<div class="outline-text-5" id="text-org4546197">
+<p>
+多个文件的文件控制块组合在一起就成了文件的目录。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgabeee70" class="outline-4">
+<h4 id="orgabeee70">目录项分解法</h4>
+<div class="outline-text-4" id="text-orgabeee70">
+<img src="/images/7-14目录项分解法.png" width="50%" height="50%"/>
+
+<p>
+为了提高性能，将目录项分为两个部分：
+</p>
+<ul class="org-ul">
+<li>符号目录项（次部）
+包含文件名以及对应的文件号</li>
+<li>基本目录项（主部）
+除了次部中的内容之外的信息。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgab05ca2" class="outline-4">
+<h4 id="orgab05ca2">UNIX的文件目录实现</h4>
+<div class="outline-text-4" id="text-orgab05ca2">
+<img src="/images/UNIX的目录结构.png" width="50%" height="50%"/>
+
+<p>
+UNIX的目录项由i结点号和文件名组成，其中i结点包含文件大小，创建、最后访问、最后修改时间，所有者，所在组，保护信息，计数位。
+</p>
+
+<p>
+如果需要查找文件路径为 <code>/usr/bin/ls</code> 的文件，具体步骤如下：
+首先找到根目录下的i结点，再根据根目录的i结点找到 <code>usr</code> 目录的i结点，再根据 <code>usr</code> 的i结点找到 <code>bin</code> 的i结点，再根据 <code>bin</code> 的i结点查找 <code>ls</code> ，找到这个文件的i结点就会被读入内存，若文件不关闭则一直保留在内存中。
+</p>
+</div>
+</div>
+<div id="outline-container-orgba68401" class="outline-4">
+<h4 id="orgba68401">FAT文件系统的实现</h4>
+<div class="outline-text-4" id="text-orgba68401">
+<p>
+FAT——(File Allocation TAble)
+</p>
+
+<p>
+简单的文件系统，早期为DOS系统设计，适合小容量磁盘，版本有FAT-12、16、32。
+</p>
+
+<p>
+结构如下:
+</p>
+<img src="/images/7-17FAT卷的结构" width="50%" height="50%"/>
+
+<p>
+FAT的卷单位是簇，前两个簇用于保护卷。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga189b51" class="outline-3">
+<h3 id="orga189b51">文件存储空间管理</h3>
+<div class="outline-text-3" id="text-orga189b51">
+<p>
+本节从设计和实现者的角度讨论文件系统如何实现。
+</p>
+</div>
+<div id="outline-container-orgebf5b02" class="outline-4">
+<h4 id="orgebf5b02">磁盘空间管理</h4>
+<div class="outline-text-4" id="text-orgebf5b02">
+<p>
+虽然磁盘很大，但仍然不是无限大的，所以必须对存储空间进行分配与回收。
+</p>
+</div>
+</div>
+<div id="outline-container-org80fe155" class="outline-4">
+<h4 id="org80fe155">磁盘空间的分配回收算法</h4>
+<div class="outline-text-4" id="text-org80fe155">
+<p>
+针对磁盘空间有不同的分配算法，不同的分配算法对应着不同的回收算法。有四种方案：
+</p>
+<ol class="org-ol">
+<li><p>
+位示图
+</p>
+<img src="/images7-19位示图.png" width="50%" height="50%" />
+
+<p>
+位示图是一个二维矩形表，里面每一个单元格都反映了某个物理块的存储状态，如果单元格内是0则代表其对应的物理块是空闲，如果是1则反之。
+当分配物理空间时，从位示图的第一个开始查找，直到找到单元格为0的，将其设置为1，同时返回该二进制位对应的物理块号。
+当归还（回收）空间时，根据物理块号找到位示图单元格，将其设置为0。
+</p></li>
+
+<li><p>
+空闲块表
+</p>
+<img src="/images/7-20空闲块表.png" width="50%" height="50%"/>
+<p>
+这种数据结构的记录表是转为空闲外存物理块设计的其非常适合应用在顺序结构上，其根据首空闲块号和空格块个数表示一段连续的空闲块。
+</p></li>
+<li><p>
+空闲块链表
+</p>
+<img src="/images/7-20空闲块链表.png" width="50%" height="50%"/>
+
+<p>
+每个块的都有一个指向下一个空闲块的指针，除了最后一个。
+这种方式实现效率太低 。优点是节省内存。
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org158b773" class="outline-4">
+<h4 id="org158b773">空闲块成组链接法</h4>
+<div class="outline-text-4" id="text-org158b773">
+<p>
+看书吧。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org59e93b8" class="outline-3">
+<h3 id="org59e93b8">实现文件系统的表目</h3>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2020-09-10 四 00:00</p>
+<p class="date">Date: 2020-09-10 Thu 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-03-26 五 20:57</p>
+<p class="date">Created: 2021-04-01 Thu 15:12</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
