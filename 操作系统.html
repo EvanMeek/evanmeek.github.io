@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-04-08 Thu 00:21 -->
+<!-- 2021-04-08 Thu 00:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>操作系统</title>
@@ -28,14 +28,14 @@
 <ul>
 <li><a href="#orgc87582e">批处理操作系统</a>
 <ul>
-<li><a href="#orgf6a3c82">基本工作方式</a></li>
+<li><a href="#org4659455">基本工作方式</a></li>
 <li><a href="#orgc717034">特点与分类</a></li>
 <li><a href="#org1dabbde">SPOOLing技术</a></li>
 </ul>
 </li>
 <li><a href="#org03dcbef">分时系统</a>
 <ul>
-<li><a href="#org4659455">基本工作方式</a></li>
+<li><a href="#org5614543">基本工作方式</a></li>
 <li><a href="#orga3617cf">设计思想</a></li>
 <li><a href="#orgcc294e8">特点</a></li>
 </ul>
@@ -75,7 +75,7 @@
 <li><a href="#org4248a69">限制用户程序执行特权指令</a></li>
 </ul>
 </li>
-<li><a href="#orgef82399">程序状态字(PSW)</a></li>
+<li><a href="#org29c7cf6">程序状态字(PSW)</a></li>
 </ul>
 </li>
 <li><a href="#org2cbeff3">计算机系统硬件部件</a>
@@ -140,16 +140,16 @@
 <li><a href="#orga523dc6">具体实现</a></li>
 </ul>
 </li>
-<li><a href="#orgce75063">思考题与练习题</a></li>
+<li><a href="#org2fa1662">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org295dfb3">第三章-进程与线程</a>
 <ul>
-<li><a href="#org9bbda8e">多道程序设计</a>
+<li><a href="#orgbacd94f">多道程序设计</a>
 <ul>
 <li><a href="#org74f7ef7">程序的顺序执行</a></li>
 <li><a href="#org7fc3eee">程序的并发执行</a></li>
-<li><a href="#orgbacd94f">多道程序设计</a></li>
+<li><a href="#org0f8c4d2">多道程序设计</a></li>
 </ul>
 </li>
 <li><a href="#orgf641927">进程</a>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li><a href="#org42f10e1">系统内核</a></li>
-<li><a href="#org2fa1662">思考题与练习题</a></li>
+<li><a href="#orgae675ed">思考题与练习题</a></li>
 </ul>
 </li>
 <li><a href="#org8ecc0e3">第四章-进程同步与互斥</a>
@@ -261,9 +261,9 @@
 <li><a href="#org8060645">死锁检测的算法</a></li>
 </ul>
 </li>
-<li><a href="#orgc958216">资源分配图</a>
+<li><a href="#orge61d52b">资源分配图</a>
 <ul>
-<li><a href="#orge61d52b">资源分配图</a></li>
+<li><a href="#orgbaf53ac">资源分配图</a></li>
 <li><a href="#orga7cbd51">死锁定理</a></li>
 </ul>
 </li>
@@ -378,9 +378,9 @@
 批处理操作系统是操作系统发展时代的早期产物，其工作方式是:
 </p>
 </div>
-<div id="outline-container-orgf6a3c82" class="outline-5">
-<h5 id="orgf6a3c82">基本工作方式</h5>
-<div class="outline-text-5" id="text-orgf6a3c82">
+<div id="outline-container-org4659455" class="outline-5">
+<h5 id="org4659455">基本工作方式</h5>
+<div class="outline-text-5" id="text-org4659455">
 <p>
 用户将作业交给系统操作员，系统操作员收到后一定数量的作业后将其组成一批作业，再将其输入到计算机中，随后计算机自动、依次执行每个作业，最后由系统操作员将结果返还给用户。
 </p>
@@ -426,9 +426,9 @@ SPOOLing(Simultaneous Peripheral Operating On-Line)技术全称为“同时的�
 分时系统是为了弥补批处理方式不能向用户提供交互式快速服务的缺点而出生的。
 </p>
 </div>
-<div id="outline-container-org4659455" class="outline-5">
-<h5 id="org4659455">基本工作方式</h5>
-<div class="outline-text-5" id="text-org4659455">
+<div id="outline-container-org5614543" class="outline-5">
+<h5 id="org5614543">基本工作方式</h5>
+<div class="outline-text-5" id="text-org5614543">
 <p>
 一台计算机连接了若干个终端，每个终端可由一个用户使用，用户使用终端交互式地向系统提出命令请求，系统接受用户的命令之后，采用时间片轮转方式处理服务请求，并且通过交互式的方式在终端上向用户显示结果。
 </p>
@@ -754,8 +754,8 @@ RTOS(Real Time Operating System)实时操作系统，具有高度可靠性，其
 </p>
 </div>
 </li>
-<li><a id="orgb3229ae"></a>程序状态字(PSW)<br>
-<div class="outline-text-7" id="text-orgb3229ae">
+<li><a id="orgef82399"></a>程序状态字(PSW)<br>
+<div class="outline-text-7" id="text-orgef82399">
 <p>
 记录处理器的运行模式信息
 </p>
@@ -871,9 +871,9 @@ CPU处理管态可执行任何指令，而处于目态时不允许执行特权�
 </div>
 </div>
 </div>
-<div id="outline-container-orgef82399" class="outline-4">
-<h4 id="orgef82399">程序状态字(PSW)</h4>
-<div class="outline-text-4" id="text-orgef82399">
+<div id="outline-container-org29c7cf6" class="outline-4">
+<h4 id="org29c7cf6">程序状态字(PSW)</h4>
+<div class="outline-text-4" id="text-org29c7cf6">
 <p>
 为了控制好OS与用户程序的可使用指令权限级别，CPU引入了管态和目态两种状态，而PSW用于标记当前CPU应当以什
 么状态运行。
@@ -1428,9 +1428,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgce75063" class="outline-3">
-<h3 id="orgce75063">思考题与练习题</h3>
-<div class="outline-text-3" id="text-orgce75063">
+<div id="outline-container-org2fa1662" class="outline-3">
+<h3 id="org2fa1662">思考题与练习题</h3>
+<div class="outline-text-3" id="text-org2fa1662">
 <ol class="org-ol">
 <li><p>
 请简述处理器的组成和工作原理。你认为哪些部分和操作系统密切相关，为什么？
@@ -1624,9 +1624,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 <h2 id="org295dfb3">第三章-进程与线程</h2>
 <div class="outline-text-2" id="text-org295dfb3">
 </div>
-<div id="outline-container-org9bbda8e" class="outline-3">
-<h3 id="org9bbda8e">多道程序设计</h3>
-<div class="outline-text-3" id="text-org9bbda8e">
+<div id="outline-container-orgbacd94f" class="outline-3">
+<h3 id="orgbacd94f">多道程序设计</h3>
+<div class="outline-text-3" id="text-orgbacd94f">
 <ul class="org-ul">
 <li>作用
 提高处理器利用率。</li>
@@ -1680,9 +1680,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbacd94f" class="outline-4">
-<h4 id="orgbacd94f">多道程序设计</h4>
-<div class="outline-text-4" id="text-orgbacd94f">
+<div id="outline-container-org0f8c4d2" class="outline-4">
+<h4 id="org0f8c4d2">多道程序设计</h4>
+<div class="outline-text-4" id="text-org0f8c4d2">
 <p>
 <code>能使多个硬件并行工作即多道程序设计</code>
 </p>
@@ -2204,9 +2204,9 @@ CPU暂停当前程序转而处理中断的过程称作中断响应；</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org2fa1662" class="outline-3">
-<h3 id="org2fa1662">思考题与练习题</h3>
-<div class="outline-text-3" id="text-org2fa1662">
+<div id="outline-container-orgae675ed" class="outline-3">
+<h3 id="orgae675ed">思考题与练习题</h3>
+<div class="outline-text-3" id="text-orgae675ed">
 <ol class="org-ol">
 <li>什么是多道程序设计？
 答： 多道程序设计是一种能够提高处理器利用率，充分发挥处理器与外围设备以及外围设备之间的并行工作能力的程序设计方式。</li>
@@ -3089,16 +3089,16 @@ PV操作使用不当也有可能出现死锁的情况。
 </div>
 </div>
 </div>
-<div id="outline-container-orgc958216" class="outline-3">
-<h3 id="orgc958216">资源分配图</h3>
-<div class="outline-text-3" id="text-orgc958216">
+<div id="outline-container-orge61d52b" class="outline-3">
+<h3 id="orge61d52b">资源分配图</h3>
+<div class="outline-text-3" id="text-orge61d52b">
 <p>
 资源分配图用于描述死锁，使用此分配图可以对当前系统资源分配和申请情况一目了然。
 </p>
 </div>
-<div id="outline-container-orge61d52b" class="outline-4">
-<h4 id="orge61d52b">资源分配图</h4>
-<div class="outline-text-4" id="text-orge61d52b">
+<div id="outline-container-orgbaf53ac" class="outline-4">
+<h4 id="orgbaf53ac">资源分配图</h4>
+<div class="outline-text-4" id="text-orgbaf53ac">
 <p>
 看书吧，这种涉及到数学的我都不太行。。
 </p>
@@ -4239,7 +4239,7 @@ FAT的卷单位是簇，前两个簇用于保护卷。
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-10 Thu 00:00</p>
 <p class="author">Author: Evan Meek</p>
-<p class="date">Created: 2021-04-08 Thu 00:21</p>
+<p class="date">Created: 2021-04-08 Thu 00:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
